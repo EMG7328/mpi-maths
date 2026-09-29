@@ -188,7 +188,7 @@
       top=6pt,
       bottom=6pt,
       unbreakable,
-      fonttitle=\bfseries\upshape\color{vorange},
+      fonttitle=\bfseries\upshape\color{vorange!95!black},
       theorem style=plain,
       separator sign={\textnormal{\upshape~--~}},
       terminator sign={~:~},

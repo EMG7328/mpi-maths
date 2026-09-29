@@ -1,20 +1,18 @@
-
-\section{Ensembles dénombrables}
-\subsection{Définitions }
+\section{Dénombrabilité}
+\subsection{Définitions}
 
 \begin{definition}{Dénombrable}{}
     Soit $I$ un ensemble. On dit que $I$ est \emph{dénombrable} 
-    s'il existe une bijection entre $\N$ et $I$. 
-
-    On dira (LHP) que $I$ est \emph{équipotent} à $\N$.
+    s'il existe une bijection entre $\N$ et $I$.
+    On dira que $I$ est \emph{équipotent} à $\N$ (LHP).
 \end{definition}
 
 \begin{exemple}
     \begin{itemize}
         \item L'ensemble $\N$ est dénombrable (la bijection est l'identité).
-        \item L'ensemble $N^*$ est dénombrable (la bijection est $f : n \mapsto n+1$).
+        \item L'ensemble $\N^*$ est dénombrable (la bijection est $f : n \mapsto n+1$).
         \item $2 \N$ est dénombrable (la bijection est $f : n \mapsto 2n$).
-        \item $\Z$ est dénombrable (la bijection est $f : n \mapsto p \text{ ou } -p-1$ selon que $n$ est pair ou impair)
+        \item $\Z$ est dénombrable (la bijection est $f : n \mapsto p \text{ ou } -p-1$ selon la parité de $n$).
     \end{itemize}
 \end{exemple}
 
@@ -40,31 +38,28 @@
 
     Construisons par récurrence $\varphi : \N \to A$ en posant : $\varphi(0) = \min(A)$ car $A \neq \emptyset$.
 
-    Et par récurrence, $\forall n \in \N, \, \varphi(n+1) = \min(\underbrace{A \setminus \underbrace{\{\varphi(0), \ldots, \varphi(n)\}}_{\text{est fini}}}_{\text{infini donc non vide}})$.
+    Et par récurrence, $\forall n \in \N, \, \varphi(n+1) = \min(\underbrace{A \setminus \underbrace{\{\varphi(0), \ldots, \varphi(n)\}}_{\text{est fini}}}_{\text{infini donc non vide}})$. \\
 
-    \uindent{Montrons que $\varphi$ est bijective }
+    \uline{Montrons que $\varphi$ est bijective :}
 
     \svspace On a $\varphi(n) = \min(\underbrace{A \setminus \{\varphi(0), \ldots, \varphi(n-1)\}}_{= B })$ 
     et $\varphi(n + 1) = \min(B \setminus \{ \varphi(n) \})$ 
 
     Donc $\forall k \in B, \, \varphi(n) \leqslant k$ et $\exists k_1 \in B \setminus \{\varphi(n)\}, \, \varphi(n + 1) = k_1$
 
-    Donc $\varphi(n) < \varphi(n + 1)$ et $\varphi (n) \neq \varphi(n + 1)$
+    Donc $\varphi(n) \leqslant \varphi(n + 1)$ et $\varphi (n) \neq \varphi(n + 1)$ par construction.
 
-    Donc $\varphi(n) < \varphi(n + 1)$, donc $\varphi$ est injective.
+    Donc $\varphi(n) < \varphi(n + 1)$, donc $\varphi$ est injective. \\
 
     Soit $a \in A$, alors $\{k \in A | k < a\}$ est fini et $(\varphi(n))_{n \in \N}$ est strictement croissante, donc
     $\exists n_0 \in \N, \, \varphi(n_0) \geqslant a$.
 
     Soit $n_0$ le plus petit entier tel que $\varphi(n_0) \geqslant a$.
 
-    On a donc $\varphi(n_0 - 1) < a \leqslant \varphi(n_0)$, donc $a \in B_{n_0}$. 
-
-    Si on avait $a < \varphi(n_0)$, on aurait $a \in B_{n_0 + 1}$ avec $a < \min (B_{n_0 + 1})$, absurde. 
-    
-    Donc $a = \varphi(n_0)$, donc $\varphi$ est surjective.
+    On a donc $\varphi(n_0 - 1) < a \leqslant \varphi(n_0)$.
+  
+    Donc $a = \varphi(n_0)$ par construction, donc $\varphi$ est surjective.
 \end{proof}
-
 
 \begin{proposition}{Nature des parties de $\N$}{}
     Dans $\N$, il y a deux types de parties : 
@@ -84,27 +79,22 @@
 
 
 \begin{proof}
-    Si $E$ est en bijection avec $I \subset \N$, alors si $I$ est finie, 
+    $\Leftarrow$ Si $E$ est en bijection avec $I \subset \N$, alors si $I$ est finie, 
     $E$ l'est également, et si $I$ est infinie, alors $I$ est dénombrable donc $E$ aussi.
 
-    \lvspace Si $E$ est au plus dénombrable, alors si $E$ est fini, il est en bijection 
-    avec 
-    
-    $\ninter 1 {\text{Card}(E)} \subset \N$.
-
-    S'il est dénombrable, par def il est en bijection avec $\N$.
+    $\Rightarrow$ Si $E$ est au plus dénombrable, alors si $E$ est fini, il est en bijection 
+    avec $\ninter 1 {\text{Card}(E)} \subset \N$.
+    S'il est dénombrable, par définition il est en bijection avec $\N$.
 \end{proof}
 
 
-\subsection{Opérations }
+\subsection{Opérations}
 
-\begin{theoreme}{Nature de $\N^2$}{}
+\begin{theoreme}{}{}
     $\N^2$ est dénombrable.
 \end{theoreme}
 
-Non exigible. 
-
-\begin{proof}
+\begin{proof} (non exigible)
     Considérons $\fonction \varphi {\N^2} \N {(p, q)}{2^p (2q + 1) - 1}$.
 
     $\varphi$ est bien définie, et si $a \in \N$, alors $a + 1 \in \N^*$, donc possède 
@@ -120,7 +110,7 @@ Non exigible.
 
 \end{proposition}
 
-\idee{Par récurrence}
+\idee{Par récurrence.}
 
 \begin{proof}
     Par récurrence : 
@@ -140,8 +130,18 @@ Non exigible.
     Alors $\fonction{}{E_1 \times \cdot \times E_p} \N {(e_1, \ldots, e_p)} {f(\varphi_1(e_1), \ldots, \varphi_p(e_p))}$ est bijective.
 \end{proof}
 
+\begin{theoreme}{}{}
+    $\Z$ est dénombrable.
+\end{theoreme}
 
-\begin{theoreme}{Nature de $\Q$}{}
+\begin{proof}
+Posons $\varphi : x \mapsto \frac n 2$ si $n \in 2 \N$ et $-(\frac {n+1} 2)$ sinon.
+
+Alors $\varphi$ est injective et surjective dans $\Z$ donc elle est bijective.
+Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
+\end{proof}
+
+\begin{theoreme}{}{}
     $\Q$ est dénombrable. 
 \end{theoreme}
 
@@ -162,14 +162,12 @@ Non exigible.
     infini, donc $\Q$ est dénombrable.
 \end{proof}
 
-\begin{theorement}{nature union au plus dénombrable d'ensemble au plus dénombrables}{}
+\begin{theorement}{Nature d'une union au plus dénombrable d'ensemble au plus dénombrables}{}
     Toute union \textbf{finie ou dénombrable} d'ensembles au plus dénombrables est au plus dénombrable. 
 \end{theorement}
 
-Non exigible. 
-
-\begin{proof}
-    Soit $I$ non vide et au plus dénombrable.
+\begin{proof} (non exigible)\\
+    Soit $I$ non vide au plus dénombrable.
     
     Pour $i \in I, \, I \subset \N$, il existe $P_i \subset \N$ non vide et $\fonction {\varphi_i} {P_i} {E_i} n {\varphi_i(n) }$ bijective. 
 
@@ -178,7 +176,7 @@ Non exigible.
 
     Considérons maitenant $\fonction {\psi} {\bigcup_{i \in I} E_i} {\N^2} x {(i, \psi_i(x))}$ où $i = \min \{ \alpha \in \N, \, x \in E_\alpha \}$.
 
-    $\psi$ est bin définie, et $\psi$ est injective, car si $x = y = (i, j)$, 
+    $\psi$ est bien définie, et $\psi$ est injective, car si $x = y = (i, j)$, 
     on a $x, y \in E_i$ et $j = \psi_i(x) = \psi_i(y)$, donc $x = y = \varphi_i(j)$.
 
     Donc $\displaystyle \bigcup_{i \in I} E_i$ est en bijection avec son image par $\psi$
@@ -192,9 +190,7 @@ Non exigible.
     $\R$ est non dénombrable.
 \end{theoreme}
 
-Non exigible. 
-
-\begin{proof}
+\begin{proof} (non exigible)
     Par l'absurde, supposons que $\varphi : \N \to \R$ est bijective. 
 
     Comme $\fonction{} \R {]0, 1[} x {\frac 1 {1 + e^{- x}}}$ est bijective, donc 
@@ -206,12 +202,12 @@ Non exigible.
     Posons $b_i = 4$ si $a_i \neq 4$ et $b_i = 5$ sinon, et posons $\displaystyle y = \sum_{i = 1}^\infty \frac{b_{i + 1}}{10^i} \in ]0, 1[$ 
 
     Posons $j = \psi^{-1}(y)$ 
-    
-    La jème décimale de $y$ est $b_j$ par def de $y$ 
-    $a_j$ par de $\psi$ absurde. 
+
+    La jème décimale de $y$ est $b_j$ par définition de $y$ sa $j$e décimale est 
+    $a_j$, absurde. Donc $\psi \circ \varphi$ non bijective.
 \end{proof}
 
-\begin{theoreme}{Non équipotence de $E$ et $\mathscr P(E)$}{}
+\begin{theoreme}{Non équipotence de $E$ et $\mathscr P(E)$ - LHP}{}
     Soit $E$ un ensemble non vide. Alors il n'existe pas de bijection entre $E$ et $\mathscr P(E)$
 \end{theoreme}
 

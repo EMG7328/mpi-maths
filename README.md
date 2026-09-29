@@ -17,4 +17,4 @@ La compilation s'effectue principalement via le script `compilation.py`, qui a d
 
 ## Informations supplémentaires sur le projet
 
-Des informations sur les spécificités LaTeX du projet sont disponibles dans [LATEX.md](https://github.com/MP2I-champo/mpi-maths/blob/main/LATEX.md). Des informations sur la structure des dossiers est aussi disponible dans [TEMPLATE.md](https://github.com/MP2I-champo/mpi-maths/blob/main/TEMPLATE.md).
+Des informations sur les spécificités LaTeX du projet sont disponibles dans [LATEX.md](https://github.com/MP2I-champo/mpi-maths/blob/main/LATEX.md). Des informations sur la structure des dossiers sont aussi disponible dans [TEMPLATE.md](https://github.com/MP2I-champo/mpi-maths/blob/main/TEMPLATE.md).

@@ -221,9 +221,12 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Si $x_0 \notin B, \, x_0 \in \psi(x_0)$ donc $x_0 \in B$ absurde. 
 \end{proof}
 
+\begin{remarque}
+    On montrerait que $P(\N)$ est en bijection avec $\R$.
+\end{remarque}
 
 \section{Familles sommables}
-\subsection{Définition }
+\subsection{Définition}
 
 \begin{definition}{Famille sommable}{}
     Soit $I$ un ensemble non vide et $(U_i)_{i \in I}$ famille de complexes. 
@@ -233,7 +236,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{definition}
 
 
-\subsection{Propriétés }
+\subsection{Propriétés}
 
 \begin{proposition}{Stabilité sommable par combinaison linéaire}{}
     Soit $(U_i)_{i \in I}$ famille sommable de complexes et $I' \subset I$ non vide. 
@@ -243,7 +246,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     $(\alpha u_i + \beta v_i)_{i \in I}$ est sommable.
 \end{proposition}
 
-\idee{Majorer les sommes partielles}
+\idee{Majorer les sommes partielles.}
 
 \begin{proof}
     Par hypothèse, $\exists M_1, M_2 > 0, \, \forall J \subset I$ fini, 
@@ -259,7 +262,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{proof}
 
 
-\subsection{Somme d'une famille sommable }
+\subsection{Somme d'une famille sommable}
 
 \begin{proposition}{Inégalité de comparaison}{}
     Soit $(u_i)_{i \in I}$ une famille sommable de complexes et $(v_i)_{i \in I}$
@@ -352,7 +355,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     $$\sum_{i \in I} u_i = \sum_{k \in K} \left( \sum_{i \in I_k} u_i \right) = \sum_{k \in K} u_{\sigma(k)} = \sum_{i \in I} u_{\sigma(i)}$$
 \end{proof}
 
-\subsection{Lien avec la dénombrabilité }
+\subsection{Lien avec la dénombrabilité}
 
 \begin{definition}{Support d'une famille}{}
     Soit $(u_i)_{i \in I}$ une famille de complexes. On appelle support de cette 
@@ -362,7 +365,6 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \begin{proposition}{Somme sur le support}{}
     Soit $(u_i)_{i \in I}$ une famille sommable de complexes de support $S$. Alors 
     $$\sum_{i \in I} u_i = \sum_{i \in S} u_i$$
-
 \end{proposition}
 
 
@@ -450,7 +452,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     par combinaison linéaire. 
 \end{proof}
 
-\subsection{Conséquence }
+\subsection{Conséquence}
 
 \begin{proposition}{Sommation par paquets pairs et impairs, LHP}{}
     Soit $\sum_{n \geqslant 0} u_n$ une série absolument convergente, alors 
@@ -473,7 +475,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Donc $S = \frac {\pi^2} 8$.
 \end{exemple}
 
-\subsection{Commutative convergence }
+\subsection{Commutative convergence}
 
 \begin{theoreme}{Invariance par bijection de $\N$}{}
     Soit $\displaystyle \sum_{n \geqslant 0} u_n$ une série absolument convergente et $\sigma : \N \to \N$ une bijection.
@@ -513,7 +515,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     $E_k = \{ (n, p), \, n + p = k \}$.
 \end{proof}
 
-\subsection{Théorème de Fubini positif }
+\subsection{Théorème de Fubini positif}
 
 \begin{theoreme}{Théorème de Fubini positif}{}
     Avec la convention qu'une somme infinie non convergente de réels positifs vaut 
@@ -522,7 +524,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{theoreme}
 
 \begin{proof}
-    Conséquence de 1)
+    Conséquence de 1).
 \end{proof}
 
 \subsection{Cas général}
@@ -539,7 +541,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     \end{enumerate}
 \end{theoreme}
 
-\subsection{Produit de Cauchy }
+\subsection{Produit de Cauchy}
 
 \begin{theoreme}{Produit de Cauchy}{}
     Soient $ \sum_{n \geqslant 0} u_n$ et $ \sum_{n \geqslant 0} v_n$ deux séries 
@@ -554,9 +556,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     absolument convergente, et $$\sum_{n = 0 }^{\infty} w_n = \left( \sum_{n = 0 }^{\infty } u_n \right) \left( \sum_{n = 0 }^{\infty } v_n \right)$$
 \end{theoreme}
 
-\idee{
-    56 théorèmes de sommation par paquets
-}
+\idee{56 théorèmes de sommation par paquets.}
 
 \begin{proof}
     Considérons le complexe 

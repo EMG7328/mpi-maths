@@ -1,17 +1,19 @@
 \section{Énoncés des Exercices}
 
 % --- SÉRIES NUMÉRIQUES ---
-\subsection{Séries Numériques}
+\subsection{Séries numériques}
 
 % --- Exercice 1 (Source: EXERCICE 7 analyse) ---
 \begin{exercice}
-\textbf{1.} Soient $(u_{n})_{n\in \mathbb{N}}$ et $(v_{n})_{n\in \mathbb{N}}$ deux suites de nombres réels positifs.
-On suppose que $(v_{n})_{n\in \mathbb{N}}$ est non nulle à partir d'un certain rang.
-Montrer que si $u_n \sim v_n$ alors $\sum u_n$ et $\sum v_n$ sont de même nature.
+\begin{enumerate}
+    \item Soient $(u_{n})_{n\in \mathbb{N}}$ et $(v_{n})_{n\in \mathbb{N}}$ deux suites de nombres réels positifs.
+    On suppose que $(v_{n})_{n\in \mathbb{N}}$ est non nulle à partir d'un certain rang.
+    Montrer que si $u_n \sim v_n$ alors $\sum u_n$ et $\sum v_n$ sont de même nature.
 
-\textbf{2.} Étudier la convergence de la série:
-$$ \sum_{n\ge2}\frac{(i-1)\ln n \sin(\frac{1}{n})}{(\sqrt{n+3}-1)} $$
-(où $i$ est le complexe tel que $i^2 = -1$).
+    \item Étudier la convergence de la série:
+    $$ \sum_{n\ge2}\frac{(i-1)\ln n \sin(\frac{1}{n})}{(\sqrt{n+3}-1)} $$
+    (où $i$ est le complexe tel que $i^2 = -1$).
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: EXERCICE 46 analyse) ---
@@ -26,31 +28,39 @@ On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
 
 % --- Exercice 3 (Source: Exercice 1) ---
 \begin{exercice}
-\textbf{1)} Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme $\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$.
-\textbf{2)} Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme $A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$.
-\textbf{3)} Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
-\textbf{4)} On s'intéresse à la convergence de $A(s)$ pour $s$ complexe tel que $\text{Re}(s)>0$.
-On fixe $s=a+ib$ avec $a>0$ et $b\in\mathbb{R}$ et on pose $u_{n}=\frac{(-1)^{n}}{n^{s}}$. On note $v_{n}=\text{Re}(u_{n})$ et $w_{n}=\text{Im}(u_{n})$.
+\begin{enumerate}
+    \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme $\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$.
+    \item Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme $A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$.
+    \item  Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
+    \item On s'intéresse à la convergence de $A(s)$ pour $s$ complexe tel que $\text{Re}(s)>0$.
+    On fixe $s=a+ib$ avec $a>0$ et $b\in\mathbb{R}$ et on pose $u_{n}=\frac{(-1)^{n}}{n^{s}}$. On note $v_{n}=\text{Re}(u_{n})$ et $w_{n}=\text{Im}(u_{n})$.
 \begin{enumerate}
     \item On pose $V_{n}=v_{2n}+v_{2n+1}$. En montrant que $\frac{1}{(2n+1)^{a}}=\frac{1}{(2n)^{a}}+O(\frac{1}{n^{1+a}})$, montrer que la série $\sum V_{n}$ est absolument convergente.
     \item En déduire que la série $\sum v_{n}$ converge.
     \item Conclure en raisonnant de même avec $\sum w_{n}$.
 \end{enumerate}
-\textit{Note : La question 5 évoque l'hypothèse de Riemann (non demandée ici).}
+\textit{Note : La question 5 évoquait l'hypothèse de Riemann, elle n'est pas traitée ici.}
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 2) ---
 \begin{exercice}
-\textbf{1) a)} Calculer pour $x\in[0,1]$, $\sum_{k=0}^{N}(-x^{2})^{k}$.
-\textbf{b)} Intégrer cette égalité sur $[0, 1]$.
-\textbf{c)} En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$.
-
-\textbf{2)} On définit pour tout $n$, $I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
 \begin{enumerate}
-    \item Montrer que $I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
-    \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $C^{1}$.
-    \item Utiliser une intégration par parties pour montrer que $|I_{n}|\le\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
-    \item En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
+    \item
+    \begin{enumerate}
+        \item Calculer pour $x\in[0,1]$, $\sum_{k=0}^{N}(-x^{2})^{k}$.
+        \item Intégrer cette égalité sur $[0, 1]$.
+        \item En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$.
+
+    \end{enumerate}
+    
+    \item On définit pour tout $n$, $I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
+    \begin{enumerate}
+        \item Montrer que $I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
+        \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $C^{1}$.
+        \item Utiliser une intégration par parties pour montrer que $|I_{n}|\le\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
+        \item En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
+    \end{enumerate}
 \end{enumerate}
 \end{exercice}
 
@@ -235,52 +245,75 @@ Soit $\alpha>1$ et $R_{n}=\sum_{k=n+1}^{\infty}\frac{1}{k^{\alpha}}$.
 
 % --- Correction Exercice 3 ---
 \begin{correction}{3}
-\textbf{1)} Soit $s=a+ib$ avec $a>1$.
-$|\frac{1}{n^s}| = \frac{1}{|n^a e^{ib\ln n}|} = \frac{1}{n^a}$.
-C'est une série de Riemann avec $a>1$, donc convergente. Absolue convergence vérifiée.
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        Soit $s=a+ib$ avec $a>1$.
+        $|\frac{1}{n^s}| = \frac{1}{|n^a e^{ib\ln n}|} = \frac{1}{n^a}$.
+        C'est une série de Riemann avec $a>1$, donc convergente. Absolue convergence vérifiée.
 
-\textbf{2)} Pour $s>0$ réel, la suite $\frac{1}{n^s}$ tend vers 0 en décroissant.
-D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
+        \item 
+        Pour $s>0$ réel, la suite $\frac{1}{n^s}$ tend vers 0 en décroissant.
+        D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
 
-\textbf{3)} $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
-Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
-$$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
-D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
+        \item 
+        $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
+        Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
+        $$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
+        D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
+    \end{enumerate}
 
-\textbf{4)} $s=a+ib$ avec $a>0$.
-$u_n = \frac{(-1)^n}{n^s} = \frac{(-1)^n}{n^a} \cos(b\ln n) - i \frac{(-1)^n}{n^a} \sin(b\ln n)$.
-Soit $v_n = \text{Re}(u_n)$.
-$V_n = v_{2n} + v_{2n+1} = \frac{1}{(2n)^a}\cos(b\ln(2n)) - \frac{1}{(2n+1)^a}\cos(b\ln(2n+1))$.
-Développement asymptotique :
-$\frac{1}{(2n+1)^a} = \frac{1}{(2n)^a}(1+\frac{1}{2n})^{-a} = \frac{1}{(2n)^a} - \frac{a}{(2n)^{a+1}} + o(\frac{1}{n^{a+1}})$
-$\cos(b\ln(2n+1)) = \cos(b\ln(2n) + b\ln(1+\frac{1}{2n})) \approx \cos(b\ln(2n)) - \sin(b\ln(2n))\frac{b}{2n}$.
-En combinant, on obtient $V_n = O(\frac{1}{n^{1+a}})$.
-Comme $1+a > 1$, $\sum V_n$ converge absolument.
-Puisque $v_n \to 0$, la convergence de $\sum (v_{2n}+v_{2n+1})$ implique celle de $\sum v_n$.
-Idem pour la partie imaginaire. Donc $A(s)$ converge pour $\text{Re}(s)>0$.
+    \item $s=a+ib$ avec $a>0$.
+    $u_n = \frac{(-1)^n}{n^s} = \frac{(-1)^n}{n^a} \cos(b\ln n) - i \frac{(-1)^n}{n^a} \sin(b\ln n)$.
+    Soit $v_n = \text{Re}(u_n)$.
+    $V_n = v_{2n} + v_{2n+1} = \frac{1}{(2n)^a}\cos(b\ln(2n)) - \frac{1}{(2n+1)^a}\cos(b\ln(2n+1))$.
+
+    Développement asymptotique :
+    $\frac{1}{(2n+1)^a} = \frac{1}{(2n)^a}(1+\frac{1}{2n})^{-a} = \frac{1}{(2n)^a} - \frac{a}{(2n)^{a+1}} + o(\frac{1}{n^{a+1}})$
+    $\cos(b\ln(2n+1)) = \cos(b\ln(2n) + b\ln(1+\frac{1}{2n})) \approx \cos(b\ln(2n)) - \sin(b\ln(2n))\frac{b}{2n}$.
+    En combinant, on obtient $V_n = O(\frac{1}{n^{1+a}})$.
+    Comme $1+a > 1$, $\sum V_n$ converge absolument.
+    Puisque $v_n \to 0$, la convergence de $\sum (v_{2n}+v_{2n+1})$ implique celle de $\sum v_n$.
+    Idem pour la partie imaginaire. Donc $A(s)$ converge pour $\text{Re}(s)>0$.
+\end{enumerate}
+
 \end{correction}
 
 % --- Correction Exercice 4 ---
 \begin{correction}{4}
-\textbf{1)}
-$\sum_{k=0}^N (-x^2)^k = \frac{1-(-x^2)^{N+1}}{1-(-x^2)} = \frac{1-(-1)^{N+1}x^{2N+2}}{1+x^2}$.
-En intégrant sur $[0,1]$ :
-$\int_0^1 \sum (-x^2)^k dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
-D'autre part : $\int_0^1 \frac{dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
-Majoration du reste : $|R_N| \le \int_0^1 x^{2N+2} dx = \frac{1}{2N+3} \to 0$.
-Donc $\sum_{n=0}^\infty \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$.
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\sum_{k=0}^N (-x^2)^k = \frac{1-(-x^2)^{N+1}}{1-(-x^2)} = \frac{1-(-1)^{N+1}x^{2N+2}}{1+x^2}$.
+        \item 
+        En intégrant sur $[0,1]$ :
+        $\int_0^1 \sum (-x^2)^k dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
+        D'autre part : $\int_0^1 \frac{dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
+        Majoration du reste : $|R_N| \le \int_0^1 x^{2N+2} dx = \frac{1}{2N+3} \to 0$.
+        Donc $\sum_{n=0}^\infty \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$.
+    \end{enumerate}
+    
+    \item
+    \begin{enumerate}
+        \item 
+        $I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) dx$.
+        Utilisation de $\sin p - \sin q = 2 \sin\frac{p-q}{2} \cos\frac{p+q}{2}$.
+        $I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) dx$.
+        Par double IPP ou calcul direct, on obtient le résultat donné.
 
-\textbf{2)}
-$I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) dx$.
-Utilisation de $\sin p - \sin q = 2 \sin\frac{p-q}{2} \cos\frac{p+q}{2}$.
-$I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) dx$.
-Par double IPP ou calcul direct, on obtient le résultat donné.
-$f(x) = \frac{x^2}{\sin x} \sim_0 x$. $f(0)=0$. $f$ est continue en 0.
-$f'(x) = \frac{2x\sin x - x^2\cos x}{\sin^2 x}$. $f$ est $C^1$.
-Par IPP sur $I_n$ (avec $u=f(x)$ et $v'=\sin(2nx)$), on obtient la majoration en $1/n$ (ou $1/2n$).
-$\sum (I_{n+1}-I_n)$ est une série télescopique qui converge vers $-I_0 = 0$ (car $I_n \to 0$ par Riemann-Lebesgue).
-La somme des termes en $1/(2n+1)$ donne $\pi^2/8$ (pré-requis ?). La somme des termes en $1/(2n+1)^3$ s'en déduit.
-Correction indique $\sum \frac{(-1)^n}{(2n+1)^3} = \frac{\pi^3}{32}$.
+        \item 
+        $f(x) = \frac{x^2}{\sin x} \sim_0 x$. $f(0)=0$. $f$ est continue en 0.
+        $f'(x) = \frac{2x\sin x - x^2\cos x}{\sin^2 x}$ et tend vers $1$ en $0$. Donc par prolongement $C^1$, $f$ est $C^1$ sur $[0,1]$.
+
+        \item
+        Par IPP sur $I_n$ (avec $u=f(x)$ et $v'=\sin(2nx)$), on obtient la majoration en $1/n$ (ou $1/2n$).
+        $\sum (I_{n+1}-I_n)$ est une série télescopique qui converge vers $-I_0 = 0$ (car $I_n \to 0$ par Riemann-Lebesgue).
+        La somme des termes en $1/(2n+1)$ donne $\pi^2/8$ (pré-requis ?). La somme des termes en $1/(2n+1)^3$ s'en déduit.
+        
+        \item La correction indique que $\sum \frac{(-1)^n}{(2n+1)^3} = \frac{\pi^3}{32}$.
+    \end{enumerate}
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 6 ---

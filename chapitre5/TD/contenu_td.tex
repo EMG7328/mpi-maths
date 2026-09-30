@@ -152,49 +152,70 @@ Et donc $\frac{c_n}{4n} \to 0$, d'où $c_{n}=o(n)$.
 
 % --- Correction 1 ---
 \begin{correction}{1}
-Montrons que $\mathbb{R} \setminus \mathbb{Q}$ est non dénombrable.
 Par l'absurde, si $\mathbb{R} \setminus \mathbb{Q}$ est dénombrable.
 On sait que $\mathbb{Q}$ est dénombrable.
 $\mathbb{R} = (\mathbb{R} \setminus \mathbb{Q}) \cup \mathbb{Q}$.
 Or la réunion de deux ensembles dénombrables est dénombrable.
-On en déduit que $\mathbb{R}$ est dénombrable, ce qui est absurde.
+On en déduit que $\mathbb{R}$ est dénombrable, absurde.
 \end{correction}
 
 % --- Correction 2 ---
 \begin{correction}{2}
-\textbf{1.} Soit $\varphi : A \to \mathbb{N}$ injective.
-L'application $\varphi : A \to \varphi(A)$ est bijective.
-Comme $\varphi(A) \subset \mathbb{N}$, $\varphi(A)$ est au plus dénombrable (partie de $\mathbb{N}$).
-Donc $A$ (en bijection avec $\varphi(A)$) est au plus dénombrable.
+\begin{enumerate}
+    \item Soit $\varphi : A \to \mathbb{N}$ injective.
+    L'application $\varphi : A \to \varphi(A)$ est bijective.
+    Comme $\varphi(A) \subset \mathbb{N}$, $\varphi(A)$ est au plus dénombrable (partie de $\mathbb{N}$).
+    Donc $A$ (en bijection avec $\varphi(A)$) est au plus dénombrable.
 
-\textbf{2.} Soit $\varphi : \mathbb{N} \to A$ surjective.
-Construisons $\psi : A \to \mathbb{N}$.
-Pour tout $a \in A$, l'ensemble $\varphi^{-1}(\{a\}) = \{n \in \mathbb{N}, \varphi(n)=a\}$ est une partie non vide de $\mathbb{N}$.
-Elle admet un plus petit élément. Posons $\psi(a) = \min(\varphi^{-1}(\{a\}))$.
-Soient $a, b \in A$ tels que $\psi(a) = \psi(b)$.
-Alors $\min(\varphi^{-1}(\{a\})) = \min(\varphi^{-1}(\{b\}))$. Notons $n$ cet entier.
-On a $\varphi(n) = a$ et $\varphi(n) = b$. Donc $a=b$.
-Ainsi $\psi$ est injective de $A$ dans $\mathbb{N}$.
-D'après la question 1, $A$ est au plus dénombrable.
+    \item Soit $\varphi : \mathbb{N} \to A$ surjective.
+    Construisons $\psi : A \to \mathbb{N}$.
+    Pour tout $a \in A$, l'ensemble $\varphi^{-1}(\{a\}) = \{n \in \mathbb{N}, \varphi(n)=a\}$ est une partie non vide de $\mathbb{N}$.
+    Elle admet un plus petit élément. Posons $\psi(a) = \min(\varphi^{-1}(\{a\}))$.
+    Soient $a, b \in A$ tels que $\psi(a) = \psi(b)$.
+    Alors $\min(\varphi^{-1}(\{a\})) = \min(\varphi^{-1}(\{b\}))$. Notons $n$ cet entier.
+    On a $\varphi(n) = a$ et $\varphi(n) = b$. Donc $a=b$.
+    Ainsi $\psi$ est injective de $A$ dans $\mathbb{N}$.
+    D'après la question 1, $A$ est au plus dénombrable.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 3 ---
 \begin{correction}{3}
-\textbf{1. a)} $B_n \approx \mathbb{Z}^{n+1}$ via l'application $(a_0, \dots, a_n) \mapsto \sum_{k=0}^n a_k X^k$ (avec $a_n \neq 0$).
-$\mathbb{Z}$ est dénombrable, donc $\mathbb{Z}^{n+1}$ est dénombrable (produit fini).
-Donc $B_n$ est dénombrable.
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        $B_n \approx \mathbb{Z}^{n+1}$ via l'application $(a_0, \dots, a_n) \mapsto \sum_{k=0}^n a_k X^k$ (avec $a_n \neq 0$).
+        $\mathbb{Z}$ est dénombrable, donc $\mathbb{Z}^{n+1}$ est dénombrable (produit fini).
+        Donc $B_n$ est dénombrable.
 
-\textbf{1. b)} $B = \bigcup_{n \in \mathbb{N}} B_n$.
-$B$ est une réunion dénombrable d'ensembles dénombrables, donc $B$ est dénombrable.
+        \item $B = \bigcup_{n \in \mathbb{N}} B_n$.
+        $B$ est une réunion dénombrable d'ensembles dénombrables, donc $B$ est dénombrable.
 
-\textbf{1. c)} Pour tout polynôme $P \in B$, l'ensemble des racines de $P$, noté $Rac(P)$, est fini.
-$A = \bigcup_{P \in B} Rac(P)$.
-$A$ est une réunion dénombrable (indexée par $B$) d'ensembles finis.
-Donc $A$ est au plus dénombrable. Comme $\mathbb{Q} \subset A$ et $\mathbb{Q}$ est infini, $A$ est dénombrable.
+        \item Pour tout polynôme $P \in B$, l'ensemble des racines de $P$, noté $Rac(P)$, est fini.
+        $A = \bigcup_{P \in B} Rac(P)$.
+        $A$ est une réunion dénombrable (indexée par $B$) d'ensembles finis.
+        Donc $A$ est au plus dénombrable. Comme $\mathbb{Q} \subset A$ et $\mathbb{Q}$ est infini, $A$ est dénombrable.
+    \end{enumerate}
 
-\textbf{2.} $\mathbb{R} = A \cup (\text{Transcenants})$.
-Si l'ensemble des transcendants était dénombrable, alors $\mathbb{R}$ serait dénombrable (union de deux dénombrables), ce qui est faux.
-Donc l'ensemble des nombres transcendants n'est pas dénombrable.
+    \item
+    $\mathbb{R} = A \cup (\text{transcendants})$.
+    Si l'ensemble des transcendants était dénombrable, alors $\mathbb{R}$ serait dénombrable (union de deux dénombrables), ce qui est faux.
+    Donc l'ensemble des nombres transcendants n'est pas dénombrable.
+\end{enumerate}
+\end{correction}
+
+\begin{correction}{4}
+    Par l'absurde : supposons qu'il existe $f: E \to P(E)$ bijective.
+
+    Alors $A = \{x \in E, x \not \in f(x)\} \in P(E)$.
+
+    Alors $\exists \! y$ tel que $f(y) = A$.
+
+    Si $y \in A$ : alors $y \not \in f(y) = A$ absurde
+    Sinon $y \not \in A = f(y)$. Donc $y \in A$, absurde.
+
+    Donc $P(E)$ n'est pas dénombrable.
 \end{correction}
 
 % --- Correction 11 ---

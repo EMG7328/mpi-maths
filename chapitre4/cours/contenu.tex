@@ -1,3 +1,4 @@
+On prendra $\K = \C$ ou $\K = \R$ et $(E,N)$ un $\K$-espace vectoriel normé.
 
 \section{Définitions}
 \subsection{Séries}
@@ -7,51 +8,56 @@
     On appelle série à termes dans $E$ tout couple de suites de $E$ $\left( (u_n)_{n\in\N}, (S_n)_{n\in\N} \right)$ vérifiant 
     $$\forall n \in \N, \, S_n = \sum_{k=0}^n u_k$$
 
-    On appelle $u_n$ le terme général de la série et $S_n$ la somme partielle d'ordre $n$.
+    On appelle $(u_n)_n$ le terme général de la série et $(S_n)_n$ la somme partielle.
 
-    La donnée d'une de ces 2 suites caractérise complètement la série. 
+    La donnée d'une de ces deux suites caractérise complètement la série. 
 
     Cette série sera notée $\sum_{n \geqslant 0} u_n$.
 \end{definition}
 
-\begin{proposition}{Structure ensemble des séries}{}
+\begin{remarque}
+    $S_n$ est dite somme partielle d'ordre $n$.  
+\end{remarque}
+
+\begin{proposition}{}{}
     L'ensemble des séries à termes dans $E$ est un $\K$-espace vectoriel.
 \end{proposition}
 
 \begin{proof}
     Notons $B$ cet ensemble. Alors $B \subset E^{\N} \times E^{\N}$.
 
-    Alors $(0, 0) \in B$
+    \begin{itemize}
+        \item  $(0, 0) \in B$
 
-    Soient $c_1 = \left( (u_n), (S_n) \right)$ et $c_2 = \left( (v_n), (T_n) \right)$ 
-    deux séries dans $B$ et $\alpha, \beta \in \K$. 
+        \item Soient $c_1 = \left( (u_n), (S_n) \right)$ et $c_2 = \left( (v_n), (T_n) \right)$ 
+        deux séries dans $B$ et $\alpha, \beta \in \K$. 
 
-    Alors $\alpha c_1 + \beta c_2 = \left( (\alpha(u_n)_{n \in \N} + \beta(v_n)_{n \in \N}), (\alpha(S_n)_{n \in \N} + \beta(T_n)_{n \in \N}) \right)$
+        Alors $\alpha c_1 + \beta c_2 = \left( (\alpha(u_n)_{n \in \N} + \beta(v_n)_{n \in \N}), (\alpha(S_n)_{n \in \N} + \beta(T_n)_{n \in \N}) \right)$
+        $ = \left( (\alpha u_n + \beta v_n)_{n \in \N}, (\alpha S_n + \beta T_n)_{n \in \N} \right)$
 
-    $ = \left( (\alpha u_n + \beta v_n)_{n \in \N}, (\alpha S_n + \beta T_n)_{n \in \N} \right)$
+        On a bien pour $n \in \N, \alpha S_n + \beta T_n = \sum_{k=0}^n (\alpha u_k + \beta v_k)$
 
-    On a bien pour $n \in \N, \alpha S_n + \beta T_n = \sum_{k=0}^n (\alpha u_k + \beta v_k)$
+        Donc $\alpha c_1 + \beta c_2 \in B$.
+    \end{itemize}
 
-    Donc $\alpha c_1 + \beta c_2 \in B$.
-
+Donc $B$ est un $\K$-espace vectoriel.
 \end{proof}
 
-\subsection{Convergence }
+\subsection{Convergence}
 
 \begin{definition}{Convergence d'une série}{}
     On dit que la série $\sum u_n$ converge ssi sa somme partielle $S_n$ converge 
     dans $E$. 
 
-    La limite de la suite $(S_n)$ est appelée somme de la série et est notée 
+    La limite de la suite $(S_n)$ est appelée somme de la série et est notée :
     $$\sum_{n=0}^{+\infty} u_n$$
 
     Dans le cas contraire on dit que la série diverge.
 \end{definition}
 
-\marginenote{Remarque}{La convergence de la série dépend de la norme seulement si $E$ est de dimension infinie.}
-
 \begin{definition}{Reste d'une série}{}
     \index{Reste d'une série}
+    \marginenote{Remarque}{La convergence de la série dépend de la norme seulement si $E$ est de dimension infinie.}
     Soit $N$ une norme sur $E$ et $\sum u_n$ une série \textbf{convergente} pour $N$.
 
     En notant $S_n = \sum_{k=0}^n u_k$, on a donc $S_n \limitnorme{N}{n}{+ \infty} S$.
@@ -71,6 +77,14 @@
     On a donc $R_{n_0} \longrightarrow 0$.
 
 \end{definition}
+
+\begin{exemple}
+    $\Sigma_{n \geqslant 1} \frac 1 {n(n+2)}$. On décompose en éléments simples la somme partielle. Soit $n \in \N$.
+
+    $S_n = \Sigma_{k=1}^n \frac 1 {n(n+2)} = \Sigma_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}$.
+
+    Donc $S_n \to \frac 3 4$ donc la série converge.
+\end{exemple}
 
 \begin{theoreme}{Série télescopique}{}
     Soit $(a_n)_{n \in \N}$ une suite de $E$. 
@@ -96,6 +110,14 @@
 
     On a donc $(a_n)$ qui converge ssi $(S_n)$ converge.
 \end{proof}
+
+\begin{exemple}
+    Montrons qu'il existe $\gamma \in \R$ tel quei $\Sigma_{k=1}^n = \ln(n) + \gamma + o(1)$.
+    Pour cela montrons que $u_n = (\Sigma^n_{k=1} \frac 1 k) - \ln(n)$ converge.
+
+    $u_{n+1} - u_n = \frac 1 {n+1} - \ln(n+1) + \ln(n) = \frac 1 {n+1} - \ln(1 + \frac 1 n) = O(\frac 1 {n^2})$.
+    Par un théorème qu'on prouvera plus tard, $(u_n)$ converge.
+\end{exemple}
 
 \begin{theoreme}{Limite du terme général}{}
     Le terme général d'une série convergente tend vers $0_E$, et par contraposée 
@@ -282,7 +304,7 @@ Savoir démontrer tout ça
     $$\abs{e^z - \sum_{k = 0 }^{n }\frac{z^k}{k!}} \leqslant \abs z ^n \sup_{t \in [0, 1]} \abs{e^{tz}} \frac{1}{(n + 1)!} \longrightarrow 0$$
 \end{proof}
 
-\begin{proposition}{Série de Bertrand HP}{}
+\begin{proposition}{Série de Bertrand - HP}{}
     Soient $a, b \in \R$. 
 
     Alors $\displaystyle \sum_{n \geqslant 2} \frac 1 {n^a(\ln(n))^b}$ converge ssi $a > 1$ ou $a = 1$ et $b > 1$.
@@ -473,9 +495,9 @@ et calculer $N(S_{\varphi(n)} - S_n)$
     \qquad \qquad \qquad $ \leqslant N(S_n - S_{\varphi(n)}) + N(S_{\varphi(n)} - L) \limit{n}{+ \infty} 0$.
 \end{proof}
 
-\subsection{Complément HP }
+\subsection{Complément Hors Programme}
 
-\begin{definition}{Série critère de Cauchy HP}{}
+\begin{definition}{Série critère de Cauchy - HP}{}
     Soit $\sum_{n \geqslant 0} u_n$ une série de $E$.
 
     On dit que cette série satisfait au critère de Cauchy ssi la suite $\displaystyle S_n = \sum_{k = 0}^n u_k$ 
@@ -484,7 +506,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$
     $\displaystyle \sum_{k = n + 1}^{n + p} u_k$ s'appelle une tranche de Cauchy. 
 \end{definition}
 
-\begin{theoreme}{Critère de Cauchy HP}{}
+\begin{theoreme}{Critère de Cauchy - HP}{}
     Toute série convergente est de Cauchy, et la réciproque est vraie si $E$ est complet.
 \end{theoreme}
 
@@ -514,7 +536,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$
     Donc $S_{2n} - S_n \not \longrightarrow 0$ et la série diverge.
 \end{exemple}
 
-\subsection{Semi-convergence }
+\subsection{Semi-convergence}
 
 \begin{definition}{Série semi-convergente}{}
     Soit $E$ un evn de dimension finie. On dit que la série $\sum u_n$ est semi-convergente 
@@ -522,7 +544,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$
 \end{definition}
 
 \begin{exemple}
-    Exemple plutôt important !!
+    \textbf{Exemple plutôt important !!}
 
     $\displaystyle \sum_{n \geqslant 1 } \frac{(-1)^{n + 1}} n $ est semi-convergente et $\displaystyle \sum_{n = 1 }^{+ \infty} \frac{(-1)^{n + 1}} n = \ln(2)$.
 
@@ -543,9 +565,9 @@ et calculer $N(S_{\varphi(n)} - S_n)$
 
     Donc $S_n \longrightarrow \ln(2)$.
 
-    La série converge et a pour somme ln 2
+    La série converge et a pour somme $\ln(2)$.
 
-    \uindent{Variante }
+    \uindent{Variante :}
 
     \begin{align*}
         S_{2n} & = \sum_{k = 1}^{2n} \frac{(-1)^{k + 1}} k \\
@@ -574,7 +596,6 @@ et calculer $N(S_{\varphi(n)} - S_n)$
     cf cours première année, mais sinon l'idée c'est d'utiliser les suites adjacentes. 
 \end{proof}
 
-
 \begin{exemple}
     Soit $\alpha > 0$, et considérons la série $\sum_{n \geqslant 1} \frac{(-1)^n }{n^\alpha}$.
 
@@ -595,8 +616,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$
 \end{exemple}
 
 
-\subsubsection{Complément HP : transformation d'Abel }
-
+\subsubsection{Complément Hors Programme : transformation d'Abel }
 
 Exo 3 du TD 
 
@@ -636,7 +656,7 @@ $\varepsilon_n \longrightarrow 0$ décroissante.
 $\displaystyle \frac{\abs{\cos{k \theta }}}{ k } \geqslant  \frac{\cos^2(k \theta )}{k } \geqslant \underbrace{\frac{\cos(2k \theta)}{2k}}_{\text{TGSCV}} + \underbrace{\frac{ 1 }{ 2 k }}_{\text{TGSDV}}$ 
 donc diverge. 
 
-\subsection{Séries matricielles }
+\subsection{Séries matricielles}
 
 On se place dans $\mathscr M_p(\K)$ muni d'une norme matricielle. 
 
@@ -834,7 +854,7 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
     La suite est donc majorée donc converge. 
 \end{proof}
 
-\begin{proposition}{Conséquence HP }{}
+\begin{proposition}{Conséquence - HP }{}
     Soit $f \in \mathscr C^{pm}([a, + \infty[, \R^+)$ décroissante. 
 
     Alors la série $\displaystyle \sum_{n \geqslant \lfloor a \rfloor + 1} f(n)$ converge ssi la suite 
@@ -1124,13 +1144,13 @@ d'un certain rang.
     Donc $\displaystyle \sum_{k = 0}^{n } u_k = \sum_{k = 0}^{n } v_k + o\left( \sum_{k = 0}^{n } v_k \right) \sim \sum_{k = 0}^{n } v_k$.
 \end{proof} 
 
-\begin{proposition}{Théorème de Cesaro}{}
+\begin{proposition}{Théorème de Cesàro}{}
     Soit $(a_n)$ telle que $a_n \longrightarrow \ell \in \overline \R$. Alors 
     $$\frac 1 n \sum_{k = 1}^{n } a_k \longrightarrow \ell$$
     
 \end{proposition}
 
-\idee{Sommation des relations de comparaison}
+\idee{Sommation des relations de comparaison.}
 
 \begin{proof}
     Si $\ell \in \R^*$, posons $v_n = \ell$, alors $\sum v_n$ diverge et $(v_n)$ est de signe constant.

@@ -62,15 +62,25 @@
 % =============================================================================
 % CONFIGURATION GÉOMÉTRIE
 % =============================================================================
-\geometry{
-  top=3cm,
-  bottom=2cm,
-  left=2cm,
-  right=5cm,
-  marginparwidth=3.5cm,
-  marginparsep=0.5cm,
-  headheight=30pt
-}
+\ifprepa@td
+  \geometry{
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    headheight=32pt,
+  }
+\else
+  \geometry{
+    top=2cm,
+    bottom=2cm,
+    left=1.5cm,
+    right=5cm,
+    marginparwidth=3.5cm,
+    marginparsep=0.5cm,
+    headheight=32pt,
+  }
+\fi
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.3em}
@@ -78,13 +88,13 @@
 \newcommand{\passerenmodecours}{%
   \clearpage
   \newgeometry{
-    top=3cm,
+    top=2cm,
     bottom=2cm,
-    left=2cm,
+    left=1.5cm,
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=30pt
+    headheight=30pt,
   }%
   \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}%
 }
@@ -92,20 +102,15 @@
 \newcommand{\passerenmodeexos}{%
   \clearpage
   \newgeometry{
-    top=3cm,
-    bottom=2.5cm,
+    top=2cm,
+    bottom=2cm,
     left=2cm,
     right=2cm,
-    headheight=30pt
+    headheight=30pt,
   }%
   \fancyhfoffset[R]{0pt}%
 }
 
-\ifprepa@td
-  \passerenmodeexos
-\else
-  \passerenmodecours
-\fi
 % =============================================================================
 % COULEURS
 % =============================================================================
@@ -193,7 +198,7 @@
       separator sign={\textnormal{\upshape~--~}},
       terminator sign={~:~},
       description font=\itshape,
-      description color=vorange,
+      description color=vorange!95!black,
     },
     vexstyle/.style={
     enhanced,
@@ -343,84 +348,35 @@
 \newcounter{numexo}[chapitre]
 \renewcommand{\thenumexo}{\thechapitre.\arabic{numexo}}
 
-\tcbset{
-  vexobase/.style={
-    enhanced,
-    breakable,
-    colback=white,
-    colframe=vorange,
-    arc=0pt,
-    outer arc=0pt,
-    boxrule=0pt,
-    leftrule=2pt,
-    left=10pt,
-    right=4pt,
-    top=4pt,
-    bottom=6pt,
-    before skip=14pt,
-    after skip=16pt,
-    fonttitle=\bfseries\upshape\color{vorange!95!black},
-    colbacktitle=white,
-    titlerule=0.5pt,
-    titlerule style={color=vorange!40},
-    toptitle=2pt,
-    bottomtitle=4pt,
-  }
-}
-
-\newtcolorbox{exercicebox}[2][]{%
-  vexobase,
-  title={Exercice #2\ifstrempty{#1}{}{ \textnormal{(#1)}}%
-    \hfill%
-    \hyperlink{sol.#2}{\small\color{vorange!90!black}\faArrowRight~Voir corrigé}%
-  }
-}
-
 \newenvironment{exercice}[1][]{%
   \refstepcounter{numexo}%
   \phantomsection%
   \hypertarget{exo.\thenumexo}{}%
-  \setlist[enumerate]{font=\bfseries, leftmargin=1.5em}%
-  \begin{exercicebox}[#1]{\thenumexo}%
+  \par\vspace{12pt}\noindent%
+  \begingroup%
+  \bfseries%
+  \hyperlink{sol.\thenumexo}{\bfseries\scshape\Large\color{vorange!95!black}Exercice~\thenumexo}%
+  \ifstrempty{#1}{}{ \textnormal{(#1)}}%
+  \endgroup%
+  \enspace\ignorespaces%
 }{%
-  \end{exercicebox}%
-}
-
-\newtcolorbox{correctionbox}[1]{%
-  enhanced,
-  breakable,
-  colback=white,
-  arc=0pt,
-  outer arc=0pt,
-  boxrule=0pt,
-  left=0pt,
-  right=0pt,
-  top=6pt,
-  bottom=6pt,
-  before skip=16pt,
-  after skip=18pt,
-  toprule=0.8pt,
-  colframe=vorange!85!black,
-  fonttitle=\bfseries\upshape\color{vorange!90!black},
-  colbacktitle=white,
-  toptitle=5pt,
-  bottomtitle=6pt,
-  titlerule=0pt,
-  title={Corrigé de l'exercice \thechapitre.#1%
-    \hfill%
-    \hyperlink{exo.\thechapitre.#1}{\small\color{vorange!90!black}\faArrowUp~Retour à l'énoncé}%
-  }
+  \par\vspace{12pt}%
 }
 
 \newenvironment{correction}[1]{%
   \phantomsection%
   \hypertarget{sol.\thechapitre.#1}{}%
-  \setlist[enumerate]{font=\bfseries, leftmargin=1.5em}%
-  \begin{correctionbox}{#1}%
+  \par\vspace{14pt}\noindent%
+  {\color{vorange!40}\hrule height 0.6pt}%
+  \vspace{8pt}\noindent%
+  \begingroup%
+  \bfseries%
+  \hyperlink{exo.\thechapitre.#1}{\bfseries\scshape\Large\color{vorange!95!black}Corrigé de l'exercice~\thechapitre.#1}%
+  \endgroup%
+  \enspace\ignorespaces%
 }{%
-  \end{correctionbox}%
+  \par\vspace{14pt}%
 }
-
 % =============================================================================
 % EN-TÊTES ET PIEDS DE PAGE
 % =============================================================================
@@ -447,16 +403,38 @@
 
 \fancypagestyle{premierepagechapitre}{%
   \fancyhf{}
-  \setlength{\headheight}{70pt}
+  \setlength{\headheight}{75pt}
+
   \ifprepa@td%
     \fancyhfoffset[R]{0pt}
-    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries TD~:~\@titrechapitre}}
+    \fancyhead[L]{%
+      \parbox[c]{\dimexpr\textwidth-3cm\relax}{%
+        \raggedright
+        {\fontsize{22}{26}\selectfont\bfseries\scshape TD~:~\@titrechapitre\par}%
+        \vspace{4pt}%
+        \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
+      }%
+    }%
   \else%
     \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}
-    \fancyhead[L]{\parbox[b]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3.5cm\relax}{\raggedright\fontsize{24}{28}\selectfont\bfseries\@titrechapitre}}
+    \fancyhead[L]{%
+      \parbox[c]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3cm\relax}{%
+        \raggedright
+        {\fontsize{24}{28}\selectfont\bfseries\scshape\@titrechapitre\par}%
+        \vspace{4pt}%
+        \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
+      }%
+    }%
   \fi%
-  \fancyhead[R]{\parbox[b]{3cm}{\raggedleft\fontsize{50}{40}\selectfont\bfseries\color{vorange}\@numchapitre}}
-  \renewcommand{\headrulewidth}{0.8pt}
+
+  \fancyhead[R]{%
+    \parbox[c]{2.5cm}{%
+      \raggedleft
+      \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
+    }%
+  }%
+
+  \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
 
@@ -535,7 +513,7 @@
 \providecommand{\toclevel@subsection}{2}
 
 \titleformat{\section}
-  {\normalfont\LARGE\bfseries\color{vorange}}
+  {\normalfont\LARGE\bfseries\color{vorange!95!black}}
   {\thesection}{1em}{}
   [\vspace{0.5em}]
 
@@ -543,14 +521,14 @@
 
 \titleformat{\subsection}
   {\normalfont\Large\bfseries}
-  {\color{vorange}\thesubsection}{1em}{}
+  {\color{vorange!95!black}\thesubsection}{1em}{}
   [\vspace{0.3em}]
 
 \titlespacing*{\subsection}{-3em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
-  {\color{vorange}\thesubsubsection}{1em}{}
+  {\color{vorange!95!black}\thesubsubsection}{1em}{}
   [\vspace{0.3em}]
 
 \titlespacing*{\subsubsection}{-2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}

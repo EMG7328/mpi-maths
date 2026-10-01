@@ -4,7 +4,7 @@
 \subsection{Séries numériques}
 
 % --- Exercice 1 (Source: EXERCICE 7 analyse) ---
-\begin{exercice}
+\begin{exercice}[Exercice 7 Analyse]
 \begin{enumerate}
     \item Soient $(u_{n})_{n\in \mathbb{N}}$ et $(v_{n})_{n\in \mathbb{N}}$ deux suites de nombres réels positifs.
     On suppose que $(v_{n})_{n\in \mathbb{N}}$ est non nulle à partir d'un certain rang.
@@ -17,7 +17,7 @@
 \end{exercice}
 
 % --- Exercice 2 (Source: EXERCICE 46 analyse) ---
-\begin{exercice}
+\begin{exercice}[Exercice 46 Analyse]
 On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
 \begin{enumerate}
     \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O(\frac{1}{n^{2}})$ où $\alpha$ est un réel que l'on déterminera.
@@ -39,8 +39,8 @@ On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
     \item En déduire que la série $\sum v_{n}$ converge.
     \item Conclure en raisonnant de même avec $\sum w_{n}$.
 \end{enumerate}
-\textit{Note : La question 5 évoquait l'hypothèse de Riemann, elle n'est pas traitée ici.}
 \end{enumerate}
+\textit{Note : Il existait une question 5 qui évoquait de prouver l'hypothèse de Riemann, elle n'est pas traitée ici.}
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 2) ---
@@ -98,10 +98,10 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $S_{n}=\sum_{k=0}
 \end{exercice}
 
 % --- SÉRIES DANS UN EVN ---
-\subsection{Séries dans un EVN de dimension finie}
+\subsection{Séries dans un espace vectoriel normé de dimension finie}
 
 % --- Exercice 9 (Source: EXERCICE 40 analyse) ---
-\begin{exercice}
+\begin{exercice}[Exercice 40 Analyse]
 Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément unité et munie d'une norme telle que $\|uv\| \le \|u\|\|v\|$.
 \begin{enumerate}
     \item Soit $u \in \mathcal{A}$ tel que $\|u\| < 1$.
@@ -114,7 +114,7 @@ Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément 
 \end{exercice}
 
 % --- Exercice 10 (Source: EXERCICE 61 algèbre) ---
-\begin{exercice}
+\begin{exercice}[Exercice 61 Algèbre]
 On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \sup_{i,j} |a_{i,j}|$.
 \begin{enumerate}
     \item Prouver que $\|\cdot\|$ est une norme.
@@ -158,16 +158,18 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
 \end{exercice}
 
 % --- SÉRIES À TERMES POSITIFS ---
-\subsection{Séries à Termes Positifs}
+\subsection{Séries à termes positifs}
 
 % --- Exercice 15 (Source: EXERCICE 5 analyse) ---
-\begin{exercice}
-\textbf{1.} On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\ge2, \alpha\in\mathbb{R}$).
-\begin{itemize}
-    \item Cas $\alpha\le0$ : En utilisant une minoration simple, démontrer que la série diverge.
-    \item Cas $\alpha>0$ : Étudier la nature de la série (comparaison série-intégrale avec $f(x)=\frac{1}{x(\ln x)^{\alpha}}$).
-\end{itemize}
-\textbf{2.} Déterminer la nature de la série $\sum_{n\ge3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$[.
+\begin{exercice}[Exercice 5 Analyse]
+\begin{enumerate}
+    \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\ge2, \alpha\in\mathbb{R}$).
+    \begin{itemize}
+        \item Cas $\alpha\le0$ : En utilisant une minoration simple, démontrer que la série diverge.
+        \item Cas $\alpha>0$ : Étudier la nature de la série (comparaison série-intégrale avec $f(x)=\frac{1}{x(\ln x)^{\alpha}}$).
+    \end{itemize}
+    \item Déterminer la nature de la série $\sum_{n\ge3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$[.
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 11) ---
@@ -177,13 +179,15 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
 
 % --- Exercice 17 (Source: Exercice 12) ---
 \begin{exercice}
-\textbf{1)} Comparer pour $a, b \in \mathbb{R}^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
-\textbf{2)} En déduire la convergence et la somme de $\sum_{n\ge1}\arctan(\frac{1}{n^{2}+n+1})$.
-\textbf{3)} On définit la suite de Fibonacci $(F_{n})$ par $F_{0}=0, F_{1}=1, F_{n+2}=F_{n}+F_{n+1}$.
 \begin{enumerate}
-    \item Montrer la convergence de $\sum_{k\ge1}\arctan(\frac{1}{F_{2k+1}})$.
-    \item Montrer que pour tout $n$, $\frac{\pi}{4}=\sum_{k=1}^{n}\arctan(\frac{1}{F_{2k+1}})+\arctan(\frac{1}{F_{2n+2}})$.
-    \item En déduire que $\sum_{k=1}^{\infty}\arctan(\frac{1}{F_{2k+1}}) = \frac{\pi}{4}$.
+    \item Comparer pour $a, b \in \mathbb{R}^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
+    \item En déduire la convergence et la somme de $\sum_{n\ge1}\arctan(\frac{1}{n^{2}+n+1})$.
+    \item On définit la suite de Fibonacci $(F_{n})$ par $F_{0}=0, F_{1}=1, F_{n+2}=F_{n}+F_{n+1}$.
+    \begin{enumerate}
+        \item Montrer la convergence de $\sum_{k\ge1}\arctan(\frac{1}{F_{2k+1}})$.
+        \item Montrer que pour tout $n$, $\frac{\pi}{4}=\sum_{k=1}^{n}\arctan(\frac{1}{F_{2k+1}})+\arctan(\frac{1}{F_{2n+2}})$.
+        \item En déduire que $\sum_{k=1}^{\infty}\arctan(\frac{1}{F_{2k+1}}) = \frac{\pi}{4}$.
+    \end{enumerate}
 \end{enumerate}
 \end{exercice}
 
@@ -203,21 +207,25 @@ Si $\sum u_{n}$ converge (à termes positifs), établir la convergence des séri
 
 % --- Exercice 20 (Source: analyse) ---
 \begin{exercice}
-Soit $(u_{n})$ strictement positifs.
-\textbf{1.} Démontrer que si $\lim \frac{u_{n+1}}{u_{n}}=l < 1$, alors $\sum u_{n}$ converge
-\textbf{2.} Quelle est la nature de $\sum_{n\ge1}\frac{n!}{n^{n}}$ ?
+Soit $(u_{n})$ à termes strictement positifs.
+\begin{enumerate}
+    \item Démontrer que si $\lim \frac{u_{n+1}}{u_{n}}=l < 1$, alors $\sum u_{n}$ converge
+    \item Quelle est la nature de $\sum_{n\ge1}\frac{n!}{n^{n}}$ ?
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 21 (Source: Exercice 15 - Raabe Duhamel) ---
-\begin{exercice}
-\textbf{a)} Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à TP telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\le\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
-\textbf{b)} On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o(\frac{1}{n})$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
+\begin{exercice}[Règle de Raabe Duhamel]
+\begin{enumerate}
+    \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\le\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
+    \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o(\frac{1}{n})$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 22 (Source: Exercice 16) ---
 \begin{exercice}
 Trouver la nature des séries :
-$$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac{n!^2}{(2n)!}, \quad \sum (\sin\frac{1}{n}) n^\alpha $$
+$$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \frac{n!^2}{(2n)!}, \quad \sum (\sin\frac{1}{n}) n^\alpha, \alpha \in \R $$
 \end{exercice}
 
 % --- Exercice 23 (Source: Exercice 17) ---
@@ -436,8 +444,9 @@ Donc $(e-u)$ est inversible d'inverse la somme de la série.
 % --- Correction Exercice 22 (Nature) ---
 \begin{correction}{22}
 \begin{itemize}
-    \item $u_n = \frac{n^n}{e^{n^2}}$. $n^2 u_n \to 0$. Converge (racine n-ième).
-    \item $u_n = \frac{n!^2}{(2n)!}$. Stirling : $\frac{n^{2n} e^{-2n} (2\pi n)}{(2n)^{2n} e^{-2n} \sqrt{4\pi n}} \sim \frac{\sqrt{\pi n}}{4^n}$. Converge (géométrique raison 1/4).
+    \item $u_n = \frac 1 {n^{\ln(\ln(n))}} \leqslant \frac 1 {n^2}$ pour $n$ assez grand donc elle converge. 
+    \item $u_n = \frac{n^n}{e^{n^2}}$. $n^2 u_n \to 0$. Donc elle converge (racine n-ième).
+    \item $u_n = \frac{n!^2}{(2n)!}$. Stirling : $\frac{n^{2n} e^{-2n} (2\pi n)}{(2n)^{2n} e^{-2n} \sqrt{4\pi n}} \sim \frac{\sqrt{\pi n}}{4^n}$. D'Alembert. Converge
     \item $u_n = (\sin \frac{1}{n}) n^\alpha \sim n^{\alpha-1}$. Converge ssi $1-\alpha > 1 \iff \alpha < 0$. (Attention, énoncé dit $e^{n^\alpha \ln(...)}$, vérifier l'énoncé exact, correction mentionne exponentielle).
     L'énoncé PDF source mentionne $\sum (\sin \frac{1}{n}) n^\alpha$.
     La correction manuscrite traite $u_n = e^{n^\alpha \ln(n \sin(1/n))}$.

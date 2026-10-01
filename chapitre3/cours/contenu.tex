@@ -1075,7 +1075,6 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
 
 \begin{theoreme}{Continuité en un point}{}
     Soit $f : A \subset E \to E'$, et $a \in A$, $\ell \in E'$. 
-
     Si $f(x) \limitnorme{N'}{x}{a} \ell$. Alors $\ell = f(a)$.
 
     En ce cas on dit que $f$ est continue en $a$. Ainsi, $f$ continue en $a \in A$ ssi 
@@ -1332,7 +1331,6 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 
 \begin{proposition}{Continuité sur un ensemble}{}
     Soit $f : E \to E'$ et $U \subset E$ un ouvert.
-
     Alors $f$ est continue sur $U$ ssi $\forall a \in A$, $f$ est continue en $a$. 
 \end{proposition}
 
@@ -1589,19 +1587,16 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     $$N(x) \leqslant \eta \Rightarrow N'(f(x)) \leqslant 1$$
 
     Soit $x \in E \setminus \{0\}$. 
-    
     Posons $\displaystyle y = \eta \frac {x}{N(x)} $.
 
     Alors $N(y) = \eta$, donc $N'(f(y)) \leqslant 1$.
 
     Donc $N'\left( \frac{\eta }{N(x)} f(x) \right) \leqslant 1$ car $f$ linéaire, 
-    
     et par homogénéité de $N'$, $ \frac{\eta }{N(x)} N'(f(x)) \leqslant 1$.
 
     Donc $N'(f(x)) \leqslant \frac{N(x)}{\eta}$.
 
     Comme $N'(f(0_E)) = N(0_{E'}) = 0 \leqslant \frac 1 \eta 0 $, 
-    
     en posant $c = \frac 1 \eta$, on a bien le résultat. 
 
     \lvspace $\Leftarrow$ Supposons l'inégalité et montrons que $f$ est $c$-lipschitzienne. 
@@ -1794,7 +1789,7 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
 \end{proof}
 
 \begin{proposition}{Norme d'algèbre}{}
-    Pour $f \in \mathscr L_c(E)$, on a $||||f||| = \sup \left\{ \frac{N(f(x))}{N(x)}, \, x \in E \setminus \{0\} \right\}$
+    Pour $f \in \mathscr L_c(E)$, on a $|||f||| = \sup \left\{ \frac{N(f(x))}{N(x)}, \, x \in E \setminus \{0\} \right\}$
     et $|||f|||$ est une norme qui vérifie : 
 
     $$\forall f, g \in \mathscr L_c(E), \, |||f \circ g||| \leqslant |||f||| \cdot |||g|||$$
@@ -2192,7 +2187,7 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     Ainsi, $f(x_1) = \min \{ f(x), x \in A \}$ et $f(x_2) = \max \{ f(x), x \in A \}$.
 \end{theoreme}
 
-\idee{Caractérisation séquentielle du sup et de l'inf}
+\idee{Caractérisation séquentielle du sup et de l'inf.}
 
 \begin{proof}
     Par le théorème précédent, $f(A)$ compact de $\R$, donc borné, $f(A) \neq \emptyset$ donc 
@@ -2206,7 +2201,7 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 
 Montrons le théorème d'équivalence des normes en dimension finie.
 
-Démo non exigible.
+Démonstration non exigible.
 
 \idee{
     Montrer que toute norme est équivalente à la norme infinie, et montrer 

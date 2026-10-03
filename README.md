@@ -1,7 +1,14 @@
 # Projet 
 
-Ce cours latex est tapé par un élève de MPI* du lycée Champollion. Il regroupe l'ensemble du programme de MPI ainsi que des dépassements de celui-ci, notamment à travers les TD X-ENS.
-Nos remerciements vont à M. Quibel pour le cours classique, et à M. Bonavero pour le TD X-ENS, dont les cours ont permis la rédaction de ce poly.
+Ce cours latex est tapé par des élèves de MPI* du lycée Champollion. Il regroupe l'ensemble du programme de MPI ainsi que des dépassements de celui-ci, notamment à travers les TD X-ENS.
+
+# Remerciements
+## Professeurs
+Un grand merci à M. Quibel pour son cours de mathématiques en MPI/MPI* et M. Bonavero pour ses TD X-ENS, sans qui ce polycopié n'aurait pu être écrit.
+
+## Élèves
+- L. Dehmas pour avoir initié le projet et tapé une grande partie du poly (MPI* 2025-2026)
+- C. Perry qui continue actuellement d'améliorer le poly (MPI* 2026-2027)
 
 # Fonctionnement général du cours LaTeX
 

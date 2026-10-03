@@ -230,7 +230,7 @@ $$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \
 
 % --- Exercice 23 (Source: Exercice 17) ---
 \begin{exercice}
-Soit $\sum u_{n}$ une série à TP, $u_0 > 0$. On pose $S_{n}=\sum_{k=0}^{n}u_{k}$.
+Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $S_{n}=\sum_{k=0}^{n}u_{k}$.
 \begin{enumerate}
     \item Supposons $\sum u_{n}$ converge. Montrer que $\sum\frac{u_{n}}{S_{n}}$ converge
     \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. Trouver la nature de $\sum \ln(\frac{S_{n-1}}{S_{n}})$. En déduire que $\sum u_{n}$ converge
@@ -251,41 +251,59 @@ Soit $\alpha>1$ et $R_{n}=\sum_{k=n+1}^{\infty}\frac{1}{k^{\alpha}}$.
 \newpage
 \section{Corrections}
 
+% --- Correction Exercice 2 (du fichier source, Exercice 46 ici) ---
+\begin{correction}{2}
+\begin{enumerate}
+    \item $\pi\sqrt{n^2+n+1} = \pi n (1 + \frac{1}{n} + \frac{1}{n^2})^{1/2} = \pi n (1 + \frac{1}{2n} + \frac{3}{8n^2} + O(\frac{1}{n^3}))$.
+    $= \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O(\frac{1}{n^2})$.
+
+    \item $\cos(\pi\sqrt{\dots}) = \cos(n\pi + \pi/2 + \epsilon_n) = (-1)^n \cos(\pi/2 + \epsilon_n) = (-1)^{n+1} \sin(\epsilon_n)$.
+    $\sin(\epsilon_n) \sim \frac{3\pi}{8n}$.
+    C'est une série alternée $\sum (-1)^{n+1} \frac{K}{n}$. Elle converge (TSSA).
+    Absolue convergence ? Non, car en $1/n$.
+\end{enumerate}
+\end{correction}
+
 % --- Correction Exercice 3 ---
 \begin{correction}{3}
 \begin{enumerate}
     \item
+    Soit $s=a+ib$ avec $a>1$.
+    $|\frac{1}{n^s}| = \frac{1}{|n^a e^{ib\ln n}|} = \frac{1}{n^a}$.
+    C'est une série de Riemann avec $a>1$, donc convergente. Absolue convergence vérifiée.
+
+    \item 
+    Pour $s>0$ réel, la suite $\frac{1}{n^s}$ tend vers 0 en décroissant.
+    D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
+
+    \item 
+    $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
+    Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
+    $$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
+    D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
+
+    \item
     \begin{enumerate}
+        \item $s=a+ib$ avec $a>0$.
+        $u_n = \frac{(-1)^n}{n^s} = \frac{(-1)^n}{n^a} \cos(b\ln n) - i \frac{(-1)^n}{n^a} \sin(b\ln n)$.
+        Soit $v_n = \text{Re}(u_n)$.
+        $V_n = v_{2n} + v_{2n+1} = \frac{1}{(2n)^a}\cos(b\ln(2n)) - \frac{1}{(2n+1)^a}\cos(b\ln(2n+1))$.
+
+        Développement asymptotique :
+        $\frac{1}{(2n+1)^a} = \frac{1}{(2n)^a}(1+\frac{1}{2n})^{-a} = \frac{1}{(2n)^a} - \frac{a}{(2n)^{a+1}} + o(\frac{1}{n^{a+1}})$
+        
+        $\cos(b\ln(2n+1)) = \cos(b\ln(2n) + b\ln(1+\frac{1}{2n})) \approx \cos(b\ln(2n)) - \sin(b\ln(2n))\frac{b}{2n}$.
+        
+        En combinant, on obtient $V_n = O(\frac{1}{n^{1+a}})$.
+        Comme $1+a > 1$, $\sum V_n$ converge absolument.
+
+        \item 
+        Puisque $v_n \to 0$, la convergence de $\sum (v_{2n}+v_{2n+1})$ implique celle de $\sum v_n$.
+
         \item
-        Soit $s=a+ib$ avec $a>1$.
-        $|\frac{1}{n^s}| = \frac{1}{|n^a e^{ib\ln n}|} = \frac{1}{n^a}$.
-        C'est une série de Riemann avec $a>1$, donc convergente. Absolue convergence vérifiée.
-
-        \item 
-        Pour $s>0$ réel, la suite $\frac{1}{n^s}$ tend vers 0 en décroissant.
-        D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
-
-        \item 
-        $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
-        Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
-        $$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
-        D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
+        Idem pour la partie imaginaire. Donc $A(s)$ converge pour $\text{Re}(s)>0$.
     \end{enumerate}
-
-    \item $s=a+ib$ avec $a>0$.
-    $u_n = \frac{(-1)^n}{n^s} = \frac{(-1)^n}{n^a} \cos(b\ln n) - i \frac{(-1)^n}{n^a} \sin(b\ln n)$.
-    Soit $v_n = \text{Re}(u_n)$.
-    $V_n = v_{2n} + v_{2n+1} = \frac{1}{(2n)^a}\cos(b\ln(2n)) - \frac{1}{(2n+1)^a}\cos(b\ln(2n+1))$.
-
-    Développement asymptotique :
-    $\frac{1}{(2n+1)^a} = \frac{1}{(2n)^a}(1+\frac{1}{2n})^{-a} = \frac{1}{(2n)^a} - \frac{a}{(2n)^{a+1}} + o(\frac{1}{n^{a+1}})$
-    $\cos(b\ln(2n+1)) = \cos(b\ln(2n) + b\ln(1+\frac{1}{2n})) \approx \cos(b\ln(2n)) - \sin(b\ln(2n))\frac{b}{2n}$.
-    En combinant, on obtient $V_n = O(\frac{1}{n^{1+a}})$.
-    Comme $1+a > 1$, $\sum V_n$ converge absolument.
-    Puisque $v_n \to 0$, la convergence de $\sum (v_{2n}+v_{2n+1})$ implique celle de $\sum v_n$.
-    Idem pour la partie imaginaire. Donc $A(s)$ converge pour $\text{Re}(s)>0$.
 \end{enumerate}
-
 \end{correction}
 
 % --- Correction Exercice 4 ---
@@ -328,17 +346,44 @@ Soit $\alpha>1$ et $R_{n}=\sum_{k=n+1}^{\infty}\frac{1}{k^{\alpha}}$.
 \begin{correction}{6}
 \begin{itemize}
     \item $\sum \frac{(-1)^n}{3n-1}$ : Converge par le TSSA ($1/(3n-1) \searrow 0$). Ne converge pas absolument.
+    
     \item $\sum \frac{(-1)^n}{n^\alpha - (-1)^n n^\beta}$ avec $\alpha \neq \beta$.
     Supposons $\alpha > \beta$.
     $u_n = \frac{(-1)^n}{n^\alpha(1 - (-1)^n n^{\beta-\alpha})} = \frac{(-1)^n}{n^\alpha} + \frac{1}{n^{2\alpha-\beta}} + o(\dots)$.
     Le terme $\frac{(-1)^n}{n^\alpha}$ est le terme général d'une série convergente (TSSA).
     Le terme $\frac{1}{n^{2\alpha-\beta}}$ est de signe constant positif.
     La série converge ssi $\sum \frac{1}{n^{2\alpha-\beta}}$ converge, soit $2\alpha - \beta > 1$.
+
+    Si $\alpha < \beta$.
+    Le terme général est équivalent à $- \frac 1 {n^{\beta}}$ donc la série converge ssi $\beta > 1$ (série de Riemann).
+    
     \item $\sum \ln(1 + \frac{(-1)^n (\ln n)}{n^\alpha})$.
     DL : $u_n = \frac{(-1)^n \ln n}{n^\alpha} - \frac{\ln^2 n}{2 n^{2\alpha}} + \dots$
     Le premier terme converge (TSSA). Le second terme est de signe constant.
     La série converge ssi $2\alpha > 1$, donc $\alpha > 1/2$.
 \end{itemize}
+\end{correction}
+
+\begin{correction}{8}
+\begin{enumerate}
+    \item ...
+    \item On applique Cesàro.
+\end{enumerate}
+\end{correction}
+
+% --- Correction Exercice 9 (Algèbre) ---
+\begin{correction}{9}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\|u\| < 1$. La série $\sum \|u\|^n$ converge (géométrique).
+        Donc $\sum u^n$ converge absolument (donc converge car l'espace est complet - dimension finie).
+        
+        \item $(e-u) \sum_{k=0}^n u^k = e - u^{n+1}$.
+        Comme $u^n \to 0$, le produit tend vers $e$.
+        Donc $(e-u)$ est inversible d'inverse la somme de la série.
+    \end{enumerate}
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 11 (Matrices) ---
@@ -380,37 +425,52 @@ $u_n \sim \frac{K}{n^{c+d-a-b}}$.
 
 % --- Correction Exercice 14 (Matrices) ---
 \begin{correction}{14}
-\textbf{1.} $a_{n,k} = \frac{1}{k!} (1 - \frac{n(n-1)\dots(n-k+1)}{n^k})$.
-Le produit $\frac{n}{n} \dots \frac{n-k+1}{n}$ est $\le 1$. Donc le terme parenthèse est positif. $a_{n,k} \ge 0$.
-\textbf{2.} $M_n = (I + A/n)^n = \sum_{k=0}^n \binom{n}{k} \frac{A^k}{n^k} = \sum_{k=0}^n \frac{1}{k!} \frac{n!}{n^k(n-k)!} A^k$.
-Différence : $D_n = \sum_{k=0}^n a_{n,k} A^k + \sum_{k=n+1}^\infty \frac{A^k}{k!}$ (la correction semble traiter la différence avec la somme partielle).
-En norme : $\|D_n\| \le \sum a_{n,k} \|A\|^k + \text{reste}$.
-On utilise l'exponentielle réelle : $(1+\frac{\|A\|}{n})^n \to e^{\|A\|}$.
-La différence tend vers 0. $M_n \to \exp(A)$.
+\begin{enumerate}
+    \item $a_{n,k} = \frac{1}{k!} (1 - \frac{n(n-1)\dots(n-k+1)}{n^k})$.
+    Le produit $\frac{n}{n} \dots \frac{n-k+1}{n}$ est $\le 1$. Donc le terme parenthèse est positif. $a_{n,k} \ge 0$.
+    
+    \item $M_n = (I + A/n)^n = \sum_{k=0}^n \binom{n}{k} \frac{A^k}{n^k} = \sum_{k=0}^n \frac{1}{k!} \frac{n!}{n^k(n-k)!} A^k$.
+    Différence : $D_n = \sum_{k=0}^n a_{n,k} A^k + \sum_{k=n+1}^\infty \frac{A^k}{k!}$ (la correction semble traiter la différence avec la somme partielle).
+    En norme : $\|D_n\| \le \sum a_{n,k} \|A\|^k + \text{reste}$.
+    On utilise l'exponentielle réelle : $(1+\frac{\|A\|}{n})^n \to e^{\|A\|}$.
+    La différence tend vers 0. $M_n \to \exp(A)$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 15 (Raabe) ---
 \begin{correction}{15}
-\textbf{a)} Si $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$, alors $\frac{u_{n+1}}{v_{n+1}} \le \frac{u_n}{v_n}$.
-La suite $(u_n/v_n)$ est décroissante, donc bornée. $u_n = O(v_n)$.
-Si $\sum v_n$ converge, alors $\sum u_n$ converge.
-\textbf{b)} Comparaison avec Riemann $v_n = 1/n^\beta$.
-$\frac{v_{n+1}}{v_n} = (1+\frac{1}{n})^{-\beta} = 1 - \frac{\beta}{n} + o(\frac{1}{n})$.
-Si $\frac{u_{n+1}}{u_n} = 1 - \frac{\alpha}{n} + o(\frac{1}{n})$.
-Si $\alpha > 1$, on peut choisir $\beta$ tel que $1 < \beta < \alpha$.
-Alors pour $n$ grand, $1 - \frac{\alpha}{n} < 1 - \frac{\beta}{n}$, donc $\frac{u_{n+1}}{u_n} < \frac{v_{n+1}}{v_n}$.
-$\sum v_n$ converge (Riemann $\beta>1$), donc $\sum u_n$ converge.
-Si $\alpha < 1$, divergence par comparaison avec $\beta \in ]\alpha, 1[$.
+\begin{enumerate}
+    \item Si $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$, alors $\frac{u_{n+1}}{v_{n+1}} \le \frac{u_n}{v_n}$.
+    La suite $(u_n/v_n)$ est décroissante, donc bornée. $u_n = O(v_n)$.
+    Si $\sum v_n$ converge, alors $\sum u_n$ converge.
+    
+    \item Comparaison avec Riemann $v_n = 1/n^\beta$.
+    $\frac{v_{n+1}}{v_n} = (1+\frac{1}{n})^{-\beta} = 1 - \frac{\beta}{n} + o(\frac{1}{n})$.
+    Si $\frac{u_{n+1}}{u_n} = 1 - \frac{\alpha}{n} + o(\frac{1}{n})$.
+    Si $\alpha > 1$, on peut choisir $\beta$ tel que $1 < \beta < \alpha$.
+    Alors pour $n$ grand, $1 - \frac{\alpha}{n} < 1 - \frac{\beta}{n}$, donc $\frac{u_{n+1}}{u_n} < \frac{v_{n+1}}{v_n}$.
+    $\sum v_n$ converge (Riemann $\beta>1$), donc $\sum u_n$ converge.
+    Si $\alpha < 1$, divergence par comparaison avec $\beta \in ]\alpha, 1[$.
+\end{enumerate}
+\end{correction}
+
+\begin{correction}{16}
+    $|u_n| \sim \frac 1 {n^2}$. Donc la série converge.
+
+    Calculons les sommes partielles $\sum_{k=2}^n \ln(k^2 - 1) - \ln(k^2) = \sum_{k=3}^{n+1} \ln(k) + \sum_{k=1}^{n-1} \ln(k) - 2 \sum_{k=2}^{n} \ln(k) = \ln(1 + \frac 1 n) - \ln(2)$.
+    Donc la somme est $-\ln(2)$.
 \end{correction}
 
 % --- Correction Exercice 17 (u/S) ---
 \begin{correction}{17}
-\textbf{a)} Si $\sum u_n$ converge, $S_n \to S > 0$. Donc $u_n/S_n \sim u_n/S$. Converge.
-\textbf{b)} Si $\sum u_n/S_n$ converge.
-$\ln(\frac{S_n}{S_{n-1}}) = \ln(1 + \frac{u_n}{S_{n-1}}) \approx \frac{u_n}{S_{n-1}} \approx \frac{u_n}{S_n}$.
-La série $\sum \ln(S_n) - \ln(S_{n-1})$ est de même nature que $\sum u_n/S_n$.
-C'est une somme télescopique $\ln S_n$.
-Si elle converge, $\ln S_n$ a une limite, donc $S_n$ a une limite finie. $\sum u_n$ converge.
+\begin{enumerate}
+    \item Si $\sum u_n$ converge, $S_n \to S > 0$. Donc $u_n/S_n \sim u_n/S$. Converge.
+    \item Si $\sum u_n/S_n$ converge.
+    $\ln(\frac{S_n}{S_{n-1}}) = \ln(1 + \frac{u_n}{S_{n-1}}) \approx \frac{u_n}{S_{n-1}} \approx \frac{u_n}{S_n}$.
+    La série $\sum \ln(S_n) - \ln(S_{n-1})$ est de même nature que $\sum u_n/S_n$.
+    C'est une somme télescopique $\ln S_n$.
+    Si elle converge, $\ln S_n$ a une limite, donc $S_n$ a une limite finie. $\sum u_n$ converge.
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 18 (Restes) ---
@@ -420,25 +480,6 @@ Comparaison série-intégrale : $R_n \sim \int_n^\infty \frac{dt}{t^\alpha} = \f
 $\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge.
 Ssi $\alpha-1 > 1 \iff \alpha > 2$.
 Somme : $\sum_{n=1}^\infty R_n = \sum_{n=1}^\infty \sum_{k=n+1}^\infty \frac{1}{k^\alpha} = \sum_{k=2}^\infty \frac{1}{k^\alpha} \sum_{n=1}^{k-1} 1 = \sum_{k=2}^\infty \frac{k-1}{k^\alpha} = \zeta(\alpha-1) - \zeta(\alpha)$.
-\end{correction}
-
-% --- Correction Exercice 2 (du fichier source, Exercice 46 ici) ---
-\begin{correction}{2}
-\textbf{1)} $\pi\sqrt{n^2+n+1} = \pi n (1 + \frac{1}{n} + \frac{1}{n^2})^{1/2} = \pi n (1 + \frac{1}{2n} + \frac{3}{8n^2} + O(\frac{1}{n^3}))$.
-$= \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O(\frac{1}{n^2})$.
-\textbf{2)} $\cos(\pi\sqrt{\dots}) = \cos(n\pi + \pi/2 + \epsilon_n) = (-1)^n \cos(\pi/2 + \epsilon_n) = (-1)^{n+1} \sin(\epsilon_n)$.
-$\sin(\epsilon_n) \sim \frac{3\pi}{8n}$.
-C'est une série alternée $\sum (-1)^{n+1} \frac{K}{n}$. Elle converge (TSSA).
-Absolue convergence ? Non, car en $1/n$.
-\end{correction}
-
-% --- Correction Exercice 9 (Algèbre) ---
-\begin{correction}{9}
-\textbf{1. a)} $\|u\| < 1$. La série $\sum \|u\|^n$ converge (géométrique).
-Donc $\sum u^n$ converge absolument (donc converge car l'espace est complet - dimension finie).
-\textbf{1. b)} $(e-u) \sum_{k=0}^n u^k = e - u^{n+1}$.
-Comme $u^n \to 0$, le produit tend vers $e$.
-Donc $(e-u)$ est inversible d'inverse la somme de la série.
 \end{correction}
 
 % --- Correction Exercice 22 (Nature) ---
@@ -461,3 +502,4 @@ Donc $(e-u)$ est inversible d'inverse la somme de la série.
     Règle $n^2 u_n$.
 \end{itemize}
 \end{correction}
+

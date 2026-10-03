@@ -229,7 +229,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \subsection{Définition}
 
 \begin{definition}{Famille sommable}{}
-    Soit $I$ un ensemble non vide et $(U_i)_{i \in I}$ famille de complexes. 
+    Soit $I$ un ensemble non vide et $(U_i)_{i \in I}$ une famille de complexes. 
     On dit que cette famille est sommable ssi l'ensemble 
     $$\left\{\sum_{j \in J} \mid u_j \mid, \, J \subset I \text{ fini} \right\}$$
     est majoré. 
@@ -238,8 +238,9 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
 \subsection{Propriétés}
 
-\begin{proposition}{Stabilité sommable par combinaison linéaire}{}
-    Soit $(U_i)_{i \in I}$ famille sommable de complexes et $I' \subset I$ non vide. 
+\begin{proposition}{Stabilité par combinaison linéaire}{}
+
+    Soit $(U_i)_{i \in I}$ une famille sommable de complexes et $I' \subset I$ non vide. 
     Alors $(U_i)_{i \in I'}$ est sommable. 
 
     Si $(v_i)$ est une autre famille sommable, et $\alpha, \beta \in \C$, alors 
@@ -272,24 +273,23 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{proposition}
 
 \begin{proof}
-    Soit $J \subset I$ fini, alors
+    Soit $J \subset I$ fini, alors :
     $$\sum_{j \in J} |v_j| \leqslant \sum_{j \in J} |u_j| \leqslant M$$
 \end{proof}
 
 
-\begin{definition}{Somme d'une famille sommable}{}
+\begin{definition}{Somme d'une famille sommable}{}\\
     Soit $(u_i)_{i \in I}$ une famille sommable de réels positifs. 
 
     Alors $\displaystyle \left\{ \sum_{i \in J} u_i, \, J \subset I \text{ fini}  \right\}$ est une partie 
     de $\R$. 
 
     Sa borne supérieure est appellée \emph{somme} de la famille et notée $\displaystyle \sum_{i \in I} u_i$.
-    Ainsi $$\sum_{i \in I} u_i = \sup \left\{ \sum_{i \in J} u_i, \, J \subset I \text{ fini}  \right\}$$
+    Ainsi : $$\sum_{i \in I} u_i = \sup \left\{ \sum_{i \in J} u_i, \, J \subset I \text{ fini}  \right\}$$
 \end{definition}
 
 \begin{theoreme}{Somme d'une famille sommable de réels quelconques}{}
     Soit $(u_i)_{i \in I}$ une famille sommable de réels. 
-
     Posons $\forall i \in I : $ 
     \begin{align*}
         u_i^+ = \frac 1 2 (\mid u_i \mid + u_i)\\
@@ -298,26 +298,27 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     Alors $0 \leqslant u_i^+, u_i^- \leqslant |u_i|$ et donc $(u_i^+)_{i \in I}$ et $(u_i^-)_{i \in I}$ sont sommables.
 
-    On définit la somme de la famille $(u_i)_{i \in I}$ par
+    On définit la somme de la famille $(u_i)_{i \in I}$ par :
     $$\sum_{i \in I} u_i = \sum_{i \in I} u_i^+ - \sum_{i \in I} u_i^-$$
 \end{theoreme}
 
 \begin{theoreme}{Somme d'une famille sommable de complexes}{}
-    Soit $(u_j)_{j \in I}$ une famille sommable de complexes. Alors
-    $\forall j \in I, \, \mid \re u_j \mid \leqslant \mid u_j \mid$ et $\mid \im u_j \mid \leqslant \mid u_j \mid$.
 
-    Donc les familles $(\re u_j)_{j \in I}$ et $(\im u_j)_{j \in I}$ sont réelles sommables.
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes. Alors :
+    
+    $\forall j \in I, \, |\re(u_j)| \leqslant |u_j|$ et $|\im(u_j)| \leqslant |u_j|$.
+    Donc les familles $(\re(u_j))_{j \in I}$ et $(\im(u_j))_{j \in I}$ sont réelles sommables.
 
-    On définit la somme de la famille $(u_j)_{j \in I}$ par
-    $$\sum_{j \in I} u_j = \sum_{j \in I} \re u_j + i \sum_{j \in I} \im u_j$$
+    On définit la somme de la famille $(u_j)_{j \in I}$ par :
+    $$\sum_{j \in I} u_j = \sum_{j \in I} \re(u_j) + i \sum_{j \in I} \im(u_j)$$
 
 \end{theoreme}
 
 
-\begin{proposition}{Linéarité de la somme famille sommable}{}
+\begin{proposition}{Linéarité de la somme}{}
     Soit $(u_i)_{i \in I}, (v_i)_{i \in I}$ deux familles sommables de complexes et $\alpha, \beta \in \C$.
 
-    Alors $(\alpha u_i + \beta v_i)_{i \in I}$ est sommable et
+    Alors $(\alpha u_i + \beta v_i)_{i \in I}$ est sommable et :
     $$\sum_{i \in I} (\alpha u_i + \beta v_i) = \alpha \sum_{i \in I} u_i + \beta \sum_{i \in I} v_i$$
 \end{proposition}
 
@@ -325,13 +326,13 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Le faire d'abord pour des réels positifs, puis des réels quelconques, puis des complexes.
 \end{proof}
 
-\begin{theoreme}{Sommation par paquet}{}
+\begin{theoreme}{Sommation par paquets}{}
     Soient $I$ et $K$ des ensembles non vides et $\displaystyle I = \bigsqcup_{k \in K} I_k$ union
     disjointe d'ensembles non vides.
 
     Soit $(u_i)_{i \in I}$ une famille de complexes. Alors $(u_i)_{i \in I}$ est sommable ssi
     
-    $\forall k \in K, \, (u_i)_{i \in I_k}$ est sommable et $\displaystyle \left( \sum_{i \in I_k} \mid u_i \mid \right)_{k \in K}$ est sommable
+    $\forall k \in K, \, (u_i)_{i \in I_k}$ est sommable et $\displaystyle \left( \sum_{i \in I_k} |u_i| \right)_{k \in K}$ est sommable
     et en ce cas, 
     $$ \sum_{i \in I} u_i = \sum_{k \in K} \left( \sum_{i \in I_k} u_i \right)$$
 \end{theoreme}
@@ -348,7 +349,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     $\sigma$ étant une bijection, $\displaystyle I = \bigsqcup_{k \in K} I_k$.
 
-    $(u_i)_{i \in I_k}$ étant sommable, par le théorème de sommation par paquet, 
+    $(u_i)_{i \in I_k}$ étant sommable, par le théorème de sommation par paquets, 
     $\forall k \in K, \, (u_i)_{i \in I_k}$ est sommable 
     et comme $\displaystyle \sum_{i \in I_k} |u_i| = |u_{\sigma(k)}|$,
     on a que $(u_{\sigma(k)})_{k \in K}$ est sommable, et 
@@ -363,7 +364,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{definition}
 
 \begin{proposition}{Somme sur le support}{}
-    Soit $(u_i)_{i \in I}$ une famille sommable de complexes de support $S$. Alors 
+    Soit $(u_i)_{i \in I}$ une famille sommable de complexes de support $S$. Alors :
     $$\sum_{i \in I} u_i = \sum_{i \in S} u_i$$
 \end{proposition}
 
@@ -371,10 +372,10 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \begin{proof}
     Posons $K = \{1, 2\}$, et $I_1 = S, \, I_2 = I \setminus S$.
 
-    Par le théorème de sommation par paquet, $\displaystyle \sum_{i \in I} u_i = \sum_{i \in S} u_i + \sum_{i \in I \setminus S} u_i$.
+    Par le théorème de sommation par paquets, $\displaystyle \sum_{i \in I} u_i = \sum_{i \in S} u_i + \sum_{i \in I \setminus S} u_i$.
 \end{proof}
 
-\begin{theoreme}{Nature support d'une famille sommable}{}
+\begin{theoreme}{Nature du support d'une famille sommable}{}
     Le support d'une famille sommable est au plus dénombrable. 
 \end{theoreme}
 
@@ -406,7 +407,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \begin{theoreme}{Familles sommables indexées par $\N$}{}
     Soit $(u_n)_{n \in N}$ une famille de complexes. Alors
     cette famille est sommable ssi $\displaystyle \sum_{n \geqslant 0} u_n$ est 
-    absolument convergente et alors 
+    absolument convergente et alors :
     $$\sum_{n \in \N} u_n = \sum_{n = 0}^\infty u_n$$    
 \end{theoreme}
 
@@ -454,13 +455,13 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
 \subsection{Conséquence}
 
-\begin{proposition}{Sommation par paquets pairs et impairs, LHP}{}
-    Soit $\sum_{n \geqslant 0} u_n$ une série absolument convergente, alors 
+\begin{proposition}{Sommation par paquets pairs et impairs - LHP}{}
+    Soit $\sum_{n \geqslant 0} u_n$ une série absolument convergente, alors :
     $$\sum_{n  = 0 }^\infty u_n = \sum_{p = 0 }^\infty u_{2p} + \sum_{p = 0}^\infty u_{2p + 1}$$
 \end{proposition}
 
 \begin{proof}
-    La famille est sommable, et on applique le théorème de sommation par paquet. 
+    La famille est sommable, et on applique le théorème de sommation par paquets. 
 \end{proof}
 
 \begin{exemple}
@@ -479,7 +480,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
 \begin{theoreme}{Invariance par bijection de $\N$}{}
     Soit $\displaystyle \sum_{n \geqslant 0} u_n$ une série absolument convergente et $\sigma : \N \to \N$ une bijection.
-    Alors $\displaystyle \sum_{n =\geqslant 0} u_{\sigma(n)}$ est absolument convergente et
+    Alors $\displaystyle \sum_{n =\geqslant 0} u_{\sigma(n)}$ est absolument convergente et :
     $$\sum_{n = 0}^\infty u_n = \sum_{n = 0}^\infty u_{\sigma(n)}$$
 \end{theoreme}
 

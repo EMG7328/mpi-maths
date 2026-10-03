@@ -161,17 +161,17 @@
 }
 
 \setlist[itemize,1]{
-  label=\raisebox{0.1ex}{\scalebox{0.65}{$\triangleright$}},
+  label=\raisebox{0.1ex}{$\triangleright$},
   leftmargin=*,
   itemsep=2pt
 }
 \setlist[itemize,2]{
-  label=\raisebox{0.15ex}{\scalebox{0.65}{$\char"25CA\relax$}},
+  label=\raisebox{0.15ex}{$\char"25CA\relax$},
   leftmargin=*,
   itemsep=2pt
 }
 \setlist[itemize,3]{
-  label=\raisebox{0.1ex}{\scalebox{0.65}{$\square$}},
+  label=\raisebox{0.1ex}{$\square$},
   leftmargin=*,
   itemsep=2pt
 }

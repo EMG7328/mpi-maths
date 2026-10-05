@@ -175,7 +175,11 @@ if args.chapitres == "integrale" :
         case "cours" :
             compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
             compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
+            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
+            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
         case "TD" :
+            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
+            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
             compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
             compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
         case _ :

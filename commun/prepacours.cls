@@ -87,6 +87,7 @@
 
 \newcommand{\passerenmodecours}{%
   \clearpage
+  \prepa@tdfalse
   \newgeometry{
     top=2cm,
     bottom=2cm,
@@ -94,13 +95,14 @@
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=30pt,
+    headheight=32pt,
   }%
   \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}%
 }
 
 \newcommand{\passerenmodeexos}{%
   \clearpage
+  \prepa@tdtrue
   \newgeometry{
     top=2cm,
     bottom=2cm,
@@ -109,6 +111,8 @@
     headheight=30pt,
   }%
   \fancyhfoffset[R]{0pt}%
+  \thispagestyle{premierepagechapitre}
+  \displaychapitrebanner
 }
 
 % =============================================================================
@@ -400,47 +404,24 @@
 \fancyfoot[L]{\@filiere}
 \fancyfoot[C]{\@etablissement~\@annee}
 \fancyfoot[R]{\@auteur}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \fancypagestyle{premierepagechapitre}{%
   \fancyhf{}
-  \setlength{\headheight}{75pt}
 
-  \ifprepa@td%
-    \fancyhfoffset[R]{0pt}
-    \fancyhead[L]{%
-      \parbox[c]{\dimexpr\textwidth-3cm\relax}{%
-        \raggedright
-        {\fontsize{22}{26}\selectfont\bfseries\scshape TD~:~\@titrechapitre\par}%
-        \vspace{4pt}%
-        \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
-      }%
-    }%
-  \else%
-    \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}
-    \fancyhead[L]{%
-      \parbox[c]{\dimexpr\textwidth+\marginparsep+\marginparwidth-3cm\relax}{%
-        \raggedright
-        {\fontsize{24}{28}\selectfont\bfseries\scshape\@titrechapitre\par}%
-        \vspace{4pt}%
-        \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
-      }%
-    }%
-  \fi%
-
-  \fancyhead[R]{%
-    \parbox[c]{2.5cm}{%
-      \raggedleft
-      \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
-    }%
-  }%
-
+  \fancyfoot[L]{\@filiere}
+  \fancyfoot[C]{\@etablissement~\@annee}
+  \fancyfoot[R]{\@auteur}
+  
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
 }
 
 \newcommand{\pagedegarde}{
+  \clearpage
   \newgeometry{top=3cm, bottom=3cm, left=3cm, right=3cm}
-  \thispagestyle{empty}
+  \pagestyle{empty}%
   \begin{center}
     {\Huge \bfseries Chapitre~\@numchapitre{} -- \@titrechapitre \par}
   \end{center}
@@ -451,9 +432,47 @@
     {\Large Année \@annee \par}
     {\normalsize Version du \today \par}
   \end{center}
-  \newpage
   \passerenmodecours
+  \pagestyle{fancy}%
   \thispagestyle{premierepagechapitre}
+  \displaychapitrebanner
+}
+
+\newcommand{\displaychapitrebanner}{%
+  \vspace*{-1cm}
+  \noindent
+  \ifprepa@td%
+    \begin{minipage}{\textwidth}
+      \parbox[b]{\dimexpr\textwidth-3cm\relax}{%
+        \raggedright
+        {\fontsize{24}{28}\selectfont\bfseries\scshape TD~:~\@titrechapitre\par}%
+        \vspace{4pt}%
+        \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
+      }%
+      \hfill
+      \parbox[b]{2.5cm}{%
+        \raggedleft
+        \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
+      }%
+    \end{minipage}%
+  \else%
+    \makebox[\textwidth][l]{%
+      \begin{minipage}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+        \parbox[b]{\dimexpr\linewidth-3.5cm\relax}{%
+          \raggedright
+          {\fontsize{24}{28}\selectfont\bfseries\scshape\@titrechapitre\par}%
+          \vspace{4pt}%
+          \textcolor{vorange}{\rule{\linewidth}{1.5pt}}%
+        }%
+        \hfill
+        \parbox[b]{3cm}{%
+          \raggedleft
+          \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
+        }%
+      \end{minipage}%
+    }%
+  \fi%
+  \par\vspace{0.5cm}
 }
 
 \newcommand{\restaurergeometrie}{%

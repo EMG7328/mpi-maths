@@ -22,9 +22,7 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     $$ u_n \limit{n}{+\infty} \ell$$ 
 \end{definition}
 
-\idee{
-    Pour unicité de la limite : utiliser la def de limite deux fois, puis inégalité triangulaire.
-    
+\idee{ 
     Pour l'équivalence : 
     
     (i) $\Rightarrow$ (ii) : si $M_\varepsilon$ n'est pas fini, il est non majoré.
@@ -47,7 +45,7 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     Posons $n_0 = N + 1$, si $n \geqslant n_0$, alors $n$ n'appartient pas à $M_\varepsilon$ et donc
     $|u_n - \ell| \leqslant \varepsilon$. Donc (i) est vérifiée.\\
 
-
+    \idee{Unicité : utiliser la définition de limite deux fois puis inégalité triangulaire.}
     \uline{Unicité de la limite :}
 
     \vspace{0.2em} Si $\ell_1$ et $\ell_2$ conviennent : 
@@ -248,12 +246,9 @@ On prendra $(E, N)$ un espace vectoriel normé sur $\K$.
     un $\C$-espace vectoriel de dimension 2. 
 \end{propositionnt}
 
+\idee{On construit une base avec des suites géométriques, et utilisation d'un isomorphisme.}
 \begin{proof}
     En effet, $\fonction{}{E}{\C^2}{(u_n)}{(u_0, u_1)}$ est un isomorphisme. 
-
-    \idee{
-        On construit une base avec des suites géométriques, et utilisation d'un isomorphisme.
-    }
     
     Une suite géométrique $(r^n)_{n \in \N}$ où $r \neq 0$ est dans $E$ ssi elle vérifie
     l'équation caractéristique $r^2 = ar + b$ (1).
@@ -313,18 +308,20 @@ sur $n$.
 Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell$ est un point fixe de $f$. \\
 
 \begin{remarque}
-    Hors programme. 
+    (hors programme)
 
     Si $f$ est $\mathscr C^1$ sur $I$ et $f(l) = l$, alors il y a plusieurs cas : 
 
-    \qquad \uline{$|f'(l)| < 1$}
-    \avspace $l$ est un point fixe attractif et si $f'(l) = 0$, il est super attractif. 
+    \begin{itemize}
+        \item \uline{$|f'(l)| < 1$ :}
+         $l$ est un point fixe attractif et si $f'(l) = 0$, il est super attractif. 
 
-    \avspace \qquad \uline{$|f'(l)| = 1$}
-    \avspace $l$ est un point fixe indifférent. 
+        \item \uline{$|f'(l)| = 1$ :}
+        $l$ est un point fixe indifférent. 
 
-    \avspace \qquad \uline{$|f'(l)| > 1$}
-    \avspace $l$ est un point fixe répulsif.
+        \item \uline{$|f'(l)| > 1$ :}
+        $l$ est un point fixe répulsif.
+    \end{itemize}
 \end{remarque}
 
 \begin{exemple}
@@ -332,7 +329,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 
     La suite est bien définie car $f(x) = \sqrt{2 + x}$ est stable sur $\R^+$. 
 
-    Etude de $f(x) = \sqrt{2 + x}$ et $g(x)= f(x) - x = \sqrt{2 + x} - x$.
+    Étude de $f(x) = \sqrt{2 + x}$ et $g(x)= f(x) - x = \sqrt{2 + x} - x$.
 
     $f$ et $g$ sont $\mathscr C^1$. 
     
@@ -375,7 +372,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
     Même chose si $u_0 > 2$. 
 
     \lvspace \lvspace
-    \uline{Exemple 2 :}
+    \uline{Autre exemple :}
     
     \avspace $\alpha = e^{1/e} > 1$, et on prend $u_0 = 1$. $\forall n \in \N, u_{n + 1} = \alpha^{u_n}$.
 
@@ -550,9 +547,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \end{remarque}
 
 \begin{proof}
-    \idee{
-        utiliser la def des normes équivalentes. 
-    }
+    \idee{Utiliser la définition de normes équivalentes.}
     
     Supposons $N_1$ et $N_2$ équivalentes.
 
@@ -580,7 +575,7 @@ Si $(u_n)$ converge vers $\ell$ et si $f$ continue alors $f(\ell) = \ell$. $\ell
 \end{theoreme}
 
 \idee{
-    On en suppose une plus fine, et on pose une suite (complètement artificiel)
+    On en suppose une plus fine, et on pose une suite (complètement artificielle)
     qui va bien. 
 }
 
@@ -696,7 +691,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtient coordo
 
     2. et 3. : facteur dans la norme 
 
-    4. : astuce du topin
+    4. : astuce du taupin
     
     5. : par 1. et 4.
 
@@ -738,7 +733,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtient coordo
 
 
 \idee{
-    par récurrence.
+    Par récurrence.
 }
 
 \begin{proof}
@@ -999,7 +994,7 @@ Ainsi en dimension finie la convergence d'une suite de vecteurs s'obtient coordo
 \end{theoreme}
 
 \idee{
-    par l'absurde 
+    Par l'absurde. 
 }
 
 \begin{proof}

@@ -401,18 +401,18 @@
   \fancyhfoffset[R]{3cm}
 \fi
 
-\fancyfoot[L]{\@filiere}
-\fancyfoot[C]{\@etablissement~\@annee}
-\fancyfoot[R]{\@auteur}
+\fancyfoot[L]{\scshape\@filiere}
+\fancyfoot[C]{\scshape\@etablissement~\@annee}
+\fancyfoot[R]{\scshape\@auteur}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
 \fancypagestyle{premierepagechapitre}{%
   \fancyhf{}
 
-  \fancyfoot[L]{\@filiere}
-  \fancyfoot[C]{\@etablissement~\@annee}
-  \fancyfoot[R]{\@auteur}
+  \fancyfoot[L]{\scshape\@filiere}
+  \fancyfoot[C]{\scshape\@etablissement~\@annee}
+  \fancyfoot[R]{\scshape\@auteur}
   
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}

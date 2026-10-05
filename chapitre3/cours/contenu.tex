@@ -896,16 +896,15 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $V \subset A$ est un fermé relatif de $A$ ssi il existe $W$ fermé de $E$ tel que $V = W \cap A$.
 \end{proposition}
 
-\idee{
-    $\Rightarrow$ Utilisation de $\overline V$ et absurde. 
-
-    $\Leftarrow$ Utilisation du complémentaire. 
-}
-
 \begin{proof}
     $\Rightarrow$ : Supposons que $V$ est un fermé relatif de $A$.
 
     Posons $W = \overline{V}$, $W$ est un fermé de $E$ et montrons que $V = W \cap A$.
+    \idee{
+        $\Rightarrow$ Utilisation de $\overline V$ et absurde. 
+
+        $\Leftarrow$ Utilisation du complémentaire. 
+    }
 
     $V \subset A$, $V \subset \overline V = W$, donc $V \subset W \cap A$.
 
@@ -2164,11 +2163,8 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     L'image d'un compact par une application continue est un compact. 
 \end{theoreme}
 
-\idee{
-    Suites avec fonction
-}
-
 \begin{proof}
+    \idee{Suites avec fonction.}
     Soit $A \subset E$ compact et $f : A \to E'$ continue. Considérons $B = f(A)$. 
 
     Soit $(b_n)_{n \in \N}$ suite de $B$. Alors $\forall n \in \N, \, \exists a_n \in A, \, b_n = f(a_n)$

@@ -132,7 +132,6 @@ Donc $B$ est un $\K$-espace vectoriel.
 
 \begin{proof}
     Supposons que la série $\sum u_n$ converge, et notons $\displaystyle S_n = \sum_{k=0}^n u_k$ sa somme partielle.
-
     Alors pour $n \geqslant 1$, on a $u_n = S_n - S_{n-1} \longrightarrow S - S = 0_E$.
 \end{proof}
 
@@ -197,7 +196,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 
 \begin{theoreme}{Séries géométriques}{}
     Soit $a \in \C$. Alors la série $\sum_{n \geqslant 0} a^n$ converge ssi $\abs{a} < 1$, 
-    et on a $$\forall n_0 \in \N, \, \sum_{n = n_0}^{+ \infty} a^n = \frac{a^{n_0}}{1 - a}$$
+    et on a : $$\forall n_0 \in \N, \, \sum_{n = n_0}^{+ \infty} a^n = \frac{a^{n_0}}{1 - a}$$
 \end{theoreme}
 
 \idee{
@@ -419,7 +418,7 @@ Etude de $\sum_{n \geqslant 0} f_n$.
 
 \avspace $\forall n \in \N, \fonction{S_n}{[0, 1 / 2]} \R x {\sum_{k = 0}^n x^k = \frac{1 - x^{n + 1}}{1 - x}}$ car $x \neq 1$. 
 
-\avspace A $x$ fixé, $S_n(x) \limit{n}{+ \infty} \frac 1 {1 - x} = h(x)$.
+\avspace À $x$ fixé, $S_n(x) \limit{n}{+ \infty} \frac 1 {1 - x} = h(x)$.
 
 Or $\displaystyle \forall x \in [0, 1 / 2], \, \abs{S_n(x) - h(x)} = \abs{\frac{x^{n + 1}}{1 - x}} \leqslant 2 \left( \frac 1 {2^{n + 1}} \right) = \frac 1 {2^n}$
 
@@ -863,9 +862,9 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
 \section{Compléments sur les séries numériques}
 \subsection{Comparaison série intégrale}
 
-Le résultat du calcul doit être refait si utilisé aux concours. 
+Il est écrit dans le programme que seules les techniques de comparaison série intégrale sont à connaitre, en conséquence, le résultat du calcul suivant doit être refait si utilisé aux concours. 
 
-On notera $\mathscr C^{pm}$ l'ensemble des fonctions continues par morceaux.
+On notera $\mathscr C^{pm}(E, F)$ l'ensemble des fonctions continues par morceaux de $E$ dans $F$.
 
 Soit $f \in \mathscr C^{pm}( [a, + \infty[ , \R^+)$ décroissante. 
 
@@ -875,8 +874,9 @@ Donc $\displaystyle \int_{k}^{k + 1} f(k + 1) \text d t \leqslant \int_{k}^{k + 
 
 Donc $\displaystyle f(k + 1) \leqslant \int_{k}^{k + 1} f(t) \text d t \leqslant f(k)$
 
-Pour $n_0 = \lfloor a \rfloor$, sommes de $n_0$ à $n - 1$, et notons $\displaystyle S_n = \sum_{k = n_0}^{n} f(k)$.
+Pour $n_0 = \lceil a \rceil$, sommes de $n_0$ à $n - 1$, et notons $\displaystyle S_n = \sum_{k = n_0}^{n} f(k)$.
 
+\marginenote{Fait historique}{Monsieur Chasles était un grand collectionneur.}
 Par Chasles : $S_n - f(n_0) \leqslant \int_{n_0}^{n} f(t) \text d t \leqslant S_n - f(n)$
 
 Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant f(n_0) + \int_{n_0}^{n} f(t) \text d t$
@@ -887,7 +887,7 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
     Notons $\forall n \in \N,$ 
     $$\omega_n = \left( \int_{n - 1 }^{n } f(t) \text d t \right) - f(n)$$
 
-    Alors $\displaystyle \sum_{n \geqslant \lfloor a \rfloor + 1} \omega_n$ converge.
+    Alors $\displaystyle \sum_{n \geqslant \lceil a \rceil + 1} \omega_n$ converge.
 \end{theoreme}
 
 \idee{
@@ -895,17 +895,16 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
 }
 
 \begin{proof}
-    $f$ est décroissante donc $\forall t \in [n - 1, n], \, f(n) \leqslant f(t)$ 
-
+    $f$ est décroissante donc $\forall t \in [n - 1, n], \, f(n) \leqslant f(t)$ .
     Donc $f(n) \leqslant \int_{n - 1}^{n} f(t) \text d t$ donc $\omega_n \geqslant 0$.
 
-    De plus $\int_{n - 1 }^{n } f(t) \text d t \leqslant f(n - 1)$. Donc $\omega_n \leqslant f(n - 1 ) - f(n)$
+    De plus $\int_{n - 1 }^{n } f(t) \text d t \leqslant f(n - 1)$. Donc $\omega_n \leqslant f(n - 1 ) - f(n)$.
 
-    Donc 
+    Donc :
     \begin{align*}
-        \sum_{k = \lfloor a \rfloor + 1}^{n} \omega_k & \leqslant \sum_{k = \lfloor a \rfloor + 1}^{n } (f(k - 1) - f(k)) \\
-                                                        & \leqslant f(\lfloor a \rfloor + 1) - f(n) \\
-                                                        & \leqslant f(\lfloor a \rfloor + 1)
+        \sum_{k = \lceil a \rceil + 1}^{n} \omega_k & \leqslant \sum_{k = \lceil a \rceil + 1}^{n } (f(k - 1) - f(k)) \\
+                                                        & \leqslant f(\lceil a \rceil + 1) - f(n) \\
+                                                        & \leqslant f(\lceil a \rceil + 1)
     \end{align*}
 
     La suite est donc majorée donc converge. 
@@ -914,14 +913,14 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
 \begin{proposition}{Conséquence - HP}{}
     Soit $f \in \mathscr C^{pm}([a, + \infty[, \R^+)$ décroissante. 
 
-    Alors la série $\displaystyle \sum_{n \geqslant \lfloor a \rfloor + 1} f(n)$ converge ssi la suite 
-    $\displaystyle \int_{\lfloor a \rfloor + 1 }^{n } f(t) \text d t$ converge.
+    Alors la série $\displaystyle \sum_{n \geqslant \lceil a \rceil + 1} f(n)$ converge ssi la suite 
+    $\displaystyle \int_{\lceil a \rceil + 1 }^{n } f(t) \text d t$ converge.
 \end{proposition}
 
 \begin{proof}
     \begin{align*}
-        \sum_{k = \lfloor a \rfloor + 2}^{n} f(k) & = \sum_{k = \lfloor a \rfloor + 2}^{n} \int_{k - 1 }^{k} f- \omega_k \\
-                                                    & = \int_{\lfloor a \rfloor + 1}^{n} f(t) \text d t - \sum_{k = \lfloor a \rfloor + 2}^{n} \omega_k                                 
+        \sum_{k = \lceil a \rceil + 2}^{n} f(k) & = \sum_{k = \lceil a \rceil + 2}^{n} \int_{k - 1 }^{k} f- \omega_k \\
+                                                    & = \int_{\lceil a \rceil + 1}^{n} f(t) \text d t - \sum_{k = \lceil a \rceil + 2}^{n} \omega_k                                 
     \end{align*}
 
 \end{proof}
@@ -1080,7 +1079,6 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \mathbb{C}$.
 
 \begin{exemple}
     $\displaystyle a_n = \frac{(-1)^n}{n + (-1)^n\sqrt{n}}$ pour $n \geqslant 2$. 
-
     Etude de $\sum a_n$.
 
     $\abs{a_n} \sim \frac 1 n $ terme général série divergente donc pas de convergence absolue. 
@@ -1097,7 +1095,8 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \mathbb{C}$.
 
     \lvspace (exo 5) $u_n = \sin(n! \pi e)$ et $v_n = \sin(2 n! \pi e)$, $\displaystyle e = \sum_{k = 0 }^{ + \infty } \frac{1}{k!}$
 
-    Donc \begin{align*}
+    Donc :
+    \begin{align*}
         n! e & = \sum_{k = 0 }^{+ \infty } \frac{n!}{k!} \\
               & = \underbrace{\sum_{k = 0}^{n - 2} \frac{n!}{k!}}_{\substack{P_n \text{ somme} \\ \text{d'entiers pairs}}} + n + 1 + \frac{1}{n + 1} + \frac{1}{(n + 1)(n + 2)} + \frac 1 {(n + 1)(n + 2)(n + 3)} + \sum_{k = n + 4 }^{\infty } \frac{n! }{k!} \\
     \end{align*}
@@ -1135,6 +1134,7 @@ Soient $\sum u_n$ et $\sum v_n$ deux séries réelles telles que $(v_n)$ est de 
 d'un certain rang. 
 
 \begin{proposition}{Sommation des relations de comparaison}{}
+\marginenote{Un peu d'histoire \!}{Les notations $o$ et $O$ viennent du mathématicien allemand Landau.}
     Si $\sum v_n$ diverge ($v_n$ de signe constant à partir d'un certain rang) et si $u_n = O(v_n)$ (resp $u_n = o(v_n)$, resp $u_n \sim v_n$),
     alors :
     
@@ -1144,10 +1144,11 @@ d'un certain rang.
 
 \begin{proof} $v_n > 0$ à partir d'un certain rang.
     
-    \uline{Cas du O : }
+    \uline{Cas du O :}
 
-    \svspace On suppose que $\exists M$, $\forall n \geqslant n_0, \, \abs{u_n} \leqslant M v_n$.
-    Alors \begin{align*}
+    \svspace On suppose que $\exists M \in \R$, $\forall n \geqslant n_0, \, \abs{u_n} \leqslant M v_n$.
+    Alors :
+    \begin{align*}
         \abs{\sum_{k = 0 }^{n } u_k} & \leqslant \sum_{k=0 }^{n } \abs{u_k} \\
                                     & \leqslant \sum_{k = 0}^{n_0 - 1} \abs{u_k} + \sum_{k = n_0}^{n } M v_k \\
                                     & \leqslant \sum_{k = 0}^{n_0 - 1} \abs{u_k - M v_k} + M \sum_{k = 0}^{n } v_k \\
@@ -1164,7 +1165,6 @@ d'un certain rang.
     \uline{Cas de $o$ :}
 
     \svspace On suppose que $\forall \varepsilon > 0, \exists n_0 \in \N, \, \forall n \geqslant n_0, \, \abs{u_n} \leqslant \varepsilon v_n$.
-
     Soit $\varepsilon > 0$. 
 
     Par le même calcul, $\exists n_0 \in \N, \, \exists n_1 \in \N$ tel que 
@@ -1195,14 +1195,13 @@ d'un certain rang.
 \idee{Sommation des relations de comparaison.}
 
 \begin{proof}
-    Si $\ell \in \R^*$, posons $v_n = \ell$, alors $\sum v_n$ diverge et $(v_n)$ est de signe constant.
+    \uline{Si $\ell \in \R^*$}, posons $v_n = \ell$, alors $\sum v_n$ diverge et $(v_n)$ est de signe constant.
 
     Or $\displaystyle a_n \sim v_n$ donc $\displaystyle \sum_{k = 1}^{n } a_k \sim \sum_{k = 1}^{n } v_k = n \ell$ (sommation des relations de comparaison). 
 
     Donc $\displaystyle \frac 1 n \sum_{k = 1}^{n } a_k \longrightarrow \ell$.
 
-    \avspace Si $\ell = 0$, alors $a_n = o(1)$, posons $v_n = 1$.
-
+    \uline{Si $\ell = 0$}, alors $a_n = o(1)$, posons $v_n = 1$.
     De même, $\displaystyle \sum_{k = 1}^{n } a_k = o(n)$ donc $\displaystyle \frac 1 n \sum_{k = 1}^{n } a_k \longrightarrow 0$. \\
 
     \uline{Si $\ell = + \infty$ :} 

@@ -50,6 +50,11 @@
 
 \setmathfont{Libertinus Math}[Scale=MatchLowercase]
 
+\newfontfamily\chapitrenumfont{QTCloisteredMonk}[
+  Extension = .otf,
+  Scale = 1.15
+]
+
 \DeclareFontFamily{U}{skulls}{}
 \DeclareFontShape{U}{skulls}{m}{n}{ <-> skull }{}
 
@@ -141,14 +146,12 @@
 \newcommand{\annee}[1]{\gdef\@annee{#1}}
 \newcommand{\filiere}[1]{\gdef\@filiere{#1}}
 \newcommand{\etablissement}[1]{\gdef\@etablissement{#1}}
-\newcommand{\auteur}[1]{\gdef\@auteur{#1}}
 
 \newcommand{\@numchapitre}{}
 \newcommand{\@titrechapitre}{}
 \newcommand{\@annee}{}
 \newcommand{\@filiere}{}
 \newcommand{\@etablissement}{}
-\newcommand{\@auteur}{}
 
 \newcommand{\setchapitre}[1]{%
   \setcounter{chapitre}{#1}%
@@ -402,8 +405,8 @@
 \fi
 
 \fancyfoot[L]{\scshape\@filiere}
-\fancyfoot[C]{\scshape\@etablissement~\@annee}
-\fancyfoot[R]{\scshape\@auteur}
+\fancyfoot[C]{\scshape\@etablissement}
+\fancyfoot[R]{\scshape Année \@annee}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -411,8 +414,8 @@
   \fancyhf{}
 
   \fancyfoot[L]{\scshape\@filiere}
-  \fancyfoot[C]{\scshape\@etablissement~\@annee}
-  \fancyfoot[R]{\scshape\@auteur}
+  \fancyfoot[C]{\scshape\@etablissement}
+  \fancyfoot[R]{\scshape Année \@annee}
   
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
@@ -425,9 +428,15 @@
   \begin{center}
     {\Huge \bfseries Chapitre~\@numchapitre{} -- \@titrechapitre \par}
   \end{center}
-    \vspace{1cm}
-    \tableofcontents
-    \vfill
+  \vspace{0.6cm}
+  \begin{center}
+    {\normalsize Polycopié rédigé par \textbf{L. Dehmas}, \textbf{C. Perry} \textit{et~al.}\par}
+    \vspace{0.2cm}
+    {{\small\itshape D'après les enseignements dispensés en \@filiere par} {\normalsize\bfseries Yann Quibel}\par}
+  \end{center}
+  \vspace{0.5cm}
+  \tableofcontents
+  \vfill
   \begin{center}
     {\Large Année \@annee \par}
     {\normalsize Version du \today \par}
@@ -452,7 +461,10 @@
       \hfill
       \parbox[b]{2.5cm}{%
         \raggedleft
-        \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
+        \color{vorange}%
+        \fontsize{80}{70}\selectfont
+        \chapitrenumfont
+        \@numchapitre
       }%
     \end{minipage}%
   \else%
@@ -467,7 +479,10 @@
         \hfill
         \parbox[b]{3cm}{%
           \raggedleft
-          \fontsize{70}{60}\selectfont\color{vorange}\@numchapitre
+          \color{vorange}%
+          \fontsize{80}{70}\selectfont
+          \chapitrenumfont
+          \@numchapitre
         }%
       \end{minipage}%
     }%

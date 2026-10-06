@@ -71,13 +71,11 @@
     \end{tikzpicture}
     \vspace{0.5cm}
     
-    Salut à toi qui passe par là ! Vous trouvez là l'ensemble du cours de notre grand Quibel, ainsi que les 
-    TD et parfois des corrections. Si certains veulent se porter volontaire pour écrire des corrections, faites 
-    vous plaisir, on les intégrera. 
+    Ce polycopié rassemble l'ensemble du cours de notre grand Quibel, ainsi que les 
+    TD et parfois des corrections. Si vous voulez vous porter volontaire pour écrire des corrections, faites 
+    vous plaisir, elles seront intégrées.
 
-    \avspace Si jamais vous avez des suggestions d'amélioration pour le style, 
-    des formats que vous aimeriez bien avoir (une version plus compacte pour 
-    imprimer, format tablette, ...), n'hésitez pas à nous demander !
+    \avspace N'hésitez pas à nous contacter si vous avez des suggestions !
 
     \avspace Bien entendu si vous voyez une erreur, merci de nous le signaler !
 
@@ -96,8 +94,94 @@
   \vspace{0.5cm}
   {\normalsize Version du \today \par}
   \vspace{1cm}
+  \makeatother
 \end{center}
-\makeatother
+
+\clearpage
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(3,0);
+  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(0,-3);
+  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(-3,0);
+  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(0,-3);
+
+  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(3,0);
+  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(0,3);
+  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(-3,0);
+  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(0,3);
+
+  \foreach \i in {1,...,5} {
+    \draw[vorange!30, line width=0.5pt] (current page.north west) ++(2+\i*0.3, -1.5) circle (0.15);
+  }
+  \foreach \i in {1,...,5} {
+    \draw[vorange!30, line width=0.5pt] (current page.south east) ++(-2-\i*0.3, 1.5) circle (0.15);
+  }
+\end{tikzpicture}
+
+\begin{center}
+  \vspace*{1cm}
+
+  \begin{tikzpicture}
+    \node[text width=12cm, align=center] {
+      {\LARGE\bfseries\scshape Crédits \& Remerciements\par}
+    };
+    \draw[vorange, line width=1.5pt] (-4,-0.6) -- (4,-0.6);
+  \end{tikzpicture}
+
+  \vspace{1.2cm}
+
+  \begin{minipage}{0.85\textwidth}
+    \begin{tikzpicture}
+      \draw[vorange, line width=1pt] (0,0) -- (\linewidth,0);
+    \end{tikzpicture}
+    \vspace{0.6cm}
+
+    \begin{center}
+      {\large\bfseries\color{vorange!95!black}\scshape Auteurs principaux}\\[0.4em]
+      \begin{tabular}{ccc}
+        {\Large\bfseries L. Dehmas} & {\Large\bfseries C. Perry} \\
+        {\footnotesize\scshape MPI* 2025--2026} & {\footnotesize\scshape MPI* 2026--2027}
+      \end{tabular}\\[0.4em]
+      {\small\itshape Rédaction du cours et des exercices, mise en forme}\par
+    \end{center}
+
+    \vspace{0.8cm}
+
+    \makeatletter
+    \begin{center}
+      {\large\bfseries\color{vorange!95!black}\scshape Enseignement \& Cours d'origine}\\[0.3em]
+      {\Large\bfseries M. Yann Quibel}\\[0.2em]
+      {\small Professeur de mathématiques en \@filiere{} au \@etablissement}\\[0.3em]
+      {\small\itshape Ce polycopié reprend et met en forme l'ensemble des cours magistraux\\et travaux dirigés dispensés au cours des années scolaires 2025-2026 et \@annee.}\par
+    \end{center}
+    \makeatother
+    
+    \vspace{0.8cm}
+
+    \begin{center}
+      {\large\bfseries\color{vorange!95!black}\scshape Autres contributions}\\[0.4em]
+      {\normalsize
+        E. Allamand {\footnotesize(\textsc{MPI* 2026--2027})}
+      }\\[0.3em]
+      {\small\itshape Solutions d'exercices, relectures}\par
+    \end{center}
+
+    \vspace{0.6cm}
+    \begin{tikzpicture}
+      \draw[vorange, line width=1pt] (0,0) -- (\linewidth,0);
+    \end{tikzpicture}
+  \end{minipage}
+
+  \vfill
+
+  \makeatletter
+  {\small\scshape \@filiere{} -- \@etablissement\par}
+  \vspace{0.3cm}
+  {\footnotesize Document composé sous \LaTeX{} -- Année \@annee\par}
+  \vspace{0.8cm}
+  \makeatother
+\end{center}
 \clearpage
 
 \begin{center}

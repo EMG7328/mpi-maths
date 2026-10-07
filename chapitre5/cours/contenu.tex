@@ -64,7 +64,7 @@
 \begin{proposition}{Nature des parties de $\N$}{}
     Dans $\N$, il y a deux types de parties : 
     \begin{itemize}
-        \item Les parties majorées qui sont finies 
+        \item Les parties majorées qui sont finies.
         \item Les parties non majorées qui sont infinies et dénombrables.
     \end{itemize}
 
@@ -105,7 +105,7 @@
 \begin{proposition}{Opérations conservant le caractère dénombrable}{}
     \begin{itemize}
         \item $\forall p \in \N, \, \N^p$ est dénombrable.
-        \item Tout produit cartésien fini d'ensembles dénombrables est dénombrable
+        \item Tout produit cartésien fini d'ensembles dénombrables est dénombrable.
     \end{itemize}
 
 \end{proposition}
@@ -201,14 +201,13 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     Posons $b_i = 4$ si $a_i \neq 4$ et $b_i = 5$ sinon, et posons $\displaystyle y = \sum_{i = 1}^\infty \frac{b_{i + 1}}{10^i} \in ]0, 1[$ 
 
-    Posons $j = \psi^{-1}(y)$ 
-
-    La jème décimale de $y$ est $b_j$ par définition de $y$ sa $j$e décimale est 
+    Posons $j = \psi^{-1}(y)$,
+    la jème décimale de $y$ est $b_j$ par définition de $y$ sa $j$e décimale est 
     $a_j$, absurde. Donc $\psi \circ \varphi$ non bijective.
 \end{proof}
 
 \begin{theoreme}{Non équipotence de $E$ et $\mathscr P(E)$ - LHP}{}
-    Soit $E$ un ensemble non vide. Alors il n'existe pas de bijection entre $E$ et $\mathscr P(E)$
+    Soit $E$ un ensemble non vide. Alors il n'existe pas de bijection entre $E$ et $\mathscr P(E)$.
 \end{theoreme}
 
 \begin{proof}
@@ -222,29 +221,26 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{proof}
 
 \begin{remarque}
-    On montrerait que $P(\N)$ est en bijection avec $\R$.
+    On montrerait que $\mathscr P(\N)$ est en bijection avec $\R$.
 \end{remarque}
 
 \section{Familles sommables}
-\subsection{Définition}
+\subsection{Définition et premières propriétés}
 
 \begin{definition}{Famille sommable}{}
-    Soit $I$ un ensemble non vide et $(U_i)_{i \in I}$ une famille de complexes. 
+    Soit $I$ un ensemble non vide et $(u_j)_{j \in I}$ une famille de complexes indexée par $I$. 
     On dit que cette famille est sommable ssi l'ensemble 
-    $$\left\{\sum_{j \in J} \mid u_j \mid, \, J \subset I \text{ fini} \right\}$$
+    $$\left\{\sum_{j \in J} |u_j|, \, J \subset I \text{ fini} \right\}$$
     est majoré. 
 \end{definition}
 
-
-\subsection{Propriétés}
-
 \begin{proposition}{Stabilité par combinaison linéaire}{}
-
-    Soit $(U_i)_{i \in I}$ une famille sommable de complexes et $I' \subset I$ non vide. 
-    Alors $(U_i)_{i \in I'}$ est sommable. 
-
-    Si $(v_i)$ est une autre famille sommable, et $\alpha, \beta \in \C$, alors 
-    $(\alpha u_i + \beta v_i)_{i \in I}$ est sommable.
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes et $I' \subset I$ non vide.
+    \begin{itemize}
+        \item Alors $(u_j)_{j \in I'}$ est sommable. 
+        \item Si $(v_j)$ est une autre famille sommable, et $\alpha, \beta \in \C$, alors 
+        $(\alpha u_j + \beta v_j)_{j \in I}$ est sommable.
+    \end{itemize}
 \end{proposition}
 
 \idee{Majorer les sommes partielles.}
@@ -254,22 +250,21 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     $\displaystyle \sum_{j \in J} |u_j| \leqslant M_1$ et $\displaystyle \sum_{j \in J} |v_j| \leqslant M_2$.
 
-    Soit $J \subset I'$ fini, alors $J \subset I$ donc $\sum_{i \in J } |u_i| \leqslant M_1$.
+    Soit $J \subset I'$ fini, alors $J \subset I$ donc $\sum_{j \in J } |u_j| \leqslant M_1$.
 
-    Donc $(u_i)_{i \in I'}$ est sommable.
+    Donc $(u_j)_{j \in I'}$ est sommable.
 
     Soit $J \subset I$ fini, alors
     $$\sum_{j \in J} |\alpha u_j + \beta v_j | \leqslant \sum_{j \in J} (|\alpha| |u_j| + |\beta| |v_j|) \leqslant |\alpha| M_1 + |\beta| M_2$$
 \end{proof}
 
-
 \subsection{Somme d'une famille sommable}
 
 \begin{proposition}{Inégalité de comparaison}{}
-    Soit $(u_i)_{i \in I}$ une famille sommable de complexes et $(v_i)_{i \in I}$
-    une autre famille telle que $\forall i \in I, \, |v_i| \leqslant |u_i|$.
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes et $(v_j)_{j \in I}$
+    une autre famille telle que $\forall j \in I, \, |v_j| \leqslant |u_j|$.
 
-    Alors $(v_i)_{i \in I}$ est sommable.
+    Alors $(v_j)_{j \in I}$ est sommable.
 \end{proposition}
 
 \begin{proof}
@@ -292,8 +287,8 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Soit $(u_i)_{i \in I}$ une famille sommable de réels. 
     Posons $\forall i \in I : $ 
     \begin{align*}
-        u_i^+ = \frac 1 2 (\mid u_i \mid + u_i)\\
-        u_i^- = \frac 1 2 (\mid u_i \mid - u_i)
+        u_i^+ = \frac 1 2 (|u_i| + u_i)\\
+        u_i^- = \frac 1 2 (|u_i| - u_i)
     \end{align*}
 
     Alors $0 \leqslant u_i^+, u_i^- \leqslant |u_i|$ et donc $(u_i^+)_{i \in I}$ et $(u_i^-)_{i \in I}$ sont sommables.
@@ -316,10 +311,10 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
 
 \begin{proposition}{Linéarité de la somme}{}
-    Soit $(u_i)_{i \in I}, (v_i)_{i \in I}$ deux familles sommables de complexes et $\alpha, \beta \in \C$.
+    Soit $(u_j)_{j \in I}, (v_j)_{j \in I}$ deux familles sommables de complexes et $\alpha, \beta \in \C$.
 
-    Alors $(\alpha u_i + \beta v_i)_{i \in I}$ est sommable et :
-    $$\sum_{i \in I} (\alpha u_i + \beta v_i) = \alpha \sum_{i \in I} u_i + \beta \sum_{i \in I} v_i$$
+    Alors $(\alpha u_j + \beta v_j)_{j \in I}$ est sommable et :
+    $$\sum_{j \in I} (\alpha u_j + \beta v_j) = \alpha \sum_{j \in I} u_j + \beta \sum_{j \in I} v_j$$
 \end{proposition}
 
 \begin{proof}
@@ -330,18 +325,18 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Soient $I$ et $K$ des ensembles non vides et $\displaystyle I = \bigsqcup_{k \in K} I_k$ union
     disjointe d'ensembles non vides.
 
-    Soit $(u_i)_{i \in I}$ une famille de complexes. Alors $(u_i)_{i \in I}$ est sommable ssi
+    Soit $(u_j)_{j \in I}$ une famille de complexes. Alors $(u_j)_{j \in I}$ est sommable ssi
     
-    $\forall k \in K, \, (u_i)_{i \in I_k}$ est sommable et $\displaystyle \left( \sum_{i \in I_k} |u_i| \right)_{k \in K}$ est sommable
+    $\forall k \in K, \, (u_j)_{j \in I_k}$ est sommable et $\displaystyle \left( \sum_{j \in I_k} |u_j| \right)_{k \in K}$ est sommable
     et en ce cas, 
-    $$ \sum_{i \in I} u_i = \sum_{k \in K} \left( \sum_{i \in I_k} u_i \right)$$
+    $$ \sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right)$$
 \end{theoreme}
 
 \subsection{Conséquence : permutation des termes}
 
 \begin{theoreme}{Invariance par bijection}{}
-    Soit $(u_i)_{i \in I}$ une famille sommable de complexes et $\sigma: I \to I$ une bijection 
-    alors $(u_{\sigma(i)})_{i \in I}$ est sommable et $\displaystyle \sum_{i \in I} u_i = \sum_{i \in I} u_{\sigma(i)}$.
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes et $\sigma: I \to I$ une bijection 
+    alors $(u_{\sigma(j)})_{j \in I}$ est sommable et $\displaystyle \sum_{j \in I} u_j = \sum_{j \in I} u_{\sigma(j)}$.
 \end{theoreme}
 
 \begin{proof}
@@ -349,30 +344,30 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     $\sigma$ étant une bijection, $\displaystyle I = \bigsqcup_{k \in K} I_k$.
 
-    $(u_i)_{i \in I_k}$ étant sommable, par le théorème de sommation par paquets, 
-    $\forall k \in K, \, (u_i)_{i \in I_k}$ est sommable 
-    et comme $\displaystyle \sum_{i \in I_k} |u_i| = |u_{\sigma(k)}|$,
-    on a que $(u_{\sigma(k)})_{k \in K}$ est sommable, et 
-    $$\sum_{i \in I} u_i = \sum_{k \in K} \left( \sum_{i \in I_k} u_i \right) = \sum_{k \in K} u_{\sigma(k)} = \sum_{i \in I} u_{\sigma(i)}$$
+    $(u_j)_{j \in I_k}$ étant sommable, par le théorème de sommation par paquets, 
+    $\forall k \in K, \, (u_j)_{j \in I_k}$ est sommable 
+    et comme $\displaystyle \sum_{j \in I_k} |u_j| = |u_{\sigma(k)}|$,
+    on a que $(u_{\sigma(k)})_{k \in K}$ est sommable, et :
+    $$\sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right) = \sum_{k \in K} u_{\sigma(k)} = \sum_{j \in I} u_{\sigma(j)}$$
 \end{proof}
 
 \subsection{Lien avec la dénombrabilité}
 
 \begin{definition}{Support d'une famille}{}
-    Soit $(u_i)_{i \in I}$ une famille de complexes. On appelle support de cette 
-    famille l'ensemble $\{ i \in I | u_i \neq 0 \}$.
+    Soit $(u_j)_{j \in I}$ une famille de complexes. On appelle support de cette 
+    famille l'ensemble $\{j \in I | u_j \neq 0 \}$.
 \end{definition}
 
 \begin{proposition}{Somme sur le support}{}
-    Soit $(u_i)_{i \in I}$ une famille sommable de complexes de support $S$. Alors :
-    $$\sum_{i \in I} u_i = \sum_{i \in S} u_i$$
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes de support $S$. Alors :
+    $$\sum_{j \in I} u_j = \sum_{j \in S} u_j$$
 \end{proposition}
 
 
 \begin{proof}
     Posons $K = \{1, 2\}$, et $I_1 = S, \, I_2 = I \setminus S$.
 
-    Par le théorème de sommation par paquets, $\displaystyle \sum_{i \in I} u_i = \sum_{i \in S} u_i + \sum_{i \in I \setminus S} u_i$.
+    Par le théorème de sommation par paquets, $\displaystyle \sum_{j \in I} u_j = \sum_{j \in S} u_j + \sum_{j \in I \setminus S} u_j$.
 \end{proof}
 
 \begin{theoreme}{Nature du support d'une famille sommable}{}
@@ -380,23 +375,22 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{theoreme}
 
 \begin{proof}
-    Soit $(u_i)_{i \in I}$ une famille sommable de complexes. 
+    Soit $(u_j)_{j \in I}$ une famille sommable de complexes. 
 
-    Posons $I_0 = \{ i \in I, \, 1 < \mid u_i \mid \}$, et pour $n \in \N^*$,
-    $I_n = \{ i \in I, \, \frac 1 {n + 1} < \mid u_i \mid \leqslant \frac 1 n \}$.
+    Posons $I_0 = \{j \in I, \, 1 < |u_j| \}$, et pour $n \in \N^*$,
+    $I_n = \{j \in I, \, \frac 1 {n + 1} < |u_j| \leqslant \frac 1 n \}$.
 
     Montrons que $\displaystyle S = \bigsqcup_{n \in \N} I_n$. 
 
-    $\forall n \in \N, \, I_n \subset S$ car $\forall i \in I_n, \, u_i \neq 0$
+    $\subset$ $\forall n \in \N, \, I_n \subset S$ car $\forall j \in I_n, \, u_j \neq 0$
+    Si $n \neq n', \, I_n \cap I_{n'} = \emptyset$ donc $\displaystyle \bigsqcup_{n \in \N} I_n \subset S$.
 
-    Si $n \neq n', \, I_n \cap I_{n'} = \emptyset$ donc $\displaystyle \bigsqcup_{n \in \N} I_n \subset S$
-
-    Si $i \in S$, alors $\mid u_i \mid > 0$, on a donc $\displaystyle i \in I_{\left\lfloor \frac 1 {\mid u_i \mid} \right\rfloor}$, 
+    $\supset$ $j \in S$, alors $\mid u_j \mid > 0$, on a donc $\displaystyle j \in I_{\left\lfloor \frac 1 {|u_j|} \right\rfloor}$, 
     donc $S \subset \displaystyle \bigsqcup_{n \in \N} I_n$.
 
-    Soit $k \in \N$, alors $\forall i \in I_k, \, \frac 1 {k + 1} < \underbrace{\mid u_i \mid}_{\text{sommable}}$
+    Soit $k \in \N$, alors $\forall j \in I_k, \, \frac 1 {k + 1} < \underbrace{|u_j|}_{\text{sommable}}$
 
-    Donc $\left( \frac 1 {k + 1} \right)_{i \in I_k}$ est sommable, or $\frac 1 {k + 1}$ est constant et positif, 
+    Donc $\left( \frac 1 {k + 1} \right)_{j \in I_k}$ est sommable, or $\frac 1 {k + 1}$ est constant et positif, 
 
     donc $I_k$ est fini, donc $S$ est au plus dénombrable.
 \end{proof}

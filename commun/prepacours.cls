@@ -579,12 +579,11 @@
 \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.5em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3em}}
 
-% Formatage personnalisé pour les chapitres dans la table des matières
 \newcommand{\l@chapitre}[2]{%
   \vspace{0.5em}%
   \ifnum \c@tocdepth >\m@ne
     \addpenalty{-\@highpenalty}%
-    \setlength\@tempdima{6em}% Largeur pour "Chapitre XX"
+    \setlength\@tempdima{6em}%
     \begingroup
       \parindent \z@ \rightskip \@pnumwidth
       \parfillskip -\@pnumwidth
@@ -600,7 +599,6 @@
   \vspace{0.2em}%
 }
 
-% Configuration hyperref pour le niveau chapitre
 \providecommand{\toclevel@chapitre}{0}
 \providecommand{\toclevel@section}{1}
 \providecommand{\toclevel@subsection}{2}
@@ -628,8 +626,6 @@
 
 \titlespacing*{\paragraph}{1.5em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
-% Commande pour démarrer un chapitre dans le document intégral
-% (sans page de garde ni table des matières propre au chapitre)
 \newcommand{\chapitreintegral}[2]{%
   \clearpage
   \setchapitre{#1}%
@@ -637,23 +633,38 @@
   \gdef\@titrechapitre{#2}%
   \markboth{Chapitre #1 -- #2}{}%
   \addcontentsline{toc}{chapitre}{\protect\numberline{Chapitre #1}#2}%
-  % Page de sommaire local en pleine largeur
-  \newgeometry{top=3cm, bottom=3cm, left=3cm, right=3cm}%
-  \thispagestyle{empty}%
+  \newgeometry{top=2.8cm, bottom=2.8cm, left=2.8cm, right=2.8cm}%
+  \pagestyle{empty}%
   \startcontents[chapters]%
-  \vspace*{1.5cm}%
-  \begin{center}%
-    {\Huge\bfseries\color{vorange!90!black} Chapitre {#1} : #2\par}%
-    \vspace{1cm}%
-    {\Large\bfseries\color{black!80} Table des matières\par}%
-    \vspace{0.8cm}%
-    \begin{minipage}{0.85\textwidth}%
+  \vspace*{0.6cm}%
+  
+  \begin{center}
+    {\LARGE\scshape\bfseries Chapitre~{\fontsize{44}{48}\selectfont\color{vorange}\chapitrenumfont #1}}\\[0.6em]
+    
+    {\fontsize{26}{32}\selectfont\bfseries #2\par}
+    
+    \vspace{0.6cm}
+    \begin{tikzpicture}
+      \draw[vorange, line width=1.4pt] (-4.5,0) -- (4.5,0);
+      \fill[vorange] (-0.35,-0.06) rectangle (0.35,0.06);
+    \end{tikzpicture}
+  \end{center}
+
+  \vspace{1.2cm}%
+
+  \begin{center}
+    {\large\bfseries\scshape\color{black!80} Table des matières\par}%
+    \vspace{0.6cm}%
+    \begin{minipage}{0.88\textwidth}%
+      \hypersetup{linkcolor=black}%
       \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}%
     \end{minipage}%
   \end{center}%
+
   \vfill%
   \clearpage
   \passerenmodecours
+  \pagestyle{fancy}%
   \thispagestyle{premierepagechapitre}%
 }
 

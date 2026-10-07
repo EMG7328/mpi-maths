@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import os
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import re
@@ -28,6 +29,12 @@ parser.add_argument("-a", "--all", action='store_true', help='Whether to compile
 
 args = parser.parse_args()
 
+env = os.environ.copy()
+fonts_dir = (Path.cwd() / "commun" / "fonts").resolve()
+current_osfontdir = env.get("OSFONTDIR", "")
+
+env["OSFONTDIR"] = f"{fonts_dir}//:{current_osfontdir}" if current_osfontdir else f"{fonts_dir}//"
+
 def clean_dir (dir) :
     for file in dir.iterdir():
         if file.is_file() and file.suffix in GARBAGE_EXTENSIONS :
@@ -46,7 +53,8 @@ def compile_file (file, output_dir, cwd_path) :
                                 file
                             ],
                             capture_output=True,
-                            cwd=cwd_dir
+                            cwd=cwd_dir,
+                            env=env
                         )
 
     if(result.returncode != 0) :

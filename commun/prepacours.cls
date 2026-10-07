@@ -50,8 +50,9 @@
 
 \setmathfont{Libertinus Math}[Scale=MatchLowercase]
 
-\newfontfamily\chapitrenumfont{QTCloisteredMonk}[
-  Extension = .otf,
+\newfontfamily\chapitrenumfont{UnifrakturCook}[
+  Extension = .ttf,
+  UprightFont = *-Bold,
   Scale = 1.15
 ]
 
@@ -123,16 +124,12 @@
 % =============================================================================
 % COULEURS
 % =============================================================================
-\definecolor{vorange}{RGB}{245, 130, 32}
+\definecolor{vorange}{RGB}{230, 120, 0}
 \definecolor{bg_theoreme}{RGB}{255, 237, 222}
 \definecolor{bg_def_start}{RGB}{255, 237, 222}
 
 \definecolor{ideayellow}{RGB}{230, 160, 0}
 \definecolor{dangerred}{RGB}{220, 40, 40}
-
-
-\definecolor{exobg}{RGB}{245,247,250}
-\definecolor{exoframe}{RGB}{100,110,120}
 
 % =============================================================================
 % COMPTEURS ET CHAPITRES
@@ -194,7 +191,7 @@
       boxrule=0.4pt,
       colframe=black!85,
       width=\dimexpr\linewidth-1.8pt\relax,
-      drop shadow={vorange!40, xshift=1.8pt, yshift=-1.8pt},
+      drop shadow={vorange!60, xshift=1.8pt, yshift=-1.8pt},
       left=8pt,
       right=8pt,
       top=6pt,
@@ -374,7 +371,7 @@
   \phantomsection%
   \hypertarget{sol.\thechapitre.#1}{}%
   \par\vspace{14pt}\noindent%
-  {\color{vorange!40}\hrule height 0.6pt}%
+  {\color{vorange!70}\hrule height 1pt}%
   \vspace{8pt}\noindent%
   \begingroup%
   \bfseries%
@@ -421,29 +418,91 @@
   \renewcommand{\footrulewidth}{0pt}
 }
 
-\newcommand{\pagedegarde}{
+\newcommand{\pagedegarde}{%
   \clearpage
-  \newgeometry{top=3cm, bottom=3cm, left=3cm, right=3cm}
+  \newgeometry{top=2.4cm, bottom=2.4cm, left=2.5cm, right=2.5cm}%
   \pagestyle{empty}%
+  
+  \begin{tikzpicture}[remember picture, overlay]
+    \draw[vorange, line width=2.5pt] (current page.north west) ++(1.4,-1.4) -- ++(2.8,0);
+    \draw[vorange, line width=2.5pt] (current page.north west) ++(1.4,-1.4) -- ++(0,-2.8);
+    \draw[vorange, line width=2.5pt] (current page.north east) ++(-1.4,-1.4) -- ++(-2.8,0);
+    \draw[vorange, line width=2.5pt] (current page.north east) ++(-1.4,-1.4) -- ++(0,-2.8);
+
+    \draw[vorange, line width=2.5pt] (current page.south west) ++(1.4,1.4) -- ++(2.8,0);
+    \draw[vorange, line width=2.5pt] (current page.south west) ++(1.4,1.4) -- ++(0,2.8);
+    \draw[vorange, line width=2.5pt] (current page.south east) ++(-1.4,1.4) -- ++(-2.8,0);
+    \draw[vorange, line width=2.5pt] (current page.south east) ++(-1.4,1.4) -- ++(0,2.8);
+
+    \draw[vorange!35, line width=0.6pt] 
+      ([xshift=1.8cm, yshift=-1.8cm]current page.north west) 
+      rectangle 
+      ([xshift=-1.8cm, yshift=1.8cm]current page.south east);
+
+    \node[anchor=north east, inner sep=0, opacity=0.2] 
+      at ([xshift=-2cm, yshift=-2cm]current page.north east) {%
+        \fontsize{150}{130}\selectfont\color{vorange}\chapitrenumfont\@numchapitre%
+      };
+  \end{tikzpicture}%
+
+  \vspace*{0.2cm}
   \begin{center}
-    {\Huge \bfseries Chapitre~\@numchapitre{} -- \@titrechapitre \par}
+    {\huge\bfseries\scshape\color{vorange!95!black} \@filiere}\\[0.3em]
+    {\Large\scshape\color{black!75} \@etablissement}\par
+    \vspace{0.4cm}
+    \tikz\draw[vorange, line width=1.5pt] (-2.5,0) -- (2.5,0);
   \end{center}
-  \vspace{0.6cm}
-  \begin{center}
-    {\normalsize Polycopié rédigé par \textbf{L. Dehmas}, \textbf{C. Perry} \textit{et~al.}\par}
-    \vspace{0.2cm}
-    {{\small\itshape D'après les enseignements dispensés en \@filiere par} {\normalsize\bfseries Yann Quibel}\par}
-  \end{center}
-  \vspace{0.5cm}
-  \tableofcontents
+
   \vfill
+
   \begin{center}
-    {\Large Année \@annee \par}
-    {\normalsize Version du \today \par}
+    {\LARGE\bfseries\scshape Chapitre~{\fontsize{48}{52}\selectfont\color{vorange}\chapitrenumfont\@numchapitre}}\\[0.8em]
+    {\fontsize{32}{38}\selectfont\bfseries \@titrechapitre\par}
+    
+    \vspace{0.8cm}
+    \begin{tikzpicture}
+      \draw[vorange, line width=2pt] (-5,0) -- (5,0);
+    \end{tikzpicture}
   \end{center}
+
+  \vspace{0.8cm}
+
+  \begin{center}
+    \begin{tcolorbox}[
+      width=0.88\linewidth,
+      arc=3mm,
+      boxrule=1pt,
+      colback=white,
+      colframe=vorange!85!black,
+      leftrule=5pt,
+      top=14pt, bottom=14pt, left=18pt, right=18pt,
+      shadow={2pt}{-2pt}{0pt}{black!8}
+    ]
+      \centering
+      {\Large\bfseries Polycopié rédigé par \textbf{L. Dehmas}, \textbf{C. Perry} \textit{et~al.}}\\[0.45em]
+      {\large\itshape D'après les enseignements dispensés par \textbf{Yann Quibel}}\par
+      \vspace{0.8em}
+      {\color{vorange!30}\hrule height 0.6pt}\par
+      \vspace{0.8em}
+      {\normalsize\scshape\color{black!70} 
+          Cours de mathématiques en maths spé
+      }
+    \end{tcolorbox}
+  \end{center}
+
+  \vfill
+
+  \begin{center}
+    {\large\bfseries\scshape Année \@annee\par}
+    \vspace{0.15cm}
+    {\small\color{black!60} Document composé sous \LaTeX{} -- Version du \today\par}
+  \end{center}
+  \vspace*{0.2cm}
+
+  \clearpage
   \passerenmodecours
   \pagestyle{fancy}%
-  \thispagestyle{premierepagechapitre}
+  \thispagestyle{premierepagechapitre}%
   \displaychapitrebanner
 }
 

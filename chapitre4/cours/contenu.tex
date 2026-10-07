@@ -5,7 +5,7 @@ On prendra $\K = \C$ ou $\K = \R$ et $(E,N)$ un $\K$-espace vectoriel normé.
 
 \begin{definition}{Série}{}
     \index{Serie@Série}
-    On appelle série à termes dans $E$ tout couple de suites de $E$ $\left( (u_n)_{n\in\N}, (S_n)_{n\in\N} \right)$ vérifiant 
+    On appelle série à termes dans $E$ tout couple de suites de $E$ $\left( (u_n)_{n\in\N}, (S_n)_{n\in\N} \right)$ vérifiant :
     $$\forall n \in \N, \, S_n = \sum_{k=0}^n u_k$$
 
     On appelle $(u_n)_n$ le terme général de la série et $(S_n)_n$ la somme partielle.
@@ -723,25 +723,48 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
 \begin{theoreme}{Exponentielle de matrices}{}
     Pour $A \in \mathscr M_p(\K)$, la série $\sum_{n \geqslant 0} \frac{A^n}{n!}$ converge absolument. 
     Sa somme est appelée exponentielle de $A$ et est notée :
-    $$\displaystyle \operatorname{exp} A = e^A = \sum_{n = 0}^{+\infty} \frac{A^n}{n!}$$
+    $$\displaystyle \exp(A) = e^A = \sum_{n = 0}^{+\infty} \frac{A^n}{n!}$$
 \end{theoreme}
 
-\idee{
-    Utiliser la sous multiplicativité de la norme matricielle. 
-}
+\idee{Utiliser la sous multiplicativité de la norme matricielle. }
 
 \begin{proof}
-    Pour $n \geqslant 1$, $N(A^n) \leqslant N(A)^n$.
+    Montrons que pour $n \geqslant 1$, $N(A^n) \leqslant N(A)^n$.
 
-    Vrai pour $n = 1$. 
+    \begin{itemize}
+        \item Évident pour $n = 1$. 
 
-    Supposons le pour un certain $n$, alors 
+        \item Supposons le pour un certain $n$, alors :
 
-    $N(A^{n + 1}) = N(A^n A) \leqslant N(A^n) N(A) \leqslant N(A)^n N(A) = N(A)^{n + 1}$
-    par HR 
+        $N(A^{n + 1}) = N(A^n A) \leqslant N(A^n) N(A) \leqslant N(A)^n N(A) = N(A)^{n + 1}$
+        par hypothèse de récurrence.
+    \end{itemize}
 
     Donc pour $n \geqslant 1$, $N\left( \frac{A^n}{n!} \right) \leqslant \frac{N(A)^n}{n!}$ TGSCV. 
 \end{proof}
+
+\begin{proposition}{}{}
+    Pour $A,B \in \mathscr M_p(\K)$ tels que $AB=BA$ on a
+    $\exp(A + B) = \exp(A) \cdot \exp(B)$.
+\end{proposition}
+
+\begin{proof}
+Voir chapitre 5 (Familles sommables).
+\end{proof}
+
+\marginenote{Anecdote}{
+    Pour prouver le théorème de Fermat, au XIXe,
+    Kumer, un mathématicien allemand, a travaillé dans $\Z[\omega]$
+    et a inventé les nombres idéaux.
+
+    Il se trouve que l'ensemble des polynômes annulateurs (qui sont ceux qu'on propose ici)
+    est un idéal.
+}
+
+\begin{remarque}
+On verra plus tard que pour calculer $A^k$, $A \in \mathscr M_p(\K)$, on trouve une relation de
+dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots, A^p$.
+\end{remarque}
 
 \begin{exemple}
     $\begin{pmatrix}
@@ -758,8 +781,10 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
     \end{pmatrix} = \begin{pmatrix}
         e^2 & 0 \\
         0 & e^3
-    \end{pmatrix}$
+    \end{pmatrix}$ \\
+\end{exemple}
 
+\begin{exemple}
     \lvspace $A = \begin{pmatrix}
         1 & 4 \\
         2 & 3
@@ -774,7 +799,7 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
     
     Mais $\deg(R_n) < 2$ donc $R_n(X) = a_n X + b_n$. 
 
-    Donc $X^n = (X - 5)(X + 1) Q_n(X) + a_n X + b_n$. Alors en évaluant en 5 et -1, on trouve
+    Donc $X^n = (X - 5)(X + 1) Q_n(X) + a_n X + b_n$. Alors en évaluant en 5 et -1, on trouve :
     $\left\{ \begin{array}{rl}
         5^n & = 5 a_n + b_n \\
         (-1)^n & = -a_n + b_n
@@ -783,17 +808,17 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
         b_n & = \frac{5^{n} + 5(-1)^n}{6}
     \end{array} \right.$
 
-    En évaluant en $A$, on trouve 
+    En évaluant en $A$, on trouve :
     
     $A^n = P(A) Q_n(A) + a_n A + b_n I_2 = \frac{5^n - (-1)^n}{6} A + \frac{5^n + 5(-1)^n}{6} I_2$.
 
     Donc $A_n = 5^n \underbrace{\left( \frac{A + I_2} 6 \right)}_{B} + (-1)^n \underbrace{\left( \frac{-A + 5 I_2}{6} \right)}_{C}$.
 
     Donc $\displaystyle e^A = \sum_{n = 0}^{+\infty} \frac{5^n}{n!}B + \frac{(-1)^n}{n!} C = e^5 B + e^{-1} C$. \\
+\end{exemple}
 
-    \uline{Un autre exemple :}   
-
-    \svspace $\begin{pmatrix}
+\begin{exemple}
+    $A = \begin{pmatrix}
         2 & -1 & 3\\
         1 & 1 & 2 \\
         3 & -3 & 4 \\
@@ -858,6 +883,23 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
     Donc $(I_p - A)S = I_p$. De même $S(I_p - A) = I_p$.
 
 \end{exemple}
+
+\subsection{Complément sur les séries matricielles - LHP}
+
+Pour $A \in \mathscr M_n(\K)$ on considère la série $\sum_{k \geqslant 0} A^k$.
+
+Si $N(A) < 1$ alors cette série est absolument convergente. De plus en ce cas $I_n - A \in \text{GL}_n(\K)$
+et $(I_n - A)^{-1} = \sum_{k=0}^{\infty} A^k$.
+
+\begin{proof}
+Par récurrence sur $k \geqslant 1$, $N(A^k) \leqslant N(A)^k$ TGSCV.
+Donc la série numérique $\sum_{k\geqslant 0} N(A^k)$ converge donc la série converge absolument, posons $S$ sa somme.
+
+$$(I_n - A)S = S - AS = S - A \sum_{k=0}^{\infty} A^k = S - \sum_{k=1}^{\infty} A^k = I_n$$
+Grâce à la continuité du produit matriciel.
+
+Donc $S = (I_n - A)^{-1}$.
+\end{proof}
 
 \section{Compléments sur les séries numériques}
 \subsection{Comparaison série intégrale}
@@ -1243,14 +1285,18 @@ d'un certain rang.
     $$S_n \sim \sum_{k = 0}^{n } \int_{k}^{k + 1} t^\alpha \text d t \sim \frac{n^{\alpha + 1}}{\alpha + 1}$$
 \end{exemple}
 
+\begin{remarque}
+Pour généraliser cette idée il faut $f\in  \mathscr C^{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
+montrerait de la même manière, dans le cas où $\int_0^n f(t) dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) dt$.
+\end{remarque}
 
 \subsection{Sommation des relations de comparaison pour des séries convergentes}
 
-\begin{theoreme}{Sommation des relations de comparaison}{}
+\begin{theoreme}{Sommation des relations de comparaison}{}\\
     Soient $\sum u_n$ et $\sum v_n$ deux séries numériques telles que 
-    $v_n$ réelle de signe constant à partir d'un certain rang et $\sum v_n$ converge.
-
+    $(v_n)$ est de signe constant à partir d'un certain rang et $\sum v_n$ converge.
     Supposons que $u_n = O(v_n)$ (resp $u_n = o(v_n)$, resp $u_n \sim v_n$).
+
     Alors $\sum u_n$ converge et on peut donc définir les restes des deux séries, et 
     $\displaystyle R_n(u) = O(R_n(v))$ (resp $o$, resp $\sim$).
 \end{theoreme}
@@ -1262,22 +1308,19 @@ d'un certain rang.
 
     Donc $\displaystyle \forall n \geqslant n_0, \, \forall N > n, \, \abs{\sum_{k = n + 1 }^{N } u_k} \leqslant \sum_{k = n + 1 }^{N } \abs{u_k} \leqslant M \sum_{k = n + 1}^{N } \abs{v_k}$.
 
-    et donc par passage à la limite, $\abs{R_n(u)} \leqslant M \abs{R_n(v)}$ car $c_k$ de signe constant. 
+    Par passage à la limite, $\abs{R_n(u)} \leqslant M \abs{R_n(v)}$ car $v_k$ de signe constant. 
+    Donc $R_n(u) = O(R_n(v))$. \\
 
-    donc $R_n(u) = O(R_n(v))$. \\
-
-    \uline{Si $u_n = o(v_n)$ :} 
-
-    Même raisonnement avec $\forall \varepsilon$ à la place de $\exists M$. \\
+    \uline{Si $u_n = o(v_n)$,} 
+    on fait le même raisonnement avec $\forall \varepsilon$ à la place de $\exists M$. \\
 
     \uline{Si $u_n \sim v_n$}, alors $u_n - v_n = o(v_n)$. 
 
     Donc $R_n(u - v) = o(R_n(v))$ donc $R_n(u) = R_n(v) + o(R_n(v)) \sim R_n(v)$.
 \end{proof}
 
-
 \begin{exemple}
-    Équivalent du reste d'une série de Riemann convergente. 
+    Cherchons l'équivalent du reste d'une série de Riemann convergente. 
 
     Soit $\alpha > 1$, $\displaystyle \sum_{k = n + 1}^{+ \infty } \frac 1 {k^\alpha}$.
 
@@ -1288,7 +1331,6 @@ d'un certain rang.
     Donc $\displaystyle \left( \frac k {k +  1} \right)^\alpha \leqslant \frac {v_k}{u_k} \leqslant 1$.
 
     Donc $v_k \sim u_k$.
-
     Donc $R_n(u) \sim R_n(v)$, or 
 
     \begin{align*}
@@ -1300,18 +1342,16 @@ d'un certain rang.
     \end{align*}
 
     Donc $\displaystyle \sum_{k = n + 1}^{\infty} \frac 1 {k^\alpha} \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}}$. \\
-     
-    \uline{Un autre exemple :}
+\end{exemple}     
 
-    Équivalent de $\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} = R_n$
-    Donc $\displaystyle \frac 1 {k^2} \sim \frac 1 {k(k + 1)}$.
+\begin{exemple}
+    Trouvons maintenant l'équivalent de $\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} = R_n$.
+    On a $\displaystyle \frac 1 {k^2} \sim \frac 1 {k(k + 1)}$.
 
     Or $\displaystyle \sum_{k = n + 1}^{N} \frac 1 {k(k + 1)} = \sum_{k = n + 1}^{N } \left( \frac 1 k - \frac 1 {k + 1} \right) = \frac 1 {n + 1} - \frac 1 {N + 1}$
 
-    Donc $\displaystyle R_n \sim \frac 1 n$
-
+    Donc $\displaystyle R_n \sim \frac 1 n$.
     Or par sommation des relations de comparaison, 
     
-    $\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} \sim \sum_{k = n + 1}^{\infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n$.
-
+    \center{$\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} \sim \sum_{k = n + 1}^{\infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n$.}
 \end{exemple}

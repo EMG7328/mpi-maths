@@ -289,31 +289,58 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \end{definition}
 
 \begin{theoreme}{Somme d'une famille sommable de réels quelconques}{}
-    Soit $(u_i)_{i \in I}$ une famille sommable de réels. 
+    Soit $(u_j)_{i \in I}$ une famille sommable de réels. 
     Posons $\forall i \in I : $ 
     \begin{align*}
         u_i^+ = \frac 1 2 (\mid u_i \mid + u_i)\\
         u_i^- = \frac 1 2 (\mid u_i \mid - u_i)
     \end{align*}
 
-    Alors $0 \leqslant u_i^+, u_i^- \leqslant |u_i|$ et donc $(u_i^+)_{i \in I}$ et $(u_i^-)_{i \in I}$ sont sommables.
+    Alors $(u_j)_{j\in I}$ est sommable si et seulement si $(u_j^+)_{j\in I}$ et $(u_j^-)_{j\in I}$ sont sommables.
 
-    On définit la somme de la famille $(u_i)_{i \in I}$ par :
+    On définit la somme de la famille $(u_j)_{i \in I}$ par :
     $$\sum_{i \in I} u_i = \sum_{i \in I} u_i^+ - \sum_{i \in I} u_i^-$$
 \end{theoreme}
+\marginenote{Remarque}{Cette définition est bien compatible avec la def 5.17 dans le
+cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
+\begin{proof}{}{}
+
+    $\Rightarrow$ On a $\left\{\begin{array}{cc}
+        |u_j^+| \leqslant |u_j|\\
+        |u_j^-| \leqslant |u_j|
+    \end{array}\right.$, d'où l'implication par la proposition 5.16.\\
+
+    $\Leftarrow$ Supposons que $(u_j^+)_{j\in I}$ et $(u_j^-)_{j\in I}$ sont sommables. Soit $J\subset I$ fini non vide
+
+    $$\sum_{j\in J} |u_j|\leqslant\sum_{j\in J} U_j^+ + \sum_{j\in J} U_j^-\leqslant \sum_{j\in I} U_j^+ + \sum_{j\in I} U_j^- \leftarrow\text{constante indépendante de J}$$
+
+    \end{proof}
+
+
 
 \begin{theoreme}{Somme d'une famille sommable de complexes}{}
 
-    Soit $(u_j)_{j \in I}$ une famille sommable de complexes. Alors :
+    Soit $(u_j)_{j \in I}$ une famille de complexes. Alors :
     
-    $\forall j \in I, \, |\re(u_j)| \leqslant |u_j|$ et $|\im(u_j)| \leqslant |u_j|$.
-    Donc les familles $(\re(u_j))_{j \in I}$ et $(\im(u_j))_{j \in I}$ sont réelles sommables.
+    $(u_j)_{j\in I}$ est sommable si et seulement si $(\re(u_j))_{j\in I}$ et $(\im(u_j)_{j\in I}$ le sont.
 
     On définit la somme de la famille $(u_j)_{j \in I}$ par :
     $$\sum_{j \in I} u_j = \sum_{j \in I} \re(u_j) + i \sum_{j \in I} \im(u_j)$$
 
 \end{theoreme}
 
+\idee{Utiliser la proposition 5.16}
+\begin{proof}{}{}
+    $\Rightarrow$
+    $\begin{array}{cc}
+    |\re(u_j)| \leqslant |u_j| \\
+    |\im(u_j)| \leqslant |u_j|
+    \end{array}$
+
+    $\Leftarrow
+    |u_j|\leqslant |\re(u_j)| + |\im(u_j)|$
+
+\end{proof}
 
 \begin{proposition}{Linéarité de la somme}{}
     Soit $(u_i)_{i \in I}, (v_i)_{i \in I}$ deux familles sommables de complexes et $\alpha, \beta \in \C$.

@@ -11,17 +11,17 @@
     Montrer que si $u_n \sim v_n$ alors $\sum u_n$ et $\sum v_n$ sont de même nature.
 
     \item Étudier la convergence de la série:
-    $$ \sum_{n\ge2}\frac{(i-1)\ln n \sin(\frac{1}{n})}{(\sqrt{n+3}-1)} $$
+    $$ \sum_{n\ge2}\frac{(i-1)\ln n \sin\left(\frac{1}{n}\right)}{(\sqrt{n+3}-1)} $$
     (où $i$ est le complexe tel que $i^2 = -1$).
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: EXERCICE 46 analyse) ---
 \begin{exercice}[Exercice 46 Analyse]
-On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
+On considère la série $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
 \begin{enumerate}
-    \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O(\frac{1}{n^{2}})$ où $\alpha$ est un réel que l'on déterminera.
-    \item En déduire que $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$ converge.
+    \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O\left(\frac{1}{n^{2}}\right)$ où $\alpha$ est un réel que l'on déterminera.
+    \item En déduire que $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$ converge.
     \item La série converge-t-elle absolument ?
 \end{enumerate}
 \end{exercice}
@@ -29,13 +29,17 @@ On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
 % --- Exercice 3 (Source: Exercice 1) ---
 \begin{exercice}
 \begin{enumerate}
-    \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme $\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$.
-    \item Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme $A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$.
+    \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme :
+    $$\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$$
+
+    \item Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme :
+    $$A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$$
+    
     \item  Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
     \item On s'intéresse à la convergence de $A(s)$ pour $s$ complexe tel que $\text{Re}(s)>0$.
     On fixe $s=a+ib$ avec $a>0$ et $b\in\mathbb{R}$ et on pose $u_{n}=\frac{(-1)^{n}}{n^{s}}$. On note $v_{n}=\text{Re}(u_{n})$ et $w_{n}=\text{Im}(u_{n})$.
 \begin{enumerate}
-    \item On pose $V_{n}=v_{2n}+v_{2n+1}$. En montrant que $\frac{1}{(2n+1)^{a}}=\frac{1}{(2n)^{a}}+O(\frac{1}{n^{1+a}})$, montrer que la série $\sum V_{n}$ est absolument convergente.
+    \item On pose $V_{n}=v_{2n}+v_{2n+1}$. En montrant que $\frac{1}{(2n+1)^{a}}=\frac{1}{(2n)^{a}}+O\left(\frac{1}{n^{1+a}}\right)$, montrer que la série $\sum V_{n}$ est absolument convergente.
     \item En déduire que la série $\sum v_{n}$ converge.
     \item Conclure en raisonnant de même avec $\sum w_{n}$.
 \end{enumerate}
@@ -48,18 +52,18 @@ On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item Calculer pour $x\in[0,1]$, $\sum_{k=0}^{N}(-x^{2})^{k}$.
+        \item Calculer pour $x\in[0,1]$, $\displaystyle\sum_{k=0}^{N}(-x^{2})^{k}$.
         \item Intégrer cette égalité sur $[0, 1]$.
-        \item En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$.
+        \item En déduire que $\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$.
 
     \end{enumerate}
     
-    \item On définit pour tout $n$, $I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
+    \item On définit pour tout $n$, $\displaystyle I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
     \begin{enumerate}
-        \item Montrer que $I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
+        \item Montrer que $\displaystyle I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
         \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $C^{1}$.
-        \item Utiliser une intégration par parties pour montrer que $|I_{n}|\le\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
-        \item En déduire que $\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
+        \item Utiliser une intégration par parties pour montrer que $\displaystyle|I_{n}|\leqslant\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
+        \item En déduire que $\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
@@ -68,9 +72,9 @@ On considère la série $\sum_{n\ge1}\cos(\pi\sqrt{n^{2}+n+1})$.
 \begin{exercice}
 On pose pour $\theta\in]0,\pi[$, $u_{n}=\frac{\cos n\theta}{n}$.
 \begin{enumerate}
-    \item On pose $C_{n}=\sum_{k=0}^{n}\cos(k\theta)$. Montrer que cette suite est bornée.
-    \item En remarquant que pour tout $n\ge1$, $\cos n\theta=C_{n}-C_{n-1}$ et en considérant sa somme partielle, montrer que la série $\sum u_{n}$ converge.
-    \item Montrer que $|\cos(n\theta)|\ge \cos^{2}(n\theta)$ et en déduire que la série $\sum u_{n}$ ne converge pas absolument.
+    \item On pose $\displaystyle C_{n}=\sum_{k=0}^{n}\cos(k\theta)$. Montrer que cette suite est bornée.
+    \item En remarquant que pour tout $n\geqslant1$, $\cos n\theta=C_{n}-C_{n-1}$ et en considérant sa somme partielle, montrer que la série $\sum u_{n}$ converge.
+    \item Montrer que $|\cos(n\theta)|\geqslant \cos^{2}(n\theta)$ et en déduire que la série $\sum u_{n}$ ne converge pas absolument.
 \end{enumerate}
 \end{exercice}
 
@@ -78,26 +82,26 @@ On pose pour $\theta\in]0,\pi[$, $u_{n}=\frac{\cos n\theta}{n}$.
 \begin{exercice}
 Préciser la nature des séries suivantes:
 $$ \sum\frac{(-1)^{n}}{3n-1}, \quad \sum\frac{(-1)^{n}}{n^{\alpha}-(-1)^{n}n^{\beta}} \ (\alpha\ne\beta), \quad \sum \ln\left(1+(-1)^{n}\frac{\ln n}{n^{\alpha}}\right) \ (\alpha>0) $$
-
 \end{exercice}
 
 % --- Exercice 7 (Source: Exercice 5 - Stirling) ---
 \begin{exercice}
-Montrer que pour tout naturel $n$, $n!e=p_{n}+\frac{1}{n+1}+O(\frac{1}{n^{2}})$ où $p_{n}$ est un entier dont on précisera la parité en fonction de $n$.
+Montrer que pour tout naturel $n$, $n!e=p_{n}+\frac{1}{n+1}+O\left(\frac{1}{n^{2}}\right)$ où $p_{n}$ est un entier dont on précisera la parité en fonction de $n$.
 En déduire la nature des séries $\sum \sin(n!2\pi e)$ et $\sum \sin(n!\pi e)$.
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 6 - Cesaro) ---
 \begin{exercice}
-Soit $(\sum u_{n})$ une série numérique convergente. On pose $S_{n}=\sum_{k=0}^{n}u_{k}$.
+Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_{n}=\sum_{k=0}^{n}u_{k}$.
 \begin{enumerate}
-    \item Exprimer $\sum_{k=1}^{n}ku_{k}$ à l'aide de $\sum_{k=1}^{n}S_{k}$ (utiliser $u_n = S_n - S_{n-1}$).
-    \item En déduire que $\lim_{n\rightarrow\infty}\frac{1}{n}\sum_{k=1}^{n}ku_{k}=0$.
-    \item On pose $v_{n}=\frac{1}{n(n+1)}\sum_{k=1}^{n}ku_{k}$. Exprimer $\sum_{k=1}^{n}v_{k}$ à l'aide de $S_{n}$. En déduire que la série $(\sum v_{n})$ converge et a même somme que $(\sum u_{n})$.
+    \item Exprimer $\displaystyle\sum_{k=1}^{n}ku_{k}$ à l'aide de $\displaystyle\sum_{k=1}^{n}S_{k}$ (utiliser $u_n = S_n - S_{n-1}$).
+    \item En déduire que $\displaystyle\lim_{n\rightarrow+\infty}\frac{1}{n}\sum_{k=1}^{n}ku_{k}=0$.
+    \item On pose $\displaystyle v_{n}=\frac{1}{n(n+1)}\sum_{k=1}^{n}ku_{k}$.
+    Exprimer $\displaystyle\sum_{k=1}^{n}v_{k}$ à l'aide de $S_{n}$.
+    En déduire que la série $(\sum v_{n})$ converge et a même somme que $(\sum u_{n})$.
 \end{enumerate}
 \end{exercice}
 
-% --- SÉRIES DANS UN EVN ---
 \subsection{Séries dans un espace vectoriel normé de dimension finie}
 
 % --- Exercice 9 (Source: EXERCICE 40 analyse) ---
@@ -106,8 +110,8 @@ Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément 
 \begin{enumerate}
     \item Soit $u \in \mathcal{A}$ tel que $\|u\| < 1$.
     \begin{enumerate}
-        \item Démontrer que la série $\sum u^{n}$ est convergente.
-        \item Démontrer que $(e-u)$ est inversible et que $(e-u)^{-1}=\sum_{n=0}^{+\infty}u^{n}$.
+        \item Démontrer que la série $\sum_{n\geqslant1} u^{n}$ est convergente.
+        \item Démontrer que $(e-u)$ est inversible et que $\displaystyle (e-u)^{-1}=\sum_{n=0}^{+\infty}u^{n}$.
     \end{enumerate}
     \item Démontrer que, pour tout $u \in \mathcal{A}$, la série $\sum\frac{u^{n}}{n!}$ converge.
 \end{enumerate}
@@ -151,7 +155,7 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
     \item Pour tout naturel $n$ et tout $k\in\{0,\dots,n\}$ on pose $a_{n,k}=\frac{1}{k!}-\frac{n!}{k!(n-k)!n^{k}}$. Montrer que $a_{n,k}\ge0$.
     \item On pose $M_{n}=(I_{p}+\frac{1}{n}A)^{n}$.
     \begin{enumerate}
-        \item Montrer que $M_{n}-\sum_{k=0}^{\infty}\frac{1}{k!}A^{k}$ tend vers 0.
+        \item Montrer que $\displaystyle M_{n}-\sum_{k=0}^{n}\frac{A^k}{k!}$ tend vers 0.
         \item En déduire que la suite $(M_{n})$ converge vers $\exp(A)$.
     \end{enumerate}
 \end{enumerate}
@@ -168,7 +172,7 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
         \item Cas $\alpha\le0$ : En utilisant une minoration simple, démontrer que la série diverge.
         \item Cas $\alpha>0$ : Étudier la nature de la série (comparaison série-intégrale avec $f(x)=\frac{1}{x(\ln x)^{\alpha}}$).
     \end{itemize}
-    \item Déterminer la nature de la série $\sum_{n\ge3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$[.
+    \item Déterminer la nature de la série $\sum_{n\ge3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$.
 \end{enumerate}
 \end{exercice}
 
@@ -185,8 +189,8 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
     \item On définit la suite de Fibonacci $(F_{n})$ par $F_{0}=0, F_{1}=1, F_{n+2}=F_{n}+F_{n+1}$.
     \begin{enumerate}
         \item Montrer la convergence de $\sum_{k\ge1}\arctan(\frac{1}{F_{2k+1}})$.
-        \item Montrer que pour tout $n$, $\frac{\pi}{4}=\sum_{k=1}^{n}\arctan(\frac{1}{F_{2k+1}})+\arctan(\frac{1}{F_{2n+2}})$.
-        \item En déduire que $\sum_{k=1}^{\infty}\arctan(\frac{1}{F_{2k+1}}) = \frac{\pi}{4}$.
+        \item Montrer que pour tout $n$, $\displaystyle\frac{\pi}{4}=\sum_{k=1}^{n}\arctan(\frac{1}{F_{2k+1}})+\arctan(\frac{1}{F_{2n+2}})$.
+        \item En déduire que $\displaystyle\sum_{k=1}^{+\infty}\arctan(\frac{1}{F_{2k+1}}) = \frac{\pi}{4}$.
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
@@ -202,7 +206,8 @@ Soient $a, b, c, d > 0$ et $u_{n}$ telle que $\frac{u_{n+1}}{u_{n}}=\frac{(n+a)(
 
 % --- Exercice 19 (Source: Exercice 14) ---
 \begin{exercice}
-Si $\sum u_{n}$ converge (à termes positifs), établir la convergence des séries $\sum u_{n}^{2}$, $\sum\frac{u_{n}}{1+u_{n}^{2}}$, $\sum\frac{\sqrt{u_{n}}}{n^{\alpha}}$ avec $\alpha>\frac{1}{2}$
+Si $\sum u_{n}$ converge (à termes positifs), établir la convergence des séries
+    $$\sum u_{n}^{2},~ \sum\frac{u_{n}}{1+u_{n}^{2}}, ~\sum\frac{\sqrt{u_{n}}}{n^{\alpha}} ~\text{avec}~ \alpha>\frac{1}{2}$$
 \end{exercice}
 
 % --- Exercice 20 (Source: analyse) ---
@@ -218,7 +223,7 @@ Soit $(u_{n})$ à termes strictement positifs.
 \begin{exercice}[Règle de Raabe Duhamel]
 \begin{enumerate}
     \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\le\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
-    \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o(\frac{1}{n})$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
+    \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o\left(\frac{1}{n}\right)$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
 \end{enumerate}
 \end{exercice}
 
@@ -230,19 +235,19 @@ $$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \
 
 % --- Exercice 23 (Source: Exercice 17) ---
 \begin{exercice}
-Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $S_{n}=\sum_{k=0}^{n}u_{k}$.
+Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $\displaystyle S_{n}=\sum_{k=0}^{n}u_{k}$.
 \begin{enumerate}
     \item Supposons $\sum u_{n}$ converge. Montrer que $\sum\frac{u_{n}}{S_{n}}$ converge
-    \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. Trouver la nature de $\sum \ln(\frac{S_{n-1}}{S_{n}})$. En déduire que $\sum u_{n}$ converge
+    \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. Trouver la nature de $\sum \ln\left(\frac{S_{n-1}}{S_{n}}\right)$. En déduire que $\sum u_{n}$ converge
     \item Montrer que si $\sum a_{n}$ diverge (TP), il existe $\sum b_{n}$ divergente (TP) telle que $b_{n}=o(a_{n})$.
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 24 (Source: Exercice 18) ---
 \begin{exercice}
-Soit $\alpha>1$ et $R_{n}=\sum_{k=n+1}^{\infty}\frac{1}{k^{\alpha}}$.
+Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}$.
 \begin{enumerate}
-    \item Équivalent de $R_{n}$ ? 
+    \item Déterminer un équivalent de $R_{n}$
     \item Condition nécessaire sur $\alpha$ de convergence de $\sum R_{n}$.
     \item Valeur de la somme dans ce cas ?
 \end{enumerate}
@@ -390,23 +395,30 @@ Soit $\alpha>1$ et $R_{n}=\sum_{k=n+1}^{\infty}\frac{1}{k^{\alpha}}$.
 \begin{correction}{11}
 \begin{itemize}
     \item $A = \begin{pmatrix} 0 & a \\ -a & 0 \end{pmatrix}$.
-    $A^2 = -a^2 I$. $A^3 = -a^3 J$ (avec $J=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$).
-    En fait $A = a J$. $J^2 = -I$.
-    $\exp(A) = \sum \frac{A^k}{k!} = \sum (-1)^p \frac{a^{2p}}{(2p)!} I + \sum (-1)^p \frac{a^{2p+1}}{(2p+1)!} J$.
-    $\exp(A) = (\cos a) I + (\sin a) J = \begin{pmatrix} \cos a & \sin a \\ -\sin a & \cos a \end{pmatrix}$.
-    \item $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = I + N$ avec $N=\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
-    $I$ et $N$ commutent. $\exp(A) = \exp(I)\exp(N) = e (I+N) = \begin{pmatrix} e & e \\ 0 & e \end{pmatrix}$.
+    $A^2 = -a^2 I_2$ et $A^3 = -a^3 J$ (avec $J=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$).
+    En fait $A = a J$. $J^2 = -I_2$.
+    
+    $\exp(A) = \sum \frac{A^k}{k!} = \sum (-1)^p \frac{a^{2p}}{(2p)!} I_2 + \sum (-1)^p \frac{a^{2p+1}}{(2p+1)!} J$.
+
+    $\exp(A) = (\cos a) I_2 + (\sin a) J = \begin{pmatrix} \cos a & \sin a \\ -\sin a & \cos a \end{pmatrix}$.
+    \item $A = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} = I_2 + N$ avec $N=\begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
+    $I_2$ et $N$ commutent. $\exp(A) = \exp(I_2)\exp(N) = e (I_2+N) = \begin{pmatrix} e & e \\ 0 & e \end{pmatrix}$.
 \end{itemize}
 \end{correction}
 
 % --- Correction Exercice 12 ---
 \begin{correction}{12}
-$A = \begin{pmatrix} 3 & 6 \\ 4 & 1 \end{pmatrix}$. Polynôme caractéristique : $X^2 - 4X - 21 = (X-7)(X+3)$.
-Valeurs propres $7$ et $-3$.
-$A^n = \alpha_n A + \beta_n I$. Ou système avec les valeurs propres.
-$7^n = 7a_n + b_n$ (système adapté à la décomposition de l'énoncé).
-On trouve $A^n = \frac{1}{10} [ 7^n (A+3I) - (-3)^n (A-7I) ]$ (vérifier les coefficients selon l'énoncé).
-$\exp(A) = \frac{e^7}{10}(A+3I) - \frac{e^{-3}}{10}(A-7I)$.
+\begin{enumerate}
+    \item $A = \begin{pmatrix} 3 & 6 \\ 4 & 1 \end{pmatrix}$. Polynôme caractéristique : $X^2 - 4X - 21 = (X-7)(X+3)$.
+    Valeurs propres $7$ et $-3$.
+
+    $A^n = \alpha_n A + \beta_n I$. Ou système avec les valeurs propres.
+    $7^n = 7a_n + b_n$ (système adapté à la décomposition de l'énoncé).
+
+    On trouve $A^n = \frac{1}{10} [ 7^n (A+3I) - (-3)^n (A-7I)]$.
+
+    \item On a immédiatement $\exp(A) = \frac{e^7}{10}(A+3I) - \frac{e^{-3}}{10}(A-7I)$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 13 (Ratio) ---
@@ -426,14 +438,23 @@ $u_n \sim \frac{K}{n^{c+d-a-b}}$.
 % --- Correction Exercice 14 (Matrices) ---
 \begin{correction}{14}
 \begin{enumerate}
-    \item $a_{n,k} = \frac{1}{k!} (1 - \frac{n(n-1)\dots(n-k+1)}{n^k})$.
-    Le produit $\frac{n}{n} \dots \frac{n-k+1}{n}$ est $\le 1$. Donc le terme parenthèse est positif. $a_{n,k} \ge 0$.
+    \item $a_{n,k} = \frac{1}{k!} \left(1 - \frac{n(n-1)\dots(n-k+1)}{n^k} \right)$.
+    Or $\frac{n}{n} \dots \frac{n-k+1}{n} \leqslant 1$. Donc $a_{n,k} \ge 0$.
     
-    \item $M_n = (I + A/n)^n = \sum_{k=0}^n \binom{n}{k} \frac{A^k}{n^k} = \sum_{k=0}^n \frac{1}{k!} \frac{n!}{n^k(n-k)!} A^k$.
-    Différence : $D_n = \sum_{k=0}^n a_{n,k} A^k + \sum_{k=n+1}^\infty \frac{A^k}{k!}$ (la correction semble traiter la différence avec la somme partielle).
-    En norme : $\|D_n\| \le \sum a_{n,k} \|A\|^k + \text{reste}$.
-    On utilise l'exponentielle réelle : $(1+\frac{\|A\|}{n})^n \to e^{\|A\|}$.
-    La différence tend vers 0. $M_n \to \exp(A)$.
+    \item
+    \begin{enumerate}   
+        \item $\displaystyle M_n = \left(I + \frac A n \right)^n = \sum_{k=0}^n \binom{n}{k} \frac{A^k}{n^k} = \sum_{k=0}^n \frac{1}{k!} \frac{n!}{n^k(n-k)!} A^k$.
+
+        Différence : $\displaystyle D_n = - \sum_{k=0}^n a_{n,k} A^k$
+        En norme : $\displaystyle \|D_n\| \leqslant \sum_{k=0}^n a_{n,k} \|A\|^k = \sum_{k=1}^n a_{n,k} ||A||^k$.
+
+        Refaire le calcul avec $||A||$ revient au même donc $\displaystyle||D_n|| \leqslant \left(1 + \frac {||A||} n\right)^n - \sum_{k=0}^n \frac {||A||^k} {k!}$.
+
+        On utilise l'exponentielle réelle : $\left(1+\frac{\|A\|}{n}\right)^n \to e^{\|A\|}$.
+        L'autre aussi, donc la différence tend vers 0.
+
+        \item On en déduit directement que $M_n \to \exp(A)$.
+    \end{enumerate}
 \end{enumerate}
 \end{correction}
 

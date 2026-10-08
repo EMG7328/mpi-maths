@@ -57,35 +57,36 @@ $$ \left(\frac{1}{x^{2}}\right)_{x\in \mathbb{Q}^{*+}}, \quad \left(\frac{a^{p}b
 
 % --- Exercice 8 ---
 \begin{exercice}
-On rappelle que pour $x>1$, $\zeta(x)=\sum_{n=1}^{\infty}\frac{1}{n^{x}}$.
+On rappelle que pour $x>1$, $\displaystyle \zeta(x)=\sum_{n=1}^{+\infty}\frac{1}{n^{x}}$.
 \begin{enumerate}
-    \item Montrer la sommabilité de la famille $(\frac{1}{np^{n}})_{n,p\in[2,\infty[}$.
-    \item En calculant sa somme de deux manières différentes montrer que $\sum_{n=2}^{\infty}\frac{\zeta(n)-1}{n}=1-\gamma$ où $\gamma$ est la constante d'Euler, $\gamma=\lim_{n\rightarrow\infty}(\sum_{k=1}^{n}\frac{1}{k}-\ln(n))$.
+    \item Montrer la sommabilité de la famille $\left(\frac{1}{np^{n}}\right)_{n,p\in[2,\infty[}$.
+    \item En calculant sa somme de deux manières différentes montrer que $\displaystyle \sum_{n=2}^{+\infty}\frac{\zeta(n)-1}{n}=1-\gamma$ où $\gamma$ est la constante d'Euler,
+    $\displaystyle \gamma=\lim_{n\rightarrow\infty}\left(\sum_{k=1}^{n}\frac{1}{k}-\ln(n) \right)$.
 \end{enumerate}
-\textit{Indication :} On montrera que $\forall x\in]-1,1[$, $\ln(1-x)=-\sum_{k=1}^{\infty}\frac{x^{k}}{k}$ en remarquant que pour tout $N$, $\sum_{k=1}^{N}\frac{x^{k}}{k}=\int_{0}^{x}\sum_{k=1}^{N}t^{k-1} dt$.
+\textit{Indication :} On montrera que $\forall x\in]-1,1[$, $\displaystyle \ln(1-x)=-\sum_{k=1}^{+\infty}\frac{x^{k}}{k}$ en remarquant que pour tout $N \in \N^*$, $\displaystyle \sum_{k=1}^{N}\frac{x^{k}}{k}=\int_{0}^{x}\sum_{k=1}^{N}t^{k-1} dt$.
 \end{exercice}
 
 \subsection{Suites doubles et produit de Cauchy}
 
 % --- Exercice 9 ---
 \begin{exercice}
-On pose pour tout naturel $n$, $u_{n}=\sum_{k=n}^{\infty}\frac{1}{k!}$.
+On pose pour tout naturel $n$, $\displaystyle u_{n}=\sum_{k=n}^{+\infty}\frac{1}{k!}$.
 \begin{enumerate}
     \item Montrer que la série $\sum u_{n}$ converge.
-    \item Calculer $\sum_{n=0}^{+\infty}u_{n}$.
+    \item Calculer $\displaystyle \sum_{n=0}^{+\infty}u_{n}$.
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 10 ---
 \begin{exercice}
-Pour $\alpha>0$ étudier la sommabilité de la famille $(\frac{1}{(m+n)^{\alpha}})_{(m,n)\in \mathbb{N}^{*2}}$.
+Pour $\alpha>0$ étudier la sommabilité de la famille $\left(\frac{1}{(m+n)^{\alpha}}\right)_{(m,n)\in \mathbb{N}^{*2}}$.
 Lorsqu'elle existe, exprimer sa somme à l'aide de la fonction $\zeta$.
 \end{exercice}
 
 % --- Exercice 11 (Classique) ---
 \begin{exercice}
-Montrer que $\sum_{p=2}^{+\infty}(\zeta(p)-1)=1$.
-On considérera la somme double $\sum_{m\ge2}\sum_{n\ge2}(\frac{1}{m^{n}})$ que l'on sommera de deux manières différentes.
+Montrer que $\displaystyle \sum_{p=2}^{+\infty}(\zeta(p)-1)=1$.
+On considérera la somme double $\sum_{m\ge2}\sum_{n\ge2}\left(\frac{1}{m^{n}}\right)$ que l'on sommera de deux manières différentes.
 \end{exercice}
 
 % --- Exercice 12 ---
@@ -105,7 +106,7 @@ Montrer l'existence et calculer $\sum_{p,q\in \mathbb{N}}\frac{p!q!}{(p+q+2)!}$.
 
 % --- Exercice 14 ---
 \begin{exercice}
-Montrer l'existence et calculer $\sum_{p=0}^{\infty}\sum_{q=0}^{\infty}(2^{-3q-p-(p+q)^{2}})$.
+Montrer l'existence et calculer $\displaystyle \sum_{p=0}^{+\infty}\sum_{q=0}^{+\infty}(2^{-3q-p-(p+q)^{2}})$.
 \end{exercice}
 
 % --- Exercice 15 ---
@@ -220,11 +221,114 @@ On en déduit que $\mathbb{R}$ est dénombrable, absurde.
     Donc $P(E)$ n'est pas dénombrable.
 \end{correction}
 
+% --- Correction 7 ---
+\begin{correction}{7}
+\begin{enumerate}
+    \item Famille $(\frac{a^p b^q}{(p+q)!})$.
+Posons $k=p+q$.
+$\sum_{p,q} | \dots | = \sum_{k=0}^\infty \frac{1}{k!} \sum_{p=0}^k \binom{k}{p} |a|^p |b|^{k-p}$ (en introduisant artificiellement le binôme ? Non).
+Simplement $\sum_{p+q=k} \frac{|a|^p |b|^q}{k!}$.
+Or $(|a|+|b|)^k = \sum_{p=0}^k \binom{k}{p} |a|^p |b|^{k-p} = k! \sum_{p+q=k} \frac{|a|^p |b|^q}{p! q!}$.
+Ce n'est pas exactement le terme.
+Le terme est $\frac{1}{(p+q)!}$.
+$\sum_{k=0}^\infty \frac{1}{k!} \sum_{p=0}^k |a|^p |b|^{k-p} = \sum_{k=0}^\infty \frac{1}{k!} \frac{|b|^{k+1}-|a|^{k+1}}{|b|-|a|}$.
+Si $|a| \neq |b|$. C'est la différence de deux exponentielles divisée par $|b|-|a|$.
+La série converge pour tout $a,b$. La famille est sommable.
+Somme : $\frac{1}{b-a} ( \sum \frac{b^{k+1}}{k!} - \sum \frac{a^{k+1}}{k!} ) = \frac{b e^b - a e^a}{b-a}$.
+
+    \item Famille $(\frac{1}{a^p+b^q})$ avec $a,b > 1$.
+Fixons $p$. $\frac{1}{a^p+b^q} \sim_{q \to \infty} \frac{1}{b^q}$. C'est une série géométrique convergente.
+Somme sur $p$ de $\sum_q \frac{1}{a^p+b^q}$.
+$\frac{1}{a^p+b^q} < \frac{1}{a^p}$.
+La série $\sum \frac{1}{a^p}$ converge car $a>1$.
+Cependant, pour la sommabilité double, il faut être plus précis.
+Pour $p,q$ grands, $a^p+b^q \ge \max(a^p, b^q)$.
+Est-ce que $\sum \frac{1}{\max(a^p, b^q)}$ converge ?
+On découpe selon $a^p \ge b^q \iff p \ln a \ge q \ln b \iff p \ge q \frac{\ln b}{\ln a}$.
+C'est une somme sur un secteur angulaire de termes géométriques. Cela converge.
+\end{enumerate}
+\end{correction}
+
+% --- Correction 8 ---
+\begin{correction}{8}
+\begin{itemize}
+    \item Soit $u_{n,p} = \frac{1}{n p^n}$ pour $n \ge 2, p \ge 2$.
+
+    Fixons $n \geqslant 2$. $\displaystyle \sum_{p \ge 2} \frac{1}{n p^n} = \frac{1}{n} \sum_{p=2}^{+\infty} \left(\frac{1}{p}\right)^n$.
+    
+    On sait que $\displaystyle \sum_{p=2}^{+\infty} \frac{1}{p^n} \le \sum_{p=2}^{+\infty} \frac{1}{p^2}$ (pour $n \ge 2$).
+    Mais pour la sommabilité, il vaut mieux sommer d'abord sur $n$.
+    
+    Fixons $p \ge 2$. $\displaystyle\sum_{n=2}^{+\infty} \frac{1}{n p^n}$.
+    
+    On sait que pour $x \in ]-1,1[$, $\displaystyle\ln(1-x) = -\sum_{n=1}^{+\infty} \frac{x^n}{n}$.
+
+    Donc $\displaystyle \sum_{n=1}^{+\infty} \frac{1}{n p^n} = \sum_{n=1}^{+\infty} \frac{(1/p)^n}{n} = -\ln\left(1-\frac{1}{p}\right)$.
+
+    Ainsi $\displaystyle \sum_{n=2}^{+\infty} \frac{1}{n p^n} = -\ln\left(1-\frac{1}{p}\right) - \frac{1}{p} = -\ln\left(\frac{p-1}{p}\right) - \frac{1}{p} = \ln(p) - \ln(p-1) - \frac{1}{p}$.
+
+    Quand $p \to +\infty$, $\ln\left(1-\frac{1}{p}\right) + \frac{1}{p} \sim \frac{1}{2p^2}$.
+    C'est le terme général d'une série convergente.
+    La famille est donc sommable.
+
+    \item Calculons la somme totale.
+    D'une part, en sommant d'abord sur $p$ :
+    $\displaystyle \sum_{n=2}^{+\infty} \frac{1}{n} \sum_{p=2}^{+\infty} \frac{1}{p^n} = \sum_{n=2}^{+\infty} \frac{\zeta(n)-1}{n}$.
+
+    D'autre part, en sommant d'abord sur $n$ (résultat précédent) :
+    $\displaystyle \sum_{p=2}^{+\infty} \left(\ln(p) - \ln(p-1) - \frac{1}{p}\right)$.
+    
+    Soit $\displaystyle S_N = \sum_{p=2}^N (\ln p - \ln(p-1)) - \sum_{p=2}^N \frac{1}{p} = \ln N - \ln 1 - (H_N - 1)$.
+    $S_N = 1 + \ln N - H_N$.
+
+    On sait que $H_N = \ln N + \gamma + o(1)$.
+    Donc $S_N = 1 + \ln N - (\ln N + \gamma + o(1)) \to 1 - \gamma$.
+
+    Conclusion : $\displaystyle \sum_{n=2}^{+\infty} \frac{\zeta(n)-1}{n} = 1-\gamma$.
+\end{itemize}
+\end{correction}
+
+% --- Correction 9 ---
+\begin{correction}{9}
+\begin{enumerate}
+    \item $u_n = \sum_{k=n}^\infty \frac{1}{k!}$. C'est le reste d'une série convergente (la série de l'exponentielle). Donc $(u_n)$ existe et tend vers 0.
+    
+    Pour la convergence de $\sum u_n$ :
+    $\frac{1}{k!} = o\left(\frac{1}{2^k}\right)$ (car $2^k/k! \to 0$).
+    
+    Donc $\displaystyle u_n = \sum_{k=n}^{+\infty} \frac{1}{k!} = o \left(\sum_{k=n}^{+\infty} \frac{1}{2^k} \right) = o \left(\frac{1}{2^{n-1}}\right)$.
+    $u_n$ est un $o$ du terme général d'une série géométrique convergente, donc $\sum u_n$ converge.
+
+    \item Calcul de la somme $\sum_{n=0}^\infty u_n$.
+    $$ \sum_{n=0}^{+\infty} u_n = \sum_{n=0}^{+\infty} \sum_{k=n}^{+\infty} \frac{1}{k!} $$
+    Comme les termes sont positifs, on peut appliquer Fubini (interversion des sommes).
+    Le domaine de sommation est $0 \leqslant n \leqslant k < +\infty$.
+    $$ = \sum_{k=0}^{+\infty} \sum_{n=0}^k \frac{1}{k!} = \sum_{k=0}^{+\infty} \frac{1}{k!} \sum_{n=0}^k 1 = \sum_{k=0}^{+\infty} \frac{k+1}{k!} $$
+    $$ = \sum_{k=0}^{+\infty} \frac{k}{k!} + \sum_{k=0}^{+\infty} \frac{1}{k!} = \sum_{k=1}^{+\infty} \frac{1}{(k-1)!} + \sum_{k=0}^{+\infty} \frac{1}{k!} $$
+    $$ = \sum_{j=0}^{+\infty} \frac{1}{j!} + e = e + e = 2e $$
+\end{enumerate}
+\end{correction}
+
+% --- Correction 10 ---
+\begin{correction}{10}
+Étude de $\sum_{m,n \ge 1} \frac{1}{(m+n)^\alpha}$.
+
+Fixons $k = m+n$. $k$ peut prendre les valeurs $2, 3, \dots$.
+
+Pour un $k$ fixé, le nombre de couples $(m,n)$ tels que $m+n=k$ est le nombre de choix pour $m \in \{1, \dots, k-1\}$, soit $k-1$ couples.
+La somme par paquets (termes positifs) donne :
+$$ \sum_{(m,n)} \frac{1}{(m+n)^\alpha} = \sum_{k=2}^{+\infty} \frac{k-1}{k^\alpha} \sim \sum \frac{1}{k^{\alpha-1}} $$
+La série converge si et seulement si $\alpha-1 > 1$, c'est-à-dire $\alpha > 2$.
+Calcul de la somme :
+$$ \sum_{k=2}^{+\infty} \frac{k-1}{k^\alpha} = \sum_{k=2}^{+\infty} \frac{1}{k^{\alpha-1}} - \sum_{k=2}^{+\infty} \frac{1}{k^\alpha} = (\zeta(\alpha-1)-1) - (\zeta(\alpha)-1) = \zeta(\alpha-1) - \zeta(\alpha) $$
+\end{correction}
+
 % --- Correction 11 ---
 \begin{correction}{11}
 On s'intéresse à $\sum_{p=2}^\infty (\zeta(p)-1) = \sum_{p=2}^\infty \sum_{n=2}^\infty \frac{1}{n^p}$.
 Considérons la famille $(\frac{1}{n^p})_{n\ge2, p\ge2}$.
 C'est une famille à termes positifs.
+
 Fixons $n \ge 2$. La somme sur $p$ est une série géométrique :
 $\sum_{p=2}^\infty \frac{1}{n^p} = \sum_{p=2}^\infty (\frac{1}{n})^p = \frac{1}{n^2} \frac{1}{1-1/n} = \frac{1}{n(n-1)}$.
 Or $\frac{1}{n(n-1)} \sim \frac{1}{n^2}$ est le terme général d'une série convergente.
@@ -236,108 +340,22 @@ La somme partielle est $\sum_{n=2}^N (\frac{1}{n-1} - \frac{1}{n}) = 1 - \frac{1
 Donc $\sum_{p=2}^\infty (\zeta(p)-1) = 1$.
 \end{correction}
 
-% --- Correction 9 ---
-\begin{correction}{9}
-\textbf{1.} $u_n = \sum_{k=n}^\infty \frac{1}{k!}$. C'est le reste d'une série convergente (la série de l'exponentielle). Donc $u_n$ existe et tend vers 0.
-Pour la convergence de $\sum u_n$ :
-$\frac{1}{k!} = o(\frac{1}{2^k})$ (car $2^k/k! \to 0$).
-Donc $u_n = \sum_{k=n}^\infty \frac{1}{k!} = o(\sum_{k=n}^\infty \frac{1}{2^k}) = o(\frac{1}{2^{n-1}})$.
-$u_n$ est un $o$ du terme général d'une série géométrique convergente, donc $\sum u_n$ converge.
-
-\textbf{2.} Calcul de la somme $\sum_{n=0}^\infty u_n$.
-$$ \sum_{n=0}^\infty u_n = \sum_{n=0}^\infty \sum_{k=n}^\infty \frac{1}{k!} $$
-Comme les termes sont positifs, on peut appliquer Fubini (interversion des sommes).
-Le domaine de sommation est $0 \le n \le k < \infty$.
-$$ = \sum_{k=0}^\infty \sum_{n=0}^k \frac{1}{k!} = \sum_{k=0}^\infty \frac{1}{k!} \sum_{n=0}^k 1 = \sum_{k=0}^\infty \frac{k+1}{k!} $$
-$$ = \sum_{k=0}^\infty \frac{k}{k!} + \sum_{k=0}^\infty \frac{1}{k!} = \sum_{k=1}^\infty \frac{1}{(k-1)!} + \sum_{k=0}^\infty \frac{1}{k!} $$
-$$ = \sum_{j=0}^\infty \frac{1}{j!} + e = e + e = 2e $$
-\end{correction}
-
-% --- Correction 8 ---
-\begin{correction}{8}
-\textbf{a)} Soit $u_{n,p} = \frac{1}{n p^n}$ pour $n \ge 2, p \ge 2$.
-Fixons $n$. $\sum_{p \ge 2} \frac{1}{n p^n} = \frac{1}{n} \sum_{p=2}^\infty (\frac{1}{p})^n$.
-On sait que $\sum_{p=2}^\infty \frac{1}{p^n} \le \sum_{p=2}^\infty \frac{1}{p^2}$ (pour $n \ge 2$).
-Mais pour la sommabilité, il vaut mieux sommer d'abord sur $n$.
-Fixons $p \ge 2$. $\sum_{n=2}^\infty \frac{1}{n p^n}$.
-On sait que pour $x \in ]-1,1[$, $\ln(1-x) = -\sum_{n=1}^\infty \frac{x^n}{n}$.
-Donc $\sum_{n=1}^\infty \frac{1}{n p^n} = \sum_{n=1}^\infty \frac{(1/p)^n}{n} = -\ln(1-\frac{1}{p})$.
-Ainsi $\sum_{n=2}^\infty \frac{1}{n p^n} = -\ln(1-\frac{1}{p}) - \frac{1}{p} = -\ln(\frac{p-1}{p}) - \frac{1}{p} = \ln(p) - \ln(p-1) - \frac{1}{p}$.
-Quand $p \to \infty$, $\ln(1-\frac{1}{p}) + \frac{1}{p} \sim \frac{1}{2p^2}$.
-C'est le terme général d'une série convergente.
-La famille est donc sommable.
-
-\textbf{b)} Calculons la somme totale.
-D'une part, en sommant d'abord sur $p$ :
-$\sum_{n=2}^\infty \frac{1}{n} \sum_{p=2}^\infty \frac{1}{p^n} = \sum_{n=2}^\infty \frac{\zeta(n)-1}{n}$.
-D'autre part, en sommant d'abord sur $n$ (résultat précédent) :
-$\sum_{p=2}^\infty (\ln(p) - \ln(p-1) - \frac{1}{p})$.
-Soit $S_N = \sum_{p=2}^N (\ln p - \ln(p-1)) - \sum_{p=2}^N \frac{1}{p} = \ln N - \ln 1 - (H_N - 1)$.
-$S_N = 1 + \ln N - H_N$.
-On sait que $H_N = \ln N + \gamma + o(1)$.
-Donc $S_N = 1 + \ln N - (\ln N + \gamma + o(1)) \to 1 - \gamma$.
-Conclusion : $\sum_{n=2}^\infty \frac{\zeta(n)-1}{n} = 1-\gamma$.
-\end{correction}
-
 % --- Correction 12 ---
 \begin{correction}{12}
-\textbf{1)} Existence et calcul de $T = \sum_{(p,q)\in\mathbb{N}^{*2}}\frac{1}{p^{2}q^{2}}$.
+\begin{enumerate}
+    \item Existence et calcul de $T = \sum_{(p,q)\in\mathbb{N}^{*2}}\frac{1}{p^{2}q^{2}}$.
 La série $\sum \frac{1}{p^2}$ converge absolument vers $\frac{\pi^2}{6}$.
 La famille est le produit de deux séries absolument convergentes, elle est donc sommable.
 $T = (\sum_{p=1}^\infty \frac{1}{p^2}) (\sum_{q=1}^\infty \frac{1}{q^2}) = \frac{\pi^2}{6} \times \frac{\pi^2}{6} = \frac{\pi^4}{36}$.
 
-\textbf{2)} On partitionne $\mathbb{N}^{*2}$ selon le PGCD $d$.
-$T = \sum_{d \ge 1} \sum_{\substack{PGCD(p,q)=d}} \frac{1}{p^2 q^2}$.
-Si $PGCD(p,q)=d$, alors $p=dp'$ and $q=dq'$ avec $PGCD(p',q')=1$.
-$\sum_{\substack{PGCD(p,q)=d}} \frac{1}{p^2 q^2} = \sum_{\substack{PGCD(p',q')=1}} \frac{1}{d^4 p'^2 q'^2} = \frac{1}{d^4} S$.
-Donc $T = \sum_{d \ge 1} \frac{1}{d^4} S = S \sum_{d \ge 1} \frac{1}{d^4} = S \zeta(4)$.
-On sait que $\zeta(4) = \frac{\pi^4}{90}$.
-Donc $S = \frac{T}{\zeta(4)} = \frac{\pi^4/36}{\pi^4/90} = \frac{90}{36} = \frac{5}{2}$.
-\end{correction}
-
-% --- Correction 10 ---
-\begin{correction}{10}
-Étude de $\sum_{m,n \ge 1} \frac{1}{(m+n)^\alpha}$.
-Fixons $k = m+n$. $k$ peut prendre les valeurs $2, 3, \dots$.
-Pour un $k$ fixé, le nombre de couples $(m,n)$ tels que $m+n=k$ est le nombre de choix pour $m \in \{1, \dots, k-1\}$, soit $k-1$ couples.
-La somme par paquets (termes positifs) donne :
-$$ \sum_{(m,n)} \frac{1}{(m+n)^\alpha} = \sum_{k=2}^\infty \frac{k-1}{k^\alpha} \sim \sum \frac{1}{k^{\alpha-1}} $$
-La série converge si et seulement si $\alpha-1 > 1$, c'est-à-dire $\alpha > 2$.
-Calcul de la somme :
-$$ \sum_{k=2}^\infty \frac{k-1}{k^\alpha} = \sum_{k=2}^\infty \frac{1}{k^{\alpha-1}} - \sum_{k=2}^\infty \frac{1}{k^\alpha} = (\zeta(\alpha-1)-1) - (\zeta(\alpha)-1) = \zeta(\alpha-1) - \zeta(\alpha) $$
-\end{correction}
-
-% --- Correction 14 ---
-\begin{correction}{14}
-Terme général $a_{p,q} = 2^{-3q-p-(p+q)^{2}}$.
-Pour sommer, posons $k=p+q$.
-$a_{p,q} = 2^{-3(k-p)-p-k^2} = 2^{-3k+2p-k^2}$.
-Pour $k$ fixé, $p$ varie de $0$ à $k$.
-$\sum_{p=0}^k a_{p,q} = 2^{-3k-k^2} \sum_{p=0}^k (2^2)^p = 2^{-3k-k^2} \sum_{p=0}^k 4^p$.
-$\sum_{p=0}^k 4^p = \frac{4^{k+1}-1}{4-1} = \frac{1}{3}(4^{k+1}-1)$.
-La somme totale est $S = \frac{1}{3} \sum_{k=0}^\infty 2^{-3k-k^2} (2^{2k+2}-1) = \frac{1}{3} \sum_{k=0}^\infty (2^{-k-k^2+2} - 2^{-3k-k^2})$.
-C'est une somme télescopique ?
-Observons les exposants :
-Terme 1 : $2 - k - k^2$.
-Terme 2 : $-3k - k^2$.
-Si on regarde le terme 1 pour $k$ et le terme 2 pour $k-1$ :
-$-3(k-1)-(k-1)^2 = -3k+3-(k^2-2k+1) = -k^2-k+2$.
-C'est exactement l'exposant du terme 1 !
-Donc $\sum_{k=0}^N (u_k - u_{k+1})$ avec $u_k = 2^{2-k-k^2}$. (Attention aux indices, vérifions le décalage).
-Le terme générique est $v_k - w_k$ avec $v_k = 2^{2-k-k^2}$ et $w_k = 2^{-3k-k^2}$.
-On a $w_{k-1} = v_k$.
-Somme partielle : $\sum_{k=0}^N v_k - \sum_{k=0}^N w_k = \sum_{k=0}^N w_{k-1} - \sum_{k=0}^N w_k = w_{-1} - w_N$.
-(Attention $w_{-1}$ n'est pas défini par la formule de somme mais par la relation).
-Reprenons :
-$\sum_{k=0}^\infty 4^p 2^{\dots} - \sum \dots$
-Pour $k=0$, $v_0 = 2^2=4$, $w_0 = 2^0=1$. Terme est $(4-1)/3 = 1$.
-La somme est $\frac{1}{3} [ (v_0 + v_1 + \dots) - (w_0 + w_1 + \dots) ]$.
-Comme $v_k = w_{k-1}$, la somme est $\frac{1}{3} [ w_{-1} ]$ si on décale ?
-Plus simplement : $\sum_{k=0}^\infty (w_{k-1} - w_k)$.
-Pour $k=0$, le terme est $v_0 - w_0$.
-On a vu $v_0 = w_{-1}$. Donc c'est $w_{-1} - w_\infty$.
-$w_k \to 0$. Donc la somme est $w_{-1} = v_0 = 4$.
-Avec le facteur $1/3$, $S = 4/3$.
+    \item On partitionne $\mathbb{N}^{*2}$ selon le PGCD $d$.
+    $T = \sum_{d \ge 1} \sum_{\substack{PGCD(p,q)=d}} \frac{1}{p^2 q^2}$.
+    Si $PGCD(p,q)=d$, alors $p=dp'$ and $q=dq'$ avec $PGCD(p',q')=1$.
+    $\sum_{\substack{PGCD(p,q)=d}} \frac{1}{p^2 q^2} = \sum_{\substack{PGCD(p',q')=1}} \frac{1}{d^4 p'^2 q'^2} = \frac{1}{d^4} S$.
+    Donc $T = \sum_{d \ge 1} \frac{1}{d^4} S = S \sum_{d \ge 1} \frac{1}{d^4} = S \zeta(4)$.
+    On sait que $\zeta(4) = \frac{\pi^4}{90}$.
+    Donc $S = \frac{T}{\zeta(4)} = \frac{\pi^4/36}{\pi^4/90} = \frac{90}{36} = \frac{5}{2}$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 13 ---
@@ -357,48 +375,71 @@ Maintenant on somme sur $p \ge 0$ :
 $\sum_{p=0}^\infty \frac{1}{(p+1)^2} = \sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6}$.
 \end{correction}
 
-% --- Correction 7 ---
-\begin{correction}{7}
-\textbf{1.} Famille $(\frac{a^p b^q}{(p+q)!})$.
-Posons $k=p+q$.
-$\sum_{p,q} | \dots | = \sum_{k=0}^\infty \frac{1}{k!} \sum_{p=0}^k \binom{k}{p} |a|^p |b|^{k-p}$ (en introduisant artificiellement le binôme ? Non).
-Simplement $\sum_{p+q=k} \frac{|a|^p |b|^q}{k!}$.
-Or $(|a|+|b|)^k = \sum_{p=0}^k \binom{k}{p} |a|^p |b|^{k-p} = k! \sum_{p+q=k} \frac{|a|^p |b|^q}{p! q!}$.
-Ce n'est pas exactement le terme.
-Le terme est $\frac{1}{(p+q)!}$.
-$\sum_{k=0}^\infty \frac{1}{k!} \sum_{p=0}^k |a|^p |b|^{k-p} = \sum_{k=0}^\infty \frac{1}{k!} \frac{|b|^{k+1}-|a|^{k+1}}{|b|-|a|}$.
-Si $|a| \neq |b|$. C'est la différence de deux exponentielles divisée par $|b|-|a|$.
-La série converge pour tout $a,b$. La famille est sommable.
-Somme : $\frac{1}{b-a} ( \sum \frac{b^{k+1}}{k!} - \sum \frac{a^{k+1}}{k!} ) = \frac{b e^b - a e^a}{b-a}$.
+% --- Correction 14 ---
+\begin{correction}{14}
+Terme général $a_{p,q} = 2^{-3q-p-(p+q)^{2}}$.
 
-\textbf{2.} Famille $(\frac{1}{a^p+b^q})$ avec $a,b > 1$.
-Fixons $p$. $\frac{1}{a^p+b^q} \sim_{q \to \infty} \frac{1}{b^q}$. C'est une série géométrique convergente.
-Somme sur $p$ de $\sum_q \frac{1}{a^p+b^q}$.
-$\frac{1}{a^p+b^q} < \frac{1}{a^p}$.
-La série $\sum \frac{1}{a^p}$ converge car $a>1$.
-Cependant, pour la sommabilité double, il faut être plus précis.
-Pour $p,q$ grands, $a^p+b^q \ge \max(a^p, b^q)$.
-Est-ce que $\sum \frac{1}{\max(a^p, b^q)}$ converge ?
-On découpe selon $a^p \ge b^q \iff p \ln a \ge q \ln b \iff p \ge q \frac{\ln b}{\ln a}$.
-C'est une somme sur un secteur angulaire de termes géométriques. Cela converge.
+Pour sommer, posons $k=p+q$.
+$a_{p,q} = 2^{-3(k-p)-p-k^2} = 2^{-3k+2p-k^2}$.
+
+Pour $k$ fixé, $p$ varie de $0$ à $k$ :
+$$\sum_{p=0}^k a_{p,q} = 2^{-3k-k^2} \sum_{p=0}^k (2^2)^p = 2^{-3k-k^2} \sum_{p=0}^k 4^p ~\text{et}~
+\sum_{p=0}^k 4^p = \frac{4^{k+1}-1}{4-1} = \frac{1}{3}(4^{k+1}-1)$$
+
+La somme totale est $S = \frac{1}{3} \sum_{k=0}^\infty 2^{-3k-k^2} (2^{2k+2}-1) = \frac{1}{3} \sum_{k=0}^\infty (2^{-k-k^2+2} - 2^{-3k-k^2})$.
+C'est une somme télescopique ?
+
+Observons les exposants :
+Terme 1 : $2 - k - k^2$.
+Terme 2 : $-3k - k^2$.
+
+Si on regarde le terme 1 pour $k$ et le terme 2 pour $k-1$ :
+$-3(k-1)-(k-1)^2 = -3k+3-(k^2-2k+1) = -k^2-k+2$.
+C'est exactement l'exposant du terme 1 !
+
+Donc $\sum_{k=0}^N (u_k - u_{k+1})$ avec $u_k = 2^{2-k-k^2}$. (Attention aux indices, vérifions le décalage).
+
+Le terme générique est $v_k - w_k$ avec $v_k = 2^{2-k-k^2}$ et $w_k = 2^{-3k-k^2}$.
+On a $w_{k-1} = v_k$.
+
+Somme partielle : $\sum_{k=0}^N v_k - \sum_{k=0}^N w_k = \sum_{k=0}^N w_{k-1} - \sum_{k=0}^N w_k = w_{-1} - w_N$.
+(Attention $w_{-1}$ n'est pas défini par la formule de somme mais par la relation).
+
+Reprenons :
+$\sum_{k=0}^\infty 4^p 2^{\dots} - \sum \dots$
+Pour $k=0$, $v_0 = 2^2=4$, $w_0 = 2^0=1$. Terme est $(4-1)/3 = 1$.
+
+La somme est $\frac{1}{3} [ (v_0 + v_1 + \dots) - (w_0 + w_1 + \dots) ]$.
+Comme $v_k = w_{k-1}$, la somme est $\frac{1}{3} [ w_{-1} ]$ si on décale ?
+
+Plus simplement : $\sum_{k=0}^\infty (w_{k-1} - w_k)$.
+Pour $k=0$, le terme est $v_0 - w_0$.
+
+On a vu $v_0 = w_{-1}$. Donc c'est $w_{-1} - w_\infty$.
+$w_k \to 0$.
+
+Donc la somme est $w_{-1} = v_0 = 4$.
+Avec le facteur $1/3$, $S = 4/3$.
 \end{correction}
 
 % --- Correction Exercice Supplémentaire ---
-\begin{correction}{Supplémentaire}
-\textbf{1.} $w_n = \sum_{k=1}^n \frac{1}{k^2} \frac{1}{(n-k)!}$.
-Posons $u_n = \frac{1}{n^2}$ pour $n \ge 1$, $u_0=0$.
-Posons $v_n = \frac{1}{n!}$ pour $n \ge 0$.
-$w_n$ est le terme général du produit de Cauchy de $\sum u_n$ et $\sum v_n$.
-$\sum |u_n|$ converge (Riemann $\alpha=2$).
-$\sum |v_n|$ converge (Exponentielle).
-Donc $\sum w_n$ converge absolument et sa somme est le produit des sommes.
-$\sum_{n=0}^\infty w_n = (\sum_{n=1}^\infty \frac{1}{n^2}) (\sum_{n=0}^\infty \frac{1}{n!}) = \frac{\pi^2}{6} \times e$.
+\begin{correction}{17}
+\begin{enumerate}
+    \item $w_n = \sum_{k=1}^n \frac{1}{k^2} \frac{1}{(n-k)!}$.
+    Posons $u_n = \frac{1}{n^2}$ pour $n \ge 1$, $u_0=0$.
+    Posons $v_n = \frac{1}{n!}$ pour $n \ge 0$.
+    $w_n$ est le terme général du produit de Cauchy de $\sum u_n$ et $\sum v_n$.
+    $\sum |u_n|$ converge (Riemann $\alpha=2$).
+    $\sum |v_n|$ converge (Exponentielle).
+    Donc $\sum w_n$ converge absolument et sa somme est le produit des sommes.
+    $\sum_{n=0}^\infty w_n = (\sum_{n=1}^\infty \frac{1}{n^2}) (\sum_{n=0}^\infty \frac{1}{n!}) = \frac{\pi^2}{6} \times e$.
 
-\textbf{2.} $w_n = \frac{1}{2^n} \sum_{k=0}^n 2^k u_k = \sum_{k=0}^n u_k \frac{1}{2^{n-k}}$.
-Posons $a_k = u_k$ et $b_k = \frac{1}{2^k}$.
-$w_n$ est le produit de Cauchy de $\sum u_n$ et $\sum \frac{1}{2^n}$.
-On nous dit que $\sum u_n$ converge absolument.
-$\sum \frac{1}{2^n}$ converge absolument (géométrique $1/2 < 1$).
-Donc $\sum w_n$ converge absolument.
-Somme = $(\sum_{n=0}^\infty u_n) (\sum_{n=0}^\infty \frac{1}{2^n}) = S_u \times 2$.
+    \item $w_n = \frac{1}{2^n} \sum_{k=0}^n 2^k u_k = \sum_{k=0}^n u_k \frac{1}{2^{n-k}}$.
+    Posons $a_k = u_k$ et $b_k = \frac{1}{2^k}$.
+    $w_n$ est le produit de Cauchy de $\sum u_n$ et $\sum \frac{1}{2^n}$.
+    On nous dit que $\sum u_n$ converge absolument.
+    $\sum \frac{1}{2^n}$ converge absolument (géométrique $1/2 < 1$).
+    Donc $\sum w_n$ converge absolument.
+    Somme = $(\sum_{n=0}^\infty u_n) (\sum_{n=0}^\infty \frac{1}{2^n}) = S_u \times 2$.
+\end{enumerate}
 \end{correction}

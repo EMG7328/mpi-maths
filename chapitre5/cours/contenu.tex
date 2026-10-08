@@ -435,42 +435,40 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 \begin{proof}
     $\Rightarrow$ Supposons que $(u_n)_{n \in \N}$ est sommable. 
 
-    Ainsi $\forall j \subset \N$ fini, $\displaystyle \sum_{n \in J} |u_n| \leqslant M$.
+    Ainsi $\forall J \subset \N$ fini, $\displaystyle \sum_{n \in J} |u_n| \leqslant M$.
 
     Soit $N \in \N$, alors $\displaystyle \sum_{j = 0 }^N |u_j|  = \sum_{n \in \{0, \ldots, N\}} |u_n| \leqslant M$.
 
-    Donc $\sum_{j \geqslant 0} \mid u_j \mid$ converge et la série est absolument convergente. 
+    Donc $\sum_{j \geqslant 0} |u_j|$ converge et la série est absolument convergente. 
 
-    \lvspace $\Leftarrow$ Supposons que $\sum_{n \geqslant 0} \mid u_n \mid $ converge. 
+    \lvspace $\Leftarrow$ Supposons que $\sum_{n \geqslant 0} |u_n|$ converge. 
 
-    Soit $J \subset \N$ fini, et soit $N$ un majorant de $J$. 
+    Soit $J \subset \N$ fini, et soit $N \in \N$ un majorant de $J$. 
 
     $$\sum_{j \in J} |u_j| \leqslant \sum_{j = 0}^N |u_j| \leqslant \sum_{j = 0}^\infty |u_j|$$
 
-    Donc la famille est sommable. 
+    Donc la famille est sommable. \\
 
-    \uindent{Si $\forall n, \, u_n \in \R^+$ }
-
+    \uline{Si $\forall n, \, u_n \in \R^+$ :}
     Pour $J \subset \N$ fini, soit $N$ un majorant de $J$. 
     $$\sum_{j \in J} u_j \leqslant \sum_{j = 0}^N u_j \leqslant \sum_{j = 0}^\infty u_j$$
 
-    Par def du sup, 
+    Par définition de la borne sup, 
     $$\sum_{n \in \N} u_n \leqslant \sum_{j = 0 }^{\infty } u_j$$
 
-    Par ailleurs $\forall k, \, \displaystyle \sum_{i = 0}^k u_i  = \sum_{i \in \ninter 0 n} u_i \leqslant \sum_{i \in \N} u_i$.
+    Par ailleurs $\forall k \in \N, \, \displaystyle \sum_{i = 0}^k u_i  = \sum_{i \in \ninter 0 n} u_i \leqslant \sum_{i \in \N} u_i$.
 
-    Donc par passage à la limite, $\displaystyle \sum_{i = 0}^\infty u_i \leqslant \sum_{i \in \N} u_i$ et on a donc l'égalité. 
+    Donc par passage à la limite, $\displaystyle \sum_{i = 0}^\infty u_i \leqslant \sum_{i \in \N} u_i$ et on a donc l'égalité. \\
 
-    \uindent{Si $\forall n \in \N, \, u_n \in \R$ }
-
-    \svspace $a \leqslant u_n^+ \leqslant \mid u_n \mid$ et $0 \leqslant u_n^- \leqslant \mid u_n \mid$.
+    \uline{Si $\forall n \in \N, \, u_n \in \R$ :}
+    $a \leqslant u_n^+ \leqslant |u_n|$ et $0 \leqslant u_n^- \leqslant |u_n|$.
 
     Donc par ce qui précède, 
     $$\sum_{n = 0}^\infty u_n^+ = \sum_{n \in \N} u_n^+ \text{ et } \sum_{n = 0}^\infty u_n^- = \sum_{n \in \N} u_n^-$$
 
     Et donc par défférence, $\displaystyle \sum_{n = 0}^\infty u_n = \sum_{n \in \N} u_n$.
 
-    Dans le cas général, on a l'égalité pour les parties réelles et imaginaires, d'où la conclusion 
+    Dans le cas complexe, on a l'égalité pour les parties réelles et imaginaires, d'où la conclusion 
     par combinaison linéaire. 
 \end{proof}
 
@@ -486,13 +484,13 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 \end{proof}
 
 \begin{exemple}
-    Calcul de $\displaystyle \sum_{n = 0 }^{\infty } \frac 1 {(2n + 1)^2}$. 
+    Calcul de $\displaystyle S = \sum_{n = 0 }^{\infty } \frac 1 {(2n + 1)^2}$, qui existe car le terme général est équivalent à $\frac 1 {n^2}$. 
 
-    $\displaystyle \zeta(2) = \frac{\pi^2} 6 = \sum_{n = 1}^\infty \frac 1 {n^2}$ famille sommable 
+    $\displaystyle \zeta(2) = \frac{\pi^2} 6 = \sum_{n = 1}^\infty \frac 1 {n^2}$ famille sommable. 
 
-    $\displaystyle = \sum_{n = 0 }^{\infty } \frac 1 {(2n)^2} + \sum_{n = 0 }^{\infty } \frac 1 {(2n + 1)^2}$ par le th de sommation par paquets. 
+    $\displaystyle \zeta(2) = \sum_{n = 0 }^{\infty } \frac 1 {(2n)^2} + \sum_{n = 0 }^{\infty } \frac 1 {(2n + 1)^2}$ par le th de sommation par paquets. 
 
-    $\displaystyle = S + \frac 1 4 + \frac{\pi^2} 6$
+    $\displaystyle \frac{\pi^2} 6 = S + \frac{\pi^2}{24}$
 
     Donc $S = \frac {\pi^2} 8$.
 \end{exemple}
@@ -506,7 +504,8 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 \end{theoreme}
 
 \begin{proof}
-    Vrai pour la famille $(u_n)_{n \in \N}$ sommable. 
+    $(u_n)_{n \in \N}$ est sommable car la série converge absolument,
+    on réutilise donc le résultat prouvé avant.
 \end{proof}
 
 \begin{remarque}
@@ -518,21 +517,20 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 \subsection{Cas des familles réelles positives}
 
 \begin{theoreme}{}{}
-    Soit $(u_{n, p})_{(n, p) \in \N^2}$ une famille de réels positifs.
+    Soit $(u_{n, p})_{(n, p) \in \N^2}$ une famille de \textbf{réels positifs}.
     Alors les assertions suivantes sont équivalentes :
     \begin{enumerate}
         \item la famille $(u_{n, p})_{(n, p) \in \N^2}$ est sommable
         \item $\displaystyle \forall n \in \N, \, \sum_{p \geqslant 0 } u_{n, p}$ converge et $\displaystyle \sum_{n \geqslant 0} \left( \sum_{p = 0}^\infty u_{n, p} \right)$ converge.
         \item $\forall p \in \N, \, \displaystyle \sum_{n \geqslant 0 } u_{n, p}$ converge et $\displaystyle \sum_{p \geqslant 0} \left( \sum_{n = 0}^\infty u_{n, p} \right)$ converge.
-        \item En posant $\forall k \in \N, \, w_k = \displaystyle \sum_{n = 0 }^{k }u_{n, k - n} = \sum_{p = 0 }^{k } u_{k - p, p} = \sum_{\substack{((n, p) \in \N^2 \\ n + p = k}} u_{n, p}$, la série $\displaystyle \sum_{k = 0}^\infty w_k$ converge
-            et en ce cas $\displaystyle \sum_{(n, p) \in \N^2} = \sum_{n = 0 }^{\infty } \sum_{p = 0 }^{\infty }u_{n, p} = \sum_{p = 0 }^{\infty } \sum_{n = 0 }^{\infty }u_{n, p} = \sum_{k = 0 }^{\infty } w_k$ 
+        \item En posant $\forall k \in \N, \, w_k = \displaystyle \sum_{n = 0 }^{k }u_{n, k - n} = \sum_{p = 0 }^{k } u_{k - p, p} = \sum_{\substack{(n, p) \in \N^2 \\ n + p = k}} u_{n, p}$, la série $\displaystyle \sum_{k = 0}^\infty w_k$ converge
+            et en ce cas $\displaystyle \sum_{(n, p) \in \N^2} u_{n,p} = \sum_{n = 0 }^{\infty } \sum_{p = 0 }^{\infty }u_{n, p} = \sum_{p = 0 }^{\infty } \sum_{n = 0 }^{\infty }u_{n, p} = \sum_{k = 0 }^{\infty } w_k$ 
     \end{enumerate}
 \end{theoreme}
 
 \begin{proof}
     C'est le théorème de sommation par paquets appliqué aux partitions de
     $\N^2 = \bigsqcup_{n \in \N} I_n = \bigsqcup_{p \in \N} J_p = \bigsqcup_{k \in \N} E_k$
-
     où $I_n = \{ (n, p), \, p \in \N \}, \, J_p = \{ (n, p), \, n \in \N \}$ et
     $E_k = \{ (n, p), \, n + p = k \}$.
 \end{proof}
@@ -541,24 +539,23 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 
 \begin{theoreme}{Théorème de Fubini positif}{}
     Avec la convention qu'une somme infinie non convergente de réels positifs vaut 
-    $+ \infty$ on a pour toute famille de réels \textbf{positifs} $(u_{n, p})_{(n, p) \in \N^2}$ :
+    $+ \infty$ on a pour toute famille de \textbf{réels positifs} $(u_{n, p})_{(n, p) \in \N^2}$ :
     $$\sum_{n = 0}^\infty \left( \sum_{p = 0}^\infty u_{n, p} \right) = \sum_{p = 0}^\infty \left( \sum_{n = 0}^\infty u_{n, p} \right) $$
 \end{theoreme}
 
 \begin{proof}
-    Conséquence de 1).
+    Conséquence de 1) de la proposition précédente.
 \end{proof}
 
 \subsection{Cas général}
 
 \begin{theoreme}{}{}
-    Soit $(u_{n, p})_{(n, p) \in \N^2}$ une famille de complexes. On suppose que 
-    cette famille est sommable.
+    Soit $(u_{n, p})_{(n, p) \in \N^2}$ une famille sommable de complexes. Alors :
 
     \begin{enumerate}
         \item $\displaystyle \forall n \in \N, \, \sum_{p \geqslant 0 } u_{n, p}$ converge et $\displaystyle \sum_{n \geqslant 0} \left( \sum_{p = 0}^\infty u_{n, p} \right)$ converge.
         \item $\forall p \in \N, \, \displaystyle \sum_{n \geqslant 0 } u_{n, p}$ converge et $\displaystyle \sum_{p \geqslant 0} \left( \sum_{n = 0}^\infty u_{n, p} \right)$ converge.
-        \item En posant $\forall k \in \N, \, w_k = \displaystyle \sum_{n = 0 }^{k }u_{n, k - n} = \sum_{p = 0 }^{k } u_{k - p, p} = \sum_{\substack{((n, p) \in \N^2 \\ n + p = k}} u_{n, p}$, la série $\displaystyle \sum_{k = 0}^\infty w_k$ converge
+        \item En posant $\forall k \in \N, \, w_k = \displaystyle \sum_{n = 0 }^{k }u_{n, k - n} = \sum_{p = 0 }^{k } u_{k - p, p} = \sum_{\substack{(n, p) \in \N^2 \\ n + p = k}} u_{n, p}$, la série $\displaystyle \sum_{k = 0}^\infty w_k$ converge
             et en ce cas $\displaystyle \sum_{(n, p) \in \N^2} = \sum_{n = 0 }^{\infty } \sum_{p = 0 }^{\infty }u_{n, p} = \sum_{p = 0 }^{\infty } \sum_{n = 0 }^{\infty }u_{n, p} = \sum_{k = 0 }^{\infty } w_k$ 
     \end{enumerate}
 \end{theoreme}
@@ -570,12 +567,13 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
     numériques \textbf{absolument convergentes}.
     
     On définit la suite $(w_n)_{n \in \N}$ appelée produit de convolution des suites 
-    $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ par
+    $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ par :
     $$\forall n \in \N, \, w_n = \sum_{\substack{(p, q) \in \N^2 \\ p + q = n}} u_p v_q = \sum_{k = 0}^n u_k v_{n - k}$$
 
     On définit le produit de Cauchy des séries $ \sum_{n \geqslant 0} u_n$ et $ \sum_{n \geqslant 0} v_n$ 
     comme étant la série $ \sum_{n \geqslant 0} w_n$. Alors cette série est
-    absolument convergente, et $$\sum_{n = 0 }^{\infty} w_n = \left( \sum_{n = 0 }^{\infty } u_n \right) \left( \sum_{n = 0 }^{\infty } v_n \right)$$
+    absolument convergente, et :
+    $$\sum_{n = 0 }^{\infty} w_n = \left( \sum_{n = 0 }^{\infty } u_n \right) \left( \sum_{n = 0 }^{\infty } v_n \right)$$
 \end{theoreme}
 
 \idee{56 théorèmes de sommation par paquets.}
@@ -598,7 +596,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 
     Donc, par le théorème de sommation par paquets, $(a_{n, p})_{(n, p) \in \N^2}$ est sommable. 
 
-    Donc par le théorème de sommation par paquets, 
+    Encore par le théorème de sommation par paquets, 
     $$P' = \sum_{(n, p) \in \N^2} |a_{n, p}| = \sum_{n = 0 }^{\infty } z_n$$
     où $\displaystyle z_n = \sum_{p = 0}^n |u_p| |v_{n - p}|$.
 
@@ -623,9 +621,9 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$}
 
 \end{exemple}
 
-\begin{corollaire}{produit de matrices exponentielles}{}
+\begin{corollaire}{Produit d'exponrntielles de matrices}{}
     Soient $A, B \in \mathscr M_p(\C)$ telles que $AB = BA$. 
-    Alors 
+    Alors :
     $$\displaystyle e^A e^B = e^{A + B}$$
 \end{corollaire}
 

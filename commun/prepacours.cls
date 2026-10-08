@@ -470,11 +470,11 @@
   \begin{center}
     \begin{tcolorbox}[
       width=0.88\linewidth,
-      arc=3mm,
+      %arc=3mm,
       boxrule=1pt,
       colback=white,
       colframe=vorange!85!black,
-      leftrule=5pt,
+      %leftrule=5pt,
       top=14pt, bottom=14pt, left=18pt, right=18pt,
       shadow={2pt}{-2pt}{0pt}{black!8}
     ]
@@ -615,14 +615,14 @@
   {\color{vorange!95!black}\thesubsection}{1em}{}
   [\vspace{0.3em}]
 
-\titlespacing*{\subsection}{-3em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsection}{-2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
 \titleformat{\subsubsection}
   {\normalfont\large\bfseries}
   {\color{vorange!95!black}\thesubsubsection}{1em}{}
   [\vspace{0.3em}]
 
-\titlespacing*{\subsubsection}{-2em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+\titlespacing*{\subsubsection}{-1em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 
 \titlespacing*{\paragraph}{1.5em}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
 

@@ -288,11 +288,6 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     Les seules parties à la fois ouvertes et fermées de $E$ sont $\emptyset$ et $E$.
 \end{theoreme}
 
-\idee{
-    Par l'absurde, on prend deux ensembles ouverts et fermés complémentaires, et 
-    on cherche à aller sur la frontière. 
-}
-
 \begin{proof}
     Supposons par l'absurde qu'il existe $A \subset E$ telle que $A \neq \emptyset$, $A \neq E$, et $A$ est à la fois ouvert et fermé.
 
@@ -302,6 +297,11 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     et considérons 
     
     $S = \left\{\lambda b + (1 - \lambda )a, \, \lambda \in \inter 0 1\right\}$
+
+\idee{
+    Par l'absurde, on prend deux ensembles ouverts et fermés complémentaires, et 
+    on cherche à aller sur la frontière. 
+}
 
     Notons $C = \left\{\lambda \in \inter 0 1 \ \mid \lambda b + (1 - \lambda )a \in A\right\}$
 
@@ -1987,7 +1987,6 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     le critère. 
 \end{exemple}
 
-
 \section{Compacts d'un espace vectoriel normé}
 
 \begin{definition}{Compact}{}
@@ -2000,6 +1999,28 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     $(u_{\varphi(n)})_{n \in \N}$ telle que $u_{\varphi(n)} \to \ell \in A$.
 \end{definition}
 
+\begin{proposition}{Précompacité - HP}{}
+Soit $(E,N)$ un evn et $A\subset E$ un compact.
+
+Alors pour tout $\varepsilon >0$ il existe un entier $n>0$ et des points $x_1,...,x_n$ de $A$ tels que :
+
+$$A \subset \bigcup_{i=1}^n B(x_i,\varepsilon)$$
+\end{proposition}
+
+\begin{proof}
+On raisonne par l'absurde en supposant qu'il existe $\varepsilon>0$ tel que pour tout $n \in \N^*$ et tous points $x_1,....,x_n$ de $A$ , il existe un point $y\in A$ tel que 
+$y \notin \bigcup_{i=1}^n B(x_i,\varepsilon)$.
+
+On va pouvoir construire par récurrence une suite $(y_n)_{n \in \N}$ de points de $A$ telle que pour tout $n$ et pour tout $i<n$ , $d(y_n,y_i)\geqslant \varepsilon$.
+
+En effet : 
+on prend $y_1$ quelconque.\\
+On suppose avoir construit $y_1,...,y_n$ pour un certain $n$.\\
+On applique la propriété à ces points et on pose $y_{n+1}=y$.\\
+
+Mais $A$ est compact donc on peut extraire de cette suite une suite $y_{\varphi(n)}$ qui converge vers un $\ell \in A$.\\
+Mézalors à cause de la propriété, comme $\varphi(n+1)>\varphi(n)$ , $d(y_{\varphi(n+1)},y_{\varphi(n)})\geqslant \varepsilon$ et donc à la limite $0\geqslant \varepsilon$ ce qui est absurde...\\
+\end{proof}
 
 \begin{definition}{Borel-Lebesgue - LHP}{}
     Soit $A \subset E$, alors
@@ -2009,6 +2030,76 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     telle que $\displaystyle A \subset \bigcup_{i \in I} U_i$, il existe $i_1, \ldots, i_n \in I$ tels que :
     $$\displaystyle A \subset \bigcup_{k=1}^n U_{i_k}$$
 \end{definition}
+
+\uline{{\bf Lemme  :}}
+Considérons $(U_i)_{i \in I}$ famille d'ouverts tels que $A \subset \bigcup_{i \in I} U_i$.
+ Il existe $r>0$ tel que pour tout $x\in A$ , il existe $i_{x} \in I$ , $B(x,r) \subset U_{i_x}$.
+
+\begin{proof}
+Commençons par prouver le lemme, raisonnons par l'absurde.
+
+Supposons que pour tout $r>0$ il existe $x\in A$ tel que pour tout $i \in I$ , il existe $y\in B(x,r)$. tel que que $y \notin U_i$.
+Utilisons ce résultat pour $r=\frac 1{n+1}$ avec $n$ naturel.
+
+Cela fournit un $x_n \in A$ tel que pour tout $i \in I$ , il existe $y\in B(x_n,\frac 1{n+1})$. tel que que $y \notin U_i$. \\
+
+La compacité de $A$ nous permet d'extraire de la suite $(x_n)$ une suite $(x_{\varphi(n)}$ qui converge vers un $x\in A$.\\
+
+Comme $A \subset \bigcup_{i \in I}\'eU_i$ il existe un indice $j \in I$ tel que $x \in U_j$.\\
+De plus,  comme $U_j$ est ouvert il existe un $R>0$ tel que $B(x,R) \subset U_j$.\\
+
+Choisissons un entier $N$ tel que $\frac 1{N+1}\leqslant \frac R 3$.\\
+Du fait de la convergence de la suite il existe un rang $n_0\geq N $ tel que $x_{\varphi(n_0)} \in B(x,\frac R 3)$.
+On a donc (par la propri\'et\'e) l'existence d'un $y \in B(x_{\varphi(n)},\frac 1{\varphi(n)+1})$. tel que que $y \notin U_j$.\\
+M\'ezalors :
+$$d(x,y) \leqslant d(x,x_{\varphi(n_0)})+d(x_{\varphi(n_0)},y) \leqslant \frac R 3 + \frac 1{\varphi(n)+1}\leqslant \frac {2R}3 <R$$
+Donc $y \in B(x,R)$ donc $y \in U_j$ et la contradiction attendue !!!\\
+\end{proof}
+
+\begin{proof}
+On va prouver l'équivalence entre les définitions. 
+
+$\Rightarrow$ Considérons  $(U_i)_{i \in I}$ famille d'ouverts tels que $A \subset \bigcup_{i \in I}\'eU_i$.
+
+Utilisons maintenant la propriété de précompacité (montrée plus haut) appliquée à $\varepsilon=r$.
+
+Il existe donc un nombre fini de $x_1,...,x_N$ de $A$ tels que `
+$$A \subset \bigcup_{i=1}^N B(x_i,\varepsilon)$$
+mézalors :
+$$A \subset \bigcup_{i=1}^N U_{i_x}$$ 
+et la conclusion ! \\
+
+
+$\Leftarrow$ Soit $(x_n)_{n \in \N}$ une suite de $A$.
+
+Posons pour tout $n \in \N$, 
+$$F_n=\overline{ \left\{x_k \ , k \geq n\right\} }$$
+C'est un fermé et on a clairement $F_{n+1} \subset F_n$.
+
+Considérons : $$F=\bigcap_{n=1}^{\infty} F_n$$
+
+Supposons dans un premier temps que $F \cap A \neq \emptyset$.\\
+
+Soit $\ell \in F \cap A$.
+
+Alors pour tout entier $N$, $\ell \in \bigcap_{n=N}^{+\infty} F_n$.
+
+Donc pour tout $n\geq N$ , $\ell \in F_n$ et donc par définition de l'adhérence  pour tout $\varepsilon>0$, $\{x_k k\geqslant n\} \cap B(\ell, \varepsilon) \neq \emptyset$
+et donc il existe $k\geq N$ tel que $x_k \in  B(\ell, \varepsilon) $.\\
+Ceci montre que $\ell$ est une valeur d'adh\'erence de la suite $(x_n)_{n \in \N}$ et donc $A$ est compact !!!\\
+
+Reste à montrer que $F \cap A \neq \emptyset$.\\
+
+Raisonnons par l'absurde.
+
+Alors en posant pour tout $n$ , $U_n=E-F_n$ ce sont des ouverts tels que :
+$$A \subset \bigcup_{n\in \N} U_n$$
+et donc grace à l'hypothèse, il existe un nombre fini d'ouverts $U_{\varphi(1)},...,U_{\varphi(N)}$ tels que :
+$$A \subset \bigcup_{n=1}^N U_{\varphi(n)}$$
+Ceci montre donc que $A \cap F_{\varphi(N)}=\emptyset$.
+
+Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
+\end{proof}
 
 \subsection{Propriétés des compacts}
 
@@ -2021,6 +2112,15 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     \end{enumerate}
 \end{proposition}
 
+\begin{proof}~
+    \begin{enumerate}
+        \item Soit $A \subset E$ un compact. Montrons que $A$ est fermé.
+
+        Soit $(u_n)_{n \in \N}$ une suite de $A$ qui converge vers $\ell \in E$.
+
+        $A$ étant compact, il existe une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
+        $\ell' \in A$. Or $u_{\varphi(n)} \to \ell$ donc $\ell = \ell' \in A$, donc $A$ est fermé.
+
 \idee{
     1. caractérisation séquentielle des fermés et absurde 
 
@@ -2030,15 +2130,6 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 
     4. extractions successives
 }
-
-\begin{proof}~
-    \begin{enumerate}
-        \item Soit $A \subset E$ un compact. Montrons que $A$ est fermé.
-
-        Soit $(u_n)_{n \in \N}$ une suite de $A$ qui converge vers $\ell \in E$.
-
-        $A$ étant compact, il existe une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
-        $\ell' \in A$. Or $u_{\varphi(n)} \to \ell$ donc $\ell = \ell' \in A$, donc $A$ est fermé.
 
         Supposons que $A$ n'est pas borné, pour tout $n \in \N$, il existe 
         $x_n \in A$ tel que $N(x_n) > n$.
@@ -2096,8 +2187,6 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     \end{enumerate}
 \end{proof}
 
-
-
 \subsection{Cas de la dimension finie}
 
 \begin{theoreme}{Compacts en dimension finie}{}
@@ -2126,9 +2215,49 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 \end{theoreme}
 
 \begin{proof}
-    A la fin du TD.
-\end{proof}
+$\Leftarrow$ Si l'espace est de dimension finie, la boule unité fermée est un fermé borné donc un compact.\\
 
+$\Rightarrow$ Réciproquement supposons que $E$ est n'est pas de dimension finie.
+
+On va construire par récurrence une famille  $(e_n)_{n \in \N}$ de vecteurs de norme $1$ tels que pour tout $i\neq j$ , 
+$d(e_i,e_j) \geqslant \frac 1 2$
+
+\uline{Initialisation :} On choisit un vecteur non nul $u$ de $E$ et on pose $e_1=\frac u{N(u)}$.
+
+\uline{Hérédité :} Soit $(e_1,..., e_n)$ une famille libre de vecteurs de $E$ de norme $1$  tels que pour tout $i\neq j$ inf\'erieurs \'e $n$ , 
+$d(e_i,e_j) \geqslant \frac 1 2$
+et considérons $F=Vect(e_1,...e_n)$.
+
+$E$ n'est pas de dimension finie, donc on peut trouver un $v \notin F$.
+
+$F$ est un espace de dimension finie donc un fermé.
+
+Comme $v \notin F $ et. que $F$ fermé, $d(v,F)=m>0$.
+
+Il existe donc $f_0\in F$ tel que $0<m<d(v,f_0)=m_0<2 m$.
+
+Considérons : $$w=\frac{f_0-v}{N(f_0-v)}=\frac{f_0-v}{m_0}$$
+$F$ étant un espace vectoriel, comme $f_0 \in F$ et $v \notin F$, on a  $w\notin F$.
+Et évidemment $N(w)=1$.
+
+Reste à évaluer pour $i \in \{1,...,n\}$ $N(w-e_i)$.
+On a :
+$$N(w-e_i)=N\left(\frac{f_0-v}{m_0}-e_i\right)=N\left(\frac{f_0-v-m_0 e_i}{m_0}\right)$$
+
+Or $f_0-me_i \in F$ donc $N(f_0-me_i-v)>m$ donc :
+$$N(w-e_i)> \frac{m}{m_0}\geqslant \frac 1 2 $$
+
+donc $e_{n+1}=w$ convient. \\
+
+On peut maintenant montrer que $B'(0,1)$ n'est pas compacte en considérant la suite  $(e_n)_{n \in \N}$.\\
+Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait une suite extraite 
+ $(e_{\varphi(n)})_{n \in \N}$ qui converge vers $\ell$.
+
+ Et donc pour $n$ assez grand , $n\geqslant n_0$, 
+ $$N(e_{\varphi(n)}-\ell) \leq \frac 1 8$$
+ 
+ Mézalors par l'inégalitée triangulaire : $$N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4 $$ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
+\end{proof}
 
 \subsection{Compacité et continuité}
 
@@ -2193,17 +2322,11 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     Or $f(A)$ fermé donc $\sup(f(A)) \in f(A)$, donc c'est un max, idem pour l'inf. 
 \end{proof}
 
-\subsubsection{Equivalence des normes en dimension finie}
+\subsubsection{Équivalence des normes en dimension finie}
 
 Montrons le théorème d'équivalence des normes en dimension finie.
 
 Démonstration non exigible.
-
-\idee{
-    Montrer que toute norme est équivalente à la norme infinie, et montrer 
-    que la norme de $E$ restreinte à la sphère de rayon $1$ et de centre $0$ pour la norme 
-    infinie est lipschitzienne. 
-}
 
 \begin{proof}
     Soit $E$ un $\K$-ev de dimension finie. 
@@ -2214,6 +2337,12 @@ Démonstration non exigible.
 
     Considérons $S_\infty (0, 1) = \{ x \in E, \, N_\infty(x) = 1 \}$ et 
     $\fonction f {S_\infty(0, 1)}{\R}{x}{N(x)}$.
+
+\idee{
+    Montrer que toute norme est équivalente à la norme infinie, et montrer 
+    que la norme de $E$ restreinte à la sphère de rayon $1$ et de centre $0$ pour la norme 
+    infinie est lipschitzienne. 
+}
 
     Soient $x, y \in S_\infty(0, 1)$. Alors $| f(x) - f(y)| = |N(x) - N(y)| \leqslant N(x - y)$ par la deuxième inégalité triangulaire. 
 
@@ -2242,7 +2371,6 @@ Démonstration non exigible.
     Vrai aussi pour $y = 0$. Donc $N$ et $N_\infty$ sont équivalentes.
 \end{proof}
 
-
 \section{Connexité par arcs}
 
 Dans ce paragraphe on prendra $\K = \R$.
@@ -2253,7 +2381,6 @@ Dans ce paragraphe on prendra $\K = \R$.
     On appelle chemin ou arc joignant $a$ à $b$ toute application continue $f$ de 
     $\inter 0 1$ dans $A$ telle que $f(0) = a$ et $f(1) = b$.
 \end{definition}
-
 
 \subsection{Connexité par arcs}
 
@@ -2441,7 +2568,28 @@ Dans ce paragraphe on prendra $\K = \R$.
     Or $\R^*$ n'est pas connexe par arcs donc par contraposée du théorème, $A$ non plus. 
 \end{exemple}
 
-\subsection{Complément Hors Programme (Connexité)}
+\subsection{Connexité par arcs de $\text{GL}_n(\C)$ - Hors Programme}
+Soient $A,B \in GL_n(\C)$.
+Considérons l'application :
+$$P : \begin{array}{ccc} \C & \rightarrow & \C \\ z & \mapsto & det(A+z(B-A))\end{array}$$
+
+C'est un polynôme en $z$, donc il s'annule un nombre fini de fois, que l'on note $z_1,...,z_n$.
+
+$P(0)=det(A)$ n'est pas nul et $P(1)=det(B)$ non plus.
+
+Considérons un chemin continu du plan complexe :
+$$\begin{array}{ccc} \varphi :[0,1] & \rightarrow & \C \\ t & \mapsto & \varphi(t)\end{array} $$
+
+telle que $\varphi(0)=0$ , $\varphi(1)=1$ et $\forall t \in ]0,1[ \ , \ \forall i \in \{1,...,n\}\'e\ , \ \varphi(t) \neq z_i$.
+(c'est possible car $\C$ privé d'un ensemble fini est connexe par arcs, ce qu'on montre facilement par récurrence sur le cardinal de l'ensemble fini).\\
+
+Considérons pour $t\in [0,1]$ , $M(t)=A+\varphi(t) (B-A)$.
+
+On a bien $M$ continue; $M(0)=A$ , $M(1)=B$ et pour tout $t$ , $det(M(t))=P(t) \neq 0$.
+
+Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est connexe par arcs.
+
+\subsection{Connexité - Hors Programme}
 
 \begin{definition}{Connexité - HP}{}
     Soit $A \subset E$. 

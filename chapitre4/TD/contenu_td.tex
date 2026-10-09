@@ -1,6 +1,5 @@
 \section{Énoncés des Exercices}
 
-% --- SÉRIES NUMÉRIQUES ---
 \subsection{Séries numériques}
 
 % --- Exercice 1 (Source: EXERCICE 7 analyse) ---
@@ -119,11 +118,11 @@ Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément 
 
 % --- Exercice 10 (Source: EXERCICE 61 algèbre) ---
 \begin{exercice}[Exercice 61 Algèbre]
-On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \sup_{i,j} |a_{i,j}|$.
+On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
 \begin{enumerate}
     \item Prouver que $\|\cdot\|$ est une norme.
     \item Démontrer que $\|AB\| \le n\|A\|\|B\|$ et $\|A^p\| \le n^{p-1}\|A\|^p$.
-    \item Démontrer que la série $\sum\frac{A^{p}}{p!}$ est absolument convergente.
+    \item Démontrer que la série $\sum\frac{A^{p}}{p!}$ est absolument convergente. Est-elle convergente ?
 \end{enumerate}
 \end{exercice}
 
@@ -230,7 +229,7 @@ Soit $(u_{n})$ à termes strictement positifs.
 % --- Exercice 22 (Source: Exercice 16) ---
 \begin{exercice}
 Trouver la nature des séries :
-$$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \frac{n!^2}{(2n)!}, \quad \sum (\sin\frac{1}{n}) n^\alpha, \alpha \in \R $$
+$$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \frac{n!^2}{(2n)!}, \quad \sum \left(\sin\frac{1}{n}\right) n^\alpha, \alpha \in \R $$
 \end{exercice}
 
 % --- Exercice 23 (Source: Exercice 17) ---
@@ -421,20 +420,6 @@ Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 13 (Ratio) ---
-\begin{correction}{13}
-$u_n > 0$. $\frac{u_{n+1}}{u_n} = \frac{(n+a)(n+b)}{(n+c)(n+d)} \to 1$. Cas douteux d'Alembert.
-$v_n = \ln(n^\alpha u_n)$.
-$v_{n+1}-v_n = \alpha \ln(1+\frac{1}{n}) + \ln \frac{u_{n+1}}{u_n}$.
-DL de $\frac{u_{n+1}}{u_n} = 1 + \frac{a+b-c-d}{n} + O(\frac{1}{n^2})$.
-$v_{n+1}-v_n = \frac{\alpha + a+b-c-d}{n} + O(\frac{1}{n^2})$.
-Série télescopique converge ssi le terme en $1/n$ est nul.
-Condition : $\alpha = c+d-a-b$.
-Si cette condition est remplie, $v_n \to L$.
-Donc $n^\alpha u_n \to e^L$.
-$u_n \sim \frac{K}{n^{c+d-a-b}}$.
-\end{correction}
-
 % --- Correction Exercice 14 (Matrices) ---
 \begin{correction}{14}
 \begin{enumerate}
@@ -494,13 +479,25 @@ $u_n \sim \frac{K}{n^{c+d-a-b}}$.
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 18 (Restes) ---
+% --- Correction Exercice 13 (Ratio) ---
 \begin{correction}{18}
-$R_n = \sum_{k=n+1}^\infty \frac{1}{k^\alpha}$.
-Comparaison série-intégrale : $R_n \sim \int_n^\infty \frac{dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
-$\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge.
-Ssi $\alpha-1 > 1 \iff \alpha > 2$.
-Somme : $\sum_{n=1}^\infty R_n = \sum_{n=1}^\infty \sum_{k=n+1}^\infty \frac{1}{k^\alpha} = \sum_{k=2}^\infty \frac{1}{k^\alpha} \sum_{n=1}^{k-1} 1 = \sum_{k=2}^\infty \frac{k-1}{k^\alpha} = \zeta(\alpha-1) - \zeta(\alpha)$.
+\begin{enumerate}
+    \item   
+    $u_n > 0$. $\frac{u_{n+1}}{u_n} = \frac{(n+a)(n+b)}{(n+c)(n+d)} \to 1$. Cas douteux d'Alembert.
+
+    $v_n = \ln(n^\alpha u_n)$.
+    $v_{n+1}-v_n = \alpha \ln(1+\frac{1}{n}) + \ln \frac{u_{n+1}}{u_n}$.
+
+    DL de $\frac{u_{n+1}}{u_n} = 1 + \frac{a+b-c-d}{n} + O\left(\frac{1}{n^2}\right)$.
+    $v_{n+1}-v_n = \frac{\alpha + a+b-c-d}{n} + O\left(\frac{1}{n^2}\right)$.
+
+    Série télescopique converge ssi le terme en $1/n$ est nul.
+    Condition : $\alpha = c+d-a-b$.
+
+    \item Si cette condition est remplie, $v_n \to L$.
+    Donc $n^\alpha u_n \to e^L$,
+    donc $u_n \sim \frac{K}{n^{c+d-a-b}}$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 22 (Nature) ---
@@ -522,5 +519,14 @@ Somme : $\sum_{n=1}^\infty R_n = \sum_{n=1}^\infty \sum_{k=n+1}^\infty \frac{1}{
     Si $\alpha > 2$, $n^{\alpha-2} \to +\infty$, terme $\to e^{-\infty} = 0$.
     Règle $n^2 u_n$.
 \end{itemize}
+\end{correction}
+
+% --- Correction Exercice 24 (Restes) ---
+\begin{correction}{24}
+$R_n = \sum_{k=n+1}^\infty \frac{1}{k^\alpha}$.
+Comparaison série-intégrale : $R_n \sim \int_n^\infty \frac{dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
+$\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge.
+Ssi $\alpha-1 > 1 \iff \alpha > 2$.
+Somme : $\sum_{n=1}^\infty R_n = \sum_{n=1}^\infty \sum_{k=n+1}^\infty \frac{1}{k^\alpha} = \sum_{k=2}^\infty \frac{1}{k^\alpha} \sum_{n=1}^{k-1} 1 = \sum_{k=2}^\infty \frac{k-1}{k^\alpha} = \zeta(\alpha-1) - \zeta(\alpha)$.
 \end{correction}
 

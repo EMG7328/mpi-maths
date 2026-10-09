@@ -60,7 +60,7 @@ Les questions 1 et 2 sont indépendantes. Soit $E$ un espace vectoriel normé. S
 
 % --- Exercice 5 (Source: Exercice 2) ---
 \begin{exercice}
-Soit $A$ une partie non vide de $E$ un evn. On note pour $x \in E$, $d_{A}(x)$ la distance de $x$ à $A$.
+Soit $A$ une partie non vide de $E$ un espace vectoriel normé. On note pour $x \in E$, $d_{A}(x)$ la distance de $x$ à $A$.
 \begin{enumerate}
     \item Montrer que la partie formée des éléments de $E$ dont la distance à $A$ est nulle est l'adhérence de $A$.
     \item En déduire que si $A$ et $B$ sont deux parties de $E$, on a $d_{A} = d_{B}$ si et seulement si $A$ et $B$ ont même adhérence.
@@ -113,12 +113,13 @@ On considère $E=\mathbb{R}^{2}$. Justifier la continuité sur $\mathbb{R}^{2}$ 
     \item $g(x,y) = \begin{cases} \frac{x^{2}y^{2}}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}$
     \item $h(x,y) = \begin{cases} \frac{\sin(x)-\sin(y)}{x-y} & \text{si } x \neq y \\ \cos(x) & \text{sinon} \end{cases}$
 \end{itemize}
-\textit{Indication :} On commencera par remarquer que $h(x,y) = \int_{0}^{1} \cos((x-y)t+y) dt$ et on en déduira que $h$ est lipschitzienne.
+\textit{Indication :} On commencera par remarquer que $\displaystyle h(x,y) = \int_{0}^{1} \cos((x-y)t+y) dt$ et on en déduira que $h$ est lipschitzienne.
 \end{exercice}
 
 % --- Exercice 11 (Source: Exercice 6) ---
 \begin{exercice}
-Soit $(E, \| \cdot \|)$ un evn et $f: E \rightarrow E$ définie par $f(x) = \frac{1}{1+\|x\|}x$.
+Soit $(E, \| \cdot \|)$ un espace vectoriel normé et $f: E \rightarrow E$ définie par $f(x) = \frac{1}{1+\|x\|}x$.
+
 Montrer que $f$ est un homéomorphisme de $E$ sur la boule unité ouverte $B(0,1)$, c'est-à-dire réalise une bijection de $E$ sur $B(0,1)$, continue ainsi que sa réciproque $f^{-1}$.
 Résoudre pour cela l'équation $f(x)=y$ pour expliciter $f^{-1}$.
 \end{exercice}
@@ -158,13 +159,15 @@ Soient $E, F$ deux espaces vectoriels normés sur le corps $\mathbb{R}$.
         \item P2. $f$ est continue en $0_{E}$.
         \item P3. $\exists k > 0$ tel que $\forall x \in E, \|f(x)\|_{F} \le k \|x\|_{E}$.
     \end{itemize}
-    \item Soit $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\mathbb{R}$ muni de la norme définie par $\|f\|_{\infty} = \sup_{x \in [0,1]} |f(x)|$. On considère l'application $\varphi$ de $E$ dans $\mathbb{R}$ définie par $\varphi(f) = \int_{0}^{1} f(t) dt$. Démontrer que $\varphi$ est linéaire et continue.
+    \item Soit $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\mathbb{R}$ muni de la norme définie par $\|f\|_{\infty} = \sup_{x \in [0,1]} |f(x)|$.
+
+    On considère l'application $\varphi$ de $E$ dans $\mathbb{R}$ définie par $\displaystyle\varphi(f) = \int_{0}^{1} f(t) dt$. Démontrer que $\varphi$ est linéaire et continue.
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 10) ---
 \begin{exercice}
-On pose $E=C^{0}([0,1], \mathbb{R})$ muni de la norme $\|\cdot\|_{\infty}$.
+On pose $E= \mathscr C^{0}([0,1], \mathbb{R})$ muni de la norme $\|\cdot\|_{\infty}$.
 Montrer que l'application qui à une fonction $f$ de $E$ associe son unique primitive s'annulant en 0 est linéaire et continue. Déterminer sa norme d'opérateur.
 \end{exercice}
 
@@ -177,14 +180,15 @@ Soit $E$ l'ensemble des suites à valeurs réelles qui convergent vers 0.
     \begin{enumerate}
         \item Prouver que $\|\cdot\|$ est une norme sur $E$.
         \item Prouver que $\forall u=(u_{n})_{n \in \mathbb{N}} \in E, \sum \frac{u_{n}}{2^{n+1}}$ converge.
-        \item On pose alors $f(u) = \sum_{n=0}^{+\infty} \frac{u_{n}}{2^{n+1}}$. Prouver que $f$ est continue sur $E$.
+        \item On pose alors $\displaystyle f(u) = \sum_{n=0}^{+\infty} \frac{u_{n}}{2^{n+1}}$. Prouver que $f$ est continue sur $E$.
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 18 (Source: Exercice 11) ---
 \begin{exercice}
-On considère $E=\mathbb{R}[X]$ muni de la norme $\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}$ pour $P = \sum_{i=0}^{n} a_{i} X^{i}$.
+On considère $E=\mathbb{R}[X]$ muni de la norme $\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}$ pour $\displaystyle P = \sum_{i=0}^{n} a_{i} X^{i}$.
+
 Les formes linéaires suivantes sont-elles continues ? Si oui déterminer leur norme d'opérateur.
 $$ P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) dt, \quad P \mapsto P(1) $$
 \end{exercice}
@@ -193,7 +197,7 @@ $$ P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) dt, \quad P \mapsto P(1) $$
 \begin{exercice}
 On munit $\mathbb{R}^{2}$ de la norme $\|\cdot\|_{\infty}$.
 \begin{enumerate}
-    \item Montrer que pour toute matrice $A \in M_{2}(\mathbb{R})$ on peut définir $|||A||| = \sup \left\{ \frac{\|AX\|_{\infty}}{\|X\|_{\infty}}, X \in \mathbb{R}^{2} \setminus \{0\} \right\}$.
+    \item Montrer que pour toute matrice $A \in \mathscr M_{2}(\mathbb{R})$ on peut définir $|||A||| = \sup \left\{ \frac{\|AX\|_{\infty}}{\|X\|_{\infty}}, X \in \mathbb{R}^{2} \setminus \{0\} \right\}$.
     \item Expliciter sa valeur en fonction des coefficients de $A$.
     \item Montrer qu'il s'agit d'une norme d'algèbre.
     \item Mêmes questions en remplaçant $\|\cdot\|_{\infty}$ par $\|\cdot\|_{1}$.
@@ -202,7 +206,7 @@ On munit $\mathbb{R}^{2}$ de la norme $\|\cdot\|_{\infty}$.
 
 % --- Exercice 20 (Source: Exercice 13) ---
 \begin{exercice}
-Soit $f \in L(E,F)$ où $E$ et $F$ sont deux espaces vectoriels normés sur $\mathbb{K}$.
+Soit $f \in \mathscr L(E,F)$ où $E$ et $F$ sont deux espaces vectoriels normés sur $\mathbb{K}$.
 Montrer que $f$ est continue ssi $\{x \in E, \|f(x)\| = 1\}$ est un fermé.
 \end{exercice}
 
@@ -214,7 +218,7 @@ Soient $(E, N)$ un espace vectoriel normé, $\varphi$ une forme linéaire non nu
     \item On suppose que $\varphi$ est continue. Montrer que $H$ est fermé.
     \item On suppose que $\varphi$ n'est pas continue.
     \begin{enumerate}
-        \item Montrer qu'il existe une suite $u_{n}$ de vecteurs de norme 1 telle que pour tout $n$, $|\varphi(u_{n})| \ge n$.
+        \item Montrer qu'il existe une suite $u_{n}$ de vecteurs de norme 1 telle que pour tout $n$, $|\varphi(u_{n})| \geqslant n$.
         \item Construire à l'aide de $u_{n}$ et $a$ une suite de vecteurs de $H$ qui converge vers $a$.
         \item En déduire que $H$ n'est pas fermé.
     \end{enumerate}
@@ -229,7 +233,7 @@ Vérifier que $O(2) = \{A \in M_2 (\R), A^T \cdot A = I_2\}$, l'ensemble des mat
 
 % --- Exercice 23 (Source: Exercice 16) ---
 \begin{exercice}
-Soit $A$ un compact et $B$ un fermé de l'evn $E$.
+Soit $A$ un compact et $B$ un fermé de l'espace vectoriel normé $E$.
 Montrer que $A+B$ est un fermé de $E$.
 \textit{On pensera aux caractérisations séquentielles.}
 \end{exercice}

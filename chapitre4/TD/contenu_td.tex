@@ -51,7 +51,7 @@ On considère la série $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item Calculer pour $x\in[0,1]$, $\displaystyle\sum_{k=0}^{N}(-x^{2})^{k}$.
+        \item Calculer pour $x\in[0,1]$, $\displaystyle\sum_{k=0}^{N}\left(-x^{2}\right)^{k}$.
         \item Intégrer cette égalité sur $[0, 1]$.
         \item En déduire que $\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{2n+1}=\frac{\pi}{4}$.
 
@@ -121,7 +121,7 @@ Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément 
 On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
 \begin{enumerate}
     \item Prouver que $\|\cdot\|$ est une norme.
-    \item Démontrer que $\|AB\| \le n\|A\|\|B\|$ et $\|A^p\| \le n^{p-1}\|A\|^p$.
+    \item Démontrer que $\|AB\| \leqslant n\|A\|\|B\|$ et $\|A^p\| \leqslant n^{p-1}\|A\|^p$.
     \item Démontrer que la série $\sum\frac{A^{p}}{p!}$ est absolument convergente. Est-elle convergente ?
 \end{enumerate}
 \end{exercice}
@@ -144,14 +144,14 @@ On pose $A=\begin{pmatrix}3&6\\ 4&1\end{pmatrix}$.
 
 % --- Exercice 13 (Source: Exercice 9) ---
 \begin{exercice}
-Montrer que pour une matrice $A\in \mathcal{M}_{p}(\mathbb{K})$ de norme suffisamment petite la série $\sum_{n\ge0}A^{n}$ est absolument convergente. Montrer que sa somme est l'inverse de $I_{p}-A$.
+Montrer que pour une matrice $A\in \mathcal{M}_{p}(\mathbb{K})$ de norme suffisamment petite la série $\sum_{n\geqslant0}A^{n}$ est absolument convergente. Montrer que sa somme est l'inverse de $I_{p}-A$.
 \end{exercice}
 
 % --- Exercice 14 (Source: Exercice 10) ---
 \begin{exercice}
 On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
 \begin{enumerate}
-    \item Pour tout naturel $n$ et tout $k\in\{0,\dots,n\}$ on pose $a_{n,k}=\frac{1}{k!}-\frac{n!}{k!(n-k)!n^{k}}$. Montrer que $a_{n,k}\ge0$.
+    \item Pour tout naturel $n$ et tout $k\in\{0,\dots,n\}$ on pose $a_{n,k}=\frac{1}{k!}-\frac{n!}{k!(n-k)!n^{k}}$. Montrer que $a_{n,k}\geqslant0$.
     \item On pose $M_{n}=(I_{p}+\frac{1}{n}A)^{n}$.
     \begin{enumerate}
         \item Montrer que $\displaystyle M_{n}-\sum_{k=0}^{n}\frac{A^k}{k!}$ tend vers 0.
@@ -166,30 +166,30 @@ On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
 % --- Exercice 15 (Source: EXERCICE 5 analyse) ---
 \begin{exercice}[Exercice 5 Analyse]
 \begin{enumerate}
-    \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\ge2, \alpha\in\mathbb{R}$).
+    \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\geqslant2, \alpha\in\mathbb{R}$).
     \begin{itemize}
-        \item Cas $\alpha\le0$ : En utilisant une minoration simple, démontrer que la série diverge.
+        \item Cas $\alpha\leqslant0$ : En utilisant une minoration simple, démontrer que la série diverge.
         \item Cas $\alpha>0$ : Étudier la nature de la série (comparaison série-intégrale avec $f(x)=\frac{1}{x(\ln x)^{\alpha}}$).
     \end{itemize}
-    \item Déterminer la nature de la série $\sum_{n\ge3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$.
+    \item Déterminer la nature de la série $\sum_{n\geqslant3}\frac{(e-(1+\frac{1}{n})^{n})e^{\frac{1}{n}}}{(\ln(n^{2}+n))^{2}}$.
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 11) ---
 \begin{exercice}
-Établir la convergence et calculer la somme de la série télescopique : $\sum_{n\ge2}\ln(1-\frac{1}{n^{2}})$.
+Établir la convergence et calculer la somme de la série télescopique : $\sum_{n\geqslant2}\ln(1-\frac{1}{n^{2}})$.
 \end{exercice}
 
 % --- Exercice 17 (Source: Exercice 12) ---
 \begin{exercice}
 \begin{enumerate}
     \item Comparer pour $a, b \in \mathbb{R}^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
-    \item En déduire la convergence et la somme de $\sum_{n\ge1}\arctan(\frac{1}{n^{2}+n+1})$.
+    \item En déduire la convergence et la somme de $\sum_{n\geqslant1}\arctan\left(\frac{1}{n^{2}+n+1}\right)$.
     \item On définit la suite de Fibonacci $(F_{n})$ par $F_{0}=0, F_{1}=1, F_{n+2}=F_{n}+F_{n+1}$.
     \begin{enumerate}
-        \item Montrer la convergence de $\sum_{k\ge1}\arctan(\frac{1}{F_{2k+1}})$.
-        \item Montrer que pour tout $n$, $\displaystyle\frac{\pi}{4}=\sum_{k=1}^{n}\arctan(\frac{1}{F_{2k+1}})+\arctan(\frac{1}{F_{2n+2}})$.
-        \item En déduire que $\displaystyle\sum_{k=1}^{+\infty}\arctan(\frac{1}{F_{2k+1}}) = \frac{\pi}{4}$.
+        \item Montrer la convergence de $\sum_{k\geqslant1}\arctan\left(\frac{1}{F_{2k+1}}\right)$.
+        \item Montrer que pour tout $n$, $\displaystyle\frac{\pi}{4}=\sum_{k=1}^{n}\arctan\left(\frac{1}{F_{2k+1}}\right)+\arctan\left(\frac{1}{F_{2n+2}}\right)$.
+        \item En déduire que $\displaystyle\sum_{k=1}^{+\infty}\arctan\left(\frac{1}{F_{2k+1}}\right) = \frac{\pi}{4}$.
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
@@ -214,14 +214,14 @@ Si $\sum u_{n}$ converge (à termes positifs), établir la convergence des séri
 Soit $(u_{n})$ à termes strictement positifs.
 \begin{enumerate}
     \item Démontrer que si $\lim \frac{u_{n+1}}{u_{n}}=l < 1$, alors $\sum u_{n}$ converge
-    \item Quelle est la nature de $\sum_{n\ge1}\frac{n!}{n^{n}}$ ?
+    \item Quelle est la nature de $\sum_{n\geqslant1}\frac{n!}{n^{n}}$ ?
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 21 (Source: Exercice 15 - Raabe Duhamel) ---
 \begin{exercice}[Règle de Raabe Duhamel]
 \begin{enumerate}
-    \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\le\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
+    \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\leqslant\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
     \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o\left(\frac{1}{n}\right)$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
 \end{enumerate}
 \end{exercice}

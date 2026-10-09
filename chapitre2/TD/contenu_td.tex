@@ -32,7 +32,7 @@ Soit $x_{0}\in\mathbb{R}$. On définit la suite $(u_{n})$ par $u_{0}=x_{0}$ et, 
 
 % --- Exercice 3 (Source: Exercice 2) ---
 \begin{exercice}
-On suppose que $f\in C^{1}(I,I)$ et que $a\in I$ vérifie $f(a)=a$.
+On suppose que $f\in \mathscr C^{1}(I,I)$ et que $a\in I$ vérifie $f(a)=a$.
 On considère $u_{0}\in I$ et $\forall n\in\mathbb{N}$, $u_{n+1}=f(u_{n})$.
 On suppose que $f^{\prime}(a)\in]-1,1[$. \\
 
@@ -62,7 +62,7 @@ $u_{0}=1$ et $\forall n\in\mathbb{N}$, $u_{n+1}=\alpha^{u_{n}}$. \\
     \item On considère deux suites numériques $(u_{n})_{n\in\mathbb{N}}$ et $(v_{n})_{n\in\mathbb{N}}$ telles que $(v_{n})_{n\in\mathbb{N}}$ est non nulle à partir d'un certain rang et $u_{n}\sim v_{n}$.
     Démontrer que $u_{n}$ et $v_{n}$ sont de même signe à partir d'un certain rang.
 
-    \item Déterminer le signe, au voisinage de l'infini, de $u_{n}=\sinh(\frac{1}{n})-\tan(\frac{1}{n})$.
+    \item Déterminer le signe, au voisinage de l'infini, de $u_{n}=\sinh\left(\frac{1}{n}\right)-\tan\left(\frac{1}{n}\right)$.
 \end{enumerate}
 \end{exercice}
 
@@ -74,7 +74,8 @@ On pose pour tout naturel $n\ge1$, $f_{n}(x)=nx^{n+1}-(n+1)x^{n}-\frac{1}{2}$.
     \item Montrer que la suite $(x_{n})_{n\in\mathbb{N}}$ est monotone et qu'elle converge.
     \item Déterminer sa limite $\ell$.
     \item Déterminer un équivalent de $x_{n}-\ell$.
-    \textit{Indication :} On montrera d'abord qu'il existe un unique réel $\alpha>0$ tel que $e^{\alpha}(\alpha-1)=\frac{1}{2}$. On calculera ensuite pour $\beta\in\mathbb{R}$ un équivalent de $f_{n}(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}})$. On en déduira qu'il existe deux réels $\beta$ et $\beta^{\prime}$ tels que pour $n$ assez grand $1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\le x_{n}\le1+\frac{\alpha}{n}+\frac{\beta^{\prime}}{n^{2}}$ puis on conclura.
+
+    \textit{Indication :} On montrera d'abord qu'il existe un unique réel $\alpha>0$ tel que $e^{\alpha}(\alpha-1)=\frac{1}{2}$. On calculera ensuite pour $\beta\in\R$ un équivalent de $f_{n}\left(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\right)$. On en déduira qu'il existe deux réels $\beta$ et $\beta^{\prime}$ tels que pour $n$ assez grand $1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\leqslant x_{n}\leqslant 1+\frac{\alpha}{n}+\frac{\beta^{\prime}}{n^{2}}$ puis on conclura.
 \end{enumerate}
 \end{exercice}
 
@@ -114,8 +115,8 @@ En déduire la valeur de $Y$. Conclure.
 
 % --- Exercice 11 (Source: Exercice 9) ---
 \begin{exercice}
-On munit $M_{p}(\mathbb{R})$ de la norme $N(A) = \max\{|a_{ij}|, i,j\in\{1,\dots,p\}\}$.
-Soit $A\in M_{p}(\mathbb{R})$ telle que la suite $A^{n}$ converge.
+On munit $\mathscr M_{p}(\mathbb{R})$ de la norme $N(A) = \max\{|a_{ij}|, i,j\in\{1,\dots,p\}\}$.
+Soit $A\in \mathscr M_{p}(\mathbb{R})$ telle que la suite $A^{n}$ converge.
 Montrer que la limite $L$ de la suite vérifie $L^{2}=L$. Qu'en déduire ?
 \end{exercice}
 
@@ -139,14 +140,14 @@ Montrer que l'ensemble des valeurs d'adhérence de cette suite est un intervalle
 
 % --- Exercice 14 (Source: Exercice 12) ---
 \begin{exercice}
-On considère une suite $(u_{n})_{n\in\mathbb{N}}$ de réels strictement positifs tels que $\forall n,p\in\mathbb{N}$, $u_{n+p}\le u_{n}+u_{p}$ et on pose pour tout naturel $n$, $x_{n}=\frac{u_{n}}{n}$.
+On considère une suite $(u_{n})_{n\in\mathbb{N}}$ de réels strictement positifs tels que $\forall n,p\in\mathbb{N}$, $u_{n+p}\leqslant u_{n}+u_{p}$ et on pose pour tout naturel $n$, $x_{n}=\frac{u_{n}}{n}$.
 \begin{enumerate}
     \item Montrer que la suite $(x_{n})_{n\in\mathbb{N}}$ est bornée.
-    \item En déduire que l'on peut définir pour tout naturel $n$, $y_{n}=\sup\{x_{p}, p\ge n\}$.
+    \item En déduire que l'on peut définir pour tout naturel $n$, $y_{n}=\sup\{x_{p}, p\geqslant n\}$.
     \item Montrer que la suite $y_{n}$ converge. On notera $\ell$ sa limite.
     \item Montrer que $\ell$ est une valeur d'adhérence de $(x_{n})_{n\in\mathbb{N}}$.
-    \item On fixe un entier $q$ non nul, montrer en utilisant la division euclidienne de $n$ par $q$ qu'il existe une constante $M_{q}$ telle que pour tout naturel $n$, $x_{n}\le x_{q}+\frac{M_{q}}{n}$.
-    \item En déduire que pour tout $q$ naturel, $\ell\le x_{q}$ et enfin que la suite $(x_{n})_{n\in\mathbb{N}}$ converge vers $\ell$.
+    \item On fixe un entier $q$ non nul, montrer en utilisant la division euclidienne de $n$ par $q$ qu'il existe une constante $M_{q}$ telle que pour tout naturel $n$, $x_{n}\leqslant x_{q}+\frac{M_{q}}{n}$.
+    \item En déduire que pour tout $q$ naturel, $\ell\leqslant x_{q}$ et enfin que la suite $(x_{n})_{n\in\mathbb{N}}$ converge vers $\ell$.
 \end{enumerate}
 \textit{Ce résultat s'appelle le lemme sous-additif ou lemme de Fekete.}
 \end{exercice}

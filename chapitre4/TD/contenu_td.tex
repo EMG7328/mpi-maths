@@ -238,7 +238,7 @@ Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $\displaysty
 \begin{enumerate}
     \item Supposons $\sum u_{n}$ converge. Montrer que $\sum\frac{u_{n}}{S_{n}}$ converge
     \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. Trouver la nature de $\sum \ln\left(\frac{S_{n-1}}{S_{n}}\right)$. En déduire que $\sum u_{n}$ converge
-    \item Montrer que si $\sum a_{n}$ diverge (TP), il existe $\sum b_{n}$ divergente (TP) telle que $b_{n}=o(a_{n})$.
+    \item Montrer que si $\sum a_{n}$ diverge (termes positifs), il existe $\sum b_{n}$ divergente (à termes positifs) telle que $b_{n}=o(a_{n})$.
 \end{enumerate}
 \end{exercice}
 
@@ -258,11 +258,12 @@ Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha
 % --- Correction Exercice 2 (du fichier source, Exercice 46 ici) ---
 \begin{correction}{2}
 \begin{enumerate}
-    \item $\pi\sqrt{n^2+n+1} = \pi n (1 + \frac{1}{n} + \frac{1}{n^2})^{1/2} = \pi n (1 + \frac{1}{2n} + \frac{3}{8n^2} + O(\frac{1}{n^3}))$.
-    $= \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O(\frac{1}{n^2})$.
+    \item $\pi\sqrt{n^2+n+1} = \pi n \left(1 + \frac{1}{n} + \frac{1}{n^2}\right)^{1/2} = \pi n \left(1 + \frac{1}{2n} + \frac{3}{8n^2} + O\left(\frac{1}{n^3}\right)\right)
+    = \pi n + \frac{\pi}{2} + \frac{3\pi}{8n} + O\left(\frac{1}{n^2}\right)$.
+    
+    \item $\cos(\pi\sqrt{\dots}) = \cos(n\pi + \pi/2 + \varepsilon_n) = (-1)^n \cos(\pi/2 + \varepsilon_n) = (-1)^{n+1} \sin(\varepsilon_n)$.
+    Et $\sin(\varepsilon_n) \sim \frac{3\pi}{8n}$.
 
-    \item $\cos(\pi\sqrt{\dots}) = \cos(n\pi + \pi/2 + \epsilon_n) = (-1)^n \cos(\pi/2 + \epsilon_n) = (-1)^{n+1} \sin(\epsilon_n)$.
-    $\sin(\epsilon_n) \sim \frac{3\pi}{8n}$.
     C'est une série alternée $\sum (-1)^{n+1} \frac{K}{n}$. Elle converge (TSSA).
     Absolue convergence ? Non, car en $1/n$.
 \end{enumerate}
@@ -315,30 +316,37 @@ Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\sum_{k=0}^N (-x^2)^k = \frac{1-(-x^2)^{N+1}}{1-(-x^2)} = \frac{1-(-1)^{N+1}x^{2N+2}}{1+x^2}$.
+        \item $\displaystyle \sum_{k=0}^N (-x^2)^k = \frac{1-(-x^2)^{N+1}}{1-(-x^2)} = \frac{1-(-1)^{N+1}x^{2N+2}}{1+x^2}$.
         \item 
         En intégrant sur $[0,1]$ :
-        $\int_0^1 \sum (-x^2)^k dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
-        D'autre part : $\int_0^1 \frac{dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
-        Majoration du reste : $|R_N| \le \int_0^1 x^{2N+2} dx = \frac{1}{2N+3} \to 0$.
-        Donc $\sum_{n=0}^\infty \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$.
+        $\displaystyle \int_0^1 \sum (-x^2)^k dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
+
+        D'autre part : $\displaystyle\int_0^1 \frac{dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
+
+        Majoration du reste : $\displaystyle |R_N| \leqslant \int_0^1 x^{2N+2} dx = \frac{1}{2N+3} \to 0$.
+        Donc $\displaystyle \sum_{n=0}^{+\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$.
     \end{enumerate}
     
     \item
     \begin{enumerate}
         \item 
-        $I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) dx$.
+        $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) dx$.
+        
         Utilisation de $\sin p - \sin q = 2 \sin\frac{p-q}{2} \cos\frac{p+q}{2}$.
-        $I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) dx$.
+        On a $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) dx$.
+
         Par double IPP ou calcul direct, on obtient le résultat donné.
 
         \item 
         $f(x) = \frac{x^2}{\sin x} \sim_0 x$. $f(0)=0$. $f$ est continue en 0.
-        $f'(x) = \frac{2x\sin x - x^2\cos x}{\sin^2 x}$ et tend vers $1$ en $0$. Donc par prolongement $C^1$, $f$ est $C^1$ sur $[0,1]$.
+        $f'(x) = \frac{2x\sin x - x^2\cos x}{\sin^2 x}$ et tend vers $1$ en $0$.
+
+        Donc par prolongement $\mathscr C^1$, $f$ est $\mathscr C^1$ sur $[0,1]$.
 
         \item
         Par IPP sur $I_n$ (avec $u=f(x)$ et $v'=\sin(2nx)$), on obtient la majoration en $1/n$ (ou $1/2n$).
         $\sum (I_{n+1}-I_n)$ est une série télescopique qui converge vers $-I_0 = 0$ (car $I_n \to 0$ par Riemann-Lebesgue).
+
         La somme des termes en $1/(2n+1)$ donne $\pi^2/8$ (pré-requis ?). La somme des termes en $1/(2n+1)^3$ s'en déduit.
         
         \item La correction indique que $\sum \frac{(-1)^n}{(2n+1)^3} = \frac{\pi^3}{32}$.
@@ -443,40 +451,12 @@ Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 15 (Raabe) ---
-\begin{correction}{15}
-\begin{enumerate}
-    \item Si $\frac{u_{n+1}}{u_n} \le \frac{v_{n+1}}{v_n}$, alors $\frac{u_{n+1}}{v_{n+1}} \le \frac{u_n}{v_n}$.
-    La suite $(u_n/v_n)$ est décroissante, donc bornée. $u_n = O(v_n)$.
-    Si $\sum v_n$ converge, alors $\sum u_n$ converge.
-    
-    \item Comparaison avec Riemann $v_n = 1/n^\beta$.
-    $\frac{v_{n+1}}{v_n} = (1+\frac{1}{n})^{-\beta} = 1 - \frac{\beta}{n} + o(\frac{1}{n})$.
-    Si $\frac{u_{n+1}}{u_n} = 1 - \frac{\alpha}{n} + o(\frac{1}{n})$.
-    Si $\alpha > 1$, on peut choisir $\beta$ tel que $1 < \beta < \alpha$.
-    Alors pour $n$ grand, $1 - \frac{\alpha}{n} < 1 - \frac{\beta}{n}$, donc $\frac{u_{n+1}}{u_n} < \frac{v_{n+1}}{v_n}$.
-    $\sum v_n$ converge (Riemann $\beta>1$), donc $\sum u_n$ converge.
-    Si $\alpha < 1$, divergence par comparaison avec $\beta \in ]\alpha, 1[$.
-\end{enumerate}
-\end{correction}
-
 \begin{correction}{16}
     $|u_n| \sim \frac 1 {n^2}$. Donc la série converge.
 
-    Calculons les sommes partielles $\sum_{k=2}^n \ln(k^2 - 1) - \ln(k^2) = \sum_{k=3}^{n+1} \ln(k) + \sum_{k=1}^{n-1} \ln(k) - 2 \sum_{k=2}^{n} \ln(k) = \ln(1 + \frac 1 n) - \ln(2)$.
+    Calculons les sommes partielles :
+    $$\sum_{k=2}^n \ln(k^2 - 1) - \ln(k^2) = \sum_{k=3}^{n+1} \ln(k) + \sum_{k=1}^{n-1} \ln(k) - 2 \sum_{k=2}^{n} \ln(k) = \ln(1 + \frac 1 n) - \ln(2)$$
     Donc la somme est $-\ln(2)$.
-\end{correction}
-
-% --- Correction Exercice 17 (u/S) ---
-\begin{correction}{17}
-\begin{enumerate}
-    \item Si $\sum u_n$ converge, $S_n \to S > 0$. Donc $u_n/S_n \sim u_n/S$. Converge.
-    \item Si $\sum u_n/S_n$ converge.
-    $\ln(\frac{S_n}{S_{n-1}}) = \ln(1 + \frac{u_n}{S_{n-1}}) \approx \frac{u_n}{S_{n-1}} \approx \frac{u_n}{S_n}$.
-    La série $\sum \ln(S_n) - \ln(S_{n-1})$ est de même nature que $\sum u_n/S_n$.
-    C'est une somme télescopique $\ln S_n$.
-    Si elle converge, $\ln S_n$ a une limite, donc $S_n$ a une limite finie. $\sum u_n$ converge.
-\end{enumerate}
 \end{correction}
 
 % --- Correction Exercice 13 (Ratio) ---
@@ -500,33 +480,78 @@ Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha
 \end{enumerate}
 \end{correction}
 
+% --- Correction Exercice 15 (Raabe) ---
+\begin{correction}{21}
+\begin{enumerate}
+    \item Si $\frac{u_{n+1}}{u_n} \leqslant \frac{v_{n+1}}{v_n}$, alors $\frac{u_{n+1}}{v_{n+1}} \leqslant \frac{u_n}{v_n}$.
+    La suite $(u_n/v_n)$ est décroissante, donc bornée. $u_n = O(v_n)$.
+    Si $\sum v_n$ converge, alors $\sum u_n$ converge.
+    
+    \item Comparaison avec Riemann $v_n = \frac{1}{n}^\beta$.
+
+    $\frac{v_{n+1}}{v_n} = \left(1+\frac{1}{n}\right)^{-\beta} = 1 - \frac{\beta}{n} + o\left(\frac{1}{n}\right)$.
+    Si $\frac{u_{n+1}}{u_n} = 1 - \frac{\alpha}{n} + o(\frac{1}{n})$.
+    \begin{itemize}
+        \item Si $\alpha > 1$, on peut choisir $\beta$ tel que $1 < \beta < \alpha$.
+
+        Alors pour $n$ grand, $1 - \frac{\alpha}{n} < 1 - \frac{\beta}{n}$, donc $\frac{u_{n+1}}{u_n} < \frac{v_{n+1}}{v_n}$.
+        $\sum v_n$ converge (Riemann $\beta>1$), donc $\sum u_n$ converge.
+
+        \item Si $\alpha < 1$, divergence par comparaison avec $\beta \in ]\alpha, 1[$.
+    \end{itemize}
+\end{enumerate}
+\end{correction}
+
 % --- Correction Exercice 22 (Nature) ---
 \begin{correction}{22}
 \begin{itemize}
     \item $u_n = \frac 1 {n^{\ln(\ln(n))}} \leqslant \frac 1 {n^2}$ pour $n$ assez grand donc elle converge. 
     \item $u_n = \frac{n^n}{e^{n^2}}$. $n^2 u_n \to 0$. Donc elle converge (racine n-ième).
     \item $u_n = \frac{n!^2}{(2n)!}$. Stirling : $\frac{n^{2n} e^{-2n} (2\pi n)}{(2n)^{2n} e^{-2n} \sqrt{4\pi n}} \sim \frac{\sqrt{\pi n}}{4^n}$. D'Alembert. Converge
+
     \item $u_n = (\sin \frac{1}{n}) n^\alpha \sim n^{\alpha-1}$. Converge ssi $1-\alpha > 1 \iff \alpha < 0$. (Attention, énoncé dit $e^{n^\alpha \ln(...)}$, vérifier l'énoncé exact, correction mentionne exponentielle).
+
     L'énoncé PDF source mentionne $\sum (\sin \frac{1}{n}) n^\alpha$.
     La correction manuscrite traite $u_n = e^{n^\alpha \ln(n \sin(1/n))}$.
     $n \sin(1/n) = 1 - \frac{1}{6n^2}$.
     $\ln(\dots) \sim -\frac{1}{6n^2}$.
+
     Exposant $\sim - \frac{n^{\alpha-2}}{6}$.
     Si $\alpha < 2$, exposant $\to 0$, $u_n \to 1$. Diverge.
     Si $\alpha = 2$, $u_n \to e^{-1/6}$. Diverge.
     Si $\alpha > 2$, exposant $\to -\infty$ (très vite ? ou vers 0 par valeurs négatives ?).
+
     Attention, il y a $n^\alpha$ en facteur devant le log dans l'exposant.
     Si $\alpha > 2$, $n^{\alpha-2} \to +\infty$, terme $\to e^{-\infty} = 0$.
     Règle $n^2 u_n$.
 \end{itemize}
 \end{correction}
 
+% --- Correction Exercice 17 (u/S) ---
+\begin{correction}{23}
+\begin{enumerate}
+    \item Si $\sum u_n$ converge, $S_n \to S > 0$. Donc $u_n/S_n \sim u_n/S$. Converge.
+    \item Si $\sum u_n/S_n$ converge.
+    $\ln(\frac{S_n}{S_{n-1}}) = \ln(1 + \frac{u_n}{S_{n-1}}) \approx \frac{u_n}{S_{n-1}} \approx \frac{u_n}{S_n}$.
+
+    La série $\sum \ln(S_n) - \ln(S_{n-1})$ est de même nature que $\sum u_n/S_n$.
+    C'est une somme télescopique $\ln S_n$.
+
+    Si elle converge, $\ln S_n$ a une limite, donc $S_n$ a une limite finie. $\sum u_n$ converge.
+\end{enumerate}
+\end{correction}
+
 % --- Correction Exercice 24 (Restes) ---
 \begin{correction}{24}
-$R_n = \sum_{k=n+1}^\infty \frac{1}{k^\alpha}$.
-Comparaison série-intégrale : $R_n \sim \int_n^\infty \frac{dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
-$\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge.
-Ssi $\alpha-1 > 1 \iff \alpha > 2$.
-Somme : $\sum_{n=1}^\infty R_n = \sum_{n=1}^\infty \sum_{k=n+1}^\infty \frac{1}{k^\alpha} = \sum_{k=2}^\infty \frac{1}{k^\alpha} \sum_{n=1}^{k-1} 1 = \sum_{k=2}^\infty \frac{k-1}{k^\alpha} = \zeta(\alpha-1) - \zeta(\alpha)$.
+\begin{enumerate}
+    \item 
+    $\displaystyle R_n = \sum_{k=n+1}^{+\infty} \frac{1}{k^\alpha}$.
+    Comparaison série-intégrale : $\displaystyle R_n \sim \int_n^{+\infty} \frac{dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
+    
+    \item $\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge
+    ssi $\alpha-1 > 1 \iff \alpha > 2$.
+
+    \item Somme : $$\sum_{n=1}^{+\infty} R_n = \sum_{n=1}^{+\infty} \sum_{k=n+1}^{+\infty} \frac{1}{k^\alpha} = \sum_{k=2}^{+\infty} \frac{1}{k^\alpha} \sum_{n=1}^{k-1} 1 = \sum_{k=2}^{+\infty} \frac{k-1}{k^\alpha} = \zeta(\alpha-1) - \zeta(\alpha)$$
+\end{enumerate}
 \end{correction}
 

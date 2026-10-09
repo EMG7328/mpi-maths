@@ -15,17 +15,17 @@
 
 % --- Exercice 2 (Source: Exercice 1) ---
 \begin{exercice}
-Étudier (prolongement, variations, courbes) sur $\mathbb{R}^{+*}$ la fonction $x\mapsto x^{x}$.
+Étudier (prolongement, variations, courbes) sur $\mathbb{R}^{+}_*$ la fonction $x\mapsto x^{x}$.
 \end{exercice}
 
 % --- Exercice 3 (Source: Exercice 2) ---
 \begin{exercice}
-Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un EVN de dimension finie, et continue en $a$.
+Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un espace vectoriel normé de dimension finie, et continue en $a$.
 \begin{enumerate}
     \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
     \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
     On pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :
-    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f(a+\frac{t}{2^{k}})-f(a+\frac{t}{2^{k+1}})}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f(a+\frac{t}{2^{n+1}})-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
+    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
 \end{enumerate}
 \end{exercice}
 
@@ -51,6 +51,7 @@ Soit $f$ dérivable sur $[a, b]$ à valeurs dans $\mathbb{R}$.
 \begin{enumerate}
     \item On suppose que $f'(a)>0$ et $f'(b)<0$.
     Montrer qu'il existe $c\in]a,b[$ vérifiant $f'(c)=0$.
+
     \textit{Indication : On utilisera le fait que $f$ est continue sur le segment et on montrera qu'il n'est pas possible que ses deux extremums ne soient atteints qu'en $a$ et $b$.}
     \item En déduire le théorème de Darboux : "Toute dérivée d'une fonction dérivable de $[a, b]$ dans $\mathbb{R}$ vérifie le théorème des valeurs intermédiaires".
 \end{enumerate}
@@ -83,14 +84,14 @@ Procéder par récurrence et formule de Leibniz.
 
 % --- Exercice 11 (Source: Exercice 9) ---
 \begin{exercice}
-Calculer de deux manières différentes la dérivée $n$-ième de $x\mapsto x^{2n}=x^{n}.x^{n}$ pour calculer la valeur de $\sum_{k=0}^{n}\binom{n}{k}^{2}$.
+Calculer de deux manières différentes la dérivée $n$-ième de $x\mapsto x^{2n}=x^{n}.x^{n}$ pour calculer la valeur de $\displaystyle \sum_{k=0}^{n}\binom{n}{k}^{2}$.
 \end{exercice}
 
 \subsection{Intégration sur un segment}
 
 % --- Exercice 12 (Source: EXERCICE 56 analyse) ---
 \begin{exercice}
-On considère la fonction $H$ définie sur $]1, +\infty[$ par $H(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
+On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
 \begin{enumerate}
     \item Montrer que $H$ est $\mathcal{C}^{1}$ sur $]1,+\infty[$ et calculer sa dérivée.
     \item Montrer que la fonction $u$ définie par $u(x)=\frac{1}{\ln x}-\frac{1}{x-1}$ admet une limite finie en $x=1$.
@@ -102,28 +103,28 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $H(x)=\int_{x}^{x^
 \begin{exercice}
 Soit $f\in \mathcal{C}^{2}(\mathbb{R},\mathbb{R})$ telle que $f+f''>0$. Démontrer que
 $$ \forall x\in\mathbb{R}, \quad f(x)+f(x+\pi)\ge0 $$
-\textit{Indication : considérer $\int_{0}^{\pi}\sin(t)(f(t)+f''(t))dt$.}
+\textit{Indication : considérer $\displaystyle \int_{0}^{\pi}\sin(t)(f(t)+f''(t))dt$.}
 \end{exercice}
 
 % --- Exercice 14 (Source: Exercice 11) ---
 \begin{exercice}
-Déterminer $\lim_{x\rightarrow0^{+}}\int_{x}^{2x}\frac{e^{t}}{\arcsin t}dt$.
+Déterminer $\displaystyle \lim_{x\rightarrow0^{+}}\int_{x}^{2x}\frac{e^{t}}{\arcsin t}dt$.
 \end{exercice}
 
 % --- Exercice 15 (Source: Exercice 12) ---
 \begin{exercice}
-Étudier la fonction définie par $f(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
+Étudier la fonction définie par $\displaystyle f(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 13) ---
 \begin{exercice}
-Après avoir montré son existence, en utilisant un changement de variable affine échangeant les bornes, calculer $\int_{0}^{\pi}\frac{x}{1+\sin x}dx$.
+Après avoir montré son existence, en utilisant un changement de variable affine échangeant les bornes, calculer $\displaystyle \int_{0}^{\pi}\frac{x}{1+\sin x}dx$.
 \end{exercice}
 
 % --- Exercice 17 (Source: Exercice 14) ---
 \begin{exercice}
 Soit $f$ de classe $\mathcal{C}^{1}$ sur $\mathbb{R}^{+}$, strictement croissante et réalisant une bijection de $\mathbb{R}^{+}$ sur $\mathbb{R}^{+}$.
-Montrer que pour tout $x\ge0$,
+Montrer que pour tout $x\geqslant0$,
 $$ xf(x)=\int_{0}^{x}f(t)dt+\int_{0}^{f(x)}f^{-1}(t)dt $$
 \textit{Indication : Dériver. Interprétation géométrique ?}
 \end{exercice}
@@ -131,8 +132,8 @@ $$ xf(x)=\int_{0}^{x}f(t)dt+\int_{0}^{f(x)}f^{-1}(t)dt $$
 % --- Exercice 18 (Source: Exercice 15) ---
 \begin{exercice}
 Soit $f\in \mathcal{C}^{2}([a,b],E)$ telle que $f(a)=f(b)=0$. Montrer que
-$$ \left\| \int_{a}^{b}f(t)dt \right\| \le \frac{(b-a)^{3}}{12} \sup_{[a,b]} \|f''(t)\| $$
-Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\int_{a}^{b}P(t)f''(t)dt$.
+$$ \left\| \int_{a}^{b}f(t)dt \right\| \leqslant \frac{(b-a)^{3}}{12} \sup_{[a,b]} \|f''(t)\| $$
+Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)dt$.
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 16) ---
@@ -141,40 +142,40 @@ Soit $A\in \mathcal{M}_{n}(\mathbb{C})$. Calculer de deux manières différentes
 $$ I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta $$
 Et en déduire le théorème de Cayley-Hamilton.
 \begin{enumerate}
-    \item Commencer par montrer que pour $r>0$ assez grand $(re^{i\theta}I_{n}-A)$ est bien inversible pour tout $\theta$, ce qui assure bien l'existence de $I(r)$.
+    \item Commencer par montrer que pour $r>0$ assez grand $\left(re^{i\theta}I_{n}-A\right)$ est bien inversible pour tout $\theta$, ce qui assure bien l'existence de $I(r)$.
     On supposera dans toute la suite que $r>0$ est assez grand pour que $I(r)$ existe.
     \item 
     \begin{enumerate}
-        \item Utiliser la relation entre inverse et comatrice pour montrer que $I(r)=\int_{0}^{2\pi}re^{i\theta} \text{Com}(re^{i\theta}I_n-A)^{T} d\theta$.
-        \item En déduire que pour tous $i,j\in\{1,\dots,n\}$ il existe un polynôme $Q_{ij}$ tel que $(I(r))_{i,j}=\int_{0}^{2\pi}re^{i\theta}Q_{i,j}(re^{i\theta}) d\theta$.
+        \item Utiliser la relation entre inverse et comatrice pour montrer que $\ds I(r)=\int_{0}^{2\pi}re^{i\theta} \text{Com}\left(re^{i\theta}I_n-A\right)^{T} d\theta$.
+        \item En déduire que pour tous $i,j\in\{1,\dots,n\}$ il existe un polynôme $Q_{ij}$ tel que $\ds (I(r))_{i,j}=\int_{0}^{2\pi}re^{i\theta}Q_{i,j}\left(re^{i\theta}\right) d\theta$.
         \item En déduire que $I(r)=0$.
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item Montrer que pour tout matrice de norme assez petite, $(I_{n}-B)^{-1}=\sum_{k=0}^{\infty}B^{k}$.
-        \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que
+        \item Montrer que pour tout matrice de norme assez petite, $\ds (I_{n}-B)^{-1}=\sum_{k=0}^{\infty}B^{k}$.
+        \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que :
         $$ I(r)=\sum_{k=0}^{\infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta $$
-        (Note: correction dans l'exposant de $r$ selon le contexte classique).
-        \item En notant le polynôme caractéristique de $A$, $\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, conclure en remarquant que $\int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
+        (note: correction dans l'exposant de $r$ selon le contexte classique).
+        \item En notant le polynôme caractéristique de $A$, $\ds\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, conclure en remarquant que $\ds \int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 20 (Source: Exercice 17) ---
 \begin{exercice}
-Déterminer $\lim_{n\rightarrow\infty}\sum_{k=1}^{n}\sin(\frac{k}{n})\sin(\frac{k}{n^{2}})$.
-On se ramènera par un encadrement de $\sin x$ à la recherche de $\lim_{n\rightarrow\infty}\sum_{k=1}^{n}\sin(\frac{k}{n})\frac{k}{n^{2}}$.
+Déterminer $\ds\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\sin\left(\frac{k}{n}\right)\sin\left(\frac{k}{n^{2}}\right)$.
+On se ramènera par un encadrement de $\sin x$ à la recherche de $\ds \lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\sin\left(\frac{k}{n}\right)\frac{k}{n^{2}}$.
 \end{exercice}
 
 % --- Exercice 21 (Source: Exercice 18) ---
 \begin{exercice}
-Trouver un équivalent de $\sum_{k=1}^{n}k \cos(\frac{k\pi}{n})$.
+Trouver un équivalent de $\ds \sum_{k=1}^{n}k \cos(\frac{k\pi}{n})$.
 \end{exercice}
 
 % --- Exercice 22 (Source: Exercice 19) ---
 \begin{exercice}
 Soit $x$ réel différent de -1 et 1.
-Après avoir vérifié son existence, utiliser les sommes de Riemann pour calculer $\int_{0}^{2\pi}\ln(x^{2}-2x \cos t + 1)dt$.
+Après avoir vérifié son existence, utiliser les sommes de Riemann pour calculer $\ds \int_{0}^{2\pi}\ln(x^{2}-2x \cos t + 1)dt$.
 \end{exercice}
 
 \newpage
@@ -203,16 +204,18 @@ Courbe : branche parabolique de direction $(Oy)$ car $f(x)/x = x^{x-1} \to \inft
 
 % --- Correction 3 (Source: Exercice 2) ---
 \begin{correction}{3}
-\textbf{1.} On considère le taux $\Delta(t) = \frac{f(a+t)-f(a-t)}{2t}$.
-Si $f$ est dérivable en $a$, $\Delta(t) = \frac{1}{2} (\frac{f(a+t)-f(a)}{t} + \frac{f(a-t)-f(a)}{-t}) \to \frac{1}{2}(f'(a)+f'(a)) = f'(a)$.
-La limite existe et vaut $f'(a)$.
-Réciproque fausse : Contre-exemple $f(x)=|x|$ en $a=0$.
-$\frac{|t|-|-t|}{2t} = 0 \to 0$, pourtant $f$ non dérivable en 0.
+\begin{enumerate}
+    \item On considère le taux $\Delta(t) = \frac{f(a+t)-f(a-t)}{2t}$.
+    Si $f$ est dérivable en $a$, $\Delta(t) = \frac{1}{2} (\frac{f(a+t)-f(a)}{t} + \frac{f(a-t)-f(a)}{-t}) \to \frac{1}{2}(f'(a)+f'(a)) = f'(a)$.
+    La limite existe et vaut $f'(a)$.
+    Réciproque fausse : Contre-exemple $f(x)=|x|$ en $a=0$.
+    $\frac{|t|-|-t|}{2t} = 0 \to 0$, pourtant $f$ non dérivable en 0.
 
-\textbf{2.} Avec la relation fournie.
-Si la limite existe et vaut $\lambda$, cela n'implique pas la dérivabilité.
-Exemple : fonction de Weierstrass (continue partout, nulle part dérivable) ? Ou plus simple.
-La formule fournie permet de relier le taux classique au taux généralisé par une série.
+    \item Avec la relation fournie.
+    Si la limite existe et vaut $\lambda$, cela n'implique pas la dérivabilité.
+    Exemple : fonction de Weierstrass (continue partout, nulle part dérivable) ? Ou plus simple.
+    La formule fournie permet de relier le taux classique au taux généralisé par une série.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 4 (Source: Exercice 3) ---
@@ -238,18 +241,20 @@ En $0$, $\varphi'(0) = \sum \lambda_i = \text{Tr}(A)$.
 
 % --- Correction 7 (Source: Exercice 6) ---
 \begin{correction}{7}
-\textbf{a)} $f$ est dérivable donc continue sur le segment $[a,b]$. Elle est bornée et atteint ses bornes.
-Si le maximum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
-Si le minimum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
-Si le max est en $a$ et le min en $b$ (ou inversement), alors $f$ est décroissante (resp. croissante).
-Or $f'(a)>0 \implies f$ croissante au voisinage de $a$. Donc $a$ n'est pas un maximum.
-$f'(b)<0 \implies f$ décroissante au voisinage de $b$. Donc $b$ n'est pas un minimum.
-Donc il existe un extremum local à l'intérieur, donc $f'(c)=0$.
+\begin{enumerate}
+    \item $f$ est dérivable donc continue sur le segment $[a,b]$. Elle est bornée et atteint ses bornes.
+    Si le maximum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
+    Si le minimum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
+    Si le max est en $a$ et le min en $b$ (ou inversement), alors $f$ est décroissante (resp. croissante).
+    Or $f'(a)>0 \implies f$ croissante au voisinage de $a$. Donc $a$ n'est pas un maximum.
+    $f'(b)<0 \implies f$ décroissante au voisinage de $b$. Donc $b$ n'est pas un minimum.
+    Donc il existe un extremum local à l'intérieur, donc $f'(c)=0$.
 
-\textbf{b)} Théorème de Darboux : Si $f$ est dérivable, $f'$ vérifie le TVI.
-Soit $y$ entre $f'(a)$ et $f'(b)$. On pose $g(x) = f(x) - yx$.
-$g'(a) = f'(a)-y$ et $g'(b)=f'(b)-y$ sont de signes contraires.
-D'après a), il existe $c$ tel que $g'(c)=0$, soit $f'(c)=y$.
+    \item Théorème de Darboux : Si $f$ est dérivable, $f'$ vérifie le TVI.
+    Soit $y$ entre $f'(a)$ et $f'(b)$. On pose $g(x) = f(x) - yx$.
+    $g'(a) = f'(a)-y$ et $g'(b)=f'(b)-y$ sont de signes contraires.
+    D'après 1., il existe $c$ tel que $g'(c)=0$, soit $f'(c)=y$.
+\end{enumerate}
 \end{correction}
 
 % --- Correction 8 (Source: Exercice 7) ---

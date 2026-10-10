@@ -1,228 +1,206 @@
 #!/usr/bin/env python3
 import argparse
 import os
+import re
+import sys
 import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
-import re
 from pathlib import Path
 
-CHAPTERS_LOCATION = "./"
+ROOT_DIR = Path(__file__).resolve().parent
+BUILD_CACHE_DIR = ROOT_DIR / ".build"
+DIST_DIR = ROOT_DIR / "dist"
 
-BUILD_DIR = CHAPTERS_LOCATION + "build/"
-C_CHAPITRES_DIR = BUILD_DIR + "chapitres/"
-C_COURS_DIR = BUILD_DIR + "cours/"
-C_TD_DIR = BUILD_DIR + "TDs/"
-C_INTEGRALE_DIR = BUILD_DIR + "integrale/"
-LATEX_COMPILER = "lualatex"
-
-GARBAGE_EXTENSIONS = {
-    ".aux", ".log", ".toc", ".out", ".synctex.gz", 
-    ".fls", ".fdb_latexmk", ".lof", ".lot", ".bcf", ".run.xml", ".ptc", ".idx"
-}
-
-parser = argparse.ArgumentParser(description="Compilation script for MPI math course.")
-
-parser.add_argument("-ch", "--chapitres", default="all", help="Chapters to compile, default : all.")
-parser.add_argument("-m", "--mode", default="chapitre", help="What to compile, default : chapitre, options : chapitre, cours, TD." )
-parser.add_argument("-he", "--halt_on_error", action='store_true', help="Wether the compilation stops or not when a file gets an error while compiling.")
-parser.add_argument("-a", "--all", action='store_true', help='Whether to compile all files or not.')
-
-args = parser.parse_args()
+DIST_CHAPITRES = DIST_DIR / "chapitres"
+DIST_COURS = DIST_DIR / "cours"
+DIST_TDS = DIST_DIR / "TDs"
+DIST_INTEGRALE = DIST_DIR / "integrale"
 
 env = os.environ.copy()
 fonts_dir = (Path.cwd() / "commun" / "fonts").resolve()
 current_osfontdir = env.get("OSFONTDIR", "")
-
 env["OSFONTDIR"] = f"{fonts_dir}//:{current_osfontdir}" if current_osfontdir else f"{fonts_dir}//"
 
-def clean_dir (dir) :
-    for file in dir.iterdir():
-        if file.is_file() and file.suffix in GARBAGE_EXTENSIONS :
-            file.unlink()
-    return
+def parse_latex_error(log_content: str, max_lines: int = 15) -> str:
+    lines = log_content.splitlines()
+    for idx, line in enumerate(lines):
+        if line.startswith("!") or ": error:" in line.lower():
+            start = max(0, idx - 1)
+            end = min(len(lines), idx + max_lines)
+            return "\n".join(lines[start:end])
+    return "\n".join(lines[-50:])
 
-def compile_file (file, output_dir, cwd_path) :
-    cwd_dir = Path(cwd_path).resolve()
+def compile_file (file: Path, dist_dir: Path, cwd_dir: Path, halt_on_error: bool = True) -> bool :
+    tex_file = file.resolve()
+    if not tex_file.exists():
+        print(f"[ERROR] Target file not found: {tex_file}", file=sys.stderr)
+        return False
+
+    dist_dir = dist_dir.resolve()
+    dist_dir.mkdir(parents=True, exist_ok=True)
     
+    rel_path = cwd_dir.resolve().relative_to(ROOT_DIR) if cwd_dir.resolve() != ROOT_DIR else Path()
+    aux_dir = (BUILD_CACHE_DIR / rel_path).resolve()
+    aux_dir.mkdir(parents=True, exist_ok=True)
+    
+    lualatex_cmd = (
+        'lualatex --synctex=0 --halt-on-error --file-line-error '
+        '--interaction=nonstopmode %O %S'
+    )
+
+    cmd = [
+        "latexmk",
+        "-lualatex",
+        "-interaction=nonstopmode",
+        f"-pdflualatex={lualatex_cmd}",
+        f"-auxdir={aux_dir}",
+        f"-outdir={dist_dir}",
+        "-silent",
+        "-e", "$max_repeat=5;",
+        str(tex_file)
+    ]
+
+    print(f"[*] Compiling {tex_file.name}...")
     result = subprocess.run(
-                            [
-                                LATEX_COMPILER,
-                                f"-output-directory={output_dir}",
-                                "-interaction=nonstopmode",
-                                "-halt-on-error",
-                                file
-                            ],
-                            capture_output=True,
-                            cwd=cwd_dir,
-                            env=env
-                        )
-
-    if(result.returncode != 0) :
-        print("ERROR : Compilation failed for ", file)
-        if args.halt_on_error:
-            exit(1)
-    return
-
-chapters_path = Path(CHAPTERS_LOCATION).resolve()
-
-target_dirs = [
-    d for d in chapters_path.iterdir() 
-    if d.is_dir() and d.name.startswith("chapitre") and d.name 
-]
-
-build_dir = Path(BUILD_DIR).resolve()
-build_dir.mkdir(exist_ok=True)
-
-if args.all :
-    target_files = []
-    target_out_dirs = []
-    target_cwds = []
-
-    c_integrale_dir = Path(C_INTEGRALE_DIR).resolve()
-    c_integrale_dir.mkdir(exist_ok=True)
+        cmd,
+        cwd=cwd_dir.resolve(),
+        capture_output=True,
+        text=True,
+        env=env
+    )
     
-    c_chapters_dir = Path(C_CHAPITRES_DIR).resolve()
-    c_chapters_dir.mkdir(exist_ok=True)
-    
-    c_cours_dir = Path(C_COURS_DIR).resolve()
-    c_cours_dir.mkdir(exist_ok=True)
-    
-    c_TDs_dir = Path(C_TD_DIR).resolve()
-    c_TDs_dir.mkdir(exist_ok=True)
-    
-    target_files.append(str(chapters_path) + "/integrale/integrale_mpi.tex")
-    target_files.append(str(chapters_path) + "/integrale/integrale_cours.tex")
-    target_files.append(str(chapters_path) + "/integrale/integrale_TD.tex")
+    if result.returncode != 0 :
+        print(f"\n[!] Compilation FAILED for {tex_file.name} (exit {result.returncode})", file=sys.stderr)
 
-    target_out_dirs.extend(str(c_integrale_dir) for _ in range(3))
-    target_cwds.extend(str(chapters_path) + "/integrale/" for _ in range(3))
+        log_file = aux_dir / f"{tex_file.stem}.log"
+        error_context = ""
+        if log_file.exists():
+            try:
+                error_context = parse_latex_error(log_file.read_text(encoding="utf-8", errors="replace"))
+            except Exception:
+                pass
 
-    for chap in target_dirs :
-        chap_int = str(int(chap.name.replace("chapitre", "")))
+        if not error_context and result.stdout:
+            error_context = parse_latex_error(result.stdout)
 
-        target_files.append(str(chap) + "/chapitre" + chap_int + ".tex")
-        target_out_dirs.append(str(c_chapters_dir))
-        target_cwds.append(str(chap))
+        print("----------- LaTeX Error Trace -----------", file=sys.stderr)
+        print(error_context if error_context else "No error snippet found in log.", file=sys.stderr)
+        print("-----------------------------------------", file=sys.stderr)
+
+        if halt_on_error:
+            sys.exit(1)
+        return False
+
+    print(f"[+] Done: {dist_dir / (tex_file.stem + '.pdf')}")
+    return True
+
+
+def run_tasks(tasks: list[tuple[Path, Path, Path]], halt_on_error: bool = False):
+    if not tasks:
+        print("[-] No matching files found to compile.")
+        return
+
+    max_workers = min(os.cpu_count() or 4, len(tasks))
+    print(f"[*] Starting {len(tasks)} compilation tasks across {max_workers} threads...\n")
+
+    failed = False
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(compile_file, tex, out, cwd, halt_on_error): tex
+            for tex, out, cwd in tasks
+        }
+        for fut in as_completed(futures):
+            success = fut.result()
+            if not success:
+                failed = True
+
+    if failed:
+        print("\n[!] One or more documents failed to build.", file=sys.stderr)
+        sys.exit(1)
+    else:
+        print(f"\n[+] All compilations completed successfully. Deliverables are in: {DIST_DIR}")
+
+def get_chapter_num(dir_name: str) -> str | None:
+    match = re.search(r"(\d+)$", dir_name)
+    return str(int(match.group(1))) if match else None
+
+def main():
+    parser = argparse.ArgumentParser(description="Compilation script for MPI math course.")
+
+    parser.add_argument("-ch", "--chapitres", default="all", help="Chapters to compile, default : all.")
+    parser.add_argument("-m", "--mode", default="chapitre", help="What to compile, default : chapitre, options : chapitre, cours, TD." )
+    parser.add_argument("-he", "--halt_on_error", action='store_true', help="Wether the compilation stops or not when a file gets an error while compiling.")
+    parser.add_argument("-a", "--all", action='store_true', help='Whether to compile all files or not.')
+
+    args = parser.parse_args()
+
+    chapter_dirs = [d for d in ROOT_DIR.iterdir() if d.is_dir() and d.name.startswith("chapitre")]
+    chapter_dirs.sort(key=lambda d: int(get_chapter_num(d.name) or 0))
+
+    tasks: list[tuple[Path, Path, Path]] = []
+
+    if args.all:
+        integ_dir = ROOT_DIR / "integrale"
+        if integ_dir.exists():
+            for name in ["integrale_mpi.tex", "integrale_cours.tex", "integrale_TD.tex"]:
+                f = integ_dir / name
+                if f.exists():
+                    tasks.append((f, DIST_INTEGRALE, integ_dir))
+
+        for chap in chapter_dirs:
+            c_num = get_chapter_num(chap.name)
+            if not c_num:
+                continue
+            
+            f_chap = chap / f"chapitre{c_num}.tex"
+            if f_chap.exists():
+                tasks.append((f_chap, DIST_CHAPITRES, chap))
+            f_cours = chap / "cours" / f"cours{c_num}.tex"
+            if f_cours.exists():
+                tasks.append((f_cours, DIST_COURS, chap / "cours"))
+            f_td = chap / "TD" / f"TD{c_num}.tex"
+            if f_td.exists():
+                tasks.append((f_td, DIST_TDS, chap / "TD"))
+
+        run_tasks(tasks, args.halt_on_error)
+        return
+
+    if args.chapitres.lower() == "integrale":
+        integ_dir = ROOT_DIR / "integrale"
+        lookup = {
+            "chapitre": "integrale_mpi.tex",
+            "cours": "integrale_cours.tex",
+            "TD": "integrale_TD.tex",
+        }
         
-        target_files.append(str(chap) + "/cours/cours" + chap_int + ".tex")
-        target_out_dirs.append(str(c_cours_dir))
-        target_cwds.append(str(chap) + "/cours/")
-        
-        target_files.append(str(chap) + "/TD/TD" + chap_int + ".tex")
-        target_out_dirs.append(str(c_TDs_dir))
-        target_cwds.append(str(chap) + "/TD/")
-        
-    with ThreadPoolExecutor() as executor:
-        futures = [
-            executor.submit(compile_file, file, dir_out, cw) 
-            for file, dir_out, cw in zip(target_files, target_out_dirs, target_cwds)
-        ]
-    
-        results = [fut.result() for fut in as_completed(futures)]
-        
-    with ThreadPoolExecutor() as executor:
-        futures = [
-            executor.submit(compile_file, file, out, c) 
-            for file, out, c in zip(target_files, target_out_dirs, target_cwds)
-         ]
-    
-        results = [fut.result() for fut in as_completed(futures)]
-        
-    clean_dir(c_integrale_dir)
-    clean_dir(c_chapters_dir)
-    clean_dir(c_cours_dir)
-    clean_dir(c_TDs_dir)
-    
-    print("Compilation finished, pdf are in the build subdir.")
-    exit(0)
+        target_file = integ_dir / lookup[args.mode]
+        tasks.append((target_file, DIST_INTEGRALE, integ_dir))
+        run_tasks(tasks, args.halt_on_error)
+        return
 
-if args.chapitres.lower() != "all" and args.chapitres.lower() != "integrale" :
-    target_numbers = {num.strip() for num in args.chapitres.split(",")}
-    target_dirs = [d for d in target_dirs if (m := re.search(r"(\d+)$", d.name)) and m.group(1) in target_numbers]
+    if args.chapitres.lower() != "all":
+        selected_numbers = {str(int(n.strip())) for n in args.chapitres.split(",") if n.strip().isdigit()}
+        chapter_dirs = [d for d in chapter_dirs if get_chapter_num(d.name) in selected_numbers]
 
-def compile_chapters (targets, dir) :
-    with ThreadPoolExecutor() as executor:
-        futures = [
-        executor.submit(compile_file, str(chap) + "/chapitre" + str(int(chap.name.replace("chapitre", ""))) + ".tex", str(dir), str(chap)) 
-        for chap in targets
-    ]
+    for chap in chapter_dirs:
+        c_num = get_chapter_num(chap.name)
+        if not c_num:
+            continue
 
-    results = [fut.result() for fut in as_completed(futures)]
-    return
+        if args.mode == "chapitre":
+            f = chap / f"chapitre{c_num}.tex"
+            if f.exists():
+                tasks.append((f, DIST_CHAPITRES, chap))
+        elif args.mode == "cours":
+            f = chap / "cours" / f"cours{c_num}.tex"
+            if f.exists():
+                tasks.append((f, DIST_COURS, chap / "cours"))
+        elif args.mode == "TD":
+            f = chap / "TD" / f"TD{c_num}.tex"
+            if f.exists():
+                tasks.append((f, DIST_TDS, chap / "TD"))
 
-def compile_cours (targets, dir) :
-    with ThreadPoolExecutor() as executor:
-        futures = [
-        executor.submit(compile_file, str(chap) + "/cours/cours" + str(int(chap.name.replace("chapitre", ""))) + ".tex", str(dir), str(chap) + "/cours/") 
-        for chap in targets
-    ]
+    run_tasks(tasks, args.halt_on_error)
 
-    results = [fut.result() for fut in as_completed(futures)]
-    return  
-
-def compile_TDs (targets, dir) :
-    with ThreadPoolExecutor() as executor:
-        futures = [
-        executor.submit(compile_file, str(chap) + "/TD/TD" + str(int(chap.name.replace("chapitre", ""))) + ".tex", str(dir), str(chap) + "/TD/") 
-        for chap in targets
-    ]
-
-    results = [fut.result() for fut in as_completed(futures)]
-    return
-
-if args.chapitres == "integrale" :
-    c_integrale_dir = Path(C_INTEGRALE_DIR).resolve()
-    c_integrale_dir.mkdir(exist_ok=True)
-
-    match args.mode :
-        case "chapitre" :
-            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_mpi.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-        case "cours" :
-            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_cours.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-        case "TD" :
-            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-            compile_file(str(chapters_path) + "/integrale/integrale_TD.tex", str(c_integrale_dir), str(chapters_path) + "/integrale/")
-        case _ :
-            print("ERROR: invalid input for mode field.")
-            exit(1)
-
-    #clean_dir(c_integrale_dir)
-else :
-    match args.mode :
-        case "chapitre" :
-            c_chapters_dir = Path(C_CHAPITRES_DIR).resolve()
-            c_chapters_dir.mkdir(exist_ok=True)
-        
-            compile_chapters(target_dirs, c_chapters_dir)
-            compile_chapters(target_dirs, c_chapters_dir)
-        
-           # clean_dir(c_chapters_dir)
-        case "cours" :
-            c_cours_dir = Path(C_COURS_DIR).resolve()
-            c_cours_dir.mkdir(exist_ok=True)
-        
-            compile_cours(target_dirs, c_cours_dir)
-            compile_cours(target_dirs, c_cours_dir)
-
-            clean_dir(c_cours_dir)
-        case "TD" :
-            c_TDs_dir = Path(C_TD_DIR).resolve()
-            c_TDs_dir.mkdir(exist_ok=True)
-        
-            compile_TDs(target_dirs, c_TDs_dir)
-            compile_TDs(target_dirs, c_TDs_dir)
-
-            clean_dir(c_TDs_dir)
-        case _ :
-            print("ERROR: invalid input for mode field.")
-            exit(1)
-
-print("Compilation finished, pdf are in the build subdir.")
+if __name__ == "__main__":
+    main()

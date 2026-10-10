@@ -58,18 +58,18 @@ dont l'intersection infinie est $\{0\}$.}
     Un espace dit \textit{topologique} vérifie les deux premières propriétés.
 \end{remarque}
 
+\idee{
+    1. Utiliser la définition.
+
+    2. Idem.
+}
+
 \begin{proof}~\\
     \uline{Réunion :}
     \svspace Soit $I$ un ensemble non vide tel que $\forall i \in I, \, A_i$ est un ouvert de $E$, et 
     $\displaystyle B = \bigcup_{i \in I} A_i$.
 
     Soit $x \in B$. Il existe $i \in I$ tel que $x \in A_i$.
-
-    \idee{
-        1. Utiliser la définition.
-
-        2. Idem.
-    }
 
     Or $A_i$ est un ouvert, donc il existe $R > 0$ tel que $B(x, R) \subset A_i \subset B$, 
     donc $B$ est un ouvert. \\
@@ -163,7 +163,7 @@ dont l'intersection infinie est $\{0\}$.}
 \end{theoreme}
 
 \idee{
-    $\Rightarrow$ : par l'absurde, on suppose la limite dans le complémentaire. 
+    $\Rightarrow$ : Par l'absurde, on suppose la limite dans le complémentaire. 
 }
 
 \begin{proof}~\\
@@ -288,6 +288,11 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     Les seules parties à la fois ouvertes et fermées de $E$ sont $\emptyset$ et $E$.
 \end{theoreme}
 
+\idee{
+    Par l'absurde, on prend deux ensembles ouverts et fermés complémentaires, et 
+    on cherche à aller sur la frontière. 
+}
+
 \begin{proof}
     Supposons par l'absurde qu'il existe $A \subset E$ telle que $A \neq \emptyset$, $A \neq E$, et $A$ est à la fois ouvert et fermé.
 
@@ -297,11 +302,6 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     et considérons 
     
     $S = \left\{\lambda b + (1 - \lambda )a, \, \lambda \in \inter 0 1\right\}$
-
-\idee{
-    Par l'absurde, on prend deux ensembles ouverts et fermés complémentaires, et 
-    on cherche à aller sur la frontière. 
-}
 
     Notons $C = \left\{\lambda \in \inter 0 1 \ \mid \lambda b + (1 - \lambda )a \in A\right\}$
 
@@ -1136,7 +1136,7 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
 \idee{
     $\Rightarrow$ Utilisation de la limite avec des boules comme voisinages. 
 
-    $\Leftarrow$ même idée dans l'autre sens. 
+    $\Leftarrow$ Même idée dans l'autre sens. 
 }
 
 \begin{proof}~\\
@@ -2112,6 +2112,16 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
     \end{enumerate}
 \end{proposition}
 
+\idee{
+    1. Caractérisation séquentielle des fermés et absurde.
+
+    2. Caractérisation séquentielle.
+
+    3. Absurde. 
+
+    4. Extractions successives.
+}
+
 \begin{proof}~
     \begin{enumerate}
         \item Soit $A \subset E$ un compact. Montrons que $A$ est fermé.
@@ -2120,16 +2130,6 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 
         $A$ étant compact, il existe une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
         $\ell' \in A$. Or $u_{\varphi(n)} \to \ell$ donc $\ell = \ell' \in A$, donc $A$ est fermé.
-
-\idee{
-    1. caractérisation séquentielle des fermés et absurde 
-
-    2. caractérisation séquentielle 
-
-    3. absurde 
-
-    4. extractions successives
-}
 
         Supposons que $A$ n'est pas borné, pour tout $n \in \N$, il existe 
         $x_n \in A$ tel que $N(x_n) > n$.
@@ -2328,6 +2328,12 @@ Montrons le théorème d'équivalence des normes en dimension finie.
 
 Démonstration non exigible.
 
+\idee{
+    Montrer que toute norme est équivalente à la norme infinie, et montrer 
+    que la norme de $E$ restreinte à la sphère de rayon $1$ et de centre $0$ pour la norme 
+    infinie est lipschitzienne. 
+}
+
 \begin{proof}
     Soit $E$ un $\K$-ev de dimension finie. 
 
@@ -2337,12 +2343,6 @@ Démonstration non exigible.
 
     Considérons $S_\infty (0, 1) = \{ x \in E, \, N_\infty(x) = 1 \}$ et 
     $\fonction f {S_\infty(0, 1)}{\R}{x}{N(x)}$.
-
-\idee{
-    Montrer que toute norme est équivalente à la norme infinie, et montrer 
-    que la norme de $E$ restreinte à la sphère de rayon $1$ et de centre $0$ pour la norme 
-    infinie est lipschitzienne. 
-}
 
     Soient $x, y \in S_\infty(0, 1)$. Alors $| f(x) - f(y)| = |N(x) - N(y)| \leqslant N(x - y)$ par la deuxième inégalité triangulaire. 
 
@@ -2528,12 +2528,12 @@ Dans ce paragraphe on prendra $\K = \R$.
     Les parties connexes par arcs de $\R$ sont les intervalles.
 \end{theoreme}
 
+    \marginenote{Remarque}{On peut tuer la preuve en remarquant qu'un intervalle est convexe et donc que $A$ est étoilée par rapport à un de ses points et donc que $A$ est connexe par arcs.}
 \begin{proof}
     Soit $A \subset \R$. 
 
     $\Leftarrow$ Si $A$ est un intervalle, alors $A$ est convexe donc $A$ est connexe par arcs.
 
-    \marginenote{Remarque}{On peut tuer la preuve en remarquant qu'un intervalle est convexe et donc que $A$ est étoilée par rapport à un de ses points et donc que $A$ est connexe par arcs.}
     $\Rightarrow$ Supposons que $A$ est connexe par arcs. 
 
     Soient $a \leqslant b \in A$. Montrons que $[a, b] \subset A$.
@@ -2609,11 +2609,11 @@ Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est conn
     Toute partie connexe par arcs est connexe. 
 \end{proposition}
 
+\idee{Absurde et TVI.}
 \begin{proof}
     Soit $A \subset E$ connexe par arcs et $f : A \to \{0, 1\}$ continue. Supposons $f$ non constante. 
 
     Alors $\exists a, b \in A$ tel que $f(a) = 0$ et $f(b) = 1$.
-    \idee{Absurde et TVI.}
 
     Il existe $\varphi : \inter 0 1 \to A$ continue telle que $\varphi(0) = a$ et $\varphi(1) = b$.
 

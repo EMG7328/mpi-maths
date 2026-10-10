@@ -1,6 +1,8 @@
 # Projet 
 
-Ce cours latex est tapé par des élèves de MPI* du lycée Champollion. Il regroupe l'ensemble du programme de MPI ainsi que des dépassements de celui-ci, notamment à travers les TD X-ENS.
+Ce cours latex est tapé par des élèves de MPI/MPI* du lycée Champollion. Il regroupe l'ensemble du programme de MPI ainsi que des dépassements de celui-ci, notamment à travers les TD X-ENS.
+
+Une version a peu près à jour du polycopié est disponible [ici](https://mp2i-mpi-champo.github.io/files/integrale_mpi.pdf).
 
 # Remerciements
 ## Professeurs

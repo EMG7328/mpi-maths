@@ -28,7 +28,8 @@
 \RequirePackage{unicode-math}
 \RequirePackage{fontawesome5}
 \RequirePackage{graphicx}
-\RequirePackage{marginnote}
+\RequirePackage{scrlayer-notecolumn}
+\RequirePackage{scrlayer-fancyhdr}
 \RequirePackage{needspace}
 \RequirePackage{atbegshi}
 \RequirePackage[normalem]{ulem}
@@ -284,9 +285,16 @@
 % =============================================================================
 % NOTES DANS LA MARGE
 % =============================================================================
+\DeclareNewNoteColumn[%
+  position=\dimexpr1in+\oddsidemargin+\textwidth+\marginparsep\relax,
+  width=\marginparwidth,
+  font=\normalfont
+]{margincol}
+
 \newtcolorbox{marginbox}[3][]{%
   enhanced,
   nobeforeafter,
+  unbreakable,
   sharp corners,
   colback=white,
   colframe=#2,
@@ -294,12 +302,12 @@
   width=\dimexpr\marginparwidth-1.8pt\relax,
   left=4pt,
   right=4pt,
-  top=5pt,
-  bottom=5pt,
+  top=1pt,
+  bottom=4pt,
   drop shadow={#2!40, xshift=1.8pt, yshift=-1.8pt},
   title={#3},
   fonttitle=\small\bfseries\color{#2},
-  attach boxed title to top center={yshift=-\tcboxedtitleheight/2},
+  attach boxed title to top center={yshift*=-\tcboxedtitleheight/2},
   boxed title style={
     colback=white,
     colframe=white,
@@ -319,29 +327,40 @@
   #1
 }
 
-\newcommand{\idee}[2][0pt]{%
-  \marginnote{%
-    \vspace{#1}%
+\newbox{\prepa@notebox}
+
+\NewDocumentCommand{\prepa@makenote}{O{0pt} +m}{%
+  \setbox\prepa@notebox=\vbox{%
+    \hsize=\marginparwidth
+    \textwidth=\marginparwidth
+    \parindent=0pt
+    \vskip #1\relax
+    #2\par\kern0pt
+  }%
+  \dp\prepa@notebox=0pt
+  \makenote*[margincol]{\box\prepa@notebox}%
+}
+
+\NewDocumentCommand{\idee}{O{0pt} +m}{%
+  \prepa@makenote[#1]{%
     \begin{marginbox}{ideayellow}{\faLightbulb~ Idée}
-      \footnotesize\raggedright #2
+      \footnotesize\raggedright\sloppy #2
     \end{marginbox}%
   }%
 }
 
-\newcommand{\notedanger}[2][0pt]{%
-  \marginnote{%
-    \vspace{#1}%
+\NewDocumentCommand{\notedanger}{O{0pt} +m}{%
+  \prepa@makenote[#1]{%
     \begin{marginbox}{dangerred}{\skull~ Danger !}
-      \footnotesize\raggedright #2
+      \footnotesize\raggedright\sloppy #2
     \end{marginbox}%
   }%
 }
 
-\newcommand{\marginenote}[3][0pt]{%
-  \marginnote{%
-    \vspace{#1}%
+\NewDocumentCommand{\marginenote}{O{0pt} m +m}{%
+  \prepa@makenote[#1]{%
     \begin{marginbox}{vorange}{#2}
-      \footnotesize\raggedright #3
+      \footnotesize\raggedright\sloppy #3
     \end{marginbox}%
   }%
 }
@@ -636,6 +655,7 @@
   \newgeometry{top=2.8cm, bottom=2.8cm, left=2.8cm, right=2.8cm}%
   \pagestyle{empty}%
   \startcontents[chapters]%
+
   \vspace*{0.6cm}%
   
   \begin{center}
@@ -650,17 +670,23 @@
     \end{tikzpicture}
   \end{center}
 
-  \vspace{1.2cm}%
+  \vspace{1.0cm}
+  \nopagebreak
 
   \begin{center}
     {\large\bfseries\scshape\color{black!80} Table des matières\par}%
-    \vspace{0.6cm}%
-    \begin{minipage}{0.88\textwidth}%
-      \hypersetup{linkcolor=black}%
-      \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}%
-    \end{minipage}%
   \end{center}%
+  \vspace{0.4cm}%
+  \nopagebreak
 
+  \begingroup
+    \setlength{\leftskip}{0.06\textwidth}%
+    \setlength{\rightskip}{0.06\textwidth}%
+    \hypersetup{linkcolor=black}%
+    \printcontents[chapters]{}{1}{\setcounter{tocdepth}{2}}%
+    \par
+  \endgroup
+  
   \vfill%
   \clearpage
   \passerenmodecours

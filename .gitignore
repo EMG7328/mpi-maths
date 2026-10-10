@@ -1,4 +1,5 @@
-build
+.build
+dist
 
 # Ignore build files
 cours[0-9]*.pdf

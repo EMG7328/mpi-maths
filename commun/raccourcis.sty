@@ -4,21 +4,21 @@
 
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{../commun/raccourcis}[2025/01/01 Raccourcis personnalisés]
+\ProvidesPackage{../commun/raccourcis}[2026/10/10 Raccourcis personnalisés]
 
-% Raccourcis mathématiques couramment utilisés
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\U}{\mathbb{U}}
-\newcommand{\dx}{\,\mathrm{d}x}
-\newcommand{\dt}{\,\mathrm{d}t}
-\newcommand{\dy}{\,\mathrm{d}y}
+% Symboles courants
+\NewDocumentCommand{\R}{}{\symbb{R}}
+\NewDocumentCommand{\N}{}{\symbb{N}}
+\NewDocumentCommand{\Z}{}{\symbb{Z}}
+\NewDocumentCommand{\Q}{}{\symbb{Q}}
+\NewDocumentCommand{\C}{}{\symbb{C}}
+\NewDocumentCommand{\K}{}{\symbb{K}}
+\NewDocumentCommand{\U}{}{\symbb{U}}
+\NewDocumentCommand{\dx}{}{\,\mathrm{d}x}
+\NewDocumentCommand{\dt}{}{\,\mathrm{d}t}
+\NewDocumentCommand{\dy}{}{\,\mathrm{d}y}
 % \newcommand{\L}{\mathcal{L}}
-\newcommand{\mc}[1]{\,\mathscr C^{#1}}
+\NewDocumentCommand{\mc}{m}{\,\mathscr C^{#1}}
 
 % Raccourcis pour les opérateurs
 \newcommand{\abs}[1]{\left|#1\right|}

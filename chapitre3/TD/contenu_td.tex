@@ -53,7 +53,7 @@ Les questions 1 et 2 sont indépendantes. Soit $E$ un espace vectoriel normé. S
     \item On pose $\forall x \in E, d_{A}(x) = \inf_{a \in A} \|x-a\|$.
     \begin{enumerate}
         \item Soit $x \in E$. Prouver que $d_{A}(x) = 0 \Rightarrow x \in \overline{A}$.
-        \item On suppose que $A$ est fermée et que, $\forall (x,y) \in E^{2}, \forall t \in [0,1], d_{A}(tx+(1-t)y) \le t d_{A}(x) + (1-t) d_{A}(y)$. Prouver que $A$ est convexe.
+        \item On suppose que $A$ est fermée et que, $\forall (x,y) \in E^{2}, \forall t \in [0,1], d_{A}(tx+(1-t)y) \leqslant t d_{A}(x) + (1-t) d_{A}(y)$. Prouver que $A$ est convexe.
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
@@ -157,7 +157,7 @@ Soient $E, F$ deux espaces vectoriels normés sur le corps $\mathbb{R}$.
     \begin{itemize}
         \item P1. $f$ est continue sur $E$.
         \item P2. $f$ est continue en $0_{E}$.
-        \item P3. $\exists k > 0$ tel que $\forall x \in E, \|f(x)\|_{F} \le k \|x\|_{E}$.
+        \item P3. $\exists k > 0$ tel que $\forall x \in E, \|f(x)\|_{F} \leqslant k \|x\|_{E}$.
     \end{itemize}
     \item Soit $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\mathbb{R}$ muni de la norme définie par $\|f\|_{\infty} = \sup_{x \in [0,1]} |f(x)|$.
 
@@ -296,27 +296,40 @@ Utiliser la fonction déterminant pour montrer que ni $GL_{n}(\mathbb{R})$ ni le
 \begin{correction}{1}
 \begin{enumerate}
     \item \textbf{Par le complémentaire :}
-$\mathbb{R} \setminus \mathbb{Z} = \bigcup_{k \in \mathbb{Z}} ]k, k+1[$.
-Chaque intervalle $]k, k+1[ = B(k+\frac{1}{2}, \frac{1}{2})$ est une boule ouverte, donc un ouvert.
-Une réunion d'ouverts étant ouverte, le complémentaire de $\mathbb{Z}$ est ouvert, donc $\mathbb{Z}$ est fermé.
+        $\mathbb{R} \setminus \mathbb{Z} = \bigcup_{k \in \mathbb{Z}} ]k, k+1[$.
+
+        Chaque intervalle $]k, k+1[ = B(k+\frac{1}{2}, \frac{1}{2})$ est une boule ouverte, donc un ouvert.
+        Une réunion d'ouverts étant ouverte, le complémentaire de $\mathbb{Z}$ est ouvert, donc $\mathbb{Z}$ est fermé.
+
     \item \textbf{Par l'image réciproque :}
-Considérons $f : x \mapsto \sin(\pi x)$.
-$f$ est continue sur $\mathbb{R}$.
-$\mathbb{Z} = \{ x \in \mathbb{R}, f(x)=0 \} = f^{-1}(\{0\})$.
-$\{0\}$ est un fermé (singleton dans un espace séparé). L'image réciproque d'un fermé par une application continue est un fermé. Donc $\mathbb{Z}$ est fermé.
+        Considérons $f : x \mapsto \sin(\pi x)$.
+        $f$ est continue sur $\mathbb{R}$. \\
+        $\mathbb{Z} = \{ x \in \mathbb{R}, f(x)=0 \} = f^{-1}(\{0\})$.
+        $\{0\}$ est un fermé (singleton dans un espace séparé). 
+        L'image réciproque d'un fermé par une application continue est un fermé. 
+        Donc $\mathbb{Z}$ est fermé.
+
     \item \textbf{Par caractérisation séquentielle :}
-Soit $(u_{n})$ une suite d'éléments de $\mathbb{Z}$ qui converge vers $\ell \in \mathbb{R}$.
-Une suite convergente de Cauchy : $\exists N, \forall p,q \ge N, |u_{p} - u_{q}| < \epsilon$.
-Prenons $\epsilon = \frac{1}{2}$.
-Si $u_{p}, u_{q} \in \mathbb{Z}$ et $|u_{p} - u_{q}| < \frac{1}{2}$, alors $u_{p} = u_{q}$.
-La suite est donc stationnaire à partir d'un certain rang : $\exists N, \forall n \ge N, u_{n} = C \in \mathbb{Z}$.
-Donc $\ell = C \in \mathbb{Z}$. $\mathbb{Z}$ est séquentiellement fermé.
+        Soit $(u_{n})$ une suite d'éléments de $\mathbb{Z}$ qui converge vers $\ell \in \mathbb{R}$.
+
+        Une suite convergente de Cauchy : $\exists N, \forall p,q \geqslant N, |u_{p} - u_{q}| < \varepsilon$.
+
+        Prenons $\varepsilon = \frac{1}{2}$.
+        Si $u_{p}, u_{q} \in \mathbb{Z}$ et $|u_{p} - u_{q}| < \frac{1}{2}$, alors $u_{p} = u_{q}$.
+
+        La suite est donc stationnaire à partir d'un certain rang : $\exists N, \forall n \geqslant N, u_{n} = C \in \mathbb{Z}$.
+
+        Donc $\ell = C \in \mathbb{Z}$. $\mathbb{Z}$ est séquentiellement fermé.
+
     \item \textbf{Autre méthode (voisinage) :}
-Montrons que le complémentaire $A = \mathbb{R} \setminus \mathbb{Z}$ est ouvert.
-Soit $a \in A$. $a \notin \mathbb{Z}$, donc $\lfloor a \rfloor < a < \lfloor a \rfloor + 1$.
-Posons $R = \min(a - \lfloor a \rfloor, \lfloor a \rfloor + 1 - a)$.
-Alors $B(a, R) \subset ]\lfloor a \rfloor, \lfloor a \rfloor + 1[ \subset \mathbb{R} \setminus \mathbb{Z}$.
-Donc $A$ est ouvert.
+        Montrons que le complémentaire $A = \mathbb{R} \setminus \mathbb{Z}$ est ouvert.
+
+        Soit $a \in A$. $a \notin \mathbb{Z}$, donc $\lfloor a \rfloor < a < \lfloor a \rfloor + 1$.
+
+        Posons $R = \min(a - \lfloor a \rfloor, \lfloor a \rfloor + 1 - a)$.
+        Alors $B(a, R) \subset ]\lfloor a \rfloor, \lfloor a \rfloor + 1[ \subset \mathbb{R} \setminus \mathbb{Z}$.
+
+        Donc $A$ est ouvert.
 \end{enumerate}
 \end{correction}
 
@@ -324,35 +337,36 @@ Donc $A$ est ouvert.
 \begin{enumerate}
     \item Cours
     \item Cours
-    
     \item Soit $A$ un sous-espace vectoriel de $E$, montrons que $\overline{A} \subset E$ et que $\{0\} \in \overline{A}$
 
-    Soient $x,y^\in \overline{A}$, $\alpha,\beta \in \K$, par caractérisation séquentielle il existe $(u_n),(v_n) \in A^{\N}$ telles que $u_n \to x$ et $v_n \to y$
-    par théorème d'opération $\alpha u_n + \beta v_n \to \alpha x + \beta y$. Or $A$ est un sev donc $\alpha x + \beta y \in \overline{A}$
+        Soient $x,y^\in \overline{A}$, $\alpha,\beta \in \K$, par caractérisation séquentielle il existe $(u_n),(v_n) \in A^{\N}$ telles que $u_n \to x$ et $v_n \to y$.
+        Par théorème d'opération $\alpha u_n + \beta v_n \to \alpha x + \beta y$. Or $A$ est un sev donc $\alpha x + \beta y \in \overline{A}$
 
-    Donc $\overline{A}$ est un sev de $E$.
+        Donc $\overline{A}$ est un sev de $E$.
     
-    \item $A \subset E$ convexe non vide. Soient $x,y \in \overline{A}$. Soit $z \in [x,y], \exists \lambda \in [0,1], z = \lambda x + (1 - \lambda)y$,
-    par caractérisation séquentielle, $\exists (u_n),(v_n) \in A^{\N}$ telles que $\lambda u_n + (1 - \lambda) v_n \to z$.
-    
-    $A$ convexe donc $z \in \overline{A}$. Donc $\overline{A}$ est convexe.
+    \item $A \subset E$ convexe non vide. Soient $x,y \in \overline{A}$. Soit $z \in [x,y]$, 
+        $\exists \lambda \in [0,1], z = \lambda x + (1 - \lambda)y$,
+
+        par caractérisation séquentielle, $\exists (u_n),(v_n) \in A^{\N}$ telles que $\lambda u_n + (1 - \lambda) v_n \to z$.
+        
+        $A$ convexe donc $z \in \overline{A}$. Donc $\overline{A}$ est convexe.
 \end{enumerate}
 \end{correction}
 
 \begin{correction}{3}
 \begin{enumerate}
     \item
-    \begin{enumerate}
-        \item Cours
-        \item Supposons que $A \subset B$, soit $x \in \overline{A}$, par caractérisation séquentielle, $\exists (u_n) \in A^{\N}$ telle que $u_n \to x$.
-        Or $A \subset B$ donc $(u_n)$ suite de $B$ donc $x \in \overline{B}$. Donc $\overline{A} \subset \overline{B}$.
-    \end{enumerate}
+        \begin{enumerate}
+            \item Cours
+            \item Supposons que $A \subset B$, soit $x \in \overline{A}$, par caractérisation séquentielle, $\exists (u_n) \in A^{\N}$ telle que $u_n \to x$.
+            Or $A \subset B$ donc $(u_n)$ suite de $B$ donc $x \in \overline{B}$. Donc $\overline{A} \subset \overline{B}$.
+        \end{enumerate}
 
     \item $A \subset A \cup B$
-    donc $\overline{A} \subset \overline{A \cup B}$, de même pour $B$
-    donc $\overline{A} \cup \overline{B} \subset \overline{A \cup B}$
+        donc $\overline{A} \subset \overline{A \cup B}$, de même pour $B$
+        donc $\overline{A} \cup \overline{B} \subset \overline{A \cup B}$
 
-    Et $A \subset \overline A$ ... ok
+        Et $A \subset \overline A$ ... ok
 
     \item
     \begin{enumerate}
@@ -366,33 +380,44 @@ Donc $A$ est ouvert.
 \begin{correction}{5}
 \begin{enumerate}
     \item \textbf{Distance nulle et adhérence :}
-On note $W = \{x \in E, d_{A}(x) = 0\}$.
-Soit $x \in E$.
-$x \in W \iff \inf_{a \in A} \|x-a\| = 0$
-$\iff \forall \epsilon > 0, \exists a \in A, \|x-a\| \le \epsilon$ (caractérisation de l'inf)
-$\iff \forall \epsilon > 0, A \cap B(x, \epsilon) \neq \emptyset$
-$\iff x \in \overline{A}$.
-Donc $W = \overline{A}$.
+        On note $W = \{x \in E, d_{A}(x) = 0\}$.
+        Soit $x \in E$.
+        \begin{align*}
+            x \in W &\iff \inf_{a \in A} \|x-a\| = 0  \\
+            &\iff \forall \varepsilon > 0, \exists a \in A, \|x-a\| \leqslant \varepsilon &\text{(caractérisation de l'inf)} \\
+            &\iff \forall \varepsilon > 0, A \cap B(x, \varepsilon) \neq \emptyset \\
+            &\iff x \in \overline{A}
+        \end{align*}
+        Donc $W = \overline{A}$.
 
     \item \textbf{Égalité des distances :}
-Supposons $d_{A} = d_{B}$.
-Alors $\forall x, d_{A}(x)=0 \iff d_{B}(x)=0$.
-D'après a), cela signifie $x \in \overline{A} \iff x \in \overline{B}$. Donc $\overline{A} = \overline{B}$.
+        Supposons $d_{A} = d_{B}$.
+        Alors $\forall x, d_{A}(x)=0 \iff d_{B}(x)=0$.
 
-Réciproquement, montrons le lemme : $\forall A \subset E, d_{A} = d_{\overline{A}}$.
-Puisque $A \subset \overline{A}$, $\inf_{y \in \overline{A}} \|x-y\| \le \inf_{y \in A} \|x-y\|$, donc $d_{\overline{A}}(x) \le d_{A}(x)$.
-Inversement, soit $y \in \overline{A}$. Il existe une suite $(a_{n}) \in A$ telle que $a_{n} \to y$.
-On a $\|x-a_{n}\| \to \|x-y\|$.
-Or $\|x-a_{n}\| \ge d_{A}(x)$. À la limite, $\|x-y\| \ge d_{A}(x)$.
-En passant à l'infimum sur $y \in \overline{A}$, on a $d_{\overline{A}}(x) \ge d_{A}(x)$.
-D'où l'égalité.
-Si $\overline{A} = \overline{B}$, alors $d_{A} = d_{\overline{A}} = d_{\overline{B}} = d_{B}$.
+        D'après 1., cela signifie $x \in \overline{A} \iff x \in \overline{B}$. Donc $\overline{A} = \overline{B}$.
+
+        Réciproquement, montrons le lemme : $\forall A \subset E, d_{A} = d_{\overline{A}}$.
+        \begin{quote}
+            Puisque $A \subset \overline{A}$, $\inf_{y \in \overline{A}} \|x-y\| \leqslant \inf_{y \in A} \|x-y\|$, donc $d_{\overline{A}}(x) \leqslant d_{A}(x)$.
+
+            Inversement, soit $y \in \overline{A}$. Il existe une suite $(a_{n}) \in A$ telle que $a_{n} \to y$.
+
+            On a $\|x-a_{n}\| \to \|x-y\|$.
+            Or $\|x-a_{n}\| \geqslant d_{A}(x)$. À la limite, $\|x-y\| \geqslant d_{A}(x)$.
+
+            En passant à l'infimum sur $y \in \overline{A}$, on a $d_{\overline{A}}(x) \geqslant d_{A}(x)$.
+            D'où l'égalité.
+        \end{quote}
+        Si $\overline{A} = \overline{B}$, alors $d_{A} = d_{\overline{A}} = d_{\overline{B}} = d_{B}$.
 
     \item \textbf{Injectivité :}
-Soient $A, B \in \mathcal{F}$ (fermés non vides).
-Si $d_{A} = d_{B}$, alors d'après b), $\overline{A} = \overline{B}$.
-Comme $A$ et $B$ sont fermés, $A = \overline{A}$ et $B = \overline{B}$.
-Donc $A = B$. L'application est injective.
+        Soient $A, B \in \mathcal{F}$ (fermés non vides).
+        Si $d_{A} = d_{B}$, alors d'après 2., $\overline{A} = \overline{B}$.
+
+        Comme $A$ et $B$ sont fermés, $A = \overline{A}$ et $B = \overline{B}$.
+        Donc $A = B$.
+
+        L'application est injective.
 \end{enumerate}
 \end{correction}
 
@@ -407,7 +432,8 @@ Donc $A = B$. L'application est injective.
 \begin{itemize}
     \item Par caractérisation séquentielle (ex: appliquée à $(0,0)$ est fermé)
     \item Tout sous-espace vectoriel de dimension finie est fermé (ex: $\Vect(1,1)$ est fermé)
-    \item L'image réciproque d'un fermé par une application continue est un fermé (ex: $f : (x,y) \mapsto \sin^2(\pi x) + \sin^2(\pi y)$ donc $f^{-1}(\{0\} = \Z^2)$)
+    \item L'image réciproque d'un fermé par une application continue est un fermé \\
+        (ex: $f : (x,y) \mapsto \sin^2(\pi x) + \sin^2(\pi y)$ donc $f^{-1}(\{0\} = \Z^2)$)
     \item Complémentaire d'un ouvert
 \end{itemize}
 \end{correction}
@@ -416,12 +442,14 @@ Donc $A = B$. L'application est injective.
 \begin{correction}{9}
 On s'intéresse à la continuité en $(0,0)$.
 
-L'inégalité utile ici est : $\sqrt{|x|} \le \sqrt{|x|+|y|}$ et $\sqrt{|y|} \le \sqrt{|x|+|y|}$.
-Donc $\frac{\sqrt{|x|}}{\sqrt{|x|+|y|}} \le 1$.
+L'inégalité utile ici est : $\sqrt{|x|} \leqslant \sqrt{|x|+|y|}$ et $\sqrt{|y|} \leqslant \sqrt{|x|+|y|}$.
+Donc $\frac{\sqrt{|x|}}{\sqrt{|x|+|y|}} \leqslant 1$.
 
-Ainsi $|f(x,y)| = \sqrt{|y|} \frac{\sqrt{|x|}}{\sqrt{|x|+|y|}} \le \sqrt{|y|}$.
+Ainsi $|f(x,y)| = \sqrt{|y|} \frac{\sqrt{|x|}}{\sqrt{|x|+|y|}} \leqslant \sqrt{|y|}$.
+
 Quand $(x,y) \to (0,0)$, $\sqrt{|y|} \to 0$.
 Donc $\lim_{(x,y) \to (0,0)} f(x,y) = 0 = f(0,0)$.
+
 La fonction est continue en $(0,0)$.
 \end{correction}
 
@@ -429,118 +457,149 @@ La fonction est continue en $(0,0)$.
 \begin{itemize}
     \item $f$ est clairement continue par théorèmes d'opérations.
     \[
-        \forall (x,y) \in \R^2 | f(x,y) - f(0,0)| = \frac{|x^3 + y^3|}{|x^2 + y^2|} 
+        \forall (x,y) \in \R^2, | f(x,y) - f(0,0)| = \frac{|x^3 + y^3|}{|x^2 + y^2|} 
         \leqslant | x \frac {x^2} {x^2 + y^2} + y \frac{y^2}{x^2 + y^2} | 
         \leqslant ||x| + |y||
     \]
 
     \item $g$ est clairement continue par théorèmes d'opérations.
     \item Soit $\Delta$ la première bissectrice, $\Delta$ est un fermé.
-    Soit $(x_0, y_0) \in \R^2$, $h$ est définie par la formule 2 sur un voisinage donc continue en $(x_0,y_0)$.
+        Soit $(x_0, y_0) \in \R^2$, $h$ est définie par la formule 2 sur un voisinage donc continue en $(x_0,y_0)$.
 
-    Soit $(x,y) \in \R^2$, si $x \not \equal y$, $\frac 1 {x - y} (\sin x - \sin y) = [\frac{\sin{x-y}t + y}{x - y}]_0^1 = \int_0^1 \cos{(x-y)t + y}~dt$ 
-    
-    Si $x \equal y$, $h(x,y) = \int_0^1 \cos{(x-y)t + y}~dt$
+        Soit $(x,y) \in \R^2$, si $x \not \equal y$, 
+        $\frac 1 {x - y} (\sin x - \sin y) = [\frac{\sin{x-y}t + y}{x - y}]_0^1 = \int_0^1 \cos{(x-y)t + y}~dt$ 
+        
+        Si $x \equal y$, $h(x,y) = \int_0^1 \cos{(x-y)t + y}~dt$
 
-    Soit $(x_0, y_0) \in \R^2$ et $(x,y) \in \R$, $|h(x,y) - h(x_0,y_0)| \leqslant \int_0^1 |t(x-y) + y - (t(x_0 - y_0) + y_0)|dt \leqslant 2 ||(x,y) - (x_0,y_0)||_1$. Donc elle est continue.
+        Soit $(x_0, y_0) \in \R^2$ et $(x,y) \in \R$, 
+        $|h(x,y) - h(x_0,y_0)| \leqslant \int_0^1 |t(x-y) + y - (t(x_0 - y_0) + y_0)|dt \leqslant 2 ||(x,y) - (x_0,y_0)||_1$.
+        Donc elle est continue.
 \end{itemize}
 \end{correction}
 
 \begin{correction}{11}
-    $f$ est continue sur $E$. \\
+    $f$ est continue sur $E$.
 
-    Alors $f(E) \subset B(0,1)$ car $\forall x \in E, \frac 1 {1 - ||x||} < 1$, cherchons $f^{-1}$ :\\
+    Alors $f(E) \subset B(0,1)$ car $\forall x \in E, \frac 1 {1 - ||x||} < 1$, cherchons $f^{-1}$ :
 
-    Soit $y \in B(0,1)$, $x \in E$, que $ y = \frac 1 {1 + ||x||}$, \\
+    \begin{quote}
+        Soit $y \in B(0,1)$, $x \in E$, que $ y = \frac 1 {1 + ||x||}$, \\
+        Donc $||x|| = \frac{||y||}{1 - ||y||}$ \\
+        Donc $x = \frac y {1 - ||y||}$. 
+    \end{quote}
 
-    Donc $||x|| = \frac{||y||}{1 - ||y||}$ \\
-
-    Donc $x = \frac y {1 - ||y||}$. Donc $f^{-1} : y \mapsto \frac y {1 - ||y||}$ est continue.
+    Donc $f^{-1} : y \mapsto \frac y {1 - ||y||}$ est continue.
 \end{correction}
 
 \begin{correction}{13}
+
     On est en dimension finie, soit $B = (b_1, \dots, b_n)$ une base orthonormée.
+
     Si $x = \Sigma_{i = 1}^n x_ib_i$ et $y = \Sigma_{i = 1}^n y_ib_i$,
 
-    $f(x,y) = \sqrt{\Sigma_{i = 1}^n x_i^2}\sqrt{\Sigma_{i = 1}^n y_n} - | \Sigma_{i=1}^n x_iy_i|$ est continue par théorèmes d'opérations car s'exprime continûment en fonction des coordonnées.  
+    $f(x,y) = \sqrt{\Sigma_{i = 1}^n x_i^2}\sqrt{\Sigma_{i = 1}^n y_n^2} - | \Sigma_{i=1}^n x_iy_i|$ 
+    est continue par théorèmes d'opérations car s'exprime continûment en fonction des coordonnées.  
 
     $\{(x,y) \in E^2 \mid (x,y)~libre\} = f^{-1}(\R^{*})$.
 \end{correction}
+
 \begin{correction}{14}
 \begin{enumerate}
     \item À faire
-    \item $M_n(\R)$ est de dimension finie. Munissons le de la base des matrices élémentaires. Chacune des coordonées de l'image par $f,g$ ou $h$ s'exprime comme somme de produits de coordonées de l'antécédent. Donc elles sont continues par théorèmes d'opérations, donc $f,g$ et $h$ aussi.
-    \item $GL_n(\R)$ dense dans $M_n(\R)$ (voir exemple du cours). $GL_n(\R) = \det^{-1}(\R^{*})$, $\det$ est continu car pour toute matrice son déterminant est une somme de produits de coordonées.
-    $\R^{*}$ est un ouvert donc $GL_n(\R)$ est un ouvert.
-    \item $SL_n(\R)$ est le groupe spécial linéaire (groupe des matrices de déterminant 1). $SL_n(\R) = \det^{-1} (\{1\})$ donc $SL_n(\R)$ est un fermé.
+    \item $M_n(\R)$ est de dimension finie. Munissons le de la base des matrices élémentaires. 
+        Chacune des coordonées de l'image par $f,g$ ou $h$ s'exprime comme somme de produits de coordonées de l'antécédent.
 
-    Soit $A \in SL_n(\R)$, posons $\forall p \in \N^{*}, B_p (1 + \frac 1 p) A$.
-    $\det B_p = (1 + \frac 1 p)^n \det A \not \equal 1$. Donc $B_p \not \in SL_n(\R)$ et $B_p \to A$ donc $A \not \in \mathring{SL_n(\R)}$.
+        Donc elles sont continues par théorèmes d'opérations, donc $f,g$ et $h$ aussi.
 
-    Donc $\mathring{SL_n(\R)} = \varnothing$.
+    \item $GL_n(\R)$ dense dans $M_n(\R)$ (voir exemple du cours). $GL_n(\R) = \det^{-1}(\R^{*})$, 
+        $\det$ est continu car, pour toute matrice, son déterminant est une somme de produits de coordonées.
+
+        $\R^{*}$ est un ouvert, donc $GL_n(\R)$ est un ouvert.
+
+    \item $SL_n(\R)$ est le groupe spécial linéaire (groupe des matrices de déterminant 1). 
+
+        $SL_n(\R) = \det^{-1} (\{1\})$ donc $SL_n(\R)$ est un fermé.
+
+        Soit $A \in SL_n(\R)$, posons $\forall p \in \N^{*}, B_p = (1 + \frac 1 p) A$.
+
+        $\det B_p = (1 + \frac 1 p)^n \det A \not \equal 1$. Donc $B_p \not \in SL_n(\R)$ et $B_p \to A$ donc $A \not \in \mathring{SL_n(\R)}$.
+
+        Donc $\mathring{SL_n(\R)} = \varnothing$.
 \end{enumerate}
 \end{correction}
 
 \begin{correction}{16}
-$\varphi$ est bien un endomorphisme car une primitive d'une fonction continue est continue. \\
 
-\uline{Linéarité :}
+    $\varphi$ est bien un endomorphisme car une primitive d'une fonction continue est continue. \\
 
-$\varphi{(0)} = 0$.
-Par la linéarité de la dérivation il est clair que $\varphi (\lambda f) = \lambda \varphi f$, de même $\varphi (f + g) = \varphi{(f)} + \varphi{(g)}$. Donc $\varphi$ est linéaire. \\
+    \uline{Linéarité :}
+    $\varphi{(0)} = 0$.
 
-\uline{Continuité :}
+    Par la linéarité de la dérivation il est clair que $\varphi (\lambda f) = \lambda \varphi f$, 
+    de même $\varphi (f + g) = \varphi{(f)} + \varphi{(g)}$. 
 
-Soit $f \in E$, $\| \varphi{(f)}\|_{\infty} \leqslant \|f\|_{\infty}$ (on majore pour tout $x \in [0,1]$).
+    Donc $\varphi$ est linéaire. \\
 
-Si $f \not \equal 0$, on a montré que $\frac{\|\varphi{(f)}\|_{\infty}}{\|f\|_{\infty}} \leqslant 1$. Donc $|||\varphi||| \leqslant 1$. \\
+    \uline{Continuité :}
 
-Soit $f = 1$ alors $\|f\|_{\infty} = 1$ et donc $\|\varphi{(f)}\|_{\infty} = 1$.
-Donc le majorant est atteint en f. Donc $|||\varphi||| = 1$.
+    Soit $f \in E$, $\| \varphi{(f)}\|_{\infty} \leqslant \|f\|_{\infty}$ (on majore pour tout $x \in [0,1]$).
+
+    Si $f \not \equal 0$, on a montré que $\frac{\|\varphi{(f)}\|_{\infty}}{\|f\|_{\infty}} \leqslant 1$. Donc $|||\varphi||| \leqslant 1$.
+
+    Soit $f = 1$, alors $\|f\|_{\infty} = 1$ et donc $\|\varphi{(f)}\|_{\infty} = 1$.
+    Donc le majorant est atteint en f. Donc $|||\varphi||| = 1$.
 \end{correction}
 
 % --- Correction 18 (Exercice 11 du PDF) ---
 \begin{correction}{18}
 Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
-
 \begin{enumerate}
-    \item $\varphi_{1}(P) = P(0) = a_{0}$.
-    $|\varphi_{1}(P)| = |a_{0}| \le \|P\|$. Donc $\varphi_{1}$ est continue et $\|\varphi_{1}\| \le 1$.
-    Pour $P=1$, $\varphi_{1}(1)=1$ et $\|1\|=1$, donc $|\varphi_{1}(1)| = 1 \cdot \|1\|$.
-    La norme est atteinte, $|||\varphi_{1}||| = 1$.
+    \item $\varphi_{1}(P) = P(0) = a_{0}$. $|\varphi_{1}(P)| = |a_{0}| \leqslant \|P\|$.
+    
+        Donc $\varphi_{1}$ est continue et $\|\varphi_{1}\| \leqslant 1$.
+        Pour $P=1$, $\varphi_{1}(1)=1$ et $\|1\|=1$, donc $|\varphi_{1}(1)| = 1 \cdot \|1\|$.
+
+        La norme est atteinte, $|||\varphi_{1}||| = 1$.
 
     \item $\varphi_{2}(P) = \int_{0}^{1} P(t) dt = \sum_{i=0}^{n} \frac{a_{i}}{i+1}$.
-    Considérons $P_{n} = \sum_{k=0}^{n} X^{k}$, alors $\|P_{n}\| = 1$.
-    $\varphi_{2}(P_{n}) = \sum_{k=0}^{n} \frac{1}{k+1} \to +\infty$ quand $n \to \infty$.
-    Le rapport $\frac{|\varphi_{2}(P_{n})|}{\|P_{n}\|}$ n'est pas borné.
-    $\varphi_{2}$ n'est pas continue.
+        Considérons $P_{n} = \sum_{k=0}^{n} X^{k}$, alors $\|P_{n}\| = 1$.
 
-    \item
-    $\varphi_{3}(P) = P(1) = \sum a_{i}$.
-    De même avec $P_{n} = \sum_{k=0}^{n} X^{k}$, $\varphi_{3}(P_{n}) = n+1$.
-    $\|P_{n}\| = 1$. Non borné. $\varphi_{3}$ non continue.
+        $\varphi_{2}(P_{n}) = \sum_{k=0}^{n} \frac{1}{k+1} \to +\infty$ quand $n \to \infty$.
+
+        Le rapport $\frac{|\varphi_{2}(P_{n})|}{\|P_{n}\|}$ n'est pas borné.
+        $\varphi_{2}$ n'est pas continue.
+
+    \item $\varphi_{3}(P) = P(1) = \sum a_{i}$.
+        De même avec $P_{n} = \sum_{k=0}^{n} X^{k}$, $\varphi_{3}(P_{n}) = n+1$.
+
+        $\|P_{n}\| = 1$. Non borné. $\varphi_{3}$ non continue.
 \end{enumerate}
 \end{correction}
 
 % --- Correction 20 (Exercice 13 du PDF) ---
 \begin{correction}{20}
-Soit $B = \{x \in E, \|f(x)\| = 1\}$.
+    Soit $B = \{x \in E, \|f(x)\| = 1\}$.
 
-$\Rightarrow$ Supposons $f$ continue. $x \mapsto \|f(x)\|$ est continue (composition).
-$B$ est l'image réciproque du fermé $\{1\}$ par une application continue, donc $B$ est fermé. \\
+    $\Rightarrow$ Supposons $f$ continue. $x \mapsto \|f(x)\|$ est continue (composition).
+    $B$ est l'image réciproque du fermé $\{1\}$ par une application continue, donc $B$ est fermé. \\
 
-$\Leftarrow$ Réciproquement, supposons $B$ fermé. Supposons par l'absurde que $f$ n'est pas continue.
-Alors $f$ n'est pas bornée sur la boule unité.
-$\forall n \in \mathbb{N}, \exists x_{n} \in E, \|f(x_{n})\| > n \|x_{n}\|$.
-On peut supposer $f(x_{n}) \neq 0$.
-Posons $u_{n} = \frac{x_{n}}{\|f(x_{n})\|}$.
-Par linéarité, $\|f(u_{n})\| = \frac{\|f(x_{n})\|}{\|f(x_{n})\|} = 1$. Donc $u_{n} \in B$.
-Mais $\|u_{n}\| = \frac{\|x_{n}\|}{\|f(x_{n})\|} < \frac{1}{n}$.
-Donc $u_{n} \to 0_{E}$.
-Puisque $B$ est fermé, la limite $0_{E}$ devrait appartenir à $B$.
-Or $\|f(0_{E})\| = 0 \neq 1$. Contradiction. \\
+    $\Leftarrow$ Réciproquement, supposons $B$ fermé. Supposons par l'absurde que $f$ n'est pas continue.
+    \begin{quote}
+        Alors $f$ n'est pas bornée sur la boule unité.
+        $\forall n \in \mathbb{N}, \exists x_{n} \in E, \|f(x_{n})\| > n \|x_{n}\|$.
 
-Donc $f$ est continue.
+        On peut supposer $f(x_{n}) \neq 0$.
+        Posons $u_{n} = \frac{x_{n}}{\|f(x_{n})\|}$.
+
+        Par linéarité, $\|f(u_{n})\| = \frac{\|f(x_{n})\|}{\|f(x_{n})\|} = 1$. Donc $u_{n} \in B$.
+        Mais $\|u_{n}\| = \frac{\|x_{n}\|}{\|f(x_{n})\|} < \frac{1}{n}$.
+
+        Donc $u_{n} \to 0_{E}$.
+        Puisque $B$ est fermé, la limite $0_{E}$ devrait appartenir à $B$.
+
+        Or $\|f(0_{E})\| = 0 \neq 1$. Contradiction.
+    \end{quote}
+    Donc $f$ est continue.
 \end{correction}
 
 \begin{correction}{21}
@@ -553,16 +612,16 @@ Donc $f$ est continue.
 
     \item
     \begin{enumerate}
-        \item Alors $\forall c, \exists x \in E, |\varphi(x)| > c\|x\|$.
+    \item Alors $\forall c, \exists x \in E, |\varphi(x)| > c\|x\|$.
         Appliquons ceci à $c = n \in \N$.
         
         Il existe donc $x_n \in E$ tel que $\varphi(x_n)| > n \|x_n\|$.
         Remarquons que $x_n \not = 0$.
+        
         Posons $u_n = \frac {x_n} {\|x_n\|}$.
-
         Par linéarité de $\varphi$ on a $\varphi(u_n) > n$.
 
-        \item Posons $y_n = a - \frac {u_n} {\varphi(u_n)}$. Qui existe car $\varphi(u_n) > n$.
+    \item Posons $y_n = a - \frac {u_n} {\varphi(u_n)}$. Qui existe car $\varphi(u_n) > n$.
         Par linéarité de $\varphi$ on a $\varphi(y_n) = 0$, donc $y_n \in H$.
 
         Or $\|y_n - a\| \leqslant \frac 1 n \to 0$ donc $y_n \to a$. Donc $H$ non fermé.
@@ -571,56 +630,66 @@ Donc $f$ est continue.
 \end{correction}
 
 \begin{correction}{22}
+
     $M_2(\R)$ est de dimension finie, munissons le de la norme infinie.
 
     Si $A \in O(2), \| A\|_{\infty} \leqslant 1$. Donc $O(2)$ est borné.
+
     Posons $f: A \mapsto A^T \cdot A$, continue car composée de fonctions continues.
-    $O(2) = f^{-1}(\{I^2\})$ donc $O(2)$ est fermé. \\
+    $O(2) = f^{-1}(\{I^2\})$ donc $O(2)$ est fermé.
 
     Donc $O(2)$ est compact.
 \end{correction}
 
 % --- Correction 23 (Exercice 16 du PDF) ---
 \begin{correction}{23}
-Soit $(c_{n})$ une suite de $A+B$ convergeant vers $\ell$.
-$c_{n} = a_{n} + b_{n}$ avec $a_{n} \in A, b_{n} \in B$.
 
-Comme $A$ est compact, on peut extraire une sous-suite $(a_{\phi(n)})$ qui converge vers $a \in A$.
-On a $b_{\phi(n)} = c_{\phi(n)} - a_{\phi(n)}$.
-$c_{\phi(n)} \to \ell$ (suite extraite convergente) et $a_{\phi(n)} \to a$.
+    Soit $(c_{n})$ une suite de $A+B$ convergeant vers $\ell$.
+    $c_{n} = a_{n} + b_{n}$ avec $a_{n} \in A, b_{n} \in B$.
 
-Donc $b_{\phi(n)} \to \ell - a$.
-Or $B$ est fermé, donc la limite $\ell - a$ appartient à $B$.
+    Comme $A$ est compact, on peut extraire une sous-suite $(a_{\phi(n)})$ qui converge vers $a \in A$.
+    On a $b_{\phi(n)} = c_{\phi(n)} - a_{\phi(n)}$.
+    $c_{\phi(n)} \to \ell$ (suite extraite convergente) et $a_{\phi(n)} \to a$.
 
-Ainsi $\ell = a + (\ell - a) \in A + B$.
-$A+B$ est fermé. \\
+    Donc $b_{\phi(n)} \to \ell - a$.
+    Or $B$ est fermé, donc la limite $\ell - a$ appartient à $B$.
 
-\textbf{Contre-exemple si $A$ est seulement fermé :} $\{(x, \frac 1 x), x \in \R^*\}$ est un fermé car image réciproque de $\{1\}$ par $f: x,y \mapsto xy$. 
-Soit $B = \{(x, 0), x \in \R\}$ un fermé car droite. $A + B = \R^2 \setminus B$, qui est donc ouvert...
+    Ainsi $\ell = a + (\ell - a) \in A + B$.
+    $A+B$ est fermé. \\
+
+    \textbf{Contre-exemple si $A$ est seulement fermé :} $\{(x, \frac 1 x), x \in \R^*\}$ est un fermé car image réciproque de $\{1\}$ par $f: x,y \mapsto xy$. 
+    Soit $B = \{(x, 0), x \in \R\}$ un fermé car droite. $A + B = \R^2 \setminus B$, qui est donc ouvert...
 \end{correction}
 
 % --- Correction 24 (Exercice 17 du PDF) ---
 \begin{correction}{24}
-$A$ est compact donc borné. L'ensemble des distances est borné, la borne sup existe.
 
-Considérons l'application $\Phi : A \times A \rightarrow \mathbb{R}$ définie par $\Phi(x,y) = \|x-y\|$.
-$\Phi$ est continue car la norme est continue (lipschitzienne).
-$A \times A$ est compact car produit de deux compacts.
+    $A$ est compact donc borné. L'ensemble des distances est borné, la borne sup existe.
 
-L'image d'un compact par une application continue est un compact (donc borné et atteint ses bornes).
-Donc le sup est atteint : $\exists (a,b) \in A^{2}, \text{diam}(A) = \|a-b\|$.
+    Considérons l'application $\Phi : A \times A \rightarrow \mathbb{R}$ définie par $\Phi(x,y) = \|x-y\|$.
+    $\Phi$ est continue car la norme est continue (lipschitzienne).
+    $A \times A$ est compact car produit de deux compacts.
+
+    L'image d'un compact par une application continue est un compact (donc borné et atteint ses bornes).
+    Donc le sup est atteint : $\exists (a,b) \in A^{2}, \text{diam}(A) = \|a-b\|$.
 \end{correction}
 
 % --- Correction 25 (Exercice 18 du PDF) ---
 \begin{correction}{25}
-Soit $(a_{p})$ une suite d'éléments de $K = \{u_{n}\} \cup \{\ell\}$.
-Cas 1 : La suite prend une infinité de fois la valeur $\ell$ ou une valeur $u_{n_0}$. Alors on peut extraire une sous-suite constante, qui converge dans $K$.
-Cas 2 : La suite $(a_{p})$ prend une infinité de valeurs distinctes de la suite $(u_{n})$.
-On peut extraire une sous-suite $(u_{\phi(n)})$.
-Comme $u_{n} \to \ell$, toute sous-suite converge vers $\ell$.
-$\ell \in K$.
-Dans tous les cas, on peut extraire une sous-suite convergente dans $K$.
-Donc $K$ est compact.
+
+    Soit $(a_{p})$ une suite d'éléments de $K = \{u_{n}\} \cup \{\ell\}$.
+    \begin{itemize}
+    \item 
+        Cas 1 : La suite prend une infinité de fois la valeur $\ell$ ou une valeur $u_{n_0}$. \\
+        Alors on peut extraire une sous-suite constante, qui converge dans $K$.
+    \item
+        Cas 2 : La suite $(a_{p})$ prend une infinité de valeurs distinctes de la suite $(u_{n})$. \\
+        On peut extraire une sous-suite $(u_{\phi(n)})$. \\
+        Comme $u_{n} \to \ell$, toute sous-suite converge vers $\ell$.
+        $\ell \in K$.
+    \end{itemize}
+    Dans tous les cas, on peut extraire une sous-suite convergente dans $K$.
+    Donc $K$ est compact.
 \end{correction}
 
 % --- Correction 26 (Exercice 19 du PDF) ---
@@ -629,111 +698,141 @@ Donc $K$ est compact.
     \item Soit $g : x \mapsto \|x-f(x)\|$. $g$ est continue sur le compact $A$ par théorèmes d'opération, donc elle atteint son minimum en un point $x_{0}$ par le théorème des bornes atteintes.
 
     Supposons $g(x_{0}) > 0$.
-    $g(f(x_{0})) = \|f(x_{0}) - f(f(x_{0}))\| \le k \|x_{0} - f(x_{0})\|$ (car $f$ $k$-lipschitzienne).
+    $g(f(x_{0})) = \|f(x_{0}) - f(f(x_{0}))\| \leqslant k \|x_{0} - f(x_{0})\|$ (car $f$ $k$-lipschitzienne).
 
-    Donc $g(f(x_{0})) \le k g(x_{0}) < g(x_{0})$ (car $k < 1$).
+    Donc $g(f(x_{0})) \leqslant k g(x_{0}) < g(x_{0})$ (car $k < 1$).
     Cela contredit le fait que $g(x_{0})$ est le minimum.
 
     Donc $g(x_{0}) = 0$, soit $f(x_{0}) = x_{0}$, donc il existe bien un point fixe.
     
-    Unicité : Si $x, y$ sont points fixes, $\|x-y\| = \|f(x)-f(y)\| \le k \|x-y\|$.
-    $(1-k)\|x-y\| \le 0 \implies \|x-y\| = 0 \implies x=y$.
+    Unicité : Si $x, y$ sont points fixes, $\|x-y\| = \|f(x)-f(y)\| \leqslant k \|x-y\|$.
+    $(1-k)\|x-y\| \leqslant 0 \implies \|x-y\| = 0 \implies x=y$.
 
-    \item $\|u_{n+1} - x_{0}\| = \|f(u_{n}) - f(x_{0})\| \le k \|u_{n} - x_{0}\|$.
-    Par récurrence, $\|u_{n} - x_{0}\| \le k^{n} \|u_{0} - x_{0}\|$.
+    \item $\|u_{n+1} - x_{0}\| = \|f(u_{n}) - f(x_{0})\| \leqslant k \|u_{n} - x_{0}\|$.
+    Par récurrence, $\|u_{n} - x_{0}\| \leqslant k^{n} \|u_{0} - x_{0}\|$.
     Comme $k \in [0,1[$, $k^{n} \to 0$. Donc $u_{n} \to x_{0}$.
 \end{enumerate}
 \end{correction}
 
 % --- Correction 27 (Exercice 20 du PDF) ---
 \begin{correction}{27}
-Soit $f$ continue et $T$-périodique.
-Sur le segment $[0, 2T]$, $f$ est continue, donc uniformément continue (théorème de Heine).
-Donc $\forall \epsilon > 0, \exists \delta > 0, \forall x,y \in [0, 2T], |x-y| \le \delta \implies |f(x)-f(y)| \le \epsilon$. \\
 
-Prenons $\delta' = \min(\delta, T)$.
-Soient $x, y \in \mathbb{R}$ tels que $|x-y| \le \delta'$.
-Il existe $n \in \mathbb{Z}$ tel que $x' = x - nT \in [0, T]$.
-Posons $y' = y - nT$. Alors $|x'-y'| = |x-y| \le \delta' \le T$.
-Donc $y' \in [-T, 2T]$.
+    Soit $f$ continue et $T$-périodique.
 
-En fait, on peut toujours se ramener à un intervalle de longueur $2T$ centré ou décalé.
-Si $x' \in [0, T]$, alors $y' \in [-\delta, T+\delta] \subset [-T, 2T]$.
+    Sur le segment $[0, 2T]$, $f$ est continue, donc uniformément continue (théorème de Heine).
 
-La fonction étant périodique, elle prend les mêmes valeurs sur des intervalles décalés.
-La restriction de $f$ à tout intervalle de longueur $2T$ est uniformément continue avec le même module de continuité.
+    Donc $\forall \varepsilon > 0, \exists \delta > 0, \forall x,y \in [0, 2T], |x-y| \leqslant \delta \implies |f(x)-f(y)| \leqslant \varepsilon$. \\
 
-Donc $f$ est uniformément continue sur $\mathbb{R}$.
+    Prenons $\delta' = \min(\delta, T)$.
+    Soient $x, y \in \mathbb{R}$ tels que $|x-y| \leqslant \delta'$.
+
+    Il existe $n \in \mathbb{Z}$ tel que $x' = x - nT \in [0, T]$.
+
+    Posons $y' = y - nT$. Alors $|x'-y'| = |x-y| \leqslant \delta' \leqslant T$.
+    Donc $y' \in [-T, 2T]$. \\
+
+    En fait, on peut toujours se ramener à un intervalle de longueur $2T$ centré ou décalé.
+    Si $x' \in [0, T]$, alors $y' \in [-\delta, T+\delta] \subset [-T, 2T]$.
+
+    La fonction étant périodique, elle prend les mêmes valeurs sur des intervalles décalés.
+    La restriction de $f$ à tout intervalle de longueur $2T$ est uniformément continue avec le même module de continuité.
+
+    Donc $f$ est uniformément continue sur $\mathbb{R}$.
 \end{correction}
 
 % --- Correction 28 (Exercice 21 du PDF) ---
 \begin{correction}{28}
-Sur $[1, +\infty[$, $f(x) = \sqrt{x}$ a pour dérivée $f'(x) = \frac{1}{2\sqrt{x}} \le \frac{1}{2}$.
-La dérivée est bornée, donc $f$ est lipschitzienne, donc uniformément continue sur $[1, +\infty[$.
 
-Sur $[0, 1]$, $f$ est continue sur un compact, donc uniformément continue (Heine).
+    Sur $[1, +\infty[$, $f(x) = \sqrt{x}$ a pour dérivée $f'(x) = \frac{1}{2\sqrt{x}} \leqslant \frac{1}{2}$.
 
-L'union de deux intervalles sur lesquels $f$ est uniformément continue (avec recouvrement) conserve l'uniforme continuité (prouvé en exemple du cours).
-Donc $f$ est uniformément continue sur $\mathbb{R}^{+}$.
+    La dérivée est bornée, donc $f$ est lipschitzienne, donc uniformément continue sur $[1, +\infty[$.
+
+    Sur $[0, 1]$, $f$ est continue sur un compact, donc uniformément continue (Heine).
+
+    L'union de deux intervalles sur lesquels $f$ est uniformément continue (avec recouvrement)
+    conserve l'uniforme continuité (prouvé en exemple du cours).
+
+    Donc $f$ est uniformément continue sur $\mathbb{R}^{+}$.
 \end{correction}
 
 % --- Correction 29 (Exercice 22 du PDF) ---
 \begin{correction}{29}
 
-Soient $a, b$ deux points de la sphère unité $S$. \\
+    Soient $a, b$ deux points de la sphère unité $S$.
 
-Si $b \neq -a$ :
-considérons le segment $[a,b]$. Il ne passe pas par 0.
+    \begin{itemize}
+    \item 
+        Si $b \neq -a$ :
+        considérons le segment $[a,b]$. Il ne passe pas par 0.
+        
+        On projette ce segment sur la sphère : $f(t) = \frac{(1-t)a + tb}{\|(1-t)a + tb\|}$. \\
+        C'est bien défini car le dénominateur ne s'annule pas
+        ($0$ n'est pas sur le segment car $a, b$ non antipodaux de même norme et $a \neq -b$). \\
+        $f$ est un chemin continu reliant $a$ à $b$ sur la sphère.
+    \item
+        Si $b = -a$ :
+        comme la dimension est $\geqslant 2$, il existe un vecteur $c$ sur la sphère tel que $c \neq a$ et $c \neq -a$. \\
+        On peut relier $a$ à $c$ (car non antipodaux) et $c$ à $b$ (car non antipodaux). \\
+        La concaténation des chemins relie $a$ à $b$. \\
+    \end{itemize}
 
-On projette ce segment sur la sphère : $f(t) = \frac{(1-t)a + tb}{\|(1-t)a + tb\|}$.
-C'est bien défini car le dénominateur ne s'annule pas ($0$ n'est pas sur le segment car $a, b$ non antipodaux de même norme et $a \neq -b$).
-$f$ est un chemin continu reliant $a$ à $b$ sur la sphère. \\
-
-Si $b = -a$ :
-comme la dimension est $\ge 2$, il existe un vecteur $c$ sur la sphère tel que $c \neq a$ et $c \neq -a$.
-On peut relier $a$ à $c$ (car non antipodaux) et $c$ à $b$ (car non antipodaux).
-La concaténation des chemins relie $a$ à $b$. \\
-
-La sphère est connexe par arcs.
+    La sphère est connexe par arcs.
 \end{correction}
 
 % --- Correction 30 (Exercice 23 du PDF) ---
 \begin{correction}{30}
 \begin{enumerate}
     \item Soit $\phi(t) = (1-t)a + tc$ le segment reliant $a \in A$ à $c \notin A$.
-    Soit $E = \{ t \in [0,1], \phi(t) \in A \}$. $0 \in E$, donc $E$ non vide.
-    Soit $t_{0} = \sup E$.
+        Soit $E = \{ t \in [0,1], \phi(t) \in A \}$. $0 \in E$, donc $E$ non vide.
+        Soit $t_{0} = \sup E$.
 
-    Comme $A$ est fermé, $\phi(t_{0}) \in A$.
-    Comme $c \notin A$, $t_{0} < 1$.
-    Pour tout $\epsilon > 0$, il existe $t > t_{0}$ tel que $\phi(t) \notin A$ (sinon $t_{0}$ ne serait pas le sup).
-    Donc $\phi(t_{0})$ est limite de points hors de $A$ et est dans $A$.
-    C'est un point frontière. Donc $d = \phi(t_{0}) \in \text{Fr}(A)$.
+        Comme $A$ est fermé, $\phi(t_{0}) \in A$.
+        Comme $c \notin A$, $t_{0} < 1$.
+        Pour tout $\varepsilon > 0$, il existe $t > t_{0}$ tel que $\phi(t) \notin A$
+        (sinon $t_{0}$ ne serait pas le sup).
+
+        Donc $\phi(t_{0})$ est limite de points hors de $A$ et est dans $A$.
+        C'est un point frontière.
+
+        Donc $d = \phi(t_{0}) \in \text{Fr}(A)$.
 
     \item Soient $x, y \in A$.
-    
-    Si le segment $[x,y] \subset A$, c'est fini.
-    
-    Sinon, il sort de $A$. Mais l'énoncé suggère d'utiliser la frontière.
-    On peut relier tout point de $A$ à la frontière ? Non, pas forcément (ex : boule ouverte).
-    Mais si $A$ est fermé et connexe par arcs... l'énoncé dit "dont la frontière est connexe par arcs".
-    Si $A \neq E$ et $A \neq \emptyset$.
-    Pour tout $a \in A$, peut-on le relier à la frontière ?
-    Si $A$ est borné, on prend une demi-droite partant de $a$. Elle finit par sortir. Le point de sortie est sur la frontière.
-    On relie $a$ à un point $d_{a} \in \text{Fr}(A)$ par un segment.
-    On relie $b$ à un point $d_{b} \in \text{Fr}(A)$ par un segment.
-    Comme $\text{Fr}(A)$ est connexe par arcs, on relie $d_{a}$ à $d_{b}$ par un chemin dans la frontière (donc dans $A$).
+        \begin{itemize}
+        \item 
+            Si le segment $[x,y] \subset A$, c'est fini.
+        \item
+            Sinon, il sort de $A$. Mais l'énoncé suggère d'utiliser la frontière.
 
-    Le chemin total relie $a$ à $b$ dans $A$.
+            On peut relier tout point de $A$ à la frontière ? Non, pas forcément (ex : boule ouverte). \\
+            Mais si $A$ est fermé et connexe par arcs... l'énoncé dit "dont la frontière est connexe par arcs". \\
+
+            Si $A \neq E$ et $A \neq \emptyset$.
+            Pour tout $a \in A$, peut-on le relier à la frontière ? \\
+
+            Si $A$ est borné, on prend une demi-droite partant de $a$.
+            Elle finit par sortir. Le point de sortie est sur la frontière.
+
+            On relie $a$ (resp. $b$) à un point $d_{a}$ (resp. $d_{b}$) $\in \text{Fr}(A)$ par un segment.
+
+            Comme $\text{Fr}(A)$ est connexe par arcs, on relie $d_{a}$ à $d_{b}$ par un chemin dans la frontière (donc dans $A$).
+
+            Le chemin total relie $a$ à $b$ dans $A$.
+        \end{itemize}
+        
 \end{enumerate}
 \end{correction}
 
 % --- Correction 31 (Exercice 24 du PDF) ---
 \begin{correction}{31}
-L'application déterminant est continue.
-L'image de $GL_{n}(\mathbb{R})$ par $\det$ est $\mathbb{R}^{*}$.
-$\mathbb{R}^{*}$ n'est pas connexe (deux composantes connexes $\mathbb{R}_{-}^{*}$ et $\mathbb{R}_{+}^{*}$).
-L'image d'un connexe par une application continue doit être connexe.
-Donc $GL_{n}(\mathbb{R})$ n'est pas connexe (et donc pas connexe par arcs).
-De même, $\det(O(n)) = \{-1, 1\}$, qui n'est pas connexe.
+
+    L'application déterminant est continue.
+    L'image de $GL_{n}(\mathbb{R})$ par $\det$ est $\mathbb{R}^{*}$.
+
+    $\mathbb{R}^{*}$ n'est pas connexe (deux composantes connexes $\mathbb{R}_{-}^{*}$ et $\mathbb{R}_{+}^{*}$).
+
+    L'image d'un connexe par une application continue doit être connexe.
+
+    Donc $GL_{n}(\mathbb{R})$ n'est pas connexe (et donc pas connexe par arcs). \\
+
+    De même, $\det(O(n)) = \{-1, 1\}$, qui n'est pas connexe.
 \end{correction}

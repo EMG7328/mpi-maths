@@ -200,15 +200,20 @@ On pose $f(x)=\arctan x$.
 
     \item 
     Soit $h$ une fonction continue sur $\mathbb{R}$ telle que $\forall x\in\mathbb{R}, h(x)=h(\arctan x)$.
-    Soit $x\in\mathbb{R}$. Considérons la suite $(u_{n})$ définie par $u_{0}=x$ et $u_{n+1}=\arctan(u_{n})$.
+    Soit $x\in\mathbb{R}$. 
+
+    Considérons la suite $(u_{n})$ définie par $u_{0}=x$ et $u_{n+1}=\arctan(u_{n})$.
+
     On a alors $h(x)=h(u_{0})=h(\arctan(u_{0}))=h(u_{1})=h(\arctan(u_{1}))=h(u_{2})=\dots$
+
     Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $h(x)=h(u_{n})$.
-    De plus $\lim_{n\rightarrow+\infty}h(u_{n})=h(0)$ par convergence de la suite $(u_{n})$ vers 0 et par continuité de $h$.
+
+    De plus, par convergence de la suite $(u_{n})$ vers 0 et par continuité de $h$, $\lim_{n\rightarrow+\infty}h(u_{n})=h(0)$ 
+
     On obtient ainsi : $h(x)=h(0)$ et donc $h$ est une fonction constante.
+
     Réciproquement, toutes les fonctions constantes conviennent.
 \end{enumerate}
-
-
 \end{correction}
 
 % --- Correction 2 ---
@@ -216,78 +221,97 @@ On pose $f(x)=\arctan x$.
 \begin{enumerate}
     \item 
     On pose $c$ la constante telle que $c=ac+b$, c'est-à-dire $c=\frac{b}{1-a}$.
+
     Alors $v_{n}=u_{n}-c$ est géométrique de raison $a$.
+
     Donc pour tout $n$, $v_{n}=a^{n}v_{0}$ donc $u_{n}=c+a^{n}(u_{0}-c)$.
 
     \item 
     On note $u_{n}$ le capital restant dû au bout de $n$ mois.
+
     On a donc $u_{0}=S$, pour tout $n$, $u_{n+1}=(1+t)u_{n}-R$.
+
     L'hypothèse $u_{N}=0$ permet de calculer $R$.
 \end{enumerate}
 \end{correction}
 
 % --- Correction 3 ---
 \begin{correction}{3}
-Par continuité de $f'$, il existe $\alpha>0$ et $\beta\in]0,1[$ tels que $\forall x\in]a-\alpha,a+\alpha[, |f^{\prime}(x)|\le\beta$.
 
-Posons $J=]a-\alpha,a+\alpha[\cap I$.
+    Par continuité de $f'$, il existe $\alpha>0$ et $\beta\in]0,1[$ tels que $\forall x\in]a-\alpha,a+\alpha[, |f^{\prime}(x)|\le\beta$. \\
+    Posons $J=]a-\alpha,a+\alpha[\cap I$. \\
+    Tout d'abord $J$ est bien stable par $f$, car si $x\in J$, $x\in I$ donc $f(x)\in I$.
 
-Tout d'abord $J$ est bien stable par $f$, car si $x\in J$, $x\in I$ donc $f(x)\in I$.
-De plus par l'inégalité des accroissements finis, $|f(x)-a|=|f(x)-f(a)|\le \sup_{[a,x]}|f^{\prime}|\cdot|x-a|\le\beta|x-a| < |x-a| \le \alpha$. Donc $f(x)\in J$.
+    De plus par l'inégalité des accroissements finis, \\
+    $|f(x)-a|=|f(x)-f(a)|\le \sup_{[a,x]}|f^{\prime}|\cdot|x-a|\le\beta|x-a| < |x-a| \le \alpha$. Donc $f(x)\in J$. \\
 
-Ainsi si on pose $u_{0}\in J$ tous les $u_{n}$ sont dans $J$.
-Et donc toujours par l'inégalité des accroissements finis, pour tout $n$, $|u_{n+1}-a|=|f(u_{n})-f(a)|\le\beta|u_{n}-a|$.
-Et donc par récurrence $|u_{n}-a|\le\beta^{n}|u_{0}-a|$ qui converge vers 0.
+    Ainsi si on pose $u_{0}\in J$ tous les $u_{n}$ sont dans $J$. \\
+    Et donc toujours par l'inégalité des accroissements finis, pour tout $n$, $|u_{n+1}-a|=|f(u_{n})-f(a)|\le\beta|u_{n}-a|$. \\
+    Et donc par récurrence $|u_{n}-a|\le\beta^{n}|u_{0}-a|$ qui converge vers 0. \\
 
-Conclusion : $(u_n)$ converge vers $a$.
+    Conclusion : $(u_n)$ converge vers $a$.
 \end{correction}
 
 % --- Correction 4 ---
 \begin{correction}{4}
-On pose pour $x$ réel $f(x)=\frac{1}{3}(x^{3}+2)$ et $g(x)=f(x)-x$.
-$f$ et $g$ sont polynomiales donc $C^{1}$ et pour tout $x$, $f^{\prime}(x)=x^{2}$ et $g^{\prime}(x)=x^{2}-1$.
-On étudie les variations :
-\begin{itemize}
-    \item $g$ croît sur $]-\infty, -1]$, décroît sur $[-1, 1]$, croît sur $[1, +\infty[$. $g(-1) = 0$ n'est pas correct ($g(-1) = 1/3(-1+2) - (-1) = 1/3+1 = 4/3$), le tableau du PDF montre des signes.
-    \item $g(x) = \frac{1}{3}x^3 - x + \frac{2}{3} = \frac{1}{3}(x^3 - 3x + 2) = \frac{1}{3}(x-1)^2(x+2)$.\\
-\end{itemize}
 
-On remarque aussi que les seuls points fixes de $f$ sont $-2$ et $1$.
-On en déduit que :
-\begin{itemize}
-    \item Si $u_{0}\in\{-2,1\}$, la suite est constante.
-    \item Si $u_{0}\in]-\infty,-2[$, comme cet intervalle est stable, tous les $u_{n}$ y sont, donc $u_{n+1}-u_{n}=g(u_{n})\le0$, donc la suite est décroissante. Si elle était minorée elle convergerait vers un point fixe $l$ avec $l\le u_{0}<-2$, absurde. Donc elle diverge vers $-\infty$.
-    \item Si $u_{0}\in]-2,1[$, comme cet intervalle est stable, $u_{n+1}-u_{n}=g(u_{n})\ge0$, donc la suite est croissante. Elle est majorée par 1, donc converge vers un point fixe $l$ avec $-2<u_{0}\le l\le1$, donc $l=1$.
-    \item Si $u_{0}\in]1,+\infty[$, intervalle stable, $u_{n+1}-u_{n}\ge0$, suite croissante. Si elle était majorée elle convergerait vers $l \ge u_0 > 1$, absurde. Elle diverge vers $+\infty$.
-\end{itemize}
-Les cas de convergence sont donc $u_{0}\in\{-2,1\}$ où la suite est constante et $u_{0}\in]-2,1[$.
-Dans ce dernier cas on pose $v_{n}=1-u_{n}$ qui est positive et converge vers 0.
-On trouve ensuite une relation de récurrence entre $v_{n+1}$ et $v_{n}$.
-Cela permet de faire un DL de $v_{n+1}^{\alpha}-v_{n}^{\alpha}$ et de trouver que pour $\alpha=-1$ cette quantité converge vers 1.
-On applique le théorème de Cesàro pour en déduire $v_{n}\sim\frac{1}{n}$.
+    On pose pour $x$ réel $f(x)=\frac{1}{3}(x^{3}+2)$ et $g(x)=f(x)-x$. \\
+    $f$ et $g$ sont polynomiales donc $C^{1}$ et pour tout $x$, $f^{\prime}(x)=x^{2}$ et $g^{\prime}(x)=x^{2}-1$.
+
+    On étudie les variations :
+    \begin{itemize}
+        \item $g$ croît sur $]-\infty, -1]$, décroît sur $[-1, 1]$, croît sur $[1, +\infty[$. \\
+            $g(-1) = 0$ n'est pas correct ($g(-1) = 1/3(-1+2) - (-1) = 1/3+1 = 4/3$), le tableau du PDF montre des signes.
+        \item $g(x) = \frac{1}{3}x^3 - x + \frac{2}{3} = \frac{1}{3}(x^3 - 3x + 2) = \frac{1}{3}(x-1)^2(x+2)$.\\
+    \end{itemize}
+
+    On remarque aussi que les seuls points fixes de $f$ sont $-2$ et $1$. \\
+    On en déduit que :
+    \begin{itemize}
+        \item Si $u_{0}\in\{-2,1\}$, la suite est constante.
+        \item Si $u_{0}\in]-\infty,-2[$, comme cet intervalle est stable, tous les $u_{n}$ y sont, \\
+            donc $u_{n+1}-u_{n}=g(u_{n})\le0$, donc la suite est décroissante. \\
+            Si elle était minorée elle convergerait vers un point fixe $l$ avec $l\le u_{0}<-2$, absurde. \\
+            Donc elle diverge vers $-\infty$.
+        \item Si $u_{0}\in]-2,1[$, comme cet intervalle est stable, $u_{n+1}-u_{n}=g(u_{n})\ge0$,
+            donc la suite est croissante. \\
+            Elle est majorée par 1, donc converge vers un point fixe $l$ avec $-2<u_{0}\le l\le1$, donc $l=1$.
+        \item Si $u_{0}\in]1,+\infty[$, intervalle stable, $u_{n+1}-u_{n}\ge0$, suite croissante. \\
+            Si elle était majorée elle convergerait vers $l \ge u_0 > 1$, absurde. Elle diverge vers $+\infty$.
+    \end{itemize}
+    Les cas de convergence sont donc $u_{0}\in\{-2,1\}$ où la suite est constante et $u_{0}\in]-2,1[$. \\
+    Dans ce dernier cas on pose $v_{n}=1-u_{n}$ qui est positive et converge vers 0. \\
+    On trouve ensuite une relation de récurrence entre $v_{n+1}$ et $v_{n}$. \\
+    Cela permet de faire un DL de $v_{n+1}^{\alpha}-v_{n}^{\alpha}$ et de trouver que pour $\alpha=-1$ cette quantité converge vers 1. \\
+    On applique le théorème de Cesàro pour en déduire $v_{n}\sim\frac{1}{n}$.
 \end{correction}
 
 % --- Correction 5 ---
 \begin{correction}{5}
+
 Pour pouvoir poser $f(x)=\alpha^{x}=e^{x \ln \alpha}=e^{\frac{x}{e}}$.
+
 On étudie la fonction $f$, la fonction $g$ définie par $g(x)=f(x)-x$.
-On trace le tableau de variation et on en déduit facilement que $[0, e]$ est stable par $f$, que $e$ est l'unique point fixe de $f$ et que $u_{n}$ est croissante et converge vers $e$.
+
+On trace le tableau de variation et on en déduit facilement que $[0, e]$ est stable par $f$, 
+que $e$ est l'unique point fixe de $f$ et que $u_{n}$ est croissante et converge vers $e$.
 \end{correction}
 
 % --- Correction 6 ---
 \begin{correction}{6}
 \begin{enumerate}
     \item 
-    Par hypothèse, $\exists N_{0}\in\mathbb{N}, \forall n\ge N_{0}, v_{n}\ne0$.
-    Ainsi la suite $(\frac{u_{n}}{v_{n}})$ est définie à partir du rang $N_{0}$.
-    Comme $u_{n}\sim v_{n}$, on a $\lim_{n\rightarrow+\infty}\frac{u_{n}}{v_{n}}=1$.
-    Alors, $\forall\epsilon>0, \exists N\ge N_{0}, \forall n\ge N \Rightarrow |\frac{u_{n}}{v_{n}}-1|\le\epsilon$.
-    Prenons $\epsilon=\frac{1}{2}$. On en déduit que pour $n \ge N$, $\frac{1}{2} \le \frac{u_n}{v_n} \le \frac{3}{2}$.
+    Par hypothèse, $\exists N_{0}\in\mathbb{N}, \forall n\ge N_{0}, v_{n}\ne0$. \\
+    Ainsi la suite $(\frac{u_{n}}{v_{n}})$ est définie à partir du rang $N_{0}$. \\
+    Comme $u_{n}\sim v_{n}$, on a $\lim_{n\rightarrow+\infty}\frac{u_{n}}{v_{n}}=1$. \\
+    Alors, $\forall\varepsilon>0, \exists N\ge N_{0}, \forall n\ge N \Rightarrow |\frac{u_{n}}{v_{n}}-1|\le\varepsilon$. \\
+    Prenons $\varepsilon=\frac{1}{2}$. On en déduit que pour $n \ge N$, $\frac{1}{2} \le \frac{u_n}{v_n} \le \frac{3}{2}$. \\
     Donc $\frac{u_{n}}{v_{n}}>0$, ce qui implique que $u_{n}$ et $v_{n}$ sont de même signe.
 
     \item
-    Au voisinage de $+\infty$, $\sinh(\frac{1}{n})=\frac{1}{n}+\frac{1}{6n^{3}}+o(\frac{1}{n^{3}})$ et $\tan\frac{1}{n}=\frac{1}{n}+\frac{1}{3n^{3}}+o(\frac{1}{n^{3}})$.
-    Donc $u_{n}\sim -\frac{1}{6n^{3}}$.
+    Au voisinage de $+\infty$, $\sinh(\frac{1}{n})=\frac{1}{n}+\frac{1}{6n^{3}}+o(\frac{1}{n^{3}})$
+    et $\tan\frac{1}{n}=\frac{1}{n}+\frac{1}{3n^{3}}+o(\frac{1}{n^{3}})$. \\
+    Donc $u_{n}\sim -\frac{1}{6n^{3}}$. \\
     On en déduit, d'après 1, qu'à partir d'un certain rang, $u_{n}$ est négatif.
 \end{enumerate}
 \end{correction}
@@ -297,28 +321,31 @@ On trace le tableau de variation et on en déduit facilement que $[0, e]$ est st
 \begin{enumerate}
     \item On étudie $f_{n}$ et on lui applique le théorème de la bijection, on trouve $x_{n}>1$.
 
-    \item 
-    La stricte croissance de $f_{n}$ montre que $x_{n+1}-x_{n}$ est du même signe que $f_{n}(x_{n+1})-f_{n}(x_{n})=f_{n}(x_{n+1})$ car $f_n(x_n)=0$.
-    Or $f_{n+1}(x_{n+1})=0=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}-\frac{1}{2}$.
-    Donc $\frac{1}{2}=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}$.
-    En injectant dans $f_n(x_{n+1})$, on trouve que $f_{n}(x_{n+1}) \le 0$ après factorisation.
-    Donc la suite décroît et est minorée par 1. Elle converge.
+    \item La stricte croissance de $f_{n}$ montre que $x_{n+1}-x_{n}$ 
+        est du même signe que $f_{n}(x_{n+1})-f_{n}(x_{n})=f_{n}(x_{n+1})$ car $f_n(x_n)=0$. \\
+        Or $f_{n+1}(x_{n+1})=0=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}-\frac{1}{2}$.
+        Donc $\frac{1}{2}=(n+1)x_{n+1}^{n+2}-(n+2)x_{n+1}^{n+1}$. \\
+        En injectant dans $f_n(x_{n+1})$, on trouve que $f_{n}(x_{n+1}) \le 0$ après factorisation. \\
+        Donc la suite décroît et est minorée par 1. Elle converge.
 
-    \item On a $\ell\ge1$. Supposons par l'absurde que $\ell>1$. En passant à la limite $f_{n}(x_{n})=0$ on tombe sur une contradiction (termes tendant vers l'infini), donc $\ell=1$.
+    \item On a $\ell\ge1$. Supposons par l'absurde que $\ell>1$.  \\
+        En passant à la limite $f_{n}(x_{n})=0$ on tombe sur une contradiction (termes tendant vers l'infini), donc $\ell=1$.
 
-    \item
-    Le résultat sur $\alpha$ se montre par le théorème de la bijection.
-    Puis on effectue un DL sur le calcul de $f_{n}(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}})$.
-    On trouve un équivalent dont le signe dépend de celui d'un polynôme de degré 1 en $\beta$.
-    Il existe donc deux valeurs de $\beta$ pour lesquels cette valeur est positive, respectivement négative, et donc par stricte monotonie de $f_{n}$, l'inégalité cherchée donne $x_{n} - 1 \sim \frac{\alpha}{n}$.
+    \item Le résultat sur $\alpha$ se montre par le théorème de la bijection. \\
+        Puis on effectue un DL sur le calcul de $f_{n}(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}})$. \\
+        On trouve un équivalent dont le signe dépend de celui d'un polynôme de degré 1 en $\beta$. \\
+        Il existe donc deux valeurs de $\beta$ pour lesquels cette valeur est positive, respectivement négative, \\
+        et donc par stricte monotonie de $f_{n}$, l'inégalité cherchée donne $x_{n} - 1 \sim \frac{\alpha}{n}$.
 \end{enumerate}
 \end{correction}
 
 % --- Correction 8 ---
 \begin{correction}{8}
+
 On applique le théorème de Cesàro à la suite $y_{n}$.
-$z_n = \frac{1}{n} \sum_{k=0}^{n-1} (x_{k+1}-x_k) + \frac{x_0}{n} = \frac{1}{n} \sum_{k=0}^{n-1} y_k + \frac{x_0}{n}$.
-La moyenne de Cesàro converge vers $\ell$, et le terme $x_0/n$ tend vers 0. Donc $(z_n)$ tend vers $\ell$.\\
+$$z_n = \frac{1}{n} \sum_{k=0}^{n-1} (x_{k+1}-x_k) + \frac{x_0}{n} = \frac{1}{n} \sum_{k=0}^{n-1} y_k + \frac{x_0}{n}$$
+
+La moyenne de Cesàro converge vers $\ell$, et le terme $x_0/n$ tend vers 0. Donc $(z_n)$ tend vers $\ell$.
 
 $(-1)^n$ ou $\mathbb{sin}(\frac{\pi}2 n)$ sont des contre-exemples à la réciproque ($z_n \to 0$ mais $y_n$ ne converge pas).
 \end{correction}
@@ -367,7 +394,7 @@ On dit que "$f_n$ converge simplement vers f".\\
 \end{enumerate}    
 \end{correction}
 
-\begin{correction}{11}
+\begin{correction}{11} \\
 On prend la suite $(A^{2n})$ or $A^{2n} = (A^n)^2$ et $M \mapsto M^2$ est continue. Donc $A^{2n} \rightarrow L^2$.
 \end{correction}
 

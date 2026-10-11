@@ -2,7 +2,7 @@
 
 \subsection{Séries numériques}
 
-% --- Exercice 1 (Source: EXERCICE 7 analyse) ---
+% --- (Source: EXERCICE 7 analyse) ---
 \begin{exercice}[Exercice 7 Analyse]
 \begin{enumerate}
     \item Soient $(u_{n})_{n\in \mathbb{N}}$ et $(v_{n})_{n\in \mathbb{N}}$ deux suites de nombres réels positifs.
@@ -15,7 +15,7 @@
 \end{enumerate}
 \end{exercice}
 
-% --- Exercice 2 (Source: EXERCICE 46 analyse) ---
+% --- (Source: EXERCICE 46 analyse) ---
 \begin{exercice}[Exercice 46 Analyse]
     On considère la série $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
     \begin{enumerate}
@@ -25,7 +25,7 @@
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 3 (Source: Exercice 1) ---
+% --- (Source: Exercice 1) ---
 \begin{exercice}
 \begin{enumerate}
     \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme :
@@ -46,7 +46,7 @@
 \textit{Note : Il existait une question 5 qui évoquait de prouver l'hypothèse de Riemann, elle n'est pas traitée ici.}
 \end{exercice}
 
-% --- Exercice 4 (Source: Exercice 2) ---
+% --- (Source: Exercice 2) ---
 \begin{exercice}
 \begin{enumerate}
     \item
@@ -60,14 +60,14 @@
     \item On définit pour tout $n$, $\displaystyle I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
     \begin{enumerate}
         \item Montrer que $\displaystyle I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
-        \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $C^{1}$.
+        \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $\mathscr C^{1}$.
         \item Utiliser une intégration par parties pour montrer que $\displaystyle|I_{n}|\leqslant\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
         \item En déduire que $\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
     \end{enumerate}
 \end{enumerate}
 \end{exercice}
 
-% --- Exercice 5 (Source: Exercice 3) ---
+% --- (Source: Exercice 3) ---
 \begin{exercice}
     On pose pour $\theta\in]0,\pi[$, $u_{n}=\frac{\cos n\theta}{n}$.
     \begin{enumerate}
@@ -77,20 +77,20 @@
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 6 (Source: Exercice 4) ---
+% --- (Source: Exercice 4) ---
 \begin{exercice}
     Préciser la nature des séries suivantes:
     $$ \sum\frac{(-1)^{n}}{3n-1}, \quad \sum\frac{(-1)^{n}}{n^{\alpha}-(-1)^{n}n^{\beta}} \ (\alpha\ne\beta), \quad \sum \ln\left(1+(-1)^{n}\frac{\ln n}{n^{\alpha}}\right) \ (\alpha>0) $$
 \end{exercice}
 
-% --- Exercice 7 (Source: Exercice 5 - Stirling) ---
+% --- (Source: Exercice 5 - Stirling) ---
 \begin{exercice}
     Montrer que pour tout naturel $n$, $n!e=p_{n}+\frac{1}{n+1}+O\left(\frac{1}{n^{2}}\right)$ 
     où $p_{n}$ est un entier dont on précisera la parité en fonction de $n$.
     En déduire la nature des séries $\sum \sin(n!2\pi e)$ et $\sum \sin(n!\pi e)$.
 \end{exercice}
 
-% --- Exercice 8 (Source: Exercice 6 - Cesaro) ---
+% --- (Source: Exercice 6 - Cesaro) ---
 \begin{exercice}
 Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_{n}=\sum_{k=0}^{n}u_{k}$.
 \begin{enumerate}
@@ -102,9 +102,13 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{exercice}
 
+\begin{exercice}
+Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
+\end{exercice}
+    
 \subsection{Séries dans un espace vectoriel normé de dimension finie}
 
-% --- Exercice 9 (Source: EXERCICE 40 analyse) ---
+% --- (Source: EXERCICE 40 analyse) ---
 \begin{exercice}[Exercice 40 Analyse]
     Soit $\mathcal{A}$ une algèbre de dimension finie admettant $e$ pour élément unité et munie d'une norme telle que $\|uv\| \le \|u\|\|v\|$.
     \begin{enumerate}
@@ -117,7 +121,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 10 (Source: EXERCICE 61 algèbre) ---
+% --- (Source: EXERCICE 61 algèbre) ---
 \begin{exercice}[Exercice 61 Algèbre]
     On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
     \begin{enumerate}
@@ -127,14 +131,14 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 11 (Source: Exercice 7) ---
+% --- (Source: Exercice 7) ---
 \begin{exercice}
     Calculer les exponentielles des matrices suivantes:
     $$ \begin{pmatrix} 0 & a \\ -a & 0 \end{pmatrix}, \quad \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} $$
 
 \end{exercice}
 
-% --- Exercice 12 (Source: Exercice 8) ---
+% --- (Source: Exercice 8) ---
 \begin{exercice}
     On pose $A=\begin{pmatrix}3&6\\ 4&1\end{pmatrix}$.
     \begin{enumerate}
@@ -143,12 +147,12 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 13 (Source: Exercice 9) ---
+% --- (Source: Exercice 9) ---
 \begin{exercice}
     Montrer que pour une matrice $A\in \mathcal{M}_{p}(\mathbb{K})$ de norme suffisamment petite la série $\sum_{n\geqslant0}A^{n}$ est absolument convergente. Montrer que sa somme est l'inverse de $I_{p}-A$.
 \end{exercice}
 
-% --- Exercice 14 (Source: Exercice 10) ---
+% --- (Source: Exercice 10) ---
 \begin{exercice}
     On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
     \begin{enumerate}
@@ -161,10 +165,9 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- SÉRIES À TERMES POSITIFS ---
 \subsection{Séries à termes positifs}
 
-% --- Exercice 15 (Source: EXERCICE 5 analyse) ---
+% --- (Source: EXERCICE 5 analyse) ---
 \begin{exercice}[Exercice 5 Analyse]
 \begin{enumerate}
     \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\geqslant2, \alpha\in\mathbb{R}$).
@@ -176,12 +179,12 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{exercice}
 
-% --- Exercice 16 (Source: Exercice 11) ---
+% --- (Source: Exercice 11) ---
 \begin{exercice}
     Établir la convergence et calculer la somme de la série télescopique : $\sum_{n\geqslant2}\ln(1-\frac{1}{n^{2}})$.
 \end{exercice}
 
-% --- Exercice 17 (Source: Exercice 12) ---
+% --- (Source: Exercice 12) ---
 \begin{exercice}
 \begin{enumerate}
     \item Comparer pour $a, b \in \mathbb{R}^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
@@ -195,7 +198,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{exercice}
 
-% --- Exercice 18 (Source: Exercice 13) ---
+% --- (Source: Exercice 13) ---
 \begin{exercice}
     Soient $a, b, c, d > 0$ et $u_{n}$ telle que $\frac{u_{n+1}}{u_{n}}=\frac{(n+a)(n+b)}{(n+c)(n+d)}$.
     \begin{enumerate}
@@ -204,13 +207,13 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 19 (Source: Exercice 14) ---
+% --- (Source: Exercice 14) ---
 \begin{exercice}
     Si $\sum u_{n}$ converge (à termes positifs), établir la convergence des séries
     $$\sum u_{n}^{2},~ \sum\frac{u_{n}}{1+u_{n}^{2}}, ~\sum\frac{\sqrt{u_{n}}}{n^{\alpha}} ~\text{avec}~ \alpha>\frac{1}{2}$$
 \end{exercice}
 
-% --- Exercice 20 (Source: analyse) ---
+% --- (Source: analyse) ---
 \begin{exercice}
     Soit $(u_{n})$ à termes strictement positifs.
     \begin{enumerate}
@@ -219,7 +222,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 21 (Source: Exercice 15 - Raabe Duhamel) ---
+% --- (Source: Exercice 15 - Raabe Duhamel) ---
 \begin{exercice}[Règle de Raabe Duhamel]
 \begin{enumerate}
     \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\leqslant\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
@@ -227,13 +230,13 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{exercice}
 
-% --- Exercice 22 (Source: Exercice 16) ---
+% --- (Source: Exercice 16) ---
 \begin{exercice}
     Trouver la nature des séries :
     $$ \sum \frac{1}{\ln(n)^{\ln n}}, \quad \sum \frac {n^n} {2^{n^2}}, \quad \sum \frac{n!^2}{(2n)!}, \quad \sum \left(\sin\frac{1}{n}\right) n^\alpha, \alpha \in \R $$
 \end{exercice}
 
-% --- Exercice 23 (Source: Exercice 17) ---
+% --- (Source: Exercice 17) ---
 \begin{exercice}
     Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $\displaystyle S_{n}=\sum_{k=0}^{n}u_{k}$.
     \begin{enumerate}
@@ -243,7 +246,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     \end{enumerate}
 \end{exercice}
 
-% --- Exercice 24 (Source: Exercice 18) ---
+% --- (Source: Exercice 18) ---
 \begin{exercice}
     Soit $\alpha>1$ et $\displaystyle R_{n}=\sum_{k=n+1}^{+\infty}\frac{1}{k^{\alpha}}$.
     \begin{enumerate}
@@ -382,6 +385,37 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{itemize}
 \end{correction}
 
+\begin{correction}{7}
+Soit $n \in \N$, on a la décomposition suivante :
+    \[n! e = P_n + R_n  \quad \text{où} \quad P_n = \sum_{k=0}^{n} \frac{n!}{k!} \in \N \quad \text{et} \quad R_n = \frac{1}{n+1} + \sum_{k=n+2}^{+\infty} \frac{n!}{k!} = \frac{1}{n+1} + O\left(\frac{1}{n^2}\right) \] 
+    
+    Et donc: 
+    \[ \sin(n! e 2\pi) = \sin(2\pi P_n + 2\pi R_n) \quad \text{et} \quad \sin(n! e \pi) = \sin(\pi P_n + \pi R_n) \]
+    
+    Puisque $P_n \in \N$, on a :
+    \[ \sin(n! e 2\pi) = \sin(2\pi R_n) \quad \text{et} \quad \sin(n! e \pi) = (-1)^{P_n}\sin(\pi R_n) \]
+    
+    Or :
+    \[\sin(2\pi R_n) \sim 2\pi R_n \sim \frac{2\pi}{n+1} \] 
+    
+    Par comparaison avec la série harmonique, la série de terme général $\sin(n! e 2\pi)$ diverge. \newline
+    
+    Mais par récurrence sur $n$ on étudie la parité de $P_n$:
+    \begin{itemize}
+        \item \text{Initialisation :} 
+        Pour $n = 0$, $P_0 = \frac{0!}{0!} = 1$ (impair). 
+        Pour $n = 1$, $P_1 = \frac{1!}{0!} + \frac{1!}{1!} = 1 + 1 = 2$ (pair).
+        
+        \item \text{Hérédité :} Soit $n \in \mathbb{N}$. Par hypothèse de récurrence, on sait que : \\
+        $n \equiv 0 \ [2] \implies P_n \equiv 1 \ [2]$ \quad et \quad $n \equiv 1 \ [2] \implies P_n \equiv 0 \ [2]$ \quad Et on a \quad $P_{n+1} = (n+1)P_n + 1$ \\
+
+        Donc, pour n pair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{impair}} \underbrace{P_n}_{\text{impair}} + 1}_{\text{pair}}$ et pour n impair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{pair}} \underbrace{P_n}_{\text{pair}} + 1}_{\text{impair}}$ 
+    \end{itemize}
+    Ainsi, selon le principe de récurrence, on en déduit que: $\forall n \in \N, (-1)^{P_n} = (-1)^{n+1}$ \\
+    
+    Et par le critère des séries spéciales alternées, on en déduit que la série de terme général $\sin(n! \pi e)$ est semi-convergente.    
+\end{correction}
+
 \begin{correction}{8}
 \begin{enumerate}
     \item ...
@@ -389,8 +423,48 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 9 (Algèbre) ---
 \begin{correction}{9}
+    Notons $S$ la série. On a, pour tout $n\in\N$,
+    \[
+    0\leq \frac{1}{(3n)!}\leq \frac{1}{n!}.
+    \]
+    Or, la série exponentielle converge, donc $S$ converge.
+    
+    Mais pour $j=e^{2i\pi/3}$, on a,
+    \[
+    e+e^j+e^{j^2}
+    =\sum_{k=0}^{+\infty}\frac{1+j^k+j^{2k}}{k!}.
+    \]
+    
+    Or, pour tout $k\in\N$,
+    \[
+    1+j^k+j^{2k}=
+    \begin{cases}
+        3 & \text{si } 3\mid k,\\
+        0 & \text{sinon}.
+    \end{cases}
+    \]
+    Ainsi,
+    \[
+    e+e^j+e^{j^2}
+    =3\sum_{n=0}^{+\infty}\frac{1}{(3n)!}.
+    \]
+    
+    Puisque $ e^j=e^{-\frac12}e^{i\frac{\sqrt{3}}{2}}
+    \quad\text{et}\quad
+    e^{j^2}=e^{-\frac12}e^{-i\frac{\sqrt{3}}{2}}.
+    \quad\text{et par la relation}\quad
+    e^{i\theta}+e^{-i\theta} = 2 \cos \theta
+    $.
+     
+    On a :
+    \[
+    S = \frac{e+e^j+e^{j^2}}{3}
+    = \frac13\left(e+\frac{2}{\sqrt{e}}\cos\left(\frac{\sqrt{3}}{2}\right)\right)
+    \]
+\end{correction}
+
+\begin{correction}{10}
 \begin{enumerate}
     \item
     \begin{enumerate}
@@ -404,8 +478,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 11 (Matrices) ---
-\begin{correction}{11}
+\begin{correction}{12}
 \begin{itemize}
     \item $A = \begin{pmatrix} 0 & a \\ -a & 0 \end{pmatrix}$.
         $A^2 = -a^2 I_2$ et $A^3 = -a^3 J$ (avec $J=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}$).
@@ -421,8 +494,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{itemize}
 \end{correction}
 
-% --- Correction Exercice 12 ---
-\begin{correction}{12}
+\begin{correction}{13}
 \begin{enumerate}
     \item $A = \begin{pmatrix} 3 & 6 \\ 4 & 1 \end{pmatrix}$. Polynôme caractéristique : $X^2 - 4X - 21 = (X-7)(X+3)$.
         Valeurs propres $7$ et $-3$.
@@ -436,8 +508,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 14 (Matrices) ---
-\begin{correction}{14}
+\begin{correction}{15}
 \begin{enumerate}
     \item $a_{n,k} = \frac{1}{k!} \left(1 - \frac{n(n-1)\dots(n-k+1)}{n^k} \right)$.
         Or $\frac{n}{n} \dots \frac{n-k+1}{n} \leqslant 1$. Donc $a_{n,k} \ge 0$.
@@ -459,7 +530,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-\begin{correction}{16}
+\begin{correction}{17}
 
     $|u_n| \sim \frac 1 {n^2}$. Donc la série converge.
 
@@ -468,8 +539,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
     Donc la somme est $-\ln(2)$.
 \end{correction}
 
-% --- Correction Exercice 13 (Ratio) ---
-\begin{correction}{18}
+\begin{correction}{19}
 \begin{enumerate}
     \item   
         $u_n > 0$. $\frac{u_{n+1}}{u_n} = \frac{(n+a)(n+b)}{(n+c)(n+d)} \to 1$. Cas douteux d'Alembert.
@@ -489,8 +559,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 15 (Raabe) ---
-\begin{correction}{21}
+\begin{correction}{22}
 \begin{enumerate}
     \item Si $\frac{u_{n+1}}{u_n} \leqslant \frac{v_{n+1}}{v_n}$, alors $\frac{u_{n+1}}{v_{n+1}} \leqslant \frac{u_n}{v_n}$.
         La suite $(u_n/v_n)$ est décroissante, donc bornée.
@@ -512,8 +581,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 22 (Nature) ---
-\begin{correction}{22}
+\begin{correction}{23}
 \begin{itemize}
     \item $u_n = \frac 1 {n^{\ln(\ln(n))}} \leqslant \frac 1 {n^2}$ pour $n$ assez grand donc elle converge. 
     \item $u_n = \frac{n^n}{e^{n^2}}$. $n^2 u_n \to 0$. Donc elle converge (racine n-ième).
@@ -541,8 +609,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{itemize}
 \end{correction}
 
-% --- Correction Exercice 17 (u/S) ---
-\begin{correction}{23}
+\begin{correction}{24}
 \begin{enumerate}
     \item Si $\sum u_n$ converge, $S_n \to S > 0$. Donc $u_n/S_n \sim u_n/S$. Converge.
     \item Si $\sum u_n/S_n$ converge.
@@ -555,8 +622,7 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
 \end{enumerate}
 \end{correction}
 
-% --- Correction Exercice 24 (Restes) ---
-\begin{correction}{24}
+\begin{correction}{25}
 \begin{enumerate}
     \item 
         $\displaystyle R_n = \sum_{k=n+1}^{+\infty} \frac{1}{k^\alpha}$.
@@ -574,4 +640,5 @@ Soit $(\sum u_{n})$ une série numérique convergente. On pose $\displaystyle S_
         \end{align*}
 \end{enumerate}
 \end{correction}
+
 

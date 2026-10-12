@@ -283,7 +283,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \begin{proof}
     Posons pour $n \geqslant 1$, $\displaystyle a_n = \left( \sum_{k = 1 }^{n } \frac 1 k \right) - \ln(n)$.
 
-    Posons pour $n \geqslant 1$, $b_n = a_n - a_{n - 1}$. 
+    Posons pour $n \geqslant 2$, $b_n = a_n - a_{n - 1}$. 
 
     \begin{align*}
         b_n & = \frac 1 n - \ln(n) + \ln(n - 1) \\
@@ -294,7 +294,14 @@ Donc $B$ est un $\K$-espace vectoriel.
     Donc $- b_n \sim \frac 1 {2 n^2}$.
 
     Or $\sum \frac 1 {2 n^2}$ est une série à termes positifs convergente, donc 
-    $\sum - b_n$ converge, donc $\sum b_n$ converge donc $(a_n)$ converge.
+
+    $\sum - b_n$ converge, donc $\sum b_n \limit{n}{+ \infty} \alpha\in\R$ donc pour $n \geqslant 2$,
+
+    $$\sum_{k=2}^{n} b_n  = \sum_{k=2}^{n} a_k - a_{k-1} = a_n - a_1\limit{n}{+\infty} \alpha$$
+
+    Donc $a_n \limit{n}{+\infty} \alpha + a_1 = \alpha + 1$. On identifie $\gamma$ à $\alpha + 1$
+
+    Donc $\displaystyle\sum_{k=1}^{n} \frac 1 k = ln(n) + \gamma + o(1)$
 \end{proof}
 
 \begin{proposition}{LHP}{}

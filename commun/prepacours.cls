@@ -16,13 +16,11 @@
 % =============================================================================
 \RequirePackage[french]{babel}
 \RequirePackage{amsmath,amsthm}
-\RequirePackage{mathrsfs}
 \RequirePackage{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
-\RequirePackage[hidelinks]{hyperref}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
@@ -31,14 +29,13 @@
 \RequirePackage{scrlayer-notecolumn}
 \RequirePackage{scrlayer-fancyhdr}
 \RequirePackage{needspace}
-\RequirePackage{atbegshi}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{etoolbox}
 \RequirePackage{pgfplots}
 \RequirePackage{titletoc}
 \RequirePackage{enumitem}
 \RequirePackage{ifthen}
-\RequirePackage{soul}
+\RequirePackage[hidelinks]{hyperref}
 
 \setmainfont{fbb}[
   Extension      = .otf,
@@ -133,7 +130,15 @@
 
 \definecolor{ideayellow}{RGB}{230, 160, 0}
 \definecolor{dangerred}{RGB}{220, 40, 40}
+% =============================================================================
+% SOULIGNAGE
+% =============================================================================
 
+\newcommand{\vorangeuline}{%
+  \bgroup
+  \markoverwith{\textcolor{vorange}{\rule[-0.6ex]{2pt}{0.6pt}}}%
+  \ULon
+}
 % =============================================================================
 % COMPTEURS ET CHAPITRES
 % =============================================================================

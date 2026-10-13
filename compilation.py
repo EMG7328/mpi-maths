@@ -42,7 +42,13 @@ def compile_file (file: Path, dist_dir: Path, cwd_dir: Path, halt_on_error: bool
     rel_path = cwd_dir.resolve().relative_to(ROOT_DIR) if cwd_dir.resolve() != ROOT_DIR else Path()
     aux_dir = (BUILD_CACHE_DIR / rel_path).resolve()
     aux_dir.mkdir(parents=True, exist_ok=True)
-    
+
+    latexmk_init = (
+        "$max_repeat=5; "
+        "push @generated_exts, 'slnc', 'ptc'; "
+        "push @rerun_warnings, 'Note column'; "
+        "$clean_ext .= ' %R.slnc %R.ptc'; " 
+    )
     lualatex_cmd = (
         'lualatex --synctex=0 --halt-on-error --file-line-error '
         '--interaction=nonstopmode %O %S'
@@ -55,8 +61,9 @@ def compile_file (file: Path, dist_dir: Path, cwd_dir: Path, halt_on_error: bool
         f"-pdflualatex={lualatex_cmd}",
         f"-auxdir={aux_dir}",
         f"-outdir={dist_dir}",
-        "-silent",
-        "-e", "$max_repeat=5;",
+        #"-silent",
+        "-e",
+        latexmk_init,
         str(tex_file)
     ]
 

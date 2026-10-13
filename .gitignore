@@ -10,6 +10,7 @@ integrale_cours.pdf
 integrale_mpi.pdf
 
 # LaTeX temporary and build artifacts
+*.slnc
 *.aux
 *.fdb_latexmk
 *.fls

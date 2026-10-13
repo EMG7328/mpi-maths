@@ -19,7 +19,7 @@
 \RequirePackage{xcolor}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{geometry}
-\RequirePackage{fancyhdr}
+\RequirePackage{scrlayer-scrpage}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{fontspec}
@@ -27,14 +27,12 @@
 \RequirePackage{fontawesome5}
 \RequirePackage{graphicx}
 \RequirePackage{scrlayer-notecolumn}
-\RequirePackage{scrlayer-fancyhdr}
 \RequirePackage{needspace}
 \RequirePackage[normalem]{ulem}
 \RequirePackage{etoolbox}
 \RequirePackage{pgfplots}
 \RequirePackage{titletoc}
 \RequirePackage{enumitem}
-\RequirePackage{ifthen}
 \RequirePackage[hidelinks]{hyperref}
 
 \setmainfont{fbb}[
@@ -72,7 +70,7 @@
     bottom=2cm,
     left=2cm,
     right=2cm,
-    headheight=32pt,
+    headheight=14pt,
   }
 \else
   \geometry{
@@ -82,7 +80,7 @@
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=12pt,
+    headheight=14pt,
   }
 \fi
 
@@ -99,9 +97,9 @@
     right=5cm,
     marginparwidth=3.5cm,
     marginparsep=0.5cm,
-    headheight=12pt,
+    headheight=14pt,
   }%
-  \fancyhfoffset[R]{\dimexpr\marginparsep+\marginparwidth\relax}%
+  \KOMAoptions{headwidth=textwithmarginpar, footwidth=textwithmarginpar}%
 }
 
 \newcommand{\passerenmodeexos}{%
@@ -112,10 +110,10 @@
     bottom=2cm,
     left=2cm,
     right=2cm,
-    headheight=30pt,
+    headheight=14pt,
   }%
-  \fancyhfoffset[R]{0pt}%
-  \thispagestyle{premierepagechapitre}
+  \KOMAoptions{headwidth=text, footwidth=text}%
+  \thispagestyle{plain.scrheadings}
   \displaychapitrebanner
 }
 
@@ -335,18 +333,33 @@
   #1
 }
 
-\newbox{\prepa@notebox}
+\newcounter{marginnotecount}
+
+\NewDocumentCommand{\safeprintnote}{m}{%
+  \ifcsname prepanotebox#1\endcsname\else
+    \expandafter\newbox\csname prepanotebox#1\endcsname
+  \fi
+  \copy\csname prepanotebox#1\endcsname
+}
+
+\NewDocumentCommand{\prepa@invoke@makenote}{m}{%
+  \makenote*[margincol]{\safeprintnote{#1}}%
+}
 
 \NewDocumentCommand{\prepa@makenote}{O{0pt} +m}{%
-  \setbox\prepa@notebox=\vbox{%
-    \hsize=\marginparwidth
-    \textwidth=\marginparwidth
-    \parindent=0pt
-    \vskip #1\relax
-    #2\par\kern0pt
-  }%
-  \dp\prepa@notebox=0pt
-  \makenote*[margincol]{\box\prepa@notebox}%
+    \stepcounter{marginnotecount}%
+    \ifcsname prepanotebox\romannumeral\c@marginnotecount\endcsname\else
+      \expandafter\newbox\csname prepanotebox\romannumeral\c@marginnotecount\endcsname
+    \fi
+    \expandafter\global\expandafter\setbox\csname prepanotebox\romannumeral\c@marginnotecount\endcsname=\vbox{%
+      \hsize=\marginparwidth
+      \textwidth=\marginparwidth
+      \linewidth=\marginparwidth
+      \parindent=0pt
+      \vskip #1\relax
+      #2\par\kern0pt
+    }%
+    \expandafter\prepa@invoke@makenote\expandafter{\romannumeral\c@marginnotecount}%
 }
 
 \NewDocumentCommand{\idee}{O{0pt} +m}{%
@@ -370,6 +383,13 @@
     \begin{marginbox}{vorange}{#2}
       \footnotesize\raggedright\sloppy #3
     \end{marginbox}%
+  }%
+}
+
+\NewDocumentCommand{\cleanmarginenote}{O{0pt} +m}{%
+  \prepa@makenote[#1]{%
+    \centering
+    #2\par
   }%
 }
 
@@ -411,10 +431,12 @@
 % =============================================================================
 % EN-TÊTES ET PIEDS DE PAGE
 % =============================================================================
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\thepage}
-\fancyhead[R]{%
+\setkomafont{pageheadfoot}{\normalfont}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+
+\ihead{\thepage}
+\ohead{%
   \ifprepa@td%
     TD~\@numchapitre~-- \@titrechapitre%
   \else%
@@ -422,28 +444,17 @@
   \fi%
 }
 
+\ifoot[\scshape\@filiere]{\scshape\@filiere}
+\cfoot[\scshape\@etablissement]{\scshape\@etablissement}
+\ofoot[\scshape Année \@annee]{\scshape Année \@annee}
+
+\KOMAoptions{headsepline=0.4pt}
+
 \ifprepa@td
-  \fancyhfoffset[R]{0pt}
+  \KOMAoptions{headwidth=text, footwidth=text}
 \else
-  \fancyhfoffset[R]{3cm}
+  \KOMAoptions{headwidth=textwithmarginpar, footwidth=textwithmarginpar}
 \fi
-
-\fancyfoot[L]{\scshape\@filiere}
-\fancyfoot[C]{\scshape\@etablissement}
-\fancyfoot[R]{\scshape Année \@annee}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\fancypagestyle{premierepagechapitre}{%
-  \fancyhf{}
-
-  \fancyfoot[L]{\scshape\@filiere}
-  \fancyfoot[C]{\scshape\@etablissement}
-  \fancyfoot[R]{\scshape Année \@annee}
-  
-  \renewcommand{\headrulewidth}{0pt}
-  \renewcommand{\footrulewidth}{0pt}
-}
 
 \newcommand{\pagedegarde}{%
   \clearpage
@@ -528,8 +539,8 @@
 
   \clearpage
   \passerenmodecours
-  \pagestyle{fancy}%
-  \thispagestyle{premierepagechapitre}%
+  \pagestyle{scrheadings}%
+  \thispagestyle{plain.scrheadings}%
   \displaychapitrebanner
 }
 
@@ -583,7 +594,7 @@
   \else
     \passerenmodecours
   \fi
-  \pagestyle{fancy}%
+  \pagestyle{scrheadings}%
 }
 
 % =============================================================================
@@ -698,8 +709,8 @@
   \vfill%
   \clearpage
   \passerenmodecours
-  \pagestyle{fancy}%
-  \thispagestyle{premierepagechapitre}%
+  \pagestyle{scrheadings}%
+  \thispagestyle{plain.scrheadings}%
 }
 
 \endinput

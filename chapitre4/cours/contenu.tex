@@ -79,11 +79,13 @@ Donc $B$ est un $\K$-espace vectoriel.
 \end{definition}
 
 \begin{exemple}
-    $\Sigma_{n \geqslant 1} \frac 1 {n(n+2)}$. On décompose en éléments simples la somme partielle. Soit $n \in \N$.
+    Étudions la série $\ds\sum_{n \geqslant 1} \frac 1 {n(n+2)}$. On décompose en éléments simples la somme partielle.
 
-    $S_n = \Sigma_{k=1}^n \frac 1 {n(n+2)} = \Sigma_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}$.
+    Soit $n \in \N$,
 
-    Donc $S_n \to \frac 3 4$ donc la série converge.
+    $$S_n = \sum_{k=1}^n \frac 1 {n(n+2)} = \sum_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}$$
+
+    Donc $S_n \limit{n}{+\infty} \frac 3 4$ donc la série converge.
 \end{exemple}
 
 \begin{theoreme}{Série télescopique}{}
@@ -112,10 +114,12 @@ Donc $B$ est un $\K$-espace vectoriel.
 \end{proof}
 
 \begin{exemple}
-    Montrons qu'il existe $\gamma \in \R$ tel quei $\Sigma_{k=1}^n = \ln(n) + \gamma + o(1)$.
-    Pour cela montrons que $u_n = (\Sigma^n_{k=1} \frac 1 k) - \ln(n)$ converge.
+    Montrons qu'il existe $\gamma \in \R$ tel que $\ds \sum_{k=1}^n = \ln(n) + \gamma + o(1)$.
+    
+    Pour cela montrons que $\ds u_n = \left(\sum^n_{k=1} \frac 1 k\right) - \ln(n)$ converge.
 
-    $u_{n+1} - u_n = \frac 1 {n+1} - \ln(n+1) + \ln(n) = \frac 1 {n+1} - \ln(1 + \frac 1 n) = O(\frac 1 {n^2})$.
+    $$u_{n+1} - u_n = \frac 1 {n+1} - \ln(n+1) + \ln(n) = \frac 1 {n+1} - \ln\left(1 + \frac 1 n\right) = O\left(\frac 1 {n^2}\right)$$
+    
     Par un théorème qu'on prouvera plus tard, $(u_n)$ converge.
 \end{exemple}
 
@@ -266,10 +270,10 @@ Donc $B$ est un $\K$-espace vectoriel.
 \end{proof}
 
 \begin{proposition}{Série harmonique}{}
-    $\displaystyle \sum_{n \geqslant 1} \frac 1 n$ diverge et (LHP)
-    $\displaystyle \sum_{k = 1 }^{n } \frac 1 k = \ln(n) + \gamma + o(1)$ où $\gamma \approx 0,577$ est la constante d'Euler.
+    $\ds \sum_{n \geqslant 1} \frac 1 n$ diverge et (LHP)
+    $\ds \sum_{k = 1 }^{n } \frac 1 k = \ln(n) + \gamma + o(1)$ où $\gamma \approx 0,577$ est la constante d'Euler.
     Donc :
-    $$\displaystyle \sum_{k = 1}^{n} \frac 1 k - \ln(n) \limit{n}{+ \infty} \gamma$$
+    $$\ds \sum_{k = 1}^{n} \frac 1 k - \ln(n) \limit{n}{+ \infty} \gamma$$
 \end{proposition}
 
 \begin{remarque}
@@ -294,18 +298,19 @@ Donc $B$ est un $\K$-espace vectoriel.
     Donc $- b_n \sim \frac 1 {2 n^2}$.
 
     Or $\sum \frac 1 {2 n^2}$ est une série à termes positifs convergente, donc 
+    $\sum - b_n$ converge.
 
-    $\sum - b_n$ converge, donc $\sum b_n \limit{n}{+ \infty} \alpha\in\R$ donc pour $n \geqslant 2$,
+    Donc $\ds \sum_{k=2}^n b_n \limit{n}{+ \infty} \alpha\in\R$ donc pour $n \geqslant 2$,
 
     $$\sum_{k=2}^{n} b_n  = \sum_{k=2}^{n} a_k - a_{k-1} = a_n - a_1\limit{n}{+\infty} \alpha$$
 
-    Donc $a_n \limit{n}{+\infty} \alpha + a_1 = \alpha + 1$. On identifie $\gamma$ à $\alpha + 1$
+    Donc $a_n \limit{n}{+\infty} \alpha + a_1 = \alpha + 1$. On identifie $\gamma$ à $\alpha + 1$.
 
-    Donc $\displaystyle\sum_{k=1}^{n} \frac 1 k = ln(n) + \gamma + o(1)$
+    Donc $\ds \sum_{k=1}^{n} \frac 1 k = \ln(n) + \gamma + o(1)$.
 \end{proof}
 
 \begin{proposition}{LHP}{}
-    $\sum_{n \geqslant 1} \frac {(-1)^{n+1}} n$ converge et $\sum_{n=1}^{\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
+    $\sum_{n \geqslant 1} \frac {(-1)^{n+1}} n$ converge et $\sum_{n=1}^{+\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
 \end{proposition}
 
 \begin{proof}
@@ -318,7 +323,7 @@ Donc $B$ est un $\K$-espace vectoriel.
                 &= \ln(2) + o(1)
     \end{align*}
 
-    Donc $\sum_{n=1}^{\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
+    Donc $\ds \sum_{n=1}^{+\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
 \end{proof}
 
 \begin{proposition}{Série exponentielle}{}
@@ -345,7 +350,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \begin{proposition}{Séries de Bertrand - HP}{}
     Soient $a, b \in \R$. 
 
-    Alors $\displaystyle \sum_{n \geqslant 2} \frac 1 {n^a(\ln(n))^b}$ converge ssi $a > 1$ ou $a = 1$ et $b > 1$.
+    Alors $\ds \sum_{n \geqslant 2} \frac 1 {n^a(\ln(n))^b}$ converge ssi $a > 1$ ou $a = 1$ et $b > 1$.
 
 \end{proposition}
 

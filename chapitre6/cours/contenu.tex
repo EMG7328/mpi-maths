@@ -1,17 +1,17 @@
-Soit $I$ un intervalle réel tel que $\mathring{I} \neq \emptyset$.
+Dans tout le chapitre, on prend $I$ un intervalle réel tel que $\mathring{I} \neq \emptyset$.
 
-$\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
+On prendra aussi $\K = \R$ ou $\C$, et $(E,N)$ un $\K$-espace vectoriel normé
  de dimension finie.
 
 
-\section{Dérivation }
+\section{Dérivation}
 \subsection{Dérivée en un point}
 
 \begin{definition}{Dérivable en un point}{}
     Soit $a \in I$ et $f: I \to E$. On dit que $f$ est dérivable en $a$ ssi 
     \[\fonction{\Delta_a}{I \setminus \{a\}}{E}{t}{\frac{f(t) - f(a)}{t-a}}\]
     a une limite $\ell \in E$ en $a$. Cette limite est appelée dérivée (ou vecteur dérivé)
-    de $f$ en $a$ et se note $f'(a)$.
+    de $f$ en $a$ et se note $f'(a)$. \\
 
     On a alors : $\displaystyle \frac{f(a + h ) - f(a)}{h} \xrightarrow[h \to 0]{N} f'(a)$.
 \end{definition}
@@ -19,56 +19,62 @@ $\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
 \begin{proposition}{Caractérisation de la dérivabilité}{}
     Soit $a \in I$ et $f: I \to E$. Alors $f$ est dérivable en $a$ ssi il existe $V \in E$
     et $\varepsilon : I \to E$, avec $\varepsilon(t) \xrightarrow[t \to a]{} 0$ telle que
-    \[f(t) = f(a) + (t-a)V + (t-a)\varepsilon(t)\]
+    \[ \forall t \in I,~f(t) = f(a) + (t-a)V + (t-a)\varepsilon(t)\]
 
-    appelée développement limité de $f$ en $a$ à l'ordre 1, et alors $V = f'(a)$.
+    appelé développement limité de $f$ en $a$ à l'ordre 1, et alors $V = f'(a)$.
 \end{proposition}
 
 \begin{proof}
-    Si $f$ est dérivable en $a$, posons $V = f'(a)$ et $\varepsilon(t) = \frac{f(t) - f(a)}{t - a }$ si 
+    $\Rightarrow$ Si $f$ est dérivable en $a$, posons $V = f'(a)$ et $\varepsilon(t) = \frac{f(t) - f(a)}{t - a } - f'(a)$ si 
     $t \neq a$ et $\varepsilon(a) = 0$. 
 
     Alors $\varepsilon$ vérifie l'égalité et $\varepsilon$ continue en $a$ car 
     $\displaystyle \frac{f(t) - f(a)}{t-a} \xrightarrow[t \to a]{} f'(a)$, c'est à dire 
     $\varepsilon(t) \xrightarrow[t \to a]{} 0$.
 
-    \uindent{Réciproquement }
-
-    \svspace Si $\varepsilon$ et $V$ existent, $\displaystyle \frac{f(t) - f(a)}{t-a} = V + \varepsilon(t) \limit t a V$
-    Donc $f$ dérivable en $a$ et 
-    
-    $f'(a) = V$.
+    $\Leftarrow$ Si $\varepsilon$ et $V$ existent, $\displaystyle \frac{f(t) - f(a)}{t-a} = V + \varepsilon(t) \limit t a V$
+    Donc $f$ dérivable en $a$ et $f'(a) = V$.
 \end{proof}
 
-
-\begin{corollaire}{dérivabilité implique continuité}{}
+\begin{remarque}
+Avoir un DL2 n'implique pas d'être deux fois dérivable.
+Par exemple :
+\[\fonction{f}{\R}{\R}{x}{
+    \begin{cases} x^3\sin\left(\frac 1 {x^2}\right)~\text{si}~x \not = 0 \\
+    0~\text{sinon}
+    \end{cases}}\]
+a un DL2 mais n'est pas dérivable deux fois.
+\end{remarque}
+\begin{corollaire}{Dérivabilité implique continuité}{}
     Si $f$ est dérivable en $a$, alors $f$ est continue en $a$.
 \end{corollaire}
 
 \begin{proof}
-    En ce cas $f(t) = f(a) + (t-a)f'(a) + (t-a)\varepsilon(t) \xrightarrow[t \to a]{} f(a)$.
+    En ce cas $f(t) = f(a) + (t-a)f'(a) + (t-a)\varepsilon(t) \limit{t}{a} f(a)$.
 \end{proof}
 
 
 \begin{definition}{Interprétation cinématique}{}
-    Soit $f : I \to E$ courbe paramétrée. 
-    
-    $t$ instant et $f(t)$ posittion d'un point matériel à l'instant 
-    $t$ $f'(a)$ vecteur vitesse à l'instant $a$. 
+    Soit $f : I \to E$ une courbe paramétrée. 
 
-    Si $f'(a) \neq 0$, $T = \{ f(a) + hf'(a), \, h \in \R\}$ tangeante à la courbe à l'instant 
-    $a$. 
+    \begin{itemize}
+        \item Soit $t$ un instant et $f(t)$ la position d'un point matériel à l'instant 
+        $t$, alors $f'(t)$ est le vecteur vitesse à l'instant $t$. 
 
-    $C = \{ f(t), \, t \in I\}$ support de la courbe paramétrée par $f$. 
+        \item Si $f'(a) \neq 0$, $T = \{ f(a) + hf'(a), \, h \in \R\}$ est la tangeante à la courbe à l'instant 
+        $a$. 
+
+        \item $C = \{ f(t), \, t \in I\}$ est le support de la courbe paramétrée par $f$.  
+    \end{itemize}
 \end{definition}
 
-\begin{proposition}{Lien avec une base }{}
+\begin{proposition}{Lien avec une base}{}
     Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et soit 
-    $\displaystyle \fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i}$, où $f_i : I \to \R$.
+    \[\fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i},~\text{où}~f_i : I \to \R\]
 
-    Soit $a \in I$. $f$ est dérivable en $a$ ssi $\forall i \in \ninter{1}{n}$, $f_i$
-    est dérivable en $a$, et alors 
-    $$f'(a) = \sum_{i=1}^n f_i'(a)e_i$$
+    Soit $a \in I$. $f$ est dérivable en $a$ ssi $\forall i \in \ninter{1}{n}~f_i$
+    est dérivable en $a$, et alors :
+    \[f'(a) = \sum_{i=1}^n f_i'(a)e_i\]
 \end{proposition}
 
 \begin{proof}
@@ -78,29 +84,129 @@ $\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
 
 \begin{exemple}
     $\fonction f \R {\R^3} t {(\cos t, \sin t, t)}$ représente une hélice.
+
+    $\fonction g \R {\R^2} t {(\ch t, \sh t)}$ est une hyperbole.
+
+    La lemniscate de Bernoulli est aussi une courbe paramétrée, plus précisément par $\rho = \sqrt{\cos {2\theta}}$.
 \end{exemple}
+
+\begin{figure}[htbp]
+    \centering
+        \begin{minipage}[t]{0.32\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=4.8cm,
+                view={65}{30},
+                axis lines=center,
+                axis line style={-stealth, black!50, line width=0.4pt},
+                ticks=none,
+                xlabel={$x$}, ylabel={$y$}, zlabel={$z$},
+                label style={font=\footnotesize},
+                xmin=-1.3, xmax=1.3,
+                ymin=-1.3, ymax=1.3,
+                zmin=0,    zmax=14,
+                enlargelimits=0.1
+            ]
+            \addplot3[
+                domain=0:4*pi,
+                samples=160,
+                samples y=0,
+                vorange,
+                line width=1.2pt
+            ] (
+                {cos(deg(x))},
+                {sin(deg(x))},
+                {x}
+            );
+            \end{axis}
+        \end{tikzpicture}
+        \par\vspace{2pt}
+        {\footnotesize\textbf{Hélice}\par}
+        {\scriptsize $t \mapsto (\cos t, \sin t, t)$\par}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.32\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=\linewidth,
+                    height=4.8cm,
+                    axis lines=middle,
+                    axis line style={-stealth, black!50, line width=0.4pt},
+                    ticks=none,
+                    xlabel={$x$}, ylabel={$y$},
+                    label style={font=\footnotesize},
+                    xmin=-0.5, xmax=3.2,
+                    ymin=-2.5, ymax=2.5,
+                    axis equal image
+                ]
+                \addplot[densely dashed, black!35, line width=0.5pt, domain=0:2.5] {x};
+                \addplot[densely dashed, black!35, line width=0.5pt, domain=0:2.5] {-x};
+                \addplot[
+                    domain=-1.5:1.5,
+                    samples=80,
+                    vorange,
+                    line width=1.2pt
+                ] (
+                {cosh(x)},
+                {sinh(x)}
+                );
+                \end{axis}
+            \end{tikzpicture}
+            \par\vspace{2pt}
+            {\footnotesize\textbf{Hyperbole}\par}
+            {\scriptsize $t \mapsto (\ch t, \sh t)$\par}
+            \end{minipage}\hfill
+            \begin{minipage}[t]{0.32\textwidth}
+            \centering
+            \begin{tikzpicture}
+                \begin{axis}[
+                    width=\linewidth,
+                    height=4.8cm,
+                    axis lines=middle,
+                    axis line style={-stealth, black!50, line width=0.4pt},
+                    ticks=none,
+                    xlabel={$x$}, ylabel={$y$},
+                    label style={font=\footnotesize},
+                    xmin=-1.25, xmax=1.25,
+                    ymin=-0.65, ymax=0.65,
+                    axis equal image
+                ]
+                \addplot[
+                    domain=0:360,
+                    samples=160,
+                    vorange,
+                    line width=1.2pt
+                ] (
+                {cos(x) / (1 + sin(x)^2)},
+                {sin(x) * cos(x) / (1 + sin(x)^2)}
+                );
+                \end{axis}
+            \end{tikzpicture}
+            \par\vspace{2pt}
+            {\footnotesize\textbf{Lemniscate de Bernoulli}\par}
+            {\scriptsize $\rho^2 = \cos(2\theta)$\par}
+        \end{minipage}
+\end{figure}
 
 \begin{definition}{Dérivabilité à droite et à gauche}{}
     Soit $f : I \to E$ et $a \in \mathring I$. 
 
-    \avspace On définit $\fonction{f_g}{I \cap ]-\infty, a]}{E}{t}{f(t)}$ et 
-
-    \avspace $\fonction{f_d}{I \cap [a, +\infty[}{E}{t}{f(t)}$
+    \avspace On définit $\fonction{f_g}{I \cap ]-\infty, a]}{E}{t}{f(t)}$ et
+    $\fonction{f_d}{I \cap [a, +\infty[}{E}{t}{f(t)}$ \\
 
     Comme $a \in \mathring I$, $I \cap ]-\infty, a]$ et $I \cap [a, +\infty[$ 
-    sont d'intérieur non vide.
+    sont d'intérieur non vide. \\
 
     On dit que $f$ est dérivable à gauche (resp. à droite) en $a$ ssi $f_g$ 
     (resp. $f_d$) est dérivable en $a$.
-
-    On définit alors le vecteur dérivé à gauche (resp. à droite) de $f$ en $a$ par 
-    $\displaystyle f'_g(a) = \lim_{t \to a} \frac{f_g(t) - f_g(a)}{t-a} = \lim_{t \to a^-} \frac{f(t) - f(a)}{t-a}$
-    (resp. à droite par $\displaystyle f'_d(a) = \lim_{t \to a^+} \frac{f(t) - f(a)}{t-a}$).                                                    
+    On définit alors le vecteur dérivé à gauche (resp. à droite) de $f$ en $a$ par :
+    \[f'_g(a) = \lim_{t \to a} \frac{f_g(t) - f_g(a)}{t-a} = \lim_{t \to a^-} \frac{f(t) - f(a)}{t-a}~\text{(resp. à droite par}~f'_d(a) = \lim_{t \to a^+} \frac{f(t) - f(a)}{t-a}\text{)}\]                                                    
 \end{definition}
 
 \begin{proposition}{Dérivabilité en un point avec dérivées à gauche et à droite}{}
     $f$ est dérivable en $a$ ssi elle est dérivable à gauche et à droite en $a$ et
-    
     $f'_g(a) = f'_d(a)$. 
 \end{proposition}
 
@@ -108,34 +214,54 @@ $\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
     Coordonnée par coordonnée.
 \end{proof}
 
-\begin{definition}{Point anguleux, LHP}{}
-    Soit $f : I \to E$, et $a \in \mathring{I }$. 
+\begin{definition}{Point anguleux - LHP}{}
+    Soit $f : I \to E$, et $a \in \mathring{I}$. 
     On suppose que $f$ est dérivable à gauche et à droite en $a$ et que 
     $f'_g(a) \neq f'_d(a)$.
 
     On dit alors que la courbe paramétrée par $f$ possède en $a$ un point anguleux.
 \end{definition}
 
+\makenote*[margincol]{%
+  \centering
+  \begin{tikzpicture}[scale=0.9, >=stealth]
+    \draw[->, black!35, line width=0.4pt] (-0.3, 0) -- (2.3, 0) node[right, font=\tiny] {$x$};
+    \draw[->, black!35, line width=0.4pt] (0, -2.1) -- (0, 1.3) node[above, font=\tiny] {$y$};
+
+    \draw[vorange, line width=1.3pt] (0, -1.8) -- (0, 0) -- (1.8, 0);
+
+    \draw[->, dangerred, line width=1.1pt] (0, 0) -- (0, 1) 
+      node[left=1pt, font=\scriptsize, text=dangerred] {$f'_g(0)$};
+    \draw[->, forestgreen!85!black, line width=1.1pt] (0, 0) -- (1, 0) 
+      node[above=1pt, font=\scriptsize, text=forestgreen!85!black] {$f'_d(0)$};
+
+    \fill[black] (0, 0) circle (1.2pt) node[below left=1pt, font=\tiny] {$O$};
+  \end{tikzpicture}%
+}
+
+\begin{exemple}
+    $\fonction f \R {\R^2} t {\begin{cases} (t, 0)~\text{si}~x > 0\\(0,t)~\text{sinon}\end{cases}}$ admet un point anguleux en $0$.
+\end{exemple}
+
 \subsection{Dérivabilité sur un intervalle}
 
 \begin{definition}{Dérivable sur un intervalle}{}
     Soit $f : I \to E$. On dit que $f$ est dérivable sur $I$ ssi elle l'est en tout $a \in I$. 
-
-    On définit alors sa dérivée $\fonction{f'}{I}{E}{t}{f'(t)}$. 
+    On définit alors sa dérivée :
+    \[\fonction{f'}{I}{E}{t}{f'(t)}\] 
 
     L'ensemble des fonctions dérivables de $I$ dans $E$ est noté $\mathscr D(I, E)$.
 \end{definition}
 
 \begin{definition}{Fonction de classe $\mathscr C^1$}{}
     On dit que $f : I \to E$ est de classe $\mathscr C^1$ sur $I$ ssi 
-    elle y est dérivable et si $f'$ est continue. 
-
+    elle y est dérivable et si $f'$ est continue.
     L'ensemble de ces fonctions est noté $\mathscr C^1(I, E)$.
 \end{definition}
 
 \begin{proposition}{Dérivabilité et classe $\mathscr C^1$ avec une base }{}
     Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et soit
-    $\displaystyle \fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i}$, où $f_i : I \to \K$.
+    $\displaystyle \fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i}$, où $f_i : I \to \K$. \\
 
     Alors $f$ est dérivable (resp. de classe $\mathscr C^1$) sur $I$ ssi
     $\forall i \in \ninter{1}{n}$, $f_i$ est dérivable (resp. de classe $\mathscr C^1$).
@@ -147,33 +273,39 @@ $\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
     Alors $f$ est $\mathscr C^1$ sur $\R$ car $x$ et $y$ le sont.
 \end{exemple}
 
+\marginenote{Un peu de Latin}{\emph{Nihil novi sub sole} - rien de nouveau pour le moment.}
 \begin{proposition}{Structure fonctions dérivables et $\mathscr C^1$}{}
-    $\mathscr D(I, E)$ et $\mathscr C^1(I, E)$ sont des $\K$-espaces vectoriels et 
+    $\mathscr D(I, E)$ et $\mathscr C^1(I, E)$ sont des $\K$-espaces vectoriels et :
 
-    $\fonction{}{\mathscr C^1(I, E)}{\mathscr C(I, E)}{f}{f'}$ est linéaire. 
+    \[\fonction{\varphi}{\mathscr C^1(I, E)}{\mathscr C(I, E)}{f}{f'} \text{est linéaire.}\] 
 \end{proposition}
 
-\subsection{Composition }
+\begin{proof}
+    Coordonnée par coordonnée.
+\end{proof}
+
+\subsection{Composition}
 
 \begin{proposition}{Composition à droite}{}
     Soit $f \in \mathscr C^1(I, E)$ et $\varphi \in \mathscr C^1(J, I)$, où $J$ est un intervalle de $\R$
     tel que $\mathring{J } \neq \emptyset$. 
-
-    Considérons $\fonction{g = f \circ \varphi}{J}{E}{u}{f(\varphi(u))}$.
+    Considérons :
+    \[\fonction{g = f \circ \varphi}{J}{E}{u}{f(\varphi(u))}\]
 
     Alors $g \in \mathscr C^1(J, E)$ et $g' = \varphi' f' \circ \varphi$
     
 \end{proposition}
 
 \begin{remarque}
-    (Hors programme)
+    (hors programme)
+    \begin{itemize}
+        \item La composition par $\varphi$ s'appelle un changement de paramétrage.
 
-    La composition par $\varphi$ s'appelle un changement de paramétrage.
+        \item Si $\varphi$ est bijective et si $\varphi^{-1} \in \mathscr C^1(I, J)$, c'est à dire si 
+        $\varphi '$ ne s'annule pas (on dit alors que $\varphi$ est un $\mathscr C^1$-difféomorphisme). 
 
-    Si $\varphi$ est bijective et si $\varphi^{-1} \in \mathscr C^1(I, J)$, c'est à dire si 
-    $\varphi '$ ne s'annule pas (on dit alors que $\varphi$ est un $\mathscr C^1$-difféomorphisme). 
-
-    On dit que $\varphi$ est un changement de paramétrage admissible.
+        On dit alors que $\varphi$ est un changement de paramétrage admissible.
+    \end{itemize}
 \end{remarque}
 
 \idee{Coordonnée par coordonnée.}
@@ -188,14 +320,13 @@ $\K = \R$ ou $\C$, et $E$ est un $\K$-espace vectoriel normé
     Donc $g \in \mathscr C^1(J, E)$ et $\displaystyle g'(u) = \sum_{i=1}^n \varphi'(u)f_i'(\varphi(u))e_i = \varphi'(u)f'(\varphi(u))$.
 \end{proof}
 
-\begin{theoreme}{Composition par une application linéaire}{}
-    Soit $(F, N)$ un espace vectoriel normé de dimension finie, et $f$ dérivable en $a$
-    (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et $u \in \mathscr{L }(E, F)$.
+\begin{theoreme}{Composition à gauche par une application linéaire}{}
 
-    Alors $u \circ f$ est dérivable en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et
-    
-    $(u \circ f)'(a) = u \circ f'(a) $ (resp. $(u \circ f)' = u \circ f'$).
+    Soit $(F, N)$ un espace vectoriel normé de dimension finie, $f$ dérivable en $a$
+    (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et $u \in \mathscr{L }(E, F)$. \\
 
+    Alors $u \circ f$ est dérivable en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et :
+    \[(u \circ f)'(a) = u \circ f'(a)~\text{(resp.} (u \circ f)' = u \circ f'\text{)}\]
 \end{theoreme}
 
 \idee{Passer par le DL de $f$, et composer par $u$.}

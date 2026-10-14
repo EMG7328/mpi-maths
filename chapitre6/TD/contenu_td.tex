@@ -3,7 +3,7 @@
 \subsection{Dérivation}
 
 % --- Exercice 1 (Source: EXERCICE 4 analyse) ---
-\begin{exercice}
+\begin{exercice}[Exercice 4 analyse]
 \begin{enumerate}
     \item Énoncer le théorème des accroissements finis.
     \item Soit $f:[a,b]\longrightarrow\mathbb{R}$ et soit $x_{0}\in]a,b[$. 
@@ -25,8 +25,9 @@ Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un esp
 \begin{enumerate}
     \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
     \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
-        On pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :
-        $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
+    
+    \textit{On pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :}
+    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
 \end{enumerate}
 \end{exercice}
 
@@ -184,11 +185,11 @@ Et en déduire le théorème de Cayley-Hamilton.
 
 % --- Correction 2 (Source: Exercice 1) ---
 \begin{correction}{2}
-    Soit $f : x \mapsto x^x$ définie sur $\mathbb{R}^{+*}$.
+    Soit $f : x \mapsto x^x$ définie sur $\R^+_*$.
     On écrit $f(x) = e^{x \ln x}$.
 
     $f$ est $\mathcal{C}^{\infty}$ par théorèmes d'opérations.
-    $\forall x \in \mathbb{R}^{+*}, f'(x) = (\ln x + 1) e^{x \ln x}$.
+    $\forall x \in \R^+_*, f'(x) = (\ln x + 1) e^{x \ln x}$.
 
     \begin{itemize}
     \item 
@@ -201,15 +202,15 @@ Et en déduire le théorème de Cayley-Hamilton.
         Minimum en $1/e$ valant $(1/e)^{1/e} = e^{-1/e}$.
     \item
         \textbf{Limites :}
-        En $0^+$ : $x \ln x \to 0$, donc $f(x) \to e^0 = 1$.
-
-        Prolongement par continuité en posant $f(0)=1$.
+        en $0^+$ : $x \ln x \to 0$, donc $f(x) \to e^0 = 1$.
+        On la prolonge par continuité en posant $f(0)=1$.
+        
         Dérivabilité en 0 du prolongement :
 
-        $\frac{f(x)-f(0)}{x} = \frac{e^{x \ln x}-1}{x} \sim_{0} \frac{x \ln x}{x} = \ln x \to -\infty$.
-        Donc tangente verticale en 0.
+        \[\frac{f(x)-f(0)}{x} = \frac{e^{x \ln x}-1}{x} \sim_{0} \frac{x \ln x}{x} = \ln x \to -\infty \]
+        Donc le prolongement a une tangente verticale en $0$ (et donc n'est pas dérivable en $0$).
 
-        En $+\infty$ : $f(x) \to +\infty$.
+        De plus, $f(x) \limit{x}{+\infty} +\infty$.
     \item
         \textbf{Courbe :} branche parabolique de direction $(Oy)$ car $f(x)/x = x^{x-1} \to \infty$ (si $x>2$).
     \end{itemize}
@@ -218,22 +219,19 @@ Et en déduire le théorème de Cayley-Hamilton.
 % --- Correction 3 (Source: Exercice 2) ---
 \begin{correction}{3}
 \begin{enumerate}
-    \item On considère le taux $\Delta(t) = \frac{f(a+t)-f(a-t)}{2t}$.
+    \item $\Rightarrow$ On considère le taux $\Delta(t) = \frac{f(a+t)-f(a-t)}{2t}$.
 
         Si $f$ est dérivable en $a$, $\Delta(t) = \frac{1}{2} (\frac{f(a+t)-f(a)}{t} + \frac{f(a-t)-f(a)}{-t}) \to \frac{1}{2}(f'(a)+f'(a)) = f'(a)$.
 
         La limite existe et vaut $f'(a)$.
 
-        Réciproque fausse : Contre-exemple $f(x)=|x|$ en $a=0$.
+        $\Leftarrow$ Réciproque fausse : Contre-exemple $f(x)=|x|$ en $a=0$.
         $\frac{|t|-|-t|}{2t} = 0 \to 0$, pourtant $f$ non dérivable en 0.
 
-    \item Avec la relation fournie.
-        Si la limite existe et vaut $\lambda$, cela n'implique pas la dérivabilité.
+    \item
+    $\Rightarrow$ Si $f$ est dérivable par sensiblement le même calcul qu'au dessus le quotient a bien une limite.
 
-        Exemple : fonction de Weierstrass (continue partout, nulle part dérivable) ? 
-        
-        Ou plus simple.
-        La formule fournie permet de relier le taux classique au taux généralisé par une série.
+    $\Leftarrow$ On démontre la relation via récurrence puis on utilise la définition de limite et la continuité de $f$.
 \end{enumerate}
 \end{correction}
 
@@ -243,13 +241,11 @@ Et en déduire le théorème de Cayley-Hamilton.
     $f(x) = \arcsin(1-x^3)$. Définie si $-1 \le 1-x^3 \le 1 \iff 0 \le x^3 \le 2 \iff 0 \le x \le \sqrt[3]{2}$.
 
     Sur $[0, 1]$, $f$ est définie et continue.
-    Dérivabilité sur $]0, 1[$ : composition de fonctions dérivables.
+    Dérivabilité sur $]0, 1]$ : composition de fonctions dérivables.
 
     $$f'(x) = \frac{-3x^2}{\sqrt{1-(1-x^3)^2}} = \frac{-3x^2}{\sqrt{1-(1-2x^3+x^6)}} = \frac{-3x^2}{\sqrt{2x^3-x^6}} = \frac{-3x^2}{x^{3/2}\sqrt{2-x^3}} = \frac{-3\sqrt{x}}{\sqrt{2-x^3}}$$.
 
     En $0^+$ : $f'(x) \to 0$. Par le théorème de la limite de la dérivée (puisque $f$ est continue en 0), $f$ est dérivable en 0 et $f'(0)=0$.
-
-    En $1^-$ : $f'(x) \to -3$. Donc $f$ dérivable en 1 et $f'(1)=-3$.
 \end{correction}
 
 % --- Correction 6 (Source: Exercice 5) ---
@@ -270,24 +266,13 @@ Et en déduire le théorème de Cayley-Hamilton.
 % --- Correction 7 (Source: Exercice 6) ---
 \begin{correction}{7}
 \begin{enumerate}
-    \item $f$ est dérivable donc continue sur le segment $[a,b]$. Elle est bornée et atteint ses bornes.
-        \begin{itemize}
-        \item 
-            Si le maximum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
-        \item
-            Si le minimum est atteint en $c \in ]a,b[$, alors $f'(c)=0$.
-        \item
-            Si le max est en $a$ et le min en $b$ (ou inversement), alors $f$ est décroissante (resp. croissante).
-            Or $f'(a)>0 \implies f$ croissante au voisinage de $a$. Donc $a$ n'est pas un maximum.
-            $f'(b)<0 \implies f$ décroissante au voisinage de $b$. Donc $b$ n'est pas un minimum.
-        \end{itemize}
-        Donc il existe un extremum local à l'intérieur, donc $f'(c)=0$.
+    \item À écrire
 
     \item Théorème de Darboux : Si $f$ est dérivable, $f'$ vérifie le TVI.
     
-        Soit $y$ entre $f'(a)$ et $f'(b)$. On pose $g(x) = f(x) - yx$.
+        Soit $y$ entre $f'(a)$ et $f'(b)$. On pose $g(x) = yx - f(x)$.
 
-        $g'(a) = f'(a)-y$ et $g'(b)=f'(b)-y$ sont de signes contraires.
+        $g'(a) = y - f'(a)$ et $g'(b)= y - f'(b)$ sont de signes contraires.
 
         D'après 1., il existe $c$ tel que $g'(c)=0$, soit $f'(c)=y$.
 \end{enumerate}

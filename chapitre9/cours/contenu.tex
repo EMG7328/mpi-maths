@@ -397,27 +397,27 @@ Si $E = \R$ et $a = \pm \infty$, le théorème s'applique aussi.
     Alors : 
     \begin{itemize}
         \item $\displaystyle \sum_{n \geqslant 0} \alpha_n$ converge
-        \item $ \displaystyle \sum_{n = 0 }^{\infty    } u_n(x) \xrightarrow[x \to a]{} \sum_{n = 0}^{\infty} \alpha_n$
+        \item $ \displaystyle \sum_{n = 0 }^{+ \infty    } u_n(x) \xrightarrow[x \to a]{} \sum_{n = 0}^{+ \infty} \alpha_n$
     \end{itemize} 
 
     C'est à dire que :
-    $$\lim_{x \to a} \sum_{n = 0}^{\infty} u_n(x) = \sum_{n = 0}^{\infty} \lim_{x \to a} u_n(x)$$
+    $$\lim_{x \to a} \sum_{n = 0}^{+ \infty} u_n(x) = \sum_{n = 0}^{+ \infty} \lim_{x \to a} u_n(x)$$
 \end{theoreme}
 
 \idee{théorème de la double limite}
 
 \begin{proof}
     Posons $\forall n \in \N, \forall x \in A$, $\displaystyle f_n(x) = \sum_{k = 0}^n u_k(x)$ et par hypothèse 
-    $(f_n)_{n \in \N}$ converge uniformément sur $A$ vers $\displaystyle g : x \mapsto \sum_{n = 0}^{\infty} u_n(x)$.
+    $(f_n)_{n \in \N}$ converge uniformément sur $A$ vers $\displaystyle g : x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 
     De plus $\displaystyle \forall n \in \N$, $\displaystyle f_n(x) \xrightarrow[x \to a]{} \sum_{k = 0}^n \alpha_k$ par théorème d'opérations. 
 
     Donc par le théorème de la double limite, $(l_n)_{n \in \N}$ converge donc $\displaystyle \sum_{n \geqslant 0} \alpha_n$ converge et 
-    $\displaystyle g(x) \xrightarrow[x \to a]{} \sum_{n = 0}^{\infty} \alpha_n$.
+    $\displaystyle g(x) \xrightarrow[x \to a]{} \sum_{n = 0}^{+ \infty} \alpha_n$.
 \end{proof}
 
 \begin{exemple}
-    $\fonction \zeta{]1; +\infty[}{\R}{x}{\sum_{n = 1}^{\infty} \frac 1 {n^x}}$.
+    $\fonction \zeta{]1; +\infty[}{\R}{x}{\sum_{n = 1}^{+ \infty} \frac 1 {n^x}}$.
 
     Posons $\forall n \geqslant 1, \, \forall x > 1, \, u_n(x) = \frac 1 {n^x}$.
 
@@ -431,7 +431,7 @@ Si $E = \R$ et $a = \pm \infty$, le théorème s'applique aussi.
     Donc $\displaystyle \sum_{n \geqslant 1} u_n$ converge normalement sur $A$. 
 
     Donc $\displaystyle \sum_{n \geqslant 1} \alpha_n$ converge et donc $\zeta$ a une limite en $+ \infty$ et 
-    $\zeta(x) \xrightarrow[x \to +\infty]{} \sum_{n = 1 }^{\infty } \alpha_n = 1$.
+    $\zeta(x) \xrightarrow[x \to +\infty]{} \sum_{n = 1 }^{+ \infty } \alpha_n = 1$.
 
 \end{exemple}
 
@@ -469,7 +469,7 @@ Si $E = \R$ et $a = \pm \infty$, le théorème s'applique aussi.
         \item $\forall n \in \N, \, u_n$ est continue en $a$
         \item $\displaystyle \sum_{n \geqslant 0} u_n$ converge uniformément sur $A$ 
     \end{itemize}
-    Alors $\displaystyle \sum_{n = 0}^{\infty} u_n$ est continue en $a$.
+    Alors $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est continue en $a$.
 \end{theoreme}
 
 \begin{proof}
@@ -505,18 +505,18 @@ Si $E = \R$ et $a = \pm \infty$, le théorème s'applique aussi.
     simplement. 
 
     \begin{enumerate}
-        \item Si la convergence est uniforme sur $A$, alors $\displaystyle \sum_{n = 0}^{\infty} u_n$ est continue sur $A$.
+        \item Si la convergence est uniforme sur $A$, alors $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est continue sur $A$.
         \item Si pour tout $a \in A$, il existe un ouvert relatif $A'$ tel que $a \in A', \, A' \subset A$ et
-        si la convergence est uniforme sur $A'$, alors $\displaystyle \sum_{n = 0}^{\infty} u_n$ est continue sur $A$.
+        si la convergence est uniforme sur $A'$, alors $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est continue sur $A$.
         \item Si $A = \R$ et si $\forall \alpha > 0$, la convergence est uniforme sur $[-\alpha, \alpha]$, 
-        alors $\displaystyle \sum_{n = 0}^{\infty} u_n$ est continue sur $\R$.
+        alors $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est continue sur $\R$.
         \item Si $A = \R_+^*$ et si $\forall 0 < a < b$, la convergence est uniforme sur $[a, b]$,
-        alors $\displaystyle \sum_{n = 0}^{\infty} u_n$ est continue sur $\R_+^*$.
+        alors $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est continue sur $\R_+^*$.
     \end{enumerate}
 \end{theoreme}
 
 \begin{exemple}
-    $\displaystyle \fonction \zeta{]1; +\infty[}{\R}{x}{\sum_{n = 1}^{\infty} \frac 1 {n^x}}$, et 
+    $\displaystyle \fonction \zeta{]1; +\infty[}{\R}{x}{\sum_{n = 1}^{+ \infty} \frac 1 {n^x}}$, et 
     $\forall n \geqslant 1, \, \fonction{u_n}{]1; +\infty[}{\R}{x}{\frac 1 {n^x} = e^{-x \ln(x)}}$. 
 
     On a $\forall n \geqslant 1, \, u_n$ est continue sur $]1; +\infty[$. L'utilisation du 1) échoue, car 
@@ -532,7 +532,7 @@ Si $E = \R$ et $a = \pm \infty$, le théorème s'applique aussi.
 
 
 \begin{exemple}
-    $\fonction{f}{\U}{\C}{z}{\sum_{n = 0}^{\infty} \frac{z^n }{n^2}}$. 
+    $\fonction{f}{\U}{\C}{z}{\sum_{n = 0}^{+ \infty} \frac{z^n }{n^2}}$. 
 
     Pour $z \in \U$, $\forall n \geqslant 1, \, \left| \frac{z^n }{n^2} \right| \leqslant \frac 1 {n^2}$ terme général
     d'une série convergente indépendante de $z$. Donc $\sum_{n \geqslant 0} \frac{z^n }{n^2}$ converge simplement (normalement aussi mais on fait comme si 
@@ -720,13 +720,13 @@ séries de fonctions.
     
     et 
     $\forall x \in I$, 
-    $$\sum_{n = 0 }^{ \infty } \int_{a }^{x } u_n(t) dt = \int_{a}^{x } \sum_{n = 0}^{\infty} u_n(t) dt$$
+    $$\sum_{n = 0 }^{+ \infty } \int_{a }^{x } u_n(t) dt = \int_{a}^{x } \sum_{n = 0}^{+ \infty} u_n(t) dt$$
 \end{theoreme}
 
 \begin{corollaire}{}{}
     Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions continues qui converge uniformément sur 
     $[a, b]$, alors 
-    $$\sum_{n = 0}^{\infty} \int_{a}^{b} u_n(t) dt = \int_{a}^{b} \sum_{n = 0}^{\infty} u_n(t) dt$$
+    $$\sum_{n = 0}^{+ \infty} \int_{a}^{b} u_n(t) dt = \int_{a}^{b} \sum_{n = 0}^{+ \infty} u_n(t) dt$$
 \end{corollaire}
 
 \begin{proof}
@@ -743,7 +743,7 @@ séries de fonctions.
     Alors : 
     \begin{itemize}
         \item $\sum_{n \geqslant 0} u_n$ converge uniformément sur tout segment
-        \item $\displaystyle \sum_{n = 0 }^{\infty } u_n$ est de classe $\mathscr C^1$
+        \item $\displaystyle \sum_{n = 0 }^{+ \infty } u_n$ est de classe $\mathscr C^1$
     \end{itemize}
     Donc : 
     $$\left(\sum_{n = 0}^{+ \infty} u_n\right)' = \sum_{n = 0 }^{+ \infty } u_n'$$
@@ -757,12 +757,12 @@ séries de fonctions.
     \end{itemize}
 
     Alors $\forall i \in \ninter{0}{k - 1}, \, \sum_{n \geqslant 0} u_n^{(i)}$ converge uniformément sur tout segment
-    et $\displaystyle \sum_{n = 0}^{\infty} u_n$ est de classe $\mathscr{C}^k$ et 
-    $\forall i \geqslant k$, $\displaystyle \left( \sum_{n = 0}^{\infty} u_n \right)^{(i)} = \sum_{n = 0}^{\infty} u_n^{(i)}$.
+    et $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est de classe $\mathscr{C}^k$ et 
+    $\forall i \geqslant k$, $\displaystyle \left( \sum_{n = 0}^{+ \infty} u_n \right)^{(i)} = \sum_{n = 0}^{+ \infty} u_n^{(i)}$.
 \end{theoreme}
 
 \begin{exemple}
-    $\fonction \zeta {]1, + \infty[}{\R} x {\sum_{n = 1}^{\infty} \frac 1 {n^x}}$.
+    $\fonction \zeta {]1, + \infty[}{\R} x {\sum_{n = 1}^{+ \infty} \frac 1 {n^x}}$.
 
     Pososn $\forall n \geqslant 1, \, u_n(x) = \frac 1 {n^x} = e^{-x \ln(n)}$.
 
@@ -775,13 +775,13 @@ séries de fonctions.
     général d'une série convergente, donc la série converge normalement. 
 
     Donc $\zeta$ est de classe $\mathscr{C}^{k}$ pour tout $k$ donc $\mathscr{C}^{\infty}$ est 
-    $$\zeta^{(k)}(x) = \sum_{n = 0}^{\infty} \frac{(- \ln(n))^k}{n^x}$$
+    $$\zeta^{(k)}(x) = \sum_{n = 0}^{+ \infty} \frac{(- \ln(n))^k}{n^x}$$
 \end{exemple}
 
 \subsection{Etude de fonctions définies comme somme de série }
 
 
-On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{\infty} u_n(x)$. 
+On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$. 
 
 \begin{enumerate}
     \item On cherche les $x$ tels que la série converge. Cela donne $I$ un ensemble de définition 
@@ -843,7 +843,7 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{\infty} u_n(x)$.
 \begin{proposition}{}{}
     Soit $\sum_{n \geqslant 0} u_n$ définie sur $I$ qui converge simplement. 
 
-    Si on exhibe une suite $(x_n)$ telle que $\displaystyle \sum_{k = n + 1 }^{\infty  } u_n(x_n) \nrightarrow 0$,
+    Si on exhibe une suite $(x_n)$ telle que $\displaystyle \sum_{k = n + 1 }^{+ \infty  } u_n(x_n) \nrightarrow 0$,
     il n'y a pas de convergence uniforme. En particulier, si $u_k$ est à valeurs dans $\R^+$ il suffit 
     d'exhiber $x_n$ telle que $\displaystyle \sum_{k = n + 1}^{2n} u_k(x_n) \nrightarrow 0$.
 \end{proposition}

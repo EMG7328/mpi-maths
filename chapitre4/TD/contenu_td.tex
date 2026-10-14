@@ -29,10 +29,10 @@
 \begin{exercice}
 \begin{enumerate}
     \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme :
-        $$\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$$
+        $$\zeta(s)=\sum_{n=1}^{+ \infty}\frac{1}{n^{s}}$$
 
     \item Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme :
-        $$A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$$
+        $$A(s)=\sum_{n=1}^{+ \infty}\frac{(-1)^{n}}{n^{s}}$$
     
     \item  Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
     \item On s'intéresse à la convergence de $A(s)$ pour $s$ complexe tel que $\text{Re}(s)>0$.
@@ -289,9 +289,9 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
         D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
 
     \item 
-        $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
+        $A(s)+\zeta(s) = \sum_{n=1}^{+ \infty} \frac{(-1)^n+1}{n^s}$.
         Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
-        $$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
+        $$ A(s)+\zeta(s) = \sum_{p=1}^{+ \infty} \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^{+ \infty} \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
         D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
 
     \item

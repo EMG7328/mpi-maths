@@ -854,12 +854,12 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
     Donc $(1 + x) f'(x) = \alpha f(x)$. 
 
     Or $\forall x \in ]-1, 1[, \, g$ est aussi $\mathscr C^1$ et
-    $$ g'(x) = \sum_{n = 1 }^{\infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1 )! }$$ car série entière 
+    $$ g'(x) = \sum_{n = 1 }^{+ \infty  } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1 )! }$$ car série entière 
     Donc 
     \begin{align}
-        (1 + x) g'(x) & = \displaystyle \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1)!} + \sum_{n = 1 }^{\infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) }{(n + 1)!} x^n \\
-        & = \sum_{p = 0 }^{\infty    } \frac{\alpha (\alpha - 1) \cdots (\alpha - p)}{p!} x^p + \sum_{n = 1 }^{\infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{(n - 1)!} x^n \\
-        & = \alpha + \sum_{n = 1 }^{\infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{n! } (\alpha - n + n) x^n \\
+        (1 + x) g'(x) & = \displaystyle \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1)!} + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) }{(n + 1)!} x^n \\
+        & = \sum_{p = 0 }^{+ \infty    } \frac{\alpha (\alpha - 1) \cdots (\alpha - p)}{p!} x^p + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{(n - 1)!} x^n \\
+        & = \alpha + \sum_{n = 1 }^{+ \infty   } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1)}{n! } (\alpha - n + n) x^n \\
         & = \alpha g(x)
     \end{align}
 

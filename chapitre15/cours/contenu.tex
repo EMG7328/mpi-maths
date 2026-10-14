@@ -1022,7 +1022,7 @@ Soit $a \in \R$ et $f \in \mc{pm} ([a, + \infty[, \K)$
 \end{exemple}
 
 \begin{exemple}
-    On cherche la limite de $\ds a_n = \int_{0 }^{ \infty } \frac{t^n(2 + \cos (nt)) e^{-t}}{1 + t^{2n}} \dt$.
+    On cherche la limite de $\ds a_n = \int_{0 }^{ + \infty } \frac{t^n(2 + \cos (nt)) e^{-t}}{1 + t^{2n}} \dt$.
 
     \svspace Posons $\forall n \in \N, \, \fonction {f_n}{[0, + \infty[}{\R}{t}{\frac{t^n(2 + \cos (nt)) e^{-t}}{1 + t^{2n}}}$ qui
     est continue par théorème d'opérations.
@@ -1112,7 +1112,7 @@ Soit $a \in \R$ et $f \in \mc{pm} ([a, + \infty[, \K)$
     qui est continue par morceaux sur $]0, 1[$. $f$ est continue en $1$ donc intégrable en $1$
     et $|f(x)| = o\left(\frac 1 {\sqrt x} \right)$ par croissance comparée, donc $f$ inégrable en $0$. 
 
-    $A$ converge absolument donc converge. On a $\ds A = \int_{0}^{1 } \sum_{n = 0}^{\infty} (-1)^n \ln x \cdot x^n \dx$
+    $A$ converge absolument donc converge. On a $\ds A = \int_{0}^{1 } \sum_{n = 0}^{+ \infty} (-1)^n \ln x \cdot x^n \dx$
     car $\forall x \in ]0, 1[, \, \frac 1 {1 + x} = \ds \sum_{n = 0}^{+ \infty} (-1)^n x^n$.
 
     Posons $\forall n \in \N$, $\fonction {u_n}{]0, 1[}{\R}{x}{(-1)^n \ln x \cdot x^n}$ qui est continue par morceaux sur $]0, 1[$.
@@ -1129,7 +1129,7 @@ Soit $a \in \R$ et $f \in \mc{pm} ([a, + \infty[, \K)$
 
     Posons $\varphi = 2 |f|$ qui est intégrable sur $]0, 1[$. Donc par le théorème de convergence dominée 
     appliqué à la suite des sommes partielles, on a 
-    $$A = \sum_{n=0}^{\infty} \underbrace{\int_{0}^{1} (-1)^n \ln x \cdot x^n \dx}_{I_n}$$
+    $$A = \sum_{n=0}^{+ \infty} \underbrace{\int_{0}^{1} (-1)^n \ln x \cdot x^n \dx}_{I_n}$$
 
     Posons $u(x) = \ln x$ et $u'(x) = \frac 1 x$ 
 
@@ -1144,7 +1144,7 @@ Soit $a \in \R$ et $f \in \mc{pm} ([a, + \infty[, \K)$
     & = \frac{(-1)^{n+1}}{(n + 1)^2}
     \end{align}
 
-    Donc $A = \ds \sum_{n = 0 }^{\infty} \frac{(-1)^{n+1}}{(n + 1)^2} = - \frac{\pi^2}{12}$.
+    Donc $A = \ds \sum_{n = 0 }^{+ \infty} \frac{(-1)^{n+1}}{(n + 1)^2} = - \frac{\pi^2}{12}$.
 
 \end{exemple}
 
@@ -1228,10 +1228,10 @@ Soit $a \in \R$ et $f \in \mc{pm} ([a, + \infty[, \K)$
 
 Il y a donc deux cas possibles : 
 
-$\blacktriangleright$ Si $\sum_{n \geqslant 0} \int_I f_n(t) \dt$ converge alors $\ds \sum_{n = 0}^{\infty} f_n$ est intégrable 
+$\blacktriangleright$ Si $\sum_{n \geqslant 0} \int_I f_n(t) \dt$ converge alors $\ds \sum_{n = 0}^{+ \infty} f_n$ est intégrable 
 et on a l'égalité entre la somme de la série des intégrales et l'intégrale de la somme de la série.
 
-\avspace $\blacktriangleright$ Si $\sum_{n \geqslant 0} \int_I f_n(t) \dt$ diverge alors $\ds \sum_{n = 0}^{\infty} f_n$ n'est pas intégrable.
+\avspace $\blacktriangleright$ Si $\sum_{n \geqslant 0} \int_I f_n(t) \dt$ diverge alors $\ds \sum_{n = 0}^{+ \infty} f_n$ n'est pas intégrable.
 
 \begin{proof}
     Hors programme. 
@@ -1303,9 +1303,9 @@ Si la fonction est positive on privilégie le 3, si on est sur un segment le 1, 
 on essaie le 4. En cas d'échec on essaie le 2. 
 
 \begin{exemple}
-    Calcul de $\ds \sum_{n = 1}^{\infty} \frac{(-1)^{n + 1}}{n} = A$. 
+    Calcul de $\ds \sum_{n = 1}^{+ \infty} \frac{(-1)^{n + 1}}{n} = A$. 
 
-    $A = \ds \sum_{n = 1}^{\infty} \int_{0}^{1} (-1)^{n + 1} x^{n - 1} \dx$. 
+    $A = \ds \sum_{n = 1}^{+\infty} \int_{0}^{1} (-1)^{n + 1} x^{n - 1} \dx$. 
 
     Les méthodes 1, 3, et 4 échouent (laissé au plaisir du lecteur).
 
@@ -1316,7 +1316,7 @@ on essaie le 4. En cas d'échec on essaie le 2.
     Donc par théorème de convergence dominée appliqué à la suite des sommes partielles, 
 
     \begin{align}
-        A & = \int_{0}^{1} \sum_{n = 1}^{ \infty} (-t)^{n - 1} \dt \\
+        A & = \int_{0}^{1} \sum_{n = 1}^{+\infty} (-t)^{n - 1} \dt \\
         & = \int_0^1 \frac{1}{1 + t} \dt \\
         & = \ln 2
     \end{align}

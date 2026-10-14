@@ -174,7 +174,7 @@ dont l'intersection infinie est $\{0\}$.}
 
     Supposons $\ell \in A$. $B$ est fermé, donc $A$ est ouvert, donc $\exists R > 0, \, B(\ell, R) \subset A$.
 
-    Or $u_n \limit n \infty \ell$. Prenons $\varepsilon = \frac R 2$. 
+    Or $u_n \limit{n}{+\infty} \ell$. Prenons $\varepsilon = \frac R 2$. 
 
     Alors $\exists n_0 \in \N, \, \forall n \geqslant n_0, \, d(u_{n}, \ell) \leqslant \varepsilon$. 
 
@@ -217,9 +217,9 @@ dont l'intersection infinie est $\{0\}$.}
 
     $\forall n \in \N, \, N(x_n - \omega) \leqslant R$.
 
-    Or $x_n \limit n \infty \ell$, donc $x_n - \omega \limit n \infty \ell - \omega$.
+    Or $x_n \limit n {+ \infty} \ell$, donc $x_n - \omega \limit n {+ \infty} \ell - \omega$.
 
-    Donc $N(x_n - \omega) \limit n \infty N(\ell - \omega)$.
+    Donc $N(x_n - \omega) \limit n {+ \infty} N(\ell - \omega)$.
 
     Donc par passage à la limite dans $\R$, $N(\ell - \omega ) \leqslant R$, donc $\ell \in B$.
 
@@ -272,7 +272,7 @@ de ses éléments, or tout ensemble n'est pas fermé.
 
     Notons $\ell = (\ell_1, \dots, \ell_p)$.
 
-    On a $\forall j \in \ninter 1 p, \, x_{n, j} \limit n \infty \ell_j$.
+    On a $\forall j \in \ninter 1 p, \, x_{n, j} \limit n {+ \infty} \ell_j$.
 
     Or $\forall n \in \N, \, x_{n, j} \in B_j$, et $B_j$ est un fermé, donc $\ell_j \in B_j$.
 
@@ -315,12 +315,12 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
 
     On a $\forall t_n \in \interoc{\lambda_0}{1}$, donc $t_n \not \in C$, donc $t_n b + (1 - t_n)a \in B$.
 
-    Or $t_n b + (1 - t_n)a \limit n \infty d$. Or $B$ est fermé, donc $d \in B$.
+    Or $t_n b + (1 - t_n)a \limit n {+ \infty} d$. Or $B$ est fermé, donc $d \in B$.
 
     Par caractérisation séquentielle du sup, il existe une suite $(u_n)_{n \in \N}$ de $C$ qui converge 
     vers $\lambda_0$.
 
-    Donc $u_n b + (1 - u_n)a \in A$, or $u_n b + (1 - u_n)a \limit n \infty d$.
+    Donc $u_n b + (1 - u_n)a \in A$, or $u_n b + (1 - u_n)a \limit n {+ \infty} d$.
 
     Or $A$ est fermé, donc $d \in A$.
 
@@ -350,7 +350,7 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     Donc par le théorème de Bolzano-Weierstrass, on peut en extraite une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
     $\ell_1 \in F$.
 
-    Or $u_n \limit n \infty \ell$, donc $\ell_1 = \ell$, donc $\ell \in F$.
+    Or $u_n \limit n {+ \infty} \ell$, donc $\ell_1 = \ell$, donc $\ell \in F$.
 \end{proof}
 
 Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
@@ -366,9 +366,9 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 
     Posons $Q = -1$. Alors 
 
-    $$ N(P_n - Q ) = \int_0^1 |X^n| dt = \frac 1 {n+1} \limit n \infty 0.$$
+    $$ N(P_n - Q ) = \int_0^1 |X^n| dt = \frac 1 {n+1} \limit n {+ \infty} 0.$$
 
-    Donc $P_n \limit n \infty Q$ et pourtant $Q \not \in H$.
+    Donc $P_n \limit n {+ \infty} Q$ et pourtant $Q \not \in H$.
 
     Donc $H$ n'est pas fermé.
 \end{proof}
@@ -521,7 +521,7 @@ intérieurs avec une suite. }
 
     Soit $n \in \N^*$, avec $R = \frac 1 n$n cela fournit $a_n \in A$ tel que $d(x, a_n) < \frac 1 n$.
 
-    Donc $a_n \limit n \infty x$.
+    Donc $a_n \limit n {+ \infty} x$.
 
     $\Leftarrow$ Soit $x \in E$ tel qu'il existe une suite $(a_n)_{n \in \N}$ d'éléments 
     de $A$ qui converge vers $x$. 
@@ -595,10 +595,10 @@ intérieurs avec une suite. }
     \begin{align*}
         N(a_n - x) & = N\left( \omega - x + \frac n {n + 1} (x - \omega) \right) \\
         & = N\left( \frac 1 {n + 1}(\omega - x) \right) \\
-        & = \frac 1 {n + 1} N(\omega - x) \limit n \infty 0.
+        & = \frac 1 {n + 1} N(\omega - x) \limit n {+ \infty} 0.
     \end{align*}
 
-    Donc $a_n \limit n \infty x$, 
+    Donc $a_n \limit n {+ \infty} x$, 
 
     Donc $x \in \overline{B(\omega, R)}$, donc $B'(\omega, R) \subset \overline{B(\omega, R)}$.
 \end{proof}
@@ -776,7 +776,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 
     Pour $n \in \N^*$, posons $B_n = A - \frac 1 n I_p$.
 
-    Par théorème des valeurs propres, $B_n \limit n {+ \infty} A$.
+    Par théorème des valeurs propres, $B_n \limit n {+ {+ \infty}} A$.
 
     Or 
     \begin{align*}
@@ -826,13 +826,13 @@ Donc $x \in \overline A$ donc $E = \overline A$.
     Supposons que $H$ n'est pas fermé, et montrons qu'il est dense.
 
     Il existe une suite $(h_n)_{n \in \N}$ d'éléments de $H$ telle que 
-    $h_n \limit n \infty \ell$ avec $\ell \not \in H$, donc $\varphi(\ell) \neq 0$.
+    $h_n \limit n {+ \infty} \ell$ avec $\ell \not \in H$, donc $\varphi(\ell) \neq 0$.
 
     Donc $E = H \oplus \operatorname{Vect}(\ell)$.
 
     Soit $x \in E$. Décomposons $x = h_x + \lambda_x \ell$ où $h_x \in H$ et $\lambda_x \in \K$.
 
-    Posons $x_n = h_x + \lambda_x h_n$. On a bien $x_n \in H$, et $x_n \limit n \infty x$ 
+    Posons $x_n = h_x + \lambda_x h_n$. On a bien $x_n \in H$, et $x_n \limit n {+ \infty} x$ 
     d'où $\overline H = E$.
 \end{exemple}
 
@@ -1177,7 +1177,7 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $A \subset E$ non vide, $a \in \overline A$, $\ell \in E'$ :
 
     Alors $f(x) \limitnorme{N'}{x}{a} \ell$ ssi pour toute suite $(u_n)_{n \in \N}$ 
-    d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'}{n}{\infty} \ell$.
+    d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'}{n}{+ \infty} \ell$.
 \end{theorement}
 
 \idee{
@@ -1200,16 +1200,16 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
 
     Alors on a (grâce au (2)) $N(u_n - a) \leqslant \eta$ donc (grâce au (1)) $N'(f(u_n) - \ell) \leqslant \varepsilon$.
 
-    Donc $f(u_n) \limitnorme{N'}{n}{\infty} \ell$. \\
+    Donc $f(u_n) \limitnorme{N'}{n}{+ \infty} \ell$. \\
 
     $\Leftarrow$ Supposons que $\exists \varepsilon > 0, \, \forall \eta > 0, \, \exists x \in A, \, d(x, a) \leqslant \eta $ et $d'(f(x), \ell) > \varepsilon$ (3).
 
     Soit $n \in \N^*$. Cette phrase avec $\frac 1 n$ dans le rôle de $\eta$ fournit
     un $x_n \in A$ tel que $N(x_n - a) \leqslant \frac 1 n$ et $N'(f(x_n) - \ell) > \varepsilon$.
 
-    On a $N(x_n - a) \limit n \infty 0$, donc $x_n \limitnorme N n \infty a$.
+    On a $N(x_n - a) \limit n {+ \infty} 0$, donc $x_n \limitnorme N n {+ \infty} a$.
 
-    On a de plus $N'(f(x_n) - \ell) > \varepsilon$. Si on avait $f(x_n) \limitnorme{N'}{n}{\infty} \ell$, 
+    On a de plus $N'(f(x_n) - \ell) > \varepsilon$. Si on avait $f(x_n) \limitnorme{N'}{n}{+ \infty} \ell$, 
     on aurait $\varepsilon$ la limite, donc $0 \geqslant \varepsilon$, absurde.
 
     Donc $f(x_n)$ ne converge pas vers $\ell$.
@@ -1220,7 +1220,7 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $A \subset E$ non vide, $a \in A$. :
 
     Alors $f$ est continue en $a$ ssi pour toute suite $(u_n)_{n \in \N}$ d'éléments de $A$ 
-    qui converge vers $a$ on a $f(u_n) \limitnorme{N'}{n}{\infty} f(a)$.
+    qui converge vers $a$ on a $f(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$.
 \end{theoreme}
 
 \subsection{Opérations}
@@ -1304,9 +1304,9 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 
 \begin{proof}
     $f(x) \limitnorme{N'_\infty}{x}{a} \ell$ ssi pour toute suite $(u_n)_{n \in \N}$ 
-    d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'_\infty}{n}{\infty} \ell$.
+    d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'_\infty}{n}{+ \infty} \ell$.
     ssi pour toute suite $(u_n)_{n \in \N}$ d'éléments de $A$ qui converge vers $a$, 
-    $\forall j \in \ninter{1}{p}, \, f_j(u_n) \limitnorme{N'_j}{n}{\infty} \ell_j$.
+    $\forall j \in \ninter{1}{p}, \, f_j(u_n) \limitnorme{N'_j}{n}{+ \infty} \ell_j$.
 
 
     ssi $\forall j \in \ninter{1}{p}, \, f_j(x) \limitnorme{N'_j}{x}{a} \ell_j$ (Caractérisation LHP).
@@ -1337,10 +1337,10 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
     $f$ est continue sur $U$ ssi $\forall a \in U, \, f_{|U}$ est continue en $a$ 
     
     ssi $\forall a \in U, \, \forall (u_n)_{n \in \N}$ suite d'éléments de $U$ qui converge vers $a$,
-    $f_{|U}(u_n) \limitnorme{N'}{n}{\infty} f(a)$
+    $f_{|U}(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$
 
     ssi $\forall a \in U, \, \forall (u_n)_{n \in \N}$ suite d'éléments de $E$ qui converge vers $a$,
-    $f(u_n) \limitnorme{N'}{n}{\infty} f(a)$ car comme $U$ est ouvert, pour $n$ assez
+    $f(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$ car comme $U$ est ouvert, pour $n$ assez
     grand, si $u_n \in E$ et $u_n \to a$, alors $u_n \in U$.
 
     ssi $\forall a \in U, \, f$ est continue en $a$.
@@ -2076,7 +2076,7 @@ Posons pour tout $n \in \N$,
 $$F_n=\overline{ \left\{x_k \ , k \geq n\right\} }$$
 C'est un fermé et on a clairement $F_{n+1} \subset F_n$.
 
-Considérons : $$F=\bigcap_{n=1}^{\infty} F_n$$
+Considérons : $$F=\bigcap_{n=1}^{+ \infty} F_n$$
 
 Supposons dans un premier temps que $F \cap A \neq \emptyset$.\\
 
@@ -2297,9 +2297,9 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
 
     Soit $(b_n)_{n \in \N}$ suite de $B$. Alors $\forall n \in \N, \, \exists a_n \in A, \, b_n = f(a_n)$
     $(a_n)_{n \in \N}$ est une suite de $A$ qui est compact, on peut donc en extraire 
-    $a_{\varphi(n)} \limit n \infty \ell \in A$. 
+    $a_{\varphi(n)} \limit n {+ \infty} \ell \in A$. 
 
-    Donc $b_{\varphi(n)} = f(a_{\varphi(n)}) \limit n \infty f(\ell) $ car $f$ continue en 
+    Donc $b_{\varphi(n)} = f(a_{\varphi(n)}) \limit n {+ \infty} f(\ell) $ car $f$ continue en 
     $\ell$ car $f$ continue sur $A$. Or $f(\ell) \in B$, donc $B$ est compact.
 \end{proof}
 
@@ -2316,7 +2316,7 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
 \begin{proof}
     Par le théorème précédent, $f(A)$ compact de $\R$, donc borné, $f(A) \neq \emptyset$ donc 
     $ \inf(A)$ et $\sup(A)$ existent par caractérisation séquentielle, et donc il existe une suite 
-    $\alpha_n$ de $f(A)$ telle que $\alpha_n \limit n \infty \sup(f(A))$.
+    $\alpha_n$ de $f(A)$ telle que $\alpha_n \limit n {+ \infty} \sup(f(A))$.
 
     Or $f(A)$ fermé donc $\sup(f(A)) \in f(A)$, donc c'est un max, idem pour l'inf. 
 \end{proof}

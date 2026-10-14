@@ -374,14 +374,17 @@ a un DL2 mais n'est pas dérivable deux fois.
     
 \end{exemple}
 
-\begin{theoreme}{Composition par une application bilinéaire}{}
-    Soient $f : I \to E$, $g : I \to F$ et $B : E \times F \to G$ une application bilinéaire où 
-    $(G, N'')$ est un espace vectoriel normé de dimension finie.
+\marginenote[0.5cm]{Tenseurs - HP}{En définissant $E\otimes F$ le produit \emph{tensoriel} de $E$ et $F$ on pourrait créer des applications linéaires à partir des bilinéaires.}
+\begin{theoreme}{Composition à gauche par une application bilinéaire}{}
 
-    Notons $\fonction{B(f, g)}{I}{G}{t}{B(f(t), g(t))}$.
+    Soient $f : I \to E$, $g : I \to F$ des applications et $B : E \times F \to G$ une application bilinéaire où 
+    $(G, N'')$ est un espace vectoriel normé de dimension finie.
+    Notons :
+    \[\fonction{B(f, g)}{I}{G}{t}{B(f(t), g(t))}\]
 
     Soit $a \in I$. Si $f$ et $g$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$),
-    alors $B(f, g)$ aussi et $(B(f, g))'(a) = B(f'(a), g(a)) + B(f(a), g'(a))$ (resp. $(B(f, g))' = B(f', g) + B(f, g')$).
+    alors $B(f, g)$ aussi et :
+    \[(B(f, g))'(a) = B(f'(a), g(a)) + B(f(a), g'(a))~\text{(resp.}~(B(f, g))' = B(f', g) + B(f, g')\text{)}\]
 \end{theoreme}
 
 \idee{DL de $f$ et $g$, puis bilinéarité.}
@@ -408,18 +411,16 @@ a un DL2 mais n'est pas dérivable deux fois.
     Si $f, g \in \mathscr C^1(I, E)$, $B(f, g)'$ est continue car $B$ est bilinéaire entre espaces de dimension finie, donc continue. 
 \end{proof}
 
-\subsubsection{Conséquences }
-
 \begin{proposition}{}{}
     \begin{itemize}
         \item Le produit scalaire de deux applications dérivables est dérivable.
         \item Le produit matriciel de deux applications dérivables est dérivable.
-        \item Si $(E, \langle \cdot, \cdot \rangle)$ est préhilbertien, et $f \in \mathscr{C }^1(I, E)$, alors $||f||^2 \in \mathscr C^1(I, \R)$ et
+        \item Si $(E, \langle \cdot, \cdot \rangle)$ est préhilbertien (c'est-à-dire euclidien car de dimension finie), et $f \in \mathscr{C }^1(I, E)$, alors $||f||^2 \in \mathscr C^1(I, \R)$ et
         $(||f||^2)' = 2 \langle f, f' \rangle$.
     \end{itemize}
 \end{proposition}
 
-\idee{Bilinéarité}
+\idee{Bilinéarité.}
 
 \begin{proof}
     Un produit scalaire est bilinéaire, et le produit matriciel également, et si 
@@ -427,33 +428,84 @@ a un DL2 mais n'est pas dérivable deux fois.
 \end{proof}
 
 \begin{theoreme}{Généralisation à une application n-linéaire}{}
+
     Soient $(E_1, N_1), \ldots, (E_n, N_n), (F, N')$ des espaces vectoriels normés de dimension finie, et
     $f_i : I \to E_i$, $M : E_1 \times \cdots \times E_n \to F$ une application $n$-linéaire.
-
-    \avspace Notons $\fonction{M(f_1, \ldots, f_n)}{I}{F}{t}{M(f_1(t), \ldots, f_n(t))}$.
+    Notons :
+    \[\fonction{M(f_1, \ldots, f_n)}{I}{F}{t}{M(f_1(t), \ldots, f_n(t))}\]
 
     \avspace Si $f_1, \ldots, f_n$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$),
-    alors $M(f_1, \ldots, f_n)$ aussi et 
+    alors $M(f_1, \ldots, f_n)$ aussi et :
     $$(M(f_1, \ldots, f_n))'(a) = \sum_{i=1}^n M(f_1(a), \ldots, f_{i-1}(a), f_i'(a), f_{i+1}(a), \ldots, f_n(a))$$
 \end{theoreme}
 
 \begin{proof}
-    On généralise celle réalisée pour une application bilinéaire.
+    On généralise celle réalisée pour une application bilinéaire via une récurrence.
 \end{proof}
 
 \begin{corollaire}{}{}
-    Si $f \in \mathscr C^1(I, \mathscr M_n(\K))$ alors $\det \circ f \in \mathscr C^1(I, \K)$
+    Si $f \in \mathscr C^1(I, \mathscr M_n(\K))$ alors $\det \circ f \in \mathscr C^1(I, \K)$.
 \end{corollaire}
 
 \begin{exemple}
-    Soit $f: t \to f(t) = \det(X_1(t), X_2(t))$ avec $X_1, X_2 \in \mathscr M_{2, 1}(\K)$. 
+    Soit $f: t \to \det(X_1(t), X_2(t))$ avec $X_1, X_2 \in \mathscr F(\R, \mathscr M_{2, 1}(\K))$. 
 
     Alors si $X_1, X_2$ sont dérivables, $f$ aussi et 
-
     $f' = \det(X_1', X_2) + \det(X_1, X_2')$.
 \end{exemple}
 
-\subsection{Rappels : prolongement }
+\subsection{Application de classe \texorpdfstring{$\mathscr C^k$}{Ck}}
+
+\begin{definition}{Fonction de classe $\mathscr C^k$}{}
+    Soit $f : I \to E$ et $k \in \N, \, k \geqslant 2$. On dit que $f$ est de classe 
+    $\mathscr C^k$ sur $I$ ssi $f, f', \ldots, f^{(k-1)}$ sont dérivables sur $I$ et $f^{(k)}$ est continue sur $I$. \\
+
+    On dit que $f$ est de classe $\mathscr C^\infty$ sur I ssi $f$ est de classe 
+    $\mathscr C^k$ pour tout $k \in \N$.
+\end{definition}
+
+\begin{remarque}
+    Si $f \in \mathscr C^k(I,E)$ alors :
+    $\ds \forall i,j \in \N$ tels que $i + j \leqslant k$,
+    $\left(f^{(i)}\right)^{(j)} = \left(f^{(j)}\right)^{(i)} = f^{(i+j)}$.
+\end{remarque}
+
+\begin{proposition}{Classe $\mathscr C^k$ avec une base}{}
+    Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et :
+    \[\fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i},~\text{où}~f_i : I \to \K\]
+    
+
+    Alors $f$ est de classe $\mathscr C^k$ sur $I$ ssi $\forall i \in \ninter{1}{n}$, $f_i$ est de classe $\mathscr C^k$. 
+
+    On a alors $\displaystyle \forall j \in \ninter{0}{k}, \, f^{(j)} = \sum_{i=1}^n f_i^{(j)}e_i$.
+\end{proposition}
+
+\idee{Récurrence sur $k$.}
+
+\begin{proof}
+    Par récurrence sur $k$. 
+
+    \uline{Initialisation :} c'est vrai pour $k = 1$ (vu en sup).
+
+    \uline{Hérédité :} supposons le pour toute fonction de classe $\mathscr C^{k - 1} $. Soit 
+    $f \in \mathscr C^k$. Donc $f \in \mathscr C^{k-1}$ ssi $\forall i, \, f_i \in \mathscr C^{k-1}$ 
+    et alors $\displaystyle \forall t \in I, \, f^{(k-1)}(t) = \sum_{i=1}^n f_i^{(k-1)}(t)e_i$.
+
+    Et alors en appliquant le cas $k = 1$, on a $f \in \mathscr C^k$ ssi $f^{(k-1)} \in \mathscr C^1$, 
+    ssi $\forall i, \, f_i^{(k-1)} \in \mathscr C^1$, ssi $\forall i, \, f_i \in \mathscr C^k$.
+\end{proof}
+
+\begin{proposition}{Structure de l'ensemble des fonctions de classe $\mathscr C^k$}{}
+
+    $\mathscr C^k(I, E)$ est un $\K$-espace vectoriel et
+    $\fonction{\varphi}{\mathscr C^k(I, E)}{\mathscr C^{k-1}(I, E)}{f}{f'}$ est linéaire.
+\end{proposition}
+
+\begin{proof}
+    Immédiate en regardant coordonnée par coordonnée.
+\end{proof}
+
+\subsection{Rappels : prolongements}
 
 \begin{theoreme}{Limite de la dérivée}{}
     Soit $f : [a, b] \to \R$ continue sur $[a, b]$ et dérivable sur $]a, b]$. 
@@ -475,10 +527,7 @@ a un DL2 mais n'est pas dérivable deux fois.
     Ce théorème se généralise aux fonctions de classe $\mathscr C^n$.
 \end{remarque}
 
-\begin{exemple}
-    \textbf{Exemple important !!}
-    Normalement il est juste, mais pas sûr à 100\%.
-
+\begin{exemple}[Classique à retenir]
     Soit $\fonction f \R \R x {\begin{cases}
         0 & \text{si } x \leqslant 0\\
         e^{-\frac{1}{x^2}} & \text{sinon}
@@ -510,81 +559,44 @@ a un DL2 mais n'est pas dérivable deux fois.
 
 \end{exemple}
 
+\subsection{Complément hors programme sur les courbes paramétrées}
 
-\subsection{Application de classe \texorpdfstring{$\mathscr C^k$}{Ck}}
+\subsubsection{Vocabulaire}
 
-\begin{definition}{Fonction de classe $\mathscr C^k$}{}
-    Soit $f : I \to E$ et $k \in \N, \, k \geqslant 2$. On dit que $f$ est de calasse 
-    $\mathscr C^k$ sur $I$ ssi $f, f', \ldots, f^{(k-1)}$ sont dérivables sur $I$ et $f^{(k)}$ est continue sur $I$.
+Soit $f : I \to E$.
+\begin{itemize}
+    \item Si $E = \R^2$, $f$ est appelée courbe plane
+    \item Si $E = \R^3$, $f$ est appelée courbe gauche
+\end{itemize}
 
-    On dit que $f$ est de classe $\mathscr C^\infty$ sur I ssi $f$ est de classe 
-    $\mathscr C^k$ pour tout $k \in \N$.
-\end{definition}
-
-\begin{proposition}{Classe $\mathscr C^k$ avec une base }{}
-    Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et soit
-    $\fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i}$ 
-    
-    où $f_i : I \to \K$.
-
-    Alors $f$ est de classe $\mathscr C^k$ sur $I$ ssi $\forall i \in \ninter{1}{n}$, $f_i$ est de classe $\mathscr C^k$, 
-    et on a alors $\displaystyle \forall j \in \ninter{0}{k}, \, f^{(j)} = \sum_{i=1}^n f_i^{(j)}e_i$.
-\end{proposition}
-
-\idee{Par récurrence sur $k$.}
-
-\begin{proof}
-    Par récurrence sur $k$. 
-
-    initialisation : $k = 1$ est vrai (fait précédemment).
-
-    Récurrence : supposons le pour toute fonction de classe $\mathscr C^{k - 1} $. Soit 
-    $f \in \mathscr C^k$. Donc $f \in \mathscr C^{k-1}$ ssi $\forall i, \, f_i \in \mathscr C^{k-1}$ 
-    et alors $\displaystyle \forall t \in I, \, f^{(k-1)}(t) = \sum_{i=1}^n f_i^{(k-1)}(t)e_i$.
-
-    Et alorsen appliquant le cas $k = 1$, on a $f \in \mathscr C^k$ ssi $f^{(k-1)} \in \mathscr C^1$, 
-    ssi $\forall i, \, f_i^{(k-1)} \in \mathscr C^1$, ssi $\forall i, \, f_i \in \mathscr C^k$.
-\end{proof}
-
-\begin{proposition}{Structure fonctions de classe $\mathscr C^k$}{}
-    $\mathscr C^k(I, E)$ est un $\K$-espace vectoriel et
-    $\fonction{}{\mathscr C^k(I, E)}{\mathscr C^{k-1}(I, E)}{f}{f'}$ est linéaire.
-\end{proposition}
-
-\begin{proof}
-    Immédiate en regardant coordonnée par coordonnée.
-\end{proof}
-
-\subsection{Complément Hors programme sur les courbes paramétrées}
-
-\subsubsection{Interprétation cinématique }
+\subsubsection{Interprétation cinématique}
 
 Soit $f \in \mathscr C^2(I, E)$. 
+Pour $t \in I$, $f'(t)$ est appelé vecteur vitesse à l'instant $t$ et $f''(t)$ est appelé vecteur accélération à l'instant $t$.
 
-pour $t \in I$, $f''(t)$ est le vecteur accélération à l'instant $t$.
-
-\subsubsection{Etude locale }
+\subsubsection{Étude locale}
 
 Soit $f \in \mathscr C^k(I, E), \, k \geqslant 2$ et $a \in I$. 
 
-On suppose qu'il existe $p \in \ninter 1 k$ tel que $f^{(p)}(a) \neq 0$ et
-on note alors $p^k$ le plus petit entier satisfaisant cela. 
+On suppose qu'il existe $p \in \ninter 1 k$ minimal tel que $f^{(p)}(a) \neq 0$.
 
-On suppose qu'il existe $q \in \ninter p k$ tel que $\left( f^{(p)}(a), f^{(q)}(a) \right)$ 
-est libre et on note $q^k$ le plus petit entier satisfaisant cela.
-
-Si $p = 1$ on dit que le point $f(a)$ est régulier. 
-
-Si $p = 1$ et $q = 2$, on dit que le point $f(a)$ est birégulier. 
-
-On montre que la droite tangeante à la courbe est dirigé par $f^{(p)}(a)$ et 
-on montre qu'il existe quatre types de points : 
+De plus, on suppose qu'il existe $q \in \ninter p k$ minimal tel que $\left( f^{(p)}(a), f^{(q)}(a) \right)$ 
+est libre.
 
 \begin{itemize}
-    \item $p$ impair, $q$ pair : point ordinaire.Toute droite passant par $f(a)$ traverse la courbe, sauf la tangeante.
-    \item $p$ impair, $q$ impair : point d'inflexion. Toute droite passant par $f(a)$ traverse la courbe. 
+    \item Si $p = 1$ on dit que le point $f(a)$ est régulier. 
+    \item Si $p = 1$ et $q = 2$, on dit que le point $f(a)$ est birégulier. 
+\end{itemize}
+
+\idee[-0.25cm]{Tout cela se démontrerait "facilement" avec des DL.}
+
+La droite tangeante à la courbe est dirigée par $f^{(p)}(a)$ et 
+il existe quatre types de points : 
+\begin{itemize}
+    \item $p$ impair, $q$ pair : point ordinaire, toute droite passant par $f(a)$ traverse alors la courbe, sauf la tangeante.
+    \item $p$ impair, $q$ impair : point d'inflexion, toute droite passant par $f(a)$ traverse alors la courbe. 
     \item $p$ pair, $q$ impair : point de rembroussement de première espèce. 
-    \item $p$ pair, $q$ pair : point de rembroussement de seconde espèce. Aucune droite ne traverse la courbe.
+    \item $p$ pair, $q$ pair : point de rembroussement de seconde espèce, aucune droite ne traverse la courbe.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -592,8 +604,7 @@ on montre qu'il existe quatre types de points :
   \includegraphics[height=22.em]{images/courbes.jpg}
 \end{figure}
 
-
-\subsubsection{Etude globale d'une courbe plane }
+\subsubsection{Étude globale d'une courbe plane }
 
 $E = \R^2$, $\fonction f I {\R^2} t {\begin{pmatrix} x(t) \\ y(t) \end{pmatrix}}$ $f$ de classe $\mathscr C^k, \, k \geqslant 1$.
 
@@ -609,9 +620,8 @@ $$\begin{array}{c|c}
     y(t) & \cdots \\    
 \end{array}$$
 
-
-\section{Intégration sur un segment }
-\subsection{Théorème définition }
+\section{Intégration sur un segment}
+\subsection{Théorème définition}
 
 \begin{theoreme}{Intégrale de $f \in \mathscr C^{pm}$ à valeurs dans un evn de dim finie}{}
     Soit $f : [a, b] \to E$ et $B = (e_1, \ldots, e_n)$ une base de $E$.
@@ -671,7 +681,7 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \subsection{Propriétés }
 
 
-\begin{proposition}{Linéarité de l'intégrale }{}
+\begin{proposition}{Linéarité de l'intégrale}{}
     L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et 
     $$ \fonction{}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) dt}$$ 
     est linéaire. 

@@ -6,7 +6,7 @@
 \begin{exercice}[Exercice 4 analyse]
 \begin{enumerate}
     \item Énoncer le théorème des accroissements finis.
-    \item Soit $f:[a,b]\longrightarrow\mathbb{R}$ et soit $x_{0}\in]a,b[$. 
+    \item Soit $f:[a,b]\longrightarrow\R$ et soit $x_{0}\in]a,b[$. 
         On suppose que $f$ est continue sur $[a, b]$ et que $f$ est dérivable sur $]a, x_{0}[$ et sur $]x_{0}, b[$.
         Démontrer que, si $f'$ admet une limite finie en $x_{0}$, alors $f$ est dérivable en $x_{0}$ et $f'(x_{0})=\lim_{x\rightarrow x_{0}}f'(x)$.
     \item Prouver que l'implication : ($f$ est dérivable en $x_{0}) \Rightarrow$ ($f'$ admet une limite finie en $x_{0}$) est fausse.
@@ -16,19 +16,19 @@
 
 % --- Exercice 2 (Source: Exercice 1) ---
 \begin{exercice}
-Étudier (prolongement, variations, courbes) sur $\mathbb{R}^{+}_*$ la fonction $x\mapsto x^{x}$.
+    Étudier (prolongement, variations, courbes) sur $\R^{+}_*$ la fonction $x\mapsto x^{x}$.
 \end{exercice}
 
 % --- Exercice 3 (Source: Exercice 2) ---
 \begin{exercice}
-Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un espace vectoriel normé de dimension finie, et continue en $a$.
-\begin{enumerate}
-    \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
-    \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
-    
-    \textit{On pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :}
-    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
-\end{enumerate}
+    Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un espace vectoriel normé de dimension finie, et continue en $a$.
+    \begin{enumerate}
+        \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
+        \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
+        
+        \textit{On pourra commencer par montrer que pour $t>0$ et $n\in\N^{*}$ on a :}
+        $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 3) ---
@@ -38,30 +38,30 @@ Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un esp
 
 % --- Exercice 5 (Source: Exercice 4) ---
 \begin{exercice}
-    Montrer que $t\mapsto e^{-\frac{1}{|t|}}$ est de classe $\mathcal{C}^{\infty}$ sur $\mathbb{R}$.
+    Montrer que $t\mapsto e^{-\frac{1}{|t|}}$ est de classe $\mathcal{C}^{\infty}$ sur $\R$.
 \end{exercice}
 
 % --- Exercice 6 (Source: Exercice 5) ---
 \begin{exercice}
-    Soit $A\in \mathcal{M}_{n}(\mathbb{R})$ et $\varphi\in \mathcal{F}(\mathbb{R},\mathbb{R})$ définie par $\forall t\in\mathbb{R}$, $\varphi(t)=\det(tA+I_{n})$.
+    Soit $A\in \mathcal{M}_{n}(\R)$ et $\varphi\in \mathcal{F}(\R,\R)$ définie par $\forall t\in\R$, $\varphi(t)=\det(tA+I_{n})$.
     Montrer que $\varphi$ est dérivable en 0 et que $\varphi'(0)=\text{Tr}(A)$.
 \end{exercice}
 
 % --- Exercice 7 (Source: Exercice 6) ---
 \begin{exercice}
-Soit $f$ dérivable sur $[a, b]$ à valeurs dans $\mathbb{R}$.
-\begin{enumerate}
-    \item On suppose que $f'(a)>0$ et $f'(b)<0$.
-        Montrer qu'il existe $c\in]a,b[$ vérifiant $f'(c)=0$.
+    Soit $f$ dérivable sur $[a, b]$ à valeurs dans $\R$.
+    \begin{enumerate}
+        \item On suppose que $f'(a)>0$ et $f'(b)<0$.
+            Montrer qu'il existe $c\in]a,b[$ vérifiant $f'(c)=0$.
 
-        \textit{Indication : On utilisera le fait que $f$ est continue sur le segment et on montrera qu'il n'est pas possible que ses deux extremums ne soient atteints qu'en $a$ et $b$.}
-    \item En déduire le théorème de Darboux : "Toute dérivée d'une fonction dérivable de $[a, b]$ dans $\mathbb{R}$ vérifie le théorème des valeurs intermédiaires".
-\end{enumerate}
+            \textit{Indication : On utilisera le fait que $f$ est continue sur le segment et on montrera qu'il n'est pas possible que ses deux extremums ne soient atteints qu'en $a$ et $b$.}
+        \item En déduire le théorème de Darboux : "Toute dérivée d'une fonction dérivable de $[a, b]$ dans $\R$ vérifie le théorème des valeurs intermédiaires".
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 7) ---
 \begin{exercice}
-    Soit $f\in \mathcal{C}^{1}([a,b],\mathbb{R})$ telle que $f'(a)=f'(b)$.
+    Soit $f\in \mathcal{C}^{1}([a,b],\R)$ telle que $f'(a)=f'(b)$.
     Montrer qu'il existe $c\in]a,b[$ tel que
     $$ f'(c)=\frac{f(c)-f(a)}{c-a} $$
     \textit{Indication : On définira $g:x\mapsto\frac{f(x)-f(a)}{x-a}$ prolongée par continuité sur $[a, b]$ et on montrera qu'elle atteint un de ses extremums en un point $c\in]a,b[$.}
@@ -73,7 +73,8 @@ Soit $f$ dérivable sur $[a, b]$ à valeurs dans $\mathbb{R}$.
     \item On pose $g(x)=e^{2x}$ et $h(x)=\frac{1}{1+x}$.
         Calculer, pour tout entier naturel $k$, la dérivée d'ordre $k$ des fonctions $g$ et $h$ sur leurs ensembles de définitions respectifs.
     \item On pose $f(x)=\frac{e^{2x}}{1+x}$.
-        En utilisant la formule de Leibniz, concernant la dérivée $n$-ième d'un produit de fonctions, déterminer, pour tout entier naturel $n$ et pour $x\in\mathbb{R}\setminus\{-1\}$, la valeur de $f^{(n)}(x)$.
+        En utilisant la formule de Leibniz, concernant la dérivée $n$-ième d'un produit de fonctions, 
+        déterminer, pour tout entier naturel $n$ et pour $x\in\R\setminus\{-1\}$, la valeur de $f^{(n)}(x)$.
     \item Démontrer, dans le cas général, la formule de Leibniz, utilisée dans la question précédente.
 \end{enumerate}
 \end{exercice}
@@ -86,81 +87,87 @@ Soit $f$ dérivable sur $[a, b]$ à valeurs dans $\mathbb{R}$.
 
 % --- Exercice 11 (Source: Exercice 9) ---
 \begin{exercice}
-    Calculer de deux manières différentes la dérivée $n$-ième de $x\mapsto x^{2n}=x^{n}.x^{n}$ pour calculer la valeur de $\displaystyle \sum_{k=0}^{n}\binom{n}{k}^{2}$.
+    Calculer de deux manières différentes la dérivée $n$-ième de $x\mapsto x^{2n}=x^{n}.x^{n}$ 
+    pour calculer la valeur de $\displaystyle \sum_{k=0}^{n}\binom{n}{k}^{2}$.
 \end{exercice}
 
 \subsection{Intégration sur un segment}
 
 % --- Exercice 12 (Source: EXERCICE 56 analyse) ---
 \begin{exercice}
-On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
-\begin{enumerate}
-    \item Montrer que $H$ est $\mathcal{C}^{1}$ sur $]1,+\infty[$ et calculer sa dérivée.
-    \item Montrer que la fonction $u$ définie par $u(x)=\frac{1}{\ln x}-\frac{1}{x-1}$ admet une limite finie en $x=1$.
-    \item En utilisant la fonction $u$ de la question 2, calculer la limite en $1^+$ de la fonction $H$.
-\end{enumerate}
+    On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{\dt}{\ln t}$.
+    \begin{enumerate}
+        \item Montrer que $H$ est $\mathcal{C}^{1}$ sur $]1,+\infty[$ et calculer sa dérivée.
+        \item Montrer que la fonction $u$ définie par $u(x)=\frac{1}{\ln x}-\frac{1}{x-1}$ admet une limite finie en $x=1$.
+        \item En utilisant la fonction $u$ de la question 2, calculer la limite en $1^+$ de la fonction $H$.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 13 (Source: Exercice 10) ---
 \begin{exercice}
-    Soit $f\in \mathcal{C}^{2}(\mathbb{R},\mathbb{R})$ telle que $f+f''>0$. Démontrer que
-    $$ \forall x\in\mathbb{R}, \quad f(x)+f(x+\pi)\ge0 $$
-    \textit{Indication : considérer $\displaystyle \int_{0}^{\pi}\sin(t)(f(t)+f''(t))dt$.}
+    Soit $f\in \mathcal{C}^{2}(\R,\R)$ telle que $f+f''>0$. Démontrer que
+    $$ \forall x\in\R, \quad f(x)+f(x+\pi)\ge0 $$
+    \textit{Indication : considérer $\displaystyle \int_{0}^{\pi}\sin(t)(f(t)+f''(t))\dt$.}
 \end{exercice}
 
 % --- Exercice 14 (Source: Exercice 11) ---
 \begin{exercice}
-    Déterminer $\displaystyle \lim_{x\rightarrow0^{+}}\int_{x}^{2x}\frac{e^{t}}{\arcsin t}dt$.
+    Déterminer $\displaystyle \lim_{x\rightarrow0^{+}}\int_{x}^{2x}\frac{e^{t}}{\arcsin t}\dt$.
 \end{exercice}
 
 % --- Exercice 15 (Source: Exercice 12) ---
 \begin{exercice}
-    Étudier la fonction définie par $\displaystyle f(x)=\int_{x}^{x^{2}}\frac{dt}{\ln t}$.
+    Étudier la fonction définie par $\displaystyle f(x)=\int_{x}^{x^{2}}\frac{\dt}{\ln t}$.
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 13) ---
 \begin{exercice}
-    Après avoir montré son existence, en utilisant un changement de variable affine échangeant les bornes, calculer $\displaystyle \int_{0}^{\pi}\frac{x}{1+\sin x}dx$.
+    Après avoir montré son existence, en utilisant un changement de variable affine échangeant les bornes, 
+    calculer $\displaystyle \int_{0}^{\pi}\frac{x}{1+\sin x}\dx$.
 \end{exercice}
 
 % --- Exercice 17 (Source: Exercice 14) ---
 \begin{exercice}
-    Soit $f$ de classe $\mathcal{C}^{1}$ sur $\mathbb{R}^{+}$, strictement croissante et réalisant une bijection de $\mathbb{R}^{+}$ sur $\mathbb{R}^{+}$.
+    Soit $f$ de classe $\mathcal{C}^{1}$ sur $\R^{+}$, strictement croissante et réalisant une bijection de $\R^{+}$ sur $\R^{+}$.
     Montrer que pour tout $x\geqslant0$,
-    $$ xf(x)=\int_{0}^{x}f(t)dt+\int_{0}^{f(x)}f^{-1}(t)dt $$
+    $$ xf(x)=\int_{0}^{x}f(t)\dt+\int_{0}^{f(x)}f^{-1}(t)\dt $$
     \textit{Indication : Dériver. Interprétation géométrique ?}
 \end{exercice}
 
 % --- Exercice 18 (Source: Exercice 15) ---
 \begin{exercice}
     Soit $f\in \mathcal{C}^{2}([a,b],E)$ telle que $f(a)=f(b)=0$. Montrer que
-    $$ \left\| \int_{a}^{b}f(t)dt \right\| \leqslant \frac{(b-a)^{3}}{12} \sup_{[a,b]} \|f''(t)\| $$
-    Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)dt$.
+    $$ \left\| \int_{a}^{b}f(t)\dt \right\| \leqslant \frac{(b-a)^{3}}{12} \sup_{[a,b]} \|f''(t)\| $$
+    Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)\dt$.
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 16) ---
 \begin{exercice}
-Soit $A\in \mathcal{M}_{n}(\mathbb{C})$. Calculer de deux manières différentes, pour $r>0$ assez grand,
-$$ I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta $$
-Et en déduire le théorème de Cayley-Hamilton.
-\begin{enumerate}
-    \item Commencer par montrer que pour $r>0$ assez grand $\left(re^{i\theta}I_{n}-A\right)$ est bien inversible pour tout $\theta$, ce qui assure bien l'existence de $I(r)$.
-        On supposera dans toute la suite que $r>0$ est assez grand pour que $I(r)$ existe.
-    \item 
+    Soit $A\in \mathcal{M}_{n}(\C)$. Calculer de deux manières différentes, pour $r>0$ assez grand,
+    $$ I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta $$
+    Et en déduire le théorème de Cayley-Hamilton.
     \begin{enumerate}
-        \item Utiliser la relation entre inverse et comatrice pour montrer que $\ds I(r)=\int_{0}^{2\pi}re^{i\theta} \text{Com}\left(re^{i\theta}I_n-A\right)^{T} d\theta$.
-        \item En déduire que pour tous $i,j\in\{1,\dots,n\}$ il existe un polynôme $Q_{ij}$ tel que $\ds (I(r))_{i,j}=\int_{0}^{2\pi}re^{i\theta}Q_{i,j}\left(re^{i\theta}\right) d\theta$.
-        \item En déduire que $I(r)=0$.
+        \item Commencer par montrer que pour $r>0$ assez grand $\left(re^{i\theta}I_{n}-A\right)$ e
+            st bien inversible pour tout $\theta$, ce qui assure bien l'existence de $I(r)$.
+            On supposera dans toute la suite que $r>0$ est assez grand pour que $I(r)$ existe.
+        \item 
+        \begin{enumerate}
+            \item Utiliser la relation entre inverse et comatrice pour montrer que 
+                $\ds I(r)=\int_{0}^{2\pi}re^{i\theta} \text{Com}\left(re^{i\theta}I_n-A\right)^{T} d\theta$.
+            \item En déduire que pour tous $i,j\in\{1,\dots,n\}$ il existe un polynôme $Q_{ij}$ tel que 
+                $\ds (I(r))_{i,j}=\int_{0}^{2\pi}re^{i\theta}Q_{i,j}\left(re^{i\theta}\right) d\theta$.
+            \item En déduire que $I(r)=0$.
+        \end{enumerate}
+        \item 
+        \begin{enumerate}
+            \item Montrer que pour tout matrice de norme assez petite, $\ds (I_{n}-B)^{-1}=\sum_{k=0}^{+ \infty}B^{k}$.
+            \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que :
+                $$ I(r)=\sum_{k=0}^{+ \infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta $$
+                (note: correction dans l'exposant de $r$ selon le contexte classique).
+            \item En notant le polynôme caractéristique de $A$, $\ds\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, 
+                conclure en remarquant que $\ds \int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
+        \end{enumerate}
     \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Montrer que pour tout matrice de norme assez petite, $\ds (I_{n}-B)^{-1}=\sum_{k=0}^{+ \infty}B^{k}$.
-        \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que :
-            $$ I(r)=\sum_{k=0}^{+ \infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta $$
-            (note: correction dans l'exposant de $r$ selon le contexte classique).
-        \item En notant le polynôme caractéristique de $A$, $\ds\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, conclure en remarquant que $\ds \int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
-    \end{enumerate}
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 20 (Source: Exercice 17) ---
@@ -177,7 +184,7 @@ Et en déduire le théorème de Cayley-Hamilton.
 % --- Exercice 22 (Source: Exercice 19) ---
 \begin{exercice}
     Soit $x$ réel différent de -1 et 1.
-    Après avoir vérifié son existence, utiliser les sommes de Riemann pour calculer $\ds \int_{0}^{2\pi}\ln(x^{2}-2x \cos t + 1)dt$.
+    Après avoir vérifié son existence, utiliser les sommes de Riemann pour calculer $\ds \int_{0}^{2\pi}\ln(x^{2}-2x \cos t + 1)\dt$.
 \end{exercice}
 
 \newpage
@@ -320,13 +327,13 @@ Et en déduire le théorème de Cayley-Hamilton.
 
 % --- Correction 13 (Source: Exercice 10) ---
 \begin{correction}{13}
-    Posons $I = \int_0^\pi (f(t)+f''(t)) \sin t dt$.
+    Posons $I = \int_0^\pi (f(t)+f''(t)) \sin t \dt$.
     Par IPP (deux fois) sur $\int f'' \sin$ :
     \begin{align*}
-        \int_0^\pi f''(t) \sin t dt &= [f'(t)\sin t]_0^\pi - \int_0^\pi f'(t) \cos t dt \\
-        &= 0 - ([f(t)\cos t]_0^\pi - \int_0^\pi f(t)(-\sin t)dt) \\
-        &= - (-f(\pi) - f(0) + \int_0^\pi f(t) \sin t dt) \\
-        &= f(\pi)+f(0) - \int_0^\pi f(t) \sin t dt
+        \int_0^\pi f''(t) \sin t \dt &= [f'(t)\sin t]_0^\pi - \int_0^\pi f'(t) \cos t \dt \\
+        &= 0 - ([f(t)\cos t]_0^\pi - \int_0^\pi f(t)(-\sin t)\dt) \\
+        &= - (-f(\pi) - f(0) + \int_0^\pi f(t) \sin t \dt) \\
+        &= f(\pi)+f(0) - \int_0^\pi f(t) \sin t \dt
     \end{align*}
     Donc $I = \int f \sin + f(\pi)+f(0) - \int f \sin = f(\pi)+f(0)$.
 
@@ -339,14 +346,14 @@ Et en déduire le théorème de Cayley-Hamilton.
 % --- Correction 14 (Source: Exercice 11) ---
 \begin{correction}{14}
 
-    Soit $f(x) = \int_x^{2x} \frac{e^t}{\arcsin t} dt$.
+    Soit $f(x) = \int_x^{2x} \frac{e^t}{\arcsin t} \dt$.
     Quand $t \to 0$, $\frac{e^t}{\arcsin t} \sim \frac{1}{t}$.
 
-    On compare avec $g(x) = \int_x^{2x} \frac{1}{t} dt = [\ln t]_x^{2x} = \ln 2$.
-    $f(x) - g(x) = \int_x^{2x} (\frac{e^t}{\arcsin t} - \frac{1}{t}) dt$
+    On compare avec $g(x) = \int_x^{2x} \frac{1}{t} \dt = [\ln t]_x^{2x} = \ln 2$.
+    $f(x) - g(x) = \int_x^{2x} (\frac{e^t}{\arcsin t} - \frac{1}{t}) \dt$
 
     La fonction $h(t) = \frac{e^t}{\arcsin t} - \frac{1}{t}$ se prolonge par continuité en 0 (limite 1).
-    Donc $\int_x^{2x} h(t) dt \approx x \cdot h(0) \to 0$.
+    Donc $\int_x^{2x} h(t) \dt \approx x \cdot h(0) \to 0$.
 
     Ainsi, $\lim_{x\to 0^+} f(x) = \ln 2$.
 \end{correction}
@@ -354,19 +361,19 @@ Et en déduire le théorème de Cayley-Hamilton.
 % --- Correction 16 (Source: Exercice 13) ---
 \begin{correction}{16}
 
-    $I = \int_0^\pi \frac{x}{1+\sin x} dx$.
+    $I = \int_0^\pi \frac{x}{1+\sin x} \dx$.
 
-    Changement de variable $u = \pi - x$. $dx = -du$.
+    Changement de variable $u = \pi - x$. $\dx = -\dif u$.
     Bornes : $\pi \to 0$.
     
-    $$I = \int_\pi^0 \frac{\pi-u}{1+\sin(\pi-u)} (-du) = \int_0^\pi \frac{\pi-u}{1+\sin u} du$$
+    $$I = \int_\pi^0 \frac{\pi-u}{1+\sin(\pi-u)} (-\dif u) = \int_0^\pi \frac{\pi-u}{1+\sin u} \dif u$$
 
-    $$2I = \int_0^\pi \frac{x + \pi - x}{1+\sin x} dx = \pi \int_0^\pi \frac{1}{1+\sin x} dx$$
+    $$2I = \int_0^\pi \frac{x + \pi - x}{1+\sin x} \dx = \pi \int_0^\pi \frac{1}{1+\sin x} \dx$$
 
-    Calcul de $J = \int_0^\pi \frac{1}{1+\sin x} dx$.
+    Calcul de $J = \int_0^\pi \frac{1}{1+\sin x} \dx$.
     On peut utiliser $1+\sin x = 1 + \cos(\frac{\pi}{2}-x) = 2 \cos^2(\frac{\pi}{4}-\frac{x}{2})$.
     \begin{align*}
-        J &= \frac{1}{2} \int_0^\pi \frac{dx}{\cos^2(\frac{\pi}{4}-\frac{x}{2})} &\text{Primitive} \tan \\
+        J &= \frac{1}{2} \int_0^\pi \frac{\dx}{\cos^2(\frac{\pi}{4}-\frac{x}{2})} &\text{Primitive} \tan \\
           &= [\tan(\frac{x}{2}-\frac{\pi}{4})]_0^\pi \\
           &= \tan(\frac{\pi}{4}) - \tan(-\frac{\pi}{4}) \\
           &= 1 - (-1) \\
@@ -385,9 +392,9 @@ Et en déduire le théorème de Cayley-Hamilton.
     On compare la somme à $S_n = \sum_{k=1}^n \sin(k/n) \frac{k}{n^2} = \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \sin(\frac{k}{n})$.
 
     C'est une somme de Riemann pour la fonction $x \mapsto x \sin x$ sur $[0,1]$.
-    Elle converge vers $\int_0^1 x \sin x dx$.
+    Elle converge vers $\int_0^1 x \sin x \dx$.
 
-    IPP : $[-x\cos x]_0^1 + \int_0^1 \cos x dx = -\cos 1 + [\sin x]_0^1 = \sin 1 - \cos 1$.
+    IPP : $[-x\cos x]_0^1 + \int_0^1 \cos x \dx = -\cos 1 + [\sin x]_0^1 = \sin 1 - \cos 1$.
 
     Majoration de l'erreur : $|\sin u - u| \le \frac{|u|^3}{6}$.
 
@@ -402,14 +409,14 @@ Et en déduire le théorème de Cayley-Hamilton.
 
     La somme est une somme de Riemann pour $x \mapsto x \cos(\pi x)$ sur $[0,1]$.
 
-    L'intégrale est $\int_0^1 t \cos(\pi t) dt = \dots = -2/\pi^2$.
+    L'intégrale est $\int_0^1 t \cos(\pi t) \dt = \dots = -2/\pi^2$.
 
     Donc $S_n \sim n^2 \times (-2/\pi^2)$.
 \end{correction}
 
 % --- Correction 22 (Source: Exercice 19) ---
 \begin{correction}{22}
-    $I = \int_0^{2\pi} \ln(x^2 - 2x \cos t + 1) dt$.
+    $I = \int_0^{2\pi} \ln(x^2 - 2x \cos t + 1) \dt$.
 
     Sommes de Riemann : 
     \begin{math}

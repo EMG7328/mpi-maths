@@ -3,290 +3,308 @@
 \subsection{Topologie}
 % --- Exercice 1 ---
 \begin{exercice}
-Montrer que $\mathbb{Z}$ est fermé dans $\mathbb{R}$ de 4 manières différentes :
-\begin{enumerate}
-    \item En revenant à la définition (complémentaire ouvert).
-    \item Par la caractérisation séquentielle.
-    \item En voyant le complémentaire comme union d'ouverts.
-    \item En considérant $x \mapsto \sin(\pi x)$.
-\end{enumerate}
+    Montrer que $\Z$ est fermé dans $\R$ de 4 manières différentes :
+    \begin{enumerate}
+        \item En revenant à la définition (complémentaire ouvert).
+        \item Par la caractérisation séquentielle.
+        \item En voyant le complémentaire comme union d'ouverts.
+        \item En considérant $x \mapsto \sin(\pi x)$.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: EXERCICE 34 analyse) ---
 \begin{exercice}[Exercice 34 Analyse]
-Soit $A$ une partie non vide d'un espace vectoriel normé $E$.
-\begin{enumerate}
-    \item Rappeler la définition d'un point adhérent à $A$, en termes de voisinages ou de boules.
-    \item Démontrer que : $x \in \overline{A} \iff \exists (x_{n})_{n \in \mathbb{N}}$ telle que, $\forall n \in \mathbb{N}, x_{n} \in A$ et $\lim_{n \rightarrow +\infty} x_{n} = x$.
-    \item Démontrer que si $A$ est un sous-espace vectoriel de $E$, alors $\overline{A}$ est un sous-espace vectoriel de $E$.
-    \item Démontrer que si $A$ est convexe alors $\overline{A}$ est convexe.
-\end{enumerate}
+    Soit $A$ une partie non vide d'un espace vectoriel normé $E$.
+    \begin{enumerate}
+        \item Rappeler la définition d'un point adhérent à $A$, en termes de voisinages ou de boules.
+        \item Démontrer que : $x \in \overline{A} \iff \exists (x_{n})_{n \in \N}$ telle que, 
+            $\forall n \in \N, x_{n} \in A$ et $\lim_{n \rightarrow +\infty} x_{n} = x$.
+        \item Démontrer que si $A$ est un sous-espace vectoriel de $E$, alors $\overline{A}$ est un sous-espace vectoriel de $E$.
+        \item Démontrer que si $A$ est convexe alors $\overline{A}$ est convexe.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 3 (Source: EXERCICE 44 analyse) ---
 \begin{exercice}[Exercice 44 Analyse]
-Soit $E$ un espace vectoriel normé. Soient $A$ et $B$ deux parties non vides de $E$.
-\begin{enumerate}
-    \item 
+    Soit $E$ un espace vectoriel normé. Soient $A$ et $B$ deux parties non vides de $E$.
     \begin{enumerate}
-        \item Rappeler la caractérisation de l'adhérence d'un ensemble à l'aide des suites.
-        \item Montrer que $A \subset B \Rightarrow \overline{A} \subset \overline{B}$.
+        \item 
+        \begin{enumerate}
+            \item Rappeler la caractérisation de l'adhérence d'un ensemble à l'aide des suites.
+            \item Montrer que $A \subset B \Rightarrow \overline{A} \subset \overline{B}$.
+        \end{enumerate}
+        \item Montrer que $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
+        \item 
+        \begin{enumerate}
+            \item Montrer que $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$.
+            \item Montrer à l'aide d'un exemple que l'autre inclusion n'est pas forcément vérifiée (on pourra prendre $E=\R$).
+        \end{enumerate}
     \end{enumerate}
-    \item Montrer que $\overline{A \cup B} = \overline{A} \cup \overline{B}$.
-    \item 
-    \begin{enumerate}
-        \item Montrer que $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$.
-        \item Montrer à l'aide d'un exemple que l'autre inclusion n'est pas forcément vérifiée (on pourra prendre $E=\mathbb{R}$).
-    \end{enumerate}
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 4 (Source: EXERCICE 45 analyse) ---
 \begin{exercice}[Exercice 45 Analyse]
-Les questions 1 et 2 sont indépendantes. Soit $E$ un espace vectoriel normé. Soit $A$ une partie non vide de $E$. On note $\overline{A}$ l'adhérence de $A$.
-\begin{enumerate}
-    \item 
+    Les questions 1 et 2 sont indépendantes. Soit $E$ un espace vectoriel normé. 
+    Soit $A$ une partie non vide de $E$. On note $\overline{A}$ l'adhérence de $A$.
     \begin{enumerate}
-        \item Donner la caractérisation séquentielle de $\overline{A}$.
-        \item Prouver que, si $A$ est convexe, alors $\overline{A}$ est convexe.
+        \item 
+        \begin{enumerate}
+            \item Donner la caractérisation séquentielle de $\overline{A}$.
+            \item Prouver que, si $A$ est convexe, alors $\overline{A}$ est convexe.
+        \end{enumerate}
+        \item On pose $\forall x \in E, d_{A}(x) = \inf_{a \in A} \|x-a\|$.
+        \begin{enumerate}
+            \item Soit $x \in E$. Prouver que $d_{A}(x) = 0 \Rightarrow x \in \overline{A}$.
+            \item On suppose que $A$ est fermée et que, $\forall (x,y) \in E^{2}, \forall t \in [0,1], d_{A}(tx+(1-t)y) \leqslant t d_{A}(x) + (1-t) d_{A}(y)$. 
+                Prouver que $A$ est convexe.
+        \end{enumerate}
     \end{enumerate}
-    \item On pose $\forall x \in E, d_{A}(x) = \inf_{a \in A} \|x-a\|$.
-    \begin{enumerate}
-        \item Soit $x \in E$. Prouver que $d_{A}(x) = 0 \Rightarrow x \in \overline{A}$.
-        \item On suppose que $A$ est fermée et que, $\forall (x,y) \in E^{2}, \forall t \in [0,1], d_{A}(tx+(1-t)y) \leqslant t d_{A}(x) + (1-t) d_{A}(y)$. Prouver que $A$ est convexe.
-    \end{enumerate}
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 5 (Source: Exercice 2) ---
 \begin{exercice}
-Soit $A$ une partie non vide de $E$ un espace vectoriel normé. On note pour $x \in E$, $d_{A}(x)$ la distance de $x$ à $A$.
-\begin{enumerate}
-    \item Montrer que la partie formée des éléments de $E$ dont la distance à $A$ est nulle est l'adhérence de $A$.
-    \item En déduire que si $A$ et $B$ sont deux parties de $E$, on a $d_{A} = d_{B}$ si et seulement si $A$ et $B$ ont même adhérence.
-    \item On note $\mathcal{F}$ l'ensemble des fermés non vides de $E$. Montrer que l'application $A \mapsto d_{A}$ de $\mathcal{F}$ vers $\mathcal{F}(E, \mathbb{R})$ est injective.
-\end{enumerate}
+    Soit $A$ une partie non vide de $E$ un espace vectoriel normé. On note pour $x \in E$, $d_{A}(x)$ la distance de $x$ à $A$.
+    \begin{enumerate}
+        \item Montrer que la partie formée des éléments de $E$ dont la distance à $A$ est nulle est l'adhérence de $A$.
+        \item En déduire que si $A$ et $B$ sont deux parties de $E$, on a $d_{A} = d_{B}$ si et seulement si $A$ et $B$ ont même adhérence.
+        \item On note $\mathcal{F}$ l'ensemble des fermés non vides de $E$. 
+            Montrer que l'application $A \mapsto d_{A}$ de $\mathcal{F}$ vers $\mathcal{F}(E, \R)$ est injective.
+    \end{enumerate}
 \end{exercice}
 
 \subsection{Limites et continuité d'une application}
 % --- Exercice 6 (Source: EXERCICE 35 analyse) ---
 \begin{exercice}[Exercice 35 Analyse]
-$E$ et $F$ désignent deux espaces vectoriels normés.
-\begin{enumerate}
-    \item Soient $f$ une application de $E$ dans $F$ et $a$ un point de $E$. On considère les propositions suivantes :
-    \begin{itemize}
-        \item P1. $f$ est continue en $a$.
-        \item P2. Pour toute suite $(x_{n})$ d'éléments de $E$ telle que $\lim_{n \rightarrow +\infty} x_{n} = a$, alors $\lim_{n \rightarrow +\infty} f(x_{n}) = f(a)$.
-    \end{itemize}
-    Prouver que les propositions P1 et P2 sont équivalentes.
-    \item Soit $A$ une partie dense d'un sous-espace vectoriel normé $E$, et soient $f$ et $g$ deux applications continues de $E$ dans $F$. Démontrer que si, pour tout $x \in A$, $f(x)=g(x)$, alors $f=g$.
-\end{enumerate}
+    $E$ et $F$ désignent deux espaces vectoriels normés.
+    \begin{enumerate}
+        \item Soient $f$ une application de $E$ dans $F$ et $a$ un point de $E$. On considère les propositions suivantes :
+        \begin{itemize}
+            \item P1. $f$ est continue en $a$.
+            \item P2. Pour toute suite $(x_{n})$ d'éléments de $E$ telle que $\lim_{n \rightarrow +\infty} x_{n} = a$, 
+                alors $\lim_{n \rightarrow +\infty} f(x_{n}) = f(a)$.
+        \end{itemize}
+            Prouver que les propositions P1 et P2 sont équivalentes.
+        \item Soit $A$ une partie dense d'un sous-espace vectoriel normé $E$, et soient $f$ et $g$ deux applications continues de $E$ dans $F$. 
+            Démontrer que si, pour tout $x \in A$, $f(x)=g(x)$, alors $f=g$.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 7 (Source: EXERCICE 41 analyse) ---
 \begin{exercice}[Exercice 41 Analyse]
-Énoncer quatre théorèmes différents ou méthodes permettant de prouver qu'une partie d'un espace vectoriel normé est fermée et pour chacun d'eux, donner un exemple concret d'utilisation dans $\mathbb{R}^{2}$. \\
+    Énoncer quatre théorèmes différents ou méthodes permettant de prouver qu'une partie d'un espace vectoriel normé est fermée,
+    et pour chacun d'eux, donner un exemple concret d'utilisation dans $\R^{2}$. \\
 
-\textit{Remarques :}
-1. On utilisera au moins une fois des suites.
-2. On pourra utiliser au plus une fois le passage au complémentaire.
-3. Ne pas utiliser le fait que $\mathbb{R}^{2}$ et l'ensemble vide sont des parties ouvertes et fermées.
+    \textit{Remarques :}
+    1. On utilisera au moins une fois des suites.
+    2. On pourra utiliser au plus une fois le passage au complémentaire.
+    3. Ne pas utiliser le fait que $\R^{2}$ et l'ensemble vide sont des parties ouvertes et fermées.
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 3) ---
 \begin{exercice}
-Étudier la continuité en $(0,0)$ de l'application de $\mathbb{R}^{2}$ dans $\mathbb{R}$ définie par :
-$$ f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
+    Étudier la continuité en $(0,0)$ de l'application de $\R^{2}$ dans $\R$ définie par :
+    $$ f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
 \end{exercice}
 
 % --- Exercice 9 (Source: Exercice 4) ---
 \begin{exercice}
-Étudier la continuité en $(0,0)$ de l'application de $\mathbb{R}^{2}$ dans $\mathbb{R}$ définie par :
-$$ f(x,y) = \begin{cases} \frac{\sqrt{|xy|}}{\sqrt{|x|+|y|}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
+    Étudier la continuité en $(0,0)$ de l'application de $\R^{2}$ dans $\R$ définie par :
+    $$ f(x,y) = \begin{cases} \frac{\sqrt{|xy|}}{\sqrt{|x|+|y|}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
 \end{exercice}
 
 % --- Exercice 10 (Source: Exercice 5) ---
 \begin{exercice}
-On considère $E=\mathbb{R}^{2}$. Justifier la continuité sur $\mathbb{R}^{2}$ des applications de $\mathbb{R}^{2}$ dans $\mathbb{R}$ définies par :
-\begin{itemize}
-    \item $f(x,y) = \begin{cases} \frac{x^{3}+y^{3}}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}$
-    \item $g(x,y) = \begin{cases} \frac{x^{2}y^{2}}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}$
-    \item $h(x,y) = \begin{cases} \frac{\sin(x)-\sin(y)}{x-y} & \text{si } x \neq y \\ \cos(x) & \text{sinon} \end{cases}$
-\end{itemize}
-\textit{Indication :} On commencera par remarquer que $\displaystyle h(x,y) = \int_{0}^{1} \cos((x-y)t+y) dt$ et on en déduira que $h$ est lipschitzienne.
+    On considère $E=\R^{2}$. Justifier la continuité sur $\R^{2}$ des applications de $\R^{2}$ dans $\R$ définies par :
+    \begin{itemize}
+        \item $f(x,y) = \begin{cases} \frac{x^{3}+y^{3}}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}$
+        \item $g(x,y) = \begin{cases} \frac{x^{2}y^{2}}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}$
+        \item $h(x,y) = \begin{cases} \frac{\sin(x)-\sin(y)}{x-y} & \text{si } x \neq y \\ \cos(x) & \text{sinon} \end{cases}$
+    \end{itemize}
+    \textit{Indication :} On commencera par remarquer que $\displaystyle h(x,y) = \int_{0}^{1} \cos((x-y)t+y) \dt$
+    et on en déduira que $h$ est lipschitzienne.
 \end{exercice}
 
 % --- Exercice 11 (Source: Exercice 6) ---
 \begin{exercice}
-Soit $(E, \| \cdot \|)$ un espace vectoriel normé et $f: E \rightarrow E$ définie par $f(x) = \frac{1}{1+\|x\|}x$.
+    Soit $(E, \| \cdot \|)$ un espace vectoriel normé et $f: E \rightarrow E$ définie par $f(x) = \frac{1}{1+\|x\|}x$.
 
-Montrer que $f$ est un homéomorphisme de $E$ sur la boule unité ouverte $B(0,1)$, c'est-à-dire réalise une bijection de $E$ sur $B(0,1)$, continue ainsi que sa réciproque $f^{-1}$.
-Résoudre pour cela l'équation $f(x)=y$ pour expliciter $f^{-1}$.
+    Montrer que $f$ est un homéomorphisme de $E$ sur la boule unité ouverte $B(0,1)$, 
+    c'est-à-dire réalise une bijection de $E$ sur $B(0,1)$, continue ainsi que sa réciproque $f^{-1}$.
+    Résoudre pour cela l'équation $f(x)=y$ pour expliciter $f^{-1}$.
 \end{exercice}
 
 % --- Exercice 12 (Source: Exercice 7) ---
 \begin{exercice}
-Déterminer les applications $f: \mathbb{R}^{+} \rightarrow \mathbb{R}$ continues vérifiant pour tout $x \in \mathbb{R}^{+}$, $f(x^{2})=f(x)$.
-On utilisera le fait que pour tout naturel $n$ et tout $x \in \mathbb{R}^{+}$, $f(x) = f(x^{\frac{1}{n}})$. (Attention, l'énoncé suggère $x^{1/2^n}$ plutôt).
+    Déterminer les applications $f: \R^{+} \rightarrow \R$ continues vérifiant pour tout $x \in \R^{+}$, $f(x^{2})=f(x)$.
+    On utilisera le fait que pour tout naturel $n$ et tout $x \in \R^{+}$, $f(x) = f(x^{\frac{1}{n}})$. 
+    (Attention, l'énoncé suggère $x^{1/2^n}$ plutôt).
 \end{exercice}
 
 % --- Exercice 13 (Source: Exercice 8) ---
 \begin{exercice}
-Dans $E=\mathbb{R}^{n}$ euclidien pour le produit scalaire usuel, justifier la continuité de l'application $E \times E \rightarrow \mathbb{R}$ définie par $(x,y) \mapsto \|x\| \cdot \|y\| - |\langle x | y \rangle|$.
-En déduire que l'ensemble $\{(x,y) \in E \times E, (x,y) \text{ libre}\}$ est un ouvert de $E \times E$.
+    Dans $E=\R^{n}$ euclidien pour le produit scalaire usuel, justifier la continuité de l'application $E \times E \rightarrow \R$ 
+    définie par $(x,y) \mapsto \|x\| \cdot \|y\| - |\langle x | y \rangle|$.
+    En déduire que l'ensemble $\{(x,y) \in E \times E, (x,y) \text{ libre}\}$ est un ouvert de $E \times E$.
 \end{exercice}
 
 % --- Exercice 14 (Source: Exercice 9) ---
 \begin{exercice}
-On munit $M_{n}(\mathbb{R})$ de la norme $N(A) = \max \{|a_{ij}|, i,j \in \{1,\dots,n\}\}$.
-\begin{enumerate}
-    \item En identifiant $M_{n}(\mathbb{R})$ à $\mathbb{K}^{n^{2}}$, justifier que $N$ est bien une norme.
-    \item On fixe une matrice $A$ de $M_{n}(\mathbb{R})$. Montrer que les applications suivantes sont continues :
-    $$ M \mapsto A+M, \quad M \mapsto AM, \quad M \mapsto MA $$
-    \item Montrer que $GL_{n}(\mathbb{R})$ est un ouvert dense de $M_{n}(\mathbb{R})$.
-    \item Montrer que $SL_{n}(\mathbb{R})$ est un fermé d'intérieur vide de $M_{n}(\mathbb{R})$.
-\end{enumerate}
+    On munit $M_{n}(\R)$ de la norme $N(A) = \max \{|a_{ij}|, i,j \in \{1,\dots,n\}\}$.
+    \begin{enumerate}
+        \item En identifiant $M_{n}(\R)$ à $\K^{n^{2}}$, justifier que $N$ est bien une norme.
+        \item On fixe une matrice $A$ de $M_{n}(\R)$. Montrer que les applications suivantes sont continues :
+            $$ M \mapsto A+M, \quad M \mapsto AM, \quad M \mapsto MA $$
+        \item Montrer que $GL_{n}(\R)$ est un ouvert dense de $M_{n}(\R)$.
+        \item Montrer que $SL_{n}(\R)$ est un fermé d'intérieur vide de $M_{n}(\R)$.
+    \end{enumerate}
 \end{exercice}
 
 \subsection{Continuité d'une application linéaire}
 % --- Exercice 15 (Source: EXERCICE 36 analyse) ---
 \begin{exercice}[Exercice 36 Analyse]
-Soient $E, F$ deux espaces vectoriels normés sur le corps $\mathbb{R}$.
-\begin{enumerate}
-    \item Démontrer que si $f$ est une application linéaire de $E$ dans $F$, alors les propriétés suivantes sont deux à deux équivalentes :
-    \begin{itemize}
-        \item P1. $f$ est continue sur $E$.
-        \item P2. $f$ est continue en $0_{E}$.
-        \item P3. $\exists k > 0$ tel que $\forall x \in E, \|f(x)\|_{F} \leqslant k \|x\|_{E}$.
-    \end{itemize}
-    \item Soit $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\mathbb{R}$ muni de la norme définie par $\|f\|_{\infty} = \sup_{x \in [0,1]} |f(x)|$.
+    Soient $E, F$ deux espaces vectoriels normés sur le corps $\R$.
+    \begin{enumerate}
+        \item Démontrer que si $f$ est une application linéaire de $E$ dans $F$, alors les propriétés suivantes sont deux à deux équivalentes :
+        \begin{itemize}
+            \item P1. $f$ est continue sur $E$.
+            \item P2. $f$ est continue en $0_{E}$.
+            \item P3. $\exists k > 0$ tel que $\forall x \in E, \|f(x)\|_{F} \leqslant k \|x\|_{E}$.
+        \end{itemize}
+        \item Soit $E$ l'espace vectoriel des applications continues de $[0,1]$ 
+            dans $\R$ muni de la norme définie par $\|f\|_{\infty} = \sup_{x \in [0,1]} |f(x)|$.
 
-    On considère l'application $\varphi$ de $E$ dans $\mathbb{R}$ définie par $\displaystyle\varphi(f) = \int_{0}^{1} f(t) dt$. Démontrer que $\varphi$ est linéaire et continue.
-\end{enumerate}
+            On considère l'application $\varphi$ de $E$ dans $\R$ définie par $\displaystyle\varphi(f) = \int_{0}^{1} f(t) \dt$. 
+            Démontrer que $\varphi$ est linéaire et continue.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 16 (Source: Exercice 10) ---
 \begin{exercice}
-On pose $E= \mathscr C^{0}([0,1], \mathbb{R})$ muni de la norme $\|\cdot\|_{\infty}$.
-Montrer que l'application qui à une fonction $f$ de $E$ associe son unique primitive s'annulant en 0 est linéaire et continue. Déterminer sa norme d'opérateur.
+    On pose $E= \mathscr C^{0}([0,1], \R)$ muni de la norme $\|\cdot\|_{\infty}$.
+    Montrer que l'application qui à une fonction $f$ de $E$ associe son unique primitive s'annulant en 0 est linéaire et continue. 
+    Déterminer sa norme d'opérateur.
 \end{exercice}
 
 % --- Exercice 17 (Source: EXERCICE 54 analyse) ---
 \begin{exercice}[Exercice 54 Analyse]
-Soit $E$ l'ensemble des suites à valeurs réelles qui convergent vers 0.
-\begin{enumerate}
-    \item Prouver que $E$ est un sous-espace vectoriel de l'espace vectoriel des suites à valeurs réelles.
-    \item On pose : $\forall u=(u_{n})_{n \in \mathbb{N}} \in E, \|u\| = \sup_{n \in \mathbb{N}} |u_{n}|$.
+    Soit $E$ l'ensemble des suites à valeurs réelles qui convergent vers 0.
     \begin{enumerate}
-        \item Prouver que $\|\cdot\|$ est une norme sur $E$.
-        \item Prouver que $\forall u=(u_{n})_{n \in \mathbb{N}} \in E, \sum \frac{u_{n}}{2^{n+1}}$ converge.
-        \item On pose alors $\displaystyle f(u) = \sum_{n=0}^{+\infty} \frac{u_{n}}{2^{n+1}}$. Prouver que $f$ est continue sur $E$.
+        \item Prouver que $E$ est un sous-espace vectoriel de l'espace vectoriel des suites à valeurs réelles.
+        \item On pose : $\forall u=(u_{n})_{n \in \N} \in E, \|u\| = \sup_{n \in \N} |u_{n}|$.
+        \begin{enumerate}
+            \item Prouver que $\|\cdot\|$ est une norme sur $E$.
+            \item Prouver que $\forall u=(u_{n})_{n \in \N} \in E, \sum \frac{u_{n}}{2^{n+1}}$ converge.
+            \item On pose alors $\displaystyle f(u) = \sum_{n=0}^{+\infty} \frac{u_{n}}{2^{n+1}}$. Prouver que $f$ est continue sur $E$.
+        \end{enumerate}
     \end{enumerate}
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 18 (Source: Exercice 11) ---
 \begin{exercice}
-On considère $E=\mathbb{R}[X]$ muni de la norme $\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}$ pour $\displaystyle P = \sum_{i=0}^{n} a_{i} X^{i}$.
+    On considère $E=\R[X]$ muni de la norme $\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}$ pour $\displaystyle P = \sum_{i=0}^{n} a_{i} X^{i}$.
 
-Les formes linéaires suivantes sont-elles continues ? Si oui déterminer leur norme d'opérateur.
-$$ P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) dt, \quad P \mapsto P(1) $$
+    Les formes linéaires suivantes sont-elles continues ? Si oui déterminer leur norme d'opérateur.
+    $$ P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) \dt, \quad P \mapsto P(1) $$
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 12) ---
 \begin{exercice}
-On munit $\mathbb{R}^{2}$ de la norme $\|\cdot\|_{\infty}$.
-\begin{enumerate}
-    \item Montrer que pour toute matrice $A \in \mathscr M_{2}(\mathbb{R})$ on peut définir $|||A||| = \sup \left\{ \frac{\|AX\|_{\infty}}{\|X\|_{\infty}}, X \in \mathbb{R}^{2} \setminus \{0\} \right\}$.
-    \item Expliciter sa valeur en fonction des coefficients de $A$.
-    \item Montrer qu'il s'agit d'une norme d'algèbre.
-    \item Mêmes questions en remplaçant $\|\cdot\|_{\infty}$ par $\|\cdot\|_{1}$.
-\end{enumerate}
+    On munit $\R^{2}$ de la norme $\|\cdot\|_{\infty}$.
+    \begin{enumerate}
+        \item Montrer que pour toute matrice $A \in \mathscr M_{2}(\R)$ on peut définir 
+            $|||A||| = \sup \left\{ \frac{\|AX\|_{\infty}}{\|X\|_{\infty}}, X \in \R^{2} \setminus \{0\} \right\}$.
+        \item Expliciter sa valeur en fonction des coefficients de $A$.
+        \item Montrer qu'il s'agit d'une norme d'algèbre.
+        \item Mêmes questions en remplaçant $\|\cdot\|_{\infty}$ par $\|\cdot\|_{1}$.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 20 (Source: Exercice 13) ---
 \begin{exercice}
-Soit $f \in \mathscr L(E,F)$ où $E$ et $F$ sont deux espaces vectoriels normés sur $\mathbb{K}$.
-Montrer que $f$ est continue ssi $\{x \in E, \|f(x)\| = 1\}$ est un fermé.
+    Soit $f \in \mathscr L(E,F)$ où $E$ et $F$ sont deux espaces vectoriels normés sur $\K$.
+    Montrer que $f$ est continue ssi $\{x \in E, \|f(x)\| = 1\}$ est un fermé.
 \end{exercice}
 
 % --- Exercice 21 (Source: Exercice 14) ---
 \begin{exercice}
-Soient $(E, N)$ un espace vectoriel normé, $\varphi$ une forme linéaire non nulle et $H = \ker(\varphi)$.
-\begin{enumerate}
-    \item Justifier l'existence d'un vecteur $a$ tel que $\varphi(a)=1$ et montrer que $E = H \oplus \text{Vect}(a)$.
-    \item On suppose que $\varphi$ est continue. Montrer que $H$ est fermé.
-    \item On suppose que $\varphi$ n'est pas continue.
+    Soient $(E, N)$ un espace vectoriel normé, $\varphi$ une forme linéaire non nulle et $H = \ker(\varphi)$.
     \begin{enumerate}
-        \item Montrer qu'il existe une suite $u_{n}$ de vecteurs de norme 1 telle que pour tout $n$, $|\varphi(u_{n})| \geqslant n$.
-        \item Construire à l'aide de $u_{n}$ et $a$ une suite de vecteurs de $H$ qui converge vers $a$.
-        \item En déduire que $H$ n'est pas fermé.
+        \item Justifier l'existence d'un vecteur $a$ tel que $\varphi(a)=1$ et montrer que $E = H \oplus \text{Vect}(a)$.
+        \item On suppose que $\varphi$ est continue. Montrer que $H$ est fermé.
+        \item On suppose que $\varphi$ n'est pas continue.
+        \begin{enumerate}
+            \item Montrer qu'il existe une suite $u_{n}$ de vecteurs de norme 1 telle que pour tout $n$, $|\varphi(u_{n})| \geqslant n$.
+            \item Construire à l'aide de $u_{n}$ et $a$ une suite de vecteurs de $H$ qui converge vers $a$.
+            \item En déduire que $H$ n'est pas fermé.
+        \end{enumerate}
     \end{enumerate}
-\end{enumerate}
 \end{exercice}
 
 \subsection{Compacité et convexité}
 % --- Exercice 22 (Source: Exercice 15) ---
 \begin{exercice}
-Vérifier que $O(2) = \{A \in M_2 (\R), A^T \cdot A = I_2\}$, l'ensemble des matrices orthogonales, est un compact de $GL_{2}(\mathbb{R})$.
+    Vérifier que $O(2) = \{A \in M_2 (\R), A^T \cdot A = I_2\}$, 
+    l'ensemble des matrices orthogonales, est un compact de $GL_{2}(\R)$.
 \end{exercice}
 
 % --- Exercice 23 (Source: Exercice 16) ---
 \begin{exercice}
-Soit $A$ un compact et $B$ un fermé de l'espace vectoriel normé $E$.
-Montrer que $A+B$ est un fermé de $E$.
-\textit{On pensera aux caractérisations séquentielles.}
+    Soit $A$ un compact et $B$ un fermé de l'espace vectoriel normé $E$.
+    Montrer que $A+B$ est un fermé de $E$.
+    \textit{On pensera aux caractérisations séquentielles.}
 \end{exercice}
 
 % --- Exercice 24 (Source: Exercice 17) ---
 \begin{exercice}
-Soit $E$ un espace vectoriel normé. On rappelle que le diamètre d'une partie $A$ bornée non vide de $E$ est le réel $\text{diam}(A) = \sup \{ \|x-y\|, (x,y) \in A^{2} \}$.
+    Soit $E$ un espace vectoriel normé. On rappelle que le diamètre d'une partie $A$ bornée non vide de $E$ 
+    est le réel $\text{diam}(A) = \sup \{ \|x-y\|, (x,y) \in A^{2} \}$.
 
-Soit $A$ une partie compacte de $E$. Montrer qu'il existe un couple $(a,b)$ de points de $A$ tels que $\text{diam}(A) = \|a-b\|$.
+    Soit $A$ une partie compacte de $E$. Montrer qu'il existe un couple $(a,b)$ de points de $A$ tels que $\text{diam}(A) = \|a-b\|$.
 \end{exercice}
 
 % --- Exercice 25 (Source: Exercice 18) ---
 \begin{exercice}
-Soit $(E, N)$ un espace vectoriel normé et $(u_{n})_{n \in \mathbb{N}}$ une suite convergente de limite $\ell$.
-Montrer que $A = \{u_{n}, n \in \mathbb{N}\} \cup \{\ell\}$ est un compact.
+    Soit $(E, N)$ un espace vectoriel normé et $(u_{n})_{n \in \N}$ une suite convergente de limite $\ell$.
+    Montrer que $A = \{u_{n}, n \in \N\} \cup \{\ell\}$ est un compact.
 \end{exercice}
 
 % --- Exercice 26 (Source: Exercice 19) ---
 \begin{exercice}
-Soit $A$ un compact de $E$ et $f$ une application de $A$ dans $A$ lipschitzienne de rapport $k \in [0,1[$.
-\begin{enumerate}
-    \item En utilisant $g : x \mapsto \|x-f(x)\|$, montrer que $f$ possède un point fixe. Montrer que ce point fixe est unique.
-    \item Montrer que toute suite $(u_{n})_{n \in \mathbb{N}}$ définie par $u_{0} \in A$ et pour tout $n$, $u_{n+1}=f(u_{n})$ converge vers ce point fixe.
-\end{enumerate}
+    Soit $A$ un compact de $E$ et $f$ une application de $A$ dans $A$ lipschitzienne de rapport $k \in [0,1[$.
+    \begin{enumerate}
+        \item En utilisant $g : x \mapsto \|x-f(x)\|$, montrer que $f$ possède un point fixe. Montrer que ce point fixe est unique.
+        \item Montrer que toute suite $(u_{n})_{n \in \N}$ définie par $u_{0} \in A$ et pour tout $n$, $u_{n+1}=f(u_{n})$ converge vers ce point fixe.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 27 (Source: Exercice 20) ---
 \begin{exercice}
-Montrer qu'une application continue périodique de $\mathbb{R}$ dans $\mathbb{R}$ est uniformément continue sur $\mathbb{R}$.
+    Montrer qu'une application continue périodique de $\R$ dans $\R$ est uniformément continue sur $\R$.
 \end{exercice}
 
 % --- Exercice 28 (Source: Exercice 21) ---
 \begin{exercice}
-Montrer que $x \mapsto \sqrt{x}$ est uniformément continue sur $\mathbb{R}^{+}$.
+    Montrer que $x \mapsto \sqrt{x}$ est uniformément continue sur $\R^{+}$.
 \end{exercice}
 
 % --- Exercice 29 (Source: Exercice 22) ---
 \begin{exercice}
-Montrer que dans un evn de dimension finie supérieure à 2, la sphère unité est connexe par arcs.
+    Montrer que dans un evn de dimension finie supérieure à 2, la sphère unité est connexe par arcs.
 \end{exercice}
 
 % --- Exercice 30 (Source: Exercice 23) ---
 \begin{exercice}
-Soit $A \neq E$ un fermé dont la frontière est connexe par arcs.
-\begin{enumerate}
-    \item Soit $a \in A, c \notin A$. Montrer qu'il existe $d \in [a,c]$ tel que $d \in \text{Fr}(A)$.
-    \item En déduire que $A$ est connexe par arcs.
-\end{enumerate}
+    Soit $A \neq E$ un fermé dont la frontière est connexe par arcs.
+    \begin{enumerate}
+        \item Soit $a \in A, c \notin A$. Montrer qu'il existe $d \in [a,c]$ tel que $d \in \text{Fr}(A)$.
+        \item En déduire que $A$ est connexe par arcs.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 31 (Source: Exercice 24) ---
 \begin{exercice}
-Utiliser la fonction déterminant pour montrer que ni $GL_{n}(\mathbb{R})$ ni le groupe orthogonal $O(n)$ ne sont connexes par arcs.
+    Utiliser la fonction déterminant pour montrer que ni $GL_{n}(\R)$ 
+    ni le groupe orthogonal $O(n)$ ne sont connexes par arcs.
 \end{exercice}
 
 \newpage
@@ -296,38 +314,38 @@ Utiliser la fonction déterminant pour montrer que ni $GL_{n}(\mathbb{R})$ ni le
 \begin{correction}{1}
 \begin{enumerate}
     \item \textbf{Par le complémentaire :}
-        $\mathbb{R} \setminus \mathbb{Z} = \bigcup_{k \in \mathbb{Z}} ]k, k+1[$.
+        $\R \setminus \Z = \bigcup_{k \in \Z} ]k, k+1[$.
 
         Chaque intervalle $]k, k+1[ = B(k+\frac{1}{2}, \frac{1}{2})$ est une boule ouverte, donc un ouvert.
-        Une réunion d'ouverts étant ouverte, le complémentaire de $\mathbb{Z}$ est ouvert, donc $\mathbb{Z}$ est fermé.
+        Une réunion d'ouverts étant ouverte, le complémentaire de $\Z$ est ouvert, donc $\Z$ est fermé.
 
     \item \textbf{Par l'image réciproque :}
         Considérons $f : x \mapsto \sin(\pi x)$.
-        $f$ est continue sur $\mathbb{R}$. \\
-        $\mathbb{Z} = \{ x \in \mathbb{R}, f(x)=0 \} = f^{-1}(\{0\})$.
+        $f$ est continue sur $\R$. \\
+        $\Z = \{ x \in \R, f(x)=0 \} = f^{-1}(\{0\})$.
         $\{0\}$ est un fermé (singleton dans un espace séparé). 
         L'image réciproque d'un fermé par une application continue est un fermé. 
-        Donc $\mathbb{Z}$ est fermé.
+        Donc $\Z$ est fermé.
 
     \item \textbf{Par caractérisation séquentielle :}
-        Soit $(u_{n})$ une suite d'éléments de $\mathbb{Z}$ qui converge vers $\ell \in \mathbb{R}$.
+        Soit $(u_{n})$ une suite d'éléments de $\Z$ qui converge vers $\ell \in \R$.
 
         Une suite convergente de Cauchy : $\exists N, \forall p,q \geqslant N, |u_{p} - u_{q}| < \varepsilon$.
 
         Prenons $\varepsilon = \frac{1}{2}$.
-        Si $u_{p}, u_{q} \in \mathbb{Z}$ et $|u_{p} - u_{q}| < \frac{1}{2}$, alors $u_{p} = u_{q}$.
+        Si $u_{p}, u_{q} \in \Z$ et $|u_{p} - u_{q}| < \frac{1}{2}$, alors $u_{p} = u_{q}$.
 
-        La suite est donc stationnaire à partir d'un certain rang : $\exists N, \forall n \geqslant N, u_{n} = C \in \mathbb{Z}$.
+        La suite est donc stationnaire à partir d'un certain rang : $\exists N, \forall n \geqslant N, u_{n} = C \in \Z$.
 
-        Donc $\ell = C \in \mathbb{Z}$. $\mathbb{Z}$ est séquentiellement fermé.
+        Donc $\ell = C \in \Z$. $\Z$ est séquentiellement fermé.
 
     \item \textbf{Autre méthode (voisinage) :}
-        Montrons que le complémentaire $A = \mathbb{R} \setminus \mathbb{Z}$ est ouvert.
+        Montrons que le complémentaire $A = \R \setminus \Z$ est ouvert.
 
-        Soit $a \in A$. $a \notin \mathbb{Z}$, donc $\lfloor a \rfloor < a < \lfloor a \rfloor + 1$.
+        Soit $a \in A$. $a \notin \Z$, donc $\lfloor a \rfloor < a < \lfloor a \rfloor + 1$.
 
         Posons $R = \min(a - \lfloor a \rfloor, \lfloor a \rfloor + 1 - a)$.
-        Alors $B(a, R) \subset ]\lfloor a \rfloor, \lfloor a \rfloor + 1[ \subset \mathbb{R} \setminus \mathbb{Z}$.
+        Alors $B(a, R) \subset ]\lfloor a \rfloor, \lfloor a \rfloor + 1[ \subset \R \setminus \Z$.
 
         Donc $A$ est ouvert.
 \end{enumerate}
@@ -467,12 +485,12 @@ La fonction est continue en $(0,0)$.
         Soit $(x_0, y_0) \in \R^2$, $h$ est définie par la formule 2 sur un voisinage donc continue en $(x_0,y_0)$.
 
         Soit $(x,y) \in \R^2$, si $x \not \equal y$, 
-        $\frac 1 {x - y} (\sin x - \sin y) = [\frac{\sin{x-y}t + y}{x - y}]_0^1 = \int_0^1 \cos{(x-y)t + y}~dt$ 
+        $\frac 1 {x - y} (\sin x - \sin y) = [\frac{\sin{x-y}t + y}{x - y}]_0^1 = \int_0^1 \cos{(x-y)t + y}~\dt$ 
         
-        Si $x \equal y$, $h(x,y) = \int_0^1 \cos{(x-y)t + y}~dt$
+        Si $x \equal y$, $h(x,y) = \int_0^1 \cos{(x-y)t + y}~\dt$
 
         Soit $(x_0, y_0) \in \R^2$ et $(x,y) \in \R$, 
-        $|h(x,y) - h(x_0,y_0)| \leqslant \int_0^1 |t(x-y) + y - (t(x_0 - y_0) + y_0)|dt \leqslant 2 ||(x,y) - (x_0,y_0)||_1$.
+        $|h(x,y) - h(x_0,y_0)| \leqslant \int_0^1 |t(x-y) + y - (t(x_0 - y_0) + y_0)|\dt \leqslant 2 ||(x,y) - (x_0,y_0)||_1$.
         Donc elle est continue.
 \end{itemize}
 \end{correction}
@@ -552,7 +570,7 @@ La fonction est continue en $(0,0)$.
 
 % --- Correction 18 (Exercice 11 du PDF) ---
 \begin{correction}{18}
-Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
+Soit $E = \R[X]$ muni de $\|P\| = \max |a_{i}|$.
 \begin{enumerate}
     \item $\varphi_{1}(P) = P(0) = a_{0}$. $|\varphi_{1}(P)| = |a_{0}| \leqslant \|P\|$.
     
@@ -561,7 +579,7 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
 
         La norme est atteinte, $|||\varphi_{1}||| = 1$.
 
-    \item $\varphi_{2}(P) = \int_{0}^{1} P(t) dt = \sum_{i=0}^{n} \frac{a_{i}}{i+1}$.
+    \item $\varphi_{2}(P) = \int_{0}^{1} P(t) \dt = \sum_{i=0}^{n} \frac{a_{i}}{i+1}$.
         Considérons $P_{n} = \sum_{k=0}^{n} X^{k}$, alors $\|P_{n}\| = 1$.
 
         $\varphi_{2}(P_{n}) = \sum_{k=0}^{n} \frac{1}{k+1} \to +\infty$ quand $n \to +\infty$.
@@ -586,7 +604,7 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
     $\Leftarrow$ Réciproquement, supposons $B$ fermé. Supposons par l'absurde que $f$ n'est pas continue.
     \begin{quote}
         Alors $f$ n'est pas bornée sur la boule unité.
-        $\forall n \in \mathbb{N}, \exists x_{n} \in E, \|f(x_{n})\| > n \|x_{n}\|$.
+        $\forall n \in \N, \exists x_{n} \in E, \|f(x_{n})\| > n \|x_{n}\|$.
 
         On peut supposer $f(x_{n}) \neq 0$.
         Posons $u_{n} = \frac{x_{n}}{\|f(x_{n})\|}$.
@@ -666,7 +684,7 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
 
     $A$ est compact donc borné. L'ensemble des distances est borné, la borne sup existe.
 
-    Considérons l'application $\Phi : A \times A \rightarrow \mathbb{R}$ définie par $\Phi(x,y) = \|x-y\|$.
+    Considérons l'application $\Phi : A \times A \rightarrow \R$ définie par $\Phi(x,y) = \|x-y\|$.
     $\Phi$ est continue car la norme est continue (lipschitzienne).
     $A \times A$ est compact car produit de deux compacts.
 
@@ -724,9 +742,9 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
     Donc $\forall \varepsilon > 0, \exists \delta > 0, \forall x,y \in [0, 2T], |x-y| \leqslant \delta \implies |f(x)-f(y)| \leqslant \varepsilon$. \\
 
     Prenons $\delta' = \min(\delta, T)$.
-    Soient $x, y \in \mathbb{R}$ tels que $|x-y| \leqslant \delta'$.
+    Soient $x, y \in \R$ tels que $|x-y| \leqslant \delta'$.
 
-    Il existe $n \in \mathbb{Z}$ tel que $x' = x - nT \in [0, T]$.
+    Il existe $n \in \Z$ tel que $x' = x - nT \in [0, T]$.
 
     Posons $y' = y - nT$. Alors $|x'-y'| = |x-y| \leqslant \delta' \leqslant T$.
     Donc $y' \in [-T, 2T]$. \\
@@ -737,7 +755,7 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
     La fonction étant périodique, elle prend les mêmes valeurs sur des intervalles décalés.
     La restriction de $f$ à tout intervalle de longueur $2T$ est uniformément continue avec le même module de continuité.
 
-    Donc $f$ est uniformément continue sur $\mathbb{R}$.
+    Donc $f$ est uniformément continue sur $\R$.
 \end{correction}
 
 % --- Correction 28 (Exercice 21 du PDF) ---
@@ -752,7 +770,7 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
     L'union de deux intervalles sur lesquels $f$ est uniformément continue (avec recouvrement)
     conserve l'uniforme continuité (prouvé en exemple du cours).
 
-    Donc $f$ est uniformément continue sur $\mathbb{R}^{+}$.
+    Donc $f$ est uniformément continue sur $\R^{+}$.
 \end{correction}
 
 % --- Correction 29 (Exercice 22 du PDF) ---
@@ -826,13 +844,13 @@ Soit $E = \mathbb{R}[X]$ muni de $\|P\| = \max |a_{i}|$.
 \begin{correction}{31}
 
     L'application déterminant est continue.
-    L'image de $GL_{n}(\mathbb{R})$ par $\det$ est $\mathbb{R}^{*}$.
+    L'image de $GL_{n}(\R)$ par $\det$ est $\R^{*}$.
 
-    $\mathbb{R}^{*}$ n'est pas connexe (deux composantes connexes $\mathbb{R}_{-}^{*}$ et $\mathbb{R}_{+}^{*}$).
+    $\R^{*}$ n'est pas connexe (deux composantes connexes $\R_{-}^{*}$ et $\R_{+}^{*}$).
 
     L'image d'un connexe par une application continue doit être connexe.
 
-    Donc $GL_{n}(\mathbb{R})$ n'est pas connexe (et donc pas connexe par arcs). \\
+    Donc $GL_{n}(\R)$ n'est pas connexe (et donc pas connexe par arcs). \\
 
     De même, $\det(O(n)) = \{-1, 1\}$, qui n'est pas connexe.
 \end{correction}

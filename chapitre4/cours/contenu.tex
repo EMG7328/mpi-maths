@@ -715,11 +715,11 @@ donc diverge. \\
 Le vin est tiré, il faut le boire, calculons $\sum_{k=1}^{+ \infty} \frac {\sin(n)} n$.
 
 \begin{align*}
-    S_n &= \sum_{k=1}^n \frac {\sin(k)} k = \sum_{k=1}^n \sin(k) \int_0^1 (t^{k-1}) dt\\
-        &= \im \left(\sum_{k=1}^{n} \int_0^1 e^{ik} t^{k-1} dt \right)\\
-        &= \im \left(e^i \int_0^1 \sum_{k=1}^{n}  (e^it)^{k-1} dt \right)\\
-        &= \im \left( e^i \int_0^1 \frac {1 - (e^it)^n} {1 - e^it} dt \right)\\
-        &= \im \left(e^i \int_0^1 \frac {dt} {1 - te^i} \right) - \im \left(e^i \int_0^1 \frac {(te^i)^n} {1 - te^i} dt\right)
+    S_n &= \sum_{k=1}^n \frac {\sin(k)} k = \sum_{k=1}^n \sin(k) \int_0^1 (t^{k-1}) \dt\\
+        &= \im \left(\sum_{k=1}^{n} \int_0^1 e^{ik} t^{k-1} \dt \right)\\
+        &= \im \left(e^i \int_0^1 \sum_{k=1}^{n}  (e^it)^{k-1} \dt \right)\\
+        &= \im \left( e^i \int_0^1 \frac {1 - (e^it)^n} {1 - e^it} \dt \right)\\
+        &= \im \left(e^i \int_0^1 \frac {\dt} {1 - te^i} \right) - \im \left(e^i \int_0^1 \frac {(te^i)^n} {1 - te^i} \dt\right)
 \end{align*}
 
 La deuxième partie imaginaire tend vers $0$. Il ne reste donc qu'à calculer la première... (laissé en exercice).
@@ -1066,7 +1066,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
 
 \subsection{Plan d'étude des séries numériques}
 
-Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \mathbb{C}$.
+Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 
 \begin{center}
 \begin{tikzpicture}[
@@ -1290,7 +1290,7 @@ d'un certain rang.
 
 \begin{remarque}
 Pour généraliser cette idée il faut $f\in  \mathscr C^{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
-montrerait de la même manière, dans le cas où $\int_0^n f(t) dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) dt$.
+montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
 \end{remarque}
 
 \subsection{Sommation des relations de comparaison pour des séries convergentes}

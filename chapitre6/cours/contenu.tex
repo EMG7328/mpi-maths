@@ -847,7 +847,7 @@ Sinon exprimer une base dans l'autre.}
 \end{proof}
 
 \begin{remarque}
-Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment ;
+Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \end{remarque}
 
@@ -855,21 +855,22 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 
 \begin{proposition}{Linéarité de l'intégrale}{}
     L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et 
-    $$ \fonction{}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) dt}$$ 
+    $$ \fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) dt}$$ 
     est linéaire. 
 \end{proposition}
 
-% \idee{Coordonnée par coordonnée.}
+\idee{Coordonnée par coordonnée.}
 
 \begin{proof}
-    Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et notons 
+    Soient $f,g \in \mathscr C^{pm}([a,b],E)$, $\alpha,\beta \in \K$ et $B = (e_1, \ldots, e_n)$ une base de $E$, notons :
     
     $\displaystyle \forall t \in [a, b], \, f(t) = \sum_{i=1}^n f_i(t)e_i$ et
-    $\displaystyle g(t) = \sum_{i=1}^n g_i(t)e_i$ alors 
-
+    $\displaystyle g(t) = \sum_{i=1}^n g_i(t)e_i$
+    
+    Alors :
     $\displaystyle \forall t \in [a, b], \, (\alpha f + \beta g)(t) = \sum_{i=1}^n (\alpha f_i(t) + \beta g_i(t))e_i$.
 
-    Donc $\alpha f + \beta g$ est cpm et par def,
+    Donc $\alpha f + \beta g$ est continue par morceaux (car on a la proposition dans $\K$) et par définition,
 
     \begin{align*}
         \int_a^b (\alpha f + \beta g)(t) dt & = \sum_{i=1}^n \left( \int_a^b (\alpha f_i(t) + \beta g_i(t)) dt \right) e_i\\
@@ -879,21 +880,18 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     \end{align*}
 \end{proof}
 
-
-\begin{proposition}{Notations intégrale}{}
-    Soit $f : i \to E$ cpm sur tout segment de $I$. Soient $a, b \in I$.
-
-    Si $a < b$, alors $\displaystyle \int_a^b f(t) dt = \int_{[a, b]} f$
-
-    Si $a = b$, par convention $\displaystyle \int_a^b f(t) dt = 0_E$
-
-    Si $a > b$, alors $\displaystyle \int_a^b f(t) dt = - \int_{[b, a]} f$
-    
+\begin{proposition}{Notations}{}
+    Soit $f : i \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b \in I$.
+    \begin{itemize}
+        \item Si $a < b$, alors $\displaystyle \int_a^b f(t) dt = \int_{[a, b]} f$
+        \item Si $a = b$, par convention $\displaystyle \int_a^b f(t) dt = 0_E$
+        \item Si $a > b$, alors $\displaystyle \int_a^b f(t) dt = - \int_{[b, a]} f$
+    \end{itemize}
 \end{proposition}
 
 
 \begin{proposition}{Relation de Chasles}{}
-    Soit $f : I \to E$ cpm sur tout segment de $I$. Soient $a, b, c \in I$.
+    Soit $f : I \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b, c \in I$.
 
     Alors $\displaystyle \int_a^c f(t) dt = \int_a^b f(t) dt + \int_b^c f(t) dt$.
     
@@ -903,14 +901,16 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Coordonnée par coordonnée.
 \end{proof}
 
-\begin{theoreme}{Composition intégrale par une application linéaire}{}
-    Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-evn de dim finie, et 
+\marginenote{Remarque}{$f$ est dite continue par morceaux sur $I$ si elle l'est sur tout segment de $I$.}
+
+\begin{theoreme}{Composition de l'intégrale par une application linéaire}{}
+    Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-espace vectoriel normé de dim finie, et 
     $L \in \mathscr L(E, F)$.
 
     Alors $L \circ f \in \mathscr C^{pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) dt = L\left( \int_a^b f(t) dt \right)$.
 \end{theoreme}
 
-\idee{Coordonnée par coordonnée, as usual.}
+\idee{Coordonnée par coordonnée, \emph{as usual}.}
 
 \begin{proof}
     Soit $(e_1, \ldots, e_n)$ une base de $E$, et $(b_1, \ldots, b_q)$ une base de $F$.
@@ -920,22 +920,24 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Donc $\displaystyle (L \circ f)(t) = \sum_{i=1}^n f_i(t)L(e_i)$.
 
     Décomposons pour tout $i$, $\displaystyle L(e_i) = \sum_{j=1}^q a_{j, i} b_j$.
+    On a alors :
 
     \begin{align*}
         (L \circ f) (t) & = \sum_{i=1}^n f_i(t) \sum_{j=1}^q a_{j, i} b_j \\
         & = \sum_{j=1}^q \underbrace{\left( \sum_{i=1}^n a_{j, i} f_i(t) \right)}_{g_j(t)} b_j
     \end{align*}
 
-    Les $f_i$ sont cpm donc $g_k$ aussi, donc $L \circ f$ est cpm et par def : 
-
+    Les $f_i$ sont continues par morceaux donc $g_k$ aussi, donc $L \circ f$ est continue par morceaux et par définition : 
+    {\allowdisplaybreaks
     \begin{align*}
         \int_a^b L \circ f & = \sum_{j=1}^q \left( \int_a^b g_j(t) dt \right) b_j \\
         & = \sum_{j=1}^q \left( \int_a^b \sum_{i=1}^n a_{j, i} f_i(t) dt \right) b_j \\
         & = \sum_{i = 1}^n \sum_{k = 1 }^{q } \int_{a }^{b } a_{k, i} f_i(t) dt b_k \\
         & = \sum_{i=1}^n \left( \int_a^b f_i(t) dt \right) \sum_{k=1}^q a_{k, i} b_k \\
-        & = L \left( \sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \text d t e_i \right) \\
+        & = L \left(\left(\sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \text d t\right) e_i\right) \\
         & = L \left( \int_a^b f(t) dt \right)
     \end{align*}
+    }
 \end{proof}
 
 \subsection{Sommes de Riemann}
@@ -944,21 +946,23 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Soit $N \geqslant 2$ et $f \in \mathscr C^{pm}([a, b], E)$.
 
     On appelle somme de Riemann à gauche (resp. à droite) pour $f$ sur $[a, b]$ associée à la 
-    subdivision régulière en $N$ segments le vecteur 
+    subdivision régulière en $N$ segments le vecteur :
     $$R_{g, N, f, [a, b]} = \frac{b-a} N \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right)$$
 
     Resp. $\displaystyle R_{d, N, f, [a, b]} = \frac{b-a} N \sum_{k=1}^{N} f\left( a + k \frac{b-a}{N} \right)$
 \end{definition}
 
 \begin{remarque}
-    La notation des R avec 50 indices est pas universelle
+    La notation avec les indices n'est pas standard.
+    
+    On peut aussi définir ces sommes sur des subdivisions non régulières et prendre un point quelconque dans les intervalles mais ce n'est pas utile ici.
 \end{remarque}
 
 \begin{proposition}{}{}
     Soit $f \in \mathscr C^{pm}([a, b], E)$. Alors les sommes de Riemann pour $f$ convergent vers 
     $\displaystyle \int_a^b f(t) dt$ quand $N \to +\infty$.
 
-    On a donc 
+    On a donc :
     $$ \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) dt$$
     $$ \frac{b - a }{N } \sum_{k = 1 }^{N} f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) dt$$
 
@@ -967,27 +971,29 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \idee{Surprise surprise, coordonnée par coordonnée.}
 
 \begin{proof}
+Soit $B= (e_1,\dots,e_n)$ une base de $E$.
     \begin{align*}
         R_{g, N, f, [a, b]} & = \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } \sum_{i = 1 }^{n } f_i\left( a + k \frac{b - a } N \right) e_i \\
         & = \sum_{i = 1 }^{n } \left( \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f_i\left( a + k \frac{b - a } N \right) \right) e_i \\
         & \limit{N}{+ \infty} \sum_{i = 1 }^{n } \left( \int_a^b f_i(t) dt \right) e_i \\
         & = \int_a^b f(t) dt
     \end{align*}
+De même pour la somme à droite.
 \end{proof}
 
 \begin{theoreme}{Inégalité triangulaire pour l'intégrale}{}
-    Munisson $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
-    
-    Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et
+    Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
+    Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et :
     $$\left|\left| \int_a^b f(t) dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
 \end{theoreme}
 
-\idee{Sommes de Riemann + passage à la limite.}
+\idee{Sommes de Riemann et passage à la limite.}
 
 \begin{proof}
-    $||f||$ est cpm par compo car $||\cdot||$ est continue.
+    $||f||$ est continue par morceaux par composition car $||\cdot||$ est continue
+    et $f$ est continue par morceaux (prendre une subdivision adaptée pour le prouver).
 
-    Soit $N \geqslant 1$, alors 
+    Soit $N \geqslant 2$, alors,
 
     \begin{align*}
         \left|\left| R_{g, N, f, [a, b]} \right|\right| & = \left|\left| \frac{b-a}{N} \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right) \right|\right| \\
@@ -1000,7 +1006,7 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \end{proof}
 
 
-\subsection{Intégrale de la borne supérieure }
+\subsection{Intégrale de la borne supérieure}
 
 \begin{theoreme}{Primitive fonction vectorielle}{}
     Soit $f \in \mathscr C(I, E)$ et $a \in I$. 
@@ -1008,7 +1014,7 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) dt}$ est de classe $\mathscr C^1$ sur $I$ et 
     vérifie $F' = f$.
 
-    $F$ est appelée la primitive de $f $ qui s'annule en $a$. 
+    $F$ est appelée la primitive de $f$ sur $I$ qui s'annule en $a$. 
 \end{theoreme}
 
 \idee{Coordonnée par coordonnée.}
@@ -1021,24 +1027,23 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Par le théorème fondamental pour les fonctions réelles, $F_i$ est de classe $\mathscr C^1$ et $F_i' = f_i$.
 \end{proof}
 
-\begin{corollaire}{calcul d'intégrale}{}
+\begin{corollaire}{Calcul d'intégrales}{}
     Soit $f \in \mathscr C(I, E)$ et $F \in \mathscr C^1(I, E)$ tel que 
     $F' = f$, alors $F$ est appelée une primitive de $f$. Alors $\forall a, b \in I$, 
     
     $$\displaystyle \int_a^b f(t) dt = F(b) - F(a)$$
 \end{corollaire}
 
-\idee{Prendre deux primitives différentes. }
+\idee{Prendre deux primitives différentes.}
 
 \begin{proof}
-    Posons $\forall x \in I, \, G(x) = \int_a^x f(t) dt$.
+    Posons $\ds \forall x \in I, \, G(x) = \int_a^x f(t) dt$.
 
     Par le théorème, $G' = f = F'$ donc $(F - G)' = 0$ et donc $F - G$ est constante, 
-    donc $F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) dt$.
+    donc $\ds F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) dt$.
 \end{proof}
 
-
-\subsubsection{Recherche de primitives }
+\subsubsection{Recherche de primitives}
 
 $$\renewcommand{\arraystretch}{1.6}
 \begin{array}{|c|c|c|}
@@ -1067,13 +1072,13 @@ $$\renewcommand{\arraystretch}{1.6}
     \hline
 \end{array}$$
 
-\subsubsection{Intégration par parties }
+\subsubsection{Intégration par parties}
 
 Soient $u, v \in \mathscr C^1([a, b], \K)$.
+Alors :
+$$\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b } u \cdot v'$$
 
-Alors $$\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b } u \cdot v'$$
-
-\subsubsection{Changement de variable }
+\subsubsection{Changement de variable}
 
 Soit $\varphi \in \mathscr C^1(J, I)$ et $\alpha, \beta \in J$, 
 $\varphi(\alpha) = a, \, \varphi(\beta) = b$.
@@ -1105,7 +1110,7 @@ $$\renewcommand{\arraystretch}{2.1}
     \hline
 \end{array}}$$
 
-\subsubsection{Décomposition en éléments simples }
+\subsubsection{Décomposition en éléments simples}
 
 \begin{exemple}
     $\displaystyle I = \int_0^x \sqrt{\tan t} \text d t$, $x \in [0, \frac \pi 2[$.
@@ -1139,29 +1144,43 @@ $$\renewcommand{\arraystretch}{2.1}
 \end{exemple}
 
 \begin{theoreme}{Inégalité des accroissements finis}{}
-    Soit $f \in \mathscr C^1(I, E)$. On suppose $\exists M > 0, \, \forall x \in I, \, ||f'(x)|| \leqslant M$.
+    Soit $f \in \mathscr C^1(I, E)$, soient $\alpha,\beta \in I$. Soit $M > 0, \, \forall x \in [\alpha,\beta], \, ||f'(x)|| \leqslant M$.
 
-    Alors $\forall a, b \in I$, 
+    Alors $\forall a, b \in [\alpha,\beta]$, 
 
     $$||f(b) - f(a)|| \leqslant M |b - a|$$
 \end{theoreme}
 
-\idee{Inégalité triangulaire des intégrales }
+\idee{Inégalité triangulaire des intégrales.}
 
 \begin{proof}
 
-    $f(b) - f(a) = \int_a^b f'(t) dt$.
+    $\ds f(b) - f(a) = \int_a^b f'(t) dt$.
 
     Donc $\displaystyle ||f(b) - f(a)|| \leqslant \int_a^b ||f'(t)|| dt \leqslant \int_a^b M dt = M |b - a|$.
 \end{proof}
 
+\begin{remarque}
+    À contrario, le théorème de Rolle et le théorème des accroissement finis ne sont pas valables pour les fonctions vectorielles.
+\end{remarque}
 
-\subsection{Formule de Taylor }
+\subsection{Formules de Taylor}
 
-\begin{proposition}{Formule de Taylor avec reste intégral}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$. 
+\marginenote{Histoire !}{À l'époque, Taylor notait les dérivées successives par des lettres $m,n,\dots$ car la notation $f^{(n)}$ n'existait pas.}
 
-    $$f(b) = \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) + \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n dt$$
+\begin{proposition}{Formule de Taylor-Young}{}
+    Soit $f \in \mathscr C^n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a :
+    $$f(a + h) = \sum_{k = 0 }^{n } \frac{h^k}{k!} f^{(k)}(a) + o(h^n)$$
+\end{proposition}
+
+\begin{proof}
+    Composante par composante.
+\end{proof}
+
+\begin{proposition}{Formule de Taylor avec reste intégrale}{}
+    Soit $f \in \mathscr C^{n + 1}(I, E)$ et $a, b \in I$. 
+
+    $$f(b) = \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) + \int_a^b \frac{(b - t)^n}{n!} f^{(n+1)}(t) dt$$
 \end{proposition}
 
 \begin{proof}
@@ -1169,13 +1188,13 @@ $$\renewcommand{\arraystretch}{2.1}
 \end{proof}
 
 \begin{proposition}{Inégalité de Taylor-Lagrange}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$. On suppose $\exists M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
-
-    Alors $$\left|\left| f(b) - \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right| \leqslant \frac{M |b - a|^{n + 1}}{(n + 1)!}$$
+    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$.  Soit $M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
+    Alors :
+    $$\left|\left| f(b) - \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right| \leqslant \frac{M |b - a|^{n + 1}}{(n + 1)!}$$
 \end{proposition}
 
 \begin{proof}
-    On prend $a < b$
+    On prend $a < b$.
 
     \begin{align*}
     \left|\left| f(b) - \sum_{k = 0}^n \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right|  & = \left|\left| \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n dt \right|\right| \\
@@ -1183,14 +1202,4 @@ $$\renewcommand{\arraystretch}{2.1}
         & \leqslant M \int_{a }^{b } \frac{(b - t)^n}{n!} dt \\
         & = M \frac{(b - a )^{n + 1}}{(n+ 1)!}
     \end{align*}
-\end{proof}
-
-\begin{proposition}{Formule de Taylor-Young}{}
-    Soit $f \in \mathscr C^n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a
-
-    $$f(a + h) = \sum_{k = 0 }^{n } \frac{h^k}{k!} f^{(k)}(a) + o(h^n)$$
-\end{proposition}
-
-\begin{proof}
-    Composante par composante.
 \end{proof}

@@ -3,7 +3,6 @@ Dans tout le chapitre, on prend $I$ un intervalle réel tel que $\mathring{I} \n
 On prendra aussi $\K = \R$ ou $\C$, et $(E,N)$ un $\K$-espace vectoriel normé
  de dimension finie.
 
-
 \section{Dérivation}
 \subsection{Dérivée en un point}
 
@@ -427,6 +426,29 @@ a un DL2 mais n'est pas dérivable deux fois.
     $||f||^2 = \langle f, f \rangle$, donc $(||f||^2)' = \langle f', f \rangle + \langle f, f' \rangle = 2 \langle f, f' \rangle$.
 \end{proof}
 
+\begin{exemple}
+Soit $f: I \to E$ dérivable telle que $\forall t \in I, \|f(t)\| = K > 0$.
+
+Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
+\end{exemple}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=1.2, >= stealth]
+    \draw[->, black!35, line width=0.4pt] (-1.2, 0) -- (1.2, 0) node[right, font=\tiny] {$x$};
+    \draw[->, black!35, line width=0.4pt] (0, -1.2) -- (0, 1.2) node[above, font=\tiny] {$y$};
+
+    \draw[thick, vorange] (0,0) circle (1);
+
+    \draw[<->, thick, dangerred] (0,0) -- node[midway, above] {$K$} (1,0);
+
+    \draw[->, forestgreen!85!black, line width=1.1pt] (1, 0) -- (1, 1) 
+      node[above=1pt, font=\scriptsize, text=forestgreen!85!black] {$f'(0)$};
+
+    \fill[black] (0, 0) circle (1.2pt) node[below left=1pt, font=\tiny] {$O$};
+\end{tikzpicture}
+\end{figure}
+
 \begin{theoreme}{Généralisation à une application n-linéaire}{}
 
     Soient $(E_1, N_1), \ldots, (E_n, N_n), (F, N')$ des espaces vectoriels normés de dimension finie, et
@@ -508,11 +530,18 @@ a un DL2 mais n'est pas dérivable deux fois.
 \subsection{Rappels : prolongements}
 
 \begin{theoreme}{Limite de la dérivée}{}
-    Soit $f : [a, b] \to \R$ continue sur $[a, b]$ et dérivable sur $]a, b]$. 
+    Soit $f : [a, b] \to E$ continue sur $[a, b]$ et dérivable sur $]a, b]$. 
 
-    Si $f'(t)$ a une limite finie $\ell$ en $a$, alors $f$ est dérivable en $a$ et $f'(a) = \ell$.
-
+    Si $f'$ a une limite finie $\ell \R$ en $a$, alors $f$ est dérivable en $a$ et $f'(a) = \ell$.
 \end{theoreme}
+
+\begin{proof}
+    Le faire dans $\R$ puis faire coordonnée par coordonnée.
+\end{proof}
+
+\begin{remarque}
+    Si $f$ est définie sur $]a,b]$ on peut alors essayer de prolonger $f$ par continuité avant d'appliquer ce théorème.
+\end{remarque}
 
 \begin{theoreme}{Prolongement des fonctions de classe $\mathscr C^1$}{}
     Soit $f \in \mathscr C^1(]a, b], \R)$ avec $f$ et $f'$ qui ont des limites finies 
@@ -523,9 +552,12 @@ a un DL2 mais n'est pas dérivable deux fois.
     Et alors $f$ est $\mathscr C^1$ sur $[a, b]$ et $f'(a) = \ell_2$.
 \end{theoreme}
 
-\begin{remarque}
-    Ce théorème se généralise aux fonctions de classe $\mathscr C^n$.
-\end{remarque}
+\begin{theoreme}{Prolongement des fonctions de classe $\mathscr C^k$ et $\mathscr C^{\infty}$}{}
+    Soit $f \in \mathscr C^k(I, \R)$ avec $f,\dots,f^{(k)}$ qui ont des limites finies en $a \in \overline{I} \setminus I$. 
+
+    Alors on peut prolonger $f$ par continuité en $a$.
+    Et alors $f$ est $\mathscr C^k$ sur $I \cup \{a\}$ (de même pour $\mathscr C^{\infty}$).
+\end{theoreme}
 
 \begin{exemple}[Classique à retenir]
     Soit $\fonction f \R \R x {\begin{cases}
@@ -533,16 +565,15 @@ a un DL2 mais n'est pas dérivable deux fois.
         e^{-\frac{1}{x^2}} & \text{sinon}
     \end{cases}}$
 
-    Alors $f$ est $\mathscr C^\infty$ sur $\R$ et on a $\forall n \in \N, \, f^{(n)}(0) = 0$.
+    Montrons que $f$ est $\mathscr C^{\infty}$ par prolongement.
 
-    Montrons par récurrence $\mathscr P(n) : \forall x \in \R_+^*, \, f^{(n)}(x) = \frac{P_n(x) }{x^{3n}} e^{-\frac{1}{x^2}}$ où $P_n \in \R [X]$. 
+    Montrons par récurrence que $\forall x \in \R_+^*, \, f^{(n)}(x) = \frac{P_n(x) }{x^{3n}} e^{-\frac{1}{x^2}}$ où $P_n \in \R [X]$. 
 
     $f$ est $\mathscr C^\infty$ sur $\R_+^*$. 
 
     Pour $x > 0$, $f^{(0)}(x) = \frac{P_0(x )}{x^0} e^{-\frac{1}{x^2}}$ avec $P_0 = 1$.
-    d'où $\mathscr P(0)$ vraie.
 
-    \avspace Récurrence : Supposons que $\displaystyle \exists P_n, \, \forall x > 0, \, f^{(n)}(x) = \frac{P_n(x)}{x^{3n}} e^{-\frac{1}{x^2}}$.
+    \uline{Hérédité :} Supposons que $\displaystyle \exists P_n, \, \forall x > 0, \, f^{(n)}(x) = \frac{P_n(x)}{x^{3n}} e^{-\frac{1}{x^2}}$.
 
     Alors $\displaystyle f^{(n+1)}(x) = \frac{P'_n(x)}{x^{3n}} e^{-\frac{1}{x^2}}  - \frac{3n P_n(x)}{x^{3n + 1}}e^{-\frac{1}{x^2}} - \frac 2 {x^3} \frac{P_n(x)}{x^{3n}}e^{-\frac{1}{x^2}}$
 
@@ -558,6 +589,23 @@ a un DL2 mais n'est pas dérivable deux fois.
     Alors $g$ est $\mathscr C^\infty$ sur $\R$, $g$ est strictement positive sur $]a, b[$ et nulle ailleurs.
 
 \end{exemple}
+
+\begin{remarque}
+    (hors programme)
+    
+    On dira alors que $g$ est $\mathscr C^{\infty}$ à support compact (plus précisément à support inclus dans un compact).
+
+    L'ensemble de ces fonctions est appelé \emph{espace de Schwartz}, est un espace vectoriel et est noté $S$.
+
+    $\forall f \in \mathscr C^0(\R, \R)$ posons :
+    \[\fonction {\varphi_f} S {\R} g {\int_{\R}} f(t)g(t) \dif t\]
+    On montrerait que :
+    \[\fonction {\psi} {\mathscr C^0(\R,\R)} {\mathscr L(S,\R)} f {\varphi_f}\]
+
+    est injective.
+    À chaque fonction continue on associe donc une forme linéaire.
+    Ceci généralise la notion de fonctions et définit la notion de \emph{distributions}.
+\end{remarque}
 
 \subsection{Complément hors programme sur les courbes paramétrées}
 
@@ -600,11 +648,139 @@ il existe quatre types de points :
 \end{itemize}
 
 \begin{figure}[htbp]
-  \centering
-  \includegraphics[height=22.em]{images/courbes.jpg}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=4.8cm,
+                axis lines=middle,
+                axis line style={-stealth, black!50, line width=0.4pt},
+                title={Point ordinaire},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\footnotesize},
+                xmin = -1.0, xmax = 1.0,
+                ymin = -1.0, ymax = 1.0,
+                ticks=none,
+                samples=100,
+            ]
+                \addplot[black!50, line width=0.5pt, thick] {1.2*x};
+                \addplot[vorange, thick] {x^2};
+
+                \draw[->, thick, forestgreen] (axis cs:0,0) -- (axis cs:0.6,0)
+                    node[below, text=forestgreen] {$f^{(p)}(t_0)$};
+
+                \draw[->, thick, dangerred] (axis cs:0,0) -- (axis cs:0.35,{1.2*0.35})
+                    node[left, xshift=-6pt, text=dangerred] {$f^{(q)}(t_0)$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=4.8cm,
+                axis lines=middle,
+                axis line style={-stealth, black!50, line width=0.4pt},
+                title={Point d'inflexion},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\footnotesize},
+                xmin = -1.0, xmax = 1.0,
+                ymin = -1.0, ymax = 1.0,
+                ticks=none,
+                samples=100,
+            ]
+                \addplot[black!50, line width=0.5pt, thick] {1.2*x};
+                \addplot[vorange, thick] {x^3};
+
+                \draw[->, thick, forestgreen] (axis cs:0,0) -- (axis cs:0.6,0)
+                    node[below, text=forestgreen] {$f^{(p)}(t_0)$};
+
+                \draw[->, thick, dangerred] (axis cs:0,0) -- (axis cs:0.35,{1.2*0.35})
+                    node[left, xshift=-6pt, text=dangerred] {$f^{(q)}(t_0)$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    \vfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=4.8cm,
+                axis lines=middle,
+                axis line style={-stealth, black!50, line width=0.4pt},
+                title={Rebroussement 1ère espèce},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\footnotesize},
+                xmin = -1.0, xmax = 1.0,
+                ymin = -1.0, ymax = 1.0,
+                ticks=none,
+                samples=100,
+            ]
+                \addplot[black!50, line width=0.5pt, thick] {1.0*x};
+
+                \addplot[
+                    domain=-0.95:0.95,
+                    vorange,
+                    very thick,
+                    variable=\t
+                ] ({t^2}, {0.9*t^3});
+
+
+                \draw[->, thick, forestgreen] (axis cs:0,0) -- (axis cs:0.6,0)
+                    node[below, text=forestgreen] {$f^{(p)}(t_0)$};
+
+                \draw[->, thick, dangerred] (axis cs:0,0) -- (axis cs:0.35,{1.0*0.35})
+                    node[left, xshift=-6pt, text=dangerred] {$f^{(q)}(t_0)$};
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=\linewidth,
+                height=4.8cm,
+                axis lines=middle,
+                axis line style={-stealth, black!50, line width=0.4pt},
+                title={Rebroussement 2ème espèce},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\footnotesize},
+                xmin = -1.0, xmax = 1.0,
+                ymin = -1.0, ymax = 1.0,
+                ticks=none,
+                samples=100,
+            ]
+                \addplot[black!50, line width=0.5pt, thick] {1.3*x};
+
+                \addplot[
+                    domain=-0.95:0.95,
+                    vorange,
+                    very thick,
+                    variable=\t
+                ] ({t^2 + 0.15*(t^4 + 0.35*t^5)}, {1.15*(t^4 + 0.35*t^5)});
+
+                \draw[->, thick, forestgreen] (axis cs:0,0) -- (axis cs:0.6,0)
+                    node[below, text=forestgreen] {$f^{(p)}(t_0)$};
+
+                \draw[->, thick, dangerred] (axis cs:0,0) -- (axis cs:0.35,{1.3*0.35})
+                    node[left, xshift=-6pt, text=dangerred] {$f^{(q)}(t_0)$};
+                
+            \end{axis}
+        \end{tikzpicture}
+    \end{minipage}
 \end{figure}
 
-\subsubsection{Étude globale d'une courbe plane }
+\subsubsection{Étude globale d'une courbe plane}
 
 $E = \R^2$, $\fonction f I {\R^2} t {\begin{pmatrix} x(t) \\ y(t) \end{pmatrix}}$ $f$ de classe $\mathscr C^k, \, k \geqslant 1$.
 
@@ -621,7 +797,7 @@ $$\begin{array}{c|c}
 \end{array}$$
 
 \section{Intégration sur un segment}
-\subsection{Théorème définition}
+\subsection{Théorème-définition}
 
 \begin{theoreme}{Intégrale de $f \in \mathscr C^{pm}$ à valeurs dans un evn de dim finie}{}
     Soit $f : [a, b] \to E$ et $B = (e_1, \ldots, e_n)$ une base de $E$.
@@ -641,7 +817,7 @@ $$\begin{array}{c|c}
 
     Ce vecteur est noté $\displaystyle \int_a^b f(t) \dt$.
 
-    On dit que $f$ est cpm sur $[a, b]$. Cette notion ne dépend donc pas 
+    On dit que $f$ est continue par morceaux sur $[a, b]$. Cette notion ne dépend donc pas 
     du choix de la base.
 \end{theoreme}
 
@@ -673,31 +849,31 @@ Sinon exprimer une base dans l'autre.}
     \end{align*}
 \end{proof}
 
-\subsubsection{Notation }
-
-Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment
+\begin{remarque}
+Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
+\end{remarque}
 
-\subsection{Propriétés }
-
+\subsection{Propriétés}
 
 \begin{proposition}{Linéarité de l'intégrale}{}
     L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et 
-    $$ \fonction{}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}$$ 
+    $$ \fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}$$ 
     est linéaire. 
 \end{proposition}
 
-% \idee{Coordonnée par coordonnée.}
+\idee{Coordonnée par coordonnée.}
 
 \begin{proof}
-    Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et notons 
+    Soient $f,g \in \mathscr C^{pm}([a,b],E)$, $\alpha,\beta \in \K$ et $B = (e_1, \ldots, e_n)$ une base de $E$, notons :
     
     $\displaystyle \forall t \in [a, b], \, f(t) = \sum_{i=1}^n f_i(t)e_i$ et
-    $\displaystyle g(t) = \sum_{i=1}^n g_i(t)e_i$ alors 
-
+    $\displaystyle g(t) = \sum_{i=1}^n g_i(t)e_i$
+    
+    Alors :
     $\displaystyle \forall t \in [a, b], \, (\alpha f + \beta g)(t) = \sum_{i=1}^n (\alpha f_i(t) + \beta g_i(t))e_i$.
 
-    Donc $\alpha f + \beta g$ est cpm et par def,
+    Donc $\alpha f + \beta g$ est continue par morceaux (car on a la proposition dans $\K$) et par définition,
 
     \begin{align*}
         \int_a^b (\alpha f + \beta g)(t) \dt & = \sum_{i=1}^n \left( \int_a^b (\alpha f_i(t) + \beta g_i(t)) \dt \right) e_i\\
@@ -707,21 +883,18 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     \end{align*}
 \end{proof}
 
-
-\begin{proposition}{Notations intégrale}{}
-    Soit $f : i \to E$ cpm sur tout segment de $I$. Soient $a, b \in I$.
-
-    Si $a < b$, alors $\displaystyle \int_a^b f(t) \dt = \int_{[a, b]} f$
-
-    Si $a = b$, par convention $\displaystyle \int_a^b f(t) \dt = 0_E$
-
-    Si $a > b$, alors $\displaystyle \int_a^b f(t) \dt = - \int_{[b, a]} f$
-    
+\begin{proposition}{Notations}{}
+    Soit $f : i \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b \in I$.
+    \begin{itemize}
+        \item Si $a < b$, alors $\displaystyle \int_a^b f(t) \dt = \int_{[a, b]} f$
+        \item Si $a = b$, par convention $\displaystyle \int_a^b f(t) \dt = 0_E$
+        \item Si $a > b$, alors $\displaystyle \int_a^b f(t) \dt = - \int_{[b, a]} f$
+    \end{itemize}
 \end{proposition}
 
 
 \begin{proposition}{Relation de Chasles}{}
-    Soit $f : I \to E$ cpm sur tout segment de $I$. Soient $a, b, c \in I$.
+    Soit $f : I \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b, c \in I$.
 
     Alors $\displaystyle \int_a^c f(t) \dt = \int_a^b f(t) \dt + \int_b^c f(t) \dt$.
     
@@ -731,14 +904,16 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Coordonnée par coordonnée.
 \end{proof}
 
-\begin{theoreme}{Composition intégrale par une application linéaire}{}
-    Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-evn de dim finie, et 
+\marginenote{Remarque}{$f$ est dite continue par morceaux sur $I$ si elle l'est sur tout segment de $I$.}
+
+\begin{theoreme}{Composition de l'intégrale par une application linéaire}{}
+    Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-espace vectoriel normé de dim finie, et 
     $L \in \mathscr L(E, F)$.
 
     Alors $L \circ f \in \mathscr C^{pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) \dt = L\left( \int_a^b f(t) \dt \right)$.
 \end{theoreme}
 
-\idee{Coordonnée par coordonnée, as usual.}
+\idee{Coordonnée par coordonnée, \emph{as usual}.}
 
 \begin{proof}
     Soit $(e_1, \ldots, e_n)$ une base de $E$, et $(b_1, \ldots, b_q)$ une base de $F$.
@@ -748,22 +923,24 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Donc $\displaystyle (L \circ f)(t) = \sum_{i=1}^n f_i(t)L(e_i)$.
 
     Décomposons pour tout $i$, $\displaystyle L(e_i) = \sum_{j=1}^q a_{j, i} b_j$.
+    On a alors :
 
     \begin{align*}
         (L \circ f) (t) & = \sum_{i=1}^n f_i(t) \sum_{j=1}^q a_{j, i} b_j \\
         & = \sum_{j=1}^q \underbrace{\left( \sum_{i=1}^n a_{j, i} f_i(t) \right)}_{g_j(t)} b_j
     \end{align*}
 
-    Les $f_i$ sont cpm donc $g_k$ aussi, donc $L \circ f$ est cpm et par def : 
-
+    Les $f_i$ sont continues par morceaux donc $g_k$ aussi, donc $L \circ f$ est continue par morceaux et par définition : 
+    {\allowdisplaybreaks
     \begin{align*}
         \int_a^b L \circ f & = \sum_{j=1}^q \left( \int_a^b g_j(t) \dt \right) b_j \\
         & = \sum_{j=1}^q \left( \int_a^b \sum_{i=1}^n a_{j, i} f_i(t) \dt \right) b_j \\
         & = \sum_{i = 1}^n \sum_{k = 1 }^{q } \int_{a }^{b } a_{k, i} f_i(t) \dt b_k \\
         & = \sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) \sum_{k=1}^q a_{k, i} b_k \\
-        & = L \left( \sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \text d t e_i \right) \\
-        & = L \left( \int_a^b f(t) \dt \right)
+        & = L \left(\left(\sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \dt\right) e_i\right) \\
+        & = L \left( \int_a^b f(t) dt \right)
     \end{align*}
+    }
 \end{proof}
 
 \subsection{Sommes de Riemann}
@@ -772,21 +949,23 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Soit $N \geqslant 2$ et $f \in \mathscr C^{pm}([a, b], E)$.
 
     On appelle somme de Riemann à gauche (resp. à droite) pour $f$ sur $[a, b]$ associée à la 
-    subdivision régulière en $N$ segments le vecteur 
+    subdivision régulière en $N$ segments le vecteur :
     $$R_{g, N, f, [a, b]} = \frac{b-a} N \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right)$$
 
     Resp. $\displaystyle R_{d, N, f, [a, b]} = \frac{b-a} N \sum_{k=1}^{N} f\left( a + k \frac{b-a}{N} \right)$
 \end{definition}
 
 \begin{remarque}
-    La notation des R avec 50 indices est pas universelle
+    La notation avec les indices n'est pas standard.
+    
+    On peut aussi définir ces sommes sur des subdivisions non régulières et prendre un point quelconque dans les intervalles mais ce n'est pas utile ici.
 \end{remarque}
 
 \begin{proposition}{}{}
     Soit $f \in \mathscr C^{pm}([a, b], E)$. Alors les sommes de Riemann pour $f$ convergent vers 
     $\displaystyle \int_a^b f(t) \dt$ quand $N \to +\infty$.
 
-    On a donc 
+    On a donc :
     $$ \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) \dt$$
     $$ \frac{b - a }{N } \sum_{k = 1 }^{N} f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) \dt$$
 
@@ -795,27 +974,29 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \idee{Surprise surprise, coordonnée par coordonnée.}
 
 \begin{proof}
+Soit $B= (e_1,\dots,e_n)$ une base de $E$.
     \begin{align*}
         R_{g, N, f, [a, b]} & = \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } \sum_{i = 1 }^{n } f_i\left( a + k \frac{b - a } N \right) e_i \\
         & = \sum_{i = 1 }^{n } \left( \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f_i\left( a + k \frac{b - a } N \right) \right) e_i \\
         & \limit{N}{+ \infty} \sum_{i = 1 }^{n } \left( \int_a^b f_i(t) \dt \right) e_i \\
         & = \int_a^b f(t) \dt
     \end{align*}
+De même pour la somme à droite.
 \end{proof}
 
 \begin{theoreme}{Inégalité triangulaire pour l'intégrale}{}
-    Munisson $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
-    
-    Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et
-    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt$$
+    Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
+    Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et :
+    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
 \end{theoreme}
 
-\idee{Sommes de Riemann + passage à la limite.}
+\idee{Sommes de Riemann et passage à la limite.}
 
 \begin{proof}
-    $||f||$ est cpm par compo car $||\cdot||$ est continue.
+    $||f||$ est continue par morceaux par composition car $||\cdot||$ est continue
+    et $f$ est continue par morceaux (prendre une subdivision adaptée pour le prouver).
 
-    Soit $N \geqslant 1$, alors 
+    Soit $N \geqslant 2$, alors,
 
     \begin{align*}
         \left|\left| R_{g, N, f, [a, b]} \right|\right| & = \left|\left| \frac{b-a}{N} \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right) \right|\right| \\
@@ -828,7 +1009,7 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \end{proof}
 
 
-\subsection{Intégrale de la borne supérieure }
+\subsection{Intégrale de la borne supérieure}
 
 \begin{theoreme}{Primitive fonction vectorielle}{}
     Soit $f \in \mathscr C(I, E)$ et $a \in I$. 
@@ -836,7 +1017,7 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) \dt}$ est de classe $\mathscr C^1$ sur $I$ et 
     vérifie $F' = f$.
 
-    $F$ est appelée la primitive de $f $ qui s'annule en $a$. 
+    $F$ est appelée la primitive de $f$ sur $I$ qui s'annule en $a$. 
 \end{theoreme}
 
 \idee{Coordonnée par coordonnée.}
@@ -849,24 +1030,23 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Par le théorème fondamental pour les fonctions réelles, $F_i$ est de classe $\mathscr C^1$ et $F_i' = f_i$.
 \end{proof}
 
-\begin{corollaire}{calcul d'intégrale}{}
+\begin{corollaire}{Calcul d'intégrales}{}
     Soit $f \in \mathscr C(I, E)$ et $F \in \mathscr C^1(I, E)$ tel que 
     $F' = f$, alors $F$ est appelée une primitive de $f$. Alors $\forall a, b \in I$, 
     
     $$\displaystyle \int_a^b f(t) \dt = F(b) - F(a)$$
 \end{corollaire}
 
-\idee{Prendre deux primitives différentes. }
+\idee{Prendre deux primitives différentes.}
 
 \begin{proof}
-    Posons $\forall x \in I, \, G(x) = \int_a^x f(t) \dt$.
+    Posons $\ds \forall x \in I, \, G(x) = \int_a^x f(t) dt$.
 
     Par le théorème, $G' = f = F'$ donc $(F - G)' = 0$ et donc $F - G$ est constante, 
-    donc $F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) \dt$.
+    donc $\ds F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) \dt$.
 \end{proof}
 
-
-\subsubsection{Recherche de primitives }
+\subsubsection{Recherche de primitives}
 
 $$\renewcommand{\arraystretch}{1.6}
 \begin{array}{|c|c|c|}
@@ -895,13 +1075,13 @@ $$\renewcommand{\arraystretch}{1.6}
     \hline
 \end{array}$$
 
-\subsubsection{Intégration par parties }
+\subsubsection{Intégration par parties}
 
 Soient $u, v \in \mathscr C^1([a, b], \K)$.
+Alors :
+$$\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b } u \cdot v'$$
 
-Alors $$\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b } u \cdot v'$$
-
-\subsubsection{Changement de variable }
+\subsubsection{Changement de variable}
 
 Soit $\varphi \in \mathscr C^1(J, I)$ et $\alpha, \beta \in J$, 
 $\varphi(\alpha) = a, \, \varphi(\beta) = b$.
@@ -933,7 +1113,7 @@ $$\renewcommand{\arraystretch}{2.1}
     \hline
 \end{array}}$$
 
-\subsubsection{Décomposition en éléments simples }
+\subsubsection{Décomposition en éléments simples}
 
 \begin{exemple}
     $\displaystyle I = \int_0^x \sqrt{\tan t} \text d t$, $x \in [0, \frac \pi 2[$.
@@ -967,29 +1147,43 @@ $$\renewcommand{\arraystretch}{2.1}
 \end{exemple}
 
 \begin{theoreme}{Inégalité des accroissements finis}{}
-    Soit $f \in \mathscr C^1(I, E)$. On suppose $\exists M > 0, \, \forall x \in I, \, ||f'(x)|| \leqslant M$.
+    Soit $f \in \mathscr C^1(I, E)$, soient $\alpha,\beta \in I$. Soit $M > 0, \, \forall x \in [\alpha,\beta], \, ||f'(x)|| \leqslant M$.
 
-    Alors $\forall a, b \in I$, 
+    Alors $\forall a, b \in [\alpha,\beta]$, 
 
     $$||f(b) - f(a)|| \leqslant M |b - a|$$
 \end{theoreme}
 
-\idee{Inégalité triangulaire des intégrales }
+\idee{Inégalité triangulaire des intégrales.}
 
 \begin{proof}
 
-    $f(b) - f(a) = \int_a^b f'(t) \dt$.
+    $\ds f(b) - f(a) = \int_a^b f'(t) \dt$.
 
     Donc $\displaystyle ||f(b) - f(a)|| \leqslant \int_a^b ||f'(t)|| \dt \leqslant \int_a^b M \dt = M |b - a|$.
 \end{proof}
 
+\begin{remarque}
+    À contrario, le théorème de Rolle et le théorème des accroissement finis ne sont pas valables pour les fonctions vectorielles.
+\end{remarque}
 
-\subsection{Formule de Taylor }
+\subsection{Formules de Taylor}
 
-\begin{proposition}{Formule de Taylor avec reste intégral}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$. 
+\marginenote{Histoire !}{À l'époque, Taylor notait les dérivées successives par des lettres $m,n,\dots$ car la notation $f^{(n)}$ n'existait pas.}
 
-    $$f(b) = \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) + \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n \dt$$
+\begin{proposition}{Formule de Taylor-Young}{}
+    Soit $f \in \mathscr C^n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a :
+    $$f(a + h) = \sum_{k = 0 }^{n } \frac{h^k}{k!} f^{(k)}(a) + o(h^n)$$
+\end{proposition}
+
+\begin{proof}
+    Composante par composante.
+\end{proof}
+
+\begin{proposition}{Formule de Taylor avec reste intégrale}{}
+    Soit $f \in \mathscr C^{n + 1}(I, E)$ et $a, b \in I$. 
+
+    $$f(b) = \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) + \int_a^b \frac{(b - t)^n}{n!} f^{(n+1)}(t) dt$$
 \end{proposition}
 
 \begin{proof}
@@ -997,13 +1191,13 @@ $$\renewcommand{\arraystretch}{2.1}
 \end{proof}
 
 \begin{proposition}{Inégalité de Taylor-Lagrange}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$. On suppose $\exists M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
-
-    Alors $$\left|\left| f(b) - \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right| \leqslant \frac{M |b - a|^{n + 1}}{(n + 1)!}$$
+    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$.  Soit $M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
+    Alors :
+    $$\left|\left| f(b) - \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right| \leqslant \frac{M |b - a|^{n + 1}}{(n + 1)!}$$
 \end{proposition}
 
 \begin{proof}
-    On prend $a < b$
+    On prend $a < b$.
 
     \begin{align*}
     \left|\left| f(b) - \sum_{k = 0}^n \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right|  & = \left|\left| \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n \dt \right|\right| \\
@@ -1012,17 +1206,3 @@ $$\renewcommand{\arraystretch}{2.1}
         & = M \frac{(b - a )^{n + 1}}{(n+ 1)!}
     \end{align*}
 \end{proof}
-
-\begin{proposition}{Formule de Taylor-Young}{}
-    Soit $f \in \mathscr C^n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a
-
-    $$f(a + h) = \sum_{k = 0 }^{n } \frac{h^k}{k!} f^{(k)}(a) + o(h^n)$$
-\end{proposition}
-
-\begin{proof}
-    Composante par composante.
-\end{proof}
-
-
-
-

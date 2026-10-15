@@ -3,7 +3,7 @@
 \subsection{Dérivation}
 
 % --- Exercice 1 (Source: EXERCICE 4 analyse) ---
-\begin{exercice}[Exercice 4 analyse]
+\begin{exercice}[Exercice 4 Analyse]
 \begin{enumerate}
     \item Énoncer le théorème des accroissements finis.
     \item Soit $f:[a,b]\longrightarrow\R$ et soit $x_{0}\in]a,b[$. 
@@ -21,14 +21,14 @@
 
 % --- Exercice 3 (Source: Exercice 2) ---
 \begin{exercice}
-    Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un espace vectoriel normé de dimension finie, et continue en $a$.
-    \begin{enumerate}
-        \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
-        \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
-        
-        \textit{On pourra commencer par montrer que pour $t>0$ et $n\in\N^{*}$ on a :}
-        $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
-    \end{enumerate}
+Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un espace vectoriel normé de dimension finie, et continue en $a$.
+\begin{enumerate}
+    \item Comparer la dérivabilité de $f$ en $a$ et l'existence de $\lim_{t\rightarrow0}\frac{f(a+t)-f(a-t)}{2t}$.
+    \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
+    
+    \textit{Indication : on pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :}
+    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 3) ---
@@ -54,9 +54,9 @@
         \item On suppose que $f'(a)>0$ et $f'(b)<0$.
             Montrer qu'il existe $c\in]a,b[$ vérifiant $f'(c)=0$.
 
-            \textit{Indication : On utilisera le fait que $f$ est continue sur le segment et on montrera qu'il n'est pas possible que ses deux extremums ne soient atteints qu'en $a$ et $b$.}
-        \item En déduire le théorème de Darboux : "Toute dérivée d'une fonction dérivable de $[a, b]$ dans $\R$ vérifie le théorème des valeurs intermédiaires".
-    \end{enumerate}
+        \textit{Indication : on utilisera le fait que $f$ est continue sur le segment et on montrera qu'il n'est pas possible que ses deux extremums ne soient atteints qu'en $a$ et $b$.}
+    \item En déduire le théorème de Darboux : "Toute dérivée d'une fonction dérivable de $[a, b]$ dans $\R$ vérifie le théorème des valeurs intermédiaires".
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 7) ---
@@ -64,11 +64,11 @@
     Soit $f\in \mathcal{C}^{1}([a,b],\R)$ telle que $f'(a)=f'(b)$.
     Montrer qu'il existe $c\in]a,b[$ tel que
     $$ f'(c)=\frac{f(c)-f(a)}{c-a} $$
-    \textit{Indication : On définira $g:x\mapsto\frac{f(x)-f(a)}{x-a}$ prolongée par continuité sur $[a, b]$ et on montrera qu'elle atteint un de ses extremums en un point $c\in]a,b[$.}
+    \textit{Indication : on définira $g:x\mapsto\frac{f(x)-f(a)}{x-a}$ prolongée par continuité sur $[a, b]$ et on montrera qu'elle atteint un de ses extremums en un point $c\in]a,b[$.}
 \end{exercice}
 
 % --- Exercice 9 (Source: EXERCICE 3 analyse) ---
-\begin{exercice}
+\begin{exercice}[Exercice 3 Analyse]
 \begin{enumerate}
     \item On pose $g(x)=e^{2x}$ et $h(x)=\frac{1}{1+x}$.
         Calculer, pour tout entier naturel $k$, la dérivée d'ordre $k$ des fonctions $g$ et $h$ sur leurs ensembles de définitions respectifs.
@@ -94,19 +94,19 @@
 \subsection{Intégration sur un segment}
 
 % --- Exercice 12 (Source: EXERCICE 56 analyse) ---
-\begin{exercice}
-    On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{\dt}{\ln t}$.
-    \begin{enumerate}
-        \item Montrer que $H$ est $\mathcal{C}^{1}$ sur $]1,+\infty[$ et calculer sa dérivée.
-        \item Montrer que la fonction $u$ définie par $u(x)=\frac{1}{\ln x}-\frac{1}{x-1}$ admet une limite finie en $x=1$.
-        \item En utilisant la fonction $u$ de la question 2, calculer la limite en $1^+$ de la fonction $H$.
-    \end{enumerate}
+\begin{exercice}[Exercice 56 Analyse]
+On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{\dt}{\ln t}$.
+\begin{enumerate}
+    \item Montrer que $H$ est $\mathcal{C}^{1}$ sur $]1,+\infty[$ et calculer sa dérivée.
+    \item Montrer que la fonction $u$ définie par $u(x)=\frac{1}{\ln x}-\frac{1}{x-1}$ admet une limite finie en $x=1$.
+    \item En utilisant la fonction $u$ de la question 2, calculer la limite en $1^+$ de la fonction $H$.
+\end{enumerate}
 \end{exercice}
 
 % --- Exercice 13 (Source: Exercice 10) ---
 \begin{exercice}
     Soit $f\in \mathcal{C}^{2}(\R,\R)$ telle que $f+f''>0$. Démontrer que
-    $$ \forall x\in\R, \quad f(x)+f(x+\pi)\ge0 $$
+    $$ \forall x\in\R,~f(x)+f(x+\pi)\ge0 $$
     \textit{Indication : considérer $\displaystyle \int_{0}^{\pi}\sin(t)(f(t)+f''(t))\dt$.}
 \end{exercice}
 
@@ -131,7 +131,7 @@
     Soit $f$ de classe $\mathcal{C}^{1}$ sur $\R^{+}$, strictement croissante et réalisant une bijection de $\R^{+}$ sur $\R^{+}$.
     Montrer que pour tout $x\geqslant0$,
     $$ xf(x)=\int_{0}^{x}f(t)\dt+\int_{0}^{f(x)}f^{-1}(t)\dt $$
-    \textit{Indication : Dériver. Interprétation géométrique ?}
+    \textit{Indication : dériver. Interprétation géométrique ?}
 \end{exercice}
 
 % --- Exercice 18 (Source: Exercice 15) ---
@@ -299,43 +299,70 @@
 
     Si $g'(c)=0$, alors $f'(c) = g(c) = \frac{f(c)-f(a)}{c-a}$.
 
-    Le résultat demandé est légèrement différent de la forme des accroissements finis usuels ?
+    Reste à montrer que $g$ a un extremum sur $]a,b[$.
 
-    L'énoncé demande $f'(c) = \frac{f(c)-f(a)}{c-a}$. C'est exactement $g'(c)=0 \implies f'(c)=g(c)$.
+    Supposons que $g$ a son maximum en $a$ et son minimum en $b$ (quitte à échanger).
+    
+    $$g(a) \leqslant g(x) \leqslant g(b)$$
 
-    Reste à montrer que $g$ a un extremum.
+    Par le lemme des trois pentes :
+    $$\frac{f(b) - f(a)}{b-a} \leqslant \frac{f(b) - f(x)}{b-x}$$
 
-    Comme $g(a)=f'(a)$ et $f'(a)=f'(b)$, on peut utiliser un raisonnement similaire au Rolle classique ou Darboux.
+    On fait tendre $x$ vers $b$ :
+    $$\frac{f(b) - f(a)}{b-a} \leqslant f'(b) = f'(a)$$
+
+    Donc $\forall x \in ]a,b[, \frac{f(x) -f(a)}{x-a} = f'(a)$.
+    Donc $f$ affine.
+\end{correction}
+
+\begin{correction}{10}
+Notons $f_n: t \to t^{n-1} \ln(t)$ et $g_n: t \to t^{n-1}$.    
+Les deux fonctions sont bien $\mathscr C^n$ donc $f$ l'est aussi.
+On a :
+\[\forall K \in \inter 0 {n-1}, \left(g_n\right)^{(K)}(x) = \frac{(n-1)!}{(n-1-K)!}x^{n-1-K}\]
+Et :
+\[\forall K \in \inter 1 {n}, \left(\ln\right)^{(K)}(x) = \frac{(-1)^K(K-1)!}{x^K}\]
+On calcule avec la formule de Leibniz :
+\begin{align*}
+    \left(f_n\right)^{(n)} &= \sum_{k=0}^n \binom{n}{k} g_n^{(n-k)}(x) \ln^{k}(x) \\
+    &= \sum_{k=1}^n \binom{n}{k} \frac{(n-1)!}{(k-1)!} x^{k-1} \frac{(-1)^{k+1}(k-1)!}{x^k} \\
+    &= \frac{(n-1)!}{x} \sum_{k=1}^n \binom{n}{k} (-1)^{k+1} \\
+    &= \frac{(n-1)!}{x} \sum_{k=0}^n \left(\binom{n}{k} (-1)^{k+1} -1\right)\\
+    &= \frac{(n-1)!}{x}
+\end{align*}
 \end{correction}
 
 % --- Correction 11 (Source: Exercice 9) ---
 \begin{correction}{11}
-\begin{enumerate}
-    \item $x \mapsto x^{2n}$. Dérivée $n$-ième : $(x^{2n})^{(n)} = \frac{(2n)!}{(2n-n)!} x^{2n-n} = \frac{(2n)!}{n!} x^n$.
-        En $x=1$, valeur $\frac{(2n)!}{n!}$.
-    \item Leibniz sur $x^n \cdot x^n$.
-        $(x^{2n})^{(n)} = \sum_{k=0}^n \binom{n}{k} (x^n)^{(k)} (x^n)^{(n-k)}$.
+    On note $f_n: x \to x^n$.
 
-        Or $(x^n)^{(k)} = \frac{n!}{(n-k)!} x^{n-k}$.
-        En $x=1$, $(x^n)^{(k)}(1) = \frac{n!}{(n-k)!}$.
+    Dérivée $n$-ième : $(f_{2n})^{(n)}(x) = \frac{(2n)!}{(2n-n)!} x^{2n-n} = \frac{(2n)!}{n!} x^n$.
+    En $x=1$, valeur $\frac{(2n)!}{n!}$. \\
+    
+    Leibniz sur $x^n \cdot x^n$.
+    $\ds(f_{2n})^{(n)}(x) = \sum_{k=0}^n \binom{n}{k} (f_n)^{(k)}(x) (f_n)^{(n-k)}(x)$.
 
-        Donc $(x^{2n})^{(n)}(1) = \sum_{k=0}^n \binom{n}{k} \frac{n!}{(n-k)!} \frac{n!}{k!} = n! \sum_{k=0}^n \binom{n}{k} \binom{n}{n-k} = n! \sum_{k=0}^n \binom{n}{k}^2$.
-    \item Égalité des résultats : $\frac{(2n)!}{n!} = n! \sum \binom{n}{k}^2$.
-        D'où $\sum_{k=0}^n \binom{n}{k}^2 = \frac{(2n)!}{(n!)^2} = \binom{2n}{n}$.
-\end{enumerate}
+    Or $(f_n)^{(k)}(x) = \frac{n!}{(n-k)!} x^{n-k}$.
+    En $x=1$, $(f_n)^{(k)}(1) = \frac{n!}{(n-k)!}$.
+
+    Donc $\ds (f_{2n})^{(n)}(1) = \sum_{k=0}^n \binom{n}{k} \frac{n!}{(n-k)!} \frac{n!}{k!} = n! \sum_{k=0}^n \binom{n}{k} \binom{n}{n-k} = n! \sum_{k=0}^n \binom{n}{k}^2$. \\
+
+    Égalité des résultats : $\ds \frac{(2n)!}{n!} = n! \sum_{k=0}^n \binom{n}{k}^2$.
+    D'où $\ds \sum_{k=0}^n \binom{n}{k}^2 = \frac{(2n)!}{(n!)^2} = \binom{2n}{n}$.
 \end{correction}
 
 % --- Correction 13 (Source: Exercice 10) ---
 \begin{correction}{13}
-    Posons $I = \int_0^\pi (f(t)+f''(t)) \sin t \dt$.
+    Posons $\ds I = \int_0^\pi (f(t)+f''(t)) \sin t \dif t$.
     Par IPP (deux fois) sur $\int f'' \sin$ :
     \begin{align*}
-        \int_0^\pi f''(t) \sin t \dt &= [f'(t)\sin t]_0^\pi - \int_0^\pi f'(t) \cos t \dt \\
-        &= 0 - ([f(t)\cos t]_0^\pi - \int_0^\pi f(t)(-\sin t)\dt) \\
-        &= - (-f(\pi) - f(0) + \int_0^\pi f(t) \sin t \dt) \\
+        \int_0^\pi f''(t) \sin t \dif t &= [f'(t)\sin t]_0^\pi - \int_0^\pi f'(t) \cos t \dt \\
+        &= 0 - \left([f(t)\cos t]_0^\pi - \int_0^\pi f(t)(-\sin t)\dt\right) \\
+        &= - \left(-f(\pi) - f(0) + \int_0^\pi f(t) \sin t \dt\right) \\
         &= f(\pi)+f(0) - \int_0^\pi f(t) \sin t \dt
     \end{align*}
-    Donc $I = \int f \sin + f(\pi)+f(0) - \int f \sin = f(\pi)+f(0)$.
+    
+    Donc $\ds I = \int_0^{\pi} f \sin + f(\pi)+f(0) - \int_0^{\pi} f \sin = f(\pi)+f(0)$.
 
     Comme $f+f''>0$ et $\sin t > 0$ sur $]0,\pi[$, l'intégrale $I$ est strictement positive.
     Donc $f(\pi)+f(0) > 0$.
@@ -346,14 +373,15 @@
 % --- Correction 14 (Source: Exercice 11) ---
 \begin{correction}{14}
 
-    Soit $f(x) = \int_x^{2x} \frac{e^t}{\arcsin t} \dt$.
+    Soit $\ds f(x) = \int_x^{2x} \frac{e^t}{\arcsin t} \dt$.
     Quand $t \to 0$, $\frac{e^t}{\arcsin t} \sim \frac{1}{t}$.
 
-    On compare avec $g(x) = \int_x^{2x} \frac{1}{t} \dt = [\ln t]_x^{2x} = \ln 2$.
-    $f(x) - g(x) = \int_x^{2x} (\frac{e^t}{\arcsin t} - \frac{1}{t}) \dt$
+    On compare avec $\ds g(x) = \int_x^{2x} \frac{1}{t} \dt = [\ln t]_x^{2x} = \ln 2$.
+    $\ds f(x) - g(x) = \int_x^{2x} \left(\frac{e^t}{\arcsin t} - \frac{1}{t}\right) \dt$
 
     La fonction $h(t) = \frac{e^t}{\arcsin t} - \frac{1}{t}$ se prolonge par continuité en 0 (limite 1).
-    Donc $\int_x^{2x} h(t) \dt \approx x \cdot h(0) \to 0$.
+    
+    Donc $\ds \int_x^{2x} h(t) \dif t \approx x \cdot h(0) \to 0$.
 
     Ainsi, $\lim_{x\to 0^+} f(x) = \ln 2$.
 \end{correction}
@@ -361,7 +389,7 @@
 % --- Correction 16 (Source: Exercice 13) ---
 \begin{correction}{16}
 
-    $I = \int_0^\pi \frac{x}{1+\sin x} \dx$.
+    $\ds I = \int_0^\pi \frac{x}{1+\sin x} \dx$ existe bien car ce qui est intégré est continu sur $[0,\pi]$.
 
     Changement de variable $u = \pi - x$. $\dx = -\dif u$.
     Bornes : $\pi \to 0$.
@@ -373,7 +401,7 @@
     Calcul de $J = \int_0^\pi \frac{1}{1+\sin x} \dx$.
     On peut utiliser $1+\sin x = 1 + \cos(\frac{\pi}{2}-x) = 2 \cos^2(\frac{\pi}{4}-\frac{x}{2})$.
     \begin{align*}
-        J &= \frac{1}{2} \int_0^\pi \frac{\dx}{\cos^2(\frac{\pi}{4}-\frac{x}{2})} &\text{Primitive} \tan \\
+        J &= \frac{1}{2} \int_0^\pi \frac{\dif x}{\cos^2(\frac{\pi}{4}-\frac{x}{2})} &\text{primitive} \tan \\
           &= [\tan(\frac{x}{2}-\frac{\pi}{4})]_0^\pi \\
           &= \tan(\frac{\pi}{4}) - \tan(-\frac{\pi}{4}) \\
           &= 1 - (-1) \\

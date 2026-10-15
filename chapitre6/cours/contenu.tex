@@ -3,7 +3,6 @@ Dans tout le chapitre, on prend $I$ un intervalle réel tel que $\mathring{I} \n
 On prendra aussi $\K = \R$ ou $\C$, et $(E,N)$ un $\K$-espace vectoriel normé
  de dimension finie.
 
-
 \section{Dérivation}
 \subsection{Dérivée en un point}
 
@@ -593,15 +592,19 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 
 \begin{remarque}
     (hors programme)
-
+    
     On dira alors que $g$ est $\mathscr C^{\infty}$ à support compact (plus précisément à support inclus dans un compact).
 
     L'ensemble de ces fonctions est appelé \emph{espace de Schwartz}, est un espace vectoriel et est noté $S$.
 
+    $\forall f \in \mathscr C^0(\R, \R)$ posons :
+    \[\fonction {\varphi_f} S {\R} g {\int_{\R}} f(t)g(t) \dif t\]
     On montrerait que :
-    \[\fonction {\varphi_f} S {\R} g {\int_{\R}} f(t)g(t)dt\]
+    \[\fonction {\psi} {\mathscr C^0(\R,\R)} {\mathscr L(S,\R)} f {\varphi_f}\]
 
     est injective.
+    À chaque fonction continue on associe donc une forme linéaire.
+    Ceci généralise la notion de fonctions et définit la notion de \emph{distributions}.
 \end{remarque}
 
 \subsection{Complément hors programme sur les courbes paramétrées}

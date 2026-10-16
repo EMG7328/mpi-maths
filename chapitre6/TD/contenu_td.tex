@@ -136,20 +136,21 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 
 % --- Exercice 18 (Source: Exercice 15) ---
 \begin{exercice}
-    Soit $f\in \mathcal{C}^{2}([a,b],E)$ telle que $f(a)=f(b)=0$. Montrer que
-    $$ \left\| \int_{a}^{b}f(t)\dt \right\| \leqslant \frac{(b-a)^{3}}{12} \sup_{[a,b]} \|f''(t)\| $$
+    Soit $f\in \mathcal{C}^{2}([a,b],\C)$ telle que $f(a)=f(b)=0$. Montrer que :
+    $$ \left| \int_{a}^{b}f(t)\dt \right| \leqslant \frac{(b-a)^{3}}{12} \|f''(t)\|_{\infty} $$
     Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)\dt$.
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 16) ---
-\begin{exercice}
+\begin{exercice}[Cayley-Hamilton]
     Soit $A\in \mathcal{M}_{n}(\C)$. Calculer de deux manières différentes, pour $r>0$ assez grand,
     $$ I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta $$
     Et en déduire le théorème de Cayley-Hamilton.
     \begin{enumerate}
         \item Commencer par montrer que pour $r>0$ assez grand $\left(re^{i\theta}I_{n}-A\right)$ e
             st bien inversible pour tout $\theta$, ce qui assure bien l'existence de $I(r)$.
-            On supposera dans toute la suite que $r>0$ est assez grand pour que $I(r)$ existe.
+
+            \textit{On supposera dans toute la suite que $r>0$ est assez grand pour que $I(r)$ existe.}
         \item 
         \begin{enumerate}
             \item Utiliser la relation entre inverse et comatrice pour montrer que 
@@ -163,16 +164,17 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
             \item Montrer que pour tout matrice de norme assez petite, $\ds (I_{n}-B)^{-1}=\sum_{k=0}^{+ \infty}B^{k}$.
             \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que :
                 $$ I(r)=\sum_{k=0}^{+ \infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta $$
-                (note: correction dans l'exposant de $r$ selon le contexte classique).
             \item En notant le polynôme caractéristique de $A$, $\ds\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, 
                 conclure en remarquant que $\ds \int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
         \end{enumerate}
     \end{enumerate}
 \end{exercice}
 
+\subsection{Sommes de Riemann}
 % --- Exercice 20 (Source: Exercice 17) ---
 \begin{exercice}
     Déterminer $\ds\lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\sin\left(\frac{k}{n}\right)\sin\left(\frac{k}{n^{2}}\right)$.
+
     On se ramènera par un encadrement de $\sin x$ à la recherche de $\ds \lim_{n\rightarrow+\infty}\sum_{k=1}^{n}\sin\left(\frac{k}{n}\right)\frac{k}{n^{2}}$.
 \end{exercice}
 
@@ -183,7 +185,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 
 % --- Exercice 22 (Source: Exercice 19) ---
 \begin{exercice}
-    Soit $x$ réel différent de -1 et 1.
+    Soit $x \in \R \setminus \{-1,1\}$.
     Après avoir vérifié son existence, utiliser les sommes de Riemann pour calculer $\ds \int_{0}^{2\pi}\ln(x^{2}-2x \cos t + 1)\dt$.
 \end{exercice}
 
@@ -413,18 +415,18 @@ On calcule avec la formule de Leibniz :
 % --- Correction 20 (Source: Exercice 17) ---
 \begin{correction}{20}
 
-    On cherche $\lim \sum \sin(k/n) \sin(k/n^2)$.
+    On cherche $\ds \lim_{n\to + \infty} \sum_{k=0}^n \sin\left(\frac k n\right) \sin\left(\frac k {n^2}\right)$.
 
-    Pour $n$ grand, $k/n^2$ est petit. $\sin(k/n^2) \sim k/n^2$.
+    Pour $n$ grand, $\frac k {n^2}$ est petit. $\sin\left(\frac k {n^2}\right) \sim \frac k {n^2}$.
 
-    On compare la somme à $S_n = \sum_{k=1}^n \sin(k/n) \frac{k}{n^2} = \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \sin(\frac{k}{n})$.
+    On compare la somme à $\ds S_n = \sum_{k=1}^n \sin\left(\frac k n\right) \frac{k}{n^2} = \frac{1}{n} \sum_{k=1}^n \frac{k}{n} \sin\left(\frac{k}{n}\right)$.
 
     C'est une somme de Riemann pour la fonction $x \mapsto x \sin x$ sur $[0,1]$.
-    Elle converge vers $\int_0^1 x \sin x \dx$.
+    Elle converge vers $\ds \int_0^1 x \sin x \dx$.
 
-    IPP : $[-x\cos x]_0^1 + \int_0^1 \cos x \dx = -\cos 1 + [\sin x]_0^1 = \sin 1 - \cos 1$.
+    IPP : $\ds [-x\cos x]_0^1 + \int_0^1 \cos x \dx = -\cos 1 + [\sin x]_0^1 = \sin 1 - \cos 1$.
 
-    Majoration de l'erreur : $|\sin u - u| \le \frac{|u|^3}{6}$.
+    Par Taylor-Lagrange à l'ordre $2$ : $|\sin u - u| \le \frac{|u|^3}{6}$.
 
     L'erreur totale tend vers 0. La limite est $\sin 1 - \cos 1$.
 \end{correction}

@@ -1,14 +1,16 @@
-
-\section{Groupes, sous-groupes et morphismes }
+\section{Groupes, sous-groupes et morphismes}
 \subsection{Groupe}
 
+\marginenote{Histoire}{La notion a été inventée au XIXe siècle par Galois qui cherchait les solutions d'équations polynomiales de degré $> 4$.
+
+C'est cependant Cayley en 1854 qui donnera la première définition abstraite de groupe fini.}
 \begin{definition}{Groupe}{}
     \index{Groupe}
     Soit $G$ un ensemble muni d'une loi de composition interne $\ast$. 
     On dit que $(G, \ast)$ est un \emph{groupe} ssi 
     \begin{itemize}
         \item $\ast$ est associative
-        \item $\ast$ possède un neutre noté $e_G \in G$, unique.
+        \item $G$ possède un neutre $e_G \in G$ pour $\ast$, qui est alors unique.
         \item Tout élément de $G$ est symétrisable par $\ast$, c'est-à-dire que pour tout $x \in G$, 
         il existe un unique élément de $G$ appelé symétrique de $x$ noté $x^{-1}$ tel que $x \ast x^{-1} = e_G$.
     \end{itemize}
@@ -17,16 +19,19 @@
     on dit que $(G, \ast)$ est un \emph{groupe abélien}.
 \end{definition}
 
-
-\subsubsection{Notations - Vocabulaire }
-
+\begin{remarque}
+Notations, vocabulaire :
 \begin{itemize}
     \item Dans le cas où la loi de $G$ est notée $+$, on dit que $(G, +)$ est un \emph{groupe additif},
     La loi $+$ est en général commutative, et son neutre noté $0_G$. Le symétrique de $x \in G$ 
     est appelé opposé de $x$ et noté $-x$.
 
     Pour $n \in \N$, l'élément du groupe obtenu en itérant $n$ fois la loi $+$ sur $x$ est noté
-    $nx$. Pour $n \in \Z, n < 0$, on pose $nx = (-n)(-x)$. $(G, +)$ est un $\Z$-module (HP).
+    $nx$. On a de plus $\forall n,p \in \Z,~(n+p) \cdot x = n\cdot x + p\cdot x$.
+
+    Pour $n \in \Z, n < 0$, on pose $nx = (-n)(-x)$. $(G, +)$ est un $\Z$-module (HP).
+
+    \marginenote{Musique !}{Le groupe multiplicatif le plus célèbre est $\symbb U_2$ (U2)!}
     \item Dans le cas où la loi de $G$ est notée $\cdot$, on dit que $(G, \cdot)$ est un \emph{groupe multiplicatif}.
     Son neutre est alors noté $1_G$. Le symétrique de $x \in G$ est appelé inverse de $x$ et noté $x^{-1}$.
     Pour $n \in \N^*$, l'élément du groupe obtenu en itérant $n$ fois la loi $\cdot$ sur $x$ est noté $x^n$. 
@@ -46,6 +51,7 @@
 
     \item Si $n \in \N^*$, l'ensemble $\mathfrak{S}_n$ des permutations de $\{1, \ldots, n\}$ est un groupe pour la composition.
 \end{itemize}
+\end{remarque}
 
 \subsection{Sous-groupes}
 
@@ -72,8 +78,6 @@
     De plus si $G$ est abélien, alors $H$ est abélien.
 \end{proposition}
 
-
-
 \begin{remarque}
     Si $(G, +)$ est un groupe additif et $H \subset G$, cette caractérisation devient : 
     \begin{itemize}
@@ -96,7 +100,7 @@
     $G_i$ est un sous-groupe de $(G, \ast)$, donc $x \ast y^{-1} \in H$
 \end{proof}
 
-\begin{proposition}{Réunion de deux sous-groupes (LHP)}{}
+\begin{proposition}{Réunion de deux sous-groupes - LHP}{}
     Soit $(G, \ast)$ un groupe et $G_1, G_2$ deux sous-groupes de $(G, \ast)$.
 
     Alors $G_1 \cup G_2$ est un sous-groupe de $(G, \ast)$ ssi $G_1 \subset G_2$ ou $G_2 \subset G_1$.
@@ -160,7 +164,7 @@
     Or $n$ est le plus petit élément de $H \cap \N^*$, donc $r = 0$ et $x = nq \in n \Z$.
 \end{proof}
 
-\subsection{Morphisme de groupes }
+\subsection{Morphisme de groupes}
 
 \begin{definition}{Morphisme de groupes}{}
     \index{Morphisme!de groupes}
@@ -248,9 +252,8 @@
     \end{align*}
 \end{proof}
 
-
 \section{Les groupes \texorpdfstring{$\Z / n \Z$}{Z/nZ}}
-\subsection{Définitions }
+\subsection{Définitions}
 
 Soit $n \in \N, \, n \geqslant 2$.
 
@@ -373,7 +376,6 @@ au dessus).}
     De plus $\fonction{}{(\Z, +)}{(\Z/n\Z, +)}{k}{\hat k}$ est un morphisme de groupes surjectif.
 \end{theoreme}
 
-
 \begin{proof}
     $+$ est commutative et associative. 
 
@@ -391,7 +393,7 @@ au dessus).}
     \avspace $\varphi(k_1 + k_2) = \widehat{k_1 + k_2} = \hat{k_1} + \hat{k_2} = \varphi(k_1) + \varphi(k_2)$.
 \end{proof}
 
-\subsection{Isomorphisme }
+\subsection{Isomorphisme}
 
 \begin{theoreme}{}{}
     L'application $\fonction{\varphi}{(\Z/n\Z, +)}{(\mathbb U, \cdot)}{c = \hat k}{e^{\frac{2i\pi k} n}}$
@@ -428,7 +430,6 @@ au dessus).}
     \avspace $\Z / n \Z$ et $\mathbb U$ ont même cardinal $n$, donc $\varphi$ est bijecive.
 \end{proof}
 
-
 \begin{remarque}
     Deux groupes de même cardinal ne sont pas forcément isomorphes.
 \end{remarque}
@@ -444,6 +445,7 @@ au dessus).}
 Soit $(G, \ast)$ un groupe et $a \in G$.
 
 \subsection{Morphisme fondamental}
+
 \begin{theoreme}{Puissances d'un élément et morphisme}{}
     L'application $\fonction{\varphi_a}{(\Z, +)}{(G, \ast)}{k}{a^k}$ est un morphisme de groupes.
 \end{theoreme}
@@ -468,7 +470,6 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
     $\displaystyle a = j = e^{\frac{2i\pi}3}$.
     Alors $\langle a \rangle = \{1, j, j^2\} = \mathbb U_3$.
 \end{exemple}
-
 
 \begin{remarque}
     Si $(G, +)$ est un groupe additif et $a \in G$, alors 
@@ -508,8 +509,7 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
     $\ker \varphi_1 = \Z$.
 \end{exemple}
 
-
-\subsection{Eléments d'ordre infini}
+\subsection{Éléments d'ordre infini}
 
 \begin{proposition}{}{}
     \index{Ordre!infini}
@@ -527,8 +527,7 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 
 \end{exemple}
 
-
-\subsection{Eléments d'ordre fini}
+\subsection{Éléments d'ordre fini}
 
 Soit $a \in G$ d'ordre fini $n$.
 
@@ -571,7 +570,6 @@ Soit $a \in G$ d'ordre fini $n$.
     Or $-(n-1) < k_1 - k_2 < n-1$, donc $k_1 - k_2 = 0$ et $k_1 = k_2$.
 
     Donc les éléments de $B$ sont deux à deux distincts, et Card $B = n$.
-
 \end{proof}
 
 \begin{corollaire}{}{}
@@ -589,7 +587,6 @@ Soit $a \in G$ d'ordre fini $n$.
     alors $a$ est d'ordre fini. 
 
     De plus, l'ordre de $a$ divise le cardinal de $G$.
-    
 \end{theoreme}
 
 \idee{Cas commutatif uniquement. Poser le produit de tous les éléments, et 
@@ -616,7 +613,6 @@ Le théorème de Lagrange généralise ce résultat.
     \index{Lagrange}
     Soit $(G, \ast)$ un groupe fini et $H$ un sous-groupe de $(G, \ast)$.
     Alors le cardinal de $H$ divise le cardinal de $G$.
-    
 \end{theoreme}
 
 Preuve du théorème précédent en utilisant Lagrange :
@@ -673,7 +669,7 @@ de même cardinal que $H$.}
     Donc $\operatorname{Card} G = \sum_{i \in I} \operatorname{Card} c_i = \sum_{i \in I} \operatorname{Card} H = \operatorname{Card} I \cdot \operatorname{Card} H$.
 \end{proof}
 
-\section{Groupes monogènes et cycliques }
+\section{Groupes monogènes et cycliques}
 
 \begin{definition}{Groupe monogène et cyclique}{}
     \index{Groupe!monogène}
@@ -765,7 +761,7 @@ de même cardinal que $H$.}
     $k \in \ninter{1}{n-1}$ et $\pgcd(k, n) = 1$.
 \end{theoreme}
 
-\idee{Bézout}
+\idee{Bézout.}
 
 \begin{proof}
     Soit $k \in \ninter{1}{n-1}$ tel que $\pgcd(k, n) = 1$.
@@ -792,7 +788,6 @@ de même cardinal que $H$.}
     Donc $\hat 1 = \widehat{uk}$, donc $1 \equiv uk [n]$, donc $\exists v \in \Z$ tel que $uk - 1 = vn$.
 
     Donc (par Bézout) $\pgcd(k, n) = 1$.
-
 \end{proof}
 
 \begin{corollaire}{Générateurs de $U_n$}{}
@@ -816,11 +811,9 @@ de même cardinal que $H$.}
     
     \avspace $n = 5$ : $X^5 - 1 = (X - 1)(X - e^{\frac{2i\pi}5})(X - e^{\frac{4i\pi}5})(X - e^{\frac{6i\pi}5})(X - e^{\frac{8i\pi}5})$
     Donc $1 \wedge 5 = 1 = 2 \wedge 5 = 3 \wedge 5 = 4 \wedge 5$ donc 4 racines primitives $5$-ième de l'unité.
-
-
 \end{exemple}
 
-\section{Sous-groupe engendré par une partie }
+\section{Sous-groupe engendré par une partie}
 
 \begin{definition}{Sous-groupe engendré par une partie}{}
     \index{Sous-groupe!Engendre par une partie@Engendré par une partie}
@@ -991,9 +984,3 @@ de même cardinal que $H$.}
     \end{pmatrix}$.
     Alors $\langle \{S, T\} \rangle = G$
 \end{exemple}
-
-
-
-
-
-

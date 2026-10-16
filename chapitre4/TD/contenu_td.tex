@@ -5,8 +5,8 @@
 % --- (Source: EXERCICE 7 analyse) ---
 \begin{exercice}[Exercice 7 Analyse]
 \begin{enumerate}
-    \item Soient $(u_{n})_{n\in \mathbb{N}}$ et $(v_{n})_{n\in \mathbb{N}}$ deux suites de nombres réels positifs.
-        On suppose que $(v_{n})_{n\in \mathbb{N}}$ est non nulle à partir d'un certain rang.
+    \item Soient $(u_{n})_{n\in \N}$ et $(v_{n})_{n\in \N}$ deux suites de nombres réels positifs.
+        On suppose que $(v_{n})_{n\in \N}$ est non nulle à partir d'un certain rang.
         Montrer que si $u_n \sim v_n$ alors $\sum u_n$ et $\sum v_n$ sont de même nature.
 
     \item Étudier la convergence de la série:
@@ -19,7 +19,8 @@
 \begin{exercice}[Exercice 46 Analyse]
     On considère la série $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$.
     \begin{enumerate}
-        \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O\left(\frac{1}{n^{2}}\right)$ où $\alpha$ est un réel que l'on déterminera.
+        \item Prouver que, au voisinage de $+\infty$, $\pi\sqrt{n^{2}+n+1}=n\pi+\frac{\pi}{2}+\alpha\frac{\pi}{n}+O\left(\frac{1}{n^{2}}\right)$ 
+            où $\alpha$ est un réel que l'on déterminera.
         \item En déduire que $\sum_{n\ge1}\cos\left(\pi\sqrt{n^{2}+n+1}\right)$ converge.
         \item La série converge-t-elle absolument ?
     \end{enumerate}
@@ -28,17 +29,19 @@
 % --- (Source: Exercice 1) ---
 \begin{exercice}
 \begin{enumerate}
-    \item Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme :
-        $$\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^{s}}$$
+    \item Pour $s\in\C$ tel que $\text{Re}(s)>1$, justifier la convergence absolue de la série de Riemann de somme :
+        $$\zeta(s)=\sum_{n=1}^{+ \infty}\frac{1}{n^{s}}$$
 
-    \item Pour $s\in\mathbb{R}$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme :
-        $$A(s)=\sum_{n=1}^{\infty}\frac{(-1)^{n}}{n^{s}}$$
+    \item Pour $s\in\R$ tel que $s>0$, justifier la convergence de la série alternée de Riemann de somme :
+        $$A(s)=\sum_{n=1}^{+ \infty}\frac{(-1)^{n}}{n^{s}}$$
     
-    \item  Pour $s\in\mathbb{C}$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
+    \item  Pour $s\in\C$ tel que $\text{Re}(s)>1$, simplifier $A(s)+\zeta(s)$ et en déduire un lien entre $\zeta(s)$ et $A(s)$.
     \item On s'intéresse à la convergence de $A(s)$ pour $s$ complexe tel que $\text{Re}(s)>0$.
-        On fixe $s=a+ib$ avec $a>0$ et $b\in\mathbb{R}$ et on pose $u_{n}=\frac{(-1)^{n}}{n^{s}}$. On note $v_{n}=\text{Re}(u_{n})$ et $w_{n}=\text{Im}(u_{n})$.
+        On fixe $s=a+ib$ avec $a>0$ et $b\in\R$ et on pose $u_{n}=\frac{(-1)^{n}}{n^{s}}$. 
+        On note $v_{n}=\text{Re}(u_{n})$ et $w_{n}=\text{Im}(u_{n})$.
     \begin{enumerate}
-        \item On pose $V_{n}=v_{2n}+v_{2n+1}$. En montrant que $\frac{1}{(2n+1)^{a}}=\frac{1}{(2n)^{a}}+O\left(\frac{1}{n^{1+a}}\right)$, montrer que la série $\sum V_{n}$ est absolument convergente.
+        \item On pose $V_{n}=v_{2n}+v_{2n+1}$. En montrant que $\frac{1}{(2n+1)^{a}}=\frac{1}{(2n)^{a}}+O\left(\frac{1}{n^{1+a}}\right)$, 
+            montrer que la série $\sum V_{n}$ est absolument convergente.
         \item En déduire que la série $\sum v_{n}$ converge.
         \item Conclure en raisonnant de même avec $\sum w_{n}$.
     \end{enumerate}
@@ -57,11 +60,12 @@
 
     \end{enumerate}
     
-    \item On définit pour tout $n$, $\displaystyle I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x}dx$.
+    \item On définit pour tout $n$, $\displaystyle I_{n}=\int_{0}^{\pi/2}x^{2}\frac{\sin(2nx)}{\sin x} \dx$.
     \begin{enumerate}
-        \item Montrer que $\displaystyle I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x)dx$ et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
+        \item Montrer que $\displaystyle I_{n+1}-I_{n}=\int_{0}^{\pi/2}2x^{2}\cos((2n+1)x) \dx$ 
+            et en déduire que $I_{n+1}-I_{n}=\frac{(-1)^{n}\pi^{2}}{2(2n+1)}-\frac{4(-1)^{n}}{(2n+1)^{3}}$.
         \item On pose pour $x>0$, $f(x)=\frac{x^{2}}{\sin x}$. Montrer que $f$ se prolonge en 0 en une fonction de classe $\mathscr C^{1}$.
-        \item Utiliser une intégration par parties pour montrer que $\displaystyle|I_{n}|\leqslant\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)|dx}{2n}$.
+        \item Utiliser une intégration par parties pour montrer que $\displaystyle|I_{n}|\leqslant\frac{|f(\pi/2)|+\int_{0}^{\pi/2}|f^{\prime}(x)| \dx}{2n}$.
         \item En déduire que $\displaystyle\sum_{n=0}^{+\infty}\frac{(-1)^{n}}{(2n+1)^{3}}=\frac{\pi^{3}}{32}$. % Note: PDF says pi^3/32
     \end{enumerate}
 \end{enumerate}
@@ -72,7 +76,8 @@
     On pose pour $\theta\in]0,\pi[$, $u_{n}=\frac{\cos n\theta}{n}$.
     \begin{enumerate}
         \item On pose $\displaystyle C_{n}=\sum_{k=0}^{n}\cos(k\theta)$. Montrer que cette suite est bornée.
-        \item En remarquant que pour tout $n\geqslant1$, $\cos n\theta=C_{n}-C_{n-1}$ et en considérant sa somme partielle, montrer que la série $\sum u_{n}$ converge.
+        \item En remarquant que pour tout $n\geqslant1$, $\cos n\theta=C_{n}-C_{n-1}$ et en considérant sa somme partielle, 
+            montrer que la série $\sum u_{n}$ converge.
         \item Montrer que $|\cos(n\theta)|\geqslant \cos^{2}(n\theta)$ et en déduire que la série $\sum u_{n}$ ne converge pas absolument.
     \end{enumerate}
 \end{exercice}
@@ -123,7 +128,7 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 
 % --- (Source: EXERCICE 61 algèbre) ---
 \begin{exercice}[Exercice 61 Algèbre]
-    On note $\mathcal{M}_{n}(\mathbb{C})$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
+    On note $\mathcal{M}_{n}(\C)$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
     \begin{enumerate}
         \item Prouver que $\|\cdot\|$ est une norme.
         \item Démontrer que $\|AB\| \leqslant n\|A\|\|B\|$ et $\|A^p\| \leqslant n^{p-1}\|A\|^p$.
@@ -149,14 +154,16 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 
 % --- (Source: Exercice 9) ---
 \begin{exercice}
-    Montrer que pour une matrice $A\in \mathcal{M}_{p}(\mathbb{K})$ de norme suffisamment petite la série $\sum_{n\geqslant0}A^{n}$ est absolument convergente. Montrer que sa somme est l'inverse de $I_{p}-A$.
+    Montrer que pour une matrice $A\in \mathcal{M}_{p}(\K)$ de norme suffisamment petite la série $\sum_{n\geqslant0}A^{n}$ est absolument convergente. 
+    Montrer que sa somme est l'inverse de $I_{p}-A$.
 \end{exercice}
 
 % --- (Source: Exercice 10) ---
 \begin{exercice}
-    On munit $\mathcal{M}_{p}(\mathbb{C})$ d'une norme d'algèbre.
+    On munit $\mathcal{M}_{p}(\C)$ d'une norme d'algèbre.
     \begin{enumerate}
-        \item Pour tout naturel $n$ et tout $k\in\{0,\dots,n\}$ on pose $a_{n,k}=\frac{1}{k!}-\frac{n!}{k!(n-k)!n^{k}}$. Montrer que $a_{n,k}\geqslant0$.
+        \item Pour tout naturel $n$ et tout $k\in\{0,\dots,n\}$ on pose $a_{n,k}=\frac{1}{k!}-\frac{n!}{k!(n-k)!n^{k}}$. 
+            Montrer que $a_{n,k}\geqslant0$.
         \item On pose $M_{n}=(I_{p}+\frac{1}{n}A)^{n}$.
         \begin{enumerate}
             \item Montrer que $\displaystyle M_{n}-\sum_{k=0}^{n}\frac{A^k}{k!}$ tend vers 0.
@@ -170,7 +177,7 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 % --- (Source: EXERCICE 5 analyse) ---
 \begin{exercice}[Exercice 5 Analyse]
 \begin{enumerate}
-    \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\geqslant2, \alpha\in\mathbb{R}$).
+    \item On considère la série de terme général $u_{n}=\frac{1}{n(\ln n)^{\alpha}}$ ($n\geqslant2, \alpha\in\R$).
     \begin{itemize}
         \item Cas $\alpha\leqslant0$ : En utilisant une minoration simple, démontrer que la série diverge.
         \item Cas $\alpha>0$ : Étudier la nature de la série (comparaison série-intégrale avec $f(x)=\frac{1}{x(\ln x)^{\alpha}}$).
@@ -187,7 +194,7 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 % --- (Source: Exercice 12) ---
 \begin{exercice}
 \begin{enumerate}
-    \item Comparer pour $a, b \in \mathbb{R}^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
+    \item Comparer pour $a, b \in \R^{+}$, $\arctan(a) - \arctan(b)$ avec $\arctan \frac{a-b}{1+ab}$.
     \item En déduire la convergence et la somme de $\sum_{n\geqslant1}\arctan\left(\frac{1}{n^{2}+n+1}\right)$.
     \item On définit la suite de Fibonacci $(F_{n})$ par $F_{0}=0, F_{1}=1, F_{n+2}=F_{n}+F_{n+1}$.
     \begin{enumerate}
@@ -202,7 +209,8 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 \begin{exercice}
     Soient $a, b, c, d > 0$ et $u_{n}$ telle que $\frac{u_{n+1}}{u_{n}}=\frac{(n+a)(n+b)}{(n+c)(n+d)}$.
     \begin{enumerate}
-        \item Pour $\alpha>0$, on pose $v_{n}=\ln(n^{\alpha}u_{n})$. Écrire un développement asymptotique de $v_{n+1}-v_{n}$. À quelle condition la série télescopique converge-t-elle ?
+        \item Pour $\alpha>0$, on pose $v_{n}=\ln(n^{\alpha}u_{n})$. Écrire un développement asymptotique de $v_{n+1}-v_{n}$. 
+            À quelle condition la série télescopique converge-t-elle ?
         \item En déduire un équivalent de $u_{n}$.
     \end{enumerate}
 \end{exercice}
@@ -225,8 +233,11 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 % --- (Source: Exercice 15 - Raabe Duhamel) ---
 \begin{exercice}[Règle de Raabe Duhamel]
 \begin{enumerate}
-    \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\leqslant\frac{v_{n+1}}{v_{n}}$, alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
-    \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o\left(\frac{1}{n}\right)$. Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
+    \item Montrer que si $\sum u_{n}$ et $\sum v_{n}$ sont deux séries à termes positifs 
+        telles que pour $n$ assez grand $\frac{u_{n+1}}{u_{n}}\leqslant\frac{v_{n+1}}{v_{n}}$, 
+        alors la convergence de $\sum v_{n}$ implique celle de $\sum u_{n}$
+    \item On suppose $\frac{u_{n+1}}{u_{n}}=1-\frac{\alpha}{n}+o\left(\frac{1}{n}\right)$. 
+        Montrer que $\sum u_{n}$ converge pour $\alpha>1$ et diverge pour $\alpha<1$ (comparer avec $v_n = \frac{1}{n^\beta}$).
 \end{enumerate}
 \end{exercice}
 
@@ -241,8 +252,11 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
     Soit $\sum u_{n}$ une série à termes positifs, $u_0 > 0$. On pose $\displaystyle S_{n}=\sum_{k=0}^{n}u_{k}$.
     \begin{enumerate}
         \item Supposons $\sum u_{n}$ converge. Montrer que $\sum\frac{u_{n}}{S_{n}}$ converge
-        \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. Trouver la nature de $\sum \ln\left(\frac{S_{n-1}}{S_{n}}\right)$. En déduire que $\sum u_{n}$ converge
-        \item Montrer que si $\sum a_{n}$ diverge (termes positifs), il existe $\sum b_{n}$ divergente (à termes positifs) telle que $b_{n}=o(a_{n})$.
+        \item Supposons $\sum\frac{u_{n}}{S_{n}}$ converge. 
+            Trouver la nature de $\sum \ln\left(\frac{S_{n-1}}{S_{n}}\right)$. 
+            En déduire que $\sum u_{n}$ converge
+        \item Montrer que si $\sum a_{n}$ diverge (termes positifs), 
+            il existe $\sum b_{n}$ divergente (à termes positifs) telle que $b_{n}=o(a_{n})$.
     \end{enumerate}
 \end{exercice}
 
@@ -289,9 +303,9 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
         D'après le Théorème Spécial des Séries Alternées (TSSA), $\sum \frac{(-1)^n}{n^s}$ converge.
 
     \item 
-        $A(s)+\zeta(s) = \sum_{n=1}^\infty \frac{(-1)^n+1}{n^s}$.
+        $A(s)+\zeta(s) = \sum_{n=1}^{+ \infty} \frac{(-1)^n+1}{n^s}$.
         Si $n$ est impair, $(-1)^n+1=0$. Si $n=2p$ est pair, $(-1)^n+1=2$.
-        $$ A(s)+\zeta(s) = \sum_{p=1}^\infty \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^\infty \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
+        $$ A(s)+\zeta(s) = \sum_{p=1}^{+ \infty} \frac{2}{(2p)^s} = \frac{2}{2^s} \sum_{p=1}^{+ \infty} \frac{1}{p^s} = 2^{1-s} \zeta(s) $$
         D'où $A(s) = (2^{1-s}-1)\zeta(s)$.
 
     \item
@@ -328,21 +342,21 @@ Montrer l'existence et calculer \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
         \item $\displaystyle \sum_{k=0}^N (-x^2)^k = \frac{1-(-x^2)^{N+1}}{1-(-x^2)} = \frac{1-(-1)^{N+1}x^{2N+2}}{1+x^2}$.
         \item 
             En intégrant sur $[0,1]$ :
-            $\displaystyle \int_0^1 \sum (-x^2)^k dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
+            $\displaystyle \int_0^1 \sum (-x^2)^k \dx = \sum_{k=0}^N (-1)^k \int_0^1 x^{2k} \dx = \sum_{k=0}^N \frac{(-1)^k}{2k+1}$.
 
-            D'autre part : $\displaystyle\int_0^1 \frac{dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
+            D'autre part : $\displaystyle\int_0^1 \frac{\dx}{1+x^2} - \int_0^1 \frac{(-1)^{N+1}x^{2N+2}}{1+x^2} \dx = [\arctan x]_0^1 - R_N = \frac{\pi}{4} - R_N$.
 
-            Majoration du reste : $\displaystyle |R_N| \leqslant \int_0^1 x^{2N+2} dx = \frac{1}{2N+3} \to 0$.
+            Majoration du reste : $\displaystyle |R_N| \leqslant \int_0^1 x^{2N+2} \dx = \frac{1}{2N+3} \to 0$.
             Donc $\displaystyle \sum_{n=0}^{+\infty} \frac{(-1)^n}{2n+1} = \frac{\pi}{4}$.
     \end{enumerate}
     
     \item
     \begin{enumerate}
         \item 
-            $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) dx$.
+            $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} \frac{x^2}{\sin x} (\sin((2n+2)x) - \sin(2nx)) \dx$.
             
             Utilisation de $\sin p - \sin q = 2 \sin\frac{p-q}{2} \cos\frac{p+q}{2}$.
-            On a $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) dx$.
+            On a $\displaystyle I_{n+1}-I_n = \int_0^{\pi/2} 2x^2 \cos((2n+1)x) \dx$.
 
             Par double IPP ou calcul direct, on obtient le résultat donné.
 
@@ -402,14 +416,15 @@ Soit $n \in \N$, on a la décomposition suivante :
     
     Mais par récurrence sur $n$ on étudie la parité de $P_n$:
     \begin{itemize}
-        \item \text{Initialisation :} 
+    \item \text{Initialisation :} 
         Pour $n = 0$, $P_0 = \frac{0!}{0!} = 1$ (impair). 
         Pour $n = 1$, $P_1 = \frac{1!}{0!} + \frac{1!}{1!} = 1 + 1 = 2$ (pair).
-        
-        \item \text{Hérédité :} Soit $n \in \mathbb{N}$. Par hypothèse de récurrence, on sait que : \\
+    
+    \item \text{Hérédité :} Soit $n \in \N$. Par hypothèse de récurrence, on sait que : \\
         $n \equiv 0 \ [2] \implies P_n \equiv 1 \ [2]$ \quad et \quad $n \equiv 1 \ [2] \implies P_n \equiv 0 \ [2]$ \quad Et on a \quad $P_{n+1} = (n+1)P_n + 1$ \\
 
-        Donc, pour n pair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{impair}} \underbrace{P_n}_{\text{impair}} + 1}_{\text{pair}}$ et pour n impair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{pair}} \underbrace{P_n}_{\text{pair}} + 1}_{\text{impair}}$ 
+        Donc, pour n pair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{impair}} \underbrace{P_n}_{\text{impair}} + 1}_{\text{pair}}$ 
+        et pour n impair, $P_{n+1} = \underbrace{ \underbrace{(n+1)}_{\text{pair}} \underbrace{P_n}_{\text{pair}} + 1}_{\text{impair}}$ 
     \end{itemize}
     Ainsi, selon le principe de récurrence, on en déduit que: $\forall n \in \N, (-1)^{P_n} = (-1)^{n+1}$ \\
     
@@ -626,7 +641,7 @@ Soit $n \in \N$, on a la décomposition suivante :
 \begin{enumerate}
     \item 
         $\displaystyle R_n = \sum_{k=n+1}^{+\infty} \frac{1}{k^\alpha}$.
-        Comparaison série-intégrale : $\displaystyle R_n \sim \int_n^{+\infty} \frac{dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
+        Comparaison série-intégrale : $\displaystyle R_n \sim \int_n^{+\infty} \frac{\dt}{t^\alpha} = \frac{1}{(\alpha-1)n^{\alpha-1}}$.
         
     \item $\sum R_n$ converge ssi $\sum \frac{1}{n^{\alpha-1}}$ converge
         ssi $\alpha-1 > 1 \iff \alpha > 2$.

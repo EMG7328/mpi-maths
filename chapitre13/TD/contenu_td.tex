@@ -123,7 +123,7 @@ On suppose que $X$ suit une loi de Poisson de paramètre $\lambda$.
 
 % --- Exercice 14 ---
 \begin{exercice}
-Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}$. Montrer que $E(X)=\sum_{n=0}^{\infty}P(X>n)$.
+Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}$. Montrer que $E(X)=\sum_{n=0}^{+ \infty}P(X>n)$.
 \end{exercice}
 
 % --- Exercice 15 ---
@@ -185,7 +185,7 @@ On note $u_{n}$ le nombre de telles partitions et on pose par convention $u_{0}=
     \item Calculer $u_{1}$, $u_{2}$, $u_{3}$.
     \item Montrer que pour tout naturel $n$, $u_{n+1}=\sum_{k=0}^{n}\binom{n}{k}u_{k}$.
     \item Montrer que pour tout $n, u_{n}\le n!$.
-    \item On pose quand cela a un sens $f(x)=\sum_{k=0}^{\infty}\frac{u_{k}}{k!}x^{k}$.
+    \item On pose quand cela a un sens $f(x)=\sum_{k=0}^{+ \infty}\frac{u_{k}}{k!}x^{k}$.
     \begin{enumerate}
         \item Montrer que le rayon de convergence de cette série entière est non nul.
         \item Montrer que pour tout $x$, $f^{\prime}(x)=f(x)e^{x}$ et en déduire $f(x)$.
@@ -196,12 +196,12 @@ On note $u_{n}$ le nombre de telles partitions et on pose par convention $u_{0}=
 
 % --- Exercice 22 ---
 \begin{exercice}
-Soit $X$ une v.a. à valeurs dans $\mathbb{N}$ admettant un moment d'ordre 2. Montrer que $E(X^{2})=\sum_{n=0}^{\infty}(2n+1)P(X>n)$.
+Soit $X$ une v.a. à valeurs dans $\mathbb{N}$ admettant un moment d'ordre 2. Montrer que $E(X^{2})=\sum_{n=0}^{+ \infty}(2n+1)P(X>n)$.
 \end{exercice}
 
 % --- Exercice 23 ---
 \begin{exercice}
-Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}$ et de fonction génératrice $G$. On pose $\forall t\in]-1,1[$, $H(t)=\sum_{n=0}^{\infty}P(X>n)t^{n}$.
+Soit $X$ une variable aléatoire à valeurs dans $\mathbb{N}$ et de fonction génératrice $G$. On pose $\forall t\in]-1,1[$, $H(t)=\sum_{n=0}^{+ \infty}P(X>n)t^{n}$.
 Montrer que $H$ est bien définie et que $\forall t\in]-1,1[$, $H(t)=\frac{1-G(t)}{1-t}$.
 \end{exercice}
 
@@ -238,7 +238,7 @@ On lance deux dés à 6 faces et on note $X$ la somme des faces sorties.
 On considère des variables aléatoires $(B_{n})_{n\in\mathbb{N}^{*}}$ mutuellement indépendantes suivant toutes une loi de Bernoulli de paramètre $p=\frac{1}{2}$. On pose pour tout naturel $n$, $X_{n}=2B_{n}-1$.
 \begin{enumerate}
     \item Calculer $P(S_{n}=0)$ où $S_{n}=\sum_{k=1}^{n}X_{k}$ et en déduire que pour tout $x\in]-1,1[$ :
-    $$ \frac{1}{\sqrt{1-x^{2}}}=\sum_{n=0}^{\infty}P(S_{n}=0)x^{n} $$
+    $$ \frac{1}{\sqrt{1-x^{2}}}=\sum_{n=0}^{+ \infty}P(S_{n}=0)x^{n} $$
     \item On définit une nouvelle variable aléatoire par $T=\inf\{n\in\mathbb{N}^{*},S_{n}=0\}$ si cet ensemble est non vide et $+\infty$ sinon, et on note $G_{T}(x)=\sum_{n=1}^{+\infty}P(T=n)x^{n}.$
     Montrer que pour tout $n\ge1$, $P(S_{n}=0)=\sum_{k=0}^{n}P(S_{n-k}=0)P(T=k)$.
     En déduire $G_{T}$ et déterminer la loi de $T$.
@@ -356,18 +356,18 @@ On s'intéresse à la probabilité d'atteindre un état (probabilité de ruine o
 \textit{Note : Le début du fichier semble traiter du calcul de sommes de séries liées à des probabilités (type Poisson modulo 4).}
 
 On calcule les sommes suivantes :
-$$ A = \sum_{k=0}^\infty \frac{1}{(4k)!}, \quad B = \sum_{k=0}^\infty \frac{1}{(4k+1)!}, \quad C = \sum_{k=0}^\infty \frac{1}{(4k+2)!}, \quad D = \sum_{k=0}^\infty \frac{1}{(4k+3)!} $$
+$$ A = \sum_{k=0}^{+ \infty} \frac{1}{(4k)!}, \quad B = \sum_{k=0}^{+ \infty} \frac{1}{(4k+1)!}, \quad C = \sum_{k=0}^{+ \infty} \frac{1}{(4k+2)!}, \quad D = \sum_{k=0}^{+ \infty} \frac{1}{(4k+3)!} $$
 On utilise les racines 4-ièmes de l'unité ($1, i, -1, -i$).
 On sait que $\cosh(1) = \sum \frac{1}{(2k)!}$ et $\cos(1) = \sum \frac{(-1)^k}{(2k)!}$.
 En combinant :
-$$ \frac{\cosh(1) + \cos(1)}{2} = \sum_{k=0}^\infty \frac{1}{(4k)!} + \sum_{k=0}^\infty \frac{1}{(4k+2)!}? \quad \text{(Non, c'est pour les pairs)} $$
+$$ \frac{\cosh(1) + \cos(1)}{2} = \sum_{k=0}^{+ \infty} \frac{1}{(4k)!} + \sum_{k=0}^{+ \infty} \frac{1}{(4k+2)!}? \quad \text{(Non, c'est pour les pairs)} $$
 Exactement :
-$$ \sum_{n=0}^\infty \frac{x^n}{n!} = e^x $$
-$$ \sum_{n=0}^\infty \frac{(ix)^n}{n!} = e^{ix} $$
-$$ \sum_{n=0}^\infty \frac{(-x)^n}{n!} = e^{-x} $$
-$$ \sum_{n=0}^\infty \frac{(-ix)^n}{n!} = e^{-ix} $$
+$$ \sum_{n=0}^{+ \infty} \frac{x^n}{n!} = e^x $$
+$$ \sum_{n=0}^{+ \infty} \frac{(ix)^n}{n!} = e^{ix} $$
+$$ \sum_{n=0}^{+ \infty} \frac{(-x)^n}{n!} = e^{-x} $$
+$$ \sum_{n=0}^{+ \infty} \frac{(-ix)^n}{n!} = e^{-ix} $$
 En sommant ces quatre relations pour $x=1$ :
-$$ e + e^i + e^{-1} + e^{-i} = \sum_{n=0}^\infty \frac{1}{n!} (1 + i^n + (-1)^n + (-i)^n) $$
+$$ e + e^i + e^{-1} + e^{-i} = \sum_{n=0}^{+ \infty} \frac{1}{n!} (1 + i^n + (-1)^n + (-i)^n) $$
 Le terme parenthèse vaut 4 si $n \equiv 0 [4]$ et 0 sinon.
 Donc $4A = e + e^{-1} + 2\cos(1) = 2\cosh(1) + 2\cos(1)$.
 D'où $A = \frac{1}{2}(\cosh 1 + \cos 1)$.
@@ -382,9 +382,9 @@ C'est l'événement "une infinité des $A_n$ se réalisent".
 \textbf{1. Lemme de Borel-Cantelli (Sens facile) :}
 Si $\sum P(A_n)$ converge, alors $P(\limsup A_n) = 0$.
 Soit $C_n = \bigcup_{k \ge n} A_k$. La suite $(C_n)$ est décroissante pour l'inclusion.
-Donc $P(\limsup A_n) = \lim_{n \to \infty} P(C_n)$.
-Or $P(C_n) = P(\bigcup_{k \ge n} A_k) \le \sum_{k=n}^\infty P(A_k)$ (inégalité de Boole).
-Comme la série $\sum P(A_n)$ converge, le reste $\sum_{k=n}^\infty P(A_k)$ tend vers 0 quand $n \to \infty$.
+Donc $P(\limsup A_n) = \lim_{n \to + \infty} P(C_n)$.
+Or $P(C_n) = P(\bigcup_{k \ge n} A_k) \le \sum_{k=n}^{+ \infty} P(A_k)$ (inégalité de Boole).
+Comme la série $\sum P(A_n)$ converge, le reste $\sum_{k=n}^{+ \infty} P(A_k)$ tend vers 0 quand $n \to + \infty$.
 Donc $P(\limsup A_n) = 0$.
 
 \textbf{2. Second lemme de Borel-Cantelli (Indépendance) :}
@@ -394,8 +394,8 @@ Calculons $P(\bigcap_{k=n}^M \overline{A_k})$. Par indépendance :
 $$ P(\bigcap_{k=n}^M \overline{A_k}) = \prod_{k=n}^M (1 - P(A_k)) $$
 On utilise l'inégalité $1-x \le e^{-x}$.
 $$ \prod_{k=n}^M (1 - P(A_k)) \le \exp\left( - \sum_{k=n}^M P(A_k) \right) $$
-Comme la série diverge, la somme tend vers $+\infty$ quand $M \to \infty$. Donc l'exponentielle tend vers 0.
-Ainsi $P(\bigcap_{k=n}^\infty \overline{A_k}) = 0$.
+Comme la série diverge, la somme tend vers $+\infty$ quand $M \to + \infty$. Donc l'exponentielle tend vers 0.
+Ainsi $P(\bigcap_{k=n}^{+ \infty} \overline{A_k}) = 0$.
 L'union dénombrable d'événements de probabilité nulle est de probabilité nulle.
 Donc $P(\text{"seulement un nombre fini de } A_n \text{ se réalisent"}) = 0$.
 D'où $P(\limsup A_n) = 1$.
@@ -449,23 +449,23 @@ C'est une contradiction.
 Soit $X \sim \mathcal{P}(1)$. On pose $u_k = E[X^k]$ (moment d'ordre $k$).
 $u_0 = 1$.
 On cherche une relation de récurrence.
-$$ u_k = \sum_{j=0}^\infty j^k P(X=j) = \sum_{j=0}^\infty j^k \frac{e^{-1}}{j!} = e^{-1} \sum_{j=1}^\infty \frac{j^k}{j!} $$
-$$ u_k = e^{-1} \sum_{j=1}^\infty \frac{j^{k-1}}{(j-1)!} $$
+$$ u_k = \sum_{j=0}^{+ \infty} j^k P(X=j) = \sum_{j=0}^{+ \infty} j^k \frac{e^{-1}}{j!} = e^{-1} \sum_{j=1}^{+ \infty} \frac{j^k}{j!} $$
+$$ u_k = e^{-1} \sum_{j=1}^{+ \infty} \frac{j^{k-1}}{(j-1)!} $$
 Posons $i = j-1$ :
-$$ u_k = e^{-1} \sum_{i=0}^\infty \frac{(i+1)^{k-1}}{i!} \cdot \frac{e^1}{e^1} ? \text{ Non.} $$
+$$ u_k = e^{-1} \sum_{i=0}^{+ \infty} \frac{(i+1)^{k-1}}{i!} \cdot \frac{e^1}{e^1} ? \text{ Non.} $$
 Reprenons la méthode de la fonction génératrice exponentielle des moments.
-Soit $f(t) = \sum_{k=0}^\infty \frac{u_k}{k!} t^k$.
+Soit $f(t) = \sum_{k=0}^{+ \infty} \frac{u_k}{k!} t^k$.
 On sait que $u_k = E[X^k]$.
-Donc $f(t) = \sum_{k=0}^\infty \frac{E[X^k]}{k!} t^k = E\left[ \sum_{k=0}^\infty \frac{(tX)^k}{k!} \right] = E[e^{tX}]$.
+Donc $f(t) = \sum_{k=0}^{+ \infty} \frac{E[X^k]}{k!} t^k = E\left[ \sum_{k=0}^{+ \infty} \frac{(tX)^k}{k!} \right] = E[e^{tX}]$.
 C'est la fonction génératrice des moments.
 Pour $X \sim \mathcal{P}(1)$ :
-$$ E[e^{tX}] = \sum_{j=0}^\infty e^{tj} \frac{e^{-1}}{j!} = e^{-1} \sum_{j=0}^\infty \frac{(e^t)^j}{j!} = e^{-1} e^{e^t} = e^{e^t - 1} $$
+$$ E[e^{tX}] = \sum_{j=0}^{+ \infty} e^{tj} \frac{e^{-1}}{j!} = e^{-1} \sum_{j=0}^{+ \infty} \frac{(e^t)^j}{j!} = e^{-1} e^{e^t} = e^{e^t - 1} $$
 Donc $f(t) = e^{e^t - 1}$.
 Dérivons cette fonction :
 $$ f'(t) = e^t e^{e^t - 1} = e^t f(t) $$
 Écrivons le développement en série :
-$$ f'(t) = \sum_{k=0}^\infty \frac{u_{k+1}}{k!} t^k $$
-$$ e^t f(t) = \left( \sum_{n=0}^\infty \frac{t^n}{n!} \right) \left( \sum_{j=0}^\infty \frac{u_j}{j!} t^j \right) $$
+$$ f'(t) = \sum_{k=0}^{+ \infty} \frac{u_{k+1}}{k!} t^k $$
+$$ e^t f(t) = \left( \sum_{n=0}^{+ \infty} \frac{t^n}{n!} \right) \left( \sum_{j=0}^{+ \infty} \frac{u_j}{j!} t^j \right) $$
 Par produit de Cauchy, le coefficient de $t^k$ dans $e^t f(t)$ est :
 $$ c_k = \sum_{j=0}^k \frac{1}{(k-j)!} \frac{u_j}{j!} = \frac{1}{k!} \sum_{j=0}^k \binom{k}{j} u_j $$
 En identifiant les coefficients de $f'(t)$ et $e^t f(t)$ :
@@ -494,7 +494,7 @@ La matrice n'est pas diagonalisable car $\dim E_{1/2} = 1 \ne 2$.
 On cherche $A^k$. On décompose $X_0$ dans une base adaptée ou on utilise la réduction de Jordan ou la décomposition $A = D+N$.
 Ici, on peut calculer $A^k$ directement par récurrence ou polynôme annulateur.
 $(X-1)(X-1/2)^2$ est annulateur.
-On trouve $A^k \to \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 1 & 1 \end{pmatrix}$ quand $k \to \infty$.
+On trouve $A^k \to \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 1 & 1 \end{pmatrix}$ quand $k \to + \infty$.
 Les suites $a_n$ et $b_n$ tendent vers 0, et $c_n \to a_0+b_0+c_0 = 1$.
 \end{correction}
 
@@ -565,14 +565,14 @@ Pour $n$ personnes : $(1 - 1/p)^n$.
 Donc $P(T_k = 1) = 1 - (1 - 1/p)^n$.
 Par linéarité de l'espérance :
 $$ E[X] = \sum_{k=1}^p E[T_k] = p \left( 1 - \left(1 - \frac{1}{p}\right)^n \right) $$
-Comportement asymptotique : si $p \to \infty$ et $n$ fixe, $E[X] \sim n$.
+Comportement asymptotique : si $p \to + \infty$ et $n$ fixe, $E[X] \sim n$.
 \end{correction}
 
 % --- Correction Exercice 13 (Loi de Poisson et somme) ---
 \begin{correction}{13}
 Calcul de sommes liées à la loi de Poisson.
 $E[\frac{1}{X+1}]$ où $X \sim \mathcal{P}(\lambda)$.
-$$ E\left[\frac{1}{X+1}\right] = \sum_{k=0}^\infty \frac{1}{k+1} e^{-\lambda} \frac{\lambda^k}{k!} = \frac{e^{-\lambda}}{\lambda} \sum_{k=0}^\infty \frac{\lambda^{k+1}}{(k+1)!} $$
+$$ E\left[\frac{1}{X+1}\right] = \sum_{k=0}^{+ \infty} \frac{1}{k+1} e^{-\lambda} \frac{\lambda^k}{k!} = \frac{e^{-\lambda}}{\lambda} \sum_{k=0}^{+ \infty} \frac{\lambda^{k+1}}{(k+1)!} $$
 $$ = \frac{e^{-\lambda}}{\lambda} (e^\lambda - 1) = \frac{1 - e^{-\lambda}}{\lambda} $$
 \end{correction}
 
@@ -605,14 +605,14 @@ Soit $S_n$ une marche aléatoire symétrique sur $\mathbb{Z}$ ($X_i = \pm 1$ ave
 $P(S_n = 0)$ est non nul seulement si $n$ est pair, $n=2k$.
 $$ P(S_{2k} = 0) = \binom{2k}{k} \left(\frac{1}{2}\right)^{2k} $$
 On utilise la fonction génératrice de la suite $u_n = P(S_n=0)$.
-$U(x) = \sum_{n=0}^\infty u_{2n} x^{2n} = \sum_{k=0}^\infty \binom{2k}{k} \frac{x^{2k}}{4^k}$.
+$U(x) = \sum_{n=0}^{+ \infty} u_{2n} x^{2n} = \sum_{k=0}^{+ \infty} \binom{2k}{k} \frac{x^{2k}}{4^k}$.
 On reconnaît le développement de $\frac{1}{\sqrt{1-x^2}}$.
 Soit $T$ le temps du premier retour à 0.
 On a la relation $U(x) = 1 + U(x) F(x)$ où $F(x)$ est la fonction génératrice de $T$.
 $$ F(x) = 1 - \frac{1}{U(x)} = 1 - \sqrt{1-x^2} $$
 Cela permet de calculer la distribution de $T$.
-$P(T < \infty) = F(1) = 1$. Le retour est presque sûr.
-Mais $E[T] = F'(1) = \infty$. L'espérance est infinie.
+$P(T < + \infty) = F(1) = 1$. Le retour est presque sûr.
+Mais $E[T] = F'(1) = + \infty$. L'espérance est infinie.
 \end{correction}
 
 % --- Correction Exercice 23 (Inégalité de Bienaymé-Tchebychev) ---

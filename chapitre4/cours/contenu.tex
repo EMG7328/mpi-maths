@@ -189,7 +189,7 @@ Donc $B$ est un $\K$-espace vectoriel.
     \end{pmatrix}
     $ qui converge coordonnée par coordonée.
 
-    On prouve facilement que $\sum_{n=1}^{\infty} u_n =
+    On prouve facilement que $\sum_{n=1}^{+ \infty} u_n =
     \begin{pmatrix}
         1 & \frac {\pi} 6\\
         1 & \frac 1 2
@@ -712,14 +712,14 @@ Donc $S_n$ converge et $\sum_{n \geqslant 1 } \frac{\cos(\theta n)}{n}$ converge
 $\displaystyle \frac{\abs{\cos{k \theta }}}{ k } \geqslant  \frac{\cos^2(k \theta )}{k } \geqslant \underbrace{\frac{\cos(2k \theta)}{2k}}_{\text{TGSCV}} + \underbrace{\frac{ 1 }{ 2 k }}_{\text{TGSDV}}$ 
 donc diverge. \\
 
-Le vin est tiré, il faut le boire, calculons $\sum_{k=1}^{\infty} \frac {\sin(n)} n$.
+Le vin est tiré, il faut le boire, calculons $\sum_{k=1}^{+ \infty} \frac {\sin(n)} n$.
 
 \begin{align*}
-    S_n &= \sum_{k=1}^n \frac {\sin(k)} k = \sum_{k=1}^n \sin(k) \int_0^1 (t^{k-1}) dt\\
-        &= \im \left(\sum_{k=1}^{n} \int_0^1 e^{ik} t^{k-1} dt \right)\\
-        &= \im \left(e^i \int_0^1 \sum_{k=1}^{n}  (e^it)^{k-1} dt \right)\\
-        &= \im \left( e^i \int_0^1 \frac {1 - (e^it)^n} {1 - e^it} dt \right)\\
-        &= \im \left(e^i \int_0^1 \frac {dt} {1 - te^i} \right) - \im \left(e^i \int_0^1 \frac {(te^i)^n} {1 - te^i} dt\right)
+    S_n &= \sum_{k=1}^n \frac {\sin(k)} k = \sum_{k=1}^n \sin(k) \int_0^1 (t^{k-1}) \dt\\
+        &= \im \left(\sum_{k=1}^{n} \int_0^1 e^{ik} t^{k-1} \dt \right)\\
+        &= \im \left(e^i \int_0^1 \sum_{k=1}^{n}  (e^it)^{k-1} \dt \right)\\
+        &= \im \left( e^i \int_0^1 \frac {1 - (e^it)^n} {1 - e^it} \dt \right)\\
+        &= \im \left(e^i \int_0^1 \frac {\dt} {1 - te^i} \right) - \im \left(e^i \int_0^1 \frac {(te^i)^n} {1 - te^i} \dt\right)
 \end{align*}
 
 La deuxième partie imaginaire tend vers $0$. Il ne reste donc qu'à calculer la première... (laissé en exercice).
@@ -892,13 +892,13 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
 Pour $A \in \mathscr M_n(\K)$ on considère la série $\sum_{k \geqslant 0} A^k$.
 
 Si $N(A) < 1$ alors cette série est absolument convergente. De plus en ce cas $I_n - A \in \text{GL}_n(\K)$
-et $(I_n - A)^{-1} = \sum_{k=0}^{\infty} A^k$.
+et $(I_n - A)^{-1} = \sum_{k=0}^{+ \infty} A^k$.
 
 \begin{proof}
 Par récurrence sur $k \geqslant 1$, $N(A^k) \leqslant N(A)^k$ TGSCV.
 Donc la série numérique $\sum_{k\geqslant 0} N(A^k)$ converge donc la série converge absolument, posons $S$ sa somme.
 
-$$(I_n - A)S = S - AS = S - A \sum_{k=0}^{\infty} A^k = S - \sum_{k=1}^{\infty} A^k = I_n$$
+$$(I_n - A)S = S - AS = S - A \sum_{k=0}^{+ \infty} A^k = S - \sum_{k=1}^{+ \infty} A^k = I_n$$
 Grâce à la continuité du produit matriciel.
 
 Donc $S = (I_n - A)^{-1}$.
@@ -1049,7 +1049,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
 
     Formule de Stirling : $n! \sim \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n$.
 
-    \svspace Donc $\displaystyle a_n \sim_{n \to \infty} \frac{\frac{1}{4^n} \sqrt{4 \pi n} \left( \frac{2n} e \right)^{2n}}{\left( \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right)^2 } \sim \frac 1 {\sqrt{ \pi n}}$
+    \svspace Donc $\displaystyle a_n \sim_{n \to + \infty} \frac{\frac{1}{4^n} \sqrt{4 \pi n} \left( \frac{2n} e \right)^{2n}}{\left( \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n \right)^2 } \sim \frac 1 {\sqrt{ \pi n}}$
     terme général d'une série de Riemann divergente. 
     Donc $\sum a_n$ diverge.
 
@@ -1066,7 +1066,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
 
 \subsection{Plan d'étude des séries numériques}
 
-Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \mathbb{C}$.
+Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 
 \begin{center}
 \begin{tikzpicture}[
@@ -1143,13 +1143,13 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \mathbb{C}$.
     Donc :
     \begin{align*}
         n! e & = \sum_{k = 0 }^{+ \infty } \frac{n!}{k!} \\
-              & = \underbrace{\sum_{k = 0}^{n - 2} \frac{n!}{k!}}_{\substack{P_n \text{ somme} \\ \text{d'entiers pairs}}} + n + 1 + \frac{1}{n + 1} + \frac{1}{(n + 1)(n + 2)} + \frac 1 {(n + 1)(n + 2)(n + 3)} + \sum_{k = n + 4 }^{\infty } \frac{n! }{k!} \\
+              & = \underbrace{\sum_{k = 0}^{n - 2} \frac{n!}{k!}}_{\substack{P_n \text{ somme} \\ \text{d'entiers pairs}}} + n + 1 + \frac{1}{n + 1} + \frac{1}{(n + 1)(n + 2)} + \frac 1 {(n + 1)(n + 2)(n + 3)} + \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} \\
     \end{align*}
 
     $\displaystyle \forall k \geqslant n + 4$, $\displaystyle \frac{n!}{k!} = \frac{1}{(n + 1)(n + 2) \cdots (k)} \leqslant \frac{1}{(n + 1)(n + 2)\ldots(k - 1)k}$
 
     \begin{align*}
-        \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} & \leqslant \sum_{k = n + 4 }^{\infty    }\frac 1 {(n + 1)(n + 2) (k-1)k} \\
+        \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} & \leqslant \sum_{k = n + 4 }^{+ \infty    }\frac 1 {(n + 1)(n + 2) (k-1)k} \\
                                                     & \leqslant \frac 1 {(n + 1)(n + 2)} \underbrace{\sum_{k = 2 }^{+ \infty } \frac 1 {(k - 1)k}}_C \\
     \end{align*}
 
@@ -1290,7 +1290,7 @@ d'un certain rang.
 
 \begin{remarque}
 Pour généraliser cette idée il faut $f\in  \mathscr C^{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
-montrerait de la même manière, dans le cas où $\int_0^n f(t) dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) dt$.
+montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
 \end{remarque}
 
 \subsection{Sommation des relations de comparaison pour des séries convergentes}
@@ -1344,11 +1344,11 @@ montrerait de la même manière, dans le cas où $\int_0^n f(t) dt$ diverge, que
                                             & \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}} 
     \end{align*}
 
-    Donc $\displaystyle \sum_{k = n + 1}^{\infty} \frac 1 {k^\alpha} \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}}$. \\
+    Donc $\displaystyle \sum_{k = n + 1}^{+ \infty} \frac 1 {k^\alpha} \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}}$. \\
 \end{exemple}     
 
 \begin{exemple}
-    Trouvons maintenant l'équivalent de $\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} = R_n$.
+    Trouvons maintenant l'équivalent de $\displaystyle \sum_{k = n + 1}^{+ \infty } \frac 1 {k^2} = R_n$.
     On a $\displaystyle \frac 1 {k^2} \sim \frac 1 {k(k + 1)}$.
 
     Or $\displaystyle \sum_{k = n + 1}^{N} \frac 1 {k(k + 1)} = \sum_{k = n + 1}^{N } \left( \frac 1 k - \frac 1 {k + 1} \right) = \frac 1 {n + 1} - \frac 1 {N + 1}$
@@ -1356,5 +1356,5 @@ montrerait de la même manière, dans le cas où $\int_0^n f(t) dt$ diverge, que
     Donc $\displaystyle R_n \sim \frac 1 n$.
     Or par sommation des relations de comparaison, 
     
-    \center{$\displaystyle \sum_{k = n + 1}^{\infty } \frac 1 {k^2} \sim \sum_{k = n + 1}^{\infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n$.}
+    \center{$\displaystyle \sum_{k = n + 1}^{+ \infty } \frac 1 {k^2} \sim \sum_{k = n + 1}^{+ \infty } \frac 1 {k(k + 1)} \sim \frac 1 {n + 1} \sim \frac 1 n$.}
 \end{exemple}

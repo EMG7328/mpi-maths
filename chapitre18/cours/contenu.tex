@@ -425,7 +425,7 @@ $\alpha_0, \dots, \alpha_{n-1}, \beta \in \mathscr C(I, \K)$, $t_0 \in I$ et $y_
     Soit $t \in I$, on a donc 
     \begin{align}
         \int_{t_0}^{t} a(u)(x(u)) + b(u) \mathrm d u & = \int_{t_0}^{t} \sum_{n = 0}^{+ \infty} a(u)(\varphi_n(u)) + b(u) \mathrm d u \\
-        & = \int_{t_0}^{t} \sum_{n = 0}^{\infty} a(u)(\varphi_n(u)) \mathrm d u + \int_{t_0}^{t} b(u) \mathrm d u \\
+        & = \int_{t_0}^{t} \sum_{n = 0}^{+ \infty} a(u)(\varphi_n(u)) \mathrm d u + \int_{t_0}^{t} b(u) \mathrm d u \\
     \end{align}
 
     Or pour $u \in [t_0, t]$, $\| a(u)(\varphi_n(u)) \| \leqslant M \frac{(PM)^nK}{n}$ terme général d'une 
@@ -863,7 +863,7 @@ en les points où $\alpha_n$ s'annule de manière à ce que $x$ soit de classe $
 
     Donc $x(t) = a_0 (1 -t + t^2 - t^3) + a_4 \ds \sum_{p = 4}^{+ \infty} (-1)^p t^p$.
 
-    Et donc $x(t) = \ds (a_0 - a_4)(1 - t + t^2 - t^3) + a_4 \sum_{p = 0}^{\infty} (-1)^p t^p$
+    Et donc $x(t) = \ds (a_0 - a_4)(1 - t + t^2 - t^3) + a_4 \sum_{p = 0}^{+ \infty} (-1)^p t^p$
 
     $x(t) = \alpha (1 - t + t^2 - t^3) + \frac \beta {1 + t}$
 
@@ -1180,7 +1180,7 @@ En notant $\forall t \in I$, $X(t) = \begin{pmatrix}
 
     Donc $\sum u'_k$ converge normalement sur $[-a, a]$.
 
-    Donc $f_A$ est de classe $\mc 1$ sur $[-a, a]$ et $\forall t \in [-a, a]$, $f_A'(t) = \sum_{k = 1}^\infty \frac{t^{k - 1} A^k}{(k - 1)!}$
+    Donc $f_A$ est de classe $\mc 1$ sur $[-a, a]$ et $\forall t \in [-a, a]$, $f_A'(t) = \sum_{k = 1}^{+ \infty} \frac{t^{k - 1} A^k}{(k - 1)!}$
 
     Ceci est vrai pour tout $a$ donc $f_A$ est de classe $\mc 1$ sur $\R$ et $\forall t \in \R$, 
     $f_A'(t) = A e^{tA}$ car le produit matriciel est linéaire en dimension finie donc continu. 

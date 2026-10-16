@@ -2,103 +2,108 @@
 
 % --- Exercice 1 (Source: Exercice 89 algèbre) ---
 \begin{exercice}[Exercice 89 Algèbre]
-Soit $n \in \mathbb{N}$ tel que $n \geqslant 2$. On pose $z = e^{i\frac{2\pi}{n}}$.
-\begin{enumerate}
-    \item On suppose $k \in \{1, \dots, n-1\}$. Déterminer le module et un argument du complexe $z^k - 1$.
-    \item On pose $S = \sum_{k=0}^{n-1} |z^k - 1|$. Montrer que $S = \frac{2}{\tan \frac{\pi}{2n}}$.
-\end{enumerate}
+    Soit $n \in \N$ tel que $n \geqslant 2$. On pose $z = e^{i\frac{2\pi}{n}}$.
+    \begin{enumerate}
+        \item On suppose $k \in \{1, \dots, n-1\}$. Déterminer le module et un argument du complexe $z^k - 1$.
+        \item On pose $S = \sum_{k=0}^{n-1} |z^k - 1|$. Montrer que $S = \frac{2}{\tan \frac{\pi}{2n}}$.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: Exercice 1 Normes et distances) ---
 \begin{exercice}
-Montrer que sur $E = \mathbb{R}^2$, l'application $N$ définie par :
-$$ N(x,y) = \sup \{ |tx+y|, \ t \in [0,1] \} $$
-est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$.
+    Montrer que sur $E = \R^2$, l'application $N$ définie par :
+    $$ N(x,y) = \sup \{ |tx+y|, \ t \in [0,1] \} $$
+    est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$.
 \end{exercice}
 
 % --- Exercice 3 (Source: Exercice 37 analyse) ---
 \begin{exercice}[Exercice 37 Analyse]
-On note $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\mathbb{R}$.
-On pose, pour $f \in E$ :
-$$ N_\infty(f) = \sup_{x \in [0,1]} |f(x)| \quad \text{et} \quad N_1(f) = \int_0^1 |f(x)| dx $$
-\begin{enumerate}
-    \item 
+    On note $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\R$.
+    On pose, pour $f \in E$ :
+    $$ N_\infty(f) = \sup_{x \in [0,1]} |f(x)| \quad \text{et} \quad N_1(f) = \int_0^1 |f(x)| \dx $$
     \begin{enumerate}
-        \item Démontrer que $N_\infty$ et $N_1$ sont deux normes sur $E$.
-        \item Démontrer qu'il existe $k > 0$ tel que, pour tout $f$ de $E$, $N_1(f) \leqslant k N_\infty(f)$.
-        \item Démontrer que tout ouvert pour la norme $N_1$ est un ouvert pour la norme $N_\infty$.
+        \item 
+        \begin{enumerate}
+            \item Démontrer que $N_\infty$ et $N_1$ sont deux normes sur $E$.
+            \item Démontrer qu'il existe $k > 0$ tel que, pour tout $f$ de $E$, $N_1(f) \leqslant k N_\infty(f)$.
+            \item Démontrer que tout ouvert pour la norme $N_1$ est un ouvert pour la norme $N_\infty$.
+        \end{enumerate}
+        \item Démontrer que les normes $N_1$ et $N_\infty$ ne sont pas équivalentes.
     \end{enumerate}
-    \item Démontrer que les normes $N_1$ et $N_\infty$ ne sont pas équivalentes.
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 2) ---
 \begin{exercice}
-Soit $E = \{ f \in \mathscr C^1([0,1], \mathbb{R}) \mid f(0)=0 \}$.
-\begin{enumerate}
-    \item Justifier pourquoi $E$ est un $\mathbb{R}$-espace vectoriel.
-    \item Pour $f \in E$, on définit :
-    $$ n(f) = \|f+f'\|_\infty \quad \text{et} \quad N(f) = \|f\|_\infty + \|f'\|_\infty $$
-    Montrer que $n$ et $N$ sont deux normes sur $E$.
-    \item Montrer qu'elles sont équivalentes.
-\end{enumerate}
+    Soit $E = \{ f \in \mathscr C^1([0,1], \R) \mid f(0)=0 \}$.
+    \begin{enumerate}
+        \item Justifier pourquoi $E$ est un $\R$-espace vectoriel.
+        \item Pour $f \in E$, on définit :
+            $$ n(f) = \|f+f'\|_\infty \quad \text{et} \quad N(f) = \|f\|_\infty + \|f'\|_\infty $$
+            Montrer que $n$ et $N$ sont deux normes sur $E$.
+        \item Montrer qu'elles sont équivalentes.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 5 (Source: Exercice 3) ---
 \begin{exercice}
-On se place dans $E = \mathscr C^p([0,1], \mathbb{R})$ et on définit pour tout entier $k$ inférieur à $p$, et toute $f \in E$ :
-$$ N_k(f) = \sum_{i=0}^{k-1} |f^{(i)}(0)| + \sup \{ |f^{(k)}(t)|, \ t \in [0,1] \} $$
-\begin{enumerate}
-    \item Montrer que $N_k$ est une norme.
-    \item Montrer que ces normes sont deux à deux non-équivalentes.
-\end{enumerate}
+    On se place dans $E = \mathscr C^p([0,1], \R)$ et on définit pour tout entier $k$ inférieur à $p$, et toute $f \in E$ :
+    $$ N_k(f) = \sum_{i=0}^{k-1} |f^{(i)}(0)| + \sup \{ |f^{(k)}(t)|, \ t \in [0,1] \} $$
+    \begin{enumerate}
+        \item Montrer que $N_k$ est une norme.
+        \item Montrer que ces normes sont deux à deux non-équivalentes.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 6 (Source: Exercice 4) ---
 \begin{exercice}
-Soit $E$ l'espace vectoriel des fonctions lipschitziennes de $[0,1]$ dans $\mathbb{R}$. Pour $f \in E$, on pose :
-$$ N(f) = \sup \{ |f(x)|, x \in [0,1] \} + \sup \left\{ \left| \frac{f(x)-f(y)}{x-y} \right|, x \ne y \right\} $$
-Montrer que $N$ est une norme. Est-elle équivalente à la norme infinie ?
+    Soit $E$ l'espace vectoriel des fonctions lipschitziennes de $[0,1]$ dans $\R$. Pour $f \in E$, on pose :
+    $$ N(f) = \sup \{ |f(x)|, x \in [0,1] \} + \sup \left\{ \left| \frac{f(x)-f(y)}{x-y} \right|, x \ne y \right\} $$
+    Montrer que $N$ est une norme. Est-elle équivalente à la norme infinie ?
 \end{exercice}
 
 % --- Exercice 7 (Source: Exercice 5) ---
 \begin{exercice}
-On note $E = \{ f \in \mathscr C^2([0,1], \mathbb{R}) \mid f(0)=f(1)=0 \}$ que l'on munit de $\|\cdot\|_\infty$ et de $N$ définie par :
-$$ N(f) = \sqrt{\int_0^1 f''(t)^2 dt} $$
-\begin{enumerate}
-    \item Vérifier que $N$ est une norme sur $E$.
-    \item Montrer que pour $f \in E$, $\|f\|_\infty \leqslant N(f)$.
-    \textit{Indication : On montrera successivement que pour tout $x$ on a :}
-    $$ f(x) \leqslant \sqrt{\int_0^1 f'(t)^2 dt}, \quad \text{puis} \quad f(x) \leqslant \sqrt{\int_0^1 -f(t)f''(t) dt} $$
-    $$ \text{puis} \quad f(x) \leqslant \sqrt{\|f\|_\infty \sqrt{\int_0^1 f''(t)^2 dt}} $$
-    \item Montrer que $N$ et $\|\cdot\|_\infty$ ne sont pas équivalentes.
-\end{enumerate}
+    On note $E = \{ f \in \mathscr C^2([0,1], \R) \mid f(0)=f(1)=0 \}$ que l'on munit de $\|\cdot\|_\infty$ et de $N$ définie par :
+    $$ N(f) = \sqrt{\int_0^1 f''(t)^2 \dt} $$
+    \begin{enumerate}
+        \item Vérifier que $N$ est une norme sur $E$.
+        \item Montrer que pour $f \in E$, $\|f\|_\infty \leqslant N(f)$.
+            \textit{Indication : On montrera successivement que pour tout $x$ on a :}
+            $$ f(x) \leqslant \sqrt{\int_0^1 f'(t)^2 \dt}, \quad \text{puis} \quad f(x) \leqslant \sqrt{\int_0^1 -f(t)f''(t) \dt} $$
+            $$ \text{puis} \quad f(x) \leqslant \sqrt{\|f\|_\infty \sqrt{\int_0^1 f''(t)^2 \dt}} $$
+        \item Montrer que $N$ et $\|\cdot\|_\infty$ ne sont pas équivalentes.
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 38 analyse) ---
 \begin{exercice}[Exercice 38 Analyse]
-On note $\mathbb{R}[X]$ l'espace vectoriel des polynômes à coefficients réels.
-On pose : $\forall P \in E$, $N_1(P) = \sum_{i=0}^n |a_i|$ et $N_\infty(P) = \max_{0 \leqslant i \leqslant n} |a_i|$ où $P = \sum_{i=0}^n a_i X^i$ avec $n \geqslant \deg P$.
-\begin{enumerate}
-    \item 
+    On note $\R[X]$ l'espace vectoriel des polynômes à coefficients réels.
+    On pose : $\forall P \in E$, $N_1(P) = \sum_{i=0}^n |a_i|$ et $N_\infty(P) = \max_{0 \leqslant i \leqslant n} |a_i|$ 
+    où $P = \sum_{i=0}^n a_i X^i$ avec $n \geqslant \deg P$.
     \begin{enumerate}
-        \item Démontrer que $N_\infty$ est une norme sur $\mathbb{R}[X]$.
-        \item Dans la suite de l'exercice, on admet que $N_1$ est une norme sur $\mathbb{R}[X]$. Démontrer que tout ouvert pour la norme $N_\infty$ est un ouvert pour la norme $N_1$.
-        \item Démontrer que les normes $N_1$ et $N_\infty$ ne sont pas équivalentes.
+        \item 
+        \begin{enumerate}
+            \item Démontrer que $N_\infty$ est une norme sur $\R[X]$.
+            \item Dans la suite de l'exercice, on admet que $N_1$ est une norme sur $\R[X]$. 
+                Démontrer que tout ouvert pour la norme $N_\infty$ est un ouvert pour la norme $N_1$.
+            \item Démontrer que les normes $N_1$ et $N_\infty$ ne sont pas équivalentes.
+        \end{enumerate}
+        \item On note $\R_k[X]$ le sous-espace vectoriel de $\R[X]$ constitué par les polynômes de degré inférieur ou égal à $k$. 
+            On note $N'_1$ la restriction de $N_1$ à $\R_k[X]$ et $N'_\infty$ la restriction de $N_\infty$ à $\R_k[X]$.
+            Les normes $N'_1$ et $N'_\infty$ sont-elles équivalentes ?
     \end{enumerate}
-    \item On note $\mathbb{R}_k[X]$ le sous-espace vectoriel de $\mathbb{R}[X]$ constitué par les polynômes de degré inférieur ou égal à $k$. On note $N'_1$ la restriction de $N_1$ à $\mathbb{R}_k[X]$ et $N'_\infty$ la restriction de $N_\infty$ à $\mathbb{R}_k[X]$.
-    Les normes $N'_1$ et $N'_\infty$ sont-elles équivalentes ?
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 9 (Source: Exercice 6) ---
 \begin{exercice}
-On a vu plus haut que dans $E = \mathbb{R}^2$, l'application $N : (x,y) \mapsto \sup \{ |tx+y|, t \in [0,1] \}$ est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$. Dessiner la boule fermée de centre 0 et de rayon 1.
+    On a vu plus haut que dans $E = \R^2$, l'application $N : (x,y) \mapsto \sup \{ |tx+y|, t \in [0,1] \}$ 
+    est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$. Dessiner la boule fermée de centre 0 et de rayon 1.
 \end{exercice}
 
 % --- Exercice 10 (Source: Exercice 7) ---
 \begin{exercice}
-Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $R > 0$ tels que $B = B(a,R)$. Montrer que $R$ et $a$ sont uniques.
+    Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $R > 0$ tels que $B = B(a,R)$. 
+    Montrer que $R$ et $a$ sont uniques.
 \end{exercice}
 
 \newpage
@@ -147,9 +152,9 @@ Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $
 
     Ainsi, $N(x,y) = \max(|y|, |x+y|)$. \\
 
-    $N$ est donc bien à valeurs dans $\mathbb{R}^+$. \\
+    $N$ est donc bien à valeurs dans $\R^+$. \\
 
-    Soient $x,y, x', y'$ des réels et $\lambda \in \mathbb{R}$.
+    Soient $x,y, x', y'$ des réels et $\lambda \in \R$.
 
     \textbf{Séparation :}
     \begin{quote}
@@ -193,12 +198,12 @@ Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $
 
         \textbf{$N_1$ est une norme :}
         \begin{itemize}
-            \item \textit{Séparation :} Si $N_1(f) = 0$, alors $\int_0^1 |f(t)| dt = 0$. Or $|f|$ est continue et positive, donc $|f|=0$, soit $f=0$.
+            \item \textit{Séparation :} Si $N_1(f) = 0$, alors $\int_0^1 |f(t)| \dt = 0$. Or $|f|$ est continue et positive, donc $|f|=0$, soit $f=0$.
             \item \textit{Homogénéité :} Par linéarité de l'intégrale, $N_1(\lambda f) = |\lambda| N_1(f)$.
             \item \textit{Inégalité triangulaire :} $|f(t)+g(t)| \le |f(t)| + |g(t)|$. Par croissance de l'intégrale, $N_1(f+g) \le N_1(f) + N_1(g)$.
         \end{itemize}
 
-        \item $k=1$ convient car $\forall f \in E$, $N_1(f) = \int_0^1 |f(t)| dt \le \int_0^1 N_\infty(f) dt = N_\infty(f)$.
+        \item $k=1$ convient car $\forall f \in E$, $N_1(f) = \int_0^1 |f(t)| \dt \le \int_0^1 N_\infty(f) \dt = N_\infty(f)$.
 
         \item L'application identité de $(E, N_\infty)$ vers $(E, N_1)$ est continue car linéaire et vérifiant $N_1(f) \le k N_\infty(f)$.
         L'image réciproque d'un ouvert par une application continue étant un ouvert, on en déduit qu'un ouvert pour la norme $N_1$ est un ouvert pour la norme $N_\infty$.     
@@ -213,11 +218,11 @@ Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $
 % --- Correction 4 ---
 \begin{correction}{4}
 \begin{enumerate}
-    \item $E$ est un sous-ensemble non vide de $C^1([0,1], \mathbb{R})$ (contient la fonction nulle). 
+    \item $E$ est un sous-ensemble non vide de $C^1([0,1], \R)$ (contient la fonction nulle). 
     
     Il est stable par combinaison linéaire, c'est donc un sous-espace vectoriel.
 
-    \item $n$ et $N$ sont à valeurs dans $\mathbb{R}^+$. Soient $f,g \in E, \lambda \in \mathbb{R}$.
+    \item $n$ et $N$ sont à valeurs dans $\R^+$. Soient $f,g \in E, \lambda \in \R$.
 
     \textit{Pour $n(f)$ :}
     \begin{itemize}
@@ -243,9 +248,9 @@ Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $
     
     Soit $x \in [0,1]$. Posons $g(x) = e^x f(x)$. 
     \begin{quote}
-        On a $f(x) = e^{-x} g(x) = e^{-x} (g(x)-g(0)) = e^{-x} \int_0^x g'(t) dt$. \\
+        On a $f(x) = e^{-x} g(x) = e^{-x} (g(x)-g(0)) = e^{-x} \int_0^x g'(t) \dt$. \\
         Or $g'(t) = e^t (f(t)+f'(t))$. \\
-        Donc $|f(x)| \le e^{-x} \int_0^x e^t |f(t)+f'(t)| dt \le 1 \cdot \int_0^1 e^1 n(f) dt = e \cdot n(f)$. \\
+        Donc $|f(x)| \le e^{-x} \int_0^x e^t |f(t)+f'(t)| \dt \le 1 \cdot \int_0^1 e^1 n(f) \dt = e \cdot n(f)$. \\
         Ceci étant vrai pour tout $x$, $\|f\|_\infty \le e \cdot n(f)$. \\
         Alors $\|f'\|_\infty = \|(f+f') - f\|_\infty \le n(f) + \|f\|_\infty \le (1+e)n(f)$. \\
         Au total, $N(f) = \|f\|_\infty + \|f'\|_\infty \le (1+2e) n(f)$. 
@@ -267,7 +272,7 @@ Soit $B$ une partie d'un espace vectoriel normé $E$ telle qu'il existe $a$ et $
                 La formule de Taylor en 0 montre que $f=0$.
             \end{quote}
             \item \textbf{Homogénéité :} Immédiate par linéarité de la dérivation.
-            \item \textbf{Inégalité triangulaire :} Immédiate par inégalité triangulaire dans $\mathbb{R}$ et pour la norme infinie.
+            \item \textbf{Inégalité triangulaire :} Immédiate par inégalité triangulaire dans $\R$ et pour la norme infinie.
         \end{itemize}
 
     \item Considérons la suite $f_n(x) = x^n$.
@@ -327,14 +332,14 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 
     Séparation : Si $N(f)=0$, alors $f''=0$, donc $f$ est affine. Comme $f(0)=f(1)=0$, $f=0$.
 
-    \item Comme $f(0)=0$, $f(x) = \int_0^x f'(t) dt = \langle f', \mathbf{1}_{[0,x]} \rangle$.
+    \item Comme $f(0)=0$, $f(x) = \int_0^x f'(t) \dt = \langle f', \mathbf{1}_{[0,x]} \rangle$.
 
-    Par Cauchy-Schwarz : $|f(x)| \le \|f'\|_2 \cdot \sqrt{x} \le \|f'\|_2 \le \sqrt{\int_0^1 f'(t)^2 dt}$.
+    Par Cauchy-Schwarz : $|f(x)| \le \|f'\|_2 \cdot \sqrt{x} \le \|f'\|_2 \le \sqrt{\int_0^1 f'(t)^2 \dt}$.
 
     Ensuite, par intégration par parties : 
-    $$\int_0^1 f'(t)^2 dt = [f(t)f'(t)]_0^1 - \int_0^1 f(t)f''(t) dt = - \int_0^1 f(t)f''(t) dt$$ (car $f(0)=f(1)=0$).
+    $$\int_0^1 f'(t)^2 \dt = [f(t)f'(t)]_0^1 - \int_0^1 f(t)f''(t) \dt = - \int_0^1 f(t)f''(t) \dt$$ (car $f(0)=f(1)=0$).
 
-    Donc $f(x)^2 \le \left| \int_0^1 f(t)f''(t) dt \right| \le \|f\|_\infty \int_0^1 |f''(t)| dt \le \|f\|_\infty \|f''\|_2$ (par Cauchy-Schwarz sur 1 et $|f''|$).
+    Donc $f(x)^2 \le \left| \int_0^1 f(t)f''(t) \dt \right| \le \|f\|_\infty \int_0^1 |f''(t)| \dt \le \|f\|_\infty \|f''\|_2$ (par Cauchy-Schwarz sur 1 et $|f''|$).
 
     Ainsi $f(x)^2 \le \|f\|_\infty N(f)$.
 
@@ -364,11 +369,11 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
         \item $N_\infty$ est clairement une norme (le max des coefficients).
         \item ?
         \item Pour $P_n(X) = \sum_{k=0}^n X^k$, $N_\infty(P_n) = 1$ et $N_1(P_n) = n+1$. \\
-            Le rapport tend vers l'infini. Les normes ne sont pas équivalentes sur $\mathbb{R}[X]$.
+            Le rapport tend vers l'infini. Les normes ne sont pas équivalentes sur $\R[X]$.
     \end{enumerate}
 
-    \item \textbf{Sur $\mathbb{R}_k[X]$ :}
-    $\mathbb{R}_k[X]$ est un espace vectoriel de dimension finie ($k+1$).
+    \item \textbf{Sur $\R_k[X]$ :}
+    $\R_k[X]$ est un espace vectoriel de dimension finie ($k+1$).
 
     Toutes les normes sur un espace de dimension finie sont équivalentes.
 
@@ -379,7 +384,7 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 % --- Correction 9 ---
 \begin{correction}{9}
 
-La boule unité fermée est définie par $B = \{ (x,y) \in \mathbb{R}^2 \mid N(x,y) \le 1 \}$.
+La boule unité fermée est définie par $B = \{ (x,y) \in \R^2 \mid N(x,y) \le 1 \}$.
 $$ N(x,y) \le 1 \iff \max(|y|, |x+y|) \le 1 \iff |y| \le 1 \text{ et } |x+y| \le 1 $$
 
 Ceci équivaut au système d'inégalités :

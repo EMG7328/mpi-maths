@@ -104,7 +104,7 @@ n'a aucun sens (à montrer à Quibel un jour).
     \begin{itemize}
         \item $P(\Omega) = 1$
         \item Pour toute suite $(A_n)$ d'évènements 2 à 2 disjoints, 
-        $\displaystyle P\left( \bigcup_{n \in \N} A_n \right) = \sum_{n = 0 }^{\infty    } P(A_n ) = \sum_{n \in \N    } P(A_n)$
+        $\displaystyle P\left( \bigcup_{n \in \N} A_n \right) = \sum_{n = 0 }^{+\infty    } P(A_n ) = \sum_{n \in \N    } P(A_n)$
         appelé $\sigma$-additivité.
     \end{itemize}
 
@@ -1867,7 +1867,7 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
     Soit $X$ une variable aléatoire à valeurs dans $\N$.
 
     On définit pour tout $t \in \R$, lorsque cette série converge, 
-    $$ G_X(t) = \sum_{k = 0 }^{\infty } P(X = k) t^k $$
+    $$ G_X(t) = \sum_{k = 0 }^{+\infty } P(X = k) t^k $$
     appelée fonction génératrice de $X$.
 
     Lorsque $G_X(t)$ converge on a, par la formule de transfert,
@@ -1931,7 +1931,7 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
 \begin{proof}
     Si $X \sim \mathcal G(p)$, $t \in [-1, 1]$, alors
     \begin{align}
-        G_X(t) & = \sum_{k = 1}^{\infty} p (1 - p)^{k - 1} t^k \\
+        G_X(t) & = \sum_{k = 1}^{+\infty} p (1 - p)^{k - 1} t^k \\
         & = \frac{pt}{1 - (1 - p) t} \\
         & = \frac{pt}{1 - qt}
     \end{align}
@@ -1946,8 +1946,8 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
 \begin{proof}
     Si $X \sim \mathcal P(\lambda)$, $t \in \R$, alors
     \begin{align}
-        G_X(t) & = \sum_{k = 0}^{\infty} \frac{e^{- \lambda} \lambda^k}{k!} t^k \\
-        & = e^{- \lambda} \sum_{k = 0}^{\infty} \frac{(\lambda t)^k}{k!} \\
+        G_X(t) & = \sum_{k = 0}^{+\infty} \frac{e^{- \lambda} \lambda^k}{k!} t^k \\
+        & = e^{- \lambda} \sum_{k = 0}^{+\infty} \frac{(\lambda t)^k}{k!} \\
         & = e^{- \lambda} e^{\lambda t} \\
         & = e^{\lambda (t - 1)}
     \end{align}
@@ -1985,7 +1985,7 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
     Alors 
     $(k P(X = k))_{k \in \N}$ est sommable. 
 
-    Or $\forall t \in [-1, 1]$, $G_X(t) = \sum_{k = 0}^{\infty} \underbrace{P(X = k) t^k}_{U_k(t)}$.
+    Or $\forall t \in [-1, 1]$, $G_X(t) = \sum_{k = 0}^{+\infty} \underbrace{P(X = k) t^k}_{U_k(t)}$.
 
     $U_k$ est $\mathscr C^1$ et $u'_k(t) = k P(X = k) t^{k - 1}$.
 
@@ -1994,12 +1994,12 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
 
     Donc $\sum u'_k$ converge normalement sur $[-1, 1]$.
 
-    Donc $G_X$ dérivable en $1$ et $\displaystyle G'_X(1) = \sum_{k = 0}^{\infty} k P(X = k) 1^{k - 1} = E(X)$.
+    Donc $G_X$ dérivable en $1$ et $\displaystyle G'_X(1) = \sum_{k = 0}^{+\infty} k P(X = k) 1^{k - 1} = E(X)$.
 
     \uindent{Si $R > 1$ }
 
     $G_X$ est dérivable en $1$ car $1$ est à l'intérieur de $]-R, R[$
-    et $\forall t \in ]-R, R[$, $\displaystyle G'_X(t) = \sum_{k = 0}^{\infty} k P(X = k) t^{k - 1}$.
+    et $\forall t \in ]-R, R[$, $\displaystyle G'_X(t) = \sum_{k = 0}^{+\infty} k P(X = k) t^{k - 1}$.
 \end{proof}
 
 \begin{corollaire}{variance avec fonction génératrice}{}
@@ -2021,7 +2021,7 @@ Soit $(\Omega, \mathcal A, P)$ un espace probabilisé.
     terme général d'une série convergente indépendante de $t$.
 
     Donc $\sum_{k \geqslant 0} u''_k$ converge normalement sur $[-1, 1]$ et 
-    $$G''_X(1) = \sum_{k = 0}^{\infty} k (k - 1) P(X = k) = E(X(X - 1))$$
+    $$G''_X(1) = \sum_{k = 0}^{+\infty} k (k - 1) P(X = k) = E(X(X - 1))$$
 
     Si $R > 1$, $G_X$ est $\mathscr C^2$ sur $]-R, R[$ donc en dérivant 2 fois en 1 on obtient 
     la même chose.

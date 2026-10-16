@@ -806,16 +806,16 @@ $$\begin{array}{c|c}
 
     On suppose que $\forall i \in \ninter{1}{n}$, $f_i$ est continue par morceaux sur $[a, b]$.
 
-    Cela permet de définir pour $i \in \ninter{1}{n} $, $\displaystyle \int_a^b f_i(t) dt \in \K$.
+    Cela permet de définir pour $i \in \ninter{1}{n} $, $\displaystyle \int_a^b f_i(t) \dt \in \K$.
 
     Alors si $B' = (e'_1, \ldots, e'_n)$ est une autre base de $E$, et si 
     $\displaystyle \forall t \in [a, b]$,  
     
     $\displaystyle f(t) = \sum_{i=1}^n g_i(t)e'_i$ avec 
     $g_i$ également continues par morceaux, on a :
-    $$\sum_{i=1}^n \left( \int_a^b f_i(t) dt \right) e_i = \sum_{i=1}^n \left( \int_a^b g_i(t) dt \right) e'_i$$
+    $$\sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) e_i = \sum_{i=1}^n \left( \int_a^b g_i(t) \dt \right) e'_i$$
 
-    Ce vecteur est noté $\displaystyle \int_a^b f(t) dt$.
+    Ce vecteur est noté $\displaystyle \int_a^b f(t) \dt$.
 
     On dit que $f$ est continue par morceaux sur $[a, b]$. Cette notion ne dépend donc pas 
     du choix de la base.
@@ -842,23 +842,23 @@ Sinon exprimer une base dans l'autre.}
     Donc $g_j$ est continue par morceaux et 
 
     \begin{align*}
-        \sum_{i=1}^n \left( \int_a^b g_i(t) dt \right) e'_i & = \sum_{j=1}^n \left( \int_a^b \sum_{i=1}^n a_{i,j} f_i(t) dt \right) e'_j \\
-            & = \sum_{j=1}^n \int_a^b \sum_{i=1}^n a_{i,j} f_i(t) dt e'_j \\
-            & = \sum_{j=1}^n \sum_{i=1}^n a_{i,j} \left( \int_a^b f_i(t) dt \right) e'_j \\
-            & = \sum_{i=1}^n \left( \int_a^b f_i(t) dt \right) \underbrace{\sum_{j=1}^n a_{i,j} e'_j}_{e_i} \\ 
+        \sum_{i=1}^n \left( \int_a^b g_i(t) \dt \right) e'_i & = \sum_{j=1}^n \left( \int_a^b \sum_{i=1}^n a_{i,j} f_i(t) \dt \right) e'_j \\
+            & = \sum_{j=1}^n \int_a^b \sum_{i=1}^n a_{i,j} f_i(t) \dt e'_j \\
+            & = \sum_{j=1}^n \sum_{i=1}^n a_{i,j} \left( \int_a^b f_i(t) \dt \right) e'_j \\
+            & = \sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) \underbrace{\sum_{j=1}^n a_{i,j} e'_j}_{e_i} \\ 
     \end{align*}
 \end{proof}
 
 \begin{remarque}
 Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
-$$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
+$$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \end{remarque}
 
 \subsection{Propriétés}
 
 \begin{proposition}{Linéarité de l'intégrale}{}
     L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et 
-    $$ \fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) dt}$$ 
+    $$ \fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}$$ 
     est linéaire. 
 \end{proposition}
 
@@ -876,19 +876,19 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Donc $\alpha f + \beta g$ est continue par morceaux (car on a la proposition dans $\K$) et par définition,
 
     \begin{align*}
-        \int_a^b (\alpha f + \beta g)(t) dt & = \sum_{i=1}^n \left( \int_a^b (\alpha f_i(t) + \beta g_i(t)) dt \right) e_i\\
-        & = \sum_{i=1}^n \left( \alpha \int_a^b f_i(t) dt + \beta \int_a^b g_i(t) dt \right) e_i\\
-        & = \alpha \sum_{i=1}^n \left( \int_a^b f_i(t) dt \right) e_i + \beta \sum_{i=1}^n \left( \int_a^b g_i(t) dt \right) e_i\\
-        & = \alpha \int_a^b f(t) dt + \beta \int_a^b g(t) dt
+        \int_a^b (\alpha f + \beta g)(t) \dt & = \sum_{i=1}^n \left( \int_a^b (\alpha f_i(t) + \beta g_i(t)) \dt \right) e_i\\
+        & = \sum_{i=1}^n \left( \alpha \int_a^b f_i(t) \dt + \beta \int_a^b g_i(t) \dt \right) e_i\\
+        & = \alpha \sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) e_i + \beta \sum_{i=1}^n \left( \int_a^b g_i(t) \dt \right) e_i\\
+        & = \alpha \int_a^b f(t) \dt + \beta \int_a^b g(t) \dt
     \end{align*}
 \end{proof}
 
 \begin{proposition}{Notations}{}
     Soit $f : i \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b \in I$.
     \begin{itemize}
-        \item Si $a < b$, alors $\displaystyle \int_a^b f(t) dt = \int_{[a, b]} f$
-        \item Si $a = b$, par convention $\displaystyle \int_a^b f(t) dt = 0_E$
-        \item Si $a > b$, alors $\displaystyle \int_a^b f(t) dt = - \int_{[b, a]} f$
+        \item Si $a < b$, alors $\displaystyle \int_a^b f(t) \dt = \int_{[a, b]} f$
+        \item Si $a = b$, par convention $\displaystyle \int_a^b f(t) \dt = 0_E$
+        \item Si $a > b$, alors $\displaystyle \int_a^b f(t) \dt = - \int_{[b, a]} f$
     \end{itemize}
 \end{proposition}
 
@@ -896,7 +896,7 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \begin{proposition}{Relation de Chasles}{}
     Soit $f : I \to E$ continue par morceaux sur tout segment de $I$. Soient $a, b, c \in I$.
 
-    Alors $\displaystyle \int_a^c f(t) dt = \int_a^b f(t) dt + \int_b^c f(t) dt$.
+    Alors $\displaystyle \int_a^c f(t) \dt = \int_a^b f(t) \dt + \int_b^c f(t) \dt$.
     
 \end{proposition}
 
@@ -910,7 +910,7 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-espace vectoriel normé de dim finie, et 
     $L \in \mathscr L(E, F)$.
 
-    Alors $L \circ f \in \mathscr C^{pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) dt = L\left( \int_a^b f(t) dt \right)$.
+    Alors $L \circ f \in \mathscr C^{pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) \dt = L\left( \int_a^b f(t) \dt \right)$.
 \end{theoreme}
 
 \idee{Coordonnée par coordonnée, \emph{as usual}.}
@@ -933,11 +933,11 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
     Les $f_i$ sont continues par morceaux donc $g_k$ aussi, donc $L \circ f$ est continue par morceaux et par définition : 
     {\allowdisplaybreaks
     \begin{align*}
-        \int_a^b L \circ f & = \sum_{j=1}^q \left( \int_a^b g_j(t) dt \right) b_j \\
-        & = \sum_{j=1}^q \left( \int_a^b \sum_{i=1}^n a_{j, i} f_i(t) dt \right) b_j \\
-        & = \sum_{i = 1}^n \sum_{k = 1 }^{q } \int_{a }^{b } a_{k, i} f_i(t) dt b_k \\
-        & = \sum_{i=1}^n \left( \int_a^b f_i(t) dt \right) \sum_{k=1}^q a_{k, i} b_k \\
-        & = L \left(\left(\sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \text d t\right) e_i\right) \\
+        \int_a^b L \circ f & = \sum_{j=1}^q \left( \int_a^b g_j(t) \dt \right) b_j \\
+        & = \sum_{j=1}^q \left( \int_a^b \sum_{i=1}^n a_{j, i} f_i(t) \dt \right) b_j \\
+        & = \sum_{i = 1}^n \sum_{k = 1 }^{q } \int_{a }^{b } a_{k, i} f_i(t) \dt b_k \\
+        & = \sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) \sum_{k=1}^q a_{k, i} b_k \\
+        & = L \left(\left(\sum_{i = 1 }^{n } \int_{a }^{b } f_i(t) \dt\right) e_i\right) \\
         & = L \left( \int_a^b f(t) dt \right)
     \end{align*}
     }
@@ -963,11 +963,11 @@ $$\int_a^b f(t) dt = \int_a^b f = \int_{[a, b]} f \in E$$
 
 \begin{proposition}{}{}
     Soit $f \in \mathscr C^{pm}([a, b], E)$. Alors les sommes de Riemann pour $f$ convergent vers 
-    $\displaystyle \int_a^b f(t) dt$ quand $N \to +\infty$.
+    $\displaystyle \int_a^b f(t) \dt$ quand $N \to +\infty$.
 
     On a donc :
-    $$ \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) dt$$
-    $$ \frac{b - a }{N } \sum_{k = 1 }^{N} f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) dt$$
+    $$ \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) \dt$$
+    $$ \frac{b - a }{N } \sum_{k = 1 }^{N} f\left( a + k \frac{b - a } N \right) \limit{N}{+ \infty} \int_a^b f(t) \dt$$
 
 \end{proposition}
 
@@ -978,8 +978,8 @@ Soit $B= (e_1,\dots,e_n)$ une base de $E$.
     \begin{align*}
         R_{g, N, f, [a, b]} & = \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } \sum_{i = 1 }^{n } f_i\left( a + k \frac{b - a } N \right) e_i \\
         & = \sum_{i = 1 }^{n } \left( \frac{b - a }{N } \sum_{k = 0 }^{N - 1 } f_i\left( a + k \frac{b - a } N \right) \right) e_i \\
-        & \limit{N}{+ \infty} \sum_{i = 1 }^{n } \left( \int_a^b f_i(t) dt \right) e_i \\
-        & = \int_a^b f(t) dt
+        & \limit{N}{+ \infty} \sum_{i = 1 }^{n } \left( \int_a^b f_i(t) \dt \right) e_i \\
+        & = \int_a^b f(t) \dt
     \end{align*}
 De même pour la somme à droite.
 \end{proof}
@@ -987,7 +987,7 @@ De même pour la somme à droite.
 \begin{theoreme}{Inégalité triangulaire pour l'intégrale}{}
     Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
     Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et :
-    $$\left|\left| \int_a^b f(t) dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
+    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
 \end{theoreme}
 
 \idee{Sommes de Riemann et passage à la limite.}
@@ -1005,7 +1005,7 @@ De même pour la somme à droite.
     \end{align*}
 
     Et donc par passage à la limite, 
-    $$\left|\left| \int_a^b f(t) dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
+    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt$$
 \end{proof}
 
 
@@ -1014,7 +1014,7 @@ De même pour la somme à droite.
 \begin{theoreme}{Primitive fonction vectorielle}{}
     Soit $f \in \mathscr C(I, E)$ et $a \in I$. 
 
-    Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) dt}$ est de classe $\mathscr C^1$ sur $I$ et 
+    Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) \dt}$ est de classe $\mathscr C^1$ sur $I$ et 
     vérifie $F' = f$.
 
     $F$ est appelée la primitive de $f$ sur $I$ qui s'annule en $a$. 
@@ -1025,7 +1025,7 @@ De même pour la somme à droite.
 \begin{proof}
     Notons $B = (e_1, \ldots, e_n)$ une base de $E$, et $\forall t \in I, \, f(t) \displaystyle = \sum_{i = 0 }^{ n } f_i(t) e_i$
 
-    Donc $\displaystyle F(x) = \sum_{i = 0 }^{ n } \left( \int_a^x f_i(t) dt \right) e_i$.
+    Donc $\displaystyle F(x) = \sum_{i = 0 }^{ n } \left( \int_a^x f_i(t) \dt \right) e_i$.
 
     Par le théorème fondamental pour les fonctions réelles, $F_i$ est de classe $\mathscr C^1$ et $F_i' = f_i$.
 \end{proof}
@@ -1034,7 +1034,7 @@ De même pour la somme à droite.
     Soit $f \in \mathscr C(I, E)$ et $F \in \mathscr C^1(I, E)$ tel que 
     $F' = f$, alors $F$ est appelée une primitive de $f$. Alors $\forall a, b \in I$, 
     
-    $$\displaystyle \int_a^b f(t) dt = F(b) - F(a)$$
+    $$\displaystyle \int_a^b f(t) \dt = F(b) - F(a)$$
 \end{corollaire}
 
 \idee{Prendre deux primitives différentes.}
@@ -1043,7 +1043,7 @@ De même pour la somme à droite.
     Posons $\ds \forall x \in I, \, G(x) = \int_a^x f(t) dt$.
 
     Par le théorème, $G' = f = F'$ donc $(F - G)' = 0$ et donc $F - G$ est constante, 
-    donc $\ds F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) dt$.
+    donc $\ds F(b) - F(a) = G(b) - G(a) = \int_a^b f(t) \dt$.
 \end{proof}
 
 \subsubsection{Recherche de primitives}
@@ -1051,7 +1051,7 @@ De même pour la somme à droite.
 $$\renewcommand{\arraystretch}{1.6}
 \begin{array}{|c|c|c|}
     \hline
-    I & f(x) & \int_{a }^{x } f(t) dt \\
+    I & f(x) & \int_{a }^{x } f(t) \dt \\
     \hline
     \R & x^n & \frac{x^{n+1}}{n + 1} \\
     \hline
@@ -1086,8 +1086,8 @@ $$\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b }
 Soit $\varphi \in \mathscr C^1(J, I)$ et $\alpha, \beta \in J$, 
 $\varphi(\alpha) = a, \, \varphi(\beta) = b$.
 
-Soit $f \in \mathscr C(I, E)$. Alors $$\int_\alpha^\beta f(\varphi(u)) \varphi'(u) du = \int_a^b f(t) dt$$
-En posant $t = \varphi(u)$, donc $dx = \varphi'(u) du$.
+Soit $f \in \mathscr C(I, E)$. Alors $$\int_\alpha^\beta f(\varphi(u)) \varphi'(u) \dif u = \int_a^b f(t) \dt$$
+En posant $t = \varphi(u)$, donc $\dx = \varphi'(u) \dif u$.
 
 Changements de variable usuels : 
 
@@ -1097,19 +1097,19 @@ $$\renewcommand{\arraystretch}{2.1}
     \hline 
     \text{\textbf{Intégrale}} & \text{\textbf{changement}} \\
     \hline
-    \displaystyle \int_a^b f(t^2)t dt & x = t^2 \; dx = 2t dt \\
+    \displaystyle \int_a^b f(t^2)t \dt & x = t^2 \; \dx = 2t \dt \\
     \hline
-    \int_a^b f(\cos t) \sin t dt & x = \cos t \; dx = -\sin t dt \\
+    \int_a^b f(\cos t) \sin t \dt & x = \cos t \; \dx = -\sin t \dt \\
     \hline
-    \int_a^b F(e^t) dt & \substack{x = e^t \; dx = e^t dt \\ t = \ln(x) \; dt = \frac{dx} x} \\
+    \int_a^b F(e^t) \dt & \substack{x = e^t \; \dx = e^t \dt \\ t = \ln(x) \; \dt = \frac{\dx} x} \\
     \hline 
-    \int_{a }^{b } F(\cos t, \sin t) dt, \; F \in \K(X) & \substack{u = \tan \frac t 2, \; t = 2 \arctan u \; dt = \frac{2 du}{1 + u^2} \\ \cos t = \frac{1 - u^2}{1 + u^2} \; \sin t = \frac{2u}{1 + u^2}} \\
+    \int_{a }^{b } F(\cos t, \sin t) \dt, \; F \in \K(X) & \substack{u = \tan \frac t 2, \; t = 2 \arctan u \; \dt = \frac{2 \dif u}{1 + u^2} \\ \cos t = \frac{1 - u^2}{1 + u^2} \; \sin t = \frac{2u}{1 + u^2}} \\
     \hline
-    \int_{a }^{b } F(x, \sqrt{1 - x^2}) dx & x = \sin t \\
+    \int_{a }^{b } F(x, \sqrt{1 - x^2}) \dx & x = \sin t \\
     \hline
-    \int_{a }^{b } F(x, \sqrt{x^2 - 1}) dx & x = \cosh t \\
+    \int_{a }^{b } F(x, \sqrt{x^2 - 1}) \dx & x = \cosh t \\
     \hline
-    \int_{a }^{b } F(x, \sqrt{1 + x^2}) dx & x = \sinh t \\
+    \int_{a }^{b } F(x, \sqrt{1 + x^2}) \dx & x = \sinh t \\
     \hline
 \end{array}}$$
 
@@ -1118,9 +1118,9 @@ $$\renewcommand{\arraystretch}{2.1}
 \begin{exemple}
     $\displaystyle I = \int_0^x \sqrt{\tan t} \text d t$, $x \in [0, \frac \pi 2[$.
 
-    Posons $u = \sqrt{\tan t}$, donc $t = \arctan(u^2)$, $dt = \frac{2u}{1 + u^4} du$.
+    Posons $u = \sqrt{\tan t}$, donc $t = \arctan(u^2)$, $\dt = \frac{2u}{1 + u^4} \dif u$.
 
-    Donc $\displaystyle I = \int_0^{\sqrt{\tan x}} \frac{2u^2}{1 + u^4} du$.
+    Donc $\displaystyle I = \int_0^{\sqrt{\tan x}} \frac{2u^2}{1 + u^4} \dif u$.
 
     Décomposition en éléments simples : $\frac{2X^2}{X^4 + 1}$
 
@@ -1158,9 +1158,9 @@ $$\renewcommand{\arraystretch}{2.1}
 
 \begin{proof}
 
-    $\ds f(b) - f(a) = \int_a^b f'(t) dt$.
+    $\ds f(b) - f(a) = \int_a^b f'(t) \dt$.
 
-    Donc $\displaystyle ||f(b) - f(a)|| \leqslant \int_a^b ||f'(t)|| dt \leqslant \int_a^b M dt = M |b - a|$.
+    Donc $\displaystyle ||f(b) - f(a)|| \leqslant \int_a^b ||f'(t)|| \dt \leqslant \int_a^b M \dt = M |b - a|$.
 \end{proof}
 
 \begin{remarque}
@@ -1200,9 +1200,9 @@ $$\renewcommand{\arraystretch}{2.1}
     On prend $a < b$.
 
     \begin{align*}
-    \left|\left| f(b) - \sum_{k = 0}^n \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right|  & = \left|\left| \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n dt \right|\right| \\
-     & \leqslant \int_a^b \left| \frac{(b - t)^n}{n!} \right| M dt \\
-        & \leqslant M \int_{a }^{b } \frac{(b - t)^n}{n!} dt \\
+    \left|\left| f(b) - \sum_{k = 0}^n \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right|  & = \left|\left| \int_a^b \frac{f^{(n + 1)}(t)}{n!} (b - t)^n \dt \right|\right| \\
+     & \leqslant \int_a^b \left| \frac{(b - t)^n}{n!} \right| M \dt \\
+        & \leqslant M \int_{a }^{b } \frac{(b - t)^n}{n!} \dt \\
         & = M \frac{(b - a )^{n + 1}}{(n+ 1)!}
     \end{align*}
 \end{proof}

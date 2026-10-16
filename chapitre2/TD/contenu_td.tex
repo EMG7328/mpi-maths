@@ -6,61 +6,64 @@
 
 % --- Exercice 1 (Source: Exercice 43 analyse) ---
 \begin{exercice}[Exercice 43 Analyse]
-Soit $x_{0}\in\mathbb{R}$. On définit la suite $(u_{n})$ par $u_{0}=x_{0}$ et, $\forall n\in\mathbb{N}$, $u_{n+1}=\arctan(u_{n}).$
-\begin{enumerate}
-    \item 
+    Soit $x_{0}\in\R$. On définit la suite $(u_{n})$ par $u_{0}=x_{0}$ et, $\forall n\in\N$, $u_{n+1}=\arctan(u_{n}).$
     \begin{enumerate}
-        \item Démontrer que la suite $(u_{n})$ est monotone et déterminer, en fonction de la valeur de $x_{0}$, le sens de variation de $(u_{n})$.
-        \item Montrer que $(u_{n})$ converge et déterminer sa limite.
+        \item 
+        \begin{enumerate}
+            \item Démontrer que la suite $(u_{n})$ est monotone et déterminer, en fonction de la valeur de $x_{0}$, le sens de variation de $(u_{n})$.
+            \item Montrer que $(u_{n})$ converge et déterminer sa limite.
+        \end{enumerate}
+        \item Déterminer l'ensemble des fonctions $h$ continues sur $\R$ telles que $\forall x\in\R$, $h(x)=h(\arctan x)$.
     \end{enumerate}
-    \item Déterminer l'ensemble des fonctions $h$ continues sur $\mathbb{R}$ telles que $\forall x\in\mathbb{R}$, $h(x)=h(\arctan x)$.
-\end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: Exercice 1 Suites Arithmético-géométriques) ---
 \begin{exercice}
 \begin{enumerate}
-    \item On considère $a, b\in\mathbb{R}^{*}$, $u_{0}\in\mathbb{R}$ et $(u_{n})$ définie par $\forall n\in\mathbb{N}$, $u_{n+1}=au_{n}+b$.
-    Déterminer $u_{n}$ en fonction de $n$. On pourra remarquer que pour un choix judicieux de $c$, la suite $u_{n}-c$ est géométrique.
+    \item On considère $a, b\in\R^{*}$, $u_{0}\in\R$ et $(u_{n})$ définie par $\forall n\in\N$, $u_{n+1}=au_{n}+b$.
+        Déterminer $u_{n}$ en fonction de $n$. On pourra remarquer que pour un choix judicieux de $c$, la suite $u_{n}-c$ est géométrique.
 
     \item 
-    Votre banquier préféré vous prête une somme $S$ au taux d'intérêt fixe mensuel de $t\%$ sur une durée de $N$ mois avec remboursement mensuel constant.
-    Déterminer votre remboursement mensuel en fonction de $S, t, N$.
+        Votre banquier préféré vous prête une somme $S$ au taux d'intérêt fixe mensuel de $t\%$ sur une durée de $N$ mois avec remboursement mensuel constant.
+        Déterminer votre remboursement mensuel en fonction de $S, t, N$.
 \end{enumerate}
 
 \end{exercice}
 
 % --- Exercice 3 (Source: Exercice 2) ---
 \begin{exercice}
-On suppose que $f\in \mathscr C^{1}(I,I)$ et que $a\in I$ vérifie $f(a)=a$.
-On considère $u_{0}\in I$ et $\forall n\in\mathbb{N}$, $u_{n+1}=f(u_{n})$.
-On suppose que $f^{\prime}(a)\in]-1,1[$. \\
+    On suppose que $f\in \mathscr C^{1}(I,I)$ et que $a\in I$ vérifie $f(a)=a$.
+    On considère $u_{0}\in I$ et $\forall n\in\N$, $u_{n+1}=f(u_{n})$.
+    On suppose que $f^{\prime}(a)\in]-1,1[$. \\
 
-Montrer qu'il existe un intervalle $J\subset I$ différent de $\{a\}$ tel que si on suppose $u_{0}\in J$, $(u_n)$ converge vers $a$ ($a$ est alors appelé point fixe attractif).
+    Montrer qu'il existe un intervalle $J\subset I$ différent de $\{a\}$ tel que si on suppose $u_{0}\in J$,
+    $(u_n)$ converge vers $a$ ($a$ est alors appelé point fixe attractif).
 \end{exercice}
 
 % --- Exercice 4 (Source: Exercice 3) ---
 \begin{exercice}
-On pose $u_{0}\in\mathbb{R}$ et $u_{n+1}=\frac{1}{3}(u_{n}^{3}+2)$.
-Étudier le comportement de $u_{n}$ en fonction de $u_{0}$.
-Déterminer un développement asymptotique de $u_{n}$ lorsqu'il y a convergence.
-Pour cela, on posera $v_{n}=1-u_{n}$, on trouvera un réel $\alpha<0$ tel que $v_{n+1}^{\alpha}-v_{n}^{\alpha}$ possède une limite finie non nulle, puis on appliquera le théorème de Cesàro à la suite $v_{n+1}^{\alpha}-v_{n}^{\alpha}$.
+    On pose $u_{0}\in\R$ et $u_{n+1}=\frac{1}{3}(u_{n}^{3}+2)$.
+    Étudier le comportement de $u_{n}$ en fonction de $u_{0}$.
+    Déterminer un développement asymptotique de $u_{n}$ lorsqu'il y a convergence.
+    Pour cela, on posera $v_{n}=1-u_{n}$, on trouvera un réel $\alpha<0$ tel que $v_{n+1}^{\alpha}-v_{n}^{\alpha}$ possède une limite finie non nulle, 
+    puis on appliquera le théorème de Cesàro à la suite $v_{n+1}^{\alpha}-v_{n}^{\alpha}$.
 \end{exercice}
 
 % --- Exercice 5 (Source: Exercice 4) ---
 \begin{exercice}
-On pose $\alpha=e^{\frac{1}{e}}$ et on définit une suite $(u_{n})_{n\in\mathbb{N}}$ par :
-$u_{0}=1$ et $\forall n\in\mathbb{N}$, $u_{n+1}=\alpha^{u_{n}}$. \\
+    On pose $\alpha=e^{\frac{1}{e}}$ et on définit une suite $(u_{n})_{n\in\N}$ par :
+    $u_{0}=1$ et $\forall n\in\N$, $u_{n+1}=\alpha^{u_{n}}$. \\
 
-Étudier la convergence de cette suite.
+    Étudier la convergence de cette suite.
 \end{exercice}
 
 \subsection{Autres suites numériques}
 % --- Exercice 6 (Source: EXERCICE 1 analyse) ---
 \begin{exercice}[Exercice 1 Analyse]
 \begin{enumerate}
-    \item On considère deux suites numériques $(u_{n})_{n\in\mathbb{N}}$ et $(v_{n})_{n\in\mathbb{N}}$ telles que $(v_{n})_{n\in\mathbb{N}}$ est non nulle à partir d'un certain rang et $u_{n}\sim v_{n}$.
-    Démontrer que $u_{n}$ et $v_{n}$ sont de même signe à partir d'un certain rang.
+    \item On considère deux suites numériques $(u_{n})_{n\in\N}$ et $(v_{n})_{n\in\N}$ 
+        telles que $(v_{n})_{n\in\N}$ est non nulle à partir d'un certain rang et $u_{n}\sim v_{n}$.
+        Démontrer que $u_{n}$ et $v_{n}$ sont de même signe à partir d'un certain rang.
 
     \item Déterminer le signe, au voisinage de l'infini, de $u_{n}=\sinh\left(\frac{1}{n}\right)-\tan\left(\frac{1}{n}\right)$.
 \end{enumerate}
@@ -71,85 +74,92 @@ $u_{0}=1$ et $\forall n\in\mathbb{N}$, $u_{n+1}=\alpha^{u_{n}}$. \\
 On pose pour tout naturel $n\ge1$, $f_{n}(x)=nx^{n+1}-(n+1)x^{n}-\frac{1}{2}$.
 \begin{enumerate}
     \item Montrer qu'il existe un unique réel $x_{n}>0$ tel que $f_{n}(x_{n})=0$.
-    \item Montrer que la suite $(x_{n})_{n\in\mathbb{N}}$ est monotone et qu'elle converge.
+    \item Montrer que la suite $(x_{n})_{n\in\N}$ est monotone et qu'elle converge.
     \item Déterminer sa limite $\ell$.
     \item Déterminer un équivalent de $x_{n}-\ell$.
 
-    \textit{Indication :} On montrera d'abord qu'il existe un unique réel $\alpha>0$ tel que $e^{\alpha}(\alpha-1)=\frac{1}{2}$. On calculera ensuite pour $\beta\in\R$ un équivalent de $f_{n}\left(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\right)$. On en déduira qu'il existe deux réels $\beta$ et $\beta^{\prime}$ tels que pour $n$ assez grand $1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\leqslant x_{n}\leqslant 1+\frac{\alpha}{n}+\frac{\beta^{\prime}}{n^{2}}$ puis on conclura.
+    \textit{Indication :} On montrera d'abord qu'il existe un unique réel $\alpha>0$ tel que $e^{\alpha}(\alpha-1)=\frac{1}{2}$. 
+    On calculera ensuite pour $\beta\in\R$ un équivalent de $f_{n}\left(1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\right)$. 
+    On en déduira qu'il existe deux réels $\beta$ et $\beta^{\prime}$ tels que pour $n$ assez grand 
+    $1+\frac{\alpha}{n}+\frac{\beta}{n^{2}}\leqslant x_{n}\leqslant 1+\frac{\alpha}{n}+\frac{\beta^{\prime}}{n^{2}}$ puis on conclura.
 \end{enumerate}
 \end{exercice}
 
 % --- Exercice 8 (Source: Exercice 6) ---
 \begin{exercice}
-Soit $(x_{n})_{n\in\mathbb{N}}$ une suite réelle. Définissons les suites $(y_{n})_{n\in\mathbb{N}}$ et $(z_{n})_{n\in\mathbb{N}}$ par :
-$\forall n\in\mathbb{N}^{*}$, $y_{n}=x_{n+1}-x_{n}$ et $z_{n}=\frac{x_{n}}{n}$.
+    Soit $(x_{n})_{n\in\N}$ une suite réelle. Définissons les suites $(y_{n})_{n\in\N}$ et $(z_{n})_{n\in\N}$ par :
+    $\forall n\in\N^{*}$, $y_{n}=x_{n+1}-x_{n}$ et $z_{n}=\frac{x_{n}}{n}$.
 
-Montrer que si $\lim_{n\rightarrow\infty}y_{n}=\ell$ alors $\lim_{n\rightarrow\infty}z_{n}=\ell$.
-Trouver un contre-exemple à la réciproque.
+    Montrer que si $\lim_{n \to + \infty} y_{n} = \ell$ alors $\lim_{n \to + \infty} z_{n} = \ell$.
+    Trouver un contre-exemple à la réciproque.
 \end{exercice}
 
 \subsection{Suites d'un espace vectoriel normé}
 % --- Exercice 9 (Source: Exercice 7) ---
 \begin{exercice}
-On se place dans l'espace des fonctions bornées de $\mathbb{R}^{+}$ dans $\mathbb{R}$ muni de la norme infinie.
-Étudier la convergence de la suite $(f_{n})_{n\in\mathbb{N}}$ de fonctions dans les cas suivants :
-\begin{enumerate}
-    \item $f_{n}:\mathbb{R}^{+}\rightarrow\mathbb{R}, \quad x\mapsto\frac{x}{1+nx}$
-    \item $f_{n}:\mathbb{R}^{+}\rightarrow\mathbb{R}, \quad x\mapsto nxe^{-nx}\sin(x)$
-    \item $f_{n}:\mathbb{R}^{+}\rightarrow\mathbb{R}, \quad x\mapsto\frac{ne^{-x}+1}{x^{2}+n}$
-\end{enumerate}
-On commencera par démontrer que si $f_{n}$ converge vers $f$ pour la norme $\|\cdot\|_{\infty}$ alors pour tout $x$, $f_{n}(x)$ converge vers $f(x)$.
+    On se place dans l'espace des fonctions bornées de $\R^{+}$ dans $\R$ muni de la norme infinie.
+    Étudier la convergence de la suite $(f_{n})_{n\in\N}$ de fonctions dans les cas suivants :
+    \begin{enumerate}
+        \item $f_{n}:\R^{+}\rightarrow\R, \quad x\mapsto\frac{x}{1+nx}$
+        \item $f_{n}:\R^{+}\rightarrow\R, \quad x\mapsto nxe^{-nx}\sin(x)$
+        \item $f_{n}:\R^{+}\rightarrow\R, \quad x\mapsto\frac{ne^{-x}+1}{x^{2}+n}$
+    \end{enumerate}
+    On commencera par démontrer que si $f_{n}$ converge vers $f$ pour la norme $\|\cdot\|_{\infty}$ alors pour tout $x$, $f_{n}(x)$ converge vers $f(x)$.
 \end{exercice}
 
 % --- Exercice 10 (Source: Exercice 8) ---
 \begin{exercice}
-On se place dans l'espace $E=\ell^{\infty}(\mathbb{R})$ des suites bornées sur $\mathbb{R}$ muni de la norme infinie.
+    On se place dans l'espace $E=\ell^{\infty}(\R)$ des suites bornées sur $\R$ muni de la norme infinie.
 
-On considère une suite $(X_{p})_{p\in\mathbb{N}}$ d'éléments de $E$ définie par : $\forall p\in\mathbb{N}, X_{p}=(u_{n,p})_{n\in\mathbb{N}}$ avec $u_{n,p}=1$ si $n<p$ et $0$ sinon.
+    On considère une suite $(X_{p})_{p\in\N}$ d'éléments de $E$ définie par : 
+    $\forall p\in\N, X_{p}=(u_{n,p})_{n\in\N}$ avec $u_{n,p}=1$ si $n<p$ et $0$ sinon.
 
-On suppose dans un premier temps que la suite $(X_{p})_{p\in\mathbb{N}}$ converge vers une suite $Y=(y_{n})_{n\in\mathbb{N}}$.
+    On suppose dans un premier temps que la suite $(X_{p})_{p\in\N}$ converge vers une suite $Y=(y_{n})_{n\in\N}$.
 
-Montrer qu'alors pour tout naturel $n$, $y_{n}$ est la limite quand $p$ tend vers l'infini de la suite $u_{n,p}$.
-En déduire la valeur de $Y$. Conclure.
+    Montrer qu'alors pour tout naturel $n$, $y_{n}$ est la limite quand $p$ tend vers l'infini de la suite $u_{n,p}$.
+    En déduire la valeur de $Y$. Conclure.
 \end{exercice}
 
 % --- Exercice 11 (Source: Exercice 9) ---
 \begin{exercice}
-On munit $\mathscr M_{p}(\mathbb{R})$ de la norme $N(A) = \max\{|a_{ij}|, i,j\in\{1,\dots,p\}\}$.
-Soit $A\in \mathscr M_{p}(\mathbb{R})$ telle que la suite $A^{n}$ converge.
-Montrer que la limite $L$ de la suite vérifie $L^{2}=L$. Qu'en déduire ?
+    On munit $\mathscr M_{p}(\R)$ de la norme $N(A) = \max\{|a_{ij}|, i,j\in\{1,\dots,p\}\}$.
+    Soit $A\in \mathscr M_{p}(\R)$ telle que la suite $A^{n}$ converge.
+    Montrer que la limite $L$ de la suite vérifie $L^{2}=L$. Qu'en déduire ?
 \end{exercice}
 
 \subsection{Valeurs d'adhérence}
 % --- Exercice 12 (Source: Exercice 10) ---
 \begin{exercice}
-Soit $(x_{n})_{n\in\mathbb{N}}$ une suite réelle bornée. On pose pour tout naturel $n$,
-$a_{n}=\inf\{x_{p},p\ge n\}$ et $b_{n}=\sup\{x_{p},p\ge n\}$.
-\begin{enumerate}
-    \item Montrer que ces deux suites sont monotones et bornées.
-    \item On note $\ell$ la limite de la suite $(a_{n})_{n\in\mathbb{N}}$. Montrer que $\ell$ est une valeur d'adhérence de la suite $(x_{n})_{n\in\mathbb{N}}$.
-    Quel théorème venons-nous de démontrer ?
-\end{enumerate}
+    Soit $(x_{n})_{n\in\N}$ une suite réelle bornée. On pose pour tout naturel $n$,
+    $a_{n}=\inf\{x_{p},p\ge n\}$ et $b_{n}=\sup\{x_{p},p\ge n\}$.
+    \begin{enumerate}
+        \item Montrer que ces deux suites sont monotones et bornées.
+        \item On note $\ell$ la limite de la suite $(a_{n})_{n\in\N}$. 
+            Montrer que $\ell$ est une valeur d'adhérence de la suite $(x_{n})_{n\in\N}$.
+            Quel théorème venons-nous de démontrer ?
+    \end{enumerate}
 \end{exercice}
 
 % --- Exercice 13 (Source: Exercice 11) ---
 \begin{exercice}
-Soit $(a_{n})_{n\in\mathbb{N}}$ une suite réelle telle que $a_{n+1}-a_{n}$ tend vers 0.
-Montrer que l'ensemble des valeurs d'adhérence de cette suite est un intervalle.
+    Soit $(a_{n})_{n\in\N}$ une suite réelle telle que $a_{n+1}-a_{n}$ tend vers 0.
+    Montrer que l'ensemble des valeurs d'adhérence de cette suite est un intervalle.
 \end{exercice}
 
 % --- Exercice 14 (Source: Exercice 12) ---
 \begin{exercice}
-On considère une suite $(u_{n})_{n\in\mathbb{N}}$ de réels strictement positifs tels que $\forall n,p\in\mathbb{N}$, $u_{n+p}\leqslant u_{n}+u_{p}$ et on pose pour tout naturel $n$, $x_{n}=\frac{u_{n}}{n}$.
-\begin{enumerate}
-    \item Montrer que la suite $(x_{n})_{n\in\mathbb{N}}$ est bornée.
-    \item En déduire que l'on peut définir pour tout naturel $n$, $y_{n}=\sup\{x_{p}, p\geqslant n\}$.
-    \item Montrer que la suite $y_{n}$ converge. On notera $\ell$ sa limite.
-    \item Montrer que $\ell$ est une valeur d'adhérence de $(x_{n})_{n\in\mathbb{N}}$.
-    \item On fixe un entier $q$ non nul, montrer en utilisant la division euclidienne de $n$ par $q$ qu'il existe une constante $M_{q}$ telle que pour tout naturel $n$, $x_{n}\leqslant x_{q}+\frac{M_{q}}{n}$.
-    \item En déduire que pour tout $q$ naturel, $\ell\leqslant x_{q}$ et enfin que la suite $(x_{n})_{n\in\mathbb{N}}$ converge vers $\ell$.
-\end{enumerate}
-\textit{Ce résultat s'appelle le lemme sous-additif ou lemme de Fekete.}
+    On considère une suite $(u_{n})_{n\in\N}$ de réels strictement positifs tels que $\forall n,p\in\N$, $u_{n+p}\leqslant u_{n}+u_{p}$ 
+    et on pose pour tout naturel $n$, $x_{n}=\frac{u_{n}}{n}$.
+    \begin{enumerate}
+        \item Montrer que la suite $(x_{n})_{n\in\N}$ est bornée.
+        \item En déduire que l'on peut définir pour tout naturel $n$, $y_{n}=\sup\{x_{p}, p\geqslant n\}$.
+        \item Montrer que la suite $y_{n}$ converge. On notera $\ell$ sa limite.
+        \item Montrer que $\ell$ est une valeur d'adhérence de $(x_{n})_{n\in\N}$.
+        \item On fixe un entier $q$ non nul, montrer en utilisant la division euclidienne de $n$ par $q$ qu'il existe une constante $M_{q}$ 
+            telle que pour tout naturel $n$, $x_{n}\leqslant x_{q}+\frac{M_{q}}{n}$.
+        \item En déduire que pour tout $q$ naturel, $\ell\leqslant x_{q}$ et enfin que la suite $(x_{n})_{n\in\N}$ converge vers $\ell$.
+    \end{enumerate}
+    \textit{Ce résultat s'appelle le lemme sous-additif ou lemme de Fekete.}
 \end{exercice}
 
 \newpage
@@ -164,8 +174,8 @@ On pose $f(x)=\arctan x$.
     \begin{enumerate}
         \item
         \textit{Premier cas : Si $u_{1}<u_{0}$.}
-        Puisque la fonction $f:x\mapsto \arctan x$ est strictement croissante sur $\mathbb{R}$, alors $\arctan(u_{1})<\arctan(u_{0})$, c'est-à-dire $u_{2}<u_{1}$.
-        Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $u_{n+1}<u_{n}$. Donc la suite $(u_{n})$ est strictement décroissante.
+        Puisque la fonction $f:x\mapsto \arctan x$ est strictement croissante sur $\R$, alors $\arctan(u_{1})<\arctan(u_{0})$, c'est-à-dire $u_{2}<u_{1}$.
+        Par récurrence, on prouve que $\forall n\in\N$, $u_{n+1}<u_{n}$. Donc la suite $(u_{n})$ est strictement décroissante.
 
         \textit{Deuxième cas : Si $u_{1}>u_{0}$.}
         Par un raisonnement similaire, on prouve que la suite $(u_{n})$ est strictement croissante.
@@ -175,8 +185,8 @@ On pose $f(x)=\arctan x$.
 
         Pour connaître les variations de la suite $(u_{n})$ il faut donc déterminer le signe de $u_{1}-u_{0}$, signe de $\arctan(u_{0})-u_{0}$.
         On pose alors $g(x)=\arctan x - x$ et on étudie le signe de la fonction $g$.
-        On a $\forall x\in\mathbb{R}$, $g^{\prime}(x)=\frac{1}{1+x^{2}} - 1 = \frac{-x^{2}}{1+x^{2}}$ et donc $\forall x\in\mathbb{R}^{*}$, $g^{\prime}(x)<0$.
-        Donc $g$ est strictement décroissante sur $\mathbb{R}$ et comme $g(0)=0$ alors :
+        On a $\forall x\in\R$, $g^{\prime}(x)=\frac{1}{1+x^{2}} - 1 = \frac{-x^{2}}{1+x^{2}}$ et donc $\forall x\in\R^{*}$, $g^{\prime}(x)<0$.
+        Donc $g$ est strictement décroissante sur $\R$ et comme $g(0)=0$ alors :
         $\forall x\in]0,+\infty[$, $g(x)<0$ et $\forall x\in]-\infty,0[$, $g(x)>0$.
         On a donc trois cas suivant le signe de $x_{0}$ :
         \begin{itemize}
@@ -186,27 +196,28 @@ On pose $f(x)=\arctan x$.
         \end{itemize}
 
         \item 
-        La fonction $g$ étant strictement décroissante et continue sur $\mathbb{R}$, elle induit une bijection de $\mathbb{R}$ sur $g(\mathbb{R})=\mathbb{R}$.
+        La fonction $g$ étant strictement décroissante et continue sur $\R$, elle induit une bijection de $\R$ sur $g(\R)=\R$.
         $0$ admet donc un unique antécédent par $g$ et, comme $g(0)=0$, alors 0 est le seul point fixe de $f$.
         Donc si la suite $(u_{n})$ converge, elle converge vers 0, le seul point fixe de $f$.
         \begin{itemize}
-            \item \textit{Si $u_{0}>0$ :} L'intervalle $]0,+\infty[$ étant stable par $f$, on a par récurrence $\forall n\in\mathbb{N}, u_{n}>0$. Donc la suite $(u_{n})$ est décroissante et minorée par 0, donc elle converge vers 0, unique point fixe de $f$.
+            \item \textit{Si $u_{0}>0$ :} L'intervalle $]0,+\infty[$ étant stable par $f$, on a par récurrence $\forall n\in\N, u_{n}>0$. 
+                Donc la suite $(u_{n})$ est décroissante et minorée par 0, donc elle converge vers 0, unique point fixe de $f$.
             \item \textit{Si $u_{0}<0$ :} Par un raisonnement similaire, on prouve que $(u_{n})$ est croissante et majorée par 0, donc elle converge vers 0.
             \item \textit{Si $u_{0}=0$ :} La suite est constante égale à 0.
         \end{itemize}
 
-        \textit{Conclusion :} $\forall u_{0}\in\mathbb{R}$, $(u_{n})$ converge vers 0.
+        \textit{Conclusion :} $\forall u_{0}\in\R$, $(u_{n})$ converge vers 0.
     \end{enumerate}
 
     \item 
-    Soit $h$ une fonction continue sur $\mathbb{R}$ telle que $\forall x\in\mathbb{R}, h(x)=h(\arctan x)$.
-    Soit $x\in\mathbb{R}$. 
+    Soit $h$ une fonction continue sur $\R$ telle que $\forall x\in\R, h(x)=h(\arctan x)$.
+    Soit $x\in\R$. 
 
     Considérons la suite $(u_{n})$ définie par $u_{0}=x$ et $u_{n+1}=\arctan(u_{n})$.
 
     On a alors $h(x)=h(u_{0})=h(\arctan(u_{0}))=h(u_{1})=h(\arctan(u_{1}))=h(u_{2})=\dots$
 
-    Par récurrence, on prouve que $\forall n\in\mathbb{N}$, $h(x)=h(u_{n})$.
+    Par récurrence, on prouve que $\forall n\in\N$, $h(x)=h(u_{n})$.
 
     De plus, par convergence de la suite $(u_{n})$ vers 0 et par continuité de $h$, $\lim_{n\rightarrow+\infty}h(u_{n})=h(0)$ 
 
@@ -301,7 +312,7 @@ que $e$ est l'unique point fixe de $f$ et que $u_{n}$ est croissante et converge
 \begin{correction}{6}
 \begin{enumerate}
     \item 
-    Par hypothèse, $\exists N_{0}\in\mathbb{N}, \forall n\ge N_{0}, v_{n}\ne0$. \\
+    Par hypothèse, $\exists N_{0}\in\N, \forall n\ge N_{0}, v_{n}\ne0$. \\
     Ainsi la suite $(\frac{u_{n}}{v_{n}})$ est définie à partir du rang $N_{0}$. \\
     Comme $u_{n}\sim v_{n}$, on a $\lim_{n\rightarrow+\infty}\frac{u_{n}}{v_{n}}=1$. \\
     Alors, $\forall\varepsilon>0, \exists N\ge N_{0}, \forall n\ge N \Rightarrow |\frac{u_{n}}{v_{n}}-1|\le\varepsilon$. \\
@@ -404,7 +415,9 @@ On prend la suite $(A^{2n})$ or $A^{2n} = (A^n)^2$ et $M \mapsto M^2$ est contin
     
     $a_n$ existe car l'ensemble est non vide et minoré donc $a_0 \leqslant a_n \leqslant x_n \leqslant b_0$. Donc $a_n$ bornée.
 
-    On a que $\{x_p \mid p \geqslant n + 1\} \subset \{x_p \mid p \geqslant n\}$. Donc $a_{n+1} \geqslant a_n$. Donc $(a_n)$ converge vers $\ell$ par le théorème de la limite monotone. Par passage à la limite $a_0 \leqslant \ell \leqslant b_0$.\\
+    On a que $\{x_p \mid p \geqslant n + 1\} \subset \{x_p \mid p \geqslant n\}$. Donc $a_{n+1} \geqslant a_n$. 
+    Donc $(a_n)$ converge vers $\ell$ par le théorème de la limite monotone. 
+    Par passage à la limite $a_0 \leqslant \ell \leqslant b_0$.\\
 
     De même pour $(b_n)$.
     \item Soit $\varepsilon > 0$,\\
@@ -414,34 +427,35 @@ On prend la suite $(A^{2n})$ or $A^{2n} = (A^n)^2$ et $M \mapsto M^2$ est contin
     Soit $N \in \N$;
     $a_n$ tend vers $\ell$ donc $\exists n_0 \in \N, \forall n \geqslant n_0, |a_n - \ell| \leqslant \frac{\varepsilon}2$.
 
-    Par définition de l'inf, $\exists p \geqslant n_0$ tel que $a_n \leqslant x_p \leqslant a_n + \frac\varepsilon2$ et $p \geqslant N$ donc $|x_p - l| \leqslant |x_p - a_n- + |a_n -l| \leqslant l$.
+    Par définition de l'inf, $\exists p \geqslant n_0$ tel que $a_n \leqslant x_p \leqslant a_n + \frac\varepsilon2$ 
+    et $p \geqslant N$ donc $|x_p - l| \leqslant |x_p - a_n- + |a_n -l| \leqslant l$.
 
     Donc $p \in G_{\varepsilon}$ donc $G_{\varepsilon}$ est infini, donc $p$ est une valeur d'adhérence de $(x_n)$.
 \end{enumerate}
 \end{correction}
 
 \begin{correction}{13}
-Soit $(a_n)$ une telle suite.\\
+    Soit $(a_n)$ une telle suite.\\
 
-S'il n'y a pas de valeurs d'adhérence, $\varnothing$ est bien un intervalle, de même s'il n'y en a qu'une un singleton est bien un intervalle.\\
+    S'il n'y a pas de valeurs d'adhérence, $\varnothing$ est bien un intervalle, de même s'il n'y en a qu'une un singleton est bien un intervalle.\\
 
-Soient $y_1,y_2$ deux valeurs d'adhérences telles que $y_1 \leqslant y_2$, montrons que $[y_1,y_2] \subset$ dans les valeurs d'adhérences.\\
+    Soient $y_1,y_2$ deux valeurs d'adhérences telles que $y_1 \leqslant y_2$, montrons que $[y_1,y_2] \subset$ dans les valeurs d'adhérences.\\
 
-Soit $y_3 \in ]y_1, y_2[$ et $0 < \varepsilon < min_{i \in J}\frac{|y_J - j_i|}{3}$,
+    Soit $y_3 \in ]y_1, y_2[$ et $0 < \varepsilon < min_{i \in J}\frac{|y_J - j_i|}{3}$,
 
-Soit $N \in \N$, $a_{n+1} - a_n \rightarrow 0$, donc $\exists n_0 > N, \forall n \geqslant n_0 |a_{n+1} - a_n| \leqslant \frac\varepsilon2$.
+    Soit $N \in \N$, $a_{n+1} - a_n \rightarrow 0$, donc $\exists n_0 > N, \forall n \geqslant n_0 |a_{n+1} - a_n| \leqslant \frac\varepsilon2$.
 
-Comme $y_1$ est une valeur d'adhérence, il existe $n_1 \geqslant n_0$ tel que $a_{n_1} \in \text{B}(y_1, \varepsilon)$.
+    Comme $y_1$ est une valeur d'adhérence, il existe $n_1 \geqslant n_0$ tel que $a_{n_1} \in \text{B}(y_1, \varepsilon)$.
 
-De même, $\exists n_2 > n_1$ tel que $a_{n2} \in \text{B}(y_2, \varepsilon)$.\\
+    De même, $\exists n_2 > n_1$ tel que $a_{n2} \in \text{B}(y_2, \varepsilon)$.\\
 
-Considérons $E = \{n \in \N, n \geqslant n_1, a_n \geqslant y_3\}$, comme $a_{n_2} \in \text{B}(y_2,\varepsilon)$. Comme on a bien choisi $\varepsilon$, $n_2 \in E$.
+    Considérons $E = \{n \in \N, n \geqslant n_1, a_n \geqslant y_3\}$, comme $a_{n_2} \in \text{B}(y_2,\varepsilon)$. Comme on a bien choisi $\varepsilon$, $n_2 \in E$.
 
-Ainsi, $E$ est une partie non vide de $\N$ et donc monorée. Posons $n_3 = \text{min}(E)$.
+    Ainsi, $E$ est une partie non vide de $\N$ et donc monorée. Posons $n_3 = \text{min}(E)$.
 
-Alors $a_{n_3} \geqslant y_3$ et $a_{n_3 - 1} < y_3$ or $|a_{n_3} - a_{n_3 - 1}| \leqslant \frac\varepsilon2$, donc $|a_{n_3} - y_3| \leqslant \varepsilon$. Donc $n_3$ convient, donc $y_3$ est une valeur d'adhérence.\\
+    Alors $a_{n_3} \geqslant y_3$ et $a_{n_3 - 1} < y_3$ or $|a_{n_3} - a_{n_3 - 1}| \leqslant \frac\varepsilon2$, donc $|a_{n_3} - y_3| \leqslant \varepsilon$. Donc $n_3$ convient, donc $y_3$ est une valeur d'adhérence.\\
 
-Donc l'ensemble des valeurs d'adhérence de la suite est un intervalle. 
+    Donc l'ensemble des valeurs d'adhérence de la suite est un intervalle. 
 \end{correction}
 
 \begin{correction}{14}

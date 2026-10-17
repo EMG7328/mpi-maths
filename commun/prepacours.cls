@@ -23,6 +23,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
 \RequirePackage{tkz-tab}
+\usetikzlibrary{patterns.meta}
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
 \RequirePackage{fontawesome5}

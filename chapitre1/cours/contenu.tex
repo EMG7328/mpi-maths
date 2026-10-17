@@ -1,8 +1,19 @@
-\section{Cas de $\R$}
+\section{Cas de \texorpdfstring{$\R$}{R}}
 
 On rappelle ici quelques résultats démontrés en sup.
 
 \subsection{Valeur absolue}
+
+\cleanmarginenote{
+    \begin{tikzpicture}[scale=0.9, >=stealth]
+        \draw[->, black!35, line width=0.4pt] (-1.5, 0) -- (1.5, 0) node[right, font=\tiny] {$x$};
+        \draw[->, black!35, line width=0.4pt] (0, -1.5) -- (0, 1.5) node[above, font=\tiny] {$y$};
+
+        \draw[vorange, line width=1.3pt] (-1, 1) -- (0, 0) -- (1, 1);
+
+        \fill[black] (0, 0) circle (1.2pt) node[below left=1pt, font=\tiny] {$O$};
+    \end{tikzpicture}
+}
 
 \begin{definition}{Valeur absolue}{}
     $\forall x \in \R, |x| = \max\{x, -x\}$.
@@ -19,18 +30,17 @@ On rappelle ici quelques résultats démontrés en sup.
     \end{itemize}
 \end{proposition}
 
-
 \begin{exemple}
     Soient $a, b \in \R$ et $\varepsilon > 0$ alors 
-
     $|a - b| \leqslant \varepsilon$ ssi $b - \varepsilon \leqslant a \leqslant b + \varepsilon$
-    ssi $a - \varepsilon \leqslant b \leqslant a + \varepsilon$
+    ssi $a - \varepsilon \leqslant b \leqslant a + \varepsilon$.
 \end{exemple}
 
 \subsection{Bornes supérieures et inférieures}
 
 \begin{theoreme}{Borne supérieure}{}
-    \\Soit $A \subset \R$ non vide et majorée.\\
+
+    Soit $A \subset \R$ non vide et majorée.\\
 
     Il existe un unique réel $\alpha$ appelé borne supérieure de $A$ et noté 
     $\alpha = \sup A$ tel que : 
@@ -43,7 +53,8 @@ On rappelle ici quelques résultats démontrés en sup.
 \end{theoreme}
 
 \begin{theoreme}{Caractérisation séquentielle de la borne sup}{}
-    \\Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. \\
+
+    Soit $A \subset \R$ non vide majorée et soit $\alpha \in \R$ un majorant de $A$. \\
 
     Alors $\alpha = \sup A$ ssi il existe $(u_n)_{n \in \N}$ suite d'éléments de $A$
     telle que $\lim_{n \to + \infty} u_n = \alpha$.
@@ -53,53 +64,52 @@ On rappelle ici quelques résultats démontrés en sup.
 \begin{exemple}
     Soient $A, B \in \mathcal P(\R)$ non vides et majorées. 
 
-    Alors $A + B = \{x + y, x \in A, y \in B\} = \{z \in \R \mid \exists (x, y) \in (A \times B), z = x + y\}$
+    Alors :
+     \[A + B = \{x + y,~(x,y) \in A \times B\} = \{z \in \R \mid \exists (x, y) \in (A \times B),~z = x + y\}\]
 
-    est non vide et majorée, et $\sup( A + B) = \sup A + \sup B$ \\
+    est non vide et majorée, et $\sup( A + B) = \sup A + \sup B$.. \\
 
     \uline{Preuve :}
 
-    $A \neq \emptyset$ et $B \neq \emptyset$ donc $A + B \neq \emptyset$ 
+    $A \neq \emptyset$ et $B \neq \emptyset$ donc $A + B \neq \emptyset$.
 
-    $\forall z \in A + B, \exists(x, y) \in (A \times B), z = x + y$
+    $\forall z \in A + B,~\exists(x, y) \in (A \times B),~z = x + y$.
+    Or $x \leqslant \sup A $ et $y \leqslant \sup B$.
 
-    Or $x \leqslant \sup A $ et $y \leqslant \sup B$
+    Donc $z = x + y \leqslant \sup A + \sup B$.
 
-    Donc $z = x + y \leqslant \sup A + \sup B$
+    Donc $A + B$ est majoré par $\sup A + \sup B$.
 
-    Donc $A + B$ est majoré par $\sup A + \sup B$
-
-    Donc $\sup( A+ B)$ existe et $\sup (A + B) \leqslant \sup A + \sup B$
+    Donc $\sup(A+ B)$ existe et $\sup (A + B) \leqslant \sup A + \sup B$.
 
     \begin{itemize}
         \item \uline{Solution 1 :}
-        Soient $x \in A$ et $y \in B$ 
+        Soient $x \in A$ et $y \in B$.
 
-        Alors $x + y \leqslant \sup(A + B)$
+        Alors $x + y \leqslant \sup(A + B)$.
+        Donc $x \leqslant \sup(A + B) - y$.
 
-        Donc $x \leqslant \sup(A + B) - y$
-
-        Fixons $y \in B$. C'est vrai pour tout $x \in A$
+        Fixons $y \in B$. C'est vrai pour tout $x \in A$.
 
         Donc $\sup(A + B) - y$ est un majorant de $A$. 
 
-        Donc $\sup A \leqslant \sup(A + B) - y$
+        Donc $\sup A \leqslant \sup(A + B) - y$.
 
-        Donc $y \leqslant \sup(A + b) - \sup(A)$ (le terme de droite est un majorant de $B$)
+        Donc $y \leqslant \sup(A + B) - \sup(A)$ (le terme de droite est un majorant de $B$).
 
-        Or cela est vrai pour tout $y$, donc $\sup B \leqslant \sup(A + B) - \sup A$
+        Or cela est vrai pour tout $y$, donc $\sup B \leqslant \sup(A + B) - \sup A$.
 
-        Donc $\sup A + \sup B \leqslant \sup(A + B)$
+        Donc $\sup A + \sup B \leqslant \sup(A + B)$.
 
         \item \uline{Solution 2 :}
 
-        Soit $(u_n)_{n \in N}$ suite de $A$ telle que $u_n \longrightarrow \sup A$
-        et $(v_n)_{n \in N}$ suite de $B$ telle que $ v_n \longrightarrow \sup B$
+        Soit $(u_n) \in A^{\N}$ telle que $u_n \to \sup A$
+        et $(v_n) \in B^{\N}$ telle que $ v_n \to \sup B$
         alors $u_n + v_n \in A + B$. 
 
-        Donc $\forall n \in N, u_n + v_n \leqslant \sup(A + B)$
+        Donc $\forall n \in \N, u_n + v_n \leqslant \sup(A + B)$.
     
-        donc à la limite $\sup A + \sup B \leqslant \sup(A + B)$
+        À la limite $\sup A + \sup B \leqslant \sup(A + B)$.
     \end{itemize}
 \end{exemple}
 
@@ -115,11 +125,10 @@ On rappelle ici quelques résultats démontrés en sup.
 
 Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
+\notedanger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
 \begin{definition}{Norme et espace vectoriel normé}{}
-    \\On appelle norme sur $E$ toute application :
-    \notedanger{Bien penser à vérifier que c'est une application à valeurs dans $\R^+$ pour montrer qu'on a une norme !}
-
-    \lvspace \avspace $$\fonction{N}{E}{\R^+}{u}{N(u)}$$
+    On appelle norme sur $E$ toute application :
+    \[\fonction{N}{E}{\R^+}{u}{N(u)}\]
 
     vérifiant : 
     \begin{itemize}
@@ -128,7 +137,7 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
         \item Inégalité triangulaire : $\forall u, v \in E, N(u + v) \leqslant N(u) + N(v)$
     \end{itemize}
 
-    $(E, N)$ est alors appelé espace vectoriel normé (evn).
+    Le couple $(E, N)$ est alors appelé espace vectoriel normé (evn).
 \end{definition}
 
 \begin{exemple}
@@ -167,17 +176,17 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
     $$|N(u) - N(v)| \leqslant N(u - v)$$
 \end{proof}
 
-
 \subsection{Distance associée}
 
 \begin{definition}{}{}
     Soit $(E, N)$ un espace vectoriel normé.
-    On définit $d_N$ la distance associée par :
-    $$\forall (u, v) \in E^2,~ d_N(u, v) = N(v - u) = N(u - v)$$
+    On définit $d_N$ la distance associée ) $N$ par :
+    \[\forall (u, v) \in E^2,~ d_N(u, v) = N(v - u) = N(u - v)\]
 \end{definition}
 
 \begin{proposition}{Distance : propriétés}{}
-    \\Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
+
+    Avec ces hypothèses, on a pour $u, v, w \in E$ et $\lambda \in \K$ :
 
     \begin{enumerate}
         \item $d_N(u, v) = 0$ ssi $u = v$
@@ -200,7 +209,8 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 \end{proof}
 
 \begin{definition}{Distance à une partie}{}
-    \\Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
+
+    Soit $(E, N)$ un espace vectoriel normé, avec $A \subset E$ non vide. \\
 
     Soit $x \in E$, on appelle distance de $x$ à $A$ et on note $d(x, A) = d_A(x)$ le réel positif
     $$d_A(x) = \inf \{~ d(x, a) ~,~ a \in A\}$$
@@ -208,17 +218,15 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
 \begin{proposition}{Inégalité distance à une partie / entre deux points}{}
     \\Pour $x, y \in E$ et $A \subset E$ non vide, 
-    $$|d_A(x) - d_A(y)| \leqslant d(x, y)$$
+    \[|d_A(x) - d_A(y)| \leqslant d(x, y)\]
 \end{proposition}
 
-\idee{
-    Astuce du taupin, on fait apparaitre $y$ dans la distance entre $x$ et $a$.
-}
+\idee{Astuce du taupin, on fait apparaitre $y$ dans la distance entre $x$ et $a$.}
 
 \begin{proof}
     Soit $a \in A$.
 
-    $d(x, a) \leqslant d(x, y) + d(y, a)$, or $d(x, a) \geqslant d_A(x)$
+    $d(x, a) \leqslant d(x, y) + d(y, a)$, mais $d(x, a) \geqslant d_A(x)$
 
     Donc $d_A(x) - d(x, y) \leqslant d(y, a)$ avec le terme de gauche le minorant de
     $\{d(y, a), a \in A\}$
@@ -233,20 +241,40 @@ Soit $\K = \R$ ou $\C$ et $E$ un espace vectoriel sur $\K$.
 
 Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$. 
 
-
 \begin{definition}{Vecteur unitaire}{}
     Soit $u \in E$. On dit que $u$ est unitaire ssi $N(u) = 1$.
 \end{definition}
 
 \begin{exemple}
     Soit $a \in E$ non nul. 
-
     Alors $u = \frac{a }{N(a)}$ est unitaire colinéaire à $a$. 
 
     Si $\K = \R$, $-u$ en est un autre. 
 
     Si $\K = \C$, tous les $u \times e^{i \theta}$, où $\theta \in \R$, conviennent. 
 \end{exemple}
+
+\cleanmarginenote{
+    \begin{tikzpicture}[scale=0.9, >=stealth]
+        \draw[->, black!35, line width=0.4pt] (-1.5, 0) -- (1.5, 0) node[right, font=\tiny] {$x$};
+        \draw[->, black!35, line width=0.4pt] (0, -1.5) -- (0, 1.5) node[above, font=\tiny] {$y$};
+
+        \draw[
+            pattern={Lines[angle=45, distance=3pt, line width=0.5pt]},
+            pattern color=forestgreen!80
+          ] (0,0) circle (1);
+        \draw [line width=1.1pt, color=vorange](0,0) circle (1);
+        
+
+        \fill[black] (0, 0) circle (1.2pt) node[below left=1pt, font=\tiny] {$O$};
+    \end{tikzpicture}
+    \footnotesize
+    Sphère : orange
+    
+    Boule ouverte : vert
+    
+    Boule fermée : union
+}
 
 \begin{definition}{Boules ouvertes, fermées et sphères}{}
     \\Soit $\omega \in E$ et $R > 0$. On définit : 
@@ -287,7 +315,7 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Soit $I$ un intervalle de $\R$ et $f \in \R^{I}$.
     On définit l'épigraphe de $f$ :
 
-    \[ E_f = \{(x,y) \in \R^2, x \in I et y \geqslant f(x)\}\]     
+    \[ E_f = \{(x,y) \in \R^2, x \in I~\text{et}~y \geqslant f(x)\}\]     
 \end{definition}
 
 \begin{proposition}{}{}
@@ -295,7 +323,22 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 \end{proposition}
 
 \begin{proof}
-    Preuve laissée au lecteur.
+    $\Rightarrow$ Supposons $f$ convexe.
+    Soient $u=(x_1,y_1), v=(x_2,y_2) \in E_f$.
+
+    Soit $w = (\lambda x_1 + (1 - \lambda) x_2, \lambda y_1 + (1 - \lambda) y_2) = (x_3, y_3)$.
+
+    Alors $\lambda f(x_1) + (1 - \lambda)f(x_2) \leqslant y_3$.
+    Par convexité de $f$, $f(x_3) \leqslant y_3$.
+
+    Donc $w \in E_f$ donc $E_f$ est convexe.
+
+    $\Leftarrow$ Supposons $E_f$ convexe.
+    Soient $x_1 < x_2 \in I$ et $\lambda \in [0,1]$.
+
+    Posons $x_3  \lambda x_1 + (1 - \lambda) x_2$.
+
+    Or $(x_1,f(x_1))$ et $(x_2,f(x_2))$ sont dans $E_f$ donc $w \in E_f$. Donc $f$ est convexe.
 \end{proof}
 
 \begin{proposition}{Convexité des boules}{}
@@ -346,6 +389,8 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     \end{itemize}
 \end{proof}
 
+\marginenote{Interprétation}{En physique, le barycentre d'un corps est son centre de gravité.}
+
 \begin{definition}{Barycentre - HP}{}
     \\Soient $a_1, \dots, a_n \in E$ et $\lambda_1, \dots, \lambda_n \in \inter{0}{1}$
     tels que $\sum_{i = 1}^n \lambda_i = 1$.
@@ -369,18 +414,15 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
 
 \begin{proof}
     Soit $(A_i)_{i \in I}$ des convexes de $E$. 
-
-    Soient $a, b \in B$ et $\lambda \in \inter{0}{1}$. 
-
+    Soient $a, b \in B$ et $\lambda \in \inter{0}{1}$.
+     
     Posons $c = \lambda a + (1 - \lambda)b$. 
-
-    Montrons que $c \in B$. 
 
     Soit $i \in I$. Montrons que $c \in A_i$. 
 
     On a $a, b \in B$ donc $a, b \in A_i$, or $A_i$ est convexe. 
 
-    Donc $c \in A_i$ donc $c \in B$ donc $B$ convexe. 
+    Donc $c \in A_i$ donc $c \in B$ donc $B$ est convexe. 
 \end{proof}
 
 \begin{definition}{Enveloppe convexe - HP}{}
@@ -459,39 +501,38 @@ Soit $(E, N)$ un espace vectoriel normé et $d$ la distance associée à $N$.
     Comme $\displaystyle x = (1 - \lambda_n)w + \lambda_n a_n$ et que $B$ est convexe, $x \in B$. 
 
     D'où la récurrence, $C \subset B$ donc $C = B$. 
-
 \end{proof}
 
 \begin{exemple}
     Soit $P \in \C[X]$ de degré $\geqslant 2$. Alors les racines de $P'$ sont dans 
     l'enveloppe convexe des racines de $P$. 
 
-    Notons $\displaystyle P = \lambda \prod_{i = 1}^{k }(X - z_i)^{m_i}$ car $\C$ est algébriquement clos
+    Notons $\ds P = \lambda \prod_{i = 1}^{k}(X - z_i)^{m_i}$ car $\C$ est algébriquement clos
     donc $P$ scindé. 
 
-    On a $\displaystyle P' = \lambda \sum_{i = 1}^{k } m_i (X - z_i)^{m_i - 1} \prod_{j = 1, j \neq i}^{k}(X - z_j)^{m_j}$
+    On a $\ds P' = \lambda \sum_{i = 1}^{k} m_i (X - z_i)^{m_i - 1} \prod_{j = 1,~j\not= i}^{k}(X - z_j)^{m_j}$
 
     Soit $\alpha$ une racine de $P'$ qui n'est pas racine de $P$.
 
-    Donc $\displaystyle \sum_{i = 1}^{k }m_i(\alpha - z_i)^{m_i - 1} \prod_{j = 1}^{k } (\alpha - z_j)^{m_j} = 0$
+    Donc $\ds \sum_{i = 1}^{k }m_i(\alpha - z_i)^{m_i - 1} \prod_{j = 1}^{k } (\alpha - z_j)^{m_j} = 0$
 
     Donc en divisant par $P(\alpha)$ : 
-    $$ \sum_{i = 1}^{k } \frac{m_i}{\alpha - z_i} = 0$$
-    donc $\displaystyle \sum_{i = 1}^{k } \frac{m_i}{\bar \alpha - \bar z_i} = 0$
+    \[\sum_{i = 1}^{k } \frac{m_i}{\alpha - z_i} = 0\]
+    Donc $\displaystyle \sum_{i = 1}^{k} \frac{m_i}{\bar \alpha - \bar z_i} = 0$
     
-    Donc $\displaystyle \sum_{i = 1}^{k }\frac{m_i }{|\alpha - z_i|^2} (\alpha - z_i) = 0$
+    Donc $\displaystyle \sum_{i = 1}^{k}\frac{m_i }{|\alpha - z_i|^2} (\alpha - z_i) = 0$
     
-    En posant $\beta = \frac{m_i}{|\alpha - z_i|^2}$
-    
-    Donc $\displaystyle \sum_{i = 1}^{n }\beta_i \alpha = \sum_{i = 1}^{n } \beta_i z_i$
+    En posant $\beta = \frac{m_i}{|\alpha - z_i|^2}$, on a
+    $\displaystyle \sum_{i = 1}^{n}\beta_i \alpha = \sum_{i = 1}^{n} \beta_i z_i$.
 
-    Donc $\displaystyle \alpha = \sum_{i = 1}^{n }\frac{\beta_i}{s} z_i$
+    Donc $\displaystyle \alpha = \sum_{i = 1}^{n}\frac{\beta_i}{S} z_i$ en notant $\ds S = \sum_{i=1}^n \beta_i$.
 
-    Or $\displaystyle \sum_{i = 1}^{n }\frac{\beta_i }{S } = 1$. 
+    Or $\displaystyle \sum_{i = 1}^{n }\frac{\beta_i }{S} = 1$.
+    Donc toutes les racines qui sont racines de $P'$ mais pas de $P$ sont dans l'enveloppe convexe des racines de $P$.
+    Donc toutes les racines de $P'$ le sont.
 \end{exemple}
 
 \subsection{Parties et applications bornées}
-
 
 \subsubsection{Parties bornées}
 
@@ -524,15 +565,12 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     Toute boule est bornée de diamètre égal au double de son rayon.
 \end{proposition}
 
-\idee{
-    Astuce du taupin, on passe par $\omega$ et inégalité triangulaire pour majorer. 
-}
+\idee{Astuce du taupin, on passe par $\omega$ puis inégalité triangulaire pour majorer.}
 
 \begin{proof}
-    
     Soit $\omega \in E, R>0$ et $A = B(\omega, R)$ ou $A = B'(\omega, R)$. 
 
-    Soit $x, y \in A$. 
+    Soient $x, y \in A$. 
 
     \[
     \begin{array}{rcl}
@@ -584,7 +622,8 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 \subsubsection{Application bornées}
 
 \begin{definition}{Application bornée}{}
-    \\Soit $X$ un espace vectoriel normé non vide et $f \in \mathscr F(X, E)$. 
+
+    Soit $X$ un espace vectoriel normé non vide et $f \in \mathscr F(X, E)$. 
     On dit que $f$ est bornée ssi
      $$\exists M > 0, \forall x \in X, N(f(x)) \leqslant M$$
     c'est à dire si l'image directe $f(X)$ est bornée dans $E$. 
@@ -592,7 +631,8 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 
 \begin{exemple}
     Si $X = \N$, une application de $X$ dans $E$ est une suite $\fonction{u}{\N}{E}{n}{u_n}$.
-    $u = (u_n)_{n \in \N}$.  Cette suite est bornée ssi $\exists M > 0, \forall n \in \N, N(u_n) \leqslant M$
+    $u = (u_n)_{n \in \N}$.
+    Cette suite est bornée ssi $\exists M > 0, \forall n \in \N, N(u_n) \leqslant M$.
 \end{exemple}
 
 \begin{proposition}{Nature de l'ensemble des fonctions bornées}{}
@@ -600,14 +640,12 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
     L'ensemble des fonctions bornées de $X$ dans $E$ est un $\K$-espace vectoriel noté
     $\mathscr B(X, E)$. \\
 
-    Si $X = \N$, l'ensemble des suites bornées sur $E$ est noté $\mathscr B(\N, E) = \ell^\infty (E)$
+    Si $X = \N$, l'ensemble des suites bornées sur $E$ est noté $\mathscr B(\N, E) = \ell^\infty (E)$.
 \end{proposition}
-
 
 \begin{proof}
     $E$ étant un $\K$-espace vectoriel, on sait que $\mathscr F(X, E)$ est un 
     $\K$-espace vectoriel. 
-
     
     Montrons que $\mathscr B(X, E)$ en est un sous-espace vectoriel :
     \begin{itemize}
@@ -634,7 +672,7 @@ Soit $(E, N)$ un espace vectoriel normé sur $\K$.
 
 Soit $E$ un $\K$-espace vectoriel. 
 
-\begin{definition}{LHP}
+\begin{definition}{LHP}{}
     Soient $N_1$ et $N_2$ des normes sur $E$, on dit que $N_1$ est plus fine que $N_2$ si $\exists \beta > 0$ tel que $\forall u \in E$, $N_2(u) \leqslant \beta N_1(u)$.    
 \end{definition}
 
@@ -648,12 +686,13 @@ Soit $E$ un $\K$-espace vectoriel.
     on dit que $N_2$ est plus fine que $N_1$. 
 \end{remarque}
 
-\begin{propositionnt}{}{}
+\begin{proposition}{}{}
     L'équivalence entre normes est une relation d'équivalence dans l'ensemble des normes
     sur $E$. 
-\end{propositionnt}
+\end{proposition}
 
-\begin{proof}~\\
+\begin{proof}~
+
     \begin{itemize}
         \item \uline{Réflexivité :}
         Soit $N $ norme sur $E$. 
@@ -679,12 +718,10 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{proposition}{Équivalence du caractère borné pour les normes}{}
     Soient $N_1$ et $N_2$ deux normes équivalentes de $E$ et soit $A \subset E$. 
-    Alors $A$ est bornée pour $N_1$ ssi $A$ est bornée pour $N_2$
+    Alors $A$ est bornée pour $N_1$ ssi $A$ est bornée pour $N_2$.
 \end{proposition}
 
-\idee{
-    On suppose $A$ bornée et on utilise la def de normes équivalentes.
-}
+\idee{On suppose $A$ bornée et on utilise la def de normes équivalentes.}
 
 \begin{proof}
     Supposons que $A$ est bornée pour $N$, $\exists M > 0, \forall x \in A, N_1(x) \leqslant M$
@@ -712,9 +749,7 @@ Soit $E$ un $\K$-espace vectoriel.
     Une suite qui fonctionne souvent est $(x^n)_{n \in \N}$.
 \end{remarque}
 
-\idee{
-    Par l'absurde.
-}
+\idee{Par l'absurde.}
 
 \begin{proof}
     Si $N_1$ et $N_2$ avaient été équivalentes on aurait eu :
@@ -724,7 +759,6 @@ Soit $E$ un $\K$-espace vectoriel.
 
     Absurde à cause de la limite.
 \end{proof}
-
 
 \begin{exemple}[Normes dans $\R^2$]
     On montre (cf IV) que 
@@ -775,10 +809,10 @@ Soit $E$ un $\K$-espace vectoriel.
         Donc la norme 2 est plus fine que la norme 1. 
 \end{exemple}
 
-\begin{theorement}{}{}
+\begin{theoreme}{}{}
     Si $E$ est un $\K$-espace vectoriel de dimension finie, toutes les normes 
     sur $E$ sont équivalentes entre elles.
-\end{theorement}
+\end{theoreme}
 
 \begin{proof}
     Admis pour le moment, sera fait plus tard dans l'année.
@@ -853,25 +887,25 @@ Soit $E$ un $\K$-espace vectoriel.
         \end{array}
         \]
 
-        vrai pour tout $x$ donc $|| f + g||_\infty \leqslant ||f||_\infty + ||g||_\infty$
+        vrai pour tout $x$ donc $|| f + g||_\infty \leqslant ||f||_\infty + ||g||_\infty$.
     \end{itemize}
 \end{proof}
 
 \begin{definition}{Norme infinie sur $\K^n$}{}
     Pour $X = \{1, \dots, n\}$ et en utilisant la bijection $\mathscr B(X, \K)$
-    à $\K^n$ 
+    à $\K^n$ :
 
-    $$\fonction{}{\mathscr B(X, \K)}{\K^n}{f}{(f(1), \dots, f(n))}$$\\
+    \[\fonction{\varphi}{\mathscr B(X, \K)}{\K^n}{f}{(f(1), \dots, f(n))}\]
 
     On a ainsi construit $|| \cdot ||_\infty$ sur $\K^n$ qui est donc une norme définie
-    par $||(x_1, \dots, x_n)||_\infty = \sup\{|x_1|, \dots, |x_n| \} = \max (|x_1|, \dots, |x_n|)$
+    par $||(x_1, \dots, x_n)||_\infty = \sup\{|x_1|, \dots, |x_n| \} = \max (|x_1|, \dots, |x_n|)$.
 \end{definition}
 
 \begin{definition}{Espace vectoriel des suites bornées}{}
     On note $\ell^\infty(K) = \mathscr B(\N, \K)$ l'espace vectoriel des suites bornées
     à valeurs dans $\K$. On y a ainsi défini la norme $|| \cdot ||_\infty$ par :
 
-    $$||(u_n)_{n \in \N} ||_\infty = \sup\{|u_n|, n \in \N\}$$
+    \[||(u_n)_{n \in \N} ||_\infty = \sup\{|u_n|, n \in \N\}\]
 \end{definition}
 
 \begin{definition}{}{}
@@ -887,16 +921,13 @@ Soit $E$ un $\K$-espace vectoriel.
         \space & = & \max\{|f(x)|, x \in \inter{a}{b}\} \\
     \end{array}
     \]
-
-
 \end{definition}
-
 
 \subsection{Applications, produit cartésien d'espaces vectoriels normalisés}
 
 \begin{theoreme}{Norme produit}{}
     Soient $(E_1, N_1), \dots, (E_p, N_p)$ des espaces vectoriels normés
-    et $E$ l'espace vectoriel $E = E1 \times E_2 \dots \times E_p$.
+    et $E$ l'espace vectoriel $E = E_1 \times E_2 \dots \times E_p$.
     Alors pour $u = (u_1, \dots, u_p) \in E$ on pose :
 
     $$N_\infty(u) = \max(N_1(u_1), \dots, N_p(u_p))$$
@@ -905,7 +936,7 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{theoreme}
 
 \begin{proof}
-    $N_\infty$ est bien définie et à valeurs dans $\R^+$
+    $N_\infty$ est bien définie et à valeurs dans $\R^+$.
 
     \begin{itemize}
         \item \uline{Séparation :}
@@ -942,9 +973,9 @@ Soit $E$ un $\K$-espace vectoriel.
 \subsection{Normes 1}
 
 \begin{definition}{Norme 1 sur $\K^n$}{}
-    Pour $x = (x_1, \dots, x_n) \in \K^n$ on pose 
+    Pour $x = (x_1, \dots, x_n) \in \K^n$, on pose :
 
-    $$||x||_1 = \sum_{i = 1 }^{n } |x_i|$$
+    \[||x||_1 = \sum_{i = 1 }^{n } |x_i|\]
 \end{definition}
 
 \begin{theoreme}{Norme 1 sur $\K^n$}{}
@@ -961,13 +992,14 @@ Soit $E$ un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-\begin{definitionnt}{}{}
-    \\On note $\ell^1(\K) = \{(u_n)_{n \in \N} \in \K^n \mid \sum_{n \geqslant 0} |u_n| ~ \text{est une suite convergente} ~ \}$
-\end{definitionnt}
+\begin{definition}{Ensemble des suites convergentes}{}
+
+    On note $\ell^1(\K) = \{(u_n)_{n \in \N} \in \K^n \mid \sum_{n \geqslant 0} |u_n| ~ \text{est une suite convergente} ~ \}$
+\end{definition}
 
 \begin{theoreme}{Norme 1 suites}{}
     En posant pour $u \in \ell^1(\K)$,
-    $$||u||_1 = \sum_{i = 0}^{+ \infty }|u_i|$$ 
+    \[||u||_1 = \sum_{i = 0}^{+ \infty }|u_i|\] 
     on définit une norme. 
 \end{theoreme}
 
@@ -995,13 +1027,12 @@ Soit $E$ un $\K$-espace vectoriel.
 
 \begin{definition}{Norme 1 sur $\mathscr C([a, b], \K)$}{}
     Pour $f \in \mathscr C(\inter{a}{b}, \K)$, on pose :
-    $$||f||_1 = \int_{a }^{b } \mid f(t) \mid \text d t$$
-
+    \[||f||_1 = \int_{a }^{b } \mid f(t) \mid \text d t\]
 \end{definition}
 
 \begin{remarque}
-    Si on prend le produit scalaire $\langle f, g \rangle = \int_{a}^{b} fg$, on a 
-    $f(x) =  \langle f', 1 \rangle $ (peut servir en exercice). 
+    Si on prend le produit scalaire $\ds \langle f, g \rangle = \int_{a}^{b} fg$, on a 
+    $f(x) =  \langle f', 1 \rangle $ (parfois utile en exercice). 
 \end{remarque}
 
 \begin{theoreme}{Norme de la convergence moyenne}{}
@@ -1012,7 +1043,7 @@ Soit $E$ un $\K$-espace vectoriel.
     $||\cdot ||_1$ est bien définie et à valeurs dans $\R^+$.
     
     \begin{itemize}
-        \item Si $||f||_1 = 0$ alors $\int_{a }^{b } |f(t)| \text d t = 0$
+        \item Si $||f||_1 = 0$ alors $\ds \int_{a }^{b } |f(t)| \text d t = 0$
 
         Or $\mid f \mid $ est continue positive donc $\forall t \in \inter{a}{b}, f(t) = 0$
 
@@ -1023,9 +1054,8 @@ Soit $E$ un $\K$-espace vectoriel.
 \end{proof}
 
 \begin{exemple}
-    Si $E = \K(X)$
-    
-    On peut poser pour $P \in E$ $||P|| = \int_{-1}^{2} |P(t)| \text d t$ \\
+    Si $E = \K(X)$.
+    On peut poser pour $\ds P \in E~||P|| = \int_{-1}^{2} |P(t)| \text d t$
 
     La preuve est identique à celle d'avant sauf la fin de la vérification de l'axiome de séparation 
     où il faut ajouter que P(t) est nul sur le segment, donc a une infinité de racines donc
@@ -1036,15 +1066,13 @@ Soit $E$ un $\K$-espace vectoriel.
 
 Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \cdot \rangle$.
 
-\begin{theorement}{}{}
+\begin{theoreme}{}{}
     L'application $|| \cdot ||_2$ définie par : 
     $$ \forall u \in E, ||u||_2 = \sqrt{\langle u, u \rangle}$$
     est une norme appelée norme euclidienne associée au produit scalaire. 
-\end{theorement}
+\end{theoreme}
 
-\idee{
-    Pour l'inégalité triangulaire, utiliser Cauchy Schwarz. 
-}
+\idee{Pour l'inégalité triangulaire, utiliser Cauchy Schwarz.}
 
 \begin{proof}
     $|| \cdot ||_2$ est bien définie et à valeurs dans $\R^+$ car le produit scalaire est positif. 
@@ -1071,20 +1099,17 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \c
 \begin{definition}{Norme sur $\R^n$}{}
     \\Pour $x = (x_1, \dots, x_n)$ et $y = (y_1, \dots, y_n)$, $\displaystyle \langle x, y \rangle = \sum_{i = 1 }^{n }x_i y_i$ définit un 
     produit scalaire sur $\R^n$. La norme associée est :
-    $$ ||x||_2 = \sqrt{\sum_{i = 1 }^{n }x_i^2}$$
+    \[||x||_2 = \sqrt{\sum_{i = 1 }^{n }x_i^2}\]
 \end{definition}
-
 
 \begin{theoreme}{Espace vectoriel des suites de carré sommable}{}
     L'ensemble $E = \ell^2(\R) = \{(u_n)_{n \in \N} \mid \sum_{n \leqslant 0 }u_n^2 \text{ converge}\}$
     est un $\R$-espace vectoriel appelé espace des suites de carré sommable. 
 \end{theoreme}
 
+\idee{Cheat code avec l'identité remarquable.}
 
 \begin{proof}~
-    \idee{
-        Cheat code avec l'identité remarquable.
-    }
     \begin{itemize}
         \item $E \subset \R^{\N}$
         
@@ -1101,11 +1126,11 @@ Soit $E$ un $\R$-espace vectoriel muni d'un produit scalaire $\langle \cdot , \c
 \end{proof}
 
 \begin{theoreme}{Norme 2 pour les suites}{}
-    Pour $u, v \in \ell^2(\R)$, $\displaystyle \langle u, v \rangle = \sum_{n = 0 }^{+ \infty} u_n v_n$
-    définit un produit scalaire. \\
 
+    Pour $u, v \in \ell^2(\R)$, $\displaystyle \langle u, v \rangle = \sum_{n = 0 }^{+ \infty} u_n v_n$
+    définit un produit scalaire. 
     La norme euclidienne associée est : 
-    $$||u||_2 = \sqrt{\sum_{n = 0 }^{\infty}u_n^2}$$
+    \[||u||_2 = \sqrt{\sum_{n = 0 }^{\infty}u_n^2}\]
 \end{theoreme}
 
 \begin{proof}
@@ -1118,8 +1143,8 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 \begin{theoreme}{Norme de la convergence moyenne quadratique}{}
     Pour $f, g \in E$, on pose 
     $\langle f, g \rangle = \int_{a}^{b} f(t)g(t) \text d t$
-    est un produit scalaire, et la norme associée est 
-    $$||f||_2 = \sqrt{\int_{a }^{b } f(t)^2 \text d t}$$
+    est un produit scalaire, et la norme associée est :
+    \[||f||_2 = \sqrt{\int_{a }^{b } f(t)^2 \text d t}\]
     on l'appelle norme de la convergence moyenne quadratique. 
 \end{theoreme}
 
@@ -1133,8 +1158,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
     Soit $E$ un $\C$-espace vectoriel et 
     $$\fonction{\langle\cdot, \cdot\rangle}{E \times E}{\C}{(u, v)}{\langle u, v \rangle}$$
     On dit que $\langle\cdot, \cdot\rangle$ est un produit scalaire ou une forme 
-    sesquilinéaire à symétrie hermitienne définie positive. 
-
+    sesquilinéaire à symétrie hermitienne définie positive ssi
     $\forall u, v, w \in E, \lambda \in \C$, 
 
     \begin{itemize}
@@ -1145,10 +1169,10 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
     \end{itemize}
 \end{definition}
 
-\begin{theorement}{}{}
+\begin{theoreme}{}{}
     Inégalité de Cauchy Schwarz complexe :
-    $$\forall u, v \in E, |\langle u, v \rangle| \leqslant ||u||_2 \cdot ||v||_2$$
-\end{theorement}
+    \[\forall u, v \in E, |\langle u, v \rangle| \leqslant ||u||_2 \cdot ||v||_2\]
+\end{theoreme}
 
 \idee{
     Considérer $\langle\lambda u + v, \lambda u + v\rangle \geqslant 0$ et choisir $\lambda$ 
@@ -1158,17 +1182,17 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 \begin{proof}
     Soient $u, v \in E$, pour $\lambda \in \C$, $\langle\lambda u + v, \lambda u + v\rangle \in \R^+ $
 
-    $$
+    \[
     \begin{array}{rcl}
         \langle\lambda u + v, \lambda u + v\rangle & = & \lambda \langle\lambda u + v, u \rangle + \langle\lambda u + v, v\rangle \\
         \space & = & \lambda (\bar \lambda \langle u, u \rangle + \langle v, u \rangle ) + \bar \lambda \langle u, v \rangle + \langle v, v \rangle \\
         \space & = & |\lambda|^2 \langle u, u \rangle + \bar \lambda  \langle u, v \rangle + \langle v, v \rangle \\
         \space & = & |\lambda|^2 \langle u, u \rangle + 2 \re(\lambda \langle v, u \rangle) + \langle v, v \rangle \\
     \end{array}
-    $$
+    \]
 
     Considérons $\ds \lambda = - \frac{- \langle u, v \rangle }{\langle u, u \rangle}$ en ce $\lambda$ la quantité est dans
-    $\R^+$
+    $\R^+$.
 
     $\displaystyle \frac{|\langle u, v \rangle|^2}{\langle u, u \rangle} - 2 \re \left(\frac{|\langle u, v \rangle|^2}{\langle u, u \rangle}\right) + \langle v, v \rangle \geqslant 0$
 
@@ -1176,8 +1200,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
     Donc $|\langle u, v \rangle|^2 \leqslant \langle u, u \rangle \langle v, v \rangle$
 
-    Donc $|\langle u, v \rangle| \leqslant ||u||_2 \cdot ||v||_2$ qui est l'inégalité de Cauchy Schwarz. 
-
+    Donc $|\langle u, v \rangle| \leqslant ||u||_2 \cdot ||v||_2$ ce qui est l'inégalité de Cauchy Schwarz. 
 \end{proof}
 
 \begin{theoreme}{Norme hermitienne associée}{}
@@ -1200,7 +1223,7 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
         \item \uline{Inégalité triangulaire :} Soient $u, v \in E$,
 
-        $$
+        \[
         \begin{array}{rcl}
             ||u + v||^2_2 & = & \langle u + v, u + v \rangle  \\
             \space & = & \langle u + u \rangle + \langle u, v \rangle + \langle v, u \rangle + \langle v, v \rangle \\
@@ -1210,10 +1233,8 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
             \space & \leqslant & ||u||_2^2 + 2 ||u||_2 ||v||_2 + ||v||_2^2 \\
             \space & \leqslant & (||u||_2 + ||v||_2)^2 \\
         \end{array}
-        $$
-        
+        \]
     \end{itemize}
-
 \end{proof}
 
 \begin{exemple}
@@ -1226,28 +1247,28 @@ Soit $E = \mathscr C(\inter{a}{b}, \R)$.
 
     $\forall u = (u_1, \dots, u_n), v = (v_1, \dots, v_n) \in \K^n$,
 
-    $$
+    \[
     \langle u, v \rangle = \begin{cases}
         \ds \sum_{i = 1}^{n} u_i v_i & \text{si } \K = \R \\
         \ds \sum_{i = 1}^{n} u_i \overline{v_i} & \text{si } \K = \C \\
     \end{cases}
-    $$
+    \]
 
     Sur $\ell^2(\K)$ espace vectoriel des suites de carré sommables,
-    $\ds \ell^2(\K) = \{(u_n)_{n \in \N} \mid \sum_{n \geqslant 0} |u_n|^2 \text{ converge}\}$
+    $\ds \ell^2(\K) = \{(u_n)_{n \in \N} \mid \sum_{n \geqslant 0} |u_n|^2 \text{ converge}\}$.
     
-    On pose $\ds ||u_n||_2 = \sqrt{\sum_{n = 0 }^{+ \infty} |u_n|^2}$
+    On pose $\ds ||u_n||_2 = \sqrt{\sum_{n = 0 }^{+ \infty} |u_n|^2}$.
 
     C'est une norme euclidienne (resp. hermitienne) si $\K = \R$ (resp. $\C$) issue
     du produit scalaire $\ds \langle u_n, v_n \rangle = \sum_{n = 0}^{+ \infty} u_n v_n \text{si } \K = \R$
-    $\ds \langle u_n, v_n \rangle = \sum_{n = 0}^{+ \infty} u_n \overline{v_n} \text{si } \K = \C$
+    $\ds \langle u_n, v_n \rangle = \sum_{n = 0}^{+ \infty} u_n \overline{v_n} \text{si } \K = \C$.
 
     \uline{Preuve :}
 
-    \svspace $\ds \forall n \in \N, \mid u_n v_n \mid \leqslant \frac 1 2 (\mid u_n \mid^2 + \mid v_n \mid^2)$ est le terme
+    \svspace $\ds \forall n \in \N, |u_n v_n| \leqslant \frac 1 2 (|u_n|^2 + |v_n|^2)$ est le terme
     général d'une série convergente. 
 
-    Et donc $\ell^2(\K)$ sev de $\K^{\N}$ car $|u_n + v_n|^2 \leqslant |u_n|^2 + 2 |u_n v_n| + |v_n|^2$ \\
+    Et donc $\ell^2(\K)$ est un sous-espace vectoriel de $\K^{\N}$ car $|u_n + v_n|^2 \leqslant |u_n|^2 + 2 |u_n v_n| + |v_n|^2$. \\
 
     \uline{Sur $\mathscr C(\inter{a}{b}, \K)$ :}
 

@@ -5,14 +5,14 @@
     Soit $n \in \N$ tel que $n \geqslant 2$. On pose $z = e^{i\frac{2\pi}{n}}$.
     \begin{enumerate}
         \item On suppose $k \in \{1, \dots, n-1\}$. Déterminer le module et un argument du complexe $z^k - 1$.
-        \item On pose $S = \sum_{k=0}^{n-1} |z^k - 1|$. Montrer que $S = \frac{2}{\tan \frac{\pi}{2n}}$.
+        \item On pose $\ds S = \sum_{k=0}^{n-1} |z^k - 1|$. Montrer que $S = \frac{2}{\tan \frac{\pi}{2n}}$.
     \end{enumerate}
 \end{exercice}
 
 % --- Exercice 2 (Source: Exercice 1 Normes et distances) ---
 \begin{exercice}
     Montrer que sur $E = \R^2$, l'application $N$ définie par :
-    $$ N(x,y) = \sup \{ |tx+y|, \ t \in [0,1] \} $$
+    \[N(x,y) = \sup \{ |tx+y|, \ t \in [0,1] \}\]
     est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$.
 \end{exercice}
 
@@ -20,7 +20,7 @@
 \begin{exercice}[Exercice 37 Analyse]
     On note $E$ l'espace vectoriel des applications continues de $[0,1]$ dans $\R$.
     On pose, pour $f \in E$ :
-    $$ N_\infty(f) = \sup_{x \in [0,1]} |f(x)| \quad \text{et} \quad N_1(f) = \int_0^1 |f(x)| \dx $$
+    \[N_\infty(f) = \sup_{x \in [0,1]} |f(x)| \quad \text{et} \quad N_1(f) = \int_0^1 |f(x)| \dx\]
     \begin{enumerate}
         \item 
         \begin{enumerate}
@@ -38,7 +38,7 @@
     \begin{enumerate}
         \item Justifier pourquoi $E$ est un $\R$-espace vectoriel.
         \item Pour $f \in E$, on définit :
-            $$ n(f) = \|f+f'\|_\infty \quad \text{et} \quad N(f) = \|f\|_\infty + \|f'\|_\infty $$
+            \[n(f) = \|f+f'\|_\infty \quad \text{et} \quad N(f) = \|f\|_\infty + \|f'\|_\infty\]
             Montrer que $n$ et $N$ sont deux normes sur $E$.
         \item Montrer qu'elles sont équivalentes.
     \end{enumerate}
@@ -47,7 +47,7 @@
 % --- Exercice 5 (Source: Exercice 3) ---
 \begin{exercice}
     On se place dans $E = \mathscr C^p([0,1], \R)$ et on définit pour tout entier $k$ inférieur à $p$, et toute $f \in E$ :
-    $$ N_k(f) = \sum_{i=0}^{k-1} |f^{(i)}(0)| + \sup \{ |f^{(k)}(t)|, \ t \in [0,1] \} $$
+    \[N_k(f) = \sum_{i=0}^{k-1} |f^{(i)}(0)| + \sup \{ |f^{(k)}(t)|, \ t \in [0,1] \}\]
     \begin{enumerate}
         \item Montrer que $N_k$ est une norme.
         \item Montrer que ces normes sont deux à deux non-équivalentes.
@@ -64,13 +64,14 @@
 % --- Exercice 7 (Source: Exercice 5) ---
 \begin{exercice}
     On note $E = \{ f \in \mathscr C^2([0,1], \R) \mid f(0)=f(1)=0 \}$ que l'on munit de $\|\cdot\|_\infty$ et de $N$ définie par :
-    $$ N(f) = \sqrt{\int_0^1 f''(t)^2 \dt} $$
+    \[N(f) = \sqrt{\int_0^1 f''(t)^2 \dt}\]
     \begin{enumerate}
         \item Vérifier que $N$ est une norme sur $E$.
-        \item Montrer que pour $f \in E$, $\|f\|_\infty \leqslant N(f)$.
+        \item Montrer que pour $f \in E$, $\|f\|_\infty \le N(f)$.
+        
             \textit{Indication : On montrera successivement que pour tout $x$ on a :}
-            $$ f(x) \leqslant \sqrt{\int_0^1 f'(t)^2 \dt}, \quad \text{puis} \quad f(x) \leqslant \sqrt{\int_0^1 -f(t)f''(t) \dt} $$
-            $$ \text{puis} \quad f(x) \leqslant \sqrt{\|f\|_\infty \sqrt{\int_0^1 f''(t)^2 \dt}} $$
+            \[f(x) \leqslant \sqrt{\int_0^1 f'(t)^2 \dt}, \quad \text{puis} \quad f(x) \leqslant \sqrt{\int_0^1 -f(t)f''(t) \dt}\]
+            \[\text{puis} \quad f(x) \leqslant \sqrt{\|f\|_\infty \sqrt{\int_0^1 f''(t)^2 \dt}}\]
         \item Montrer que $N$ et $\|\cdot\|_\infty$ ne sont pas équivalentes.
     \end{enumerate}
 \end{exercice}
@@ -78,8 +79,9 @@
 % --- Exercice 8 (Source: Exercice 38 analyse) ---
 \begin{exercice}[Exercice 38 Analyse]
     On note $\R[X]$ l'espace vectoriel des polynômes à coefficients réels.
-    On pose : $\forall P \in E$, $N_1(P) = \sum_{i=0}^n |a_i|$ et $N_\infty(P) = \max_{0 \leqslant i \leqslant n} |a_i|$ 
-    où $P = \sum_{i=0}^n a_i X^i$ avec $n \geqslant \deg P$.
+    
+    On pose : $\ds \forall P \in E,~N_1(P) = \sum_{i=0}^n |a_i|$ et $N_\infty(P) = \max_{0 \leqslant i \leqslant n} |a_i|$ 
+    où $\ds P = \sum_{i=0}^n a_i X^i$ avec $n \geqslant \deg P$.
     \begin{enumerate}
         \item 
         \begin{enumerate}
@@ -90,6 +92,7 @@
         \end{enumerate}
         \item On note $\R_k[X]$ le sous-espace vectoriel de $\R[X]$ constitué par les polynômes de degré inférieur ou égal à $k$. 
             On note $N'_1$ la restriction de $N_1$ à $\R_k[X]$ et $N'_\infty$ la restriction de $N_\infty$ à $\R_k[X]$.
+
             Les normes $N'_1$ et $N'_\infty$ sont-elles équivalentes ?
     \end{enumerate}
 \end{exercice}
@@ -97,7 +100,9 @@
 % --- Exercice 9 (Source: Exercice 6) ---
 \begin{exercice}
     On a vu plus haut que dans $E = \R^2$, l'application $N : (x,y) \mapsto \sup \{ |tx+y|, t \in [0,1] \}$ 
-    est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$. Dessiner la boule fermée de centre 0 et de rayon 1.
+    est une norme et que pour tout $(x,y)$, $N(x,y) = \max(|y|, |x+y|)$.
+
+    Dessiner la boule fermée de centre 0 et de rayon 1.
 \end{exercice}
 
 % --- Exercice 10 (Source: Exercice 7) ---
@@ -112,11 +117,8 @@
 % --- Correction 1 ---
 \begin{correction}{1}
 \begin{enumerate}
-    \item On pose $Z = z^k - 1$.
-    $$ Z = e^{i\frac{k\pi}{n}} - 1 = e^{i\frac{k\pi}{n}} \left( e^{i\frac{k\pi}{n}} - e^{-i\frac{k\pi}{n}} \right) e^{-i \dots \text{(factorisation par l'arc moitié)}} $$
-    Plus précisément :
-    $$ z^k - 1 = e^{i\frac{2k\pi}{n}} - 1 = e^{i\frac{k\pi}{n}} \left( e^{i\frac{k\pi}{n}} - e^{-i\frac{k\pi}{n}} \right) = e^{i\frac{k\pi}{n}} \cdot 2i \sin\left(\frac{k\pi}{n}\right) $$
-    C'est-à-dire $Z = 2 \sin\left(\frac{k\pi}{n}\right) e^{i\left(\frac{k\pi}{n} + \frac{\pi}{2}\right)}$.
+    \item En utilisant la technique de l'angle moitié on a :
+    \[z^k - 1 = e^{i\frac{2k\pi}{n}} - 1 = e^{i\frac{k\pi}{n}} \left( e^{i\frac{k\pi}{n}} - e^{-i\frac{k\pi}{n}} \right) = e^{i\frac{k\pi}{n}} \cdot 2i \sin\left(\frac{k\pi}{n}\right)\]
 
     Pour $k \in \{1, \dots, n-1\}$, on a $0 < \frac{k\pi}{n} < \pi$, donc $\sin\left(\frac{k\pi}{n}\right) > 0$.
 
@@ -125,18 +127,18 @@
 
     \item On remarque que pour $k=0$, $|z^k-1| = 0$ et $\sin\left(\frac{k\pi}{n}\right) = 0$.
     
-    Donc d'après la question précédente, on a $S = 2 \sum_{k=0}^{n-1} \sin\left(\frac{k\pi}{n}\right)$.
+    Donc d'après la question précédente, on a $S = 2 \ds\sum_{k=0}^{n-1} \sin\left(\frac{k\pi}{n}\right)$.
 
-    $S$ est donc la partie imaginaire de $T = 2 \sum_{k=0}^{n-1} e^{i\frac{k\pi}{n}}$.
+    $S$ est donc la partie imaginaire de $T = 2 \ds\sum_{k=0}^{n-1} e^{i\frac{k\pi}{n}}$.
 
     Comme $e^{i\frac{\pi}{n}} \ne 1$, on a :
-    $$ T = 2 \frac{1 - e^{i\pi}}{1 - e^{i\frac{\pi}{n}}} = \frac{4}{1 - e^{i\frac{\pi}{n}}} $$
-    Or $1 - e^{i\frac{\pi}{n}} = e^{i\frac{\pi}{2n}} (e^{-i\frac{\pi}{2n}} - e^{i\frac{\pi}{2n}}) = -2i e^{i\frac{\pi}{2n}} \sin\left(\frac{\pi}{2n}\right)$.
+    \[ T = 2 \frac{1 - e^{i\pi}}{1 - e^{i\frac{\pi}{n}}} = \frac{4}{1 - e^{i\frac{\pi}{n}}} \]
+    Or $1 - e^{i\frac{\pi}{n}} = e^{i\frac{\pi}{2n}} \left(e^{-i\frac{\pi}{2n}} - e^{i\frac{\pi}{2n}}\right) = -2i e^{i\frac{\pi}{2n}} \sin\left(\frac{\pi}{2n}\right)$.
 
     On en déduit que $T = \frac{4}{-2i \sin\left(\frac{\pi}{2n}\right) e^{i\frac{\pi}{2n}}} = \frac{2i}{\sin\left(\frac{\pi}{2n}\right)} e^{-i\frac{\pi}{2n}}$.
 
-    En isolant la partie imaginaire de $T$, et comme $\cos\left(\frac{\pi}{2n}\right) \ne 0$ (car $n \ge 2$), on en déduit que :
-    $$ S = \text{Im}(T) = \frac{2}{\sin \frac{\pi}{2n}} \cos \frac{\pi}{2n} = \frac{2}{\tan \frac{\pi}{2n}} $$
+    En isolant la partie imaginaire de $T$, et comme $\cos\left(\frac{\pi}{2n}\right) \ne 0$ (car $n \geqslant 2$), on en déduit que :
+    \[ S = \im(T) = \frac{2}{\sin \left(\frac{\pi}{2n}\right)} \cos\left( \frac{\pi}{2n}\right) = \frac{2}{\tan\left( \frac{\pi}{2n}\right)} \]
 \end{enumerate}
 \end{correction}
 
@@ -156,6 +158,8 @@
 
     Soient $x,y, x', y'$ des réels et $\lambda \in \R$.
 
+    \newpage
+    
     \textbf{Séparation :}
     \begin{quote}
         Si $N(x,y) = 0$, \\
@@ -192,20 +196,22 @@
         \begin{itemize}
             \item \textit{Séparation :} Si $N_\infty(f) = 0$, alors $\forall t \in [0,1], |f(t)| = 0$, donc $f=0$.
             \item \textit{Homogénéité :} $N_\infty(\lambda f) = \sup |\lambda f(x)| = |\lambda| N_\infty(f)$.
-            \item \textit{Inégalité triangulaire :} $|(f+g)(t)| \le |f(t)| + |g(t)| \le N_\infty(f) + N_\infty(g)$,
-                donc en passant au sup, $N_\infty(f+g) \le N_\infty(f) + N_\infty(g)$.
+            \item \textit{Inégalité triangulaire :} $|(f+g)(t)| \leqslant |f(t)| + |g(t)| \leqslant N_\infty(f) + N_\infty(g)$.
+            
+            Comme c'est vrai pour tout $t$, $N_\infty(f+g) \leqslant N_\infty(f) + N_\infty(g)$.
         \end{itemize}
 
         \textbf{$N_1$ est une norme :}
         \begin{itemize}
-            \item \textit{Séparation :} Si $N_1(f) = 0$, alors $\int_0^1 |f(t)| \dt = 0$. Or $|f|$ est continue et positive, donc $|f|=0$, soit $f=0$.
+            \item \textit{Séparation :} Si $N_1(f) = 0$, alors $\ds \int_0^1 |f(t)| \dt = 0$. Or $|f|$ est continue et positive, donc $|f|=0$, donc $f=0$.
             \item \textit{Homogénéité :} Par linéarité de l'intégrale, $N_1(\lambda f) = |\lambda| N_1(f)$.
-            \item \textit{Inégalité triangulaire :} $|f(t)+g(t)| \le |f(t)| + |g(t)|$. Par croissance de l'intégrale, $N_1(f+g) \le N_1(f) + N_1(g)$.
+            \item \textit{Inégalité triangulaire :} $|f(t)+g(t)| \leqslant |f(t)| + |g(t)|$. Par croissance de l'intégrale, $N_1(f+g) \leqslant N_1(f) + N_1(g)$.
         \end{itemize}
 
-        \item $k=1$ convient car $\forall f \in E$, $N_1(f) = \int_0^1 |f(t)| \dt \le \int_0^1 N_\infty(f) \dt = N_\infty(f)$.
+        \item $k=1$ convient car $\ds \forall f \in E,~N_1(f) = \int_0^1 |f(t)| \dt \leqslant \int_0^1 N_\infty(f) \dt = N_\infty(f)$.
 
-        \item L'application identité de $(E, N_\infty)$ vers $(E, N_1)$ est continue car linéaire et vérifiant $N_1(f) \le k N_\infty(f)$.
+        \item L'application identité de $(E, N_\infty)$ vers $(E, N_1)$ est continue car linéaire et vérifiant $N_1(f) \leqslant k N_\infty(f)$.
+
         L'image réciproque d'un ouvert par une application continue étant un ouvert, on en déduit qu'un ouvert pour la norme $N_1$ est un ouvert pour la norme $N_\infty$.     
     \end{enumerate}
 
@@ -215,10 +221,11 @@
 \end{enumerate}
 \end{correction}
 
+\newpage
 % --- Correction 4 ---
 \begin{correction}{4}
 \begin{enumerate}
-    \item $E$ est un sous-ensemble non vide de $C^1([0,1], \R)$ (contient la fonction nulle). 
+    \item $E$ est un sous-ensemble non vide de $\mathscr C^1([0,1], \R)$ (il contient la fonction nulle). 
     
     Il est stable par combinaison linéaire, c'est donc un sous-espace vectoriel.
 
@@ -234,7 +241,7 @@
             Or $f(0)=0$, donc $\alpha=0$ et $f=0$.
         \end{quote}
         \item \textbf{Homogénéité :} $n(\lambda f) = \|\lambda(f+f')\|_\infty = |\lambda| n(f)$.
-        \item \textbf{Inégalité triangulaire :} $n(f+g) = \|(f+g) + (f+g)'\|_\infty \le \|f+f'\|_\infty + \|g+g'\|_\infty = n(f) + n(g)$.
+        \item \textbf{Inégalité triangulaire :} $n(f+g) = \|(f+g) + (f+g)'\|_\infty \leqslant \|f+f'\|_\infty + \|g+g'\|_\infty = n(f) + n(g)$.
     \end{itemize}
 
     \textit{Pour $N(f)$ :}
@@ -242,18 +249,18 @@
     
     L'homogénéité et l'inégalité triangulaire découlent directement des propriétés de la norme $\|\cdot\|_\infty$.
 
-    \item Il est clair par inégalité triangulaire que pour tout $f \in E$, $n(f) \le \|f\|_\infty + \|f'\|_\infty = N(f)$.
+    \item Il est clair par inégalité triangulaire que pour tout $f \in E$, $n(f) \leqslant \|f\|_\infty + \|f'\|_\infty = N(f)$.
 
     Pour l'autre sens, majorons $\|f\|_\infty$ par $n(f)$.
     
     Soit $x \in [0,1]$. Posons $g(x) = e^x f(x)$. 
     \begin{quote}
-        On a $f(x) = e^{-x} g(x) = e^{-x} (g(x)-g(0)) = e^{-x} \int_0^x g'(t) \dt$. \\
+        On a $\ds f(x) = e^{-x} g(x) = e^{-x} (g(x)-g(0)) = e^{-x} \int_0^x g'(t) \dt$. \\
         Or $g'(t) = e^t (f(t)+f'(t))$. \\
-        Donc $|f(x)| \le e^{-x} \int_0^x e^t |f(t)+f'(t)| \dt \le 1 \cdot \int_0^1 e^1 n(f) \dt = e \cdot n(f)$. \\
-        Ceci étant vrai pour tout $x$, $\|f\|_\infty \le e \cdot n(f)$. \\
-        Alors $\|f'\|_\infty = \|(f+f') - f\|_\infty \le n(f) + \|f\|_\infty \le (1+e)n(f)$. \\
-        Au total, $N(f) = \|f\|_\infty + \|f'\|_\infty \le (1+2e) n(f)$. 
+        Donc $\ds |f(x)| \leqslant e^{-x} \int_0^x e^t |f(t)+f'(t)| \dt \leqslant 1 \cdot \int_0^1 e^1 n(f) \dt = e \cdot n(f)$. \\
+        Ceci étant vrai pour tout $x$, $\|f\|_\infty \le e \cdot n(f)$,
+        $\|f'\|_\infty = \|(f+f') - f\|_\infty \leqslant n(f) + \|f\|_\infty \leqslant (1+e)n(f)$. \\
+        Au total, $N(f) = \|f\|_\infty + \|f'\|_\infty \leqslant (1+2e) n(f)$. 
     \end{quote}
     Les normes sont équivalentes.
 \end{enumerate}
@@ -266,7 +273,7 @@
         \begin{itemize}
             \item \textbf{Séparation :} Si $N_k(f) = 0$, 
             \begin{quote}
-                alors $\|f^{(k)}\|_\infty = 0$ donc $f^{(k)} = 0$. \\
+                Alors $\|f^{(k)}\|_\infty = 0$ donc $f^{(k)} = 0$. \\
                 $f$ est un polynôme de degré $\le k-1$. \\
                 De plus, $f^{(i)}(0) = 0$ pour $i < k$. \\
                 La formule de Taylor en 0 montre que $f=0$.
@@ -307,9 +314,9 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 
     \item \textbf{Inégalité triangulaire :} 
     \begin{quote}
-        $|g_{f+h}(x,y)| \le |g_f(x,y)| + |g_h(x,y)|$, \\
-        donc $\|g_{f+h}\|_\infty \le \|g_f\|_\infty + \|g_h\|_\infty$. \\
-        D'où $N(f+h) \le N(f) + N(h)$.
+        $|g_{f+h}(x,y)| \leqslant |g_f(x,y)| + |g_h(x,y)|$,
+        donc $\|g_{f+h}\|_\infty \leqslant \|g_f\|_\infty + \|g_h\|_\infty$. \\
+        D'où $N(f+h) \leqslant N(f) + N(h)$.
     \end{quote}
 \end{itemize}
 
@@ -334,24 +341,20 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 
     \item Comme $f(0)=0$, $f(x) = \int_0^x f'(t) \dt = \langle f', \mathbf{1}_{[0,x]} \rangle$.
 
-    Par Cauchy-Schwarz : $|f(x)| \le \|f'\|_2 \cdot \sqrt{x} \le \|f'\|_2 \le \sqrt{\int_0^1 f'(t)^2 \dt}$.
+    Par Cauchy-Schwarz : $|f(x)| \leqslant \|f'\|_2 \cdot \sqrt{x} \leqslant \|f'\|_2 \leqslant \sqrt{\int_0^1 f'(t)^2 \dt}$.
 
     Ensuite, par intégration par parties : 
-    $$\int_0^1 f'(t)^2 \dt = [f(t)f'(t)]_0^1 - \int_0^1 f(t)f''(t) \dt = - \int_0^1 f(t)f''(t) \dt$$ (car $f(0)=f(1)=0$).
+    \[\int_0^1 f'(t)^2 \dt = [f(t)f'(t)]_0^1 - \int_0^1 f(t)f''(t) \dt = - \int_0^1 f(t)f''(t) \dt\]
+    (car $f(0)=f(1)=0$).
 
-    Donc $f(x)^2 \le \left| \int_0^1 f(t)f''(t) \dt \right| \le \|f\|_\infty \int_0^1 |f''(t)| \dt \le \|f\|_\infty \|f''\|_2$ (par Cauchy-Schwarz sur 1 et $|f''|$).
+    Donc $f(x)^2 \leqslant \left| \int_0^1 f(t)f''(t) \dt \right| \leqslant \|f\|_\infty \int_0^1 |f''(t)| \dt \leqslant \|f\|_\infty \|f''\|_2$
+    (par Cauchy-Schwarz sur 1 et $|f''|$).
 
-    Ainsi $f(x)^2 \le \|f\|_\infty N(f)$.
+    Ainsi $f(x)^2 \leqslant \|f\|_\infty N(f)$.
 
-    En passant au sup sur $x$, $\|f\|_\infty^2 \le \|f\|_\infty N(f)$, d'où $\|f\|_\infty \le N(f)$.
+    Comme c'est vrai pour tout $x$, $\|f\|_\infty^2 \leqslant \|f\|_\infty N(f)$, d'où $\|f\|_\infty \leqslant N(f)$.
 
-    \item Considérons $f_n(x) = \sin(n\pi x)$ (pour satisfaire les conditions aux bords, $f_n \in E$ si on prend $\sin(k\pi x)$,
-    ici prenons simplement $\sin(nx)$ adapté ou plus simplement la suite de l'énoncé suggère $f_n(x) = \sin(nx)$ mais attention aux bords).
-
-    Le corrigé suggère $f_n(x) = \sin(nx)$. Vérifions si elle est dans $E$... 
-    non, $f(1)=\sin(n) \ne 0$ en général.
-
-    Prenons $f_n(x) = \sin(n\pi x)$. $\|f_n\|_\infty = 1$.
+    \item Considérons $f_n(x) = \sin(n\pi x)$, $\|f_n\|_\infty = 1$.
 
     $f_n''(x) = -(n\pi)^2 \sin(n\pi x)$. $N(f_n) = (n\pi)^2 \|\sin(n\pi \cdot)\|_2 \approx C n^2$.
     
@@ -359,16 +362,31 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 \end{enumerate}
 \end{correction}
 
+\newpage
 % --- Correction 8 ---
 \begin{correction}{8}
-\textit{Note : Le corrigé fourni dans le document source semble traiter d'opérateurs intégraux ou de dérivation, ce qui diffère légèrement de la question posée sur l'équivalence directe des normes de polynômes, mais correspond aux thèmes classiques.}
-
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $N_\infty$ est clairement une norme (le max des coefficients).
-        \item ?
-        \item Pour $P_n(X) = \sum_{k=0}^n X^k$, $N_\infty(P_n) = 1$ et $N_1(P_n) = n+1$. \\
+        \item On vérifie aisément les propriétés d'une norme pour $N_\infty$ à partir de celles de la valeur absolue.
+        \item Soit $U$ un ouvert de l'espace vectoriel normé $(\R[X], N_\infty)$.
+
+        Montrons que $U$ est également un ouvert pour $(\R[X], N_1)$.
+
+        Soit $P \in U$. Puisque $U$ est un ouvert pour la norme $N_\infty$, il existe un rayon $r > 0$ tel que la boule ouverte centrée en $P$ et de rayon $r$ pour $N_\infty$ soit incluse dans $U$ :
+        \[ B_\infty(P, r) \subset U \]
+
+        Or, pour tout polynôme $Q \in \R[X]$, nous avons l'inégalité fondamentale des normes :
+        \[ N_\infty(Q) \leqslant N_1(Q) \qquad \text{(car le max est toujours inférieur ou égal à la somme)} \]
+
+        Par conséquent, si un polynôme $Q$ appartient à la boule $B_1(P, r)$, c'est-à-dire si $N_1(P - Q) < r$, alors on a nécessairement $N_\infty(P - Q) \leqslant N_1(P - Q) < r$. Cela implique que $Q \in B_\infty(P, r)$. On en déduit l'inclusion géométrique des boules :
+        \[ B_1(P, r) \subset B_\infty(P, r) \]
+
+        Par transitivité de l'inclusion, on a donc :
+        \[ B_1(P, r) \subset U \]
+
+        Ainsi, pour tout $P \in U$, il existe une boule ouverte pour la norme $N_1$ centrée en $P$ et contenue dans $U$. Par définition, cela prouve que $U$ est un ouvert pour $N_1$.
+        \item Pour $P_n(X) = \ds\sum_{k=0}^n X^k$, $N_\infty(P_n) = 1$ et $N_1(P_n) = n+1$. \\
             Le rapport tend vers l'infini. Les normes ne sont pas équivalentes sur $\R[X]$.
     \end{enumerate}
 
@@ -384,11 +402,11 @@ $N(f) = \|f\|_\infty + \|g_f\|_\infty$ est bien définie et positive.
 % --- Correction 9 ---
 \begin{correction}{9}
 
-La boule unité fermée est définie par $B = \{ (x,y) \in \R^2 \mid N(x,y) \le 1 \}$.
-$$ N(x,y) \le 1 \iff \max(|y|, |x+y|) \le 1 \iff |y| \le 1 \text{ et } |x+y| \le 1 $$
+La boule unité fermée est définie par $B = \{ (x,y) \in \R^2 \mid N(x,y) \leqslant 1 \}$.
+\[ N(x,y) \leqslant 1 \iff \max(|y|, |x+y|) \leqslant 1 \iff |y| \leqslant 1 \text{ et } |x+y| \leqslant 1 \]
 
 Ceci équivaut au système d'inégalités :
-$$ -1 \le y \le 1 \quad \text{et} \quad -1 \le x+y \le 1 $$
+\[ -1 \leqslant y \leqslant 1~\text{et}~-1 \leqslant x+y \leqslant 1 \]
 
 C'est donc l'intersection de la bande horizontale définie par $y \in [-1,1]$
 et de la bande oblique définie par $-1-y \le x \le 1-y$.
@@ -423,4 +441,3 @@ On va construire un point qui est dans $B(a,R)$ et pas dans $B(a',R')$.
 \end{quote}
 Donc $a=a'$.
 \end{correction}
-

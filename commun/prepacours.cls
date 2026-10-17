@@ -708,7 +708,6 @@
   \endgroup
   
   \vfill%
-  \clearpage
   \passerenmodecours
   \pagestyle{scrheadings}%
   \thispagestyle{plain.scrheadings}%

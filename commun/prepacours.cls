@@ -22,6 +22,7 @@
 \RequirePackage{scrlayer-scrpage}
 \RequirePackage{titlesec}
 \RequirePackage{tikz}
+\RequirePackage{tkz-tab}
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
 \RequirePackage{fontawesome5}

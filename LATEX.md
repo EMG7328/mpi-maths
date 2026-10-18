@@ -1,9 +1,7 @@
 ## Aide 
-
 La page [wikipedia aide au formules tex](https://fr.wikipedia.org/wiki/Aide:Formules_TeX) contient à peu près tout ce qui est nécessaire pour écrire du latex. 
 
 ## Environnements personalisés 
-
 Il existe un certain nombre d'environnements personalisés à destination des 
 propositions, théorèmes, ... 
 
@@ -26,7 +24,6 @@ Il existe également une variante des environnements permettant de mettre un tit
 ```
 
 Tous les environnements peuvent fonctionner dans ce mode en ajoutant simplement "nt" à la fin du mot (pour no title). 
-
 
 Il existe également les environnements "idée" pour mettre par exemple une idée du principe général des preuves. Ceux si cont affichés dans la marge au niveau de l'endroit où ils sont appelés. Ils s'utilisent comme suit : 
 
@@ -67,7 +64,6 @@ Et un autre environnement plus générique :
 Il est généralement conseillé, lorsque ces environnements sont utilisés au milieu du texte, de leur ajouter des `\lvspace` ou `\avspace` par la suite, qui sont des commandes expliquées dans le paragraphe suivant.
 
 ## Titres 
-
 Il existe différents niveaux de titres, dans cet ordre : 
 
 ```latex
@@ -88,7 +84,6 @@ Pour afficher un titre sans que celui-ci n'apparaisse dans la table des matière
 Et de même pour les autres niveaux de titre.
 
 ## Commandes personalisées 
-
 J'ai également un fichier de raccourcis pour gagner du temps lorsque je tape, réunis dans le fichier `raccourcis.sty`. En voici les principaux : 
 
 Pour les ensembles de nombres : 
@@ -127,21 +122,18 @@ Un autre raccourci utile est `\uindent`. Celui-ci permet de créer un text qui v
 J'ai créé de nombreux raccourcis pour tous les opérateurs classiques comme Vect, Ker, Sp, rg, cov, ... Vous pouvez retrouver la liste exhaustive dans le fichier `raccourcis.sty`. 
 
 ## Métadonnées
-
 Avant de pouvoir compiler le fichier avec la classe, il faut lui fournir un certain nombre de métadonnées, qui sont les suivantes : 
 
 ```latex
 \annee{2025-2026}
 \filiere{MPI / MPI*}
 \etablissement{Lycée Champollion}
-\auteur{Nom de l'auteur}
 \chapitre{Numéro du chapitre (NECESSAIREMENT UN NOMBRE)}{titre du chapitre}
 ```
 
 La majorité de celles-ci sont réunis dans un fichier qui est simplement inclus au début de chaque chapitre, pour ne pas tout retaper à chaque fois.
 
 ## Présentation 
-
 Pour que la page de garde avec la table des matières apparaisse, ainsi que la première page de cours avec le titre en grand, il faut utiliser la commande `\pagedegarde` au tout début du contenu du document. Cela donne donc quelque chose du type : 
 
 ```latex
@@ -157,7 +149,6 @@ Pour que la page de garde avec la table des matières apparaisse, ainsi que la p
 ```
 
 ## Exercies et corrections 
-
 Il y a également des environnements pour inclure des exos et leur correction. Pour cela, il existe des commandes permettant de passer du mode exos au mode cours, qui sont : 
 ```latex
 \passerenmodeexos
@@ -184,14 +175,12 @@ et pour leur correction :
 Le champ "nb" permet de faire un lien vers l'exercice numéro "nb", pour ensuite permettre de passer de l'un à l'autre par un système de liens cliquables.
 
 ## Index
-
 J'ai également créé un index, qui apparait à la fin du document, pour accéder aux notions importantes rapidement. Pour ajouter un nouvel élément dans l'index, il suffit d'utiliser cette commande : 
 ```latex
 \index{Notion}
 ```
 
 ### Spécificités 
-
 On peut ajouter des éléments et des sous éléments, associés à un même élément. Pour cela, on met un `!`.
 Par exemple, groupe et anneau sont tout deux associés à morphisme de cette façon : 
 ```latex
@@ -205,14 +194,12 @@ Et si un terme contient un accent, pour le respect de l'ordre alphabétique, il 
 ```
 
 ## Index
-
 J'ai également créé un index, qui apparait à la fin du document, pour accéder aux notions importantes rapidement. Pour ajouter un nouvel élément dans l'index, il suffit d'utiliser cette commande : 
 ```latex
 \index{Notion}
 ```
 
 ### Spécificités 
-
 On peut ajouter des éléments et des sous éléments, associés à un même élément. Pour cela, on met un `!`.
 Par exemple, groupe et anneau sont tout deux associés à morphisme de cette façon : 
 ```latex

@@ -1,21 +1,17 @@
-Dans ce chapitre, on se place dans $\K = \R$ ou $\C$ et $(E, N)$ est un espace vectoriel normé.
+Dans ce chapitre, on se place dans $\K = \R$ ou $\C$ et on prendra $(E, N)$ un espace vectoriel normé.
 
 \section{Topologie d'un espace vectoriel normé}
-
 \subsection{Ouverts}
-
 \begin{definition}{Partie ouverte}{}
     Soit $A \subset E$. On dit que $A$ est ouverte ou que $A$ est un ouvert ssi 
     $$ \forall a \in A, \, \exists R > 0, \, B(a, R) \subset A.$$
 \end{definition}
 
-\begin{propositionnt}{}{}
+\begin{proposition}{}{}
     Toute boule ouverte est un ouvert.
-\end{propositionnt}
+\end{proposition}
 
-\idee{
-    Prendre un point de B et trouver le rayon pour avoir une boule entièrement dans B.
-}
+\idee{Prendre un point de B et trouver le rayon pour avoir une boule entièrement dans B.}
 
 \begin{proof}
     Soit $\omega \in E$, et $R > 0$. 
@@ -35,7 +31,6 @@ Dans ce chapitre, on se place dans $\K = \R$ ou $\C$ et $(E, N)$ est un espace v
         & \leqslant \frac{R + d(a, \omega)}{2} \\
         & < R \text{ car } d(a, \omega) < R.
     \end{align*}
-
 \end{proof}
 
 \begin{exemple}
@@ -122,7 +117,6 @@ dont l'intersection infinie est $\{0\}$.}
     En particulier, comme $a \in B(a, R)$, si $A$ est un voisinage de $a$, alors $a \in A$.
 \end{remarque}
 
-
 \begin{exemple}
     $\R^+$ est un voisinage de $3$ car $[2, 4] \subset \R^+$.
 \end{exemple}
@@ -132,7 +126,7 @@ dont l'intersection infinie est $\{0\}$.}
 \end{proposition}
 
 \begin{proposition}{Voisinages de l'infini}{}
-    Soient $E = \R, \, A \subset \R$.
+    Soit $E = \R$ et $A \subset \R$.
     \begin{itemize}
         \item On dit que $A$ est un voisinage de $+\infty$
         ssi $\exists c \in \R, \, [c, +\infty[ \subset A$. 
@@ -143,12 +137,10 @@ dont l'intersection infinie est $\{0\}$.}
 \end{proposition}
 
 \subsection{Fermés}
-
 \begin{definition}{Fermé}{}
     Soit $A \subset E$. On dit que $A$ est un fermé ssi son complémentaire 
     $E \setminus A = C_E B$ est un ouvert.
 \end{definition}
-
 
 \begin{exemple}
     $\emptyset$ et $E$ sont des fermés de $E$. 
@@ -157,14 +149,11 @@ dont l'intersection infinie est $\{0\}$.}
 \begin{theoreme}{Caractérisation séquentielle des fermés}{}
 
     Soit $B \subset E$. 
-    $B$ est un fermé ssi pour toute suite $(u_n)_{n \in \N}$ d'éléments de $B$ qui converge 
+    $B$ est un fermé ssi pour toute suite $(u_n)$ d'éléments de $B$ qui converge 
     vers $\ell \in E$, on a $\ell \in B$.
-
 \end{theoreme}
 
-\idee{
-    $\Rightarrow$ : Par l'absurde, on suppose la limite dans le complémentaire. 
-}
+\idee{$\Rightarrow$ : Par l'absurde, on suppose la limite dans le complémentaire.}
 
 \begin{proof}~\\
     $\Rightarrow$ Supposons que $B$ est un fermé.
@@ -194,14 +183,11 @@ dont l'intersection infinie est $\{0\}$.}
     C'est la contraposée de la réciproque, d'où l'équivalence. 
 \end{proof}
 
-
 \begin{proposition}{Fermés usuels}{}
     Une boule fermée, une sphère, un singleton sont des fermés. 
 \end{proposition}
 
-\idee{
-    Caractérisaiton séquentielle avec distance au centre.
-}
+\idee{Caractérisaiton séquentielle avec distance au centre.}
 
 \begin{proof}
     Soit $R \geqslant 0$, et $\omega \in E$.
@@ -213,7 +199,7 @@ dont l'intersection infinie est $\{0\}$.}
         \item Si $R > 0$, alors c'est une boule fermée
     \end{itemize}
 
-    Soit $(x_n)_{n \in \N}$ suite de $B$ qui converge vers $\ell \in E$.
+    Soit $(x_n)$ suite de $B$ qui converge vers $\ell \in E$.
 
     $\forall n \in \N, \, N(x_n - \omega) \leqslant R$.
 
@@ -239,13 +225,14 @@ dont l'intersection infinie est $\{0\}$.}
 Astuce pour ne pas inverser avec les ouverts : se rappeler que chaque ensemble est l'union des singletons 
 de ses éléments, or tout ensemble n'est pas fermé. 
 
+\idee{
+    Utiliser la définition de fermé avec les ouverts. 
+
+    Pour le produit cartésien, utiliser la caractérisation séquentielle.
+}
+
 \begin{proof}
     Soit $B_1, \dots, B_n$ des fermés de $E$, et $\displaystyle C = \bigcup_{i=1}^n B_i$.
-    \idee{
-        Utiliser la définition de fermé avec les ouverts. 
-
-        Pour le produit cartésien, utiliser la caractérisation séquentielle.
-    }
 
     Ainsi, $E \setminus C = \underbrace{\bigcap_{i=1}^n \underbrace{(E \setminus B_i)}_{\text{ouverts}}}_{\text{ouverts}}$.
 
@@ -277,7 +264,6 @@ de ses éléments, or tout ensemble n'est pas fermé.
     Or $\forall n \in \N, \, x_{n, j} \in B_j$, et $B_j$ est un fermé, donc $\ell_j \in B_j$.
 
     Donc $\ell \in B$, et $B$ est un fermé par caractérisation séquentielle.
-
 \end{proof}
 
 
@@ -331,23 +317,20 @@ Tout ensemble fini est fermé, car réunion finie de singletons.
     Tout sous espace vectoriel de dimension finie de $E$ est un fermé. 
 \end{theoreme}
 
-\idee{
-    Utilisation de Bolzano-Weierstrass et unicité de la limite. 
-}
+\idee{Utilisation de Bolzano-Weierstrass et unicité de la limite. }
 
 \begin{proof}
     Soit $F$ un sous espace vectoriel de dimension finie de $E$. 
-
     \begin{itemize}
         \item Si $F = \{0_E\}$, c'est un singleton, donc un fermé.
         \item Sinon, supposons $F \neq \emptyset$. 
     \end{itemize}
 
-    Soit $(u_n)_{n \in \N}$ une suite de $F$ qui converge vers $\ell \in E$.
+    Soit $(u_n)$ une suite de $F$ qui converge vers $\ell \in E$.
 
     Cette suite converge, donc c'est une suite bornée de $F$ pour $N$. 
 
-    Donc par le théorème de Bolzano-Weierstrass, on peut en extraite une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
+    Donc par le théorème de Bolzano-Weierstrass, on peut en extraite une sous-suite $(u_{\varphi(n)})$ qui converge vers
     $\ell_1 \in F$.
 
     Or $u_n \limit n {+ \infty} \ell$, donc $\ell_1 = \ell$, donc $\ell \in F$.
@@ -374,7 +357,6 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 \end{proof}
 
 \subsection{Intérieur, adhérence, frontière}
-
 \begin{definition}{Point intérieur}{}
     Soit $A \subset E$, et $a \in E$.
 
@@ -382,23 +364,21 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
     ssi $A$ est un voisinage de $a$. 
 \end{definition}
 
-
-
 \begin{definition}{Intérieur d'un ensemble}{}
     Soit $A \subset E$. 
 
     On appelle intérieur de $A$, et on note $\mathring{A}$, l'ensemble des points intérieurs à $A$, 
     c'est à dire : 
 
-    $$ \mathring{A} = \{a \in A, \, \exists R > 0, \, B(a, R) \subset A\}.$$
+    \[\mathring A = \{a \in A, \, \exists R > 0, \, B(a, R) \subset A\}.\]
 \end{definition}
 
 \begin{proposition}{Inclusion de l'intérieur}{}
-    On a $\mathring{A} \subset A$ avec égalité ssi $A$ est un ouvert.
+    On a $\mathring A \subset A$ avec égalité ssi $A$ est un ouvert.
 \end{proposition}
 
 \begin{proof}
-    Par définition, $\mathring{A} \subset A$.
+    Par définition, $\mathring A \subset A$.
 
     Si $A$ est un ouvert, alors $A$ est un voisinage de chacun de ses points, donc $\mathring{A} = A$.
 
@@ -407,17 +387,13 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 \end{proof}
 
 \begin{corollaire}{Intérieur d'une boule fermée}{}
-    Soit $\omega \in E, \, R_0 > 0$, et $A = B'(\omega, R_0)$, alors $\mathring{A} = B(\omega, R_0)$.
+    Soit $\omega \in E, \, R_0 > 0$, et $A = B'(\omega, R_0)$, alors $\mathring A = B(\omega, R_0)$.
 \end{corollaire}
 
-Je ne garantis pas que l'une ou l'autre des preuves soit juste (même si celle du cours 
-doit l'être à peu près). 
-
 \idee{ Montrer l'inclusion, puis que les éléments de la sphère ne sont pas 
-intérieurs avec une suite. }
+intérieurs avec une suite.}
 
 \begin{proof}~\\
-    \uline{Preuve donnée en cours :}
     Soit $a \in B(\omega, R_0)$. 
 
     On sait que $B(\omega, R_0)$ est un ouvert. 
@@ -428,7 +404,6 @@ intérieurs avec une suite. }
     Ainsi, $B(\omega, R_0) \subset \mathring{A} \subset B'(\omega, R_0)$.
 
     Soit $x \in B'(\omega, R_0) \setminus B(\omega, R_0)$.
-
     Alors $x \in S(\omega, R_0)$. 
 
     Montrons que $x \not \in \mathring A$. 
@@ -436,42 +411,23 @@ intérieurs avec une suite. }
     Soit $R > 0$. Posons $u = \frac{x - \omega}{N(x - \omega)}$ et $y = x + \frac R 2 u$.
 
     Alors $d(y, x) = N(y - x) = N\left( \frac R 2 u \right) = \frac R 2 < R$, donc $y \in B(x, R)$.
-    et $d(\omega, y) = N(y - \omega)$, 
+    De plus, $d(\omega, y) = N(y - \omega)$ :
 
     \begin{align*}
         N(y - \omega) & = N\left(x + \frac R 2 \frac{x - \omega}{N(x - \omega)} - \omega\right) \\
         & = N\left( \left( N(x - \omega) + \frac R 2 \right) \left( \frac{x - \omega}{N(x - \omega)}\right) \right) \\
+        & = \left(N(x - \omega) + \frac R 2\right) N\left(\frac {x - \omega} {N(x - \omega)}\right) \\
         & = N(x - \omega) + \frac R 2 \\
         & > R_0.
     \end{align*}
 
     Donc $y \not \in B(\omega, R_0)$, donc $x \not \in \mathring A$.
 
-    Donc $\mathring A = B(\omega, R_0)$ \\
-
-    \uline{Preuve alternative :}
-
-    Si \( x \in B(\omega, R_0) \), alors \( d(x, \omega) < R_0 \).
-    Posons \( \varepsilon = R_0 - d(x, \omega) > 0 \).
-    La boule ouverte \( B(x, \varepsilon) \) est contenue dans \( B'(\omega, R_0) \).
-    Donc \( x \) est un point intérieur de \( A \).
-    Donc \( B(\omega, R_0) \subset \mathring{A} \).
-
-    Si \( x \in \mathring{A} \), alors il existe \( \varepsilon > 0 \) tel que
-    \( B(x, \varepsilon) \subset B'(\omega, R_0) \).
-    Donc pour tout \( y \in B(x, \varepsilon) \), \( d(y, \omega) \leq R_0 \).
-    En particulier, \( d(x, \omega) < R_0 \) (strict, sinon il n'y aurait pas de marge pour contenir une boule autour de \( x \)).
-    Donc \( x \in B(\omega, R_0) \).
-    Donc \( \mathring{A} \subset B(\omega, R_0) \).
-
-    Conclusion :
-    \( \mathring{A} = B(\omega, R_0) \).
+    Donc $\mathring A = B(\omega, R_0)$.
 \end{proof}
-
 
 \begin{theoreme}{Intérieur comme réunion d'ouverts}{}
     Soit $A \subset E$.
-
     \begin{itemize}
         \item Alors $\mathring{A}$ est la réunion des ouverts contenus dans $A$.
         \item C'est le plus grand ouvert dans $A$.
@@ -479,8 +435,7 @@ intérieurs avec une suite. }
 \end{theoreme}
 
 \begin{proof}
-    Notons $(U_i)_{i \in I}$ la famille des ouverts contenus dans $A$, 
-    
+    Notons $(U_i)_{i \in I}$ la famille des ouverts contenus dans $A$
     et $C = \bigcup_{i \in I} U_i$.
 
     $\mathring A$ est un ouvert inclus dans $A$, donc c'est l'un des $U_i$, donc $\mathring A \subset C$.
@@ -503,14 +458,13 @@ intérieurs avec une suite. }
     Soit $A \subset E$ et $x \in E$.
 
     On dit que $x$ est adhérent à $A$ ssi 
-
-    $$ \forall \varepsilon > 0, \, B(x, \varepsilon) \cap A \neq \emptyset.$$
+    \[\forall \varepsilon > 0, \, B(x, \varepsilon) \cap A \neq \emptyset\]
 \end{definition}
 
 \begin{theoreme}{Caractérisation séquentielle des points adhérents}{}
     Soit $A \subset E$ et $x \in E$.
 
-    Alors $x$ est adhérent à $A$ ssi il existe une suite $(a_n)_{n \in \N}$ d'éléments de $A$ 
+    Alors $x$ est adhérent à $A$ ssi il existe une suite $(a_n)$ d'éléments de $A$ 
     qui converge vers $x$.
 \end{theoreme}
 
@@ -519,11 +473,11 @@ intérieurs avec une suite. }
 
     Alors $\forall R > 0, \, \exists a \in A, \, d(x, a) < R$.
 
-    Soit $n \in \N^*$, avec $R = \frac 1 n$n cela fournit $a_n \in A$ tel que $d(x, a_n) < \frac 1 n$.
+    Soit $n \in \N^*$, avec $R = \frac 1 n$ cela fournit $a_n \in A$ tel que $d(x, a_n) < \frac 1 n$.
 
     Donc $a_n \limit n {+ \infty} x$.
 
-    $\Leftarrow$ Soit $x \in E$ tel qu'il existe une suite $(a_n)_{n \in \N}$ d'éléments 
+    $\Leftarrow$ Soit $x \in E$ tel qu'il existe une suite $(a_n)$ d'éléments 
     de $A$ qui converge vers $x$. 
 
     Soit $R > 0$, par définition de la limite, $\exists n_0 \in \N, \, \forall n \geqslant n_0, \, d(x, a_n) < R$.
@@ -534,49 +488,47 @@ intérieurs avec une suite. }
 \begin{definition}{Adhérence d'un ensemble}{}
     Soit $A \subset E$. 
     L'ensemble des points adhérents à $A$ est appelé adhérence de $A$, et noté 
-    $\overline{A}$.
+    $\overline A$.
 \end{definition}
 
 \begin{proposition}{Inclusion de l'adhérence}{}
-    Soit $A \subset E$. Alors $A \subset \overline{A}$ avec égalité ssi $A$ est un fermé.
+    Soit $A \subset E$. Alors $A \subset \overline A$ avec égalité ssi $A$ est un fermé.
 \end{proposition}
 
 \begin{proof}
-    Soit $x \in A$. Pour tout $R > 0, \, x \in B(x, R) \cap A$ donc $x \in \overline{A}$.
-    Donc $A \subset \overline{A}$. \\
+    Soit $x \in A$. Pour tout $R > 0, \, x \in B(x, R) \cap A$ donc $x \in \overline A$.
+    Donc $A \subset \overline A$. \\
 
     \uline{Si $A$ est fermé :} 
 
-    Soit $y \in \overline{A}$. Alors il existe une suite $(a_n)_{n \in \N}$ d'éléments
+    Soit $y \in \overline A$. Alors il existe une suite $(a_n)$ d'éléments
     de $A$ qui converge vers $y$.
 
-    Or $A$ est fermé, donc $y \in A$, et $\overline{A} \subset A$ et donc $\overline{A} = A$. \\
+    Or $A$ est fermé, donc $y \in A$, et $\overline A \subset A$ et donc $\overline A = A$. \\
 
-    \uline{Si $\overline{A} = A$ : }
+    \uline{Si $\overline A = A$ : }
 
-    \svspace Soit $(a_n)_{n \in \N}$ une suite d'éléments de $A$ qui converge vers $\ell \in E$.
+    \svspace Soit $(a_n)$ une suite d'éléments de $A$ qui converge vers $\ell \in E$.
 
-    Alors par caractérisation séquentielle, $\ell \in \overline{A}$. Donc $A$ fermé. 
+    Alors par caractérisation séquentielle, $\ell \in \overline A$. Donc $A$ est un fermé. 
 \end{proof}
 
 \begin{proposition}{Adhérence des boules}{}
     Soit $\omega \in E$ et $R > 0$. Alors :
-     $$\overline{B(\omega, R)} = B'(\omega, R)$$
+     \[\overline{B(\omega, R)} = B'(\omega, R)\]
 \end{proposition}
 
 \begin{proof}
-    Soit $x \in \overline{B(\omega, R)}$.
+    $\subset$ Soit $x \in \overline{B(\omega, R)}$.
 
-    Par caractérisation séquentielle, il existe une suite $(a_n)_{n \in \N}$ d'éléments de
+    Par caractérisation séquentielle, il existe une suite $(a_n)$ d'éléments de
     $B(\omega, R)$ qui converge vers $x$.
 
     $N(a_n - \omega) < R$, donc par passage à la limite, $N(x - \omega) \leqslant R$. 
 
     Donc $x \in B'(\omega, R)$, et $\overline{B(\omega, R)} \subset B'(\omega, R)$. \\
 
-    \uline{Réciproquement : }
-
-    \svspace Soit $x \in B'(\omega, R)$.
+    $\supset$ Soit $x \in B'(\omega, R)$.
 
     Si $x = \omega$, alors $x \in B(\omega, R)$ donc $x \in \overline{B(\omega, R)}$.
 
@@ -586,7 +538,7 @@ intérieurs avec une suite. }
 
     \begin{align*}
         N(a_n - \omega) & = N\left( \frac n {n + 1} N(x - \omega) u \right) \\
-        & = \frac n {n + 1} N(x - \omega) 
+        & = \frac n {n + 1} N(x - \omega) \\
         & \leqslant \frac n {n + 1} R < R.  
     \end{align*}
 
@@ -605,19 +557,21 @@ intérieurs avec une suite. }
 
 \begin{theoreme}{Adhérence comme intersection de fermés}{}
     Soit $A \subset E$.
-    $\overline{A}$ est l'intersection de tous les fermés contenant $A$.
+    $\overline A$ est l'intersection de tous les fermés contenant $A$.
     C'est le plus petit fermé contenant $A$.
 \end{theoreme}
 
 \begin{proof}
     Notons $(F_i)_{i \in I}$ la famille des fermés contenant $A$, et
-    $ \displaystyle C = \bigcap_{i \in I} F_i$. Montrons que $C = \overline{A}$.
+    $ \displaystyle C = \bigcap_{i \in I} F_i$.
 
-    $\overline{A}$ est un fermé contenant $A$, donc c'est l'un des $F_i$, donc $ C \subset \overline{A}$.
+    Montrons que $C = \overline A$.
+
+    $\overline A$ est un fermé contenant $A$, donc c'est l'un des $F_i$, donc $ C \subset \overline{A}$.
 
     Soit $x \in \overline{A}$, et soit $i \in I$. 
 
-    Par caractérisation séquentielle de l'adhérence, il existe une suite $(a_n)_{n \in \N}$ d'éléments de $A$ qui converge vers $x$.
+    Par caractérisation séquentielle de l'adhérence, il existe une suite $(a_n)$ d'éléments de $A$ qui converge vers $x$.
 
     Mais $A \subset F_i$, donc $a_n \in F_i$.
 
@@ -630,14 +584,13 @@ intérieurs avec une suite. }
     donc $\overline A \subset B$.
 \end{proof}
 
-
 \textbf{\uline{Bilan : }}
-Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$
+Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
 
+\notedanger{Les inclusions réciproques ne sont pas vraies !}
 
 \begin{proposition}{LHP}{}
     Soit $A \subset E, \, B \subset E$. Alors :
-    \notedanger{Les inclusions réciproques ne sont pas vraies !}
     \begin{itemize}
         \item $\overline{E \setminus A} = E \setminus \mathring{A}$
         \item $E \setminus \overline A = \mathring{\overparen{E \setminus A}}$
@@ -645,7 +598,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$
         \item $\overline{A \cap B} \subset \overline{A} \cap \overline{B}$
         \item $\mathring A \cup \mathring B \subset \mathring{\overparen{A \cup B}}$ 
         \item $\mathring{\overparen{B \cap A}} = \mathring A \cap \mathring B$
-    \end{itemize} 
+    \end{itemize}
 \end{proposition}
 
 
@@ -710,14 +663,13 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$
 
     On appelle frontière de $A$ et on note $\operatorname{Fr}(A)$ la partie de $E$ définie 
     par :
-    $$ \operatorname{Fr}(A) = \overline A \setminus \mathring A$$
+    \[\operatorname{Fr}(A) = \overline A \setminus \mathring A\]
 \end{definition}
 
 \begin{exemple}
     Si $A = \Q$, 
     $\mathring A = \emptyset$, $\overline A = \R$, donc $\operatorname{Fr}(A) = \R$.
 \end{exemple}
-
 
 \begin{proposition}{Nature de la frontière}{}
     Soit $A \subset E$. Alors $\Fr(A)$ est un fermé et $\Fr(A) = \Fr(E \setminus A)$.
@@ -732,17 +684,16 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$
 \end{proof}
 
 \subsection{Partie dense}
-
-\begin{definitionnt}{Partie dense, inclusion}{}
+\begin{definition}{Partie dense, inclusion}{}
     Soient $A, B \in \mathscr P(E)$.
 
     On dit que $A$ est dense dans $B$ ssi 
-    $$A \subset B \subset \overline A$$
-\end{definitionnt}
+    \[\subset B \subset \overline A\]
+\end{definition}
 
-\begin{definitionnt}{Partie dense, égalité}{}
+\begin{definition}{Partie dense, égalité}{}
     Soit $A \in \mathscr P(E)$, on dit que $A$ est dense dans $E$ ssi $\overline A = E$.
-\end{definitionnt}
+\end{definition}
 
 \begin{proposition}{Caractérisation}{}
     Soit $A \subset E$. $A$ est  dense dans $E$ ssi pour tout ouvert $U$ de $E$, $U \cap A \not \equal \varnothing$.     
@@ -754,8 +705,10 @@ $A$ est dense dans $E$ ssi $\overline A = E$.
 $\Rightarrow$ Soit $U$ ouvert non vide de $E$.
 Alors $U \subset \overline A$.
 Soit $a \in U$, $a \in \overline A$.
+
 $U$ ouvert donc il existe $r > 0$ tel que $B(a,r) \subset U$.
 $a \in \overline A$ donc pour ce $r$, $B(a,r) \cap A \not \equal \varnothing$.
+
 Donc $U \cap A \not \equal \varnothing$. \\
 
 $\Leftarrow$ Supposons que $A$ rencontre tout ouvert.
@@ -764,49 +717,47 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 \end{proof}
 
 \begin{exemple}
-    \begin{enumerate}
-        \item $\Q$ est dense dans $\R$.
-        \item $\operatorname{GL}_p(\K)$ est dense dans $\mathcal M_p(\K)$.
-        \item Si $H$ est un hyperplan de $E$, alors $H$ est fermé ou dense \\
-    \end{enumerate}
+    $\Q$ est dense dans $\R$.
+\end{exemple}
 
-    \uline{Preuve du 2. :}
+\begin{exemple}
+    Montrons que $\operatorname{GL}_p(\K)$ est dense dans $\mathcal M_p(\K)$.
 
-    \svspace Soit $A \in \mathcal M_p(\K)$.
-
+    Soit $A \in \mathcal M_p(\K)$.
     Pour $n \in \N^*$, posons $B_n = A - \frac 1 n I_p$.
 
     Par théorème des valeurs propres, $B_n \limit n {+ {+ \infty}} A$.
 
-    Or 
+    Or :
     \begin{align*}
-        \det(B_n) & = \det((A_{i, j} - \frac 1 n \delta_{i, j})_{1 \leqslant i, j \leqslant p}) \\
-        & = \sum_{ \sigma \in S_p} \varepsilon(\sigma) \prod_{i=1}^p (A_{i, \sigma(i)} - \frac 1 n \delta_{i, \sigma(i)}) 
+        \det(B_n) & = \det\left(\left(A_{i, j} - \frac 1 n \delta_{i, j}\right)_{1 \leqslant i, j \leqslant p}\right) \\
+        & = \sum_{ \sigma \in S_p} \varepsilon(\sigma) \prod_{i=1}^p \left(A_{i, \sigma(i)} - \frac 1 n \delta_{i, \sigma(i)}\right) 
     \end{align*}
 
     Posons $x = \frac 1 n > 0$. 
 
     Donc $\det(B_n) $ est un polynôme en $x$ de degré inférieur à $p$. 
 
-    Le coef de $x^p$ provient unisuement de $\sigma = \text{Id}$, et vaut $(-1)^p$.
+    Le coefficient de $x^p$ provient uniquement de $\sigma = \text{Id}$, et vaut $(-1)^p$.
 
     Ce polynôme a au plus $p$ racines. 
 
     D'où $\exists n_0 \in \N, \, \forall n \geqslant n_0, \, \frac 1 n$ n'en est pas une racine. 
 
     Donc $\forall n \geqslant n_0, \, B_n \in \operatorname{GL}_p(\K)$. \\
+\end{exemple}
 
-
-    \uline{Preuve du 3. }
+\begin{exemple}
+    Montrons que si $H$ est un hyperplan de $E$, alors $H$ est fermé ou dense.
 
     \svspace Soit $H$ un hyperplan de $E$. Si $\varphi$ est une forme linéaire non nulle
     telle que $H = \ker \varphi$.
 
-    Soit $a \in E $tel que $\varphi(a) \neq 0$, alors $E = H \oplus \operatorname{Vect}(a)$.
+    Soit $a \in E$ tel que $\varphi(a) \neq 0$, alors $E = H \oplus \operatorname{Vect}(a)$.
 
     En effet, pour $x \in E$ : 
     
-    \uindent{Analyse }
+    \uline{Analyse :}
 
     \svspace Supposons que $x = h + \lambda a$ avec $h \in H$ et $\lambda \in \K$.
 
@@ -815,17 +766,17 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 
     d'où l'unicité sous réserve d'existence. 
 
-    \uindent{Synthèse }
+    \uline{Synthèse :}
 
     Posons $\lambda = \frac{\varphi(x)}{\varphi(a)}$ et $h = x - \lambda a$.
 
     Alors $x = h + \lambda a$ par calcul. $\lambda \in \K$. 
 
-    $\varphi(h) = \varphi(x) - \frac{\varphi(x)}{\varphi(a)} \varphi(a) = 0$, donc $h \in H$.
+    $\varphi(h) = \varphi(x) - \frac{\varphi(x)}{\varphi(a)} \varphi(a) = 0$, donc $h \in H$. \\
 
     Supposons que $H$ n'est pas fermé, et montrons qu'il est dense.
 
-    Il existe une suite $(h_n)_{n \in \N}$ d'éléments de $H$ telle que 
+    Il existe une suite $(h_n)$ d'éléments de $H$ telle que 
     $h_n \limit n {+ \infty} \ell$ avec $\ell \not \in H$, donc $\varphi(\ell) \neq 0$.
 
     Donc $E = H \oplus \operatorname{Vect}(\ell)$.
@@ -836,9 +787,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
     d'où $\overline H = E$.
 \end{exemple}
 
-
 \subsection{Invariance}
-
 \begin{theoreme}{Invariance topologique en dimension finie}{}
     Les notions topologiques (ouverts, fermés, intérieur, adhérence, frontière, densité) sont invariantes
     par remplacement de la norme par une norme équivalente. 
@@ -858,16 +807,15 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 \end{corollaire}
 
 \subsection{Topologie relative}
-
 Dans toute cette partie, on fixe $A$ partie non vide de $E$.
-On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les ouverts relatifs de $A$, fermés relatifs de $A$ et voisinages relatifs d'un point vis-à-vis de $A$.
+
+On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs de $A$, fermés relatifs de $A$ et voisinages relatifs d'un point vis-à-vis de $A$.
 
 \begin{definition}{Ouvert relatif}{}
     Soit $U \subset A$. On dit que $U$ est un ouvert relatif de $A$ 
     ssi $\forall a \in U, \, \exists R > 0, \, \forall x \in A, \, d(a, x) < R \Rightarrow x \in U$.
 
     C'est à dire $B(a, R) \cap A \subset U$.
- 
 \end{definition}
 
 \begin{definition}{Voisinage relatif}{}
@@ -884,27 +832,26 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     car $B(0, 1) \cap \R^+ \subset U$. 
 \end{exemple}
 
-
 \begin{definition}{Fermé relatif}{}
     Soit $V \subset A$. 
 
     On dit que $V$ est un fermé relatif de $A$ ssi $A \setminus V$ est un ouvert relatif de $A$.
 \end{definition}
 
-
 \begin{proposition}{Caractérisation des fermés relatifs}{}
     Soit $V \subset A$ est un fermé relatif de $A$ ssi il existe $W$ fermé de $E$ tel que $V = W \cap A$.
 \end{proposition}
+
+\idee{
+    $\Rightarrow$ Utilisation de $\overline V$ et absurde. 
+
+    $\Leftarrow$ Utilisation du complémentaire. 
+}
 
 \begin{proof}
     $\Rightarrow$ : Supposons que $V$ est un fermé relatif de $A$.
 
     Posons $W = \overline{V}$, $W$ est un fermé de $E$ et montrons que $V = W \cap A$.
-    \idee{
-        $\Rightarrow$ Utilisation de $\overline V$ et absurde. 
-
-        $\Leftarrow$ Utilisation du complémentaire. 
-    }
 
     $V \subset A$, $V \subset \overline V = W$, donc $V \subset W \cap A$.
 
@@ -919,7 +866,6 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Donc il existe un $y \in A$ tel que $y \in V$, $y \in B(x, R)$. Donc $y \in U$.
 
     Absurde car $U \cap V = \emptyset$.
-
     Donc $V = W \cap A$. \\
 
     $\Leftarrow$ Supposons qu'il existe $W$ fermé tel que $V = W \cap A$. 
@@ -931,56 +877,48 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $a \in U$. Alors $a \in C$ et $C$ est ouvert. 
 
     Donc $\exists R > 0, B(a, R) \subset C$.
-
     Donc $B(a, R) \subset C \cap A = U$ 
 
     Donc $U$ est un ouvert relatif de $A$, donc $V$ est un fermé relatif de $A$.
 \end{proof}
-
 
 \begin{proposition}{Caractérisation séquentielle des fermés relatifs}{}
     Soit $V \subset A$. 
 
     Alors $V$ est un fermé relatif de $A$ ssi pour toute suite $(a_n)_{n \in \N}$ d'éléments de $V$
     qui converge vers $\ell \in A$, on a $\ell \in V$.
-    
 \end{proposition}
 
+\idee{Utilisation de la caractérisation séquentielle des fermés, et proposition précédente.}
+    
 \begin{proof}
     $\Rightarrow$ Supposons que $V$ est un fermé relatif de $A$. 
     Alors $V = \overline V \cap A$. 
 
-    \idee{
-        Utilisation de la caractérisation séquentielle des fermés, et proposition précédente.
-    }
-
-    Soit $(a_n)_{n \in \N}$ une suite d'éléments de $V$ qui converge vers $\ell \in A$.
+    Soit $(a_n)$ une suite d'éléments de $V$ qui converge vers $\ell \in A$.
 
     Alors $\ell \in \overline V$, donc $\ell \in \overline V \cap A$ donc $\ell \in V$. \\
 
-    $\Leftarrow$ Supposons que pour toute suite $(a_n)_{n \in \N}$ d'éléments de $V$ qui converge vers
+    $\Leftarrow$ Supposons que pour toute suite $(a_n)$ d'éléments de $V$ qui converge vers
     $\ell \in A$, on a $\ell \in V$, et montrons que $V = \overline V \cap A$. 
 
     On a $V \subset \overline V$ et $V \subset A$, donc $V \subset \overline V \cap A$.
 
     Soit $\ell \in \overline V \cap A$.
 
-    Alors $\ell \in \overline V$ donc il existe une suite $(a_n)_{n \in \N}$ d'éléments de $V$ qui converge vers $\ell$.
+    Alors $\ell \in \overline V$ donc il existe une suite $(a_n)$ d'éléments de $V$ qui converge vers $\ell$.
 
     Or $\ell \in A$, donc par hypothèse, $\ell \in V$.
 
     Donc $\overline V \cap A \subset V$, donc $V = \overline V \cap A$.
-
     Donc $V$ est un fermé relatif de $A$.
 \end{proof}
-
 
 \begin{proposition}{Caractérisation des ouverts relatifs}{}
     Soit $U \subset A$. 
 
     Alors $U$ est un ouvert relatif de $A$ ssi il existe un ouvert $V$ de $E$ tel que 
     $U = V \cap A$.
-    
 \end{proposition}
 
 \begin{proof}
@@ -997,14 +935,10 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $x \in U$. Alors $x \in C$ et $C$ est ouvert.
 
     Donc $\exists R > 0, \, B(x, R) \subset C$.
-
     Donc $B(x, R) \cap A \subset U$ donc $U$ est un ouvert relatif de $A$.
 \end{proof}
 
-
-
 \section{Étude locale d'une application}
-
 \begin{definition}{Limite}{}
     Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés. 
 
@@ -1013,18 +947,15 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Soit $a \in \overline A$, et $\ell \in E'$.
 
     On dit que $f$ a pour limite $\ell$ en $a$ ssi 
-    $$\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) < \eta \Rightarrow N'(f(x) - \ell) < \varepsilon$$
+    \[\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) < \eta \Rightarrow N'(f(x) - \ell) < \varepsilon\]
 
-    c'est à dire $d(x, a) \leqslant \eta \Rightarrow d(f(x), \ell) \leqslant \varepsilon$.
+    C'est à dire $d(x, a) \leqslant \eta \Rightarrow d(f(x), \ell) \leqslant \varepsilon$.
 
-    c'est à dire $x \in B'(a, \eta) \Rightarrow f(x) \in B'(\ell, \varepsilon)$.
+    C'est à dire $x \in B'(a, \eta) \Rightarrow f(x) \in B'(\ell, \varepsilon)$.
 
-    $\ell$ est alors unique, on l'appelle limite de $f$ en $a$ et on note 
-
-    $$f(x) \xrightarrow[x \to a ]{N'} \ell$$
-
+    $\ell$ est alors unique, on l'appelle limite de $f$ en $a$ et on note :
+    \[f(x) \xrightarrow[x \to a ]{N'} \ell\]
 \end{definition}
-
 
 \begin{proof}
     Preuve de l'unicité 
@@ -1077,9 +1008,8 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Si $f(x) \limitnorme{N'}{x}{a} \ell$. Alors $\ell = f(a)$.
 
     En ce cas on dit que $f$ est continue en $a$. Ainsi, $f$ continue en $a \in A$ ssi 
-    $$\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) < \eta \Rightarrow N'(f(x) - f(a)) < \varepsilon$$
+    \[\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) < \eta \Rightarrow N'(f(x) - f(a)) < \varepsilon\]
 \end{theoreme}
-
 
 \begin{proof}
     Supposons que $f(x) \limit x a \ell$. On a : 
@@ -1093,9 +1023,7 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     Or c'est vrai pour tout $\varepsilon > 0$, donc $N'(f(a) - \ell) = 0$, donc $f(a) = \ell$.
 \end{proof}
 
-
 \subsection{Extensions}
-
 \begin{definition}{Extension notion de limite}{}
     On étend la notion de limite aux cas suivants : 
     \begin{enumerate}
@@ -1169,10 +1097,7 @@ On va définir dans ce qui suit la topologie relative à $A$, c'est à dire les 
     $d'(f(x), \ell) < \varepsilon$.
 \end{proof}
 
-
-
 \subsection{Caractérisation séquentielle}
-
 \begin{theorement}{Caractérisation séquentielle de la limite}{}
     Soit $A \subset E$ non vide, $a \in \overline A$, $\ell \in E'$ :
 

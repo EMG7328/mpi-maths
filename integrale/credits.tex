@@ -1,86 +1,112 @@
-\begin{tikzpicture}[remember picture,overlay]
-  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(3,0);
-  \draw[vorange, line width=2pt] (current page.north west) ++(0.5,-0.5) -- ++(0,-3);
-  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(-3,0);
-  \draw[vorange, line width=2pt] (current page.north east) ++(-0.5,-0.5) -- ++(0,-3);
-
-  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(3,0);
-  \draw[vorange, line width=2pt] (current page.south west) ++(0.5,0.5) -- ++(0,3);
-  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(-3,0);
-  \draw[vorange, line width=2pt] (current page.south east) ++(-0.5,0.5) -- ++(0,3);
-
-  \foreach \i in {1,...,5} {
-    \draw[vorange!30, line width=0.5pt] (current page.north west) ++(2+\i*0.3, -1.5) circle (0.15);
-  }
-  \foreach \i in {1,...,5} {
-    \draw[vorange!30, line width=0.5pt] (current page.south east) ++(-2-\i*0.3, 1.5) circle (0.15);
-  }
-\end{tikzpicture}
-
 \begin{center}
-  \vspace*{1cm}
+  \vspace*{0.8cm}
 
-  \begin{tikzpicture}
-    \node[text width=12cm, align=center] {
-      {\LARGE\bfseries\scshape Crédits \& Remerciements\par}
-    };
-    \draw[vorange, line width=1.5pt] (-4,-0.6) -- (4,-0.6);
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw[vorange!50, line width=0.6pt] 
+      ([shift={(15mm,-15mm)}]current page.north west) -- ++(8mm,0) 
+      ([shift={(15mm,-15mm)}]current page.north west) -- ++(0,-8mm);
+    \draw[vorange!50, line width=0.6pt] 
+      ([shift={(-15mm,-15mm)}]current page.north east) -- ++(-8mm,0) 
+      ([shift={(-15mm,-15mm)}]current page.north east) -- ++(0,-8mm);
+    \draw[vorange!50, line width=0.6pt] 
+      ([shift={(15mm,15mm)}]current page.south west) -- ++(8mm,0) 
+      ([shift={(15mm,15mm)}]current page.south west) -- ++(0,8mm);
+    \draw[vorange!50, line width=0.6pt] 
+      ([shift={(-15mm,15mm)}]current page.south east) -- ++(-8mm,0) 
+      ([shift={(-15mm,15mm)}]current page.south east) -- ++(0,8mm);
   \end{tikzpicture}
 
-  \vspace{1.2cm}
+  {\LARGE\bfseries\scshape Crédits \& Remerciements\par}
+  \vspace{0.35cm}
+  \begin{tikzpicture}
+    \draw[vorange, line width=1pt] (-4,0) -- (-0.4,0);
+    \fill[vorange] (0,0) ++(0,2.2pt) -- ++(2.2pt,-2.2pt) -- ++(-2.2pt,-2.2pt) -- ++(-2.2pt,2.2pt) -- cycle;
+    \fill[vorange!60] (-0.7,0) circle (0.9pt) (0.7,0) circle (0.9pt);
+    \draw[vorange, line width=1pt] (0.4,0) -- (4,0);
+  \end{tikzpicture}\par
+
+  \vspace{1.1cm}
 
   \begin{minipage}{0.85\textwidth}
+    \centering
     \begin{tikzpicture}
-      \draw[vorange, line width=1pt] (0,0) -- (\linewidth,0);
-    \end{tikzpicture}
+      \draw[vorange, line width=0.8pt] (0,0) -- (0.44\linewidth,0);
+      \draw[vorange, line width=0.6pt] (0.47\linewidth,0) circle (2pt);
+      \fill[vorange] (0.5\linewidth,0) ++(0,2.2pt) -- ++(2.2pt,-2.2pt) -- ++(-2.2pt,-2.2pt) -- ++(-2.2pt,2.2pt) -- cycle;
+      \draw[vorange, line width=0.6pt] (0.53\linewidth,0) circle (2pt);
+      \draw[vorange, line width=0.8pt] (0.56\linewidth,0) -- (\linewidth,0);
+    \end{tikzpicture}\par
     \vspace{0.6cm}
 
-    \begin{center}
-      {\large\bfseries\color{vorange!95!black}\scshape Auteurs principaux}\\[0.4em]
-      \begin{tabular}{ccc}
-        {\Large\bfseries L. Dehmas} & {\Large\bfseries C. Perry} \\
-        {\footnotesize\scshape MPI* 2025--2026} & {\footnotesize\scshape MPI* 2026--2027}
-      \end{tabular}\\[0.4em]
-      {\small\itshape Rédaction du cours et des exercices, mise en forme}\par
-    \end{center}
+    {\large\bfseries\color{vorange!95!black}\scshape Auteurs principaux\par}
+    \vspace{0.45em}
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}cc@{}}
+      \begin{minipage}[t]{0.45\linewidth}
+        \raggedleft
+        {\Large\bfseries L. Dehmas}\\[0.2em]
+        {\footnotesize\scshape MPI* 2025--2026}
+      \end{minipage}
+      &
+      \begin{minipage}[t]{0.45\linewidth}
+        {\Large\bfseries C. Perry}\\[0.2em]
+        {\footnotesize\scshape MPI* 2026--2027}
+      \end{minipage}
+    \end{tabular*}
+    \\[0.5em]
+    {\small\itshape Rédaction du cours et des exercices, mise en forme\par}
 
-    \vspace{0.8cm}
+    \vspace{0.75cm}
 
-    \makeatletter
-    \begin{center}
-      {\large\bfseries\color{vorange!95!black}\scshape Enseignement \& Cours d'origine}\\[0.3em]
-      {\Large\bfseries M. Yann Quibel}\\[0.2em]
-      {\small Professeur de mathématiques en \@filiere{} au \@etablissement}\\[0.3em]
-      {\small\itshape Ce polycopié reprend et met en forme l'ensemble des cours magistraux\\et travaux dirigés dispensés au cours des années scolaires 2025-2026 et \@annee.}\par
-    \end{center}
-    \makeatother
+    \makeatletter%
+    {\large\bfseries\color{vorange!95!black}\scshape Enseignement \& Cours d'origine\par}
+    \vspace{0.3em}
+    {\Large\bfseries Yann Quibel\par}
+    \vspace{0.2em}
+    {\small Professeur de mathématiques en \@filiere{} au \@etablissement\par}
+    \vspace{0.3em}
+    {\small\itshape Ce polycopié reprend et met en forme l'ensemble des cours magistraux\\%
+    et travaux dirigés dispensés au cours des années scolaires 2025--2026 et \@annee.\par}
+    \makeatother%
     
-    \vspace{0.8cm}
+    \vspace{0.75cm}
 
-    \begin{center}
-      {\large\bfseries\color{vorange!95!black}\scshape Autres contributions}\\[0.4em]
-      {\normalsize
-        E. Allamand {\footnotesize(\textsc{MPI* 2026--2027})}
-        C. Bras {\footnotesize(\textsc{MPI 2025--2026})}
-        T. Olinger {\footnotesize(\textsc{MPI* 2025--2027})}
-        E. Meyer Guenego {\footnotesize(\textsc{MP2I 2026--2027})}
-        F. Cerisier {\footnotesize(\textsc{MPI* 2026-2027})}
-      }\\[0.3em]
-      {\small\itshape Solutions d'exercices, relectures}\par
-    \end{center}
+    {\large\bfseries\color{vorange!95!black}\scshape Autres contributions\par}
+    \vspace{0.5em}
+
+    \newcommand{\csep}{\hspace{0.5em}\tikz[baseline=-0.6ex]{\fill[vorange!80] (0,0) ++(0,1.5pt) -- ++(1.5pt,-1.5pt) -- ++(-1.5pt,-1.5pt) -- ++(-1.5pt,1.5pt) -- cycle;}\hspace{0.5em}}
+
+    \begin{minipage}{0.96\linewidth}
+      \centering\normalsize
+      \mbox{\textbf{C. Bras} {\footnotesize(\textsc{MPI 2025--2026})}} \csep
+      \mbox{\textbf{T. Olinger} {\footnotesize(\textsc{MPI* 2025--2027})}} 
+      
+      \vspace{0.25em}
+      \mbox{\textbf{F. Cerisier} {\footnotesize(\textsc{MPI* 2026--2027})}} \csep
+      \mbox{\textbf{E. Meyer Guenego} {\footnotesize(\textsc{MP2I 2026--2027})}}
+      
+      \vspace{0.25em}
+      \mbox{\textbf{E. Allamand} {\footnotesize(\textsc{MPI* 2026--2027})}}
+    \end{minipage}
+    \\[0.5em]
+    {\small\itshape Solutions d'exercices, relectures\par}
 
     \vspace{0.6cm}
+    
     \begin{tikzpicture}
-      \draw[vorange, line width=1pt] (0,0) -- (\linewidth,0);
-    \end{tikzpicture}
+      \draw[vorange, line width=0.8pt] (0,0) -- (0.44\linewidth,0);
+      \draw[vorange, line width=0.6pt] (0.47\linewidth,0) circle (2pt);
+      \fill[vorange] (0.5\linewidth,0) ++(0,2.2pt) -- ++(2.2pt,-2.2pt) -- ++(-2.2pt,-2.2pt) -- ++(-2.2pt,2.2pt) -- cycle;
+      \draw[vorange, line width=0.6pt] (0.53\linewidth,0) circle (2pt);
+      \draw[vorange, line width=0.8pt] (0.56\linewidth,0) -- (\linewidth,0);
+    \end{tikzpicture}\par
   \end{minipage}
 
   \vfill
 
-  \makeatletter
+  \makeatletter%
   {\small\scshape \@filiere{} -- \@etablissement\par}
-  \vspace{0.3cm}
+  \vspace{0.25cm}
   {\footnotesize Document composé sous \LaTeX{} -- Année \@annee\par}
-  \vspace{0.8cm}
-  \makeatother
+  \vspace{0.6cm}
+  \makeatother%
 \end{center}

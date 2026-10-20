@@ -687,7 +687,6 @@
     \vspace{0.6cm}
     \begin{tikzpicture}
       \draw[vorange, line width=1.4pt] (-4.5,0) -- (4.5,0);
-      \fill[vorange] (-0.35,-0.06) rectangle (0.35,0.06);
     \end{tikzpicture}
   \end{center}
 

@@ -57,7 +57,7 @@
 % --- Exercice 6 (Source: Exercice 4) ---
 \begin{exercice}
     Soit $E$ l'espace vectoriel des fonctions lipschitziennes de $[0,1]$ dans $\R$. Pour $f \in E$, on pose :
-    $$ N(f) = \sup \{ |f(x)|, x \in [0,1] \} + \sup \left\{ \left| \frac{f(x)-f(y)}{x-y} \right|, x \ne y \right\} $$
+    \[N(f) = \sup \{ |f(x)|, x \in [0,1] \} + \sup \left\{ \left| \frac{f(x)-f(y)}{x-y} \right|, x \ne y \right\}\]
     Montrer que $N$ est une norme. Est-elle équivalente à la norme infinie ?
 \end{exercice}
 
@@ -67,7 +67,7 @@
     \[N(f) = \sqrt{\int_0^1 f''(t)^2 \dt}\]
     \begin{enumerate}
         \item Vérifier que $N$ est une norme sur $E$.
-        \item Montrer que pour $f \in E$, $\|f\|_\infty \le N(f)$.
+        \item Montrer que pour $f \in E$, $\|f\|_\infty \leqslant N(f)$.
         
             \textit{Indication : On montrera successivement que pour tout $x$ on a :}
             \[f(x) \leqslant \sqrt{\int_0^1 f'(t)^2 \dt}, \quad \text{puis} \quad f(x) \leqslant \sqrt{\int_0^1 -f(t)f''(t) \dt}\]

@@ -1,13 +1,12 @@
 \section{Énoncés des Exercices}
-
 \subsection{Dérivation}
-
 % --- Exercice 1 (Source: EXERCICE 4 analyse) ---
 \begin{exercice}[Exercice 4 Analyse]
 \begin{enumerate}
     \item Énoncer le théorème des accroissements finis.
-    \item Soit $f:[a,b]\longrightarrow\R$ et soit $x_{0}\in]a,b[$. 
+    \item Soit $f:[a,b]\to \R$ et soit $x_{0}\in]a,b[$. 
         On suppose que $f$ est continue sur $[a, b]$ et que $f$ est dérivable sur $]a, x_{0}[$ et sur $]x_{0}, b[$.
+
         Démontrer que, si $f'$ admet une limite finie en $x_{0}$, alors $f$ est dérivable en $x_{0}$ et $f'(x_{0})=\lim_{x\rightarrow x_{0}}f'(x)$.
     \item Prouver que l'implication : ($f$ est dérivable en $x_{0}) \Rightarrow$ ($f'$ admet une limite finie en $x_{0}$) est fausse.
         \textit{Indication : on pourra considérer la fonction $g$ définie par : $g(x)=x^{2}\sin\frac{1}{x}$ si $x\ne0$ et $g(0)=0$.}
@@ -27,7 +26,7 @@ Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un esp
     \item Même question avec l'existence de $\lim_{t\rightarrow0}\frac{f(a+2t)-f(a+t)}{t}=\lambda$.
     
     \textit{Indication : on pourra commencer par montrer que pour $t>0$ et $n\in\mathbb{N}^{*}$ on a :}
-    $$ \frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda $$
+    \[\frac{f(a+t)-f(a)}{t} - \lambda = \sum_{k=0}^{n}\frac{1}{2^{k+1}}\left(\frac{f\left(a+\frac{t}{2^{k}}\right)-f\left(a+\frac{t}{2^{k+1}}\right)}{\frac{t}{2^{k+1}}} - \lambda\right) + \frac{f\left(a+\frac{t}{2^{n+1}}\right)-f(a)}{t} - \frac{1}{2^{n+1}}\lambda\]
 \end{enumerate}
 \end{exercice}
 
@@ -63,7 +62,7 @@ Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un esp
 \begin{exercice}
     Soit $f\in \mathcal{C}^{1}([a,b],\R)$ telle que $f'(a)=f'(b)$.
     Montrer qu'il existe $c\in]a,b[$ tel que
-    $$ f'(c)=\frac{f(c)-f(a)}{c-a} $$
+    \[f'(c)=\frac{f(c)-f(a)}{c-a}\]
     \textit{Indication : on définira $g:x\mapsto\frac{f(x)-f(a)}{x-a}$ prolongée par continuité sur $[a, b]$ et on montrera qu'elle atteint un de ses extremums en un point $c\in]a,b[$.}
 \end{exercice}
 
@@ -92,7 +91,6 @@ Soit $f$ définie au voisinage du réel $a$ prenant ses valeurs dans $E$, un esp
 \end{exercice}
 
 \subsection{Intégration sur un segment}
-
 % --- Exercice 12 (Source: EXERCICE 56 analyse) ---
 \begin{exercice}[Exercice 56 Analyse]
 On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x)=\int_{x}^{x^{2}}\frac{\dt}{\ln t}$.
@@ -106,7 +104,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 % --- Exercice 13 (Source: Exercice 10) ---
 \begin{exercice}
     Soit $f\in \mathcal{C}^{2}(\R,\R)$ telle que $f+f''>0$. Démontrer que
-    $$ \forall x\in\R,~f(x)+f(x+\pi)\ge0 $$
+    \[\forall x\in\R,~f(x)+f(x+\pi)\geqslant0\]
     \textit{Indication : considérer $\displaystyle \int_{0}^{\pi}\sin(t)(f(t)+f''(t))\dt$.}
 \end{exercice}
 
@@ -130,21 +128,21 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 \begin{exercice}
     Soit $f$ de classe $\mathcal{C}^{1}$ sur $\R^{+}$, strictement croissante et réalisant une bijection de $\R^{+}$ sur $\R^{+}$.
     Montrer que pour tout $x\geqslant0$,
-    $$ xf(x)=\int_{0}^{x}f(t)\dt+\int_{0}^{f(x)}f^{-1}(t)\dt $$
+    \[xf(x)=\int_{0}^{x}f(t)\dt+\int_{0}^{f(x)}f^{-1}(t)\dt\]
     \textit{Indication : dériver. Interprétation géométrique ?}
 \end{exercice}
 
 % --- Exercice 18 (Source: Exercice 15) ---
 \begin{exercice}
     Soit $f\in \mathcal{C}^{2}([a,b],\C)$ telle que $f(a)=f(b)=0$. Montrer que :
-    $$ \left| \int_{a}^{b}f(t)\dt \right| \leqslant \frac{(b-a)^{3}}{12} \|f''(t)\|_{\infty} $$
-    Poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)\dt$.
+    \[\left| \int_{a}^{b}f(t)\dt \right| \leqslant \frac{(b-a)^{3}}{12} \|f''(t)\|_{\infty}\]
+    \textit{Indication : poser $P(t)=\frac{1}{2}(t-a)(b-t)$ et intégrer par parties $\ds \int_{a}^{b}P(t)f''(t)\dt$.}
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 16) ---
 \begin{exercice}[Cayley-Hamilton]
     Soit $A\in \mathcal{M}_{n}(\C)$. Calculer de deux manières différentes, pour $r>0$ assez grand,
-    $$ I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta $$
+    \[I(r)=\int_{0}^{2\pi}re^{i\theta} \det(re^{i\theta}I_{n}-A) (re^{i\theta}I_{n}-A)^{-1} d\theta\]
     Et en déduire le théorème de Cayley-Hamilton.
     \begin{enumerate}
         \item Commencer par montrer que pour $r>0$ assez grand $\left(re^{i\theta}I_{n}-A\right)$ e
@@ -163,7 +161,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
         \begin{enumerate}
             \item Montrer que pour tout matrice de norme assez petite, $\ds (I_{n}-B)^{-1}=\sum_{k=0}^{+ \infty}B^{k}$.
             \item Utiliser ce résultat et une interversion somme/intégrale (que l'on admet pour le moment) pour montrer que :
-                $$ I(r)=\sum_{k=0}^{+ \infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta $$
+                \[I(r)=\sum_{k=0}^{+ \infty}r^{-k}A^{k}\int_{0}^{2\pi}\det(re^{i\theta}I_{n}-A)e^{-ik\theta}d\theta\]
             \item En notant le polynôme caractéristique de $A$, $\ds\chi_{A}=\det(XI_{n}-A)=\sum_{p=0}^{n}a_{p}X^{p}$, 
                 conclure en remarquant que $\ds \int_{0}^{2\pi}e^{i(p-k)\theta}d\theta=0$ sauf si $k=p$.
         \end{enumerate}
@@ -180,7 +178,7 @@ On considère la fonction $H$ définie sur $]1, +\infty[$ par $\displaystyle H(x
 
 % --- Exercice 21 (Source: Exercice 18) ---
 \begin{exercice}
-    Trouver un équivalent de $\ds \sum_{k=1}^{n}k \cos(\frac{k\pi}{n})$.
+    Trouver un équivalent de $\ds \sum_{k=1}^{n}k \cos\left(\frac{k\pi}{n}\right)$.
 \end{exercice}
 
 % --- Exercice 22 (Source: Exercice 19) ---

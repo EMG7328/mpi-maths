@@ -1,7 +1,5 @@
 \section{Énoncés des Exercices}
-
 \subsection{Ensembles dénombrables}
-
 % --- Exercice 1 ---
 \begin{exercice}
     Montrer que $\R \setminus \Q$ n'est pas dénombrable.
@@ -19,8 +17,8 @@
 % --- Exercice 3 ---
 \begin{exercice}
     On dit qu'un réel $z$ est algébrique s'il existe un polynôme $P$ non nul à coefficients entiers tel que $P(z)=0$.
-    On note $A$ l'ensemble des réels algébriques, $B$ l'ensemble des polynômes à coefficients entiers, 
-    $B_{n}$ l'ensemble des polynômes à coefficients entiers de degré égal à $n$.
+    On note $A$ l'ensemble des réels algébriques, $B$ l'ensemble des polynômes à coefficients entiers 
+    et $B_{n}$ l'ensemble des polynômes à coefficients entiers de degré égal à $n$.
     \begin{enumerate}
         \item 
         \begin{enumerate}
@@ -36,8 +34,9 @@
 % --- Exercice 4 ---
 \begin{exercice}
     Soit $E$ un ensemble dénombrable. Montrer que l'ensemble $\mathcal{P}(E)$ des parties de $E$ n'est pas dénombrable.
-    Raisonner par l'absurde en supposant l'existence d'une bijection $f$ de $E$ sur $\mathcal{P}(E)$ 
-    et en considérant la partie $A=\{x\in E, x\notin f(x)\}$.
+    
+    \textit{On raisonnera par l'absurde en supposant l'existence d'une bijection $f$ de $E$ sur $\mathcal{P}(E)$ 
+    et en considérant la partie $A=\{x\in E, x\notin f(x)\}$.}
 \end{exercice}
 
 \subsection{Familles sommables}
@@ -56,7 +55,7 @@
 % --- Exercice 7 ---
 \begin{exercice}
     Étudier la sommabilité des familles suivantes :
-    $$ \left(\frac{1}{x^{2}}\right)_{x\in \Q^{*+}}, \quad \left(\frac{a^{p}b^{q}}{(p+q)!}\right)_{(p,q)\in \N^{2}}(a,b\in\C), \quad \left(\frac{1}{a^{p}+b^{q}}\right)_{(p,q)\in \N^{2}}(a,b\in]1,+\infty[) $$
+    \[\left(\frac{1}{x^{2}}\right)_{x\in \Q^{*+}}, \quad \left(\frac{a^{p}b^{q}}{(p+q)!}\right)_{(p,q)\in \N^{2}}(a,b\in\C), \quad \left(\frac{1}{a^{p}+b^{q}}\right)_{(p,q)\in \N^{2}}(a,b\in]1,+\infty[)\]
 \end{exercice}
 
 % --- Exercice 8 ---
@@ -68,12 +67,11 @@
             $\displaystyle \sum_{n=2}^{+\infty}\frac{\zeta(n)-1}{n}=1-\gamma$ où $\gamma$ est la constante d'Euler,
             $\displaystyle \gamma=\lim_{n\rightarrow\infty}\left(\sum_{k=1}^{n}\frac{1}{k}-\ln(n) \right)$.
     \end{enumerate}
-    \textit{Indication :} On montrera que $\forall x\in]-1,1[$, $\displaystyle \ln(1-x)=-\sum_{k=1}^{+\infty}\frac{x^{k}}{k}$ 
-        en remarquant que pour tout $N \in \N^*$, $\displaystyle \sum_{k=1}^{N}\frac{x^{k}}{k}=\int_{0}^{x}\sum_{k=1}^{N}t^{k-1} \dt$.
+    \textit{Indication : On montrera que $\forall x\in]-1,1[$, $\displaystyle \ln(1-x)=-\sum_{k=1}^{+\infty}\frac{x^{k}}{k}$ 
+        en remarquant que pour tout $N \in \N^*$, $\displaystyle \sum_{k=1}^{N}\frac{x^{k}}{k}=\int_{0}^{x}\sum_{k=1}^{N}t^{k-1} \dt$.}
 \end{exercice}
 
 \subsection{Suites doubles et produit de Cauchy}
-
 % --- Exercice 9 ---
 \begin{exercice}
     On pose pour tout naturel $n$, $\displaystyle u_{n}=\sum_{k=n}^{+\infty}\frac{1}{k!}$.
@@ -108,12 +106,12 @@
 \begin{exercice}
     Montrer l'existence et calculer $\sum_{p,q\in \N}\frac{p!q!}{(p+q+2)!}$.
 
-    \textit{Indication :} On montrera que pour $p$ fixé, on peut calculer la somme de la série en $q$ de manière télescopique.
+    \textit{Indication : On montrera que pour $p$ fixé, on peut calculer la somme de la série en $q$ de manière télescopique.}
 \end{exercice}
 
 % --- Exercice 14 ---
 \begin{exercice}
-    Montrer l'existence et calculer $\displaystyle \sum_{p=0}^{+\infty}\sum_{q=0}^{+\infty}(2^{-3q-p-(p+q)^{2}})$.
+    Montrer l'existence et calculer $\displaystyle \sum_{p=0}^{+\infty}\sum_{q=0}^{+\infty}\left(2^{-3q-p-(p+q)^{2}}\right)$.
 \end{exercice}
 
 % --- Exercice 15 ---
@@ -126,37 +124,38 @@
 \begin{exercice}[Complément : Exercice corrigé]
     Soit $(a_{k})_{k\in \N}$ une suite d'entiers naturels non nuls tels que $\sum_{k\ge0}\frac{1}{a_{k}}$ converge.
     On considère pour tout $n$, $C_{n} = \{k\in\N, a_{k}\in\{1,\dots,n\}\}$ et $c_{n}=\text{Card}(C_{n})$.
+
     Montrons que $c_{n}=o(n)$. \\
 
 \textit{Solution :}
 
-    Ma première idée est de poser pour tout naturel $n$ non nul, $D_{n}=\{k\in\N, a_{k}=n\}$ et $d_{n}=\text{Card}(D_{n})$.
-    Alors pour tout $n$, $C_{n}=\bigcup_{k=1}^{n}D_{k}$ 
-    et donc $c_{n}=\sum_{k=1}^{n}d_{k}$ est croissante en tant que somme partielle d'une série à termes positifs.
+    Une première idée est de poser pour tout naturel $n$ non nul, $D_{n}=\{k\in\N, a_{k}=n\}$ et $d_{n}=\text{Card}(D_{n})$.
+    
+    Alors pour tout $n$, $\ds C_{n}=\bigcup_{k=1}^{n}D_{k}$ 
+    et donc $\ds c_{n}=\sum_{k=1}^{n}d_{k}$ est croissante en tant que somme partielle d'une série à termes positifs.
 
     Faisons un détour par les familles sommables :
-    La série à termes positifs $\sum_{k\ge0}\frac{1}{a_{k}}$ converge donc la famille $(\frac{1}{a_{k}})$ est sommable.
-    De plus on a $\N=\bigcup_{n\in \N} D_{n}$ (union disjointe), donc on peut appliquer le théorème de sommation par paquets.
+    La série à termes positifs $\ds \sum_{k\geqslant0}\frac{1}{a_{k}}$ converge donc la famille $\left(\frac{1}{a_{k}}\right)$ est sommable.
+    De plus on a $\ds \N=\bigcup_{n\in \N} D_{n}$ (union disjointe), donc on peut appliquer le théorème de sommation par paquets.
 
-    Remarquons que $\sum_{k\in D_{n}} \frac{1}{a_{k}}=\sum_{k\in D_{n}} \frac{1}{n}=\frac{d_{n}}{n}$, 
-    on a donc la convergence de la série $\sum_{n\ge1}\frac{d_{n}}{n}$. \\
+    Remarquons que $\ds \sum_{k\in D_{n}} \frac{1}{a_{k}}=\sum_{k\in D_{n}} \frac{1}{n}=\frac{d_{n}}{n}$, 
+    on a donc la convergence de la série $\ds \sum_{n\geqslant1}\frac{d_{n}}{n}$. \\
 
     Il faut maintenant en déduire des propriétés de la suite $(c_{n})$.
     Pour cela on va utiliser le lien suite-série, ce qui revient à faire une transformation d'Abel.
     Considérons la somme partielle (que l'on sait donc convergente) :
 
-    $$ S_{N}=\sum_{n=1}^{N}\frac{d_{n}}{n}=\sum_{n=1}^{N}\frac{c_{n}-c_{n-1}}{n}=\sum_{n=1}^{N}\frac{c_{n}}{n}-\sum_{n=1}^{N}\frac{c_{n-1}}{n} $$
-    $$ =\sum_{n=1}^{N}\frac{c_{n}}{n}-\sum_{n=0}^{N-1}\frac{c_{n}}{n+1}=\frac{c_{N}}{N}+\sum_{n=1}^{N-1}\frac{c_{n}}{n(n+1)} $$
-
-    Et donc les sommes partielles de $\sum_{n\ge1}\frac{c_{n}}{n(n+1)}$ sont majorées donc cette série converge, 
-    et donc par équivalents des termes généraux positifs, la série $\sum_{n}\frac{c_{n}}{n^{2}}$ converge, avec $(c_{n})$ suite croissante.
+    \[S_{N}=\sum_{n=1}^{N}\frac{d_{n}}{n}=\sum_{n=1}^{N}\frac{c_{n}-c_{n-1}}{n}=\sum_{n=1}^{N}\frac{c_{n}}{n}-\sum_{n=1}^{N}\frac{c_{n-1}}{n}\]
+    \[=\sum_{n=1}^{N}\frac{c_{n}}{n}-\sum_{n=0}^{N-1}\frac{c_{n}}{n+1}=\frac{c_{N}}{N}+\sum_{n=1}^{N-1}\frac{c_{n}}{n(n+1)}\]
+    Et donc les sommes partielles de $\ds \sum_{n\geqslant1}\frac{c_{n}}{n(n+1)}$ sont majorées donc cette série converge, 
+    et donc par équivalents des termes généraux positifs, la série $\ds \sum \frac{c_{n}}{n^{2}}$ converge, avec $(c_{n})$ suite croissante.
 
     Reste à montrer qu'avec ces hypothèses on a $c_{n}=o(n)$.
 
-    En notant $T_{n}=\sum_{k=1}^{n}\frac{c_{k}}{k^{2}}$ sa $n$-ième somme partielle 
+    En notant $\ds T_{n}=\sum_{k=1}^{n}\frac{c_{k}}{k^{2}}$ sa $n$-ième somme partielle 
     on a donc convergence de cette suite et donc convergence vers 0 de $T_{2n}-T_{n}$.
 
-    Or $T_{2n}-T_{n}=\sum_{k=n+1}^{2n}\frac{c_{k}}{k^{2}}\ge c_{n}\sum_{k=n+1}^{2n}\frac{1}{(2n)^{2}}\ge c_{n}\frac{n}{(2n)^{2}} = \frac{c_n}{4n}$.
+    Or $\ds T_{2n}-T_{n}=\sum_{k=n+1}^{2n}\frac{c_{k}}{k^{2}}\ge c_{n}\sum_{k=n+1}^{2n}\frac{1}{(2n)^{2}}\ge c_{n}\frac{n}{(2n)^{2}} = \frac{c_n}{4n}$.
 
     Et donc $\frac{c_n}{4n} \to 0$, d'où $c_{n}=o(n)$.
 \end{exercice}
@@ -164,8 +163,8 @@
 % --- Exercice Supplémentaire ---
 \begin{exercice}[Exercice Supplémentaire]
 \begin{enumerate}
-    \item Étudier la convergence et la somme de $\sum_{n\ge1} w_n$ où $w_n = \sum_{k=1}^n \frac{1}{k^2} \times \frac{1}{(n-k)!}$.
-    \item Même question pour $w_n = \frac{1}{2^n} \sum_{k=0}^n 2^k u_k$ sachant que $\sum \frac{1}{e^n}$ converge et $\sum u_n$ converge absolument.
+    \item Étudier la convergence et la somme de $\ds \sum_{n\geqslant1} w_n$ où $\ds w_n = \sum_{k=1}^n \frac{1}{k^2} \times \frac{1}{(n-k)!}$.
+    \item Même question pour $\ds w_n = \frac{1}{2^n} \sum_{k=0}^n 2^k u_k$ sachant que $\sum \frac{1}{e^n}$ converge et $\sum u_n$ converge absolument.
 \end{enumerate}
 \end{exercice}
 

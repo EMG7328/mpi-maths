@@ -17,10 +17,10 @@
     Soit $A$ une partie non vide d'un espace vectoriel normé $E$.
     \begin{enumerate}
         \item Rappeler la définition d'un point adhérent à $A$, en termes de voisinages ou de boules.
-        \item Démontrer que : $x \in \overline{A} \iff \exists (x_{n})_{n \in \N}$ telle que, 
-            $\forall n \in \N, x_{n} \in A$ et $\lim_{n \rightarrow +\infty} x_{n} = x$.
-        \item Démontrer que si $A$ est un sous-espace vectoriel de $E$, alors $\overline{A}$ est un sous-espace vectoriel de $E$.
-        \item Démontrer que si $A$ est convexe alors $\overline{A}$ est convexe.
+        \item Démontrer que : $x \in \overline A \iff \exists (x_n) \in A^{\N}$ telle que, 
+        $\lim_{n \rightarrow +\infty} x_n = x$.
+        \item Démontrer que si $A$ est un sous-espace vectoriel de $E$, alors $\overline A$ est un sous-espace vectoriel de $E$.
+        \item Démontrer que si $A$ est convexe alors $\overline A$ est convexe.
     \end{enumerate}
 \end{exercice}
 
@@ -103,13 +103,13 @@
 % --- Exercice 8 (Source: Exercice 3) ---
 \begin{exercice}
     Étudier la continuité en $(0,0)$ de l'application de $\R^{2}$ dans $\R$ définie par :
-    $$ f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
+    \[f(x,y) = \begin{cases} \frac{xy}{x^{2}+y^{2}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}\]
 \end{exercice}
 
 % --- Exercice 9 (Source: Exercice 4) ---
 \begin{exercice}
     Étudier la continuité en $(0,0)$ de l'application de $\R^{2}$ dans $\R$ définie par :
-    $$ f(x,y) = \begin{cases} \frac{\sqrt{|xy|}}{\sqrt{|x|+|y|}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases} $$
+    \[f(x,y) = \begin{cases} \frac{\sqrt{|xy|}}{\sqrt{|x|+|y|}} & \text{si } (x,y) \neq (0,0) \\ 0 & \text{si } (x,y) = (0,0) \end{cases}\]
 \end{exercice}
 
 % --- Exercice 10 (Source: Exercice 5) ---
@@ -136,14 +136,15 @@
 % --- Exercice 12 (Source: Exercice 7) ---
 \begin{exercice}
     Déterminer les applications $f: \R^{+} \rightarrow \R$ continues vérifiant pour tout $x \in \R^{+}$, $f(x^{2})=f(x)$.
-    On utilisera le fait que pour tout naturel $n$ et tout $x \in \R^{+}$, $f(x) = f(x^{\frac{1}{n}})$. 
-    (Attention, l'énoncé suggère $x^{1/2^n}$ plutôt).
+    
+    \textit{On utilisera le fait que pour tout naturel $n$ et tout $x \in \R^{+}$, $f(x) = f\left(x^{\frac{1}{2n}}\right)$.}
 \end{exercice}
 
 % --- Exercice 13 (Source: Exercice 8) ---
 \begin{exercice}
     Dans $E=\R^{n}$ euclidien pour le produit scalaire usuel, justifier la continuité de l'application $E \times E \rightarrow \R$ 
     définie par $(x,y) \mapsto \|x\| \cdot \|y\| - |\langle x | y \rangle|$.
+
     En déduire que l'ensemble $\{(x,y) \in E \times E, (x,y) \text{ libre}\}$ est un ouvert de $E \times E$.
 \end{exercice}
 
@@ -181,7 +182,9 @@
 % --- Exercice 16 (Source: Exercice 10) ---
 \begin{exercice}
     On pose $E= \mathscr C^{0}([0,1], \R)$ muni de la norme $\|\cdot\|_{\infty}$.
+    
     Montrer que l'application qui à une fonction $f$ de $E$ associe son unique primitive s'annulant en 0 est linéaire et continue. 
+
     Déterminer sa norme d'opérateur.
 \end{exercice}
 
@@ -193,7 +196,7 @@
         \item On pose : $\forall u=(u_{n})_{n \in \N} \in E, \|u\| = \sup_{n \in \N} |u_{n}|$.
         \begin{enumerate}
             \item Prouver que $\|\cdot\|$ est une norme sur $E$.
-            \item Prouver que $\forall u=(u_{n})_{n \in \N} \in E, \sum \frac{u_{n}}{2^{n+1}}$ converge.
+            \item Prouver que $\ds \forall u=(u_{n}) \in E, \sum \frac{u_{n}}{2^{n+1}}$ converge.
             \item On pose alors $\displaystyle f(u) = \sum_{n=0}^{+\infty} \frac{u_{n}}{2^{n+1}}$. Prouver que $f$ est continue sur $E$.
         \end{enumerate}
     \end{enumerate}
@@ -201,10 +204,10 @@
 
 % --- Exercice 18 (Source: Exercice 11) ---
 \begin{exercice}
-    On considère $E=\R[X]$ muni de la norme $\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}$ pour $\displaystyle P = \sum_{i=0}^{n} a_{i} X^{i}$.
-
+    On considère $E=\R[X]$ muni de la norme :
+    \[\|P\| = \max \{|a_{i}|, i \in \{0,\dots,n\}\}~\text{pour}~P = \sum_{i=0}^{n} a_{i} X^{i}\]
     Les formes linéaires suivantes sont-elles continues ? Si oui déterminer leur norme d'opérateur.
-    $$ P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) \dt, \quad P \mapsto P(1) $$
+    \[P \mapsto P(0), \quad P \mapsto \int_{0}^{1} P(t) \dt, \quad P \mapsto P(1)\]
 \end{exercice}
 
 % --- Exercice 19 (Source: Exercice 12) ---
@@ -222,6 +225,7 @@
 % --- Exercice 20 (Source: Exercice 13) ---
 \begin{exercice}
     Soit $f \in \mathscr L(E,F)$ où $E$ et $F$ sont deux espaces vectoriels normés sur $\K$.
+
     Montrer que $f$ est continue ssi $\{x \in E, \|f(x)\| = 1\}$ est un fermé.
 \end{exercice}
 
@@ -264,7 +268,8 @@
 
 % --- Exercice 25 (Source: Exercice 18) ---
 \begin{exercice}
-    Soit $(E, N)$ un espace vectoriel normé et $(u_{n})_{n \in \N}$ une suite convergente de limite $\ell$.
+    Soit $(E, N)$ un espace vectoriel normé et $(u_{n})$ une suite convergente de limite $\ell$.
+    
     Montrer que $A = \{u_{n}, n \in \N\} \cup \{\ell\}$ est un compact.
 \end{exercice}
 
@@ -273,7 +278,7 @@
     Soit $A$ un compact de $E$ et $f$ une application de $A$ dans $A$ lipschitzienne de rapport $k \in [0,1[$.
     \begin{enumerate}
         \item En utilisant $g : x \mapsto \|x-f(x)\|$, montrer que $f$ possède un point fixe. Montrer que ce point fixe est unique.
-        \item Montrer que toute suite $(u_{n})_{n \in \N}$ définie par $u_{0} \in A$ et pour tout $n$, $u_{n+1}=f(u_{n})$ converge vers ce point fixe.
+        \item Montrer que toute suite $(u_{n})$ définie par $u_{0} \in A$ et pour tout $n$, $u_{n+1}=f(u_{n})$ converge vers ce point fixe.
     \end{enumerate}
 \end{exercice}
 
@@ -289,7 +294,7 @@
 
 % --- Exercice 29 (Source: Exercice 22) ---
 \begin{exercice}
-    Montrer que dans un evn de dimension finie supérieure à 2, la sphère unité est connexe par arcs.
+    Montrer que dans un espace vectoriel normé de dimension finie supérieure à 2, la sphère unité est connexe par arcs.
 \end{exercice}
 
 % --- Exercice 30 (Source: Exercice 23) ---
@@ -309,7 +314,6 @@
 
 \newpage
 \section{Corrections}
-
 % --- Correction 1 ---
 \begin{correction}{1}
 \begin{enumerate}

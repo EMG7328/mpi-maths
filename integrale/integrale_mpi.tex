@@ -15,61 +15,15 @@
 \gdef\@titrechapitre{Cours de Mathématiques}
 \makeatother
 
+\newcommand{\docType}{Cours \& TDs}
+
 \begin{document}
-\newgeometry{
-  top=4cm,
-  bottom=4cm,
-  left=3.5cm,
-  right=3.5cm
-}
-\thispagestyle{empty}
-
-\begin{tikzpicture}[remember picture,overlay]
-  \draw[vorange, line width=1.5pt] 
-    ([shift={(1.5cm,-1.5cm)}]current page.north west) rectangle 
-    ([shift={(-1.5cm,1.5cm)}]current page.south east);
-  \draw[vorange!40, line width=0.5pt] 
-    ([shift={(1.65cm,-1.65cm)}]current page.north west) rectangle 
-    ([shift={(-1.65cm,1.65cm)}]current page.south east);
-    
-  \node[fill=white, inner xsep=15pt, inner ysep=5pt] 
-    at ([yshift=1.5cm]current page.south) {
-      \color{black!60}\small\scshape Version du \today
-    };
-\end{tikzpicture}
-
-\begin{center}
-  \makeatletter
-  \vspace*{1.5cm}
-  
-  {\large\color{black!70}\scshape \@etablissement \ -- \ Filière \@filiere \par}
-  \vspace{3.5cm}
-  
-  {\fontsize{40}{48}\selectfont\bfseries\color{vorange!95!black} Maths spé\par}
-  \vspace{0.8cm}
-  
-  \begin{tikzpicture}
-    \draw[vorange, line width=1.5pt] (-3.5,0) -- (3.5,0);
-    \fill[vorange] (0,0) ++(0,3.5pt) -- ++(3.5pt,-3.5pt) -- ++(-3.5pt,-3.5pt) -- ++(-3.5pt,3.5pt) -- cycle;
-  \end{tikzpicture}\par
-  \vspace{0.8cm}
-  
-  {\fontsize{34}{42}\selectfont\bfseries\scshape\color{black} Cours \& TDs \par}
-
-  \vspace{4.5cm}
-
-  {\Large\bfseries D'après les cours de Yann Quibel\par}
-  \vspace{0.6cm}
-  {\normalsize\itshape Notes rédigées par L. Dehmas, C. Perry et al.\par}
-  \makeatother
-\end{center}
-
+\pagestyle{empty}
+\input{cover.tex}
 \clearpage
-\thispagestyle{empty}
 \input{credits.tex}
 \clearpage
 \cleardoublepage
-\thispagestyle{empty}
 \input{avant_propos.tex}
 \clearpage
 
@@ -84,6 +38,8 @@
   \@starttoc{toc}
   \makeatother
 \endgroup
+
+\pagestyle{scrheadings}
 
 \pagevide
 \chapitreintegral{0}{Introduction}

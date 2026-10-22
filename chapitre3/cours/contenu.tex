@@ -1101,7 +1101,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \begin{theorement}{Caractérisation séquentielle de la limite}{}
     Soit $A \subset E$ non vide, $a \in \overline A$, $\ell \in E'$ :
 
-    Alors $f(x) \limitnorme{N'}{x}{a} \ell$ ssi pour toute suite $(u_n)_{n \in \N}$ 
+    Alors $f(x) \limitnorme{N'}{x}{a} \ell$ ssi pour toute suite $(u_n)$ 
     d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'}{n}{+ \infty} \ell$.
 \end{theorement}
 
@@ -1114,7 +1114,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \begin{proof}
     $\Rightarrow$ Supposons que $\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x \in A, \, N(x - a) \leqslant \eta \Rightarrow N'(f(x) - \ell) \leqslant \varepsilon$ (1).
 
-    Soit $(u_n)_{n \in \N}$ une suite d'éléments de $A$ qui converge vers $a$.
+    Soit $(u_n)$ une suite d'éléments de $A$ qui converge vers $a$.
 
     Alors $\forall \varepsilon > 0, \, \exists n_0 \in \N, \, \forall n \geqslant n_0, \, N(u_n - a) < \varepsilon$ (2)
 
@@ -1140,16 +1140,14 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
     Donc $f(x_n)$ ne converge pas vers $\ell$.
 \end{proof}
 
-
 \begin{theoreme}{Caractérisation séquentielle de la continuité}{}
     Soit $A \subset E$ non vide, $a \in A$. :
 
-    Alors $f$ est continue en $a$ ssi pour toute suite $(u_n)_{n \in \N}$ d'éléments de $A$ 
+    Alors $f$ est continue en $a$ ssi pour toute suite $(u_n)$ d'éléments de $A$ 
     qui converge vers $a$ on a $f(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$.
 \end{theoreme}
 
 \subsection{Opérations}
-
 \begin{theoreme}{}{}
     Soient $f, g : A \subset E \to F$, $\lambda : A \to \K$, $\alpha \in K$ et $\ell_1, \ell_2 \in F$, 
 
@@ -1171,7 +1169,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 
     Par caractérisation séquentielle. Donc $(f + g)(u_n) \longrightarrow \ell_1 + \ell_2$. 
 
-    Donc (carac seq), $(f + g)(x) \longrightarrow \ell_1 + \ell_2$
+    Donc (caractérisation sequentielle), $(f + g)(x) \longrightarrow \ell_1 + \ell_2$
 
     De même pour les autres. 
 \end{proof}
@@ -1186,7 +1184,7 @@ Si $f$ et $\lambda$ continues en a, $\lambda f$ aussi.
     Soit $A \subset E$, $a \in \overline A$, $B \subset E'$, $b \in \overline B$ et 
     $(E", N")$ un espace vectoriel normé, et soit $\ell \in E"$, $f : A \to E'$ tel que $\forall x \in A, f(x) \in B$, $g: B \to E"$. 
 
-    Si $f(x) \limitnorme{N'}x a b \text{ et } g(y) \limitnorme{N"}y a \ell$ alors 
+    Si $f(x) \limitnorme{N'}x a b \text{ et } g(y) \limitnorme{N"}y a \ell$ alors :
 
     $$(g \circ f )(x) \limitnorme{N"} x a \ell$$
 \end{proposition}
@@ -1208,7 +1206,6 @@ Si $f$ et $\lambda$ continues en a, $\lambda f$ aussi.
 Soit $f : A \subset E \to E'$ tel que $f(A) \subset B$, $g : B \to E"$ $a \in A$. Si $f$ continue en $a$ et $g$ continue en $f(a)$ alors $g \circ f$ continue en $a$.
 
 \subsection{Cas des espaces vectoriels normés produits}
-
 Soient $(E'_1, N'_1), \ldots, (E'_p, N'_p)$ des espaces vectoriels normés, et $E' = E'_1 \times \cdots \times E'_p$.
 muni de la norme produit $N'_\infty$, et $\fonction{f}{A\subset E}{E'}{x}{f(x) = (f_1(x), \ldots, f_p(x))}$.
 
@@ -1228,30 +1225,25 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 }
 
 \begin{proof}
-    $f(x) \limitnorme{N'_\infty}{x}{a} \ell$ ssi pour toute suite $(u_n)_{n \in \N}$ 
+    $f(x) \limitnorme{N'_\infty}{x}{a} \ell$ ssi pour toute suite $(u_n)$ 
     d'éléments de $A$ qui converge vers $a$, on a $f(u_n) \limitnorme{N'_\infty}{n}{+ \infty} \ell$.
-    ssi pour toute suite $(u_n)_{n \in \N}$ d'éléments de $A$ qui converge vers $a$, 
+    ssi pour toute suite $(u_n)$ d'éléments de $A$ qui converge vers $a$, 
     $\forall j \in \ninter{1}{p}, \, f_j(u_n) \limitnorme{N'_j}{n}{+ \infty} \ell_j$.
 
 
-    ssi $\forall j \in \ninter{1}{p}, \, f_j(x) \limitnorme{N'_j}{x}{a} \ell_j$ (Caractérisation LHP).
+    ssi $\forall j \in \ninter{1}{p}, \, f_j(x) \limitnorme{N'_j}{x}{a} \ell_j$ (caractérisation LHP).
 \end{proof}
 
-
-
 \section{Continuité sur une partie}
-
 \begin{definition}{Continuité restriction sur une partie}{}
     Soit $f: A \to E$, et soit $B \subset A$. On dit que $f$ est continue sur $B$ ssi 
     $\forall a \in B, \, f_{|B}$ est continue en $a$.
 \end{definition}
 
-
 \begin{definition}{Continuité sur un ensemble}{}
     Soit $f : A \to E$. On dit en particulier que $f$ est continue sur $A$ ssi
     $\forall a \in A, \, f$ est continue en $a$.
 \end{definition}
-
 
 \begin{proposition}{Continuité sur un ensemble}{}
     Soit $f : E \to E'$ et $U \subset E$ un ouvert.
@@ -1261,10 +1253,10 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \begin{proof}
     $f$ est continue sur $U$ ssi $\forall a \in U, \, f_{|U}$ est continue en $a$ 
     
-    ssi $\forall a \in U, \, \forall (u_n)_{n \in \N}$ suite d'éléments de $U$ qui converge vers $a$,
+    ssi $\forall a \in U, \, \forall (u_n)$ suite d'éléments de $U$ qui converge vers $a$,
     $f_{|U}(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$
 
-    ssi $\forall a \in U, \, \forall (u_n)_{n \in \N}$ suite d'éléments de $E$ qui converge vers $a$,
+    ssi $\forall a \in U, \, \forall (u_n)$ suite d'éléments de $E$ qui converge vers $a$,
     $f(u_n) \limitnorme{N'}{n}{+ \infty} f(a)$ car comme $U$ est ouvert, pour $n$ assez
     grand, si $u_n \in E$ et $u_n \to a$, alors $u_n \in U$.
 
@@ -1272,14 +1264,12 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \end{proof}
 
 \subsection{Théorèmes d'opérations}
-
-\begin{theorement}{}{}
+\begin{theoreme}{}{}
     Soit $f, g, : A \to E$, $\lambda : A \to \K$, $\alpha \in \K$.
 
     Si $f$ et $g$ sont continues sur $A$, alors $\alpha f + g$ et $\lambda f$ sont 
     continues sur $A$. 
-\end{theorement}
-
+\end{theoreme}
 
 \textbf{\uline{Conséquence :}}
 L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est un $\K$-espace vectoriel.
@@ -1305,7 +1295,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
     Soit $x \in A$. 
 
-    $x \in \overline B$, donc il existe une suite $(u_n)_{n \in \N}$ d'éléments de $B$ qui converge vers $x$.
+    $x \in \overline B$, donc il existe une suite $(u_n)$ d'éléments de $B$ qui converge vers $x$.
     
     Comme $u_n \in B$, on a $\forall n \in \N, \, f(u_n) = g(u_n)$ et alors par 
     passage à la limite, $f(x) = g(x)$ car $f$ et $g$ sont continues en $x$.
@@ -1343,7 +1333,6 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \end{exemple}
 
 \subsection{Continuité et image réciproque }
-
 \begin{theoreme}{Nature de l'image réciproque d'une fonction continue}{}
     Soit $f \in \mathscr C(A, E')$. Alors l'image réciproque d'un ouvert (resp. fermé) 
     de $E'$ par $f$ est un ouvert (resp. fermé) relatif de $A$.
@@ -1364,7 +1353,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
     Montrons que $f^{-1}(B)$ est un fermé relatif de $A$.
 
-    Considérons $(u_n) _{n \in \N}$ une suite d'éléments de $f^{-1}(B)$ qui converge vers $\ell \in A$.
+    Considérons $(u_n)$ une suite d'éléments de $f^{-1}(B)$ qui converge vers $\ell \in A$.
 
     $f$ est continues en $\ell$, donc $f(u_n) \rightarrow f(\ell)$. 
     Or $\forall n, \, f(u_n) \in B$ et $B$ est fermé, donc $f(\ell) \in B$.
@@ -1385,7 +1374,6 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \end{proof}
 
 \subsection{Applications uniformément continues et lipschitziennes}
-
 \begin{definition}{Uniforme continuité}{}
     Soit $f : A \subset E \to E'$. On dit que $f$ est uniformément continue sur $A$ ssi 
     $$\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x, y \in A, \, N(x - y) \leqslant \eta \Rightarrow N'(f(x) - f(y)) \leqslant \varepsilon$$
@@ -1398,7 +1386,6 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
     On dit que $f$ est lipschitzienne ssi elle est lipschitzienne de rapport $k$ pour un certain $k \geqslant 0$.
 \end{definition}
-
 
 \begin{remarque}
     La caractère lipschitzien est invariant si on change les normes en des normes 
@@ -1413,9 +1400,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     \end{itemize}
 \end{proposition}
 
-\idee{
-    Poser le bon $\eta$.
-}
+\idee{Poser le bon $\eta$.}
 
 \begin{proof}
     Soit $f$ $k$ lipschitzienne de $A$ dans $E'$.
@@ -1425,14 +1410,12 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Soient $x, y \in A$ tels que $N(x - y) \leqslant \eta$.
 
     alors $N'(f(x) - f(y)) \leqslant k N(x - y) \leqslant k \eta = \varepsilon$.
-
 \end{proof}
 
 \begin{proposition}{Nature applications coordonnées}{}
     Dans un espace vectoriel normé de dimension finie, les applications coordonnées sont lipschitziennes, 
     donc uniformément continues, donc continues. 
 \end{proposition}
-
 
 \begin{proof}
     $E$ evn de base $B = (e_1, \ldots, e_n)$. Munissons le de la norme $||\cdot||_\infty$.
@@ -1444,11 +1427,9 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Donc $c_i$ est 1-lipschitzienne. 
 \end{proof}
 
-
 \begin{theoreme}{Lien dérivée et lipschitzienne}{}
     Soit $f \in \mathscr C^1(I, \R)$, alors $f$ est lipschitzienne ssi $f'$ est bornée.
 \end{theoreme}
-
 
 \begin{proof}
     Supposons que $f$ est $k$-lipschitzienne. 
@@ -1482,17 +1463,14 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     $|d_A(x) - d_A(y)| \leqslant N(x - y)$.
 \end{proof}
 
-
 \section{Continuité des applications (multi)linéaires}
-
 \subsection{Critère de continuité}
-
-\begin{theorement}{Critère de continuité pour une application linéaire}{}
+\begin{theoreme}{Critère de continuité pour une application linéaire}{}
     Soient $(E, N)$ et $(E', N')$ deux evn, et $ f \in \mathscr L(E, E')$.
 
     Alors $f$ est continue sur $E$ ssi 
     $$\exists c > 0, \, \forall x \in E, \, N'(f(x)) \leqslant c N(x)$$
-\end{theorement}
+\end{theoreme}
 
 \idee{
     $\Rightarrow$ Utilisation de la continuité en 0 et du fait que $f$ est linéaire.

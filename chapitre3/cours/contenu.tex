@@ -1466,7 +1466,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \section{Continuité des applications (multi)linéaires}
 \subsection{Critère de continuité}
 \begin{theoreme}{Critère de continuité pour une application linéaire}{}
-    Soient $(E, N)$ et $(E', N')$ deux evn, et $ f \in \mathscr L(E, E')$.
+    Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés, et $ f \in \mathscr L(E, E')$.
 
     Alors $f$ est continue sur $E$ ssi 
     $$\exists c > 0, \, \forall x \in E, \, N'(f(x)) \leqslant c N(x)$$
@@ -1475,7 +1475,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \idee{
     $\Rightarrow$ Utilisation de la continuité en 0 et du fait que $f$ est linéaire.
 
-    $\Leftarrow$ Montrer $f$ lipschitzienne $\eta$.
+    $\Leftarrow$ Montrer $f$ lipschitzienne.
 }
 
 \begin{proof}~\\
@@ -1484,7 +1484,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
     Cela fournit $\eta > 0$ tel que $\forall x \in E, \, N(x - 0) \leqslant \eta \Rightarrow N'(f(x) - f(0)) \leqslant 1$.
 
-    Or $f$ linéaire, donc $f(0_E) = 0_{E'}$ donc 
+    Or $f$ linéaire, donc $f(0_E) = 0_{E'}$ donc :
     
     $$N(x) \leqslant \eta \Rightarrow N'(f(x)) \leqslant 1$$
 
@@ -1513,26 +1513,29 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \begin{remarque}
     On a montré au passage que $f$ est continue sur $E$ ssi $f$ est continue en $0$ ssi $f$ est lipschitzienne.  
 
-    Pour montrer que $f$ n'est pas continue, on exhibe une suite $(x_n)_{n \in \N}$ de $E$ 
+    Pour montrer que $f$ n'est pas continue, on exhibe une suite $(x_n)$ de $E$ 
     telle que $\displaystyle \frac{N'(f(x_n))}{N(x_n)} \to + \infty$. Alors $\forall c > 0, \, \exists x_n \in E, \, N'(f(x_n)) > c N(x_n)$, 
-    donc $f$ non continue.
+    donc $f$ n'est pas continue.
 \end{remarque}
 
 \begin{exemple}
     Soit $\fonction f {\R[X]} \R P {P(1)}$, $f$ est linéaire. 
 
-    \avspace En munissant $\R[X]$ de la norme $||P||_\infty = \max\{P(t), t \in [0, 1]\}$, on a 
+    \avspace En munissant $\R[X]$ de la norme $||P||_\infty = \max\{|P(t)|, t \in [0, 1]\}$, on a 
     $\forall P \in \R[X], \, |f(P)| = |P(1)| \leqslant ||P||_\infty$.
 
-    Donc par critère de continuité des applications linéaires, $f$ est continue.
+    Donc par critère de continuité des applications linéaires, $f$ est continue pour $\|\cdot\|_{\infty}$.
 
-    \avspace En munissant $\R[X]$ de la norme $N_\infty = \max\{P(t), t \in \inter 0 {\frac 1 2}\}$
+    \avspace En munissant $\R[X]$ de la norme $N_\infty(P) = \max\left\{|P(t)|, t \in \inter 0 {\frac 1 2}\right\}$
 
-    Posons $P_n = X^n$. Alors $| f(P_n) | = 1$ et $||P_n||_\infty = \max\{P_n(t), t \in \inter 0 {\frac 1 2}\} = \left(\frac 1 2\right)^n$.
+    Posons $P_n = X^n$. Alors $| f(P_n) | = 1$ et $N_\infty(P_n) = \max\left\{P_n(t), t \in \inter 0 {\frac 1 2}\right\} = \left(\frac 1 2\right)^n$.
+
+    Donc $f$ n'est pas continue pour $N_{\infty}$.
 \end{exemple}
 
 \begin{definition}{Applications linéaires continues}{}
-    \\On pose $\mathscr L_c(E, E') = \mathscr L (E, E') \cap \mathscr C(E, E')$ l'espace vectoriel 
+
+    On pose $\mathscr L_c(E, E') = \mathscr L (E, E') \cap \mathscr C(E, E')$ l'espace vectoriel 
     des applications linéaires continues de $E$ dans $E'$.
 \end{definition}
 
@@ -1545,7 +1548,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
     Soit $E$ un $\K$-espace vectoriel de dimension finie et de base 
     $B = (e_1, \ldots, e_p)$. Munissons $E$ de la norme $||\cdot||_\infty$ asociée à $B$.
 
-    Soit $(E', N')$ un $\K$ evn. 
+    Soit $(E', N')$ un $\K$ espace vectoriel normé. 
 
     Soit $f \in \mathscr L(E, E')$, et soit $x \in E$. 
 
@@ -1566,10 +1569,9 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 En dimension finie, les applications coordonnées sont continues car linéaires, donc 
 tout polynôme en les coordonnées est continu. 
 
+\avspace $\fonction{\varphi}{\mathscr M_n(\K)} \K A {\det(A)}$ est continue.
 
-\avspace $\fonction{}{\mathscr M_n(\K)} \K A {\det(A)}$ est continue.
-
-$\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n, q}(\K)}{(A, B)}{AB}$ est continue.
+$\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n, q}(\K)}{(A, B)}{AB}$ est continue.
 
 \begin{proof}
     Le déterminant est polynôme en les coordonées de la matrice dans la base cononique des 
@@ -1578,44 +1580,39 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
     \svspace Chacune des coordonnées de $AB$ est un polynôme en les coordonnées de $A$ et $B$.
 \end{proof}
 
-
 \subsection{Norme subordonnée d'une application linéaire continue}
-
 \begin{definition}{Norme d'opérateur}{}
     Soient $(E, N)$, $(E', N')$ deux espaces vectoriels normés sur $\K$ et $f \in \mathscr L_c(E, E')$.
 
-    Alors par critère de continuité, $\left\{ \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\}$ est
+    \avspace Alors par critère de continuité, $\left\{ \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\}$ est
     une partie de $\R^+$ majorée. 
 
     On appelle norme d'opérateur (ou norme subordonnée, ou parfois norme triple) de $f$ le réel : 
-    $$||f||_{op} = |||f||| = \sup \left\{ \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} $$ 
-
+    $$||f||_{op} = |||f||| = \sup \left\{\frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} $$ 
 
     On a en particulier $\forall x \in E, \, N'(f(x)) \leqslant |||f||| \cdot N(x)$.
 \end{definition}
 
-
 \begin{exemple}
     $\fonction u E \R \varphi {\int_0^1 \varphi}$ donc $u \in \mathscr L(E, \R)$. 
 
-    Donc $|u(\varphi)| = \left| \int_0^1 \varphi(t) \dt \right| \leqslant \int_0^1 |\varphi(t)| \dt \leqslant ||\varphi||_\infty$.
+    \avspace Donc $\ds |u(\varphi)| = \left| \int_0^1 \varphi(t) \dt \right| \leqslant \int_0^1 |\varphi(t)| \dt \leqslant ||\varphi||_\infty$.
 
     Donc $u$ est continue. 
 
     Posons $\varphi = 1$, alors $|u(\varphi)| = 1 = ||\varphi||_\infty$.
 
-    Donc le majorant 1 de $\left\{ \frac{|u(\varphi)|}{||\varphi||_\infty}, \varphi \in E \setminus \{0\} \right\}$ est atteint. 
+    Donc le majorant 1 de $\ds \left\{ \frac{|u(\varphi)|}{||\varphi||_\infty}, \varphi \in E \setminus \{0\} \right\}$ est atteint. 
 
     Donc $|||u||| = 1$.
 \end{exemple}
-
 
 \begin{proposition}{}{}
     Soit $f \in \mathscr L_c(E, E')$ alors $|||f||| = \sup \{ N'(f(x)), \, x \in S(0, 1) \}$
 \end{proposition}
 
 \begin{proof}
-    Notons $A = \{\frac{N'(f(x))}{N(x)}, \, x \in E \setminus \{0\}\}$,
+    Notons $A = \left\{\frac{N'(f(x))}{N(x)}, \, x \in E \setminus \{0\}\right\}$,
     $B = \{N'(f(x)), \, x \in E \mid N(x) = 1\}$.
 
     Soit $\alpha \in A$, il existe $x \in E $ tel que $x \neq 0$ et $\alpha = \frac{N'(f(x))}{N(x)}$.
@@ -1634,51 +1631,47 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
     Il existe $y \in S(0, 1)$, $\beta = N'(f(y))$. 
 
     Posons $x = y$, on a $\beta = \frac{N'(f(y))}{N(y)}$. 
-
     Donc $\beta \in A$.
 \end{proof}
 
-\begin{theoreme}{La norme d'opérateur est une norme}{}
+\begin{theoreme}{}{}
     La norme d'opérateur $|||\cdot|||$ est une norme sur $\mathscr L_c(E, E')$.
 \end{theoreme}
-
 
 \begin{proof}~
     \begin{itemize}
         \item $|||\cdot|||$ est positive par définition.
         \item Supposons que $|||f||| = 0$, alors $\forall x \in E \setminus \{0\}, \, N'(f(x)) = 0$.
             Donc $f(x) = 0_{E'}$ car $N'$ est une norme. Donc $f = 0_{\mathscr L(E, E')}$ car linéaire. 
-        \item Soit $\lambda \in \K$
-    \end{itemize}
+        \item Soit $\lambda \in \K$,
+        
+        \[|||\lambda f||| = \sup \left\{ \frac{N'(\lambda f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = \sup \left\{ |\lambda| \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = |\lambda| |||f|||\]
 
-    $|||\lambda f||| = \sup \left\{ \frac{N'(\lambda f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = \sup \left\{ |\lambda| \frac{N'(f(x))}{N(x)}, x \in E \setminus \{0\} \right\} = |\lambda| |||f|||$.
+        Soient $f, g \in \mathscr L_c(E, F)$
+        et $x \in E$ tel que $x \neq 0$,
 
-    \begin{itemize}
-        \item Soient $f, g \in \mathscr L_c(E, F)$.
-    \end{itemize}
-
-    Soit $x \in E$ tel que $x \neq 0$.
-
-    \begin{align*}
-         \frac{N'((f + g)(x))}{N(x)} & = \frac{N'(f(x) + g(x))}{N(x)} \\
+        \begin{align*}
+            \frac{N'((f + g)(x))}{N(x)} & = \frac{N'(f(x) + g(x))}{N(x)} \\
             & \leqslant \frac{N'(f(x)) }{N(x)} + \frac{N'(g(x))}{N(x)} \\
             & \leqslant |||f||| + |||g|||
-    \end{align*}
+        \end{align*}
 
-    Donc par def du sup, $|||f + g||| \leqslant |||f||| + |||g|||$.
+        Donc par définition du sup, $|||f + g||| \leqslant |||f||| + |||g|||$.
+    \end{itemize}
 \end{proof}
-
 
 \begin{proposition}{Sous-multiplicativité de la norme d'opérateur}{}
     Soient $(E, N)$, $(E', N')$, $(E", N")$ trois espaces vectoriels normés sur $\K$, et soient $f \in \mathscr L_c(E, E')$ et $g \in \mathscr L_c(E', E")$.
 
+    \begin{center}
     Alors $g \circ f \in \mathscr L_c(E, E")$ et $|||g \circ f||| \leqslant |||g||| \cdot |||f|||$.
+    \end{center}
 \end{proposition}
 
 \begin{proof}
     Pour $x \in E, \, N'(f(x)) \leqslant |||f||| N(x)$ vrai si $x \neq 0$ par définition 
     de la norme d'opérateur, et si $x = 0$, $N'(f(0)) = N'(0) = 0$.
-    Donc  
+    Donc :
 
     \begin{align*}
         N"(g(f(x))) & \leqslant |||g||| N'(f(x)) \\
@@ -1691,6 +1684,7 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
 \end{proof}
 
 \begin{proposition}{Norme d'algèbre}{}
+
     Pour $f \in \mathscr L_c(E)$, on a $|||f||| = \sup \left\{ \frac{N(f(x))}{N(x)}, \, x \in E \setminus \{0\} \right\}$
     et $|||f|||$ est une norme qui vérifie : 
 
@@ -1716,11 +1710,8 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
 
 \begin{proof}
     On identifie $\K^n = \mathscr M_{n, 1}(\K)$ matrices colonnes qui existe 
-    car $\fonction{}{\K^n}{\K^n}{X}{AX}$ est linéaire et continue car $\K^n$ est de dimension finie. 
-    
+    car $\fonction{\varphi}{\K^n}{\K^n}{X}{AX}$ est linéaire et continue car $\K^n$ est de dimension finie. 
 \end{proof}
-
-
 
 \begin{exemple}
     Posons $N_\infty(A) = \max\{ |a_{i, j}|, \, i, j \in \ninter{1}{n}\}$. 
@@ -1746,57 +1737,49 @@ $\fonction {}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n,
         & \leqslant n N_\infty(A) N_\infty(B)
     \end{align*}
 
-    Donc 
+    Donc :
     \begin{align*}
         N(C) & = n N_\infty(C) \\
         & \leqslant n^2 N_\infty(A) N_\infty(B) \\
         &  \leqslant N(A) N(B)
     \end{align*}
-
-
 \end{exemple}
 
-
-\subsubsection{LHP, étude de $||| \cdot |||_1$ associée à $|| \cdot ||_1$}
-
-
+\subsubsection{Étude de $||| \cdot |||_1$ associée à $|| \cdot ||_1$ - LHP}
 Soit $A \in \mathscr M_n(\K)$, $|||A|||_1 = \sup (\{ ||AX||_1, X \in \K^n, ||X||_1 = 1 \} = z) $.
 
-Soit $X \in \K^n$ tel que $||X||_1 = 1$, c'est à dire $X = (x_1, \ldots, x_n)^T$ et $\sum_{i=1}^n |x_i| = 1$.
+Soit $X \in \K^n$ tel que $||X||_1 = 1$, c'est à dire $X = (x_1, \ldots, x_n)^T$ et $\ds \sum_{i=1}^n |x_i| = 1$.
 
 $AX = \begin{pmatrix}
     y_1 \\
     \vdots \\
     y_n
-\end{pmatrix}$  avec $||AX||_1 = \sum_{i=1}^n |y_i|$, 
+\end{pmatrix}$  avec $\ds ||AX||_1 = \sum_{i=1}^n |y_i|$, 
 or $\displaystyle \forall i, \, y_i = \sum_{j=1}^n a_{i, j} x_j$. 
 
-Donc 
+Donc :
 \begin{align*}
     || AX ||_1 & = \sum_{i=1}^n \left| \sum_{j=1}^n a_{i, j} x_j \right| \\
     & \leqslant \sum_{i=1}^n \sum_{j=1}^n |a_{i, j}| |x_j| \\
     & \leqslant \sum_{j=1}^n |x_j| \sum_{i=1}^n |a_{i, j}| 
 \end{align*}
 
+Posons $\ds k = \max \left\{ \sum_{i=1}^n |a_{i, j}|, j \in \ninter{1}{n} \right\}$.
 
-Posons $k = \max \left\{ \sum_{i=1}^n |a_{i, j}|, j \in \ninter{1}{n} \right\}$.
-
-Alors $||AX||_1 \leqslant k \sum_{j=1}^n |x_j| = k ||X||_1 = k$.
+Alors $\ds ||AX||_1 \leqslant k \sum_{j=1}^n |x_j| = k ||X||_1 = k$.
 
 
-Soit $j_0$ un indice tel que $k = \sum_{i=1}^n |a_{i, j_0}|$, et posons pour 
+Soit $j_0$ un indice tel que $\ds k = \sum_{i=1}^n |a_{i, j_0}|$, et posons pour 
 $j \neq j_0, \, x_j = 0$ et $x_{j_0} = 1$ on a bien $||X||_1 = 1$ et
-$||AX||_1 = \sum_{i=1}^n |a_{i, j_0} x_{j_0}| = k$.
+$\ds ||AX||_1 = \sum_{i=1}^n |a_{i, j_0} x_{j_0}| = k$.
 
 Donc $k$ est un majorant de $z$ qui est atteint en $X$,
 
 Donc $k = |||A|||_1$.
 
-Donc $|||A|||_1 = \max \left\{ \sum_{i=1}^n |a_{i, j}|, j \in \ninter{1}{n} \right\}$.
+Donc $\ds |||A|||_1 = \max \left\{ \sum_{i=1}^n |a_{i, j}|, j \in \ninter{1}{n} \right\}$.
 
-
-\subsubsection{LHP, étude de $||| \cdot |||_\infty$ associée à $|| \cdot ||_\infty$}
-
+\subsubsection{Étude de $||| \cdot |||_\infty$ associée à $|| \cdot ||_\infty$ - LHP}
 Soit $A \in \mathscr M_n(\K)$, $|||A|||_\infty = \sup (\{ ||AX||_\infty, X \in \K^n, ||X||_\infty = 1 \} = z) $.
 
 Soit $X \in \K^n$ tel que $||X||_\infty = 1$, c'est à dire $X = (x_1, \ldots, x_n)^T$ et $\max(|x_1|, \ldots, |x_n|) = 1$.
@@ -1816,36 +1799,32 @@ or $\displaystyle \forall i, \, y_i = \sum_{j=1}^n a_{i, j} x_j$. Donc
 
 Donc $\displaystyle ||AX||_\infty = \max \left\{ \sum_{j = 1 }^{n } |a_{i, j}|, i \in \ninter 1 n  \right\} = k$
 
-Soit $i_0$ un indice tel que $k = \sum_{j=1}^n |a_{i_0, j}|$, et posons 
+Soit $i_0$ un indice tel que $\ds k = \sum_{j=1}^n |a_{i_0, j}|$, et posons 
 $X = (x_1, \ldots, x_n)^T$. Notons $\forall j, \, a_{i_0, j} = |a_{i_0, j}| e^{i \theta_j}$ 
 
 Posons $x_j = e^{-i \theta_j}$, alors $||X||_\infty = 1$.
 
-Alors $|y_{i_0}| = \left|\sum_{j = 1 }^{n } | a_{i_0, j} | e^{i \theta_j e^{-i \theta_j}}\right| = \sum_{j=1}^n |a_{i_0, j}| = k$.
+Alors $\ds |y_{i_0}| = \left|\sum_{j = 1 }^{n } | a_{i_0, j} | e^{i \theta_j e^{-i \theta_j}}\right| = \sum_{j=1}^n |a_{i_0, j}| = k$.
 
 Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ et $k = \sup Z$. 
 
-
 \subsection{Applications multilinéaires}
+\begin{theoreme}{Continuité des applications $p$-linéaires}{}
 
-\begin{theoreme}{Continuité applications $p$-linéaires}{}
-
-    Soient $(E_1, N_1), \ldots, (E_p, N_p)$ et $(E', N')$ des espaces vectoriels normés et 
+    Soient $(E_1, N_1), \ldots, (E_p, N_p)$ et $(E', N')$ des espaces vectoriels normés.
     
-    $\fonction{f}{E_1 \times \cdots \times E_p}{E'}{(x_1, \ldots, x_p)}{f(x_1, \ldots, x_p)}$ 
+    Soit $\fonction{f}{E_1 \times \cdots \times E_p}{E'}{(x_1, \ldots, x_p)}{f(x_1, \ldots, x_p)}$ 
     $p$-linéaire. 
 
-    Alors $f$ est continue ssi $$\exists c > 0, \, \forall (x_1, \ldots, x_p) \in E_1 \times \cdots \times E_p, \, N'(f(x_1, \ldots, x_p)) \leqslant c \prod_{i=1}^p N_i(x_i)$$
+    \avspace Alors $f$ est continue ssi $$\exists c > 0, \, \forall (x_1, \ldots, x_p) \in E_1 \times \cdots \times E_p, \, N'(f(x_1, \ldots, x_p)) \leqslant c \prod_{i=1}^p N_i(x_i)$$
 \end{theoreme}
 
 \begin{proof}
-    Non exigible, non fait en classe.
+    Non exigible.
 \end{proof}
 
-\begin{proposition}{Continuité applications $p$-linéaires en dimension finie}{}
-    Soient $(E_1, N_1), \ldots, (E_p, N_p)$ des espaces vectoriels normés de dimension finie et $(E', N')$ un espace vectoriel normé.
-
-    Alors si $f : E_1 \times \cdots \times E_p \to E'$ est $p$-linéaire, alors $f$ est continue.
+\begin{proposition}{}{}
+    Les applications $p$-linéaires d'espace de départ de dimension finie sont continues.
 \end{proposition}
 
 \begin{proof}
@@ -1853,14 +1832,13 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 
     Soient $\displaystyle x_1 = \sum_{i=1}^{n_1} a_{1, i_1} e_{1, i_1} \in E_1$, ..., $\displaystyle x_p = \sum_{i=1}^{n_p} a_{p, i_p} e_{p, i_p} \in E_p$.
 
-    Alors 
-    
+    Alors :
     \begin{align*}
         f(x_1, \ldots, x_p) & = f\left( \sum_{i_1=1}^{n_1} a_{1, i_1} e_{1, i_1}, \ldots, \sum_{i_p=1}^{n_p} a_{p, i_p} e_{p, i_p} \right) \\
         & = \sum_{i_1=1}^{n_1} \cdots \sum_{i_p=1}^{n_p} a_{1, i_1} \cdots a_{p, i_p} f(e_{1, i_1}, \ldots, e_{p, i_p}) 
     \end{align*}
 
-    Donc 
+    Donc :
     \begin{align*}
         N'(f(x_1, \ldots, x_p)) & \leqslant \sum_{i_1=1}^{n_1} \cdots \sum_{i_p=1}^{n_p} |a_{1, i_1}| \cdots |a_{p, i_p}| N'(f(e_{1, i_1}, \ldots, e_{p, i_p})) \\
         & \leqslant \underbrace{\left( \sum_{i_1=1}^{n_1} \cdots \sum_{i_p=1}^{n_p} N'(f(e_{1, i_1}, \ldots, e_{p, i_p})) \right)}_{ = K \geqslant 0} \prod_{j=1}^p \left( N_{\infty, j}(x_j) \right)
@@ -1880,7 +1858,7 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
     et la continuité par le critère. 
 
     \lvspace Soit $n, p, q \in \N^*$, $\fonction{}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M_{n, q}(\K)}{(A, B)}{AB}$ est
-    continue car bilinéaire depuis des espaces de dimesnion finie. 
+    continue car bilinéaire depuis des espaces de dimension finie. 
 
 
     \lvspace Soient $E, F, G$ espaces vectoriels de dimension finie.
@@ -1891,20 +1869,18 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 \end{exemple}
 
 \section{Compacts d'un espace vectoriel normé}
-
 \begin{definition}{Compact}{}
     Soit $A \subset E$. 
 
     On dit que $A$ est compact (ou que $A$ est un compact) ssi toute suite de $A$ possède une 
-    valeur d'adhérence dans $A$.\\
+    valeur d'adhérence dans $A$.
 
-    C'est à dire pour toute suite $(u_n)_{n \in \N}$ de $A$, on peut en extraire une suite 
-    $(u_{\varphi(n)})_{n \in \N}$ telle que $u_{\varphi(n)} \to \ell \in A$.
+    \avspace C'est à dire pour toute suite $(u_n)$ de $A$, on peut en extraire une suite 
+    $(u_{\varphi(n)})$ telle que $u_{\varphi(n)} \to \ell \in A$.
 \end{definition}
 
 \begin{proposition}{Précompacité - HP}{}
-Soit $(E,N)$ un evn et $A\subset E$ un compact.
-
+Soit $(E,N)$ un espace vectoriel normé et $A\subset E$ un compact.
 Alors pour tout $\varepsilon >0$ il existe un entier $n>0$ et des points $x_1,...,x_n$ de $A$ tels que :
 
 $$A \subset \bigcup_{i=1}^n B(x_i,\varepsilon)$$
@@ -1912,14 +1888,16 @@ $$A \subset \bigcup_{i=1}^n B(x_i,\varepsilon)$$
 
 \begin{proof}
 On raisonne par l'absurde en supposant qu'il existe $\varepsilon>0$ tel que pour tout $n \in \N^*$ et tous points $x_1,....,x_n$ de $A$ , il existe un point $y\in A$ tel que 
-$y \notin \bigcup_{i=1}^n B(x_i,\varepsilon)$.
+$\ds y \notin \bigcup_{i=1}^n B(x_i,\varepsilon)$.
 
 On va pouvoir construire par récurrence une suite $(y_n)_{n \in \N}$ de points de $A$ telle que pour tout $n$ et pour tout $i<n$ , $d(y_n,y_i)\geqslant \varepsilon$.
 
-En effet : 
-on prend $y_1$ quelconque.\\
-On suppose avoir construit $y_1,...,y_n$ pour un certain $n$.\\
-On applique la propriété à ces points et on pose $y_{n+1}=y$.\\
+En effet :
+\begin{itemize}
+    \item On prend $y_1$ quelconque.
+    \item On suppose avoir construit $y_1,...,y_n$ pour un certain $n$.
+    \item On applique la propriété à ces points et on pose $y_{n+1}=y$.
+\end{itemize}
 
 Mais $A$ est compact donc on peut extraire de cette suite une suite $y_{\varphi(n)}$ qui converge vers un $\ell \in A$.\\
 Mézalors à cause de la propriété, comme $\varphi(n+1)>\varphi(n)$ , $d(y_{\varphi(n+1)},y_{\varphi(n)})\geqslant \varepsilon$ et donc à la limite $0\geqslant \varepsilon$ ce qui est absurde...\\
@@ -1944,19 +1922,19 @@ Commençons par prouver le lemme, raisonnons par l'absurde.
 Supposons que pour tout $r>0$ il existe $x\in A$ tel que pour tout $i \in I$ , il existe $y\in B(x,r)$. tel que que $y \notin U_i$.
 Utilisons ce résultat pour $r=\frac 1{n+1}$ avec $n$ naturel.
 
-Cela fournit un $x_n \in A$ tel que pour tout $i \in I$ , il existe $y\in B(x_n,\frac 1{n+1})$. tel que que $y \notin U_i$. \\
+Cela fournit un $x_n \in A$ tel que pour tout $i \in I$ , il existe $y\in B\left(x_n,\frac 1{n+1}\right)$. tel que que $y \notin U_i$. \\
 
-La compacité de $A$ nous permet d'extraire de la suite $(x_n)$ une suite $(x_{\varphi(n)}$ qui converge vers un $x\in A$.\\
+La compacité de $A$ nous permet d'extraire de la suite $(x_n)$ une suite $(x_{\varphi(n)})$ qui converge vers un $x\in A$.\\
 
-Comme $A \subset \bigcup_{i \in I}\'eU_i$ il existe un indice $j \in I$ tel que $x \in U_j$.\\
+Comme $A \subset \bigcup_{i \in I} U_i$ il existe un indice $j \in I$ tel que $x \in U_j$.\\
 De plus,  comme $U_j$ est ouvert il existe un $R>0$ tel que $B(x,R) \subset U_j$.\\
 
 Choisissons un entier $N$ tel que $\frac 1{N+1}\leqslant \frac R 3$.\\
-Du fait de la convergence de la suite il existe un rang $n_0\geq N $ tel que $x_{\varphi(n_0)} \in B(x,\frac R 3)$.
-On a donc (par la propri\'et\'e) l'existence d'un $y \in B(x_{\varphi(n)},\frac 1{\varphi(n)+1})$. tel que que $y \notin U_j$.\\
-M\'ezalors :
+Du fait de la convergence de la suite il existe un rang $n_0\geqslant N $ tel que $x_{\varphi(n_0)} \in B\left(x,\frac R 3\right)$.
+On a donc (par la propriété) l'existence d'un $y \in B\left(x_{\varphi(n)},\frac 1{\varphi(n)+1}\right)$. tel que que $y \notin U_j$.\\
+Mézalors :
 $$d(x,y) \leqslant d(x,x_{\varphi(n_0)})+d(x_{\varphi(n_0)},y) \leqslant \frac R 3 + \frac 1{\varphi(n)+1}\leqslant \frac {2R}3 <R$$
-Donc $y \in B(x,R)$ donc $y \in U_j$ et la contradiction attendue !!!\\
+Donc $y \in B(x,R)$ donc $y \in U_j$ et la contradiction attendue !
 \end{proof}
 
 \begin{proof}
@@ -1968,7 +1946,7 @@ Utilisons maintenant la propriété de précompacité (montrée plus haut) appli
 
 Il existe donc un nombre fini de $x_1,...,x_N$ de $A$ tels que `
 $$A \subset \bigcup_{i=1}^N B(x_i,\varepsilon)$$
-mézalors :
+Mézalors :
 $$A \subset \bigcup_{i=1}^N U_{i_x}$$ 
 et la conclusion ! \\
 
@@ -1985,16 +1963,15 @@ Supposons dans un premier temps que $F \cap A \neq \emptyset$.\\
 
 Soit $\ell \in F \cap A$.
 
-Alors pour tout entier $N$, $\ell \in \bigcap_{n=N}^{+\infty} F_n$.
+Alors pour tout entier $N$, $\ds \ell \in \bigcap_{n=N}^{+\infty} F_n$.
 
 Donc pour tout $n\geq N$ , $\ell \in F_n$ et donc par définition de l'adhérence  pour tout $\varepsilon>0$, $\{x_k k\geqslant n\} \cap B(\ell, \varepsilon) \neq \emptyset$
-et donc il existe $k\geq N$ tel que $x_k \in  B(\ell, \varepsilon) $.\\
-Ceci montre que $\ell$ est une valeur d'adh\'erence de la suite $(x_n)_{n \in \N}$ et donc $A$ est compact !!!\\
+et donc il existe $k\geqslant N$ tel que $x_k \in  B(\ell, \varepsilon) $.\\
+Ceci montre que $\ell$ est une valeur d'adh\'erence de la suite $(x_n)_{n \in \N}$ et donc $A$ est compact !\\
 
-Reste à montrer que $F \cap A \neq \emptyset$.\\
+Reste à montrer que $F \cap A \neq \emptyset$.
 
 Raisonnons par l'absurde.
-
 Alors en posant pour tout $n$ , $U_n=E-F_n$ ce sont des ouverts tels que :
 $$A \subset \bigcup_{n\in \N} U_n$$
 et donc grace à l'hypothèse, il existe un nombre fini d'ouverts $U_{\varphi(1)},...,U_{\varphi(N)}$ tels que :
@@ -2005,7 +1982,6 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 \end{proof}
 
 \subsection{Propriétés des compacts}
-
 \begin{proposition}{Propriétés des compacts}{}
     \begin{enumerate}
         \item Un compact est fermé et borné.
@@ -2029,44 +2005,44 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
     \begin{enumerate}
         \item Soit $A \subset E$ un compact. Montrons que $A$ est fermé.
 
-        Soit $(u_n)_{n \in \N}$ une suite de $A$ qui converge vers $\ell \in E$.
+        Soit $(u_n)$ une suite de $A$ qui converge vers $\ell \in E$.
 
-        $A$ étant compact, il existe une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers
+        $A$ étant compact, il existe une sous-suite $(u_{\varphi(n)})$ qui converge vers
         $\ell' \in A$. Or $u_{\varphi(n)} \to \ell$ donc $\ell = \ell' \in A$, donc $A$ est fermé.
 
         Supposons que $A$ n'est pas borné, pour tout $n \in \N$, il existe 
         $x_n \in A$ tel que $N(x_n) > n$.
 
-        $A$ étant compact, on peut extraire de $(x_n)_{n \in \N}$ une sous-suite $(x_{\varphi(n)})_{n \in \N}$ qui converge vers $\ell \in A$.
+        $A$ étant compact, on peut extraire de $(x_n)$ une sous-suite $(x_{\varphi(n)})$ qui converge vers $\ell \in A$.
 
-        Donc $(x_{\varphi(n)})_{n \in \N}$ est bornée, or $\forall n \in \N, \, N(x_{\varphi(n)}) > \varphi(n) \geqslant n$, absurde 
+        Donc $(x_{\varphi(n)})$ est bornée, or $\forall n \in \N, \, N(x_{\varphi(n)}) > \varphi(n) \geqslant n$, absurde 
 
         Donc $A$ est borné.
 
         \item Soit $V$ un fermé relatif de $A$. Aors $V = \overline V \cap A$. Montrons 
         que $V$ est compact. 
 
-        Soit $(u_n)_{n \in \N}$ une suite de $V$. $A$ étant compact, on peut en extraire 
-        une sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers $\ell \in A$.
+        Soit $(u_n)$ une suite de $V$. $A$ étant compact, on peut en extraire 
+        une sous-suite $(u_{\varphi(n)})$ qui converge vers $\ell \in A$.
 
         $u_{\varphi(n)} $ est une suite de $V$, donc $\ell \in \overline V$. Donc 
         $\ell \in V$. Donc $V$ est compact.
 
         \item Toute suite convergente possède une unique valeur d'adhérence d'où $\Rightarrow$. 
 
-        $\Leftarrow$ Soit $(u_n)_{n \in \N}$ une suite d'un compact $A$. Supposons qu'elle possède 
+        $\Leftarrow$ Soit $(u_n)$ une suite d'un compact $A$. Supposons qu'elle possède 
         une unique valeur d'adhérence $a$.
 
-        Supposons par l'absurde que $(u_n)_{n \in \N}$ ne converge pas vers $a$.
+        Supposons par l'absurde que $(u_n)$ ne converge pas vers $a$.
 
         Alors $ \exists \varepsilon > 0, \, \forall N \in \N, \, \exists n \geqslant N, \, d(u_n, a) > \varepsilon$.
 
         En particulier, $M_\varepsilon = \{ n \in \N, \, d(u_n, a) > \varepsilon \}$ est infini. 
 
         Numérotons $\varphi(0) < \varphi(1) < \ldots < \varphi(n) < \ldots$ les éléments
-        de $M_\varepsilon$. Alors $(u_{\varphi(n)})_{n \in \N}$ est une suite de $A$, donc 
+        de $M_\varepsilon$. Alors $(u_{\varphi(n)})$ est une suite de $A$, donc 
         possède une valeur d'adhérence $b \in A$ qui est aussi une valeur d'adhérence de 
-        $(u_n)_{n \in \N}$. Par hypothèse, $b = a$.
+        $(u_n)$. Par hypothèse, $b = a$.
 
         Or $\forall n \in \N, \, N(u_{\varphi(n)} - a) > \varepsilon$, 
         donc à la limite $0 \geqslant \varepsilon$, absurde.
@@ -2074,13 +2050,13 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
         \item Soient $(E_1, N_1), \ldots, (E_p, N_p)$ des evn tels que 
         $\forall i, \, A_i$ compact de $E_i$ et $A = A_1 \times \cdots \times A_p$. 
 
-        Soit $(u_n)_{n \in \N}$ une suite de $A$.
+        Soit $(u_n)$ une suite de $A$.
 
         Notons $u_n = (u_{n, 1}, \ldots, u_{n, p})$ avec $(u_{n, 1})$ une suite de $A_1$, et $A_1$ est un compact. 
 
-        On peut donc en extraire une sous-suite $(u_{\varphi_1(n), 1})_{n \in \N}$ qui converge vers $\ell_1 \in A_1$.
+        On peut donc en extraire une sous-suite $(u_{\varphi_1(n), 1})$ qui converge vers $\ell_1 \in A_1$.
 
-        De même, on peut extraire de $(u_{\varphi_1(n), 2})_{n \in \N}$ une sous-suite bla bla bla 
+        De même, on peut extraire de $(u_{\varphi_1(n), 2})$ une sous-suite bla bla bla 
 
         De proches en proches on obtient $u_{\varphi_1 \circ \ldots \circ \varphi_p(n)} \to \ell_p \in A_p$.+
 
@@ -2091,25 +2067,21 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 \end{proof}
 
 \subsection{Cas de la dimension finie}
-
 \begin{theoreme}{Compacts en dimension finie}{}
     Si $(E, N)$ est un espace vectoriel normé de dimension finie, tout fermé borné de $E$ est compact. Ainsi, en 
     dimension finie les compacts \textbf{sont} les fermés bornés. 
 \end{theoreme}
 
-\idee{
-    Bolzano-Weierstrass.
-}
+\idee{Bolzano-Weierstrass.}
 
 \begin{proof}
-    Soit $A$ un fermé borné de $E$, soit $(u_n)_{n \in \N}$ une suite de $A$.
+    Soit $A$ un fermé borné de $E$, soit $(u_n)$ une suite de $A$.
 
     Alors $(u_n)$ est bornée donc par Bolzano-Weierstrass, on peut en extraire une
-    sous-suite $(u_{\varphi(n)})_{n \in \N}$ qui converge vers $\ell \in E$.
+    sous-suite $(u_{\varphi(n)})$ qui converge vers $\ell \in E$.
 
     Or $A$ est fermé donc $\ell \in A$. Donc $A$ est compact.
 \end{proof}
-
 
 \begin{theoreme}{Riesz - HP}{}
     Si $(E, N)$ est de dimension infinie, $B'(0, 1)$ n'est pas compacte. 
@@ -2122,7 +2094,7 @@ $\Leftarrow$ Si l'espace est de dimension finie, la boule unité fermée est un 
 
 $\Rightarrow$ Réciproquement supposons que $E$ est n'est pas de dimension finie.
 
-On va construire par récurrence une famille  $(e_n)_{n \in \N}$ de vecteurs de norme $1$ tels que pour tout $i\neq j$ , 
+On va construire par récurrence une famille  $(e_n)$ de vecteurs de norme $1$ tels que pour tout $i\neq j$ , 
 $d(e_i,e_j) \geqslant \frac 1 2$
 
 \uline{Initialisation :} On choisit un vecteur non nul $u$ de $E$ et on pose $e_1=\frac u{N(u)}$.
@@ -2152,18 +2124,17 @@ $$N(w-e_i)> \frac{m}{m_0}\geqslant \frac 1 2 $$
 
 donc $e_{n+1}=w$ convient. \\
 
-On peut maintenant montrer que $B'(0,1)$ n'est pas compacte en considérant la suite  $(e_n)_{n \in \N}$.\\
+On peut maintenant montrer que $B'(0,1)$ n'est pas compacte en considérant la suite  $(e_n)$.\\
 Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait une suite extraite 
- $(e_{\varphi(n)})_{n \in \N}$ qui converge vers $\ell$.
+$(e_{\varphi(n)})$ qui converge vers $\ell$.
 
- Et donc pour $n$ assez grand , $n\geqslant n_0$, 
- $$N(e_{\varphi(n)}-\ell) \leq \frac 1 8$$
+Et donc pour $n$ assez grand , $n\geqslant n_0$, 
+$$N(e_{\varphi(n)}-\ell) \leqslant \frac 1 8$$
  
  Mézalors par l'inégalitée triangulaire : $$N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)})\leqslant \frac 1 4 $$ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
 \end{proof}
 
 \subsection{Compacité et continuité}
-
 \begin{theoreme}{Heine, uniforme continuité}{}
     Toute fonction continue sur un compact est uniformément continue. 
 \end{theoreme}
@@ -2180,7 +2151,7 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
     Soit $n \in \N^*$, $\eta = \frac 1 n$ fournit $x_n, y_n \in A$ tels que $N(x_n - y_n) \leqslant \frac 1 n$
     et $N'(f(x_n) - f(y_n)) > \varepsilon$.
 
-    $A^2$ est compact, donc on peut extraire $(x_{\varphi(n)}, y_{\varphi(n)})_{n \in \N}$ qui converge vers $(\ell_1, \ell_2) \in A^2$.
+    $A^2$ est compact, donc on peut extraire $(x_{\varphi(n)}, y_{\varphi(n)})$ qui converge vers $(\ell_1, \ell_2) \in A^2$.
     $\forall n \in \N, \, N(x_{\varphi(n) - y_{\varphi(n)}}) \leqslant \frac 1 {\varphi(n)}$ et $N'(f(x_{\varphi(n)}) - f(y_{\varphi(n)})) > \varepsilon$.
 
     En passant à la limite, on obtient $N(\ell_1 - \ell_2) \leqslant 0$ et comme $f$ continue, 
@@ -2193,13 +2164,13 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
     L'image d'un compact par une application continue est un compact. 
 \end{theoreme}
 
-
 \idee{Suites avec fonction.}
+
 \begin{proof}
     Soit $A \subset E$ compact et $f : A \to E'$ continue. Considérons $B = f(A)$. 
 
-    Soit $(b_n)_{n \in \N}$ suite de $B$. Alors $\forall n \in \N, \, \exists a_n \in A, \, b_n = f(a_n)$
-    $(a_n)_{n \in \N}$ est une suite de $A$ qui est compact, on peut donc en extraire 
+    Soit $(b_n)$ suite de $B$. Alors $\forall n \in \N, \, \exists a_n \in A, \, b_n = f(a_n)$,
+    $(a_n)$ est une suite de $A$ qui est compact, on peut donc en extraire 
     $a_{\varphi(n)} \limit n {+ \infty} \ell \in A$. 
 
     Donc $b_{\varphi(n)} = f(a_{\varphi(n)}) \limit n {+ \infty} f(\ell) $ car $f$ continue en 
@@ -2224,11 +2195,9 @@ Si cette suite de $B'(0,1)$ possédait une valeur d'adhérence $\ell$ on aurait 
     Or $f(A)$ fermé donc $\sup(f(A)) \in f(A)$, donc c'est un max, idem pour l'inf. 
 \end{proof}
 
-\subsubsection{Équivalence des normes en dimension finie}
-
-Montrons le théorème d'équivalence des normes en dimension finie.
-
-Démonstration non exigible.
+\begin{theoreme}{}{}
+    Toutes les normes sont équivalentes en dimension finie.
+\end{theoreme}
 
 \idee{
     Montrer que toute norme est équivalente à la norme infinie, et montrer 
@@ -2236,7 +2205,8 @@ Démonstration non exigible.
     infinie est lipschitzienne. 
 }
 
-\begin{proof}
+\begin{proof}(non exigible)
+
     Soit $E$ un $\K$-ev de dimension finie. 
 
     Soit $B = (e_1, \ldots, e_p)$ une base de $E$, soit $N$ une norme sur $E$ et $N_\infty$ définie par 
@@ -2248,7 +2218,7 @@ Démonstration non exigible.
 
     Soient $x, y \in S_\infty(0, 1)$. Alors $| f(x) - f(y)| = |N(x) - N(y)| \leqslant N(x - y)$ par la deuxième inégalité triangulaire. 
 
-    Or \begin{align*}
+    Or : \begin{align*}
         N(x - y) & = N\left( \sum_{i=1}^p (x_i - y_i) e_i \right) \\
         & \leqslant \sum_{i=1}^p |x_i - y_i| N(e_i) \\
         & \leqslant \left( \sum_{i=1}^p N_\infty(x - y) N(e_i) \right) \\
@@ -2274,7 +2244,6 @@ Démonstration non exigible.
 \end{proof}
 
 \section{Connexité par arcs}
-
 Dans ce paragraphe on prendra $\K = \R$.
 
 \begin{definition}{Chemin}{}
@@ -2285,14 +2254,12 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{definition}
 
 \subsection{Connexité par arcs}
-
 \begin{definition}{Connexité par arcs}{}
     Soit $A \subset E$. 
     On dit que $A$ est connexe par arcs ssi $\forall (a, b) \in A^2, \, \exists f \in \mathscr C(\inter 0 1, A), f(0) = a \text{ et } f(1) = b$. 
 
     C'est à dire que pour tout $(a, b) \in A^2$, il existe un chemin de $A$ reliant $a$ à $b$.
 \end{definition}
-
 
 \begin{definition}{Ensemble étoilé}{}
     Soit $A \subset E$.
@@ -2338,7 +2305,6 @@ Dans ce paragraphe on prendra $\K = \R$.
 \textbf{\uline{Conséquence :}} tout partie convexe est connexe par arcs (l'ensemble vide est trivialement connexe par arcs).
 
 \subsection{Relation d'équivalence}
-
 \begin{theoreme}{Être joint par un chemin est une relation d'équivalence}{}
 
     Soit $A \subset E$ non vide.
@@ -2425,12 +2391,12 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{proof}
 
 \subsection{Application à \texorpdfstring{$\R$}{R}}
-
 \begin{theoreme}{Connexité par arcs dans $\R$}{}
     Les parties connexes par arcs de $\R$ sont les intervalles.
 \end{theoreme}
 
-    \marginenote{Remarque}{On peut tuer la preuve en remarquant qu'un intervalle est convexe et donc que $A$ est étoilée par rapport à un de ses points et donc que $A$ est connexe par arcs.}
+\marginenote{Remarque}{On peut tuer la preuve en remarquant qu'un intervalle est convexe et donc que $A$ est étoilée par rapport à un de ses points et donc que $A$ est connexe par arcs.}
+
 \begin{proof}
     Soit $A \subset \R$. 
 
@@ -2492,7 +2458,6 @@ On a bien $M$ continue; $M(0)=A$ , $M(1)=B$ et pour tout $t$ , $det(M(t))=P(t) \
 Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est connexe par arcs.
 
 \subsection{Connexité - Hors Programme}
-
 \begin{definition}{Connexité - HP}{}
     Soit $A \subset E$. 
     On dit que $A$ est connexe ssi toute application $f : A \to \{0, 1\}$ continue est constante. 
@@ -2512,6 +2477,7 @@ Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est conn
 \end{proposition}
 
 \idee{Absurde et TVI.}
+
 \begin{proof}
     Soit $A \subset E$ connexe par arcs et $f : A \to \{0, 1\}$ continue. Supposons $f$ non constante. 
 
@@ -2522,11 +2488,10 @@ Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est conn
     Donc $f \circ \varphi : \inter 0 1 \to \{0, 1\}$ est continue, $f \circ \varphi(0) = 0$ et $f \circ \varphi (1) = 1$. 
 
     Or $\frac 1 2 \in \inter 0 1$, par le TVI, il existe $t \in \inter 0 1$, $f \circ \varphi (t) = \frac 1 2$, absurde. 
-    
 \end{proof}
 
 \begin{exemple}
-    $A \{(t, \sin \frac 1 t), t > 0\} \cup \{(0, u), \, u \in \inter {-1} 1\}$
+    $A \left\{\left(t, \sin \frac 1 t\right), t > 0\right\} \cup \{(0, u), \, u \in \inter {-1} 1\}$
 
     On montre que $A$ est connexe mais que $A$ n'est pas connexe par arcs.
 \end{exemple}

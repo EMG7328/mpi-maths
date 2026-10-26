@@ -26,6 +26,8 @@
 \usetikzlibrary{patterns.meta}
 \RequirePackage{fontspec}
 \RequirePackage{unicode-math}
+\RequirePackage{booktabs}
+\RequirePackage{array}
 \RequirePackage{fontawesome5}
 \RequirePackage{graphicx}
 \RequirePackage{scrlayer-notecolumn}

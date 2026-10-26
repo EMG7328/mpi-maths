@@ -6,7 +6,7 @@ On prendra $\K = \C$ ou $\K = \R$ et $(E,N)$ un $\K$-espace vectoriel normé.
 \begin{definition}{Série}{}
     \index{Serie@Série}
     On appelle série à termes dans $E$ tout couple de suites de $E$ $\left( (u_n)_{n\in\N}, (S_n)_{n\in\N} \right)$ vérifiant :
-    $$\forall n \in \N, \, S_n = \sum_{k=0}^n u_k$$
+    \[\forall n \in \N, \, S_n = \sum_{k=0}^n u_k\]
 
     On appelle $(u_n)_n$ le terme général de la série et $(S_n)_n$ la somme partielle.
 
@@ -25,17 +25,16 @@ On prendra $\K = \C$ ou $\K = \R$ et $(E,N)$ un $\K$-espace vectoriel normé.
 
 \begin{proof}
     Notons $B$ cet ensemble. Alors $B \subset E^{\N} \times E^{\N}$.
-
     \begin{itemize}
         \item  $(0, 0) \in B$
 
         \item Soient $c_1 = \left( (u_n), (S_n) \right)$ et $c_2 = \left( (v_n), (T_n) \right)$ 
         deux séries dans $B$ et $\alpha, \beta \in \K$. 
 
-        Alors $\alpha c_1 + \beta c_2 = \left( (\alpha(u_n)_{n \in \N} + \beta(v_n)_{n \in \N}), (\alpha(S_n)_{n \in \N} + \beta(T_n)_{n \in \N}) \right)$
-        $ = \left( (\alpha u_n + \beta v_n)_{n \in \N}, (\alpha S_n + \beta T_n)_{n \in \N} \right)$
+        Alors $\alpha c_1 + \beta c_2 = \left( (\alpha(u_n)_n + \beta(v_n)_n), (\alpha(S_n)_n + \beta(T_n)_n) \right)$
+        $ = \left( (\alpha u_n + \beta v_n)_n, (\alpha S_n + \beta T_n)_n \right)$
 
-        On a bien pour $n \in \N, \alpha S_n + \beta T_n = \sum_{k=0}^n (\alpha u_k + \beta v_k)$
+        On a bien pour $\ds n \in \N, \alpha S_n + \beta T_n = \sum_{k=0}^n (\alpha u_k + \beta v_k)$
 
         Donc $\alpha c_1 + \beta c_2 \in B$.
     \end{itemize}
@@ -50,7 +49,7 @@ Donc $B$ est un $\K$-espace vectoriel.
     dans $E$. 
 
     La limite de la suite $(S_n)$ est appelée somme de la série et est notée :
-    $$\sum_{n=0}^{+\infty} u_n$$
+    \[\sum_{n=0}^{+\infty} u_n\]
 
     Dans le cas contraire on dit que la série diverge.
 \end{definition}
@@ -60,30 +59,34 @@ Donc $B$ est un $\K$-espace vectoriel.
     \marginenote{Remarque}{La convergence de la série dépend de la norme seulement si $E$ est de dimension infinie.}
     Soit $N$ une norme sur $E$ et $\sum u_n$ une série \textbf{convergente} pour $N$.
 
-    En notant $S_n = \sum_{k=0}^n u_k$, on a donc $S_n \limitnorme{N}{n}{+ \infty} S$.
+    $\ds \forall n_0 \in \N,~R_{n_0} = \sum_{k = n_0 + 1}^{+\infty} u_k$
+    est appelé le reste de rang $n_0$ de la série. 
+\end{definition}
 
-    Pour $n_0 \in \N$, considérons la série $((u_n)_{n \geqslant n_0 + 1}, (T_n)_{n \in \N})$ où
+\begin{proposition}{}{}
+    Pour toute série convergente, $R_{n_0} \to 0$.
+\end{proposition}
+
+\begin{proof}
+    En notant $\ds S_n = \sum_{k=0}^n u_k$, on a $S_n \limitnorme{N}{n}{+ \infty} S$.
+
+    Pour $n_0 \in \N$, considérons la série $((u_n)_{n \geqslant n_0 + 1}, (T_n)_n)$ où
     $\displaystyle \forall n \in \N$, 
     
     $\displaystyle T_n = \sum_{k = n_0 + 1}^{n} u_k$. 
 
     Soit $n \geqslant n_0 + 1$. On a alors $\forall n \in \N, \, T_n = S_n - S_{n_0}$, 
-    donc $T_n \longrightarrow S - S_{n_0}$. Ainsi cette série converge et 
-    $$\sum_{k = n_0 + 1}^{+\infty} u_k = S - S_{n_0}$$
-
-    $\displaystyle R_{n_0} = \sum_{k = n_0 + 1}^{+\infty} u_k$ est appelé le reste de rang $n_0$ de 
-    la série. 
-
-    On a donc $R_{n_0} \longrightarrow 0$.
-
-\end{definition}
+    donc $T_n \to S - S_{n_0}$. Ainsi cette série converge et :
+    \[\sum_{k = n_0 + 1}^{+\infty} u_k = S - S_{n_0}\]
+    
+    Donc $R_{n_0} \to 0$.
+\end{proof}
 
 \begin{exemple}
     Étudions la série $\ds\sum_{n \geqslant 1} \frac 1 {n(n+2)}$. On décompose en éléments simples la somme partielle.
 
     Soit $n \in \N$,
-
-    $$S_n = \sum_{k=1}^n \frac 1 {n(n+2)} = \sum_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}$$
+    \[S_n = \sum_{k=1}^n \frac 1 {n(n+2)} = \sum_{k=1}^n - \frac 1 2 \left( \frac 1 k + \frac {-1} {k+2}\right) = \frac 1 2 + \frac 1 4 - \frac 1 {2n+2} - \frac 1 {2n+4}\]
 
     Donc $S_n \limit{n}{+\infty} \frac 3 4$ donc la série converge.
 \end{exemple}
@@ -96,14 +99,13 @@ Donc $B$ est un $\K$-espace vectoriel.
     Cette série est appelée série télescopique. 
 
     En cas de convergence, on a : 
-    $$a_n \limit{n}{+ \infty} \left( \sum_{k = 1 }^{+ \infty } (a_k - a_{k-1}) \right) + a_0$$
+    \[a_n \limit{n}{+ \infty} \left( \sum_{k = 1 }^{+ \infty } (a_k - a_{k-1}) \right) + a_0\]
 \end{theoreme}
 
 \begin{proof}
     Notons $(S_n)$ la somme partielle de cette série. 
 
-    On a $\forall n \geqslant 1, $
-
+    On a $\forall n \geqslant 1$,
     \begin{align*}
         S_n & = \sum_{k=1}^n (a_k - a_{k-1}) \\
             & = \sum_{k=1}^n a_k - \sum_{j=0}^{n-1} a_j \\
@@ -118,21 +120,21 @@ Donc $B$ est un $\K$-espace vectoriel.
     
     Pour cela montrons que $\ds u_n = \left(\sum^n_{k=1} \frac 1 k\right) - \ln(n)$ converge.
 
-    $$u_{n+1} - u_n = \frac 1 {n+1} - \ln(n+1) + \ln(n) = \frac 1 {n+1} - \ln\left(1 + \frac 1 n\right) = O\left(\frac 1 {n^2}\right)$$
+    \[u_{n+1} - u_n = \frac 1 {n+1} - \ln(n+1) + \ln(n) = \frac 1 {n+1} - \ln\left(1 + \frac 1 n\right) = O\left(\frac 1 {n^2}\right)\]
     
     Par un théorème qu'on prouvera plus tard, $(u_n)$ converge.
 \end{exemple}
 
 \begin{theoreme}{Limite du terme général}{}
     Le terme général d'une série convergente tend vers $0_E$, et par contraposée :
-    
-    \center{si $u_n \not \longrightarrow 0_E$, alors la série diverge grossièrement.}
+    \begin{center}
+    si $u_n \not \longrightarrow 0_E$, alors la série diverge grossièrement.
+    \end{center}
 \end{theoreme}
 
 \begin{remarque}
     Réciproque fausse avec $u_n = \ln(n + 1) - \ln(n)$ par exemple. 
 \end{remarque}
-
 
 \begin{proof}
     Supposons que la série $\sum u_n$ converge, et notons $\displaystyle S_n = \sum_{k=0}^n u_k$ sa somme partielle.
@@ -143,8 +145,9 @@ Donc $B$ est un $\K$-espace vectoriel.
     L'ensemble des séries convergentes est un $\K$-espace vectoriel.
 
     Si on le note $C$, l'application $\fonction{}{C}{E}{\sum_{n \geqslant 0} u_n}{\sum_{n = 0}^{+\infty} u_n}$ 
-    est linéaire, c'est à dire si $\sum u_n$ et $\sum v_n$ sont 2 séries convergentes et
-    $\alpha, \beta \in \K$, alors $\sum (\alpha u_n + \beta v_n)$ est une série convergente.
+    est linéaire, c'est à dire si $\sum u_n$ et $\sum v_n$
+    
+    \svspace sont deux séries convergentes et $\alpha, \beta \in \K$, alors $\sum (\alpha u_n + \beta v_n)$ est une série convergente.
 \end{proposition}
 
 \begin{remarque}
@@ -160,7 +163,6 @@ Donc $B$ est un $\K$-espace vectoriel.
     Donc la combinaison linéaire de deux séries convergentes est une série convergente.
 \end{proof}
 
-
 \begin{proposition}{Convergence par les coordonnées}{}
     On suppose $E$ de dimension $p \in \N$, et posons $B = (b_1, \ldots, b_p)$ une base de $E$.
     Soit $\sum u_n$ une série de $E$. 
@@ -170,7 +172,7 @@ Donc $B$ est un $\K$-espace vectoriel.
     Alors la série $\sum u_n$ converge ssi $\forall j \in \ninter{1}{p}, \, \sum u_{n,j}$ converge, 
 
     et on a alors :
-    $$\sum_{n = 0}^{+\infty} u_n = \sum_{j = 1}^p \left( \sum_{n = 0}^{+\infty} u_{n,j} \right) b_j$$
+    \[\sum_{n = 0}^{+\infty} u_n = \sum_{j = 1}^p \left( \sum_{n = 0}^{+\infty} u_{n,j} \right) b_j\]
 \end{proposition}
 
 \begin{proof}
@@ -200,12 +202,10 @@ Donc $B$ est un $\K$-espace vectoriel.
 
 \begin{theoreme}{Séries géométriques}{}
     Soit $a \in \C$. Alors la série $\sum_{n \geqslant 0} a^n$ converge ssi $\abs{a} < 1$, 
-    et on a : $$\forall n_0 \in \N, \, \sum_{n = n_0}^{+ \infty} a^n = \frac{a^{n_0}}{1 - a}$$
+    et on a : \[\forall n_0 \in \N, \, \sum_{n = n_0}^{+ \infty} a^n = \frac{a^{n_0}}{1 - a}\]
 \end{theoreme}
 
-\idee{
-    Formule suite géométrique.
-}
+\idee{Formule suite géométrique.}
 
 \begin{proof}
     Si $a \neq 1$ : 
@@ -266,23 +266,20 @@ Donc $B$ est un $\K$-espace vectoriel.
     Donc $S_n \leqslant \frac 1 {s - 1} + 1$.
 
     Donc $(S_n)$ est croissante et majorée, donc elle converge (théorème de la limite monotone).
-
 \end{proof}
 
 \begin{proposition}{Série harmonique}{}
     $\ds \sum_{n \geqslant 1} \frac 1 n$ diverge et (LHP)
     $\ds \sum_{k = 1 }^{n } \frac 1 k = \ln(n) + \gamma + o(1)$ où $\gamma \approx 0,577$ est la constante d'Euler.
     Donc :
-    $$\ds \sum_{k = 1}^{n} \frac 1 k - \ln(n) \limit{n}{+ \infty} \gamma$$
+    \[\sum_{k = 1}^{n} \frac 1 k - \ln(n) \limit{n}{+ \infty} \gamma\]
 \end{proposition}
 
 \begin{remarque}
     À savoir refaire.
 \end{remarque}
 
-\idee{
-    Poser une série télescopique.
-}
+\idee{Poser une série télescopique.}
 
 \begin{proof}
     Posons pour $n \geqslant 1$, $\displaystyle a_n = \left( \sum_{k = 1 }^{n } \frac 1 k \right) - \ln(n)$.
@@ -302,7 +299,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 
     Donc $\ds \sum_{k=2}^n b_n \limit{n}{+ \infty} \alpha\in\R$ donc pour $n \geqslant 2$,
 
-    $$\sum_{k=2}^{n} b_n  = \sum_{k=2}^{n} a_k - a_{k-1} = a_n - a_1\limit{n}{+\infty} \alpha$$
+    \[\sum_{k=2}^{n} b_n  = \sum_{k=2}^{n} a_k - a_{k-1} = a_n - a_1\limit{n}{+\infty} \alpha\]
 
     Donc $a_n \limit{n}{+\infty} \alpha + a_1 = \alpha + 1$. On identifie $\gamma$ à $\alpha + 1$.
 
@@ -310,7 +307,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \end{proof}
 
 \begin{proposition}{LHP}{}
-    $\sum_{n \geqslant 1} \frac {(-1)^{n+1}} n$ converge et $\sum_{n=1}^{+\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
+    $\ds \sum_{n \geqslant 1} \frac {(-1)^{n+1}} n$ converge et $\ds \sum_{n=1}^{+\infty} \frac {(-1)^{n+1}} n = \ln(2)$.
 \end{proposition}
 
 \begin{proof}
@@ -328,12 +325,10 @@ Donc $B$ est un $\K$-espace vectoriel.
 
 \begin{proposition}{Série exponentielle}{}
     Pour $z \in \C$ la série $\sum_{n \geqslant 0} \frac{z^n}{n!}$ converge et a pour somme :
-    $$e^z = \sum_{n = 0}^{+\infty} \frac{z^n}{n!}$$
+    \[e^z = \sum_{n = 0}^{+\infty} \frac{z^n}{n!}\]
 \end{proposition}
 
-\idee{
-    Inégalité de Taylor-Lagrange.
-}
+\idee{Inégalité de Taylor-Lagrange.}
 
 \begin{proof}
     Soit $\fonction f \R \C t {e^{tz}}$, alors $f$ est $\mathscr C^\infty$ et 
@@ -341,17 +336,16 @@ Donc $B$ est un $\K$-espace vectoriel.
     $\forall n \in \N, \, \forall t \in \R, \; f^{(n)}(t) = z^n e^{tz}$.
 
     Par l'inégalité de Taylor-Lagrange entre 0 et 1, 
-    $$\abs{f(1) - \sum_{k = 0}^{n} \frac{f^{(k)}(0)t^k}{k!}} \leqslant \sup_{t \in [0, 1]}\abs{f^{(n + 1)}(t)} \frac{(1 - 0)^{n + 1}}{(n + 1)!}$$
+    \[\abs{f(1) - \sum_{k = 0}^{n} \frac{f^{(k)}(0)t^k}{k!}} \leqslant \sup_{t \in [0, 1]}\abs{f^{(n + 1)}(t)} \frac{(1 - 0)^{n + 1}}{(n + 1)!}\]
 
     Donc 
-    $$\abs{e^z - \sum_{k = 0 }^{n}\frac{z^k}{k!}} \leqslant \abs z^{n+1} \sup_{t \in [0, 1]} \abs{e^{tz}} \frac{1}{(n + 1)!} \longrightarrow 0$$
+    \[\abs{e^z - \sum_{k = 0 }^{n}\frac{z^k}{k!}} \leqslant \abs z^{n+1} \sup_{t \in [0, 1]} \abs{e^{tz}} \frac{1}{(n + 1)!} \longrightarrow 0\]
 \end{proof}
 
 \begin{proposition}{Séries de Bertrand - HP}{}
     Soient $a, b \in \R$. 
 
     Alors $\ds \sum_{n \geqslant 2} \frac 1 {n^a(\ln(n))^b}$ converge ssi $a > 1$ ou $a = 1$ et $b > 1$.
-
 \end{proposition}
 
 \idee{Poser la bonne puissance et comparaison avec les séries de Riemann.}
@@ -394,7 +388,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 
     Alors $S_n - f(2) \leqslant \int_{2}^{n} f(t) \text d t \leqslant S_n - f(n)$
 
-    $$ \int_{2}^{n} f(t) \text d t + f(n) \leqslant S_n \leqslant \int_{2}^{n} f(t) \text d t + f(2)$$
+    \[\int_{2}^{n} f(t) \text d t + f(n) \leqslant S_n \leqslant \int_{2}^{n} f(t) \text d t + f(2)\]
 
     Or $\int_{2}^{n} f(t) \text d t = \int_{2}^{n} \frac 1 {t (\ln t)^b} \text d t$.
 
@@ -418,15 +412,12 @@ Donc $B$ est un $\K$-espace vectoriel.
     \end{itemize}
 \end{proof}
 
-
 \subsection{Exemple de séries dans un espace vectoriel normé de dimension infinie}
-
 
 $\forall n \in \N, \, \fonction{f_n}{[0, 1 / 2]}{\R}{x}{x^n}$ dans $\mathscr C^0([0, 1 / 2], \R)$ 
 muni de la la norme infinie. 
 
-
-Etude de $\sum_{n \geqslant 0} f_n$.
+Étude de $\sum_{n \geqslant 0} f_n$.
 
 \avspace $\forall n \in \N, \fonction{S_n}{[0, 1 / 2]} \R x {\sum_{k = 0}^n x^k = \frac{1 - x^{n + 1}}{1 - x}}$ car $x \neq 1$. 
 
@@ -436,9 +427,8 @@ Or $\displaystyle \forall x \in [0, 1 / 2], \, \abs{S_n(x) - h(x)} = \abs{\frac{
 
 Donc $|| S_n - h ||_\infty \leqslant \frac 1 {2^n} \longrightarrow 0$.
 
-Donc $S_n \longrightarrow h$ Donc la série converge et 
-$$\sum_{n = 0}^{+\infty} f_n = h$$
-
+Donc $S_n \longrightarrow h$ Donc la série converge et :
+\[\sum_{n = 0}^{+\infty} f_n = h\]
 
 \section{Convergence absolue}
 
@@ -450,11 +440,9 @@ $$\sum_{n = 0}^{+\infty} f_n = h$$
     $\sum_{n \geqslant 0} N(u_n)$ converge. 
 \end{definition}
 
-
 \begin{remarque}
     Cette notion ne dépend pas du choix de la norme car $E$ est de dimension finie.
 \end{remarque}
-
 
 \begin{theoreme}{Lien entre convergence et convergence absolue}{}
     Dans un espace vectoriel normé de dimension finie, toute série absolument convergente est convergente.
@@ -552,7 +540,6 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
     le critère de Cauchy s'y applique.
 \end{remarque}
 
-
 \begin{proposition}{}{}
     Soit $\sum u_n$ une série à termes dans $E$.
 
@@ -563,7 +550,6 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
 
     Par contraposée si $S_{2n} - S_n \not \longrightarrow 0_E$, la série diverge. 
 \end{proposition}
-
 
 \begin{exemple}
     Considérons la série harmonique. 
@@ -580,15 +566,12 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
     ssi $\sum u_n$ converge et $\sum N(u_n)$ diverge.
 \end{definition}
 
-\begin{exemple}
-    \textbf{Exemple plutôt important !!}
-
+\begin{exemple}[Classique à retenir]
     $\displaystyle \sum_{n \geqslant 1 } \frac{(-1)^{n + 1}} n $ est semi-convergente et $\displaystyle \sum_{n = 1 }^{+ \infty} \frac{(-1)^{n + 1}} n = \ln(2)$.
 
     $\sum \frac 1 n$ diverge donc la série n'est pas absolument convergente. 
 
-    Posons $\forall n \in \N^*, $
-
+    Posons $\forall n \in \N^*$,
     \begin{align*}
         S_n & = \sum_{k = 1}^{n} \frac{(-1)^{k + 1}} k \\
         & = \sum_{k = 1 }^{n } (-1)^{k + 1} \int_0^1 t^{k - 1} \text d t \\
@@ -598,9 +581,9 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
         & = \ln(2) + u_n
     \end{align*}
 
-    $\abs{u_n} \leqslant \int_0^1 \abs{(-t)^n} \text d t \leqslant \left[ \frac{t^{n + 1 }}{n + 1} \right]_0^1 = \frac 1 {n + 1} \longrightarrow 0$.
+    $\ds \abs{u_n} \leqslant \int_0^1 \abs{(-t)^n} \text d t \leqslant \left[ \frac{t^{n + 1 }}{n + 1} \right]_0^1 = \frac 1 {n + 1} \to 0$.
 
-    Donc $S_n \longrightarrow \ln(2)$.
+    Donc $S_n \to \ln(2)$.
 
     La série converge et a pour somme $\ln(2)$. \\
 
@@ -626,7 +609,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
 
     Alors la série $\sum_{n \geqslant 0} (-1)^n a_n$ converge, et on a $\forall n \in \N$ : 
 
-    $$\abs{R_n} \leqslant a_{n + 1}$$
+    \[\abs{R_n} \leqslant a_{n + 1}\]
 
     Le reste est majoré par le premier terme négligé, et du même signe que celui-ci.
 \end{theoreme}
@@ -658,21 +641,20 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
     Donc pour $\alpha > 1$, $\displaystyle \zeta(\alpha) = \frac 1 {2^{1 - \alpha} - 1} A(\alpha)$.
 \end{exemple}
 
-
 \subsection{Complément Hors Programme : Transformation d'Abel}
 
 \begin{theoreme}{}{}
     On considère deux suites $(a_n)$ et $(b_n)$ telles que :
     \begin{itemize}
         \item $a_n \to 0$ et $(a_n$) est une suite réelle
-        \item $(B_n) = (\sum_{k=0}^n b_k)$ est bornée, on prend $(b_n)$ une suite d'un espace vectoriel normé de dimension finie.
+        \item $\ds (B_n) = \left(\sum_{k=0}^n b_k\right)$ est bornée, on prend $(b_n)$ une suite d'un espace vectoriel normé de dimension finie.
     \end{itemize}
 
     Alors $\sum a_n b_n$ converge.
 \end{theoreme}
 
 \begin{proof}
-$\sum_{k=0}^n a_n b_n = a_0 b_0 + a_n B_n - a_1 b_0 + \sum_{k=1}^{n-1} (a_k - a_{k+1}) B_k$. Notons $v_k$ les termes de cette somme et montrons que $(v_n)$ converge.
+$\ds \sum_{k=0}^n a_n b_n = a_0 b_0 + a_n B_n - a_1 b_0 + \sum_{k=1}^{n-1} (a_k - a_{k+1}) B_k$. Notons $v_k$ les termes de cette somme et montrons que $(v_n)$ converge.
 
 Soit $k \in \N$, $N(v_k) = N((a_k - a_{k+1}) B_k) = (a_k - a_{k+1}) N(B_k) \leqslant (a_{k} - a_{k+1}) M$.
 
@@ -691,6 +673,7 @@ Notons pour $n \geqslant 1, $
 
 $\abs{C_n} \leqslant \abs{\frac{1 - e^{i \theta (n + 1)}}{1 - e^{i \theta}}} \leqslant \frac{2}{\abs{1 - e^{i \theta}}} = M$.
 
+{\allowdisplaybreaks
 \begin{align*}
     S_n & = \sum_{k = 1}^{n} \frac{\cos(\theta k)}{k} \\
         & = \sum_{k = 1}^{n} \frac{C_k - C_{k - 1}}{k} \\
@@ -699,9 +682,10 @@ $\abs{C_n} \leqslant \abs{\frac{1 - e^{i \theta (n + 1)}}{1 - e^{i \theta}}} \le
         & = \sum_{k = 1}^{n - 1} \frac{c_k}{k} - \sum_{k = 0 }^{n - 1 } \frac{C_k}{k + 1} \\
         & = \frac{C_n} n + \sum_{k = 1}^{n - 1} C_k \left( \frac 1 k - \frac 1 {k + 1} \right) - 1 
 \end{align*}
+}
 
 Or $\abs{C_k \left( \frac 1 k - \frac 1 {k + 1} \right)} \leqslant M \left( \frac 1 k - \frac 1 {k + 1} \right) \leqslant \frac M {k(k+1)}$
-de limite nulle 
+est de limite nulle 
 
 Donc $\sum_{k \geqslant 1} C_k \left( \frac 1 k - \frac 1 {k + 1} \right)$ converge. 
 
@@ -710,19 +694,11 @@ Donc $S_n$ converge et $\sum_{n \geqslant 1 } \frac{\cos(\theta n)}{n}$ converge
 \lvspace Montrons que $\sum_{n \geqslant 1} \left| \frac{\cos(\theta n)}{n} \right|$ diverge. 
 
 $\displaystyle \frac{\abs{\cos{k \theta }}}{ k } \geqslant  \frac{\cos^2(k \theta )}{k } \geqslant \underbrace{\frac{\cos(2k \theta)}{2k}}_{\text{TGSCV}} + \underbrace{\frac{ 1 }{ 2 k }}_{\text{TGSDV}}$ 
-donc diverge. \\
+donc diverge. 
 
-Le vin est tiré, il faut le boire, calculons $\sum_{k=1}^{+ \infty} \frac {\sin(n)} n$.
-
-\begin{align*}
-    S_n &= \sum_{k=1}^n \frac {\sin(k)} k = \sum_{k=1}^n \sin(k) \int_0^1 (t^{k-1}) \dt\\
-        &= \im \left(\sum_{k=1}^{n} \int_0^1 e^{ik} t^{k-1} \dt \right)\\
-        &= \im \left(e^i \int_0^1 \sum_{k=1}^{n}  (e^it)^{k-1} \dt \right)\\
-        &= \im \left( e^i \int_0^1 \frac {1 - (e^it)^n} {1 - e^it} \dt \right)\\
-        &= \im \left(e^i \int_0^1 \frac {\dt} {1 - te^i} \right) - \im \left(e^i \int_0^1 \frac {(te^i)^n} {1 - te^i} \dt\right)
-\end{align*}
-
-La deuxième partie imaginaire tend vers $0$. Il ne reste donc qu'à calculer la première... (laissé en exercice).
+\begin{remarque}
+    On pourrait aussi calculer la somme.
+\end{remarque}
 
 \subsection{Séries matricielles}
 
@@ -735,7 +711,7 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
 \begin{theoreme}{Exponentielle de matrices}{}
     Pour $A \in \mathscr M_p(\K)$, la série $\sum_{n \geqslant 0} \frac{A^n}{n!}$ converge absolument. 
     Sa somme est appelée exponentielle de $A$ et est notée :
-    $$\displaystyle \exp(A) = e^A = \sum_{n = 0}^{+\infty} \frac{A^n}{n!}$$
+    \[\displaystyle \exp(A) = e^A = \sum_{n = 0}^{+\infty} \frac{A^n}{n!}\]
 \end{theoreme}
 
 \idee{Utiliser la sous multiplicativité de la norme matricielle. }
@@ -755,7 +731,7 @@ On a alors $\forall A, B \in \mathscr M_p(\K), \, N(AB) \leqslant N(A) N(B)$.
     Donc pour $n \geqslant 1$, $N\left( \frac{A^n}{n!} \right) \leqslant \frac{N(A)^n}{n!}$ TGSCV. 
 \end{proof}
 
-\marginenote[-0.5cm]{Anecdote}{
+\marginenote{Anecdote}{
     Pour prouver le théorème de Fermat, au XIXe,
     Kumer, un mathématicien allemand, a travaillé dans $\Z[\omega]$
     et a inventé les nombres idéaux.
@@ -862,7 +838,6 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
 \end{remarque}
 
 \begin{exemple}
-
     Munissons $\mathscr M_p (\K)$ de $|| \cdot ||$ norme matricielle. 
 
     Soit $A \in \mathscr M_p(\K)$ telle que $|| A || < 1$. 
@@ -884,7 +859,6 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
     Or $|| A^{n + 1} || \leqslant || A ||^{n + 1} \longrightarrow 0$ donc $A^{n + 1} \longrightarrow 0$.
 
     Donc $(I_p - A)S = I_p$. De même $S(I_p - A) = I_p$.
-
 \end{exemple}
 
 \subsection{Complément sur les séries matricielles - LHP}
@@ -892,13 +866,13 @@ dépendance linéaire entre les premières puissances de $A: I_p, A, A^2, \dots,
 Pour $A \in \mathscr M_n(\K)$ on considère la série $\sum_{k \geqslant 0} A^k$.
 
 Si $N(A) < 1$ alors cette série est absolument convergente. De plus en ce cas $I_n - A \in \text{GL}_n(\K)$
-et $(I_n - A)^{-1} = \sum_{k=0}^{+ \infty} A^k$.
+et $\ds (I_n - A)^{-1} = \sum_{k=0}^{+ \infty} A^k$.
 
 \begin{proof}
 Par récurrence sur $k \geqslant 1$, $N(A^k) \leqslant N(A)^k$ TGSCV.
 Donc la série numérique $\sum_{k\geqslant 0} N(A^k)$ converge donc la série converge absolument, posons $S$ sa somme.
 
-$$(I_n - A)S = S - AS = S - A \sum_{k=0}^{+ \infty} A^k = S - \sum_{k=1}^{+ \infty} A^k = I_n$$
+\[(I_n - A)S = S - AS = S - A \sum_{k=0}^{+ \infty} A^k = S - \sum_{k=1}^{+ \infty} A^k = I_n\]
 Grâce à la continuité du produit matriciel.
 
 Donc $S = (I_n - A)^{-1}$.
@@ -926,11 +900,10 @@ Par Chasles : $S_n - f(n_0) \leqslant \int_{n_0}^{n} f(t) \text d t \leqslant S_
 
 Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant f(n_0) + \int_{n_0}^{n} f(t) \text d t$
 
-
 \begin{theoreme}{LHP}{}
     Soit $f \in \mathscr C^{pm}([a, + \infty[, \R^+)$ décroissante. 
     Notons $\forall n \in \N,$ 
-    $$\omega_n = \left( \int_{n - 1 }^{n } f(t) \text d t \right) - f(n)$$
+    \[\omega_n = \left( \int_{n - 1 }^{n } f(t) \text d t \right) - f(n)\]
 
     Alors $\displaystyle \sum_{n \geqslant \lceil a \rceil + 1} \omega_n$ converge.
 \end{theoreme}
@@ -965,9 +938,8 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
 \begin{proof}
     \begin{align*}
         \sum_{k = \lceil a \rceil + 2}^{n} f(k) & = \sum_{k = \lceil a \rceil + 2}^{n} \int_{k - 1 }^{k} f- \omega_k \\
-                                                    & = \int_{\lceil a \rceil + 1}^{n} f(t) \text d t - \sum_{k = \lceil a \rceil + 2}^{n} \omega_k                                 
+                                                & = \int_{\lceil a \rceil + 1}^{n} f(t) \text d t - \sum_{k = \lceil a \rceil + 2}^{n} \omega_k                                 
     \end{align*}
-
 \end{proof}
 
 \subsection{Rappels sur les séries à termes positifs}
@@ -1020,7 +992,7 @@ Si $a_n \sim b_n$, alors $\sum a_n$ et $\sum b_n$ sont de même nature.
     Alors $\displaystyle \forall n \geqslant n_0$, $\displaystyle a_n \leqslant (\ell')^{n-n_0} a_{n_0}$.
 
     En effet, c'est vrai au rang $n_0$ et si c'est vrai au rang $n$, 
-    alors 
+    alors :
     \begin{align*}
         a_{n + 1} & \leqslant \ell' a_n \\
                   & \leqslant \ell' (\ell')^{n - n_0} a_{n_0} \\
@@ -1114,13 +1086,11 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 
 \begin{itemize}
   \item Si $a_n = b_n + O(w_n)$ où $\sum |w_n|$ converge, 
-  alors $\displaystyle \sum_{n\ge0} a_n$ et $\displaystyle \sum_{n\ge0} b_n$ sont de même nature.
+  alors $\displaystyle \sum_{n\geqslant0} a_n$ et $\displaystyle \sum_{n\geqslant0} b_n$ sont de même nature.
 
   \item Si $a_n = b_n + c_n + o(c_n)$ où $\sum b_n$ converge et $c_n > 0$, 
-  alors $\displaystyle \sum_{n\ge0} a_n$ et $\displaystyle \sum_{n\ge0} c_n$ sont de même nature.
+  alors $\displaystyle \sum_{n\geqslant0} a_n$ et $\displaystyle \sum_{n\geqslant0} c_n$ sont de même nature.
 \end{itemize}
-
-
 
 \begin{exemple}
     $\displaystyle a_n = \frac{(-1)^n}{n + (-1)^n\sqrt{n}}$ pour $n \geqslant 2$. 
@@ -1150,15 +1120,15 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 
     \begin{align*}
         \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} & \leqslant \sum_{k = n + 4 }^{+ \infty    }\frac 1 {(n + 1)(n + 2) (k-1)k} \\
-                                                    & \leqslant \frac 1 {(n + 1)(n + 2)} \underbrace{\sum_{k = 2 }^{+ \infty } \frac 1 {(k - 1)k}}_C \\
+                                                     & \leqslant \frac 1 {(n + 1)(n + 2)} \underbrace{\sum_{k = 2 }^{+ \infty } \frac 1 {(k - 1)k}}_C \\
     \end{align*}
 
     Donc $n ! e = qn + \frac 1 {n + 1} + O(\frac 1 {n^2})$ $a_n$ entier jsp quoi 
 
     \begin{align*}
         \sin(2 \pi n! e) & = \sin \left( 2 \pi \left( q_n + \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
-                                    & = \sin \left( 2 \pi \left( \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
-                                    & = \frac {2 \pi}{n + 1} + O\left( \frac 1 {n^2} \right) \\
+                         & = \sin \left( 2 \pi \left( \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
+                         & = \frac {2 \pi}{n + 1} + O\left( \frac 1 {n^2} \right) \\
     \end{align*}
 
     Donc $\sum v_n$ diverge. (La fin de la preuve est de copilot, pas eu la temps de noter, si qqun peut 
@@ -1166,11 +1136,9 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
     
     \begin{align*}
         \sin(n! \pi e) & = \sin \left( \pi \left( q_n + \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
-                                    & = \sin \left( \pi \left( \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
-                                    & = (-1)^{q_n} \left( \frac{\pi}{n + 1} + O\left( \frac 1 {n^2} \right) \right) \\
+                       & = \sin \left( \pi \left( \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
+                       & = (-1)^{q_n} \left( \frac{\pi}{n + 1} + O\left( \frac 1 {n^2} \right) \right) \\
     \end{align*}
-
-
 \end{exemple}
 
 \subsection{Sommation des relations de comparaison pour les séries divergentes}
@@ -1178,12 +1146,13 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 Soient $\sum u_n$ et $\sum v_n$ deux séries réelles telles que $(v_n)$ est de signe constant à partir 
 d'un certain rang. 
 
-\begin{proposition}{Sommation des relations de comparaison}{}
 \marginenote{Un peu d'histoire \!}{Les notations $o$ et $O$ viennent du mathématicien allemand Landau.}
+
+\begin{proposition}{Sommation des relations de comparaison}{}
     Si $\sum v_n$ diverge ($v_n$ de signe constant à partir d'un certain rang) et si $u_n = O(v_n)$ (resp $u_n = o(v_n)$, resp $u_n \sim v_n$),
     alors :
     
-    $$\displaystyle \sum_{k = 1 }^{n }u_k = O\left( \sum_{k = 1}^{n} v_k \right)$$ 
+    \[\sum_{k = 1 }^{n }u_k = O\left( \sum_{k = 1}^{n} v_k \right)\]
     (resp $o$, resp $\sim$).
 \end{proposition}
 
@@ -1199,9 +1168,9 @@ d'un certain rang.
                                     & \leqslant \sum_{k = 0}^{n_0 - 1} \abs{u_k - M v_k} + M \sum_{k = 0}^{n } v_k \\
     \end{align*} 
 
-    Or $\sum v_n$ diverge et $v_n > 0$ à partir d'un certain rang donc $\sum_{k = 0}^{n } v_k \longrightarrow + \infty$.
+    Or $\sum v_n$ diverge et $v_n > 0$ à partir d'un certain rang donc $\sum_{k = 0}^{n } v_k \to + \infty$.
 
-    \svspace Donc $\displaystyle \frac{\sum_{k = 0 }^{n_0 - 1} (\abs{u_k} - M v_k)}{ \sum_{k = 0}^n v_k} \longrightarrow 0 \leqslant 1$ pour $n > n_1$.
+    \svspace Donc $\displaystyle \frac{\sum_{k = 0 }^{n_0 - 1} (\abs{u_k} - M v_k)}{\sum_{k = 0}^n v_k} \to 0 \leqslant 1$ pour $n > n_1$.
 
     \svspace Donc pour $\displaystyle n \leqslant \max(n_0, n_1)$, $\displaystyle \abs{\sum_{k = 0 }^{n } u_k} \leqslant \left( 1 + M \right) \sum_{k = 0}^{n } v_k$.
 
@@ -1214,7 +1183,7 @@ d'un certain rang.
 
     Par le même calcul, $\exists n_0 \in \N, \, \exists n_1 \in \N$ tel que 
 
-    $$\abs{\sum_{k = 0 }^{n } u_k} \leqslant \sum_{k = 0}^{n_0 - 1} (\abs{u_k} - \varepsilon v_k) + \varepsilon \sum_{k = 0}^{n } v_k$$
+    \[\abs{\sum_{k = 0 }^{n } u_k} \leqslant \sum_{k = 0}^{n_0 - 1} (\abs{u_k} - \varepsilon v_k) + \varepsilon \sum_{k = 0}^{n } v_k\]
 
     et $\displaystyle \frac{\sum_{k = 0 }^{n_0 - 1} (\abs{u_k} - \varepsilon v_k)}{\sum_{k = 0}^{n } v_k} \leqslant \varepsilon$ 
 
@@ -1232,9 +1201,8 @@ d'un certain rang.
 \end{proof} 
 
 \begin{proposition}{de Cesàro}{}
-    Soit $(a_n)$ telle que $a_n \longrightarrow \ell \in \overline \R$. Alors :
-    $$\frac 1 n \sum_{k = 1}^{n } a_k \longrightarrow \ell$$
-    
+    Soit $(a_n)$ telle que $a_n \to \ell \in \overline \R$. Alors :
+    \[\frac 1 n \sum_{k = 1}^{n } a_k \to \ell\]
 \end{proposition}
 
 \idee{Sommation des relations de comparaison.}
@@ -1258,8 +1226,6 @@ d'un certain rang.
     Donc $\displaystyle 1 = o\left( \frac 1 n \sum_{k = 1}^{n } a_k \right)$ donc $\displaystyle \frac 1 n \sum_{k = 1}^{n } a_k \longrightarrow + \infty$.
 \end{proof}
 
-
-
 \begin{exemple}
     Pour obtenir un équivalent d'une somme partielle de série à termes positifs, 
     on peut espérer le trouver en utilisant la comparaison série intégrale.
@@ -1276,21 +1242,20 @@ d'un certain rang.
 
     Soit $k \geqslant 0$, $t \in [k, k + 1], \, k^\alpha \leqslant t^\alpha \leqslant (k + 1)^\alpha$.
 
-    En intégrant sur $[k, k + 1]$, on trouve : $k^\alpha \leqslant \int_{k}^{k + 1} t^\alpha \text d t \leqslant (k + 1)^\alpha$
+    En intégrant sur $[k, k + 1]$, on trouve : $\ds k^\alpha \leqslant \int_{k}^{k + 1} t^\alpha \dt \leqslant (k + 1)^\alpha$
 
     Divisons par $k^\alpha$ : 
-    $$ 1 \leqslant \frac 1 {k^\alpha} \int_{k}^{k + 1} t^\alpha \text d t \leqslant \left( \frac{k+1} k \right)^\alpha \longrightarrow 1$$
+    \[1 \leqslant \frac 1 {k^\alpha} \int_{k}^{k + 1} t^\alpha \dt \leqslant \left( \frac{k+1} k \right)^\alpha \longrightarrow 1\]
 
-    Donc $k^\alpha \sim \int_{k }^{k + 1} t^\alpha \text d t$, or $\sum_{k \geqslant 0 } k^\alpha$ série à termes positifs divergente. 
+    Donc $\ds k^\alpha \sim \int_{k }^{k + 1} t^\alpha \dt$, or $\ds \sum_{k \geqslant 0 } k^\alpha$ série à termes positifs divergente. 
 
     Donc par sommation des relation de comparaison, 
-
-    $$S_n \sim \sum_{k = 0}^{n } \int_{k}^{k + 1} t^\alpha \text d t \sim \frac{n^{\alpha + 1}}{\alpha + 1}$$
+    \[S_n \sim \sum_{k = 0}^{n } \int_{k}^{k + 1} t^\alpha \dt \sim \frac{n^{\alpha + 1}}{\alpha + 1}\]
 \end{exemple}
 
 \begin{remarque}
 Pour généraliser cette idée il faut $f\in  \mathscr C^{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
-montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
+montrerait de la même manière, dans le cas où $\ds\int_0^n f(t) \dt$ diverge, que $\ds \sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
 \end{remarque}
 
 \subsection{Sommation des relations de comparaison pour des séries convergentes}
@@ -1300,7 +1265,7 @@ montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, qu
     $(v_n)$ est de signe constant à partir d'un certain rang et $\sum v_n$ converge.
     Supposons que $u_n = O(v_n)$ (resp $u_n = o(v_n)$, resp $u_n \sim v_n$).
 
-    Alors $\sum u_n$ converge et on peut donc définir les restes des deux séries, et 
+    \svspace Alors $\sum u_n$ converge et on peut donc définir les restes des deux séries, et 
     $\displaystyle R_n(u) = O(R_n(v))$ (resp $o$, resp $\sim$).
 \end{theoreme}
 
@@ -1334,14 +1299,13 @@ montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, qu
     Donc $\displaystyle \left( \frac k {k +  1} \right)^\alpha \leqslant \frac {v_k}{u_k} \leqslant 1$.
 
     Donc $v_k \sim u_k$.
-    Donc $R_n(u) \sim R_n(v)$, or 
-
+    Donc $R_n(u) \sim R_n(v)$, or :
     \begin{align*}
         \sum_{k = n + 1 }^{N } v_k & = \sum_{k = n + 1}^{N } \int_k^{k + 1} \frac 1 {t^\alpha} \text d t \\
-                                            & = \int_{n + 1}^{N + 1} \frac 1 {t^\alpha} \text d t \\
-                                            & = \left[ \frac{t^{1 - \alpha}}{1 - \alpha} \right]_{n + 1}^{N + 1} \\
-                                            & = \frac 1 {\alpha - 1} \left( \frac 1 {(n + 1)^{\alpha - 1}} - \frac 1 {N + 1}^{\alpha - 1} \right) \\
-                                            & \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}} 
+                                   & = \int_{n + 1}^{N + 1} \frac 1 {t^\alpha} \text d t \\
+                                   & = \left[ \frac{t^{1 - \alpha}}{1 - \alpha} \right]_{n + 1}^{N + 1} \\
+                                   & = \frac 1 {\alpha - 1} \left( \frac 1 {(n + 1)^{\alpha - 1}} - \frac 1 {N + 1}^{\alpha - 1} \right) \\
+                                   & \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}} 
     \end{align*}
 
     Donc $\displaystyle \sum_{k = n + 1}^{+ \infty} \frac 1 {k^\alpha} \sim \frac 1 {\alpha - 1} \frac 1 {(n + 1)^{\alpha - 1}}$. \\

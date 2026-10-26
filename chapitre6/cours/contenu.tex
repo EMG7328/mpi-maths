@@ -5,6 +5,7 @@ de dimension finie.
 
 \section{Dérivation}
 \subsection{Dérivée en un point}
+
 \begin{definition}{Dérivable en un point}{}
     Soit $a \in I$ et $f: I \to E$. On dit que $f$ est dérivable en $a$ ssi 
     \[\fonction{\Delta_a}{I \setminus \{a\}}{E}{t}{\frac{f(t) - f(a)}{t-a}}\]
@@ -242,6 +243,7 @@ a un DL2 mais n'est pas dérivable deux fois.
 \end{exemple}
 
 \subsection{Dérivabilité sur un intervalle}
+
 \begin{definition}{Dérivable sur un intervalle}{}
     Soit $f : I \to E$. On dit que $f$ est dérivable sur $I$ ssi elle l'est en tout $a \in I$. 
     On définit alors sa dérivée :
@@ -282,6 +284,7 @@ a un DL2 mais n'est pas dérivable deux fois.
 \end{proof}
 
 \subsection{Composition}
+
 \begin{proposition}{Composition à droite}{}
     Soit $f \in \mathscr C^1(I, E)$ et $\varphi \in \mathscr C^1(J, I)$, où $J$ est un intervalle de $\R$
     tel que $\mathring{J } \neq \emptyset$. 
@@ -473,6 +476,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 \end{exemple}
 
 \subsection{Application de classe \texorpdfstring{$\mathscr C^k$}{Ck}}
+
 \begin{definition}{Fonction de classe $\mathscr C^k$}{}
     Soit $f : I \to E$ et $k \in \N, \, k \geqslant 2$. On dit que $f$ est de classe 
     $\mathscr C^k$ sur $I$ ssi $f, f', \ldots, f^{(k-1)}$ sont dérivables sur $I$ et $f^{(k)}$ est continue sur $I$. \\
@@ -522,6 +526,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 \end{proof}
 
 \subsection{Rappels : prolongements}
+
 \begin{theoreme}{Limite de la dérivée}{}
     Soit $f : [a, b] \to E$ continue sur $[a, b]$ et dérivable sur $]a, b]$. 
 
@@ -600,6 +605,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 \end{remarque}
 
 \subsection{Complément hors programme sur les courbes paramétrées}
+
 \subsubsection{Vocabulaire}
 Soit $f : I \to E$.
 \begin{itemize}
@@ -900,6 +906,7 @@ Il est aussi possible de faire des choses plus compliquées :
 
 \section{Intégration sur un segment}
 \subsection{Théorème-définition}
+
 \begin{theoreme}{Intégrale de $f \in \mathscr C^{pm}$ à valeurs dans un evn de dim finie}{}
     Soit $f : [a, b] \to E$ et $B = (e_1, \ldots, e_n)$ une base de $E$.
 
@@ -914,7 +921,7 @@ Il est aussi possible de faire des choses plus compliquées :
     
     $\displaystyle f(t) = \sum_{i=1}^n g_i(t)e'_i$ avec 
     $g_i$ également continues par morceaux, on a :
-    $$\sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) e_i = \sum_{i=1}^n \left( \int_a^b g_i(t) \dt \right) e'_i$$
+    \[\sum_{i=1}^n \left( \int_a^b f_i(t) \dt \right) e_i = \sum_{i=1}^n \left( \int_a^b g_i(t) \dt \right) e'_i\]
 
     Ce vecteur est noté $\displaystyle \int_a^b f(t) \dt$.
 
@@ -952,10 +959,11 @@ Sinon exprimer une base dans l'autre.}
 
 \begin{remarque}
 Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
-$$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
+\[\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E\]
 \end{remarque}
 
 \subsection{Propriétés}
+
 \begin{proposition}{Linéarité de l'intégrale}{}
     L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et :
     \[\fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}\]
@@ -1042,12 +1050,13 @@ $$\int_a^b f(t) \dt = \int_a^b f = \int_{[a, b]} f \in E$$
 \end{proof}
 
 \subsection{Sommes de Riemann}
+
 \begin{definition}{Somme de Riemann}{}
     Soit $N \geqslant 2$ et $f \in \mathscr C^{pm}([a, b], E)$.
 
     On appelle somme de Riemann à gauche (resp. à droite) pour $f$ sur $[a, b]$ associée à la 
     subdivision régulière en $N$ segments le vecteur :
-    $$R_{g, N, f, [a, b]} = \frac{b-a} N \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right)$$
+    \[R_{g, N, f, [a, b]} = \frac{b-a} N \sum_{k=0}^{N-1} f\left( a + k \frac{b-a}{N} \right)\]
 
     (resp. $\displaystyle R_{d, N, f, [a, b]} = \frac{b-a} N \sum_{k=1}^{N} f\left( a + k \frac{b-a}{N} \right)$)
 \end{definition}
@@ -1083,7 +1092,7 @@ De même pour la somme à droite.
 \begin{theoreme}{Inégalité triangulaire pour l'intégrale}{}
     Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
     Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et :
-    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| dt$$
+    \[\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt\]
 \end{theoreme}
 
 \idee{Sommes de Riemann et passage à la limite.}
@@ -1101,10 +1110,11 @@ De même pour la somme à droite.
     \end{align*}
 
     Et donc par passage à la limite, 
-    $$\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt$$
+    \[\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt\]
 \end{proof}
 
 \subsection{Intégrale de la borne supérieure}
+
 \begin{theoreme}{Primitive fonction vectorielle}{}
     Soit $f \in \mathscr C(I, E)$ et $a \in I$. 
 
@@ -1128,7 +1138,7 @@ De même pour la somme à droite.
     Soit $f \in \mathscr C(I, E)$ et $F \in \mathscr C^1(I, E)$ tel que 
     $F' = f$, alors $F$ est appelée une primitive de $f$. Alors $\forall a, b \in I$, 
     
-    $$\displaystyle \int_a^b f(t) \dt = F(b) - F(a)$$
+    \[\displaystyle \int_a^b f(t) \dt = F(b) - F(a)\]
 \end{corollaire}
 
 \idee{Prendre deux primitives différentes.}
@@ -1184,7 +1194,7 @@ Alors :
 Soit $\varphi \in \mathscr C^1(J, I)$ et $\alpha, \beta \in J$, 
 $\varphi(\alpha) = a, \, \varphi(\beta) = b$.
 
-Soit $f \in \mathscr C(I, E)$. Alors $$\int_\alpha^\beta f(\varphi(u)) \varphi'(u) \dif u = \int_a^b f(t) \dt$$
+Soit $f \in \mathscr C(I, E)$. Alors \[\int_\alpha^\beta f(\varphi(u)) \varphi'(u) \dif u = \int_a^b f(t) \dt\]
 En posant $t = \varphi(u)$, donc $\dx = \varphi'(u) \dif u$.
 
 Changements de variable usuels :
@@ -1269,6 +1279,7 @@ Changements de variable usuels :
 \end{remarque}
 
 \subsection{Formules de Taylor}
+
 \marginenote{Histoire !}{À l'époque, Taylor notait les dérivées successives par des lettres $m,n,\dots$ car la notation $f^{(n)}$ n'existait pas.}
 
 \begin{proposition}{Formule de Taylor-Young}{}

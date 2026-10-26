@@ -16,7 +16,6 @@
     \end{itemize}
 \end{exemple}
 
-
 \begin{definition}{Au plus dénombrable}{}
     Soit $I$ un ensemble. On dit que $I$ est \emph{au plus dénombrable} si $I$ est 
     fini ou dénombrable.
@@ -71,12 +70,10 @@
     Toute partie de $\N$ est donc au plus dénombrable. 
 \end{proposition}
 
-
 \begin{proposition}{Caractérisation des ensembles au plus dénombrables}{}
     Soit $E$ un ensemble non vide. Alors $E$ est au plus dénombrable ssi il est en 
     bijection avec une partie de $\N$.
 \end{proposition}
-
 
 \begin{proof}
     $\Leftarrow$ Si $E$ est en bijection avec $I \subset \N$, alors si $I$ est finie, 
@@ -86,7 +83,6 @@
     avec $\ninter 1 {\text{Card}(E)} \subset \N$.
     S'il est dénombrable, par définition il est en bijection avec $\N$.
 \end{proof}
-
 
 \subsection{Opérations}
 
@@ -107,7 +103,6 @@
         \item $\forall p \in \N, \, \N^p$ est dénombrable.
         \item Tout produit cartésien fini d'ensembles dénombrables est dénombrable.
     \end{itemize}
-
 \end{proposition}
 
 \idee{Par récurrence.}
@@ -135,7 +130,7 @@
 \end{theoreme}
 
 \begin{proof}
-Posons $\varphi : x \mapsto \frac n 2$ si $n \in 2 \N$ et $-(\frac {n+1} 2)$ sinon.
+Posons $\varphi : x \mapsto \frac n 2$ si $n \in 2 \N$ et $-\left(\frac {n+1} 2\right)$ sinon.
 
 Alors $\varphi$ est injective et surjective dans $\Z$ donc elle est bijective.
 Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
@@ -162,9 +157,9 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     infini, donc $\Q$ est dénombrable.
 \end{proof}
 
-\begin{theorement}{Nature d'une union au plus dénombrable d'ensemble au plus dénombrables}{}
+\begin{theoreme}{Nature d'une union au plus dénombrable d'ensemble au plus dénombrables}{}
     Toute union \textbf{finie ou dénombrable} d'ensembles au plus dénombrables est au plus dénombrable. 
-\end{theorement}
+\end{theoreme}
 
 \begin{proof} (non exigible)\\
     Soit $I$ non vide au plus dénombrable.
@@ -181,7 +176,6 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     Donc $\displaystyle \bigcup_{i \in I} E_i$ est en bijection avec son image par $\psi$
     qui est une partie de $\N^2$, qui est donc au plus dénombrable.
-
 \end{proof}
 
 \subsection{Ensembles non dénombrables}
@@ -230,7 +224,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 \begin{definition}{Famille sommable}{}
     Soit $I$ un ensemble non vide et $(u_j)_{j \in I}$ une famille de complexes indexée par $I$. 
     On dit que cette famille est sommable ssi l'ensemble 
-    $$\left\{\sum_{j \in J} |u_j|, \, J \subset I \text{ fini} \right\}$$
+    \[\left\{\sum_{j \in J} |u_j|, \, J \subset I~\text{fini} \right\}\]
     est majoré. 
 \end{definition}
 
@@ -254,8 +248,8 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
     Donc $(u_j)_{j \in I'}$ est sommable.
 
-    Soit $J \subset I$ fini, alors
-    $$\sum_{j \in J} |\alpha u_j + \beta v_j | \leqslant \sum_{j \in J} (|\alpha| |u_j| + |\beta| |v_j|) \leqslant |\alpha| M_1 + |\beta| M_2$$
+    Soit $J \subset I$ fini, alors :
+    \[\sum_{j \in J} |\alpha u_j + \beta v_j | \leqslant \sum_{j \in J} (|\alpha| |u_j| + |\beta| |v_j|) \leqslant |\alpha| M_1 + |\beta| M_2\]
 \end{proof}
 
 \subsection{Somme d'une famille sommable}
@@ -269,7 +263,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
 
 \begin{proof}
     Soit $J \subset I$ fini, alors :
-    $$\sum_{j \in J} |v_j| \leqslant \sum_{j \in J} |u_j| \leqslant M$$
+    \[\sum_{j \in J} |v_j| \leqslant \sum_{j \in J} |u_j| \leqslant M\]
 \end{proof}
 
 
@@ -280,7 +274,7 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     de $\R$. 
 
     Sa borne supérieure est appellée \emph{somme} de la famille et notée $\displaystyle \sum_{i \in I} u_i$.
-    Ainsi : $$\sum_{i \in I} u_i = \sup \left\{ \sum_{i \in J} u_i, \, J \subset I \text{ fini}  \right\}$$
+    Ainsi : \[\sum_{i \in I} u_i = \sup \left\{ \sum_{i \in J} u_i, \, J \subset I \text{ fini}  \right\}\]
 \end{definition}
 
 \begin{theoreme}{Somme d'une famille sommable de réels quelconques}{}
@@ -294,12 +288,13 @@ Donc $\Z$ est équipotent à $\N$ donc $\Z$ est dénombrable.
     Alors $(u_j)_{j\in I}$ est sommable ssi $(u_j^+)_{j\in I}$ et $(u_j^-)_{j\in I}$ sont sommables.
 
     On définit la somme de la famille $(u_j)_{i \in I}$ par :
-    $$\sum_{i \in I} u_i = \sum_{i \in I} u_i^+ - \sum_{i \in I} u_i^-$$
+    \[\sum_{i \in I} u_i = \sum_{i \in I} u_i^+ - \sum_{i \in I} u_i^-\]
 \end{theoreme}
+
 \marginenote{Remarque}{Cette définition est bien compatible avec la def 5.17 dans le
 cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
-\begin{proof}{}{}
 
+\begin{proof}{}{}
     $\Rightarrow$ On a $\left\{\begin{array}{cc}
         |u_j^+| \leqslant |u_j|\\
         |u_j^-| \leqslant |u_j|
@@ -307,24 +302,20 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
     $\Leftarrow$ Supposons que $(u_j^+)_{j\in I}$ et $(u_j^-)_{j\in I}$ sont sommables. Soit $J\subset I$ fini non vide
 
-    $$\sum_{j\in J} |u_j|\leqslant\sum_{j\in J} U_j^+ + \sum_{j\in J} U_j^-\leqslant \sum_{j\in I} U_j^+ + \sum_{j\in I} U_j^- \leftarrow\text{constante indépendante de J}$$
-
-    \end{proof}
-
-
+    \[\sum_{j\in J} |u_j|\leqslant\sum_{j\in J} U_j^+ + \sum_{j\in J} U_j^-\leqslant \sum_{j\in I} U_j^+ + \sum_{j\in I} U_j^- \leftarrow\text{constante indépendante de J}\]
+\end{proof}
 
 \begin{theoreme}{Somme d'une famille sommable de complexes}{}
 
-    Soit $(u_j)_{j \in I}$ une famille de complexes. Alors :
-    
+    Soit $(u_j)_{j \in I}$ une famille de complexes. Alors
     $(u_j)_{j\in I}$ est sommable ssi $(\re(u_j))_{j\in I}$ et $(\im(u_j)_{j\in I}$ le sont.
 
     On définit la somme de la famille $(u_j)_{j \in I}$ par :
-    $$\sum_{j \in I} u_j = \sum_{j \in I} \re(u_j) + i \sum_{j \in I} \im(u_j)$$
-
+    \[\sum_{j \in I} u_j = \sum_{j \in I} \re(u_j) + i \sum_{j \in I} \im(u_j)\]
 \end{theoreme}
 
 \idee{Utiliser la proposition 5.16.}
+
 \begin{proof}{}{}
     $\Rightarrow$
     $\begin{array}{cc}
@@ -332,16 +323,15 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     |\im(u_j)| \leqslant |u_j|
     \end{array}$
 
-    $\Leftarrow
-    |u_j|\leqslant |\re(u_j)| + |\im(u_j)|$
-
+    $\Leftarrow$
+    $|u_j|\leqslant |\re(u_j)| + |\im(u_j)|$
 \end{proof}
 
 \begin{proposition}{Linéarité de la somme}{}
     Soit $(u_j)_{j \in I}, (v_j)_{j \in I}$ deux familles sommables de complexes et $\alpha, \beta \in \C$.
 
     Alors $(\alpha u_j + \beta v_j)_{j \in I}$ est sommable et :
-    $$\sum_{j \in I} (\alpha u_j + \beta v_j) = \alpha \sum_{j \in I} u_j + \beta \sum_{j \in I} v_j$$
+    \[\sum_{j \in I} (\alpha u_j + \beta v_j) = \alpha \sum_{j \in I} u_j + \beta \sum_{j \in I} v_j\]
 \end{proposition}
 
 \begin{proof}
@@ -353,10 +343,9 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     disjointe d'ensembles non vides.
 
     Soit $(u_j)_{j \in I}$ une famille de complexes. Alors $(u_j)_{j \in I}$ est sommable ssi
-    
     $\forall k \in K, \, (u_j)_{j \in I_k}$ est sommable et $\displaystyle \left( \sum_{j \in I_k} |u_j| \right)_{k \in K}$ est sommable
     et en ce cas, 
-    $$ \sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right)$$
+    \[\sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right)\]
 \end{theoreme}
 
 \subsection{Conséquence : permutation des termes}
@@ -375,7 +364,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     $\forall k \in K, \, (u_j)_{j \in I_k}$ est sommable 
     et comme $\displaystyle \sum_{j \in I_k} |u_j| = |u_{\sigma(k)}|$,
     on a que $(u_{\sigma(k)})_{k \in K}$ est sommable, et :
-    $$\sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right) = \sum_{k \in K} u_{\sigma(k)} = \sum_{j \in I} u_{\sigma(j)}$$
+    \[\sum_{j \in I} u_j = \sum_{k \in K} \left( \sum_{j \in I_k} u_j \right) = \sum_{k \in K} u_{\sigma(k)} = \sum_{j \in I} u_{\sigma(j)}\]
 \end{proof}
 
 \subsection{Lien avec la dénombrabilité}
@@ -387,9 +376,8 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
 \begin{proposition}{Somme sur le support}{}
     Soit $(u_j)_{j \in I}$ une famille sommable de complexes de support $S$. Alors :
-    $$\sum_{j \in I} u_j = \sum_{j \in S} u_j$$
+    \[\sum_{j \in I} u_j = \sum_{j \in S} u_j\]
 \end{proposition}
-
 
 \begin{proof}
     Posons $K = \{1, 2\}$, et $I_1 = S, \, I_2 = I \setminus S$.
@@ -417,9 +405,10 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
     Soit $k \in \N$, alors $\forall j \in I_k, \, \frac 1 {k + 1} < \underbrace{|u_j|}_{\text{sommable}}$
 
-    Donc $\left( \frac 1 {k + 1} \right)_{j \in I_k}$ est sommable, or $\frac 1 {k + 1}$ est constant et positif, 
+    Donc $\left( \frac 1 {k + 1} \right)_{j \in I_k}$ est sommable, or $\frac 1 {k + 1}$ est constant et positif,
+    donc $I_k$ est fini.
 
-    donc $I_k$ est fini, donc $S$ est au plus dénombrable.
+    Donc $S$ est au plus dénombrable.
 \end{proof}
 
 \section{Familles indexées par \texorpdfstring{$\N$}{N}}
@@ -429,7 +418,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     Soit $(u_n)_{n \in N}$ une famille de complexes. Alors
     cette famille est sommable ssi $\displaystyle \sum_{n \geqslant 0} u_n$ est 
     absolument convergente et alors :
-    $$\sum_{n \in \N} u_n = \sum_{n = 0}^{+\infty} u_n$$    
+    \[\sum_{n \in \N} u_n = \sum_{n = 0}^{+\infty} u_n\]
 \end{theoreme}
 
 \begin{proof}
@@ -445,16 +434,16 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
     Soit $J \subset \N$ fini, et soit $N \in \N$ un majorant de $J$. 
 
-    $$\sum_{j \in J} |u_j| \leqslant \sum_{j = 0}^N |u_j| \leqslant \sum_{j = 0}^{+\infty} |u_j|$$
+    \[\sum_{j \in J} |u_j| \leqslant \sum_{j = 0}^N |u_j| \leqslant \sum_{j = 0}^{+\infty} |u_j|\]
 
     Donc la famille est sommable. \\
 
     \uline{Si $\forall n, \, u_n \in \R^+$ :}
     Pour $J \subset \N$ fini, soit $N$ un majorant de $J$. 
-    $$\sum_{j \in J} u_j \leqslant \sum_{j = 0}^N u_j \leqslant \sum_{j = 0}^{+\infty} u_j$$
+    \[\sum_{j \in J} u_j \leqslant \sum_{j = 0}^N u_j \leqslant \sum_{j = 0}^{+\infty} u_j\]
 
     Par définition de la borne sup, 
-    $$\sum_{n \in \N} u_n \leqslant \sum_{j = 0 }^{+\infty} u_j$$
+    \[\sum_{n \in \N} u_n \leqslant \sum_{j = 0 }^{+\infty} u_j\]
 
     Par ailleurs $\forall k \in \N, \, \displaystyle \sum_{i = 0}^k u_i  = \sum_{i \in \ninter 0 n} u_i \leqslant \sum_{i \in \N} u_i$.
 
@@ -464,7 +453,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     $a \leqslant u_n^+ \leqslant |u_n|$ et $0 \leqslant u_n^- \leqslant |u_n|$.
 
     Donc par ce qui précède, 
-    $$\sum_{n = 0}^{+ \infty} u_n^+ = \sum_{n \in \N} u_n^+ \text{ et } \sum_{n = 0}^{+\infty} u_n^- = \sum_{n \in \N} u_n^-$$
+    \[\sum_{n = 0}^{+ \infty} u_n^+ = \sum_{n \in \N} u_n^+ \text{ et } \sum_{n = 0}^{+\infty} u_n^- = \sum_{n \in \N} u_n^-\]
 
     Et donc par défférence, $\displaystyle \sum_{n = 0}^{+\infty} u_n = \sum_{n \in \N} u_n$.
 
@@ -476,7 +465,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
 \begin{proposition}{Sommation par paquets pairs et impairs - LHP}{}
     Soit $\sum_{n \geqslant 0} u_n$ une série absolument convergente, alors :
-    $$\sum_{n  = 0 }^{+\infty} u_n = \sum_{p = 0 }^{+\infty} u_{2p} + \sum_{p = 0}^{+\infty} u_{2p + 1}$$
+    \[\sum_{n  = 0 }^{+\infty} u_n = \sum_{p = 0 }^{+\infty} u_{2p} + \sum_{p = 0}^{+\infty} u_{2p + 1}\]
 \end{proposition}
 
 \begin{proof}
@@ -490,7 +479,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 
     $\displaystyle \zeta(2) = \sum_{n = 0 }^{+\infty} \frac 1 {(2n)^2} + \sum_{n = 0 }^{+\infty} \frac 1 {(2n + 1)^2}$ par le th de sommation par paquets. 
 
-    $\displaystyle \frac{\pi^2} 6 = S + \frac{\pi^2}{24}$
+    Donc $\displaystyle \frac{\pi^2} 6 = S + \frac{\pi^2}{24}$.
 
     Donc $S = \frac {\pi^2} 8$.
 \end{exemple}
@@ -500,7 +489,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 \begin{theoreme}{Invariance par bijection de $\N$}{}
     Soit $\displaystyle \sum_{n \geqslant 0} u_n$ une série absolument convergente et $\sigma : \N \to \N$ une bijection.
     Alors $\displaystyle \sum_{n =\geqslant 0} u_{\sigma(n)}$ est absolument convergente et :
-    $$\sum_{n = 0}^{+\infty} u_n = \sum_{n = 0}^{+\infty} u_{\sigma(n)}$$
+    \[\sum_{n = 0}^{+\infty} u_n = \sum_{n = 0}^{+\infty} u_{\sigma(n)}\]
 \end{theoreme}
 
 \begin{proof}
@@ -511,7 +500,6 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 \begin{remarque}
     Si la série est semi-convergente, c'est faux.
 \end{remarque}
-
 
 \section{Famillles indexées par \texorpdfstring{$\N^2$}{N²}}
 \subsection{Cas des familles réelles positives}
@@ -540,7 +528,7 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
 \begin{theoreme}{Théorème de Fubini positif}{}
     Avec la convention qu'une somme infinie non convergente de réels positifs vaut 
     $+ \infty$ on a pour toute famille de \textbf{réels positifs} $(u_{n, p})_{(n, p) \in \N^2}$ :
-    $$\sum_{n = 0}^{+\infty} \left(\sum_{p = 0}^{+\infty} u_{n, p} \right) = \sum_{p = 0}^{+\infty} \left( \sum_{n = 0}^{+\infty} u_{n, p} \right) $$
+    \[\sum_{n = 0}^{+\infty} \left(\sum_{p = 0}^{+\infty} u_{n, p} \right) = \sum_{p = 0}^{+\infty} \left( \sum_{n = 0}^{+\infty} u_{n, p} \right)\]
 \end{theoreme}
 
 \begin{proof}
@@ -568,12 +556,12 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     
     On définit la suite $(w_n)_{n \in \N}$ appelée produit de convolution des suites 
     $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ par :
-    $$\forall n \in \N, \, w_n = \sum_{\substack{(p, q) \in \N^2 \\ p + q = n}} u_p v_q = \sum_{k = 0}^n u_k v_{n - k}$$
+    \[\forall n \in \N, \, w_n = \sum_{\substack{(p, q) \in \N^2 \\ p + q = n}} u_p v_q = \sum_{k = 0}^n u_k v_{n - k}\]
 
     On définit le produit de Cauchy des séries $ \sum_{n \geqslant 0} u_n$ et $ \sum_{n \geqslant 0} v_n$ 
     comme étant la série $ \sum_{n \geqslant 0} w_n$. Alors cette série est
     absolument convergente, et :
-    $$\sum_{n = 0 }^{+\infty} w_n = \left( \sum_{n = 0 }^{+\infty} u_n \right) \left( \sum_{n = 0 }^{+\infty} v_n \right)$$
+    \[\sum_{n = 0 }^{+\infty} w_n = \left( \sum_{n = 0 }^{+\infty} u_n \right) \left( \sum_{n = 0 }^{+\infty} v_n \right)\]
 \end{theoreme}
 
 \idee{56 théorèmes de sommation par paquets.}
@@ -597,13 +585,13 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     Donc, par le théorème de sommation par paquets, $(a_{n, p})_{(n, p) \in \N^2}$ est sommable. 
 
     Encore par le théorème de sommation par paquets, 
-    $$P' = \sum_{(n, p) \in \N^2} |a_{n, p}| = \sum_{n = 0 }^{+\infty} z_n$$
+    \[P' = \sum_{(n, p) \in \N^2} |a_{n, p}| = \sum_{n = 0 }^{+\infty} z_n\]
     où $\ds z_n = \sum_{p = 0}^n |u_p| |v_{n - p}|$.
 
     Or $\forall n \in \N, \, |w_n| \leqslant z_n$, donc $\ds \sum_{n = 0 }^{+\infty} w_n < A$. 
 
     De plus, de nouveau par le théorème de sommation par paquets,
-    $$P = \sum_{(n, p) \in \N^2} a_{n, p} = \sum_{n = 0 }^{+\infty} w_n$$
+    \[P = \sum_{(n, p) \in \N^2} a_{n, p} = \sum_{n = 0 }^{+\infty} w_n\]
 \end{proof}
 
 \begin{exemple}
@@ -618,13 +606,12 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     par le binôme de Newton.
 
     Donc $\displaystyle e^{z_1} e^{z_2} = e^{z_1 + z_2}$.
-
 \end{exemple}
 
 \begin{corollaire}{Produit d'exponrntielles de matrices}{}
     Soient $A, B \in \mathscr M_p(\C)$ telles que $AB = BA$. 
     Alors :
-    $$\displaystyle e^A e^B = e^{A + B}$$
+    \[e^A e^B = e^{A + B}\]
 \end{corollaire}
 
 \begin{proof}
@@ -644,7 +631,6 @@ cas où $\forall j\in\mathbb{B}, U_j\geqslant 0$.}
     \end{align*}
 
     En effet,
-
     \begin{align*}
         \sum_{q = 0}^n \sum_{k = 0}^q \frac{A^k B^{q - k}}{k! (q - k)!} & = \sum_{q= 0}^n \sum_{k = 0}^n \mathbb 1_{k \leqslant q} \frac{A^k B^{q - k}}{k! (q - k)!} \\
          & = \sum_{k = 0}^n \sum_{q = 0}^n \mathbb 1_{k \leqslant q} \frac{A^k B^{q - k}}{k! (q - k)!} \\

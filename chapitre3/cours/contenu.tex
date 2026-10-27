@@ -2,6 +2,7 @@ Dans ce chapitre, on se place dans $\K = \R$ ou $\C$ et on prendra $(E, N)$ un e
 
 \section{Topologie d'un espace vectoriel normé}
 \subsection{Ouverts}
+
 \begin{definition}{Partie ouverte}{}
     Soit $A \subset E$.
 
@@ -141,6 +142,7 @@ dont l'intersection infinie est $\{0\}$.}
 \end{proposition}
 
 \subsection{Fermés}
+
 \begin{definition}{Fermé}{}
     Soit $A \subset E$.
     On dit que $A$ est un fermé ssi son complémentaire 
@@ -357,6 +359,7 @@ Montrons qu'au contraire, cela n'est pas vrai en dimension infinie.
 \end{proof}
 
 \subsection{Intérieur, adhérence, frontière}
+
 \begin{definition}{Point intérieur}{}
     Soit $A \subset E$, et $a \in E$.
 
@@ -681,6 +684,7 @@ Si $A \subset E$, alors $\mathring A \subset A \subset \overline A$.
 \end{proof}
 
 \subsection{Partie dense}
+
 \begin{definition}{Partie dense, inclusion}{}
     Soient $A, B \in \mathscr P(E)$.
 
@@ -785,6 +789,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 \end{exemple}
 
 \subsection{Invariance}
+
 \begin{theoreme}{Invariance topologique en dimension finie}{}
     Les notions topologiques (ouverts, fermés, intérieur, adhérence, frontière, densité) sont invariantes
     par remplacement de la norme par une norme équivalente. 
@@ -804,6 +809,7 @@ Donc $x \in \overline A$ donc $E = \overline A$.
 \end{corollaire}
 
 \subsection{Topologie relative}
+
 Dans toute cette partie, on fixe $A$ partie non vide de $E$.
 
 On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs de $A$, fermés relatifs de $A$ et voisinages relatifs d'un point vis-à-vis de $A$.
@@ -936,6 +942,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \end{proof}
 
 \section{Étude locale d'une application}
+
 \begin{definition}{Limite}{}
     Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés. 
 
@@ -1020,6 +1027,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \end{proof}
 
 \subsection{Extensions}
+
 \begin{definition}{Extension notion de limite}{}
     On étend la notion de limite aux cas suivants : 
     \begin{enumerate}
@@ -1094,6 +1102,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \end{proof}
 
 \subsection{Caractérisation séquentielle}
+
 \begin{theorement}{Caractérisation séquentielle de la limite}{}
     Soit $A \subset E$ non vide, $a \in \overline A$, $\ell \in E'$ :
 
@@ -1144,6 +1153,7 @@ On va définir la topologie relative à $A$, c'est à dire les ouverts relatifs 
 \end{theoreme}
 
 \subsection{Opérations}
+
 \begin{theoreme}{}{}
     Soient $f, g : A \subset E \to F$, $\lambda : A \to \K$, $\alpha \in K$ et $\ell_1, \ell_2 \in F$, 
 
@@ -1201,6 +1211,7 @@ Si $f$ et $\lambda$ continues en a, $\lambda f$ aussi.
 Soit $f : A \subset E \to E'$ tel que $f(A) \subset B$, $g : B \to E"$ $a \in A$. Si $f$ continue en $a$ et $g$ continue en $f(a)$ alors $g \circ f$ continue en $a$.
 
 \subsection{Cas des espaces vectoriels normés produits}
+
 Soient $(E'_1, N'_1), \ldots, (E'_p, N'_p)$ des espaces vectoriels normés, et $E' = E'_1 \times \cdots \times E'_p$.
 muni de la norme produit $N'_\infty$, et $\fonction{f}{A\subset E}{E'}{x}{f(x) = (f_1(x), \ldots, f_p(x))}$.
 
@@ -1230,6 +1241,7 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \end{proof}
 
 \section{Continuité sur une partie}
+
 \begin{definition}{Continuité restriction sur une partie}{}
     Soit $f: A \to E$, et soit $B \subset A$. On dit que $f$ est continue sur $B$ ssi 
     $\forall a \in B, \, f_{|B}$ est continue en $a$.
@@ -1259,6 +1271,7 @@ Soit $a \in A$. Alors $f$ est continue en $a$ ssi $\forall j \in \ninter{1}{p}, 
 \end{proof}
 
 \subsection{Théorèmes d'opérations}
+
 \begin{theoreme}{}{}
     Soit $f, g, : A \to E$, $\lambda : A \to \K$, $\alpha \in \K$.
 
@@ -1328,6 +1341,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \end{exemple}
 
 \subsection{Continuité et image réciproque }
+
 \begin{theoreme}{Nature de l'image réciproque d'une fonction continue}{}
     Soit $f \in \mathscr C(A, E')$. Alors l'image réciproque d'un ouvert (resp. fermé) 
     de $E'$ par $f$ est un ouvert (resp. fermé) relatif de $A$.
@@ -1369,6 +1383,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 \end{proof}
 
 \subsection{Applications uniformément continues et lipschitziennes}
+
 \begin{definition}{Uniforme continuité}{}
     Soit $f : A \subset E \to E'$. On dit que $f$ est uniformément continue sur $A$ ssi 
     \[\forall \varepsilon > 0, \, \exists \eta > 0, \, \forall x, y \in A, \, N(x - y) \leqslant \eta \Rightarrow N'(f(x) - f(y)) \leqslant \varepsilon\]
@@ -1459,6 +1474,7 @@ L'ensemble $\mathscr C(A, E')$ des applications continues de $A$ dans $E'$ est u
 
 \section{Continuité des applications (multi)linéaires}
 \subsection{Critère de continuité}
+
 \begin{theoreme}{Critère de continuité pour une application linéaire}{}
     Soient $(E, N)$ et $(E', N')$ deux espaces vectoriels normés, et $ f \in \mathscr L(E, E')$.
 
@@ -1573,6 +1589,7 @@ $\fonction {\psi}{\mathscr M_{n, p}(\K) \times \mathscr M_{p, q}(\K)}{\mathscr M
 \end{proof}
 
 \subsection{Norme subordonnée d'une application linéaire continue}
+
 \begin{definition}{Norme d'opérateur}{}
     Soient $(E, N)$, $(E', N')$ deux espaces vectoriels normés sur $\K$ et $f \in \mathscr L_c(E, E')$.
 
@@ -1795,6 +1812,7 @@ Alors $\ds |y_{i_0}| = \left|\sum_{j = 1 }^{n } | a_{i_0, j} | e^{i \theta_j e^{
 Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ et $k = \sup Z$. 
 
 \subsection{Applications multilinéaires}
+
 \begin{theoreme}{Continuité des applications $p$-linéaires}{}
 
     Soient $(E_1, N_1), \ldots, (E_p, N_p)$ et $(E', N')$ des espaces vectoriels normés.
@@ -1856,6 +1874,7 @@ Donc $|| AX||_\infty \geqslant k$, or $k$ majorant donc $k = |||AX |||_\infty$ e
 \end{exemple}
 
 \section{Compacts d'un espace vectoriel normé}
+
 \begin{definition}{Compact}{}
     Soit $A \subset E$. 
 
@@ -1967,6 +1986,7 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 \end{proof}
 
 \subsection{Propriétés des compacts}
+
 \begin{proposition}{Propriétés des compacts}{}
     \begin{enumerate}
         \item Un compact est fermé et borné.
@@ -2052,6 +2072,7 @@ Or $x_{\varphi(N)}$ appartient clairement aux deux.... D'où la contradiction...
 \end{proof}
 
 \subsection{Cas de la dimension finie}
+
 \begin{theoreme}{Compacts en dimension finie}{}
     Si $(E, N)$ est un espace vectoriel normé de dimension finie, tout fermé borné de $E$ est compact. Ainsi, en 
     dimension finie les compacts \textbf{sont} les fermés bornés. 
@@ -2121,6 +2142,7 @@ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
 \end{proof}
 
 \subsection{Compacité et continuité}
+
 \begin{theoreme}{Heine, uniforme continuité}{}
     Toute fonction continue sur un compact est uniformément continue. 
 \end{theoreme}
@@ -2228,6 +2250,7 @@ ce qui contredit $N(e_{\varphi(n_0)}-e_{\varphi(n_0+1)}) \geqslant \frac 1 2$.
 \end{proof}
 
 \section{Connexité par arcs}
+
 Dans ce paragraphe on prendra $\K = \R$.
 
 \begin{definition}{Chemin}{}
@@ -2238,6 +2261,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{definition}
 
 \subsection{Connexité par arcs}
+
 \begin{definition}{Connexité par arcs}{}
     Soit $A \subset E$. 
     On dit que $A$ est connexe par arcs ssi $\forall (a, b) \in A^2, \, \exists f \in \mathscr C(\inter 0 1, A), f(0) = a \text{ et } f(1) = b$. 
@@ -2289,6 +2313,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 \textbf{\uline{Conséquence :}} tout partie convexe est connexe par arcs (l'ensemble vide est trivialement connexe par arcs).
 
 \subsection{Relation d'équivalence}
+
 \begin{theoreme}{Être joint par un chemin est une relation d'équivalence}{}
 
     Soit $A \subset E$ non vide.
@@ -2374,6 +2399,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{proof}
 
 \subsection{Application à \texorpdfstring{$\R$}{R}}
+
 \begin{theoreme}{Connexité par arcs dans $\R$}{}
     Les parties connexes par arcs de $\R$ sont les intervalles.
 \end{theoreme}
@@ -2420,6 +2446,7 @@ Dans ce paragraphe on prendra $\K = \R$.
 \end{exemple}
 
 \subsection{Connexité par arcs de $\text{GL}_n(\C)$ - Hors Programme}
+
 Soient $A,B \in GL_n(\C)$.
 Considérons l'application :
 \[\fonction P {\C} {\C} z {\det(A+z(B-A))}\]
@@ -2439,6 +2466,7 @@ On a bien $M$ continue; $M(0)=A$ , $M(1)=B$ et pour tout $t$ , $\det(M(t))=P(t) 
 Donc $M$ est un chemin de $GL_n(\C)$ reliant $A$ à $B$ donc $GL_n(\C)$ est connexe par arcs.
 
 \subsection{Connexité - Hors Programme}
+
 \begin{definition}{Connexité - HP}{}
     Soit $A \subset E$. 
     On dit que $A$ est connexe ssi toute application $f : A \to \{0, 1\}$ continue est constante. 

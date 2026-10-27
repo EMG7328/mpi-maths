@@ -351,63 +351,59 @@ Donc $B$ est un $\K$-espace vectoriel.
 \idee{Poser la bonne puissance et comparaison avec les séries de Riemann.}
 
 \begin{proof}
-    \uline{Si a > 1 :}
+    \uline{Si $a$ > 1 :}
+    $\displaystyle \frac 1 {n^a(\ln(n))^b} = o \left( \frac 1 {n^{\frac{a + 1} 2}} \right)$
 
-    \svspace $\displaystyle \frac 1 {n^a(\ln(n))^b} = o \left( \frac 1 {n^{\frac{a + 1} 2}} \right)$
+    En effet, $\displaystyle \frac{\frac 1 {n^a (\ln n)^b}}{\frac 1 {n^{\frac{a + 1} 2}}} = \frac{n^{\frac{a + 1} 2}}{n^a(\ln n)^b} = \frac{1}{n^{\frac{a - 1} 2}(\ln n)^b} \to 0$.
 
-    En effet, $\displaystyle \frac{\frac 1 {n^a (\ln n)^b}}{\frac 1 {n^{\frac{a + 1} 2}}} = \frac{n^{\frac{a + 1} 2}}{n^a(\ln n)^b} = \frac{1}{n^{\frac{a - 1} 2}(\ln n)^b} \longrightarrow 0$.
-
-    Or $\frac{a + 1} 2 > 1 $ donc la série de Riemann $\sum_{n \geqslant 1 } \frac 1 {n^{\frac{a + 1} 2}}$ converge, donc par critère de comparaison
+    Or $\frac{a + 1} 2 > 1$ donc la série de Riemann $\ds \sum_{n \geqslant 1} \frac 1 {n^{\frac{a + 1} 2}}$ converge, donc par critère de comparaison
     sur les séries de terme général positif, la série converge. \\ 
 
-    \uline{Si a < 1 :}
+    \uline{Si $a$ < 1 :}
 
     \svspace $\displaystyle \frac 1 n = o \left( \frac{1 }{n^a (\ln n)^b} \right)$
-     car $\displaystyle \frac{\frac 1 n}{\frac 1 {n^a (\ln n)^b}} = \frac{(\ln(n))^b }{n^{1 - a}} \longrightarrow 0$ par croissance comparée.
+     car $\displaystyle \frac{\frac 1 n}{\frac 1 {n^a (\ln n)^b}} = \frac{(\ln(n))^b }{n^{1 - a}} \to 0$ par croissance comparée.
 
      Or $\sum \frac 1 n $ diverge d'où la divergence par comparaison de séries de terme général positif. \\
 
-     \uline{Si $ a = 1$ et $b < 0$ :}
-
-     \svspace $ \frac 1 n = o \left( \frac 1 {n (\ln n)^b} \right)$ d'où la divergence. \\ 
+    \uline{Si $a = 1$ et $b < 0$ :}
+    $\frac 1 n = o \left( \frac 1 {n (\ln n)^b} \right)$ d'où la divergence. \\ 
 
     \uline{Si $a = 1$ et $b \geqslant 0$ :}
 
-    \svspace $\fonction f {[2, + \infty[} \R t {\frac 1 {t (\ln t)^b}}$ est décroissante (issue de produit
+    \svspace La fonction $\fonction f {[2, + \infty[} \R t {\frac 1 {t (\ln t)^b}}$ est décroissante (issue de produit
     de facteurs croissants positifs). 
 
-    Comparaison série intégrale : 
+    On fait une comparaison série intégrale : 
 
-    Soit $k \geqslant 2, \, t \in [k, k + 1]$, alors $f(k + 1) \leqslant f(t) \leqslant f(k)$
+    Soit $k \geqslant 2, \, t \in [k, k + 1]$, $f(k + 1) \leqslant f(t) \leqslant f(k)$.
 
-    Donc $\int_{k}^{k + 1} f(k + 1) \text d t \leqslant \int_{k}^{k + 1} f(t) \text d t \leqslant \int_{k}^{k + 1} f(k) \text d t$
+    Donc $\ds \int_{k}^{k + 1} f(k + 1) \dt \leqslant \int_{k}^{k + 1} f(t) \dt \leqslant \int_{k}^{k + 1} f(k) \dt$.
 
-    Donc $f(k + 1) \leqslant \int_{k}^{k + 1} f(t) \text d t \leqslant f(k)$
+    Donc $\ds f(k + 1) \leqslant \int_{k}^{k + 1} f(t) \dt \leqslant f(k)$.
 
     Sommons de $k = 2$ à $n - 1$, pour $n \geqslant 3$, en notant $\displaystyle S_n = \sum_{k = 2}^{n} f(k)$. 
 
-    Alors $S_n - f(2) \leqslant \int_{2}^{n} f(t) \text d t \leqslant S_n - f(n)$
-
+    Alors $\ds S_n - f(2) \leqslant \int_{2}^{n} f(t) \text d t \leqslant S_n - f(n)$, donc :
     \[\int_{2}^{n} f(t) \text d t + f(n) \leqslant S_n \leqslant \int_{2}^{n} f(t) \text d t + f(2)\]
 
-    Or $\int_{2}^{n} f(t) \text d t = \int_{2}^{n} \frac 1 {t (\ln t)^b} \text d t$.
+    Or $\ds \int_{2}^{n} f(t) \text d t = \int_{2}^{n} \frac 1 {t (\ln t)^b} \text d t$.
 
     \begin{itemize}
         \item Si $b = 1$,
-        $\int_2^n \frac 1 {t\ln(t)} = \left[ \ln(\ln t) \right]_{2}^{n} = \ln(\ln n) - \ln(\ln 2) \longrightarrow + \infty$
-
+        $\ds \int_2^n \frac 1 {t\ln(t)} = \left[ \ln(\ln t) \right]_{2}^{n} = \ln(\ln n) - \ln(\ln 2) \to + \infty$.
+        
         Donc $S_n \limit{n}{+ \infty} + \infty$ et la série diverge.
 
         \item Si $b > 1$, 
-        $\int_2^n \frac 1 {t\ln(t)^b} = \left[ \frac{(\ln t)^{-b + 1}}{-b + 1} \right]_{2}^{n}$ 
-
-        $S_n \leqslant \frac 1 {b - 1} \left[ (\ln 2)^{1 - b} - (\ln n)^{1 - b} \right] \leqslant \frac{(\ln 2)^{1 - b}}{b - 1}$
+        $\ds \int_2^n \frac 1 {t\ln(t)^b} = \left[ \frac{(\ln t)^{1 - b}}{1 - b} \right]_{2}^{n}$, 
+        donc $S_n \leqslant \frac 1 {b - 1} \left[ (\ln 2)^{1 - b} - (\ln n)^{1 - b} \right] \leqslant \frac{(\ln 2)^{1 - b}}{b - 1}$.
 
         Donc majorée, or $S_n$ croissante donc converge (théorème de la limite monotone).
 
-        \item Si $b < 1$, on garde le même résultat qu'au dessus pour l'intégrale,
+        \item Si $b < 1$, on garde le même résultat qu'au dessus pour l'intégrale et,
         
-        $\frac 1 {1 - b} \left[ (\ln n)^{1 - b} - (\ln 2)^{1 - b} \right] \leqslant S_n \longrightarrow + \infty$
+        $\frac 1 {1 - b} \left[ (\ln n)^{1 - b} - (\ln 2)^{1 - b} \right] \leqslant S_n \to + \infty$
         et la série diverge. 
     \end{itemize}
 \end{proof}
@@ -460,7 +456,7 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
     \uline{Si $E = \R$ :}
     \svspace Soit $\sum u_n$ une série réelle absolument convergente.
 
-    Posons $\forall n \in \N$
+    Posons $\forall n \in \N$,
 
     $\left\{ \begin{array}{rl}
         u_n^+ & = \frac{\abs{u_n} + u_n}{ 2} \\
@@ -479,13 +475,12 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
 
     Soit $B = (b_1, \ldots, b_k)$ une base de $E$, et considérons $|| \cdot ||_\infty$ associée. 
 
-    Soit $\sum_{n \leqslant 0} u_n$ une série de $E$ absolument convergente.
+    Soit $\sum_{n \geqslant 0} u_n$ une série de $E$ absolument convergente.
 
     Alors par équivalence des normes, $\sum_{n \geqslant 0} || u_n ||_\infty$ converge.
 
-    Notons $\displaystyle \forall n, \, u_n = \sum_{j = 1}^k u_{n, j} b_j$.
-
-    Alors $\forall j, \forall n, \, \abs{u_{n, j}} \leqslant || u_n ||_\infty$.
+    Notons $\displaystyle \forall n \in \N, \, u_n = \sum_{j = 1}^k u_{n, j} b_j$.
+    Alors $\forall j \in \ninter 1 k, \forall n \in \N, \, \abs{u_{n, j}} \leqslant || u_n ||_\infty$.
 
     Par comparaison de séries à termes positifs, $\sum_{n \geqslant 0} \abs{u_{n, j}}$ converge.
 
@@ -495,12 +490,11 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
 
     \uline{Solution 2 :}
 
-    Notons $\displaystyle \forall n, \, S_n = \sum_{k = 0}^{n } u_k $, $\displaystyle T_n = \sum_{k = 0 }^{n } N(u_k)$.
+    Notons $\displaystyle \forall n \in \N, \, S_n = \sum_{k = 0}^n u_k $, $\displaystyle T_n = \sum_{k = 0}^n N(u_k)$.
 
     Par hypothèse, $T_n$ converge vers $\displaystyle \ell = \sum_{k = 0}^{+\infty} N(u_k)$.
 
-    On a $\forall n, \, N(S_n) \leqslant \sum_{k = 0 }^{n } N(u_k) = T_n$ convergente donc bornée. 
-
+    On a $\ds \forall n \in \N, \, N(S_n) \leqslant \sum_{k = 0}^n N(u_k) = T_n$ convergente donc bornée. 
     Donc $(S_n)$ bornée. 
 
     Donc par Bolzano-Weierstrass, on peut en extraitre $S_{\varphi(n)} \to L \in E$
@@ -508,16 +502,15 @@ et calculer $N(S_{\varphi(n)} - S_n)$.
     Or :
 
     \begin{align*}
-        N(S_{\varphi(n)} - S_n) & = N\left( \sum_{k = 0 }^{\varphi(n)} u_k - \sum_{k = 0 }^{n } u_k \right) \\
-                                & = N \left( \sum_{k = n + 1 }^{\varphi(n)} u_k \right) \\
-                                & \leqslant \sum_{k = n + 1 }^{\varphi(n)} N(u_k) \\
-                                & \leqslant \sum_{k = 0 }^{\varphi(n) } N(u_k) - \sum_{k = 0 }^{n } N(u_k) \\
-                                & \leqslant T_{\varphi(n)} - T_n \limit{n}{+ \infty} 0
+        N(S_{\varphi(n)} - S_n) & = N\left(\sum_{k = 0}^{\varphi(n)} u_k - \sum_{k = 0}^n u_k\right) \\
+                                & = N \left(\sum_{k = n + 1}^{\varphi(n)} u_k\right) \\
+                                & \leqslant \sum_{k = n + 1}^{\varphi(n)} N(u_k) \\
+                                & \leqslant \sum_{k = 0}^{\varphi(n)} N(u_k) - \sum_{k = 0}^n N(u_k) \\
+                                & \leqslant T_{\varphi(n)} - T_n \limit{n}{+\infty} 0
     \end{align*}
 
-    Donc $N(S_n - L) = N(S_n - S_{\varphi(n)} + S_{\varphi(n)} - L)$
-
-    \qquad \qquad \qquad $ \leqslant N(S_n - S_{\varphi(n)}) + N(S_{\varphi(n)} - L) \limit{n}{+ \infty} 0$.
+    Donc $N(S_n - L) = N(S_n - S_{\varphi(n)} + S_{\varphi(n)} - L)
+    \leqslant N(S_n - S_{\varphi(n)}) + N(S_{\varphi(n)} - L) \limit{n}{+ \infty} 0$.
 \end{proof}
 
 \subsection{Complément Hors Programme : Critère de Cauchy}

@@ -577,7 +577,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 
     $f^{(n+1)}(x) = \frac{e^{\frac{-1}{x^2}}}{x^{3n + 3}} \underbrace{\left( x^3 P'_n(x) - 3nx^2 P_n(x) - 2P_n(x) \right)}_{P_{n+1}(x)}$
 
-    On a bien $\forall n, \, f^{(n)}(x) \limit x {0^-} 0 $ et $f^{(n)}(x) \limit x {0^+} 0$ par croissance comparée. 
+    On a bien $\forall n \in \N, \, f^{(n)}(x) \limit x {0^-} 0 $ et $f^{(n)}(x) \limit x {0^+} 0$ par croissance comparée. 
 
     Donc par le théorème de prolongement des fonctions de classe $\mathscr C^n$, $f$ est $\mathscr C^n$ sur $\R$ et $\forall n \in \N, \, f^{(n)}(0) = 0$.
 
@@ -1207,6 +1207,7 @@ Changements de variable usuels :
     \midrule
     \int_a^b f(t^2)t \dt & x = t^2, \; \dx = 2t \dt \\
     \int_a^b f(\cos t) \sin t \dt & x = \cos t, \; \dx = -\sin t \dt \\
+    \addlinespace[6pt]
     \int_a^b F(e^t) \dt &
     \begin{gathered}[c]
         x = e^t, \; \dx = e^t \dt \\
@@ -1218,7 +1219,7 @@ Changements de variable usuels :
         u = \tan \frac t 2, \; t = 2 \arctan u, \; \dt = \frac{2 \dif u}{1 + u^2} \\
         \cos t = \frac{1 - u^2}{1 + u^2}, \; \sin t = \frac{2u}{1 + u^2}
     \end{gathered} \\
-    \addlinespace[3pt]
+    \addlinespace[6pt]
     \int_{a}^{b} F(x, \sqrt{1 - x^2}) \dx & x = \sin t \\
     \int_{a}^{b} F(x, \sqrt{x^2 - 1}) \dx & x = \cosh t \\
     \int_{a}^{b} F(x, \sqrt{1 + x^2}) \dx & x = \sinh t \\

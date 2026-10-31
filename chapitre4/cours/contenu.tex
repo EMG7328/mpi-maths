@@ -1086,10 +1086,10 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
 \end{itemize}
 
 \begin{exemple}
-    $\displaystyle a_n = \frac{(-1)^n}{n + (-1)^n\sqrt{n}}$ pour $n \geqslant 2$. 
-    Etude de $\sum a_n$.
+    Soit $n \geqslant 2$, posons $\displaystyle a_n = \frac{(-1)^n}{n + (-1)^n\sqrt{n}}$.
+    Étudions $\sum a_n$.
 
-    $\abs{a_n} \sim \frac 1 n $ terme général série divergente donc pas de convergence absolue. 
+    $\abs{a_n} \sim \frac 1 n$, terme général d'une série divergente donc pas de convergence absolue. 
 
     $\displaystyle \frac 1 {n + (-1)^n \sqrt n}$ n'est pas décroissante, on ne peut pas appliquer le TSSA. 
 
@@ -1100,23 +1100,25 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
     \end{align*}
     
     Donc $\sum a_n$ converge.
+\end{exemple}
 
-    \lvspace (exo 5) $u_n = \sin(n! \pi e)$ et $v_n = \sin(2 n! \pi e)$, $\displaystyle e = \sum_{k = 0 }^{ + \infty } \frac{1}{k!}$
+\begin{exemple}
+    Soit $u_n = \sin(n! \pi e)$ et $v_n = \sin(2 n! \pi e)$, $\displaystyle e = \sum_{k = 0 }^{ + \infty } \frac{1}{k!}$
 
     Donc :
     \begin{align*}
         n! e & = \sum_{k = 0 }^{+ \infty } \frac{n!}{k!} \\
-              & = \underbrace{\sum_{k = 0}^{n - 2} \frac{n!}{k!}}_{\substack{P_n \text{ somme} \\ \text{d'entiers pairs}}} + n + 1 + \frac{1}{n + 1} + \frac{1}{(n + 1)(n + 2)} + \frac 1 {(n + 1)(n + 2)(n + 3)} + \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} \\
+             & = \underbrace{\sum_{k = 0}^{n - 2} \frac{n!}{k!}}_{\substack{P_n \text{ somme} \\ \text{d'entiers pairs}}} + n + 1 + \frac{1}{n + 1} + \frac{1}{(n + 1)(n + 2)} + \frac 1 {(n + 1)(n + 2)(n + 3)} + \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} \\
     \end{align*}
 
     $\displaystyle \forall k \geqslant n + 4$, $\displaystyle \frac{n!}{k!} = \frac{1}{(n + 1)(n + 2) \cdots (k)} \leqslant \frac{1}{(n + 1)(n + 2)\ldots(k - 1)k}$
 
     \begin{align*}
-        \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} & \leqslant \sum_{k = n + 4 }^{+ \infty    }\frac 1 {(n + 1)(n + 2) (k-1)k} \\
-                                                     & \leqslant \frac 1 {(n + 1)(n + 2)} \underbrace{\sum_{k = 2 }^{+ \infty } \frac 1 {(k - 1)k}}_C \\
+        \sum_{k = n + 4 }^{+ \infty } \frac{n! }{k!} & \leqslant \sum_{k = n + 4 }^{+\infty}\frac 1 {(n + 1)(n + 2) (k-1)k} \\
+                                                     & \leqslant \frac 1 {(n + 1)(n + 2)} \underbrace{\sum_{k = 2}^{+\infty} \frac 1 {(k - 1)k}}_C \\
     \end{align*}
 
-    Donc $n ! e = qn + \frac 1 {n + 1} + O(\frac 1 {n^2})$ $a_n$ entier jsp quoi 
+    Donc $n ! e = q_n + \frac 1 {n + 1} + O\left(\frac 1 {n^2}\right)$, $q_n = P_n + n + 1$. Donc :
 
     \begin{align*}
         \sin(2 \pi n! e) & = \sin \left( 2 \pi \left( q_n + \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
@@ -1124,14 +1126,15 @@ Soit $\displaystyle \sum_{n \ge 0} a_n$ où $a_n \in \C$.
                          & = \frac {2 \pi}{n + 1} + O\left( \frac 1 {n^2} \right) \\
     \end{align*}
 
-    Donc $\sum v_n$ diverge. (La fin de la preuve est de copilot, pas eu la temps de noter, si qqun peut 
-    vérifier que c'est bien ou m'envoyer le vrai truc, merci !) 
+    Donc $\sum v_n$ diverge.
     
     \begin{align*}
         \sin(n! \pi e) & = \sin \left( \pi \left( q_n + \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
                        & = \sin \left( \pi \left( \frac 1 {n + 1} + O\left( \frac 1 {n^2} \right) \right) \right) \\
                        & = (-1)^{q_n} \left( \frac{\pi}{n + 1} + O\left( \frac 1 {n^2} \right) \right) \\
     \end{align*}
+
+    Or, $q_n$ est de parité alternante donc par le TSSA, $\sum u_n$ converge.
 \end{exemple}
 
 \subsection{Sommation des relations de comparaison pour les séries divergentes}

@@ -128,10 +128,10 @@ Montrer l'existence et calculer : \[\sum_{n=0}^{+\infty} \frac{1}{(3n)!}\]
 
 % --- (Source: EXERCICE 61 algèbre) ---
 \begin{exercice}[Exercice 61 Algèbre]
-    On note $\mathcal{M}_{n}(\C)$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j} |a_{i,j}|$.
+    On note $\mathcal{M}_{n}(\C)$ l'espace des matrices carrées d'ordre $n$. Pour $A=(a_{i,j})$, on pose $\|A\| = \max_{i,j \in \ninter 1 n} |a_{i,j}|$.
     \begin{enumerate}
         \item Prouver que $\|\cdot\|$ est une norme.
-        \item Démontrer que $\|AB\| \leqslant n\|A\|\|B\|$ et $\|A^p\| \leqslant n^{p-1}\|A\|^p$.
+        \item Démontrer que $\|AB\| \leqslant n\|A\|\|B\|$ et $\forall p \in \N^* \|A^p\| \leqslant n^{p-1}\|A\|^p$.
         \item Démontrer que la série $\sum\frac{A^{p}}{p!}$ est absolument convergente. Est-elle convergente ?
     \end{enumerate}
 \end{exercice}
@@ -490,6 +490,40 @@ Soit $n \in \N$, on a la décomposition suivante :
             Comme $u^n \to 0$, le produit tend vers $e$. \\
             Donc $(e-u)$ est inversible d'inverse la somme de la série.
     \end{enumerate}
+\end{enumerate}
+\end{correction}
+
+\begin{correction}{11}
+\begin{enumerate}
+    \item $\|\cdot\|$ est définie positive.
+    Soit $A,B \in \mathscr M_n(\C)$.
+
+    Séparation : $\|0\| = 0$. Supposons que $\|A\| = 0$.
+
+    Alors $\forall i,j \in \ninter 1 n,~|a_{i,j}| \leqslant 0$. Donc $A = 0$.
+    
+    Homogénéité : soit $\lambda \in \C$,
+    \[\|\lambda A\| = \max_{i,j \in \ninter 1 n} |\lambda a_{i,j}| = \lambda \max_{i,j \in \ninter 1 n} |a_{i,j}| = \lambda \|A\|\]
+
+    Inégalité triangulaire :
+    \[\|A + B\| = \max_{i,j \in \ninter 1 n} |a_{i,j} + b_{i,j}| \leqslant \max_{i,j \in \ninter 1 n} (|a_{i,j}| + |b_{i,j}|) \leqslant \|A\| + \|B\|\]
+
+    \item Soient $A,B \in \mathscr M_n(\C)$,
+    \begin{align*}
+        \|AB\| &= \max_{i,j \in \ninter 1 n} \left|\sum_{k=1}^n a_{i,k} b_{k,j}\right| \\
+               &\leqslant \max_{i,j \in \ninter 1 n} \sum_{k=1}^n |a_{i,k} b_{k,j}| \\
+               &\leqslant \max_{i,j \in \ninter 1 n}\left(n \max_{k \in \ninter 1 n} |a_{i,k}| |b_{k,j}|\right) \\
+               &\leqslant n \left(\max_{i,k \in \ninter 1 n} |a_{i,k}|\right) \left(\max_{k,j \in \ninter 1 n} |b_{k,j}|\right) \\
+               &\leqslant n \|A\| \|B\|
+    \end{align*}
+
+    Par réccurrence immédiate en prenant $B = A$, on obtient que $\forall p \in \N^*,~\|A^p\| \leqslant n^{p-1}\|A\|^p$.
+
+    \item Soit $p \in \N^*$,
+    $\frac {\|A^p\|} {p!} \leqslant \frac {n^{p-1}\|A\|^p} {p!} = \frac {(n\|A\|)^p} {p!n}$
+    par critère de comparaison, le terme général est en $O\left(\frac 1 {n^2}\right)$ donc la série converge absolument.
+
+    Étant en dimension finie, la série est convergente.
 \end{enumerate}
 \end{correction}
 

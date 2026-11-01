@@ -677,13 +677,13 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 \begin{exemple}
     $a = 67$ et $b = 23$. 
 
-    $$\begin{array}{rccl}
+    \[\begin{array}{rccl}
         67 \times 1 & + & 23 \times 0 & = 67 \\
         67 \times 0 & + & 23 \times 1 & = 23 \\
         67 \times 1 & + & 23 \times (-2) & = 21 \\
         -67 & + & 23 \times 3 & = 2 \\
         67 \times 11 & - & 23 \times 32 & = 1
-    \end{array}$$
+    \end{array}\]
 \end{exemple}
 
 \subsection{Nombres premiers}
@@ -732,13 +732,13 @@ A chaque étape, on réalise la division euclidienne de $r_{i-1}$ par $r_i$
 
     \begin{enumerate}
         \item Théorème des nombres premiers (Hadamard et de la Vallée Poussin, 1896) :
-        $$\displaystyle \pi(x) \substack{\sim \\ x \to + \infty} \frac x {\ln(x)}$$
+        \[\pi(x) \substack{\sim \\ x \to + \infty} \frac x {\ln(x)}\]
         \item fonction logarithme intégral : 
-        $$\displaystyle \mathrm{Li}(x) = \alpha + \int_2^x \frac {dt}{\ln(t)}$$ 
+        \[\mathrm{Li}(x) = \alpha + \int_2^x \frac {dt}{\ln(t)}\]
         où $\displaystyle \alpha = \gamma + \ln(\ln(2)) + \sum_{n = 1}^{+\infty} \frac{(\ln(2))^n}{n \cdot n!}$. 
 
         Alors, en admettant l'hypothèse de Riemann, on a : 
-        $$\displaystyle \pi(x)  - \mathrm{Li}(x) = O(\sqrt x \ln(x))$$
+        \[\pi(x)  - \mathrm{Li}(x) = O(\sqrt x \ln(x))\]
         \item Nombres premiers jumeaux : $p, q \in \mathbb P$ sont jumeaux ssi $|p - q| = 2$. 
         Conjecture : il en existe une infinité. 
         \item Conjecture de Goldbach : tout entier pair $> 2$ est la somme de deux nombres premiers.
@@ -849,7 +849,7 @@ Soit $n \geqslant 2$ un entier.
 
 \begin{theoreme}{Corps $\Z/n\Z$}{}
     $\Z/n\Z$ est un corps ssi $n$ est premier. Pour $p \in \mathbb{P}$, ce corps est noté 
-    $$\Z/p\Z = \mathbb{F}_p$$
+    \[\Z/p\Z = \symbb{F}_p\]
 \end{theoreme}
 
 \begin{proof}
@@ -924,7 +924,7 @@ Soit $n \geqslant 2$ un entier.
     classes dans $\Z / (n k) \Z$, $\widetilde{.}\space $ les classes dans $\Z / k \Z$ et 
     $\space \widehat{.} \space $ les classes dans $\Z / n \Z$.
     Alors l'application 
-    $$\fonction{\varphi}{\Z / (n k) \Z}{\Z / n \Z \times \Z / k \Z}{c = \overline x}{(\widehat x, \widetilde x)}$$
+    \[\fonction{\varphi}{\Z / (n k) \Z}{\Z / n \Z \times \Z / k \Z}{c = \overline x}{(\widehat x, \widetilde x)}\]
 
     est bien définie et est un isomorphisme d'anneaux.
 \end{theoreme}
@@ -968,8 +968,7 @@ Soit $n \geqslant 2$ un entier.
 
 \begin{proposition}{Généralisation du théorème chinois}{}
     Soient $n_1, n_2, \ldots, n_k \geqslant 2$ entiers deux à deux premiers entre eux. 
-    Alors $$\fonction{\varphi}{\Z / (n_1 n_2 \cdots n_k) \Z}{\Z / n_1 \Z \times \Z / n_2 \Z \times \cdots \times \Z / n_k \Z}{\overline x}{(\widehat x_1, \widehat x_2, \ldots, \widehat x_k)}$$
-
+    Alors \[\fonction{\varphi}{\Z / (n_1 n_2 \cdots n_k) \Z}{\Z / n_1 \Z \times \Z / n_2 \Z \times \cdots \times \Z / n_k \Z}{\overline x}{(\widehat x_1, \widehat x_2, \ldots, \widehat x_k)}\]
     est bien définie et est un isomorphisme d'anneaux.
 \end{proposition}
 
@@ -1060,10 +1059,9 @@ Donc $x_0$ est une solution particulière de $(S)$.
 
 \begin{definition}{Indicatrice d'Euler}{}
     On appelle indicatrice d'Euler l'application suivante : 
-    $$\fonction{\varphi}{\N^* \setminus \{1 \}}{\N}{n}{\operatorname{card}((\zz n)^*)}$$
+    \[\fonction{\varphi}{\N^* \setminus \{1 \}}{\N}{n}{\operatorname{card}((\zz n)^*)}\]
 
     Donc $\varphi(n) = \operatorname{Card}\{ k \in \ninter{1}{n - 1} , \, k \wedge n = 1\}$.
-
 \end{definition}
 
 \begin{remarque}
@@ -1096,7 +1094,7 @@ Donc $x_0$ est une solution particulière de $(S)$.
 \begin{theoreme}{Multiplicativité de $\varphi$}{}
     $\varphi$ est un fonction multiplicative, c'est à dire que 
     si $n \wedge k = 1$, avec $n, k \geqslant 2$, alors
-    $$\varphi(nk) = \varphi(n) \times \varphi(k)$$
+    \[\varphi(nk) = \varphi(n) \times \varphi(k)\]
 \end{theoreme}
 
 \begin{proof}
@@ -1151,7 +1149,7 @@ Donc $x_0$ est une solution particulière de $(S)$.
 \begin{theoreme}{Formule de $\varphi$}{}
     Soit $n \geqslant 2$. Décomposons $\displaystyle n = \prod_{i = 1}^k p_i^{\alpha_i}$, où 
     $k \geqslant 1$, $(p_1, p_2, \ldots, p_k)$ est une suite strictement croissante de nombres premiers. 
-    Alors $$\varphi(n) = n \prod_{i = 1}^k \left(1 - \frac 1 {p_i}\right)$$
+    Alors \[\varphi(n) = n \prod_{i = 1}^k \left(1 - \frac 1 {p_i}\right)\]
 \end{theoreme}
 
 \begin{proof}
@@ -1166,7 +1164,7 @@ Donc $x_0$ est une solution particulière de $(S)$.
 
 \begin{theoreme}{Théorème d'Euler}{}
     Soit $n \geqslant 2$ et $a \in \Z$ tel que $a \wedge n = 1$.
-    Alors $$a^{\varphi(n)} \equiv 1 [n]$$
+    Alors \[a^{\varphi(n)} \equiv 1 [n]\]
 \end{theoreme}
 
 \begin{proof}
@@ -1181,7 +1179,7 @@ Donc $x_0$ est une solution particulière de $(S)$.
 
 \begin{corollaire}{petit théorème de Fermat}{}
     Soit $p$ un nombre premier et $a \in \Z$ tel que $p \nmid a$.
-    Alors $$a^{p - 1} \equiv 1 [p]$$
+    Alors \[a^{p - 1} \equiv 1 [p]\]
 \end{corollaire}
 
 \begin{proof}
@@ -1256,7 +1254,7 @@ Soit $\K$ un sous-corps de $\C$.
     Donc $I = \ker f$ est un idéal de $\Q[X]$.
 
     De plus, $I \neq 0$ car $X^3 - 1 \in \ker f$ donc il existe un unique $P_0$ unitaire
-    tel que $$I = P_0 \Q[X]$$
+    tel que \[I = P_0 \Q[X]\]
 
     On dit que $j$ est algébrique et que $P_0$ est son polynôme minimal sur $\Q$.
 
@@ -1284,7 +1282,7 @@ Soit $\K$ un sous-corps de $\C$.
     $(\alpha^2 - 5)^2 = 24$, donc $\alpha$ annule $X^4 - 10 X^2 + 1$. Donc $\alpha$ est algébrique, 
     $I$ n'est pas l'idéal nul, et donc il existe un unique polynôme unitaire $P_0$ tel que
     $I = P_0 \Q[X]$.
-    Donc $$P_0 \mid X^4 - 10 X^2 + 1$$
+    Donc \[P_0 \mid X^4 - 10 X^2 + 1\]
 
     On a : $X^4 - 10 X^2 + 1 = (X - \sqrt 2 + \sqrt 3)(X + \sqrt 2 - \sqrt 3)$ dans $\R[X]$.
 
@@ -1332,7 +1330,7 @@ Soit $\K$ un sous-corps de $\C$.
 \begin{theoreme}{Pgcd dans $\K[X]$}{}
     Soient $P, Q \in \K[X]$, alors $P\K[X] + Q \K[X] $ est un idéal de $\K[X]$, 
     donc il existe un unique polynôme $D \in \K[X]$ unitaire ou nul tel que
-    $$P \K[X] + Q \K[X] = D \K[X]$$
+    \[P \K[X] + Q \K[X] = D \K[X]\]
 
     De plus, $D$ est l'unique polynôme unitaire ou nul tel que 
     $D \mid P$, $D \mid Q$ et si $\forall E \in \K[X], E \mid P$ et $E \mid Q$ $\Rightarrow E \mid D$.
@@ -1344,7 +1342,7 @@ Soit $\K$ un sous-corps de $\C$.
     $D = 0$ si et seulement si $P = Q = 0$.
 
     De plus, on dispose de la relation de Bézout :
-    $$\exists U, V \in \K[X], \, PU + QV = D$$
+    \[\exists U, V \in \K[X], \, PU + QV = D\]
 
     On a également l'algorithme d'Euclide étendu pour calculer le pgcd de $P$ et $Q$.
 \end{remarque}
@@ -1353,10 +1351,10 @@ Soit $\K$ un sous-corps de $\C$.
     Identique à celle dans $\Z$. 
 \end{proof}
 
-\begin{theoreme}{Ppcm dans $\K[X]$}{}
+\begin{theoreme}{PPCM dans $\K[X]$}{}
     Soient $P, Q \in \K[X]$. Alors $P\K[X] \cap Q \K[X]$ est un idéal de 
     $\K[X]$, donc il existe un unique polynôme $M \in \K[X]$ unitaire ou nul tel que
-    $$P \K[X] \cap Q \K[X] = M \K[X]$$
+    \[P \K[X] \cap Q \K[X] = M \K[X]\]
 
     De plus, $M$ est l'unique polynôme unitaire ou nul tel que
     $P \mid M$, $Q \mid M$ et si $\forall N \in \K[X], P \mid N$ et $Q \mid N$ $\Rightarrow M \mid N$.
@@ -1418,7 +1416,7 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
 
     $\exists ! \alpha \in \K, \, \exists ! k \in \N^*, \, \exists (P_1, \ldots, P_k)$ irréductibles et unitaires, 
     $\exists (\beta_1, \beta_2, \ldots, \beta_k) \in (\N^*)^k$ tels que
-    $$P = \alpha \prod_{i = 1}^k P_i^{\beta_i}$$
+    \[P = \alpha \prod_{i = 1}^k P_i^{\beta_i}\]
 \end{theoreme}
 
 \idee{
@@ -1458,7 +1456,7 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
     De plus si on avait pour un certain $i$, $\beta_i \neq \beta_i'$, quitte à les échanger supposons 
     que l'on ait $\beta_i < \beta_i'$, et alors en simplifiant par $P_i^{\beta_i}$, on obient
     
-    $$P_i \mid \prod_{\substack{j = 1 \\ j \neq i}}^k P_j'^{\beta_j'}$$
+    \[P_i \mid \prod_{\substack{j = 1 \\ j \neq i}}^k P_j'^{\beta_j'}\]
 
     ce qui est absurde, donc $\beta_i = \beta_i'$.
 
@@ -1480,7 +1478,7 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
 
 \begin{remarque}
     Analogies entre $\Z$ et $\K[X]$ :
-    $$\begin{array}{|c|c|}
+    \[\begin{array}{|c|c|}
         \hline
         \Z & \K[X] \\
         \hline
@@ -1492,7 +1490,7 @@ $\displaystyle a^n - b^n = \prod_{k = 0}^{n - 1} (a - b e^{\frac{2i\pi k} n})$
         \hline
         \text{signe} & \text{coef dominant} \\
         \hline
-    \end{array}$$
+    \end{array}\]
 \end{remarque}
 
 \begin{theoreme}{Irréductibles de $\C[X]$}{}

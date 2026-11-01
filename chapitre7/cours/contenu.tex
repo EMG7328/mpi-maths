@@ -69,7 +69,7 @@ Notations, vocabulaire :
         \item $\forall x, y \in H, x \ast y \in H$ 
         \item $\forall x \in H, x^{-1} \in H$
     \end{itemize}
-    ou encore ssi :
+    ou plus simplement ssi :
     \begin{itemize}
         \item $H \neq \emptyset$
         \item $\forall x, y \in H, x \ast y^{-1} \in H$
@@ -93,7 +93,7 @@ Notations, vocabulaire :
 \end{theoreme}
 
 \begin{proof}
-    Notons $H = \bigcap_{i \in I} H_i$, alors $H \subset G$ 
+    Notons $\ds H = \bigcap_{i \in I} H_i$, alors $H \subset G$ 
     et $\forall i \in I, e \in G_i$, donc $e \in H$ et $H \neq \emptyset$.
 
     Soient $x, y \in H$, alors $\forall i \in I, x, y \in H_i$, or 
@@ -170,7 +170,7 @@ Notations, vocabulaire :
     \index{Morphisme!de groupes}
     Soit $(G, \ast)$ et $(H, \top)$ deux groupes, et $\varphi : G \to H$ une application.
     On dit que $\varphi$ est un \emph{morphisme de groupes} de $(G, \ast)$ dans $(H, \top)$ ssi
-    $$\forall x, y \in G, \varphi(x \ast y) = \varphi(x) \top \varphi(y)$$
+    \[\forall x, y \in G, \varphi(x \ast y) = \varphi(x) \top \varphi(y)\]
 \end{definition}
 
 \begin{proposition}{Propriétés des morphismes de groupes}{}
@@ -184,46 +184,45 @@ Notations, vocabulaire :
 \end{proposition}
 
 \begin{exemple}
-    $\fonction{}{(\R_+^*, \cdot)}{(\R, +)}{x}{\ln(x)}$ est un morphisme de groupes.
+    $\fonction{\varphi}{(\R_+^*, \cdot)}{(\R, +)}{x}{\ln(x)}$ est un morphisme de groupes.
     
-    $\fonction{}{(\R, +)}{(\mathbb U, \cdot)}{x}{e^{ix}}$ est un morphisme de groupes.
+    $\fonction{\psi}{(\R, +)}{(\symbb U, \cdot)}{x}{e^{ix}}$ est un morphisme de groupes.
 
     La dernière propriété s'écrit $\forall x \in \R, \forall n \in \Z, e^{i(nx)} = (e^{ix})^n$, 
-    la formule de Moivre.
+    la formule de de Moivre.
 \end{exemple}
 
 \begin{theoreme}{Noyau d'un morphisme de groupes}{}
     Soit $\varphi : (G, \ast) \to (H, \top)$ un morphisme de groupes. 
     Alors $\varphi^{-1}(\{e_H\})$ est un sous-groupe de $(G, \ast)$ appelé noyau de 
-    $\varphi$ et noté $\ker \varphi$.
+    $\varphi$ et noté $\Ker \varphi$.
 \end{theoreme}
 
 \begin{exemple}
-    $$
+    \[
     \begin{array}{c|c}
         \text{Morphisme} & \text{Noyau} \\ \hline
-        \fonction{}{(\C^*, \cdot)}{(\R_+^*, \cdot)}{z}{|z|} & \mathbb U \\ \hline
-        \fonction{}{(\C^*, \cdot)}{(\C^*, \cdot)}{z}{z^n} & \mathbb U_n \\ \hline
-        \fonction{}{(\R, +)}{(\mathbb U, \cdot)}{\theta}{e^{i\theta}} & 2\pi \Z \\ \hline
+        \fonction{}{(\C^*, \cdot)}{(\R_+^*, \cdot)}{z}{|z|} & \symbb U \\ \hline
+        \fonction{}{(\C^*, \cdot)}{(\C^*, \cdot)}{z}{z^n} & \symbb U_n \\ \hline
+        \fonction{}{(\R, +)}{(\symbb U, \cdot)}{\theta}{e^{i\theta}} & 2\pi \Z \\ \hline
         \fonction{}{(GL_n(\R), \cdot)}{(\R^*, \cdot)}{A}{\det(A)} & SL_n(\R) \\ \hline
-    \end{array}$$
+    \end{array}\]
 \end{exemple}
 
 \begin{theoreme}{Injectivité d'un morphisme de groupes avec noyau}{}
     Soit $\varphi : (G, \ast) \to (H, \top)$ un morphisme de groupes.
-    Alors $\varphi$ est injective ssi $\ker \varphi = \{e_G\}$.
+    Alors $\varphi$ est injective ssi $\Ker \varphi = \{e_G\}$.
 \end{theoreme}
 
 \begin{remarque}
-    Comme $\varphi(e_G) = e_H$, on a toujours $e_G \in \ker \varphi$.
-    Il n'y a donc qu'à montrer que $\ker \varphi \subset \{e_G\}$ pour prouver l'injectivité de $\varphi$.
+    Comme $\varphi(e_G) = e_H$, on a toujours $e_G \in \Ker \varphi$.
+    Il n'y a donc qu'à montrer que $\Ker \varphi \subset \{e_G\}$ pour prouver l'injectivité de $\varphi$.
 \end{remarque}
 
 \begin{proposition}{Image d'un morphisme de groupes}{}
     Soit $\varphi : (G, \ast) \to (H, \top)$ un morphisme de groupes. Alors l'image directe de 
     $G$ par $\varphi$, est appelée image de $\varphi$ et notée $\im \varphi$. C'est un sous-groupe de $H$.
-    $$\im \varphi = \varphi(G) = \{\varphi(x), x \in G\}$$
-    
+    \[\im \varphi = \varphi(G) = \{\varphi(x), x \in G\}\]
 \end{proposition}
 
 \begin{definition}{Isomorphisme de groupes}{}
@@ -268,20 +267,19 @@ Soit $n \in \N, \, n \geqslant 2$.
 \end{propositionnt}
 
 \begin{proof}
-    \uline{Réflexivité : }
+    \uline{Réflexivité :}
     Soit $a \in \Z$ alors $a - a = 0 = 0 \cdot n$, donc $a \equiv a [n]$.
 
-    \uindent{Symétrie }
+    \uline{Symétrie :}
     Soient $a, b \in \Z$ tels que $a \equiv b [n]$.
 
     \svspace Alors $\exists k \in \Z, \, b - a = kn$, donc $a - b = -kn = (-k)n$, donc $b \equiv a [n]$.
 
-    \uindent{Transitivité } Soient $a, b, c \in \Z$ tels que $a \equiv b [n]$ et $b \equiv c [n]$.
+    \uline{Transitivité :} Soient $a, b, c \in \Z$ tels que $a \equiv b [n]$ et $b \equiv c [n]$.
 
     \svspace Alors $\exists k_1, k_2 \in \Z, \, b - a = k_1 n$ et $c - b = k_2 n$.
 
     Donc $c - a = (k_1 + k_2)n$, donc $a \equiv c [n]$.
-
 \end{proof}
 
 \begin{proposition}{Reste division euclidienne avec congruences}{}
@@ -309,13 +307,13 @@ Soit $n \in \N, \, n \geqslant 2$.
 \begin{definition}{Classe d'équivalence modulo n}{}
     Pour $k \in \Z$, sa classe d'équivalence pour la relation de congruence modulo $n$ 
     est notée $\operatorname{cl}_n(k) = \hat k$. 
-    $$\hat k = \{x \in \Z, x \equiv k [n]\}$$
+    \[\hat k = \{x \in \Z, x \equiv k [n]\}\]
 \end{definition}
 
 \begin{definition}{Groupe Z/nZ}{}
     \index{Groupe!Z/nZ}
     L'ensemble des classes d'équivalence pour cette relation est noté $\Z/n\Z$.
-    $$\Z/n\Z = \{\hat k, k \in \Z\}$$
+    \[\Z/n\Z = \{\hat k, k \in \Z\}\]
 \end{definition}
 
 \begin{theorement}{nature applications entre Z et Z/nZ}{}
@@ -347,7 +345,7 @@ au dessus).}
     et $\hat 0 = \{k \in \Z, k \equiv 0 [2]\} = 2 \Z$ et $\hat 1 = \{k \in \Z, k \equiv 1 [2]\} = 1 + 2 \Z$.
 \end{exemple}
 
-\subsection{Structure }
+\subsection{Structure}
 
 \begin{proposition}{Loi de composition interne sur Z/nZ}{}
     Soient $c, d \in \Z/n\Z$, et soient $x \in c$ et $y \in d$. 
@@ -396,7 +394,7 @@ au dessus).}
 \subsection{Isomorphisme}
 
 \begin{theoreme}{}{}
-    L'application $\fonction{\varphi}{(\Z/n\Z, +)}{(\mathbb U, \cdot)}{c = \hat k}{e^{\frac{2i\pi k} n}}$
+    L'application $\fonction{\varphi}{(\Z/n\Z, +)}{(\symbb U, \cdot)}{c = \hat k}{e^{\frac{2i\pi k} n}}$
     est bien définie et est un isomorphisme de groupes.
 \end{theoreme}
 
@@ -410,24 +408,23 @@ au dessus).}
 
     \svspace Soient $c_1, c_2 \in \Z/n\Z$, $k_1 \in c_1, k_2 \in c_2$.
 
-    Alors
-
-     $$\begin{aligned}
+    Alors :
+     \begin{align*}
         \varphi(c_1 + c_2) & = \varphi(\hat{k_1} + \hat{k_2}) \\
         & = \varphi(\widehat{k_1 + k_2}) \\
         & = e^{\frac{2i\pi (k_1 + k_2)} n} \\
         & = e^{\frac{2i\pi k_1} n} e^{\frac{2i\pi k_2} n} \\
         & = \varphi(c_1) \cdot \varphi(c_2)
-    \end{aligned}$$
+    \end{align*}
 
     Donc $\varphi$ est un morphisme de groupes.
 
-    Soit $c \in \ker \varphi$, et soit $k \in c$.
+    Soit $c \in \Ker \varphi$, et soit $k \in c$.
 
     Alors $\varphi(c) = 1$, donc $e^{\frac{2i\pi k} n} = 1$, donc $\frac k n \in \Z$ donc 
     $c = \hat 0$, donc $\varphi$ est injective.
 
-    \avspace $\Z / n \Z$ et $\mathbb U$ ont même cardinal $n$, donc $\varphi$ est bijecive.
+    \avspace $\Z / n \Z$ et $\symbb U$ ont même cardinal $n$, donc $\varphi$ est bijecive.
 \end{proof}
 
 \begin{remarque}
@@ -460,15 +457,15 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
     L'image du morphisme $\varphi_a$ est un sous-groupe de $(G, \ast)$ appelé
     sous-groupe engendré par $a$ et noté $\langle a \rangle$. 
     Ainsi, 
-    $$\langle a \rangle = \{a^k, k \in \Z\}$$
+    \[\langle a \rangle = \{a^k, k \in \Z\}\]
 \end{definition}
 
 \begin{exemple}
-    $G = \mathbb U$, $a = -1$. 
+    $G = \symbb U$, $a = -1$. 
     Alors $\langle a \rangle = \{(-1)^k, k \in \Z\} = \{1, -1\}$.
 
     $\displaystyle a = j = e^{\frac{2i\pi}3}$.
-    Alors $\langle a \rangle = \{1, j, j^2\} = \mathbb U_3$.
+    Alors $\langle a \rangle = \{1, j, j^2\} = \symbb U_3$.
 \end{exemple}
 
 \begin{remarque}
@@ -481,20 +478,20 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 \end{exemple}
 
 \begin{definition}{}{}
-    Soit $a \in G$, alors $\ker \varphi_a$ est un sous-groupe de $(\Z, +)$. 
+    Soit $a \in G$, alors $\Ker \varphi_a$ est un sous-groupe de $(\Z, +)$. 
 
-    $\ker \varphi_a = \{k \in \Z, a^k = e_G\}$, et donc 
-    $\exists ! n \in \N$ tel que $\ker \varphi_a = n \Z$. 
+    $\Ker \varphi_a = \{k \in \Z, a^k = e_G\}$, et donc 
+    $\exists ! n \in \N$ tel que $\Ker \varphi_a = n \Z$. 
 \end{definition}
 
 \begin{definition}{Ordre d'un élément}{}
     \index{Ordre!d'un element@d'un élément}
     Soit $n \in \N$, 
-    $\ker \varphi_a = n\Z$. 
+    $\Ker \varphi_a = n\Z$. 
 
     Si $n = 0$, $\varphi_a$ est injective et on dit que $a$ est d'ordre infini.
 
-    Si $n \geq 1$, $\varphi_a$ n'est pas injective et $\ker \varphi_a = n \Z$.
+    Si $n \geq 1$, $\varphi_a$ n'est pas injective et $\Ker \varphi_a = n \Z$.
     On dit que $a$ est d'ordre $n$. Ainsi, $n = \min \{k \in \N^*, a^k = e_G\}$.
 \end{definition}
 
@@ -506,7 +503,7 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 
     \avspace Dans $(\C^*, \cdot)$, $\langle 1 \rangle = \{1\}$ et
     $1^k = 1$ pour tout $k \in \Z$, donc $1$ est d'ordre $1$ et 
-    $\ker \varphi_1 = \Z$.
+    $\Ker \varphi_1 = \Z$.
 \end{exemple}
 
 \subsection{Éléments d'ordre infini}
@@ -514,7 +511,7 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 \begin{proposition}{}{}
     \index{Ordre!infini}
     Soit $a \in G$ d'ordre infini et $\fonction {\varphi_a} \Z G k {a^k}$ 
-    alors $\ker \varphi_a = \{0\}$ et $\varphi_a$ est injective.
+    alors $\Ker \varphi_a = \{0\}$ et $\varphi_a$ est injective.
 
     Ainsi, $\fonction{\tilde \varphi_a} \Z {\langle a \rangle} k {a^k}$  est un 
     isomorphisme de groupes.
@@ -538,13 +535,13 @@ Soit $a \in G$ d'ordre fini $n$.
 \end{proposition}
 
 \begin{proof}
-    $a^k = e_G$ ssi $k \in \ker \varphi_a$ ssi $k \in n \Z$ ssi $n \mid k$.
+    $a^k = e_G$ ssi $k \in \Ker \varphi_a$ ssi $k \in n \Z$ ssi $n \mid k$.
 \end{proof}
 
 \begin{proposition}{}{}
     Soit $a \in G$ d'ordre fini $n$.
     $\langle a \rangle$ est un groupe fini de cardinal $n$ et 
-    $$\langle a \rangle = \{e_G, a, a^2, \ldots, a^{n-1}\}$$
+    \[\langle a \rangle = \{e_G, a, a^2, \ldots, a^{n-1}\}\]
 \end{proposition}
 
 \idee{Division euclidienne puis cardinal.}
@@ -609,7 +606,7 @@ bijection par multiplication à gauche.}
 
 Le théorème de Lagrange généralise ce résultat.
 
-\begin{theoreme}{Hors programme, théorème de Lagrange}{}
+\begin{theoreme}{Théorème de Lagrange - HP}{}
     \index{Lagrange}
     Soit $(G, \ast)$ un groupe fini et $H$ un sous-groupe de $(G, \ast)$.
     Alors le cardinal de $H$ divise le cardinal de $G$.
@@ -623,30 +620,25 @@ Preuve du théorème précédent en utilisant Lagrange :
     Par le théorème de Lagrange, le cardinal de $H$ divise le cardinal de $G$.
 \end{proof}
 
-
 \avspace \idee{Poser une relation d'équivalence, dont les classes sont 
 de même cardinal que $H$.}
 
-\uindent{Preuve du théorème de Lagrange (hors programme) }
-
-\svspace \begin{proof}
+\uline{Preuve du théorème de Lagrange (HP) :}
+\begin{proof}
     Considérons la relation $R$ sur $G$ définie par :
-    $$\forall (x, y) \in G^2, x R y \Leftrightarrow x^{-1} \ast y \in H$$
+    \[\forall (x, y) \in G^2, x R y \Leftrightarrow x^{-1} \ast y \in H\]
 
     Montrons que $R$ est une relation d'équivalence.
 
-    \uindent{Réflexivité } 
+    \uline{Réflexivité :}
+    soit $x \in G$, alors $x^{-1} \ast x = e_G \in H$, donc $x R x$.
     
-    \svspace Soit $x \in G$, alors $x^{-1} \ast x = e_G \in H$, donc $x R x$.
-    
-    \uindent{Symétrie }
-
-    \svspace Si $x R y$, alors $\exists h \in H$, $x = hy$ donc $y = h^{-1} x$ 
+    \uline{Symétrie :}
+    si $x R y$, alors $\exists h \in H$, $x = hy$ donc $y = h^{-1} x$ 
     et $h^{-1} \in H$, car $H$ est un sous-groupe donc $y R x$.
 
-    \uindent{Transitivité }
-
-    \svspace Soit $x, y, z \in G$ tels que $x R y$ et $y R z$.
+    \uline{Transitivité :}
+    soientt $x, y, z \in G$ tels que $x R y$ et $y R z$.
 
     Alors $\exists h_1, h_2 \in H$ tels que $x = h_1 y$ et $y = h_2 z$.
 
@@ -709,7 +701,7 @@ de même cardinal que $H$.}
 
     Comme $G = \langle a \rangle$, $\varphi_a$ est surjective.
 
-    Comme $a$ est d'ordre infini, $\ker \varphi_a = \{0\}$, donc $\varphi_a$ est injective.
+    Comme $a$ est d'ordre infini, $\Ker \varphi_a = \{0\}$, donc $\varphi_a$ est injective.
 
     Donc $\varphi_a$ est un isomorphisme de groupes.
 \end{proof}
@@ -727,7 +719,7 @@ de même cardinal que $H$.}
 
     Considérons $\fonction{\varphi}{(\Z/n\Z, +)}{(G, \ast)}{c = \hat k}{a^k}$.
 
-    \uindent{Montrons que $\varphi$ est bien définie }
+    \uline{Montrons que $\varphi$ est bien définie :}
 
     \svspace Soient $k_1, k_2 \in c$. Alors $k_1 \equiv k_2 [n]$, donc $\exists b \in \Z, k_2 = k_1 + bn$.
     
@@ -735,17 +727,17 @@ de même cardinal que $H$.}
 
     Donc $\varphi_a$ est bien définie.
 
-    \uindent{Montrons que $\varphi$ est un morphisme de groupes }
+    \uline{Montrons que $\varphi$ est un morphisme de groupes :}
 
     \svspace Soient $c_1, c_2 \in \Z/n\Z$, $k_1 \in c_1, k_2 \in c_2$.
 
-    $$ \begin{aligned}
+    \begin{align*}
         \varphi(c_1 + c_2) & = \varphi(\hat{k_1} + \hat{k_2}) \\
         & = \varphi(\widehat{k_1 + k_2}) \\
         & = a^{k_1 + k_2} \\
         & = a^{k_1} \ast a^{k_2} \\
         & = \varphi(c_1) \ast \varphi(c_2)
-    \end{aligned}$$
+    \end{align*}
 
     Donc $\varphi$ est un morphisme de groupes.
 
@@ -754,7 +746,7 @@ de même cardinal que $H$.}
     Or $\operatorname{Card} \Z/n\Z = n = \operatorname{Card} G$, donc $\varphi$ est bijective.
 \end{proof}
 
-\subsection{Generateurs de \texorpdfstring{$\Z / n \Z$}{Z/nZ} et \texorpdfstring{$\mathbb U$}{U}}
+\subsection{Générateurs de \texorpdfstring{$\Z / n \Z$}{Z/nZ} et \texorpdfstring{$\symbb U$}{U}}
 
 \begin{theoreme}{Générateurs de $\Z / n \Z$}{}
     Les générateurs de $(\Z/n\Z, +)$ sont les éléments $\hat k$ tels que 
@@ -790,17 +782,17 @@ de même cardinal que $H$.}
     Donc (par Bézout) $\pgcd(k, n) = 1$.
 \end{proof}
 
-\begin{corollaire}{Générateurs de $U_n$}{}
-    Les générateurs de $(\mathbb U_n, \cdot)$ sont les $e^{\frac{2i\pi k} n}$ tels que 
+\begin{corollaire}{Générateurs de $\symbb U_n$}{}
+    Les générateurs de $(\symbb U_n, \cdot)$ sont les $e^{\frac{2i\pi k} n}$ tels que 
     $k \in \ninter{1}{n-1}$ et $\pgcd(k, n) = 1$ que l'on appelle les racines primitives $n$-ièmes de l'unité.
 \end{corollaire}
 
 \begin{proof}
-    Isomorphisme entre $(\Z / n \Z, +)$ et $(\mathbb U_n, \cdot)$.
+    Isomorphisme entre $(\Z / n \Z, +)$ et $(\symbb U_n, \cdot)$.
 \end{proof}
 
 \begin{exemple}
-    $n = 2$ : $X^2 - 1 = (X - 1)(X + 1) = (X - e^{\frac{2 \cdot 0 \pi} 2})(X - e^{\frac{2 \cdot 1 \pi}2})$
+    $n = 2$ : $X^2 - 1 = (X - 1)(X + 1) = \left(X - e^{\frac{2 \cdot 0 \pi} 2}\right)\left(X - e^{\frac{2 \cdot 1 \pi}2}\right)$
     Donc une racine primitive $2$-ième de l'unité : $-1$.
     
     \avspace $n = 3$ : $X^3 - 1 = (X - 1)(X - j)(X - j^2)$ avec $j = e^{\frac{2i\pi}3}$.
@@ -809,7 +801,7 @@ de même cardinal que $H$.}
     \avspace $n = 4$ : $X^4 - 1 = (X - 1)(X + 1)(X - i)(X + i) = (X - 1)(X + 1)(X^2 + 1)$
     Donc $1 \wedge 4 = 1 = 3 \wedge 4$ donc 2 racines primitives $4$-ième de l'unité : $i$ et $-i$.
     
-    \avspace $n = 5$ : $X^5 - 1 = (X - 1)(X - e^{\frac{2i\pi}5})(X - e^{\frac{4i\pi}5})(X - e^{\frac{6i\pi}5})(X - e^{\frac{8i\pi}5})$
+    \avspace $n = 5$ : $X^5 - 1 = (X - 1)\left(X - e^{\frac{2i\pi}5}\right)\left(X - e^{\frac{4i\pi}5}\right)\left(X - e^{\frac{6i\pi}5}\right)\left(X - e^{\frac{8i\pi}5}\right)$
     Donc $1 \wedge 5 = 1 = 2 \wedge 5 = 3 \wedge 5 = 4 \wedge 5$ donc 4 racines primitives $5$-ième de l'unité.
 \end{exemple}
 
@@ -904,9 +896,9 @@ de même cardinal que $H$.}
     Donc $ubk_3 + vck_3 = k_3$, donc $uk_1 + vk_2 = k_3$.
 
     Donc $k_3 \in B$, donc $B = k_3 \Z$
+\end{exemple}
 
-    \uindent{Exemple 2 (énoncé) }
-
+\begin{exemple}
     $G = \R$, $k_1 \neq k_2 \in \R^*$, $A = \{k_1, k_2\}$. Alors : 
 
     Si $\frac{k_1}{k_2} \in \Q$ ($k_1$ et $k_2$ sont dits commensurables), alors il existe 
@@ -915,8 +907,6 @@ de même cardinal que $H$.}
     Si $\frac{k_1}{k_2} \notin \Q$, alors $\not exists k_3 \in \R, \, \langle A \rangle = k_3 \Z$, 
     c'est à dire que $\langle A \rangle$ est monogène et donc (par exo 12 du TD), 
     $\langle A \rangle$ est dense dans $\R$.
-
-    \uindent{Preuve de l'exemple 2 }
 
     \svspace Supposons que $\frac{k_1}{k_2} = \frac p q \in \Q$ avec $p, q \in \Z^*$, $p \wedge q = 1$.
 
@@ -943,9 +933,9 @@ de même cardinal que $H$.}
     $k_2 \in \langle A \rangle$ donc $\exists v \in \Z$ tel que $k_2 = v k_3$, $v \neq 0$ car $k_2 \neq 0$.
 
     Donc $\frac{k_1}{k_2} = \frac u v \in \Q$, ce qui est absurde.
+\end{exemple}
 
-    \uindent{Exemple 3 }
-
+\begin{exemple}
     $\alpha < \beta \in \R$, et $\langle ]\alpha, \beta[ \rangle = \R$.
 
     Posons $B = \langle ]\alpha, \beta[ \rangle$, et $\kappa = \beta - \alpha > 0$.
@@ -967,9 +957,9 @@ de même cardinal que $H$.}
     Donc $z \in [0, \frac \kappa 2]$, donc $z \in B$, or $\frac \kappa 2 \in B$, donc $y = z + \lceil \frac {2y} \kappa \rceil \frac \kappa 2 \in B$.
 
     Donc $\R \subset B$, donc $B = \R$.
+\end{exemple}
 
-    \uindent{Exemple 4 }
-
+\begin{exemple}
     $G = SL_2(\Z) = \left\{ M = \begin{pmatrix}
     a & b \\
     c & d

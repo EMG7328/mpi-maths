@@ -61,6 +61,16 @@ Notations, vocabulaire :
     $(G, \ast)$ si $(H, \ast)$ est un groupe.
 \end{definition}
 
+\begin{remarque}
+    Si $H$ est un sous-groupe de $G$ alors $e_G \in H$ et $e_H = e_G$.
+\end{remarque}
+
+\begin{exemple}
+    $\Z$ est un sous groupe de $(\R,+)$.
+
+    Si $G$ est un groupe, $G$ et $\{e_G\}$ sont des sous-groupes de $G$, qualifiés de triviaux.    
+\end{exemple}
+
 \begin{proposition}{Caractérisations des sous-groupes}{}
     Soit $(G, \ast)$ un groupe et $H \subset G$. 
     Alors $H$ est un sous-groupe de $(G, \ast)$ ssi :
@@ -86,6 +96,19 @@ Notations, vocabulaire :
     \end{itemize}
 \end{remarque}
 
+\begin{exemple}
+    On pose $\Z[\sqrt 5] = \{a + b \sqrt 5,~ (a,b) \in \Z^2\}$.
+    \begin{itemize}
+        \item $0 \in \Z[\sqrt 5]$.
+        \item Soient $x,y \in \Z[\sqrt 5]$, alors il existe $a,b,c,d \in \Z$ tels que
+        $x = a + b \sqrt 5$ et $y = c + d \sqrt 5$.
+
+        Donc $x - y = (a - c) + (b - d) \sqrt 5 \in \Z[\sqrt 5]$.
+    \end{itemize}
+
+    Donc $\Z[\sqrt 5]$ est un sous-groupe de $(\R,+)$.
+\end{exemple}
+
 \begin{theoreme}{Intersection de sous-groupes}{}
     Soit $(G, \ast)$ un groupe. Soit $I \neq \emptyset$ et 
     $(H_i)_{i \in I}$ une famille de sous-groupes de $(G, \ast)$.
@@ -94,10 +117,10 @@ Notations, vocabulaire :
 
 \begin{proof}
     Notons $\ds H = \bigcap_{i \in I} H_i$, alors $H \subset G$ 
-    et $\forall i \in I, e \in G_i$, donc $e \in H$ et $H \neq \emptyset$.
+    et $\forall i \in I, e \in G_i$, donc $e \in H$ et donc $H \neq \emptyset$.
 
     Soient $x, y \in H$, alors $\forall i \in I, x, y \in H_i$, or 
-    $G_i$ est un sous-groupe de $(G, \ast)$, donc $x \ast y^{-1} \in H$
+    $\forall i \in I,~G_i$ est un sous-groupe de $(G, \ast)$, donc $x \ast y^{-1} \in H$
 \end{proof}
 
 \begin{proposition}{Réunion de deux sous-groupes - LHP}{}
@@ -107,43 +130,41 @@ Notations, vocabulaire :
 \end{proposition}
 
 \begin{proof}
-    Si $G_1 \subset G_2$, alors $G_1 \cup G_2 = G_2$ est un sous-groupe de $(G, \ast)$.
+    $\Leftarrow$ Si $G_1 \subset G_2$, alors $G_1 \cup G_2 = G_2$ est un sous-groupe de $(G, \ast)$.
     Si $G_2 \subset G_1$, alors $G_1 \cup G_2 = G_1$ est un sous-groupe de $(G, \ast)$.
 
-    \avspace Supposons maintenant que $G_1 \not \subset G_2$ et $G_2 \not \subset G_1$.
+    \avspace $\Rightarrow$ Supposons maintenant que $G_1 \not \subset G_2$ et $G_2 \not \subset G_1$.
 
     Alors $\exists g_1 \in G_1, g_1 \not \in G_2$ et $\exists g_2 \in G_2, g_2 \not \in G_1$.
 
     On a $g_1 \in G_1 \cup G_2$ et $g_2 \in G_1 \cup G_2$, pourtant $g_1 g_2 \not \in G_1$, 
     sinon on aurait $g_2 = g_1^{-1} (g_1 g_2) \in G_1$, ce qui est absurde.
 
-    De même, $g_1 g_2 \not \in G_2$, sinon on aurait $g_1 = (g_1 g_2) g_2^{-1} \in G_2$, ce qui est absurde.
-
-    Donc $G_1 \cup G_2$ pas stable par $\ast$. 
+    De même, $g_1 g_2 \not \in G_2$.
+    Donc $G_1 \cup G_2$ n'est pas stable par $\ast$. 
 \end{proof}
 
 \begin{theoreme}{Sous-groupes de $(\Z, +)$}{}
-    Les sous-groupes de $(\Z, +)$ sont les $n\Z$ où $n \in \N^*$.
-    
+    Les sous-groupes de $(\Z, +)$ sont les $n\Z$ où $n \in \N$.
 \end{theoreme}
 
-\idee{Utiliser la division euclidienne, et l'existence d'un min dans $\N^*$.}
+\idee{Utiliser la division euclidienne et l'existence d'un min dans $\N^*$.}
 
 \begin{proof}
-    Soit $n \in \N$ et $H = n \Z$ : 
+    $\supset$ Soit $n \in \N$ et $H = n \Z$ : 
     \begin{itemize}
-        \item $H \neq \emptyset$ car $0 \in H$
+        \item $H \neq \emptyset$ car $0 \in H$.
         \item Soient $x, y \in H$, alors $\exists a, b \in \Z$ tels que $x = na$ et $y = nb$.
         Donc $x - y = na - nb = n(a - b) \in H$.
     \end{itemize}
 
     Donc $H$ est un sous-groupe de $(\Z, +)$.
 
-    Soit maintenant $H$ un sous-groupe de $(\Z, +)$. 
+    $\subset$ Soit maintenant $H$ un sous-groupe de $(\Z, +)$. 
     
-    Si $H = \{0\}$, alors $H = 0 \Z$.
+    \uline{Si $H = \{0\}$}, alors $H = 0 \Z$.
 
-    Sinon, $H \neq \{0\}$, donc $\exists h \in H, h \neq 0$.
+    \uline{Sinon $H \neq \{0\}$}, donc $\exists h \in H, h \neq 0$.
     Si $h < 0$, alors $-h \in H \cap \N^*$, et si $h > 0$, alors $h \in H \cap \N^*$.
 
     Donc $H \cap \N^*$ est une partie non vide de $\N^*$. Notons $n$ son plus petit élément.
@@ -153,18 +174,18 @@ Notations, vocabulaire :
     Soit $x \in n \Z$, $x = nk$ avec $k \in \Z$.
 
     Donc $x \in H$ car $H$ est un sous-groupe de $(\Z, +)$.
-
     Donc $n \Z \subset H$.
 
     Soit $x \in H$. 
 
-    Par division euclidienne par $n$, $\exists q, r \in \Z$ tels que $x = nq + r$ avec $0 \leq r < n$.
+    Par division euclidienne par $n$, $\exists q, r \in \Z$ tels que $x = nq + r$ avec $0 \leqslant r < n$.
+    
     Donc $r = x - nq \in H$ car $x \in H$ et $nq \in H$.
 
     Or $n$ est le plus petit élément de $H \cap \N^*$, donc $r = 0$ et $x = nq \in n \Z$.
 \end{proof}
 
-\subsection{Morphisme de groupes}
+\subsection{Morphismes de groupes}
 
 \begin{definition}{Morphisme de groupes}{}
     \index{Morphisme!de groupes}
@@ -195,18 +216,25 @@ Notations, vocabulaire :
 \begin{theoreme}{Noyau d'un morphisme de groupes}{}
     Soit $\varphi : (G, \ast) \to (H, \top)$ un morphisme de groupes. 
     Alors $\varphi^{-1}(\{e_H\})$ est un sous-groupe de $(G, \ast)$ appelé noyau de 
-    $\varphi$ et noté $\Ker \varphi$.
+    $\varphi$ et est noté $\Ker \varphi$.
 \end{theoreme}
 
 \begin{exemple}
-    \[
-    \begin{array}{c|c}
-        \text{Morphisme} & \text{Noyau} \\ \hline
-        \fonction{}{(\C^*, \cdot)}{(\R_+^*, \cdot)}{z}{|z|} & \symbb U \\ \hline
-        \fonction{}{(\C^*, \cdot)}{(\C^*, \cdot)}{z}{z^n} & \symbb U_n \\ \hline
-        \fonction{}{(\R, +)}{(\symbb U, \cdot)}{\theta}{e^{i\theta}} & 2\pi \Z \\ \hline
-        \fonction{}{(GL_n(\R), \cdot)}{(\R^*, \cdot)}{A}{\det(A)} & SL_n(\R) \\ \hline
-    \end{array}\]
+    \begin{center}
+    \begin{tabular}{cc}
+        \toprule
+        Morphisme & Noyau \\
+        \midrule
+        $\fonction{\varphi}{(\C^*, \cdot)}{(\R_+^*, \cdot)}{z}{|z|}$ & $\symbb U$ \\
+        \addlinespace[2pt]
+        $\fonction{\psi}{(\C^*, \cdot)}{(\C^*, \cdot)}{z}{z^n}$ & $\symbb U_n$ \\
+        \addlinespace[2pt]
+        $\fonction{\theta}{(\R, +)}{(\symbb U, \cdot)}{\theta}{e^{i\theta}}$ & $2\pi \Z$ \\
+        \addlinespace[2pt]
+        $\fonction{\gamma}{(GL_n(\R), \cdot)}{(\R^*, \cdot)}{A}{\det(A)}$ & $SL_n(\R)$ \\
+        \bottomrule        
+    \end{tabular}
+    \end{center}
 \end{exemple}
 
 \begin{theoreme}{Injectivité d'un morphisme de groupes avec noyau}{}
@@ -221,8 +249,9 @@ Notations, vocabulaire :
 
 \begin{proposition}{Image d'un morphisme de groupes}{}
     Soit $\varphi : (G, \ast) \to (H, \top)$ un morphisme de groupes. Alors l'image directe de 
-    $G$ par $\varphi$, est appelée image de $\varphi$ et notée $\im \varphi$. C'est un sous-groupe de $H$.
+    $G$ par $\varphi$, est appelée image de $\varphi$ et notée $\im \varphi$.
     \[\im \varphi = \varphi(G) = \{\varphi(x), x \in G\}\]
+    C'est un sous-groupe de $H$.
 \end{proposition}
 
 \begin{definition}{Isomorphisme de groupes}{}
@@ -243,7 +272,7 @@ Notations, vocabulaire :
 
     Alors $\varphi^{-1} : H \to G$ est bijecive. 
 
-    Soient $h_1, h_2 \in H$. Alors 
+    Soient $h_1, h_2 \in H$. Alors :
     \begin{align*}
         \varphi^{-1}(h_1 \top h_2) & = \varphi^{-1}(\varphi(\varphi^{-1}(h_1)) \top \varphi(\varphi^{-1}(h_2)))\\
         & = \varphi^{-1}(\varphi(\varphi^{-1}(h_1) \ast \varphi^{-1}(h_2))) \\
@@ -254,30 +283,30 @@ Notations, vocabulaire :
 \section{Les groupes \texorpdfstring{$\Z / n \Z$}{Z/nZ}}
 \subsection{Définitions}
 
-Soit $n \in \N, \, n \geqslant 2$.
+Dans la suite, on prend $n \in \N, \, n \geqslant 2$.
 
-\begin{definition}{Congruence modulo n}{}
+\begin{definition}{Congruence modulo $n$}{}
     \index{Congruence}
     On dit que $a$ est congru à $b$ modulo $n$ et on note $a \equiv b [n]$ ssi
     $\exists k \in \Z, b - a = kn$, c'est à dire $n \mid b - a$.    
 \end{definition}
 
-\begin{propositionnt}{type relation congruence}{}
-    On définit ainsi une relation d'équivalence.
-\end{propositionnt}
+\begin{proposition}{}{}
+    La relation de congruence est une relation d'équivalence.
+\end{proposition}
 
 \begin{proof}
     \uline{Réflexivité :}
     Soit $a \in \Z$ alors $a - a = 0 = 0 \cdot n$, donc $a \equiv a [n]$.
 
-    \uline{Symétrie :}
+    \svspace \uline{Symétrie :}
     Soient $a, b \in \Z$ tels que $a \equiv b [n]$.
 
-    \svspace Alors $\exists k \in \Z, \, b - a = kn$, donc $a - b = -kn = (-k)n$, donc $b \equiv a [n]$.
+    Alors $\exists k \in \Z, \, b - a = kn$, donc $a - b = -kn = (-k)n$, donc $b \equiv a [n]$.
 
-    \uline{Transitivité :} Soient $a, b, c \in \Z$ tels que $a \equiv b [n]$ et $b \equiv c [n]$.
+    \svspace \uline{Transitivité :} Soient $a, b, c \in \Z$ tels que $a \equiv b [n]$ et $b \equiv c [n]$.
 
-    \svspace Alors $\exists k_1, k_2 \in \Z, \, b - a = k_1 n$ et $c - b = k_2 n$.
+    Alors $\exists k_1, k_2 \in \Z, \, b - a = k_1 n$ et $c - b = k_2 n$.
 
     Donc $c - a = (k_1 + k_2)n$, donc $a \equiv c [n]$.
 \end{proof}
@@ -287,7 +316,7 @@ Soit $n \in \N, \, n \geqslant 2$.
     et $x$ est alors le reste de la division euclidienne de $k$ par $n$.
 \end{proposition}
 
-\idee{Pour la réciproque, partir du fait que $x \equiv k [n]$}
+\idee{Pour la réciproque, partir du fait que $x \equiv k [n]$.}
 
 \begin{proof}
     Notons $r$ le reste de la division euclidienne de $k$ par $n$. 
@@ -310,39 +339,40 @@ Soit $n \in \N, \, n \geqslant 2$.
     \[\hat k = \{x \in \Z, x \equiv k [n]\}\]
 \end{definition}
 
-\begin{definition}{Groupe Z/nZ}{}
-    \index{Groupe!Z/nZ}
+\begin{definition}{Groupe $\Z/n\Z$}{}
+    \index{Groupe!$\Z/n\Z$}
     L'ensemble des classes d'équivalence pour cette relation est noté $\Z/n\Z$.
     \[\Z/n\Z = \{\hat k, k \in \Z\}\]
 \end{definition}
 
-\begin{theorement}{nature applications entre Z et Z/nZ}{}
+\begin{theoreme}{}{}
     On peut définir les applications suivantes : 
-    \begin{itemize}
-        \item $\fonction{\varphi}{\Z}{\Z/n\Z}{k}{\hat k}$ surjective
-        \item \avspace $\fonction{\psi}{\ninter{0}{n-1}}{\Z/n\Z}{k}{\hat k}$ bijective
-    \end{itemize}
-\end{theorement}
+    \begin{center}
+        $\fonction{\varphi}{\Z}{\Z/n\Z}{k}{\hat k}$ surjective et
+        $\fonction{\psi}{\ninter{0}{n-1}}{\Z/n\Z}{k}{\hat k}$ bijective
+    \end{center}
+\end{theoreme}
 
-\idee{Utiliser la proposition sur les restes de la division euclidienne (pas loin 
-au dessus).}
+\idee[-0.3cm]{Utiliser la proposition sur les restes de la division euclidienne.}
 
 \begin{proof}
     $\varphi$ est surjective par définition de $\Z/n\Z$.
 
-    Soit $c \in \Z/n\Z$. Par def, $\exists x \in \Z, c = \hat x$. Or $\exists ! r \in \ninter{0}{n-1}$ 
+    Soit $c \in \Z/n\Z$. Par définition, $\exists x \in \Z, c = \hat x$. Or $\exists ! r \in \ninter{0}{n-1}$ 
     tel que $x \equiv r [n]$, c'est à dire tel que $c = \hat r = \psi(r)$
 \end{proof}
 
-\begin{corollaire}{contenu de $\Z/n\Z$}{}
+\begin{corollaire}{Contenu de $\Z/n\Z$}{}
     $\Z/n\Z = \{\hat 0, \hat 1, \ldots, \widehat{n-1}\}$ et ces éléments sont 
     deux à deux distincts.
 \end{corollaire}
 
 \begin{exemple}
-    $n = 2$ : $\Z/2\Z = \{\hat 0, \hat 1\}$
-
-    et $\hat 0 = \{k \in \Z, k \equiv 0 [2]\} = 2 \Z$ et $\hat 1 = \{k \in \Z, k \equiv 1 [2]\} = 1 + 2 \Z$.
+    Pour $n = 2$, $\Z/2\Z = \{\hat 0, \hat 1\}$ et :
+    \begin{itemize}
+        \item $\hat 0 = \{k \in \Z, k \equiv 0 [2]\} = 2 \Z$.
+        \item $\hat 1 = \{k \in \Z, k \equiv 1 [2]\} = 1 + 2 \Z$.
+    \end{itemize}
 \end{exemple}
 
 \subsection{Structure}

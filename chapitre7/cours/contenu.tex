@@ -377,7 +377,7 @@ Dans la suite, on prend $n \in \N, \, n \geqslant 2$.
 
 \subsection{Structure}
 
-\begin{proposition}{Loi de composition interne sur Z/nZ}{}
+\begin{proposition}{Loi de composition interne sur $\Z/n\Z$}{}
     Soient $c, d \in \Z/n\Z$, et soient $x \in c$ et $y \in d$. 
 
     Alors $e = \widehat{x + y} \in \Z/n \Z$ et la valeur de $e$ ne dépend pas du choix de $x$
@@ -391,34 +391,41 @@ Dans la suite, on prend $n \in \N, \, n \geqslant 2$.
 
 \begin{proof}
     Soient $x, x' \in c$ et $y, y' \in d$.
-    Alors $x \equiv x' [n]$ et $y \equiv y' [n]$, donc
-    $\exists k, k' \in \Z$ tels que $x = x' + kn$ et $y = y' + k'n$.
+    Alors $x \equiv x' [n]$ et $y \equiv y' [n]$.
+
+    Donc $\exists k, k' \in \Z$ tels que $x = x' + kn$ et $y = y' + k'n$.
 
     Donc $x + y = x' + y' + (k + k')n$, donc $x + y \equiv x' + y' [n]$,
-    donc $\widehat{x + y} = \widehat{x' + y'}$
+    donc $\widehat{x + y} = \widehat{x' + y'}$.
 \end{proof}
 
 \begin{theoreme}{}{}
     $(\Z/n\Z, +)$ est un groupe abélien.
 
-    De plus $\fonction{}{(\Z, +)}{(\Z/n\Z, +)}{k}{\hat k}$ est un morphisme de groupes surjectif.
+    De plus $\fonction{\varphi}{(\Z, +)}{(\Z/n\Z, +)}{k}{\hat k}$ est un morphisme de groupes surjectif de noyau $n\Z$.
 \end{theoreme}
 
-\begin{proof}
-    $+$ est commutative et associative. 
+\idee{Tout découle des propriétés de $+$ dans $\Z$.}
 
+\begin{proof}
     Soient $c_1, c_2, c_3 \in \Z/n\Z$ et soient $x_1 \in c_1, x_2 \in c_2, x_3 \in c_3$.
 
-    Alors $c_1 + c_2 = \widehat{x_1 + x_2} = \widehat{x_2 + x_1} = c_2 + c_1$.
+    \uline{Commutativité :} $c_1 + c_2 = \widehat{x_1 + x_2} = \widehat{x_2 + x_1} = c_2 + c_1$.
 
-    $c_1 + (c_2 + c_3) = \widehat{x_1 + (x_2 + x_3)} = \widehat{(x_1 + x_2) + x_3} = (c_1 + c_2) + c_3$.
+    \uline{Associativité :} $c_1 + (c_2 + c_3) = \widehat{x_1 + (x_2 + x_3)} = \widehat{(x_1 + x_2) + x_3} = (c_1 + c_2) + c_3$.
 
     \avspace Le neutre est $\hat 0$ car $\forall c \in \Z/n\Z$, si $x \in c$, alors
     $c + \hat 0 = \widehat{x + 0} = \hat x = c$.
 
-    \avspace $c_1 + \hat{-x_1} = \widehat{x_1 + (-x_1)} = \hat 0$, donc le symétrique de $c_1$ est $\hat{-x_1}$.
+    \avspace \uline{Inversibilité :} $c_1 + \hat{-x_1} = \widehat{x_1 + (-x_1)} = \hat 0$, donc le symétrique de $c_1$ est $\hat{-x_1}$.
 
     \avspace $\varphi(k_1 + k_2) = \widehat{k_1 + k_2} = \hat{k_1} + \hat{k_2} = \varphi(k_1) + \varphi(k_2)$.
+    Donc $\varphi$ est un morphisme de groupes.
+
+    De plus, $\varphi$ est surjective car $\varphi(\ninter 0 {n-1}) = \Z/n\Z$.
+
+    Enfin $x \in \Ker \varphi$ ssi $\exists k \in \Z,~x = nk$ ssi $\hat x = \hat 0$.
+    Donc $\Ker \varphi = n\Z$.
 \end{proof}
 
 \subsection{Isomorphisme}
@@ -433,7 +440,6 @@ Dans la suite, on prend $n \in \N, \, n \geqslant 2$.
     $k_1 \equiv k_2 [n]$, donc $\exists p \in \Z$ tel que $k_2 = k_1 + pn$.
 
     Donc $\displaystyle e^{\frac{2i\pi k_1}n} = e^{\frac{2i\pi (k_2 - pn)} n} = e^{\frac{2i\pi k_2} n} e^{-2i\pi p} = e^{\frac{2i\pi k_2} n}$.
-
     Donc $\varphi$ est bien définie.
 
     \svspace Soient $c_1, c_2 \in \Z/n\Z$, $k_1 \in c_1, k_2 \in c_2$.
@@ -461,6 +467,11 @@ Dans la suite, on prend $n \in \N, \, n \geqslant 2$.
     Deux groupes de même cardinal ne sont pas forcément isomorphes.
 \end{remarque}
 
+\marginenote{Remarque}{
+    $(\Z/2\Z \times \Z/2\Z)$ est le groupe de Klein,
+    c'est le plus petit groupe non cyclique.
+}
+
 \begin{exemple}
     Les groupes $(\Z/4\Z, +)$ et $\Z / 2\Z \times \Z / 2\Z$ ont même cardinal 4,
     mais ne sont pas isomorphes car $\forall x \in \Z / 2\Z \times \Z / 2\Z, x + x = 0$,
@@ -474,11 +485,12 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 \subsection{Morphisme fondamental}
 
 \begin{theoreme}{Puissances d'un élément et morphisme}{}
+
     L'application $\fonction{\varphi_a}{(\Z, +)}{(G, \ast)}{k}{a^k}$ est un morphisme de groupes.
 \end{theoreme}
 
 \begin{proof}
-    Pour $p, n \in \Z$, $a^{p + n} = a^p \ast a^n$ déjà vu. 
+    Pour $p, n \in \Z$, $a^{p + n} = a^p \ast a^n$ comme vu en début de chapitre. 
 \end{proof}
 
 \begin{definition}{Sous-groupe engendré}{}
@@ -491,11 +503,11 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 \end{definition}
 
 \begin{exemple}
-    $G = \symbb U$, $a = -1$. 
-    Alors $\langle a \rangle = \{(-1)^k, k \in \Z\} = \{1, -1\}$.
-
-    $\displaystyle a = j = e^{\frac{2i\pi}3}$.
-    Alors $\langle a \rangle = \{1, j, j^2\} = \symbb U_3$.
+    Prenons $G = \symbb U$,
+    \begin{itemize}
+        \item Si $a = -1$, alors $\langle a \rangle = \{(-1)^k, k \in \Z\} = \{1, -1\}$.
+        \item Si $\displaystyle a = j = e^{\frac{2i\pi}3}$, alors $\langle a \rangle = \{1, j, j^2\} = \symbb U_3$.
+    \end{itemize}
 \end{exemple}
 
 \begin{remarque}
@@ -504,7 +516,7 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 \end{remarque}
 
 \begin{exemple}
-    $G = (\Z, +)$, alors $\langle 0 \rangle = \{0\}$, $\langle -1 \rangle = \Z$
+    Dans $(\Z, +)$, $\forall k \in \Z,~\langle k \rangle = k\Z$.
 \end{exemple}
 
 \begin{definition}{}{}
@@ -516,24 +528,26 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 
 \begin{definition}{Ordre d'un élément}{}
     \index{Ordre!d'un element@d'un élément}
-    Soit $n \in \N$, 
-    $\Ker \varphi_a = n\Z$. 
+    Soit $n \in \N$, $\Ker \varphi_a = n\Z$. 
 
-    Si $n = 0$, $\varphi_a$ est injective et on dit que $a$ est d'ordre infini.
-
-    Si $n \geq 1$, $\varphi_a$ n'est pas injective et $\Ker \varphi_a = n \Z$.
-    On dit que $a$ est d'ordre $n$. Ainsi, $n = \min \{k \in \N^*, a^k = e_G\}$.
+    \begin{itemize}
+        \item Si $n = 0$, $\varphi_a$ est injective et on dit que $a$ est d'ordre infini.
+        \item Si $n \geqslant 1$, $\varphi_a$ n'est pas injective et $\Ker \varphi_a = n \Z$.
+        On dit que $a$ est d'ordre $n$. Ainsi, $n = \min \{k \in \N^*, a^k = e_G\}$.
+    \end{itemize}
 \end{definition}
 
 \begin{exemple}
-    $G = \C^*$ pour $\cdot$, $\langle 2 \rangle = \{2^k, k \in \Z\}$ et
-    $2^k = 1$ ssi $k = 0$, donc $2$ est d'ordre infini.
+    \begin{itemize}
+        \item Dans $(\C,\cdot)$, $\langle 2 \rangle = \{2^k, k \in \Z\}$ et
+        $2^k = 1$ ssi $k = 0$, donc $2$ est d'ordre infini.
 
-    Dans $(\Z, +)$, $\langle 1 \rangle = \Z$ et $1$ est d'ordre infini.
+        \item Dans $(\Z, +)$, $\langle 1 \rangle = \Z$ et $1$ est d'ordre infini.
 
-    \avspace Dans $(\C^*, \cdot)$, $\langle 1 \rangle = \{1\}$ et
-    $1^k = 1$ pour tout $k \in \Z$, donc $1$ est d'ordre $1$ et 
-    $\Ker \varphi_1 = \Z$.
+        \item Dans $(\C^*, \cdot)$, $\langle 1 \rangle = \{1\}$ et
+        $1^k = 1$ pour tout $k \in \Z$, donc $1$ est d'ordre $1$ et 
+        $\Ker \varphi_1 = \Z$.
+    \end{itemize}
 \end{exemple}
 
 \subsection{Éléments d'ordre infini}
@@ -556,10 +570,8 @@ Soit $(G, \ast)$ un groupe et $a \in G$.
 
 \subsection{Éléments d'ordre fini}
 
-Soit $a \in G$ d'ordre fini $n$.
-
 \begin{proposition}{}{}
-    Soit $a \in G$ d'ordre fini $n$.
+    Soit $a \in G$ d'ordre fini $n \in \N^*$.
     Soit $k \in \Z$, alors
     $a^k = e_G$ ssi $n \mid k$.
 \end{proposition}
@@ -569,8 +581,8 @@ Soit $a \in G$ d'ordre fini $n$.
 \end{proof}
 
 \begin{proposition}{}{}
-    Soit $a \in G$ d'ordre fini $n$.
-    $\langle a \rangle$ est un groupe fini de cardinal $n$ et 
+    Soit $a \in G$ d'ordre fini $n \in \N^*$.
+    Alors $\langle a \rangle$ est un groupe fini de cardinal $n$ et :
     \[\langle a \rangle = \{e_G, a, a^2, \ldots, a^{n-1}\}\]
 \end{proposition}
 
@@ -580,12 +592,12 @@ Soit $a \in G$ d'ordre fini $n$.
     Notons $B = \{e_G, a, a^2, \ldots, a^{n-1}\}$.
 
     Montrons que $\langle a \rangle = B$. 
-    
-    On a clairement $B \subset \langle a \rangle$.
+    Or $B \subset \langle a \rangle$.
+    Montrons que $\langle a \rangle \subset B$.
 
     Soit maintenant $b \in \langle a \rangle$, alors $\exists k \in \Z$ tel que $b = a^k$.
 
-    Par division euclidienne, $\exists q, r \in \Z$ tels que $k = nq + r$ avec $0 \leq r < n$.
+    Par division euclidienne, $\exists q, r \in \Z$ tels que $k = nq + r$ avec $0 \leqslant r < n$.
 
     Donc $b = a^{nq + r} = (a^n)^q a^r = e_G^q a^r = a^r \in B$.
 
@@ -606,7 +618,7 @@ Soit $a \in G$ d'ordre fini $n$.
 
 \begin{exemple}
     $i \in (\C^*, \cdot)$ est d'ordre $4$ car
-    $\langle i \rangle = \{1, i, -1, -i\}$
+    $\langle i \rangle = \{1, i, -1, -i\}$.
 \end{exemple}
 
 \begin{theoreme}{}{}
@@ -642,9 +654,9 @@ Le théorème de Lagrange généralise ce résultat.
     Alors le cardinal de $H$ divise le cardinal de $G$.
 \end{theoreme}
 
-Preuve du théorème précédent en utilisant Lagrange :
-\begin{proof}
-    Si on adment ce théorème, soit $a \in G$.
+\begin{proof}(Théorème précédent dans le cas général avec Lagrange)
+
+    Si on admet Lagrange, soit $a \in G$.
 
     Posons $H = \langle a \rangle$, alors l'ordre de $a$ est le cardinal de $H$.
     Par le théorème de Lagrange, le cardinal de $H$ divise le cardinal de $G$.
@@ -653,8 +665,8 @@ Preuve du théorème précédent en utilisant Lagrange :
 \avspace \idee{Poser une relation d'équivalence, dont les classes sont 
 de même cardinal que $H$.}
 
-\uline{Preuve du théorème de Lagrange (HP) :}
-\begin{proof}
+\begin{proof}(Lagrange - HP)
+
     Considérons la relation $R$ sur $G$ définie par :
     \[\forall (x, y) \in G^2, x R y \Leftrightarrow x^{-1} \ast y \in H\]
 
@@ -668,12 +680,11 @@ de même cardinal que $H$.}
     et $h^{-1} \in H$, car $H$ est un sous-groupe donc $y R x$.
 
     \uline{Transitivité :}
-    soientt $x, y, z \in G$ tels que $x R y$ et $y R z$.
+    soient $x, y, z \in G$ tels que $x R y$ et $y R z$.
 
     Alors $\exists h_1, h_2 \in H$ tels que $x = h_1 y$ et $y = h_2 z$.
 
     Donc $x = h_1 h_2 z$ et $h_1 h_2 \in H$, donc $x R z$.
-
     
     \lvspace Soit $c$ une classe d'équivalence telle que $x \in c$. 
 
@@ -688,7 +699,7 @@ de même cardinal que $H$.}
 
     Donc $\operatorname{Card} c = \operatorname{Card} H$, or $G$ est l'union disjointe de ses classes d'équivalences.
 
-    Donc $\operatorname{Card} G = \sum_{i \in I} \operatorname{Card} c_i = \sum_{i \in I} \operatorname{Card} H = \operatorname{Card} I \cdot \operatorname{Card} H$.
+    Donc $\ds \operatorname{Card} G = \sum_{i \in I} \operatorname{Card} c_i = \sum_{i \in I} \operatorname{Card} H = \operatorname{Card} I \cdot \operatorname{Card} H$.
 \end{proof}
 
 \section{Groupes monogènes et cycliques}
@@ -705,15 +716,13 @@ de même cardinal que $H$.}
 \end{definition}
 
 \begin{exemple}
-    $\Z = \langle 1 \rangle$ est un groupe monogène d'ordre infini.
-
-    $\U_n = \langle e^{\frac{2i\pi} n} \rangle$ est un groupe cyclique d'ordre $n$.
-
-    $(\Z/n\Z, +) = \langle \hat 1 \rangle$ est un groupe cyclique d'ordre $n$.
-
-    $(Z / 10 \Z) = \langle \hat 3 \rangle$ est un groupe cyclique d'ordre $10$.
-    
-    $(\Z / 2 \Z) \times (\Z / 2 \Z)$ n'est pas monogène car tous ses éléments sont d'ordre $2$. 
+    \begin{itemize}
+        \item $\Z = \langle 1 \rangle$ est un groupe monogène d'ordre infini.
+        \item $\U_n = \langle e^{\frac{2i\pi} n} \rangle$ est un groupe cyclique d'ordre $n$.
+        \item $(\Z/n\Z, +) = \langle \hat 1 \rangle$ est un groupe cyclique d'ordre $n$.
+        \item $(Z / 10 \Z) = \langle \hat 3 \rangle$ est un groupe cyclique d'ordre $10$.
+        \item $(\Z / 2 \Z) \times (\Z / 2 \Z)$ n'est pas monogène car tous ses éléments sont d'ordre $2$. 
+    \end{itemize}
 \end{exemple}
 
 \begin{theoreme}{Isomorphisme des groupes monogènes}{}
@@ -776,9 +785,9 @@ de même cardinal que $H$.}
     Or $\operatorname{Card} \Z/n\Z = n = \operatorname{Card} G$, donc $\varphi$ est bijective.
 \end{proof}
 
-\subsection{Générateurs de \texorpdfstring{$\Z / n \Z$}{Z/nZ} et \texorpdfstring{$\symbb U$}{U}}
+\subsection{Générateurs de \texorpdfstring{$\Z / n \Z$}{Z/nZ} et \texorpdfstring{$\symbb U_n$}{Un}}
 
-\begin{theoreme}{Générateurs de $\Z / n \Z$}{}
+\begin{theoreme}{Générateurs de $\Z/n\Z$}{}
     Les générateurs de $(\Z/n\Z, +)$ sont les éléments $\hat k$ tels que 
     $k \in \ninter{1}{n-1}$ et $\pgcd(k, n) = 1$.
 \end{theoreme}
@@ -786,11 +795,11 @@ de même cardinal que $H$.}
 \idee{Bézout.}
 
 \begin{proof}
-    Soit $k \in \ninter{1}{n-1}$ tel que $\pgcd(k, n) = 1$.
+    $\supset$ Soit $k \in \ninter{1}{n-1}$ tel que $\pgcd(k, n) = 1$.
 
     Montrons que $\langle \hat k \rangle = \Z / n \Z$.
-
-    On a clairement $\langle \hat k \rangle \subset \Z / n \Z$.
+    Or $\langle \hat k \rangle \subset \Z/n\Z$.
+    Montrons que $\Z/n\Z \subset \langle \hat k \rangle$.
 
     Soit $c \in \Z / n \Z$ et $b \in c$.
 
@@ -799,7 +808,7 @@ de même cardinal que $H$.}
     Donc $u\hat k = \hat 1$, donc $ub \hat k = b \hat 1 = \hat b = c$. Donc $c \in \langle \hat k \rangle$, 
     donc $\hat k$ est un générateur de $\Z / n \Z$.
 
-    \avspace Soit maintenant $c \in \Z / n \Z$ tel que $\langle c \rangle = \Z / n \Z$.
+    \avspace $\subset$ Soit maintenant $c \in \Z / n \Z$ tel que $\langle c \rangle = \Z / n \Z$.
 
     Soit $k \in \ninter {0}{n-1}$ tel que $c = \hat k$.
 
@@ -809,12 +818,14 @@ de même cardinal que $H$.}
 
     Donc $\hat 1 = \widehat{uk}$, donc $1 \equiv uk [n]$, donc $\exists v \in \Z$ tel que $uk - 1 = vn$.
 
-    Donc (par Bézout) $\pgcd(k, n) = 1$.
+    Donc par Bézout $\pgcd(k, n) = 1$.
 \end{proof}
 
 \begin{corollaire}{Générateurs de $\symbb U_n$}{}
     Les générateurs de $(\symbb U_n, \cdot)$ sont les $e^{\frac{2i\pi k} n}$ tels que 
-    $k \in \ninter{1}{n-1}$ et $\pgcd(k, n) = 1$ que l'on appelle les racines primitives $n$-ièmes de l'unité.
+    $k \in \ninter{1}{n-1}$ et $\pgcd(k, n) = 1$.
+
+    On les appellera racines primitives $n$-ièmes de l'unité.
 \end{corollaire}
 
 \begin{proof}
@@ -822,17 +833,23 @@ de même cardinal que $H$.}
 \end{proof}
 
 \begin{exemple}
-    $n = 2$ : $X^2 - 1 = (X - 1)(X + 1) = \left(X - e^{\frac{2 \cdot 0 \pi} 2}\right)\left(X - e^{\frac{2 \cdot 1 \pi}2}\right)$
-    Donc une racine primitive $2$-ième de l'unité : $-1$.
-    
-    \avspace $n = 3$ : $X^3 - 1 = (X - 1)(X - j)(X - j^2)$ avec $j = e^{\frac{2i\pi}3}$.
-    $1 \wedge 3 = 1 = 2 \wedge 3$ donc 2 racines $3$-ième de l'unité.
+    \begin{itemize}
+        \item Pour $n = 2$, $X^2 - 1 = (X - 1)(X + 1) = \left(X - e^{\frac{2 \cdot 0 \pi} 2}\right)\left(X - e^{\frac{2 \cdot 1 \pi}2}\right)$.
 
-    \avspace $n = 4$ : $X^4 - 1 = (X - 1)(X + 1)(X - i)(X + i) = (X - 1)(X + 1)(X^2 + 1)$
-    Donc $1 \wedge 4 = 1 = 3 \wedge 4$ donc 2 racines primitives $4$-ième de l'unité : $i$ et $-i$.
+        Donc il n'y a qu'une racine primitive $2$-ième de l'unité : $-1$.
     
-    \avspace $n = 5$ : $X^5 - 1 = (X - 1)\left(X - e^{\frac{2i\pi}5}\right)\left(X - e^{\frac{4i\pi}5}\right)\left(X - e^{\frac{6i\pi}5}\right)\left(X - e^{\frac{8i\pi}5}\right)$
-    Donc $1 \wedge 5 = 1 = 2 \wedge 5 = 3 \wedge 5 = 4 \wedge 5$ donc 4 racines primitives $5$-ième de l'unité.
+        \item Pour $n = 3$, $X^3 - 1 = (X - 1)(X - j)(X - j^2)$ avec $j = e^{\frac{2i\pi}3}$.
+        
+        Donc $1 \wedge 3 = 1 = 2 \wedge 3$ donc il y a 2 racines primitives $3$-ième de l'unité.
+
+        \item Pour $n = 4$, $X^4 - 1 = (X - 1)(X + 1)(X - i)(X + i) = (X - 1)(X + 1)(X^2 + 1)$.
+        
+        Donc $1 \wedge 4 = 1 = 3 \wedge 4$ donc 2 racines primitives $4$-ième de l'unité : $i$ et $-i$.
+    
+        \item Pour $n = 5$, $X^5 - 1 = (X - 1)\left(X - e^{\frac{2i\pi}5}\right)\left(X - e^{\frac{4i\pi}5}\right)\left(X - e^{\frac{6i\pi}5}\right)\left(X - e^{\frac{8i\pi}5}\right)$
+
+        Donc $1 \wedge 5 = 1 = 2 \wedge 5 = 3 \wedge 5 = 4 \wedge 5$ donc 4 racines primitives $5$-ième de l'unité.
+    \end{itemize}
 \end{exemple}
 
 \section{Sous-groupe engendré par une partie}
@@ -859,9 +876,9 @@ de même cardinal que $H$.}
 \end{proposition}
 
 \begin{proof}
-    $\langle a \rangle$ est un sous-groupe de $(G, \ast)$ contenant $\{a\}$ donc $\langle \{a\} \rangle \subset \langle a \rangle$.
+    $\subset$ $\langle a \rangle$ est un sous-groupe de $(G, \ast)$ contenant $\{a\}$ donc $\langle \{a\} \rangle \subset \langle a \rangle$.
 
-    Soit $b \in \langle a \rangle$, alors $\exists k \in \Z$ tel que $b = a^k$.
+    $\supset$ Soit $b \in \langle a \rangle$, alors $\exists k \in \Z$ tel que $b = a^k$.
 
     Or $\{a\} \subset \langle \{a\} \rangle$ donc $a \in \langle \{a\} \rangle$.
 
@@ -875,8 +892,9 @@ de même cardinal que $H$.}
 \end{definition}
 
 \begin{theoreme}{}{}
-    Soit $A \subset G$ non vide. Alors 
-    
+    Soit $A \subset G$ non vide.
+
+    Alors
     $\langle A \rangle = \{y \in G, \, \exists n \in \N^*, \exists a_1, \ldots, a_n \in A, \exists k_1, \ldots, k_n \in \Z, y = a_1^{k_1} \ast \cdots \ast a_n^{k_n}\}$.
 \end{theoreme}
 
@@ -885,7 +903,7 @@ de même cardinal que $H$.}
 \begin{proof}
     Posons $B$ l'horreur dans le théorème précédent. 
 
-    Soit $x \in A$, alors $x = x^1 \in B$, donc $A \subset B$.
+    $\subset$ Soit $x \in A$, alors $x = x^1 \in B$, donc $A \subset B$.
 
     Montrons que $B$ est un sous-groupe de $(G, \ast)$.
 
@@ -898,7 +916,7 @@ de même cardinal que $H$.}
     alors $y \ast z^{-1} = a_1^{k_1} \ast \cdots \ast a_n^{k_n} \ast a_1^{' -k'_1} \ast \cdots \ast a_m^{' -k'_m} \in B$.
     Donc $B$ est un sous-groupe de $(G, \ast)$ contenant $A$, donc $\langle A \rangle \subset B$.
 
-    Soit $y \in B$. 
+    $\supset$ Soit $y \in B$. 
     $y = a_1^{k_1} \ast \cdots \ast a_n^{k_n}$ avec $a_1, \ldots, a_n \in A$, donc $a_1, \ldots, a_n \in \langle A \rangle$.
     Donc $y \in \langle A \rangle$, donc $B \subset \langle A \rangle$.
 \end{proof}
@@ -931,38 +949,40 @@ de même cardinal que $H$.}
 \begin{exemple}
     $G = \R$, $k_1 \neq k_2 \in \R^*$, $A = \{k_1, k_2\}$. Alors : 
 
-    Si $\frac{k_1}{k_2} \in \Q$ ($k_1$ et $k_2$ sont dits commensurables), alors il existe 
-    $k_3 \in \R$ tel que $\langle A \rangle = k_3 \Z$.
+    \begin{itemize}
+        \item Si $\frac{k_1}{k_2} \in \Q$ ($k_1$ et $k_2$ sont dits commensurables), alors il existe 
+        $k_3 \in \R$ tel que $\langle A \rangle = k_3 \Z$.
 
-    Si $\frac{k_1}{k_2} \notin \Q$, alors $\not exists k_3 \in \R, \, \langle A \rangle = k_3 \Z$, 
-    c'est à dire que $\langle A \rangle$ est monogène et donc (par exo 12 du TD), 
-    $\langle A \rangle$ est dense dans $\R$.
+        \svspace Supposons que $\frac{k_1}{k_2} = \frac p q \in \Q$ avec $p, q \in \Z^*$, $p \wedge q = 1$.
 
-    \svspace Supposons que $\frac{k_1}{k_2} = \frac p q \in \Q$ avec $p, q \in \Z^*$, $p \wedge q = 1$.
+        Soit $y \in \langle A \rangle$, alors $\exists \alpha, \beta \in \Z, y = \alpha k_1 + \beta k_2$.
 
-    Soit $y \in \langle A \rangle$, alors $\exists \alpha, \beta \in \Z, y = \alpha k_1 + \beta k_2$.
+        Donc $\displaystyle y = \alpha \frac p q k_2 + \beta k_2 = \frac{\alpha p + \beta q} q k_2$.
 
-    Donc $\displaystyle y = \alpha \frac p q k_2 + \beta k_2 = \frac{\alpha p + \beta q} q k_2$.
+        Donc $y \in \frac{k_2} q \Z$, et il existe $c \in \Z$ tel que $\displaystyle y = c \frac{k_2} q$.
 
-    Donc $y \in \frac{k_2} q \Z$, et il existe $c \in \Z$ tel que $\displaystyle y = c \frac{k_2} q$.
+        Alors par le théorème de Bézout, $\exists u, v \in \Z$ tels que $up + vq = 1$.
 
-    Alors par le théorème de Bézout, $\exists u, v \in \Z$ tels que $up + vq = 1$.
+        Donc $\displaystyle y = c \frac{k_2} q (pu + qv) = \frac{c k_2 p u}{q} + cv k_2 = c u k_1 + cv k_2 \in \langle A \rangle$.
 
-    Donc $\displaystyle y = c \frac{k_2} q (pu + qv) = \frac{c k_2 p u}{q} + cv k_2 = c u k_1 + cv k_2 \in \langle A \rangle$.
+        Donc $k_3 = \frac{k_2} q$ et $\langle A \rangle = k_3 \Z$.
 
-    Donc $k_3 = \frac{k_2} q$ et $\langle A \rangle = k_3 \Z$.
+        \item Si $\frac{k_1}{k_2} \notin \Q$, alors $\not \exists k_3 \in \R, \, \langle A \rangle = k_3 \Z$, 
+        c'est à dire que $\langle A \rangle$ est monogène et donc (par exo 12 du TD), 
+        $\langle A \rangle$ est dense dans $\R$.
 
-    \svspace Supposons maintenant que $\frac{k_1}{k_2} \notin \Q$ et montrons 
-    que $\langle A \rangle$ n'est pas monogène.
+        \svspace Supposons maintenant que $\frac{k_1}{k_2} \notin \Q$ et montrons 
+        que $\langle A \rangle$ n'est pas monogène.
 
-    Par l'absurde, s'il était monogène, il existerait $k_3 \in \R$ tel que
-    $\langle A \rangle = \langle k_3 \rangle$. 
+        Par l'absurde, s'il était monogène, il existerait $k_3 \in \R$ tel que
+        $\langle A \rangle = \langle k_3 \rangle$. 
 
-    $k_1 \in \langle A \rangle$ donc $\exists u \in \Z$ tel que $k_1 = u k_3$, 
+        $k_1 \in \langle A \rangle$ donc $\exists u \in \Z$ tel que $k_1 = u k_3$, 
 
-    $k_2 \in \langle A \rangle$ donc $\exists v \in \Z$ tel que $k_2 = v k_3$, $v \neq 0$ car $k_2 \neq 0$.
+        $k_2 \in \langle A \rangle$ donc $\exists v \in \Z$ tel que $k_2 = v k_3$, $v \neq 0$ car $k_2 \neq 0$.
 
-    Donc $\frac{k_1}{k_2} = \frac u v \in \Q$, ce qui est absurde.
+        Donc $\frac{k_1}{k_2} = \frac u v \in \Q$, ce qui est absurde.
+    \end{itemize}
 \end{exemple}
 
 \begin{exemple}
@@ -988,6 +1008,8 @@ de même cardinal que $H$.}
 
     Donc $\R \subset B$, donc $B = \R$.
 \end{exemple}
+
+\marginenote{Remarque}{Prouver ce résultat a été présenté comme oral d'agrégation.}
 
 \begin{exemple}
     $G = SL_2(\Z) = \left\{ M = \begin{pmatrix}

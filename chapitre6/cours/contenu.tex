@@ -252,31 +252,31 @@ a un DL2 mais n'est pas dérivable deux fois.
     L'ensemble des fonctions dérivables de $I$ dans $E$ est noté $\mathscr D(I, E)$.
 \end{definition}
 
-\begin{definition}{Fonction de classe $\mathscr C^1$}{}
-    On dit que $f : I \to E$ est de classe $\mathscr C^1$ sur $I$ ssi 
+\begin{definition}{Fonction de classe $\mc 1 $}{}
+    On dit que $f : I \to E$ est de classe $\mc 1 $ sur $I$ ssi 
     elle y est dérivable et si $f'$ est continue.
-    L'ensemble de ces fonctions est noté $\mathscr C^1(I, E)$.
+    L'ensemble de ces fonctions est noté $\mc 1 (I, E)$.
 \end{definition}
 
-\begin{proposition}{Dérivabilité et classe $\mathscr C^1$ avec une base }{}
+\begin{proposition}{Dérivabilité et classe $\mc 1 $ avec une base }{}
     Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et soit
     $\displaystyle \fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i}$, où $f_i : I \to \K$. \\
 
-    Alors $f$ est dérivable (resp. de classe $\mathscr C^1$) sur $I$ ssi
-    $\forall i \in \ninter{1}{n}$, $f_i$ est dérivable (resp. de classe $\mathscr C^1$).
+    Alors $f$ est dérivable (resp. de classe $\mc 1 $) sur $I$ ssi
+    $\forall i \in \ninter{1}{n}$, $f_i$ est dérivable (resp. de classe $\mc 1 $).
 \end{proposition}
 
 \begin{exemple}
     $\fonction{f}{\R}{\R^2}{t}{(x(t), y(t))}$ avec $x(t) = 2 \cos(t)$ et $y(t) = \sin(t)$.
 
-    Alors $f$ est $\mathscr C^1$ sur $\R$ car $x$ et $y$ le sont.
+    Alors $f$ est $\mc 1 $ sur $\R$ car $x$ et $y$ le sont.
 \end{exemple}
 
 \marginenote{Un peu de Latin}{\emph{Nihil novi sub sole} - rien de nouveau pour le moment.}
+\begin{proposition}{Structure fonctions dérivables et $\mc 1 $}{}
+    $\mathscr D(I, E)$ et $\mc 1 (I, E)$ sont des $\K$-espaces vectoriels et :
 
-\begin{proposition}{Structure fonctions dérivables et $\mathscr C^1$}{}
-    $\mathscr D(I, E)$ et $\mathscr C^1(I, E)$ sont des $\K$-espaces vectoriels et :
-    \[\fonction{\varphi}{\mathscr C^1(I, E)}{\mathscr C(I, E)}{f}{f'} \text{est linéaire.}\] 
+    \[\fonction{\varphi}{\mc 1 (I, E)}{\mathscr C(I, E)}{f}{f'} \text{est linéaire.}\] 
 \end{proposition}
 
 \begin{proof}
@@ -286,11 +286,11 @@ a un DL2 mais n'est pas dérivable deux fois.
 \subsection{Composition}
 
 \begin{proposition}{Composition à droite}{}
-    Soit $f \in \mathscr C^1(I, E)$ et $\varphi \in \mathscr C^1(J, I)$, où $J$ est un intervalle de $\R$
+    Soit $f \in \mc 1 (I, E)$ et $\varphi \in \mc 1 (J, I)$, où $J$ est un intervalle de $\R$
     tel que $\mathring{J } \neq \emptyset$. 
     Considérons :
     \[\fonction{g = f \circ \varphi}{J}{E}{u}{f(\varphi(u))}\]
-    Alors $g \in \mathscr C^1(J, E)$ et $g' = \varphi' f' \circ \varphi$.
+    Alors $g \in \mc 1 (J, E)$ et $g' = \varphi' f' \circ \varphi$.
 \end{proposition}
 
 \begin{remarque}
@@ -298,8 +298,8 @@ a un DL2 mais n'est pas dérivable deux fois.
     \begin{itemize}
         \item La composition par $\varphi$ s'appelle un changement de paramétrage.
 
-        \item Si $\varphi$ est bijective et si $\varphi^{-1} \in \mathscr C^1(I, J)$, c'est à dire si 
-        $\varphi '$ ne s'annule pas (on dit alors que $\varphi$ est un $\mathscr C^1$-difféomorphisme). 
+        \item Si $\varphi$ est bijective et si $\varphi^{-1} \in \mc 1 (I, J)$, c'est à dire si 
+        $\varphi '$ ne s'annule pas (on dit alors que $\varphi$ est un $\mc 1 $-difféomorphisme). 
 
         On dit alors que $\varphi$ est un changement de paramétrage admissible.
     \end{itemize}
@@ -313,15 +313,15 @@ a un DL2 mais n'est pas dérivable deux fois.
 
     Alors $\displaystyle \forall u \in J, \, g(u ) = \sum_{i=1}^n f_i(\varphi(u))e_i$. 
 
-    Donc $g \in \mathscr C^1(J, E)$ et $\displaystyle g'(u) = \sum_{i=1}^n \varphi'(u)f_i'(\varphi(u))e_i = \varphi'(u)f'(\varphi(u))$.
+    Donc $g \in \mc 1(J, E)$ et $\displaystyle g'(u) = \sum_{i=1}^n \varphi'(u)f_i'(\varphi(u))e_i = \varphi'(u)f'(\varphi(u))$.
 \end{proof}
 
 \begin{theoreme}{Composition à gauche par une application linéaire}{}
 
     Soit $(F, N)$ un espace vectoriel normé de dimension finie, $f$ dérivable en $a$
-    (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et $u \in \mathscr{L }(E, F)$. \\
+    (resp. sur $I$, resp. de classe $\mc 1$ sur $I$) et $u \in \mathscr{L }(E, F)$. \\
 
-    Alors $u \circ f$ est dérivable en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$) et :
+    Alors $u \circ f$ est dérivable en $a$ (resp. sur $I$, resp. de classe $\mc 1$ sur $I$) et :
     \[(u \circ f)'(a) = u \circ f'(a)~\text{(resp.} (u \circ f)' = u \circ f'\text{)}\]
 \end{theoreme}
 
@@ -338,7 +338,7 @@ a un DL2 mais n'est pas dérivable deux fois.
 
     Or ceci est vrai en tout point de $I$, donc $(u \circ f)' = u \circ f'$.
 
-    Si $f \in \mathscr C^1(I, E)$, $u$ étant linéaire entre espaces de dimension finie, elle est continue donc $(u \circ f)'$ 
+    Si $f \in \mc 1(I, E)$, $u$ étant linéaire entre espaces de dimension finie, elle est continue donc $(u \circ f)'$ 
     est continue. 
 \end{proof}
 
@@ -349,20 +349,20 @@ a un DL2 mais n'est pas dérivable deux fois.
         y'(t) = 4x(t) - y(t)
     \end{cases}\]
 
-    Posons $X(t) = \begin{pmatrix} x(t) \\ y(t) \end{pmatrix}$ et $x, y \in \mathscr C^1(\R,\R)$ 
-     De même, $X \in \mathscr C^1(\R,\R^2)$. Donc : 
+    Posons $X(t) = \begin{pmatrix} x(t) \\ y(t) \end{pmatrix}$ et $x, y \in \mc 1(\R,\R)$ 
+     De même, $X \in \mc 1(\R,\R^2)$. Donc : 
     
     \[(S) \Leftrightarrow \forall t \in \R, \, X'(t) = \begin{pmatrix} 2 & 1 \\ 4 & -1 \end{pmatrix} X(t)\]
     
     Posons $P = \begin{pmatrix} 1 & 1 \\ 1 & -4 \end{pmatrix}$, $P$ est inversible car $\det(P) = -5 \neq 0$.
 
     Posons $\forall t \in \R, \, Y(t) = P^{-1}X(t)$. Comme $\fonction u {\R^2}{\R^2}{M}{P^{-1}M}$ est linéaire, 
-    $Y$ est $\mathscr C^1$ et $Y'(t) = P^{-1}X'(t)$ car $Y = u \circ X$ donc $Y' = u \circ X'$.
+    $Y$ est $\mc 1$ et $Y'(t) = P^{-1}X'(t)$ car $Y = u \circ X$ donc $Y' = u \circ X'$.
 
     Donc $(S) \Leftrightarrow \forall t \in \R, \, Y'(t) = P^{-1} \begin{pmatrix} 2 & 1 \\ 4 & -1 \end{pmatrix} P y(t)$
 
     Posons $Y(t) = \begin{pmatrix} \varphi(t) \\ \psi(t) \end{pmatrix}$ où 
-    $\varphi, \psi \in \mathscr C^1(\R,\R)$. Alors : 
+    $\varphi, \psi \in \mc 1(\R,\R)$. Alors : 
     \begin{align*}
         (S) & \Leftrightarrow \forall t \in \R, \, \begin{pmatrix} \varphi'(t)  = 3\varphi(t) \\ \psi'(t) = -2\psi(t) \end{pmatrix}\\
     & \Leftrightarrow \alpha, \beta \in \R \quad \varphi(t) = \alpha e^{3t} \space \psi(t) = \beta e^{-2t}\\
@@ -379,7 +379,7 @@ a un DL2 mais n'est pas dérivable deux fois.
     Notons :
     \[\fonction{B(f, g)}{I}{G}{t}{B(f(t), g(t))}\]
 
-    Soit $a \in I$. Si $f$ et $g$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$),
+    Soit $a \in I$. Si $f$ et $g$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mc 1$ sur $I$),
     alors $B(f, g)$ aussi et :
     \[(B(f, g))'(a) = B(f'(a), g(a)) + B(f(a), g'(a))\]
     (resp. $(B(f, g))' = B(f', g) + B(f, g')$)
@@ -406,14 +406,14 @@ a un DL2 mais n'est pas dérivable deux fois.
 
     Sur $I$ : ceci est vrai en tout point de $I$, donc $(B(f, g))' = B(f', g) + B(f, g')$.
 
-    Si $f, g \in \mathscr C^1(I, E)$, $B(f, g)'$ est continue car $B$ est bilinéaire entre espaces de dimension finie, donc continue. 
+    Si $f, g \in \mc 1(I, E)$, $B(f, g)'$ est continue car $B$ est bilinéaire entre espaces de dimension finie, donc continue. 
 \end{proof}
 
 \begin{proposition}{}{}
     \begin{itemize}
         \item Le produit scalaire de deux applications dérivables est dérivable.
         \item Le produit matriciel de deux applications dérivables est dérivable.
-        \item Si $(E, \langle \cdot, \cdot \rangle)$ est préhilbertien (c'est-à-dire euclidien car de dimension finie), et $f \in \mathscr{C }^1(I, E)$, alors $||f||^2 \in \mathscr C^1(I, \R)$ et
+        \item Si $(E, \langle \cdot, \cdot \rangle)$ est préhilbertien (c'est-à-dire euclidien car de dimension finie), et $f \in \mc 1(I, E)$, alors $||f||^2 \in \mc 1(I, \R)$ et
         $(||f||^2)' = 2 \langle f, f' \rangle$.
     \end{itemize}
 \end{proposition}
@@ -455,7 +455,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
     Notons :
     \[\fonction{M(f_1, \ldots, f_n)}{I}{F}{t}{M(f_1(t), \ldots, f_n(t))}\]
 
-    \avspace Si $f_1, \ldots, f_n$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mathscr C^1$ sur $I$),
+    \avspace Si $f_1, \ldots, f_n$ sont dérivables en $a$ (resp. sur $I$, resp. de classe $\mc 1$ sur $I$),
     alors $M(f_1, \ldots, f_n)$ aussi et :
     \[(M(f_1, \ldots, f_n))'(a) = \sum_{i=1}^n M(f_1(a), \ldots, f_{i-1}(a), f_i'(a), f_{i+1}(a), \ldots, f_n(a))\]
 \end{theoreme}
@@ -465,7 +465,7 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 \end{proof}
 
 \begin{corollaire}{}{}
-    Si $f \in \mathscr C^1(I, \mathscr M_n(\K))$ alors $\det \circ f \in \mathscr C^1(I, \K)$.
+    Si $f \in \mc 1(I, \mathscr M_n(\K))$ alors $\det \circ f \in \mc 1(I, \K)$.
 \end{corollaire}
 
 \begin{exemple}
@@ -475,25 +475,26 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
     $f' = \det(X_1', X_2) + \det(X_1, X_2')$.
 \end{exemple}
 
-\subsection{Application de classe \texorpdfstring{$\mathscr C^k$}{Ck}}
+\subsection{Application de classe \texorpdfstring{$\mc k$}{Ck}}
 
-\begin{definition}{Fonction de classe $\mathscr C^k$}{}
+\begin{definition}{Fonction de classe $\mc k$}{}
     Soit $f : I \to E$ et $k \in \N, \, k \geqslant 2$. On dit que $f$ est de classe 
-    $\mathscr C^k$ sur $I$ ssi $f, f', \ldots, f^{(k-1)}$ sont dérivables sur $I$ et $f^{(k)}$ est continue sur $I$. \\
+    $\mc k$ sur $I$ ssi $f, f', \ldots, f^{(k-1)}$ sont dérivables sur $I$ et $f^{(k)}$ est continue sur $I$. \\
 
-    On dit que $f$ est de classe $\mathscr C^\infty$ sur I ssi $f$ est de classe 
-    $\mathscr C^k$ pour tout $k \in \N$.
+    On dit que $f$ est de classe $\mc \infty$ sur I ssi $f$ est de classe 
+    $\mc k$ pour tout $k \in \N$.
 \end{definition}
 
 \begin{remarque}
-    Si $f \in \mathscr C^k(I,E)$ alors :
+    Si $f \in \mc k(I,E)$ alors :
     $\ds \forall i,j \in \N$ tels que $i + j \leqslant k$,
     $\left(f^{(i)}\right)^{(j)} = \left(f^{(j)}\right)^{(i)} = f^{(i+j)}$.
 \end{remarque}
 
-\begin{proposition}{Classe $\mathscr C^k$ avec une base}{}
+\begin{proposition}{Classe $\mc k$ avec une base}{}
     Soit $B = (e_1, \ldots, e_n)$ une base de $E$, et :
     \[\fonction{f}{I}{E}{t}{\sum_{i=1}^n f_i(t)e_i},~\text{où}~f_i : I \to \K\]
+
 
     Alors $f$ est de classe $\mathscr C^k$ sur $I$ ssi $\forall i \in \ninter{1}{n}$, $f_i$ est de classe $\mathscr C^k$. 
 
@@ -507,18 +508,18 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 
     \uline{Initialisation :} c'est vrai pour $k = 1$ (vu en sup).
 
-    \uline{Hérédité :} supposons le pour toute fonction de classe $\mathscr C^{k - 1} $. Soit 
-    $f \in \mathscr C^k$. Donc $f \in \mathscr C^{k-1}$ ssi $\forall i \in \ninter 1 n, \, f_i \in \mathscr C^{k-1}$ 
+    \uline{Hérédité :} supposons le pour toute fonction de classe $\mc {k - 1} $. Soit 
+    $f \in \mc k$. Donc $f \in \mc {k-1}$ ssi $\forall i \in \ninter 1 n, \, f_i \in \mc {k-1}$ 
     et alors $\displaystyle \forall t \in I, \, f^{(k-1)}(t) = \sum_{i=1}^n f_i^{(k-1)}(t)e_i$.
 
-    Et alors en appliquant le cas $k = 1$, on a $f \in \mathscr C^k$ ssi $f^{(k-1)} \in \mathscr C^1$, 
-    ssi $\forall i, \, f_i^{(k-1)} \in \mathscr C^1$, ssi $\forall i \ninter 1 n, \, f_i \in \mathscr C^k$.
+    Et alors en appliquant le cas $k = 1$, on a $f \in \mc k$ ssi $f^{(k-1)} \in \mc 1$, 
+    ssi $\forall i, \, f_i^{(k-1)} \in \mc 1$, ssi $\forall i \ninter 1 n, \, f_i \in \mc k$.
 \end{proof}
 
-\begin{proposition}{Structure de l'ensemble des fonctions de classe $\mathscr C^k$}{}
+\begin{proposition}{Structure de l'ensemble des fonctions de classe $\mc k$}{}
 
-    $\mathscr C^k(I, E)$ est un $\K$-espace vectoriel et
-    $\fonction{\varphi}{\mathscr C^k(I, E)}{\mathscr C^{k-1}(I, E)}{f}{f'}$ est linéaire.
+    $\mc k(I, E)$ est un $\K$-espace vectoriel et
+    $\fonction{\varphi}{\mc k(I, E)}{\mc {k-1}(I, E)}{f}{f'}$ est linéaire.
 \end{proposition}
 
 \begin{proof}
@@ -541,20 +542,20 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
     Si $f$ est définie sur $]a,b]$ on peut alors essayer de prolonger $f$ par continuité avant d'appliquer ce théorème.
 \end{remarque}
 
-\begin{theoreme}{Prolongement des fonctions de classe $\mathscr C^1$}{}
-    Soit $f \in \mathscr C^1(]a, b], \R)$ avec $f$ et $f'$ qui ont des limites finies 
+\begin{theoreme}{Prolongement des fonctions de classe $\mc 1$}{}
+    Soit $f \in \mc 1(]a, b], \R)$ avec $f$ et $f'$ qui ont des limites finies 
     $\ell_1$ et $\ell_2$ en $a$. 
 
     Alors on peut prolonger $f$ par continuité en $a$ en posant $f(a) = \ell_1$.
 
-    Et alors $f$ est $\mathscr C^1$ sur $[a, b]$ et $f'(a) = \ell_2$.
+    Et alors $f$ est $\mc 1$ sur $[a, b]$ et $f'(a) = \ell_2$.
 \end{theoreme}
 
-\begin{theoreme}{Prolongement des fonctions de classe $\mathscr C^k$ et $\mathscr C^{\infty}$}{}
-    Soit $f \in \mathscr C^k(I, \R)$ avec $f,\dots,f^{(k)}$ qui ont des limites finies en $a \in \overline{I} \setminus I$. 
+\begin{theoreme}{Prolongement des fonctions de classe $\mc k$ et $\mc {\infty}$}{}
+    Soit $f \in \mc k(I, \R)$ avec $f,\dots,f^{(k)}$ qui ont des limites finies en $a \in \overline{I} \setminus I$. 
 
     Alors on peut prolonger $f$ par continuité en $a$.
-    Et alors $f$ est $\mathscr C^k$ sur $I \cup \{a\}$ (de même pour $\mathscr C^{\infty}$).
+    Et alors $f$ est $\mc k$ sur $I \cup \{a\}$ (de même pour $\mc {\infty}$).
 \end{theoreme}
 
 \begin{exemple}[Classique à retenir]
@@ -563,11 +564,11 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
         e^{-\frac{1}{x^2}} & \text{sinon}
     \end{cases}}$
 
-    Montrons que $f$ est $\mathscr C^{\infty}$ par prolongement.
+    Montrons que $f$ est $\mc {\infty}$ par prolongement.
 
     Montrons par récurrence que $\forall x \in \R_+^*, \, f^{(n)}(x) = \frac{P_n(x) }{x^{3n}} e^{-\frac{1}{x^2}}$ où $P_n \in \R [X]$. 
 
-    $f$ est $\mathscr C^\infty$ sur $\R_+^*$. 
+    $f$ est $\mc \infty$ sur $\R_+^*$. 
 
     Pour $x > 0$, $f^{(0)}(x) = \frac{P_0(x )}{x^0} e^{-\frac{1}{x^2}}$ avec $P_0 = 1$.
 
@@ -579,25 +580,25 @@ Alors $(\|f\|^2)' = 2 \langle f',f \rangle$. Donc $\mathscr C_f \perp C_{f'}$.
 
     On a bien $\forall n \in \N, \, f^{(n)}(x) \limit x {0^-} 0 $ et $f^{(n)}(x) \limit x {0^+} 0$ par croissance comparée. 
 
-    Donc par le théorème de prolongement des fonctions de classe $\mathscr C^n$, $f$ est $\mathscr C^n$ sur $\R$ et $\forall n \in \N, \, f^{(n)}(0) = 0$.
+    Donc par le théorème de prolongement des fonctions de classe $\mc n$, $f$ est $\mc n$ sur $\R$ et $\forall n \in \N, \, f^{(n)}(0) = 0$.
 
 
     Soit $[a, b] \subset \R$, et $\fonction g \R \R t {f(t-a)f(b-t)}$.
 
-    Alors $g$ est $\mathscr C^\infty$ sur $\R$, $g$ est strictement positive sur $]a, b[$ et nulle ailleurs.
+    Alors $g$ est $\mc \infty$ sur $\R$, $g$ est strictement positive sur $]a, b[$ et nulle ailleurs.
 \end{exemple}
 
 \begin{remarque}
     (hors programme)
     
-    On dira alors que $g$ est $\mathscr C^{\infty}$ à support compact (plus précisément à support inclus dans un compact).
+    On dira alors que $g$ est $\mc {\infty}$ à support compact (plus précisément à support inclus dans un compact).
 
     L'ensemble de ces fonctions est appelé \emph{espace de Schwartz}, est un espace vectoriel et est noté $S$.
 
-    $\forall f \in \mathscr C^0(\R, \R)$ posons :
+    $\forall f \in \mc 0(\R, \R)$ posons :
     \[\fonction {\varphi_f} S {\R} g {\int_{\R}} f(t)g(t) \dif t\]
     On montrerait que :
-    \[\fonction {\psi} {\mathscr C^0(\R,\R)} {\mathscr L(S,\R)} f {\varphi_f}\]
+    \[\fonction {\psi} {\mc 0(\R,\R)} {\mathscr L(S,\R)} f {\varphi_f}\]
 
     est injective.
     À chaque fonction continue on associe donc une forme linéaire.
@@ -614,11 +615,11 @@ Soit $f : I \to E$.
 \end{itemize}
 
 \subsubsection{Interprétation cinématique}
-Soit $f \in \mathscr C^2(I, E)$. 
+Soit $f \in \mc 2(I, E)$. 
 Pour $t \in I$, $f'(t)$ est appelé vecteur vitesse à l'instant $t$ et $f''(t)$ est appelé vecteur accélération à l'instant $t$.
 
 \subsubsection{Étude locale}
-Soit $f \in \mathscr C^k(I, E), \, k \geqslant 2$ et $a \in I$. 
+Soit $f \in \mc k(I, E), \, k \geqslant 2$ et $a \in I$. 
 
 On suppose qu'il existe $p \in \ninter 1 k$ minimal tel que $f^{(p)}(a) \neq 0$.
 
@@ -774,7 +775,7 @@ il existe quatre types de points :
 \end{figure}
 
 \subsubsection{Étude globale d'une courbe plane}
-$E = \R^2$, $\fonction f I {\R^2} t {\begin{pmatrix} x(t) \\ y(t) \end{pmatrix}}$ $f$ de classe $\mathscr C^k, \, k \geqslant 2$.
+$E = \R^2$, $\fonction f I {\R^2} t {\begin{pmatrix} x(t) \\ y(t) \end{pmatrix}}$ $f$ de classe $\mc k, \, k \geqslant 2$.
 
 Les étapes clés pour tracer la courbe :
 \begin{itemize}
@@ -907,7 +908,7 @@ Il est aussi possible de faire des choses plus compliquées :
 \section{Intégration sur un segment}
 \subsection{Théorème-définition}
 
-\begin{theoreme}{Intégrale de $f \in \mathscr C^{pm}$ à valeurs dans un evn de dim finie}{}
+\begin{theoreme}{Intégrale de $f \in \mc {pm}$ à valeurs dans un evn de dim finie}{}
     Soit $f : [a, b] \to E$ et $B = (e_1, \ldots, e_n)$ une base de $E$.
 
     Notons $\displaystyle \forall t \in [a, b], \, f(t) = \sum_{i=1}^n f_i(t)e_i$.
@@ -965,15 +966,15 @@ Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 \subsection{Propriétés}
 
 \begin{proposition}{Linéarité de l'intégrale}{}
-    L'ensemble $\mathscr C^{pm}([a, b], E)$ est un $\K$-espace vectoriel et :
-    \[\fonction{\varphi}{\mathscr C^{pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}\]
+    L'ensemble $\mc {pm}([a, b], E)$ est un $\K$-espace vectoriel et :
+    \[\fonction{\varphi}{\mc {pm}([a, b], E)}{E}{f}{\int_a^b f(t) \dt}\]
     est linéaire. 
 \end{proposition}
 
 \idee{Coordonnée par coordonnée.}
 
 \begin{proof}
-    Soient $f,g \in \mathscr C^{pm}([a,b],E)$, $\alpha,\beta \in \K$ et $B = (e_1, \ldots, e_n)$ une base de $E$, notons :
+    Soient $f,g \in \mc {pm}([a,b],E)$, $\alpha,\beta \in \K$ et $B = (e_1, \ldots, e_n)$ une base de $E$, notons :
     
     $\displaystyle \forall t \in [a, b], \, f(t) = \sum_{i=1}^n f_i(t)e_i$ et
     $\displaystyle g(t) = \sum_{i=1}^n g_i(t)e_i$
@@ -1013,10 +1014,10 @@ Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 \marginenote{Remarque}{$f$ est dite continue par morceaux sur $I$ si elle l'est sur tout segment de $I$.}
 
 \begin{theoreme}{Composition de l'intégrale par une application linéaire}{}
-    Soit $f \in \mathscr C^{pm}([a, b], E)$, et soit $F$ un $\K$-espace vectoriel normé de dim finie, et 
+    Soit $f \in \mc {pm}([a, b], E)$, et soit $F$ un $\K$-espace vectoriel normé de dim finie, et 
     $L \in \mathscr L(E, F)$.
 
-    Alors $L \circ f \in \mathscr C^{pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) \dt = L\left( \int_a^b f(t) \dt \right)$.
+    Alors $L \circ f \in \mc {pm}([a, b], F)$ et $\displaystyle \int_a^b L(f(t)) \dt = L\left( \int_a^b f(t) \dt \right)$.
 \end{theoreme}
 
 \idee{Coordonnée par coordonnée, \emph{as usual}.}
@@ -1052,7 +1053,7 @@ Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 \subsection{Sommes de Riemann}
 
 \begin{definition}{Somme de Riemann}{}
-    Soit $N \geqslant 2$ et $f \in \mathscr C^{pm}([a, b], E)$.
+    Soit $N \geqslant 2$ et $f \in \mc {pm}([a, b], E)$.
 
     On appelle somme de Riemann à gauche (resp. à droite) pour $f$ sur $[a, b]$ associée à la 
     subdivision régulière en $N$ segments le vecteur :
@@ -1068,7 +1069,7 @@ Soit $f$ continue par morceaux sur $[a, b]$. Alors on note indifféremment :
 \end{remarque}
 
 \begin{proposition}{}{}
-    Soit $f \in \mathscr C^{pm}([a, b], E)$. Alors les sommes de Riemann pour $f$ convergent vers 
+    Soit $f \in \mc {pm}([a, b], E)$. Alors les sommes de Riemann pour $f$ convergent vers 
     $\displaystyle \int_a^b f(t) \dt$ quand $N \to +\infty$.
 
     On a donc :
@@ -1090,8 +1091,8 @@ De même pour la somme à droite.
 \end{proof}
 
 \begin{theoreme}{Inégalité triangulaire pour l'intégrale}{}
-    Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mathscr C^{pm}([a, b], E)$.
-    Alors $||f|| \in \mathscr C^{pm}([a, b], \R)$ et :
+    Munissons $E$ d'une norme $||\cdot||$. Soit $f \in \mc {pm}([a, b], E)$.
+    Alors $||f|| \in \mc {pm}([a, b], \R)$ et :
     \[\left|\left| \int_a^b f(t) \dt \right|\right| \leqslant \int_a^b ||f(t)|| \dt\]
 \end{theoreme}
 
@@ -1118,7 +1119,7 @@ De même pour la somme à droite.
 \begin{theoreme}{Primitive fonction vectorielle}{}
     Soit $f \in \mathscr C(I, E)$ et $a \in I$. 
 
-    Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) \dt}$ est de classe $\mathscr C^1$ sur $I$ et 
+    Alors $\fonction{F}{I}{E}{x}{\int_a^x f(t) \dt}$ est de classe $\mc 1$ sur $I$ et 
     vérifie $F' = f$.
 
     $F$ est appelée la primitive de $f$ sur $I$ qui s'annule en $a$. 
@@ -1131,11 +1132,11 @@ De même pour la somme à droite.
 
     Donc $\displaystyle F(x) = \sum_{i = 0 }^{ n } \left( \int_a^x f_i(t) \dt \right) e_i$.
 
-    Par le théorème fondamental pour les fonctions réelles, $F_i$ est de classe $\mathscr C^1$ et $F_i' = f_i$.
+    Par le théorème fondamental pour les fonctions réelles, $F_i$ est de classe $\mc 1$ et $F_i' = f_i$.
 \end{proof}
 
 \begin{corollaire}{Calcul d'intégrales}{}
-    Soit $f \in \mathscr C(I, E)$ et $F \in \mathscr C^1(I, E)$ tel que 
+    Soit $f \in \mathscr C(I, E)$ et $F \in \mc 1(I, E)$ tel que 
     $F' = f$, alors $F$ est appelée une primitive de $f$. Alors $\forall a, b \in I$, 
     
     \[\displaystyle \int_a^b f(t) \dt = F(b) - F(a)\]
@@ -1186,12 +1187,12 @@ De même pour la somme à droite.
 \end{table}
 
 \subsubsection{Intégration par parties}
-Soient $u, v \in \mathscr C^1([a, b], \K)$.
+Soient $u, v \in \mc 1([a, b], \K)$.
 Alors :
 \[\int_{a }^{b } u'\cdot v = \left[ u \cdot v \right]_{a }^{b } - \int_{a }^{b } u \cdot v'\]
 
 \subsubsection{Changement de variable}
-Soit $\varphi \in \mathscr C^1(J, I)$ et $\alpha, \beta \in J$, 
+Soit $\varphi \in \mc 1(J, I)$ et $\alpha, \beta \in J$, 
 $\varphi(\alpha) = a, \, \varphi(\beta) = b$.
 
 Soit $f \in \mathscr C(I, E)$. Alors \[\int_\alpha^\beta f(\varphi(u)) \varphi'(u) \dif u = \int_a^b f(t) \dt\]
@@ -1261,7 +1262,7 @@ Changements de variable usuels :
 \end{exemple}
 
 \begin{theoreme}{Inégalité des accroissements finis}{}
-    Soit $f \in \mathscr C^1(I, E)$, soient $\alpha,\beta \in I$. Soit $M > 0, \, \forall x \in [\alpha,\beta], \, ||f'(x)|| \leqslant M$.
+    Soit $f \in \mc 1(I, E)$, soient $\alpha,\beta \in I$. Soit $M > 0, \, \forall x \in [\alpha,\beta], \, ||f'(x)|| \leqslant M$.
 
     Alors $\forall a, b \in [\alpha,\beta]$, 
     \[||f(b) - f(a)|| \leqslant M |b - a|\]
@@ -1284,7 +1285,7 @@ Changements de variable usuels :
 \marginenote{Histoire !}{À l'époque, Taylor notait les dérivées successives par des lettres $m,n,\dots$ car la notation $f^{(n)}$ n'existait pas.}
 
 \begin{proposition}{Formule de Taylor-Young}{}
-    Soit $f \in \mathscr C^n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a :
+    Soit $f \in \mc n(I, E)$, alors pour $a \in I$, $h \in \R$ tel que $a + h \in I$, on a :
     \[f(a + h) = \sum_{k = 0 }^{n } \frac{h^k}{k!} f^{(k)}(a) + o(h^n)\]
 \end{proposition}
 
@@ -1293,7 +1294,7 @@ Changements de variable usuels :
 \end{proof}
 
 \begin{proposition}{Formule de Taylor avec reste intégrale}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$ et $a, b \in I$. 
+    Soit $f \in \mc {n + 1}(I, E)$ et $a, b \in I$. 
     \[f(b) = \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) + \int_a^b \frac{(b - t)^n}{n!} f^{(n+1)}(t) \dt\]
 \end{proposition}
 
@@ -1302,7 +1303,7 @@ Changements de variable usuels :
 \end{proof}
 
 \begin{proposition}{Inégalité de Taylor-Lagrange}{}
-    Soit $f \in \mathscr C^{n + 1}(I, E)$, $a, b \in I$.  Soit $M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
+    Soit $f \in \mc {n + 1}(I, E)$, $a, b \in I$.  Soit $M > 0, \, \forall t \in [a, b], \, ||f^{(n + 1)}(t)|| \leqslant M$.
     Alors :
     \[\left|\left| f(b) - \sum_{k = 0 }^{n } \frac{(b - a)^k}{k!} f^{(k)}(a) \right|\right| \leqslant \frac{M |b - a|^{n + 1}}{(n + 1)!}\]
 \end{proposition}

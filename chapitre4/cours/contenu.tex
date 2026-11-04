@@ -331,7 +331,7 @@ Donc $B$ est un $\K$-espace vectoriel.
 \idee{Inégalité de Taylor-Lagrange.}
 
 \begin{proof}
-    Soit $\fonction f \R \C t {e^{tz}}$, alors $f$ est $\mathscr C^\infty$ et 
+    Soit $\fonction f \R \C t {e^{tz}}$, alors $f$ est $\mc\infty$ et 
     
     $\forall n \in \N, \, \forall t \in \R, \; f^{(n)}(t) = z^n e^{tz}$.
 
@@ -410,7 +410,8 @@ Donc $B$ est un $\K$-espace vectoriel.
 
 \subsection{Exemple de séries dans un espace vectoriel normé de dimension infinie}
 
-$\forall n \in \N, \, \fonction{f_n}{[0, 1 / 2]}{\R}{x}{x^n}$ dans $\mathscr C^0([0, 1 / 2], \R)$ 
+
+$\forall n \in \N, \, \fonction{f_n}{[0, 1 / 2]}{\R}{x}{x^n}$ dans $\mc0([0, 1 / 2], \R)$ 
 muni de la la norme infinie. 
 
 Étude de $\sum_{n \geqslant 0} f_n$.
@@ -876,9 +877,9 @@ Donc $S = (I_n - A)^{-1}$.
 
 Il est écrit dans le programme que seules les techniques de comparaison série intégrale sont à connaitre, en conséquence, le résultat du calcul suivant doit être refait si utilisé aux concours. 
 
-On notera $\mathscr C^{pm}(E, F)$ l'ensemble des fonctions continues par morceaux de $E$ dans $F$.
+On notera $\mc{pm}(E, F)$ l'ensemble des fonctions continues par morceaux de $E$ dans $F$.
 
-Soit $f \in \mathscr C^{pm}( [a, + \infty[ , \R^+)$ décroissante. 
+Soit $f \in \mc{pm}( [a, + \infty[ , \R^+)$ décroissante. 
 
 Pour $k \geqslant a$ et $ t \in [k, k+ 1 ], \, f(k + 1) \leqslant f(t) \leqslant f(k)$
 
@@ -894,7 +895,7 @@ Par Chasles : $S_n - f(n_0) \leqslant \int_{n_0}^{n} f(t) \text d t \leqslant S_
 Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant f(n_0) + \int_{n_0}^{n} f(t) \text d t$
 
 \begin{theoreme}{LHP}{}
-    Soit $f \in \mathscr C^{pm}([a, + \infty[, \R^+)$ décroissante. 
+    Soit $f \in \mc{pm}([a, + \infty[, \R^+)$ décroissante. 
     Notons $\forall n \in \N,$ 
     \[\omega_n = \left( \int_{n - 1 }^{n } f(t) \text d t \right) - f(n)\]
 
@@ -922,7 +923,7 @@ Donc $\displaystyle f(n) + \int_{n_0}^{n} f(t) \text d t \leqslant S_n \leqslant
 \end{proof}
 
 \begin{proposition}{Conséquence - HP}{}
-    Soit $f \in \mathscr C^{pm}([a, + \infty[, \R^+)$ décroissante. 
+    Soit $f \in \mc{pm}([a, + \infty[, \R^+)$ décroissante. 
 
     Alors la série $\displaystyle \sum_{n \geqslant \lceil a \rceil + 1} f(n)$ converge ssi la suite 
     $\displaystyle \int_{\lceil a \rceil + 1 }^{n } f(t) \text d t$ converge.
@@ -1250,8 +1251,8 @@ d'un certain rang.
 \end{exemple}
 
 \begin{remarque}
-Pour généraliser cette idée il faut $f\in  \mathscr C^{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
-montrerait de la même manière, dans le cas où $\ds\int_0^n f(t) \dt$ diverge, que $\ds \sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
+Pour généraliser cette idée il faut $f\in  \mc{pm}(\R^+, \R^+)$ monotone telle que $f(k+1) \sim f(k)$, on
+montrerait de la même manière, dans le cas où $\int_0^n f(t) \dt$ diverge, que $\sum_{k=1}^n f(k) \sim \int_0^n f(t) \dt$.
 \end{remarque}
 
 \subsection{Sommation des relations de comparaison pour des séries convergentes}

@@ -551,7 +551,7 @@ Dans cette partie, $E = \R$
     Soit $(f_n)_{n \in \N}$ suite de fonctions de $\mathscr C (I, E')$ avec
     $\mathring I \neq \emptyset$.
 
-    Soit $a \in I$, et posons $\fonction{F_n}{I}{E'}{x}{\int_a^x f_n(t) dt}$
+    Soit $a \in I$, et posons $\fonction{F_n}{I}{E'}{x}{\int_a^x f_n(t) \dt}$
 
     On suppose que $(f_n)_{n \in \N}$ converge uniformément vers $g$ 
     sur tout segment inclus dans $I$.
@@ -559,7 +559,7 @@ Dans cette partie, $E = \R$
     Alors : 
     \begin{itemize}
         \item $g$ est continue sur $I$
-        \item On peut définir $\fonction{G}{I}{E'}{x}{\int_a^x g(t) dt}$
+        \item On peut définir $\fonction{G}{I}{E'}{x}{\int_a^x g(t) \dt}$
         \item $(F_n)_{n \in \N}$ converge uniformément vers $G$ sur tout segment inclus dans $I$
     \end{itemize}
 \end{theoreme}
@@ -569,8 +569,8 @@ Dans cette partie, $E = \R$
     $[a, b]$ qui converge uniformément vers $g$ sur $[a, b]$. 
     
     Alors $g$ est continue, et
-    $\displaystyle \int_a^b f_n(t) dt \xrightarrow[n\to +\infty]{} \int_a^b g(t) dt$, c'est à dire 
-    que $$\lim_{n \to +\infty} \int_a^b f_n(t) dt = \int_a^b \lim_{n \to +\infty} f_n(t) dt$$ 
+    $\displaystyle \int_a^b f_n(t) \dt \xrightarrow[n\to +\infty]{} \int_a^b g(t) \dt$, c'est à dire 
+    que $$\lim_{n \to +\infty} \int_a^b f_n(t) \dt = \int_a^b \lim_{n \to +\infty} f_n(t) \dt$$ 
 \end{corollaire}
 
 \idee{
@@ -593,8 +593,8 @@ Dans cette partie, $E = \R$
 
     Soit $x \in S'$. On a :
     \begin{align}
-        N'(F_n(x) - G(x)) & = N'\left( \int_a^x (f_n(t) - g(t)) dt \right) \\
-        & \leqslant \left| \int_{a}^x N'(f_n(t) - g(t)) dt \right|
+        N'(F_n(x) - G(x)) & = N'\left( \int_a^x (f_n(t) - g(t)) \dt \right) \\
+        & \leqslant \left| \int_{a}^x N'(f_n(t) - g(t)) \dt \right|
     \end{align}
 
     Soit $t \in [a, x], \, t \in S'$ car $S'$ intervalle donc convexe et $a, x \in S'$. 
@@ -620,14 +620,14 @@ Dans cette partie, $E = \R$
 \end{proof}
 
 \begin{theoreme}{Dérivation}{th:derivation}
-    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mathscr{C}^1$ de $I$ dans $E'$.
+    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mc 1$ de $I$ dans $E'$.
     On suppose que : 
     \begin{itemize}
         \item $(f_n)$ converge simplement vers $g$ sur $I$
         \item $(f_n')$ converge uniformément sur tout segment vers $h : I \to E'$
     \end{itemize}
 
-    alors $(f_n)$ converge uniformément sur tout segment vers $g$ et $g$ est de classe $\mathscr{C}^1$, 
+    alors $(f_n)$ converge uniformément sur tout segment vers $g$ et $g$ est de classe $\mc 1$, 
     avec $g' = h$.
 \end{theoreme}
 
@@ -638,11 +638,11 @@ Dans cette partie, $E = \R$
 }
 
 \begin{proof}
-    Fixons $a \in I$, et posons $\forall n \in \N, F_n(x) = \int_{a}^{x } f_n'(t) dt$.
+    Fixons $a \in I$, et posons $\forall n \in \N, F_n(x) = \int_{a}^{x } f_n'(t) \dt$.
 
     $f'_n$ est continue, leur suite converge uniformément sur tout segment vers $h$. 
 
-    Donc $(F_n)$ converge uniformément sur tout segment vers $H : x \mapsto \int_a^x h(t) dt$.
+    Donc $(F_n)$ converge uniformément sur tout segment vers $H : x \mapsto \int_a^x h(t) \dt$.
 
     \avspace Soit $S$ segment inclus dans $I$ et $x \in S$. 
     
@@ -650,7 +650,7 @@ Dans cette partie, $E = \R$
     $f_n(x) - H(x) = F_n(x) + f_n(a) - H(x)$ et donc 
 
     \begin{align}
-        N'(f_n(x) - \int_{a }^{x } h(t) dt - f_n(a)) & \leqslant N'(F_n(x) - H(x)) \\
+        N'(f_n(x) - \int_{a }^{x } h(t) \dt - f_n(a)) & \leqslant N'(F_n(x) - H(x)) \\
         & \leqslant ||F_n - H||_{\infty, S} \\
         & \to 0 \text{ et indépendant de } x
     \end{align}
@@ -666,11 +666,11 @@ Dans cette partie, $E = \R$
 
     Donc convergence simple, donc $J = g$ par unicité de la limite. 
 
-    $H$ est $\mathscr {C}^1$ donc $g$ aussi et $g' = h = H'$.
+    $H$ est $\mc 1$ donc $g$ aussi et $g' = h = H'$.
 \end{proof}
 
-\begin{theoreme}{Généralisation à la classe $\mathscr{C}^k$}{}
-    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mathscr{C}^k$ sur $I$. 
+\begin{theoreme}{Généralisation à la classe $\mc k$}{}
+    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mc k$ sur $I$. 
 
     On suppose que  $\forall i \in \ninter{0}{k - 1}$, 
     \begin{itemize}
@@ -679,7 +679,7 @@ Dans cette partie, $E = \R$
     \end{itemize}
 
     Alors $\forall i \in \ninter{0}{k - 1}, \, f_n^{(i)}$ converge uniformément sur tout segment vers $g_i$,
-    $g_0$ est de classe $\mathscr{C}^k$ et $\forall i \in \ninter{0}{k}, \, g_0^{(i)} = g_i$.
+    $g_0$ est de classe $\mc k$ et $\forall i \in \ninter{0}{k}, \, g_0^{(i)} = g_i$.
 \end{theoreme}
 
 \idee{Récurrence sur $k$}
@@ -688,17 +688,17 @@ Dans cette partie, $E = \R$
     Par récurrence sur $k$, le cas $k = 1$ est le théorème précédent.
 
     Hypothèse de récurrence : supposons cela vrai pour un certain $k \geqslant 1$, et toute 
-    suite de fonctions $\mathscr C^k$. 
+    suite de fonctions $\mc k$. 
 
-    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mathscr{C}^{k + 1}$ vérifiant les hypothèses du théorème pour $k + 1$.
+    Soit $(f_n)_{n \in \N}$ suite de fonctions de classe $\mc {k + 1}$ vérifiant les hypothèses du théorème pour $k + 1$.
 
-    Alors on peut appliquer l'hypothèse de récurrence à la suite $(f_n')_{n \in \N}$ qui est de classe $\mathscr{C}^k$.
+    Alors on peut appliquer l'hypothèse de récurrence à la suite $(f_n')_{n \in \N}$ qui est de classe $\mc k$.
 
     Donc les convergences des $f_n^{(i)}$ pour $i \geqslant 1$ sont uniformes, donc 
     par le théorème précédent, $(f_n)$ converge uniformément sur tout segment et 
-    $g_0$ est de classe $\mathscr{C}^1$ avec $g_0' = g_1$. 
+    $g_0$ est de classe $\mc 1$ avec $g_0' = g_1$. 
 
-    Or par l'hypothèse, $g_1$ est de classe $\mathscr{C}^k$ et donc $g_0$ est de classe $\mathscr{C}^{k + 1}$ avec
+    Or par l'hypothèse, $g_1$ est de classe $\mc k$ et donc $g_0$ est de classe $\mc {k + 1}$ avec
     $g_1^{(j)} = g_{j + 1}$ et $g_0^{(j)} = g_j$ 
 \end{proof}
 
@@ -714,19 +714,19 @@ séries de fonctions.
         \item $\sum_{n \geqslant 0} u_n$ converge uniformément 
     sur tout segment inclus dans $I$
     \end{itemize}
-    Soit $a \in I$. Posons $\forall n \in \N, \, \fonction{U_n} I {E'}{x}{\int_a^x u_n(t) dt}$.
+    Soit $a \in I$. Posons $\forall n \in \N, \, \fonction{U_n} I {E'}{x}{\int_a^x u_n(t) \dt}$.
 
     Alors $\sum_{n \geqslant 0} U_n$ converge uniformément sur tout segment inclus dans $I$, 
     
     et 
     $\forall x \in I$, 
-    $$\sum_{n = 0 }^{+ \infty } \int_{a }^{x } u_n(t) dt = \int_{a}^{x } \sum_{n = 0}^{+ \infty} u_n(t) dt$$
+    $$\sum_{n = 0 }^{+ \infty } \int_{a }^{x } u_n(t) \dt = \int_{a}^{x } \sum_{n = 0}^{+ \infty} u_n(t) \dt$$
 \end{theoreme}
 
 \begin{corollaire}{}{}
     Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions continues qui converge uniformément sur 
     $[a, b]$, alors 
-    $$\sum_{n = 0}^{+ \infty} \int_{a}^{b} u_n(t) dt = \int_{a}^{b} \sum_{n = 0}^{+ \infty} u_n(t) dt$$
+    $$\sum_{n = 0}^{+ \infty} \int_{a}^{b} u_n(t) \dt = \int_{a}^{b} \sum_{n = 0}^{+ \infty} u_n(t) \dt$$
 \end{corollaire}
 
 \begin{proof}
@@ -735,7 +735,7 @@ séries de fonctions.
 \end{proof}
 
 \begin{theoreme}{Dérivation série}{}
-    Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions de classe $\mathscr{C}^1$ sur $I$ telle que
+    Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions de classe $\mc 1$ sur $I$ telle que
     \begin{itemize}
         \item $\sum_{n \geqslant 0} u_n$ converge simplement
         \item $\sum_{n \geqslant 0} u'_n$ converge uniformément sur tout segment
@@ -743,21 +743,21 @@ séries de fonctions.
     Alors : 
     \begin{itemize}
         \item $\sum_{n \geqslant 0} u_n$ converge uniformément sur tout segment
-        \item $\displaystyle \sum_{n = 0 }^{+ \infty } u_n$ est de classe $\mathscr C^1$
+        \item $\displaystyle \sum_{n = 0 }^{+ \infty } u_n$ est de classe $\mc 1$
     \end{itemize}
     Donc : 
     $$\left(\sum_{n = 0}^{+ \infty} u_n\right)' = \sum_{n = 0 }^{+ \infty } u_n'$$
 \end{theoreme}
 
 \begin{theoreme}{Généralisation}{}
-    Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions de classe $\mathscr{C}^k$ sur $I$ tel que 
+    Soit $\sum_{n \geqslant 0} u_n$ une série de fonctions de classe $\mc k$ sur $I$ tel que 
     \begin{itemize}
         \item $\forall i \in \ninter{0}{k - 1}, \, \sum_{n \geqslant 0} u_n^{(i)}$ converge simplement sur $I$ 
         \item $\sum_{n \geqslant 0} u_n^{(k)}$ converge uniformément sur tout segment inclus dans $I$   
     \end{itemize}
 
     Alors $\forall i \in \ninter{0}{k - 1}, \, \sum_{n \geqslant 0} u_n^{(i)}$ converge uniformément sur tout segment
-    et $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est de classe $\mathscr{C}^k$ et 
+    et $\displaystyle \sum_{n = 0}^{+ \infty} u_n$ est de classe $\mc k$ et 
     $\forall i \geqslant k$, $\displaystyle \left( \sum_{n = 0}^{+ \infty} u_n \right)^{(i)} = \sum_{n = 0}^{+ \infty} u_n^{(i)}$.
 \end{theoreme}
 
@@ -766,7 +766,7 @@ séries de fonctions.
 
     Pososn $\forall n \geqslant 1, \, u_n(x) = \frac 1 {n^x} = e^{-x \ln(n)}$.
 
-    $u_n$ est de classe $\mathscr {C}^{\infty}$ et $\forall k \geqslant 1, \, u_n^{(k)}(x) = \frac{(- \ln(n))^k}{n^x}$. 
+    $u_n$ est de classe $\mc \infty$ et $\forall k \geqslant 1, \, u_n^{(k)}(x) = \frac{(- \ln(n))^k}{n^x}$. 
 
     Soit $[a, b] \subset ]1, +\infty[$.
     $$\left| u_n^{(k)}(x) \right| \leqslant \frac{(\ln n )^k}{n^a}$$
@@ -774,7 +774,7 @@ séries de fonctions.
     De plus, $\displaystyle \frac{(\ln n)^k}{n^a} = \circ \left( \frac 1 {n^{\frac{a + 1}{2}}} \right)$, terme 
     général d'une série convergente, donc la série converge normalement. 
 
-    Donc $\zeta$ est de classe $\mathscr{C}^{k}$ pour tout $k$ donc $\mathscr{C}^{\infty}$ est 
+    Donc $\zeta$ est de classe $\mc k$ pour tout $k$ donc $\mc \infty$ est 
     $$\zeta^{(k)}(x) = \sum_{n = 0}^{+ \infty} \frac{(- \ln(n))^k}{n^x}$$
 \end{exemple}
 
@@ -788,8 +788,8 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
     de $f$ sur lequel la série converge simplement.
     \item On étudie la convergence uniforme sur tout segment inclus dans $I$ de $\sum u_n$, on vérifie 
     les $u_n$ continues, et on déduit $f$ continue sur $I$.
-    \item Si les $u_n$ sont $\mathscr C^k$ on étudie la convergence uniforme sur tout segment des 
-    $\sum u_n^{(k)}$ pour montrer que $f$ est de classe $\mathscr{C}^k$ 
+    \item Si les $u_n$ sont $\mc k$ on étudie la convergence uniforme sur tout segment des 
+    $\sum u_n^{(k)}$ pour montrer que $f$ est de classe $\mc k$ 
     \item On utilise le théorème de la double limite pour trouver les limites de $f$ aux bornes 
     de $I$. 
     \item Si cela échoue, on utilise une comparaison série intégrale. 
@@ -859,7 +859,7 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 \end{theorement}
 
 \begin{proof}
-    Soit $f \in \mathscr C^{pm}([a, b], \R)$. 
+    Soit $f \in \mc{pm} ([a, b], \R)$. 
 
     On sait que $\forall \varepsilon > 0, \, \exists \varphi_\varepsilon, \psi_\varepsilon$ fonctions en escaliers 
     de $[a, b]$ dans $\R$ telle que $\varphi_\varepsilon \leqslant f \leqslant \psi_\varepsilon$ et
@@ -873,7 +873,7 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
 
 
 \begin{proposition}{Lemme de Lebesgue, LHP}{}
-    Soit $f \in \mathscr C^{pm}([a, b], \R)$ alors 
+    Soit $f \in \mc{pm}([a, b], \R)$ alors 
     $$\int_a^b f(t) \sin(nt) \mathrm d t \xrightarrow[n \to + \infty ]{} 0$$
 \end{proposition}
 
@@ -896,7 +896,7 @@ On considère $f : \displaystyle x \mapsto \sum_{n = 0}^{+ \infty} u_n(x)$.
         & \xrightarrow[n \to + \infty ]{} 0
     \end{align}
 
-    Soit $f \in \mathscr C^{pm}([a, b], \R)$ et $\varepsilon > 0$.
+    Soit $f \in \mc{pm}([a, b], \R)$ et $\varepsilon > 0$.
 
     Par le théorème précédent, il existe $\varphi$ fonction en escalier telle que 
     

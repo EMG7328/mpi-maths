@@ -597,7 +597,7 @@ disques ouverts et fermés ...}ko
 \lvspace \avspace \begin{theoreme}{}{}
     Soit $\sum_{n \geqslant 0} a_n x^n$ une série entière de rayon de convergence $R_a > 0$.
     Notons $$\fonction{f_a}{]-R_a, R_a[}{\C}{x}{\sum_{n = 0}^{+\infty} a_n x^n}$$ alors 
-    $f_a$ est de classe $\mathscr {C}^\infty$ sur $]-R_a, R_a[$ et 
+    $f_a$ est de classe $\mc \infty$ sur $]-R_a, R_a[$ et 
     $\forall k \in \N$, $\forall x \in ]-R_a, R_a[$,
     $$f^{(k)}_a(x) = \sum_{n = k}^{+\infty} n (n - 1) \cdots (n - k + 1) a_n x^{n - k}$$
 \end{theoreme}
@@ -613,12 +613,12 @@ disques ouverts et fermés ...}ko
 
     Soit $0 < R < R_a$. 
 
-    $u_n $ est de classe $\mathscr {C}^\infty$ et $\forall x \in \N, \, u_n^{(k)}(x) = \left\{ \begin{matrix}
+    $u_n $ est de classe $\mc \infty$ et $\forall x \in \N, \, u_n^{(k)}(x) = \left\{ \begin{matrix}
         0 & \text{ si } k > n \\
         n(n- 1) \cdots (n - k + 1) a_n x^{n - k} & \text{ sinon }
     \end{matrix} \right.$ 
 
-    Donc convergence normale sur $[-R, R]$, donc $f_a$ est de classe $\mathscr {C}^\infty$ 
+    Donc convergence normale sur $[-R, R]$, donc $f_a$ est de classe $\mc \infty$ 
     sur $[-R, R]$ donc sur $]-R_a, R_a[$ et la dérivation se calcule terme à terme.
 \end{proof}
 
@@ -662,7 +662,7 @@ disques ouverts et fermés ...}ko
     On cherche une solution somme d'une série entière $\displaystyle y(x) = \sum_{n = 0}^{+\infty} a_n x^n$
     de rayon de convergence $R > 0$.
 
-    Soit $y $ une telle série entière. Sa somme est de classe $\mathscr {C}^\infty$ et 
+    Soit $y $ une telle série entière. Sa somme est de classe $\mc \infty$ et 
     $\displaystyle \forall x \in ]-R, R[$, 
     
     $\displaystyle y'(x) = \sum_{n = 1}^{+\infty} n a_n x^{n - 1}$ et
@@ -753,7 +753,7 @@ disques ouverts et fermés ...}ko
 
 \begin{proposition}{}{}
     Soit $f$ développable en série entière sur $] - R, R[$ alors $f$ est de classe
-    $\mathscr {C}^\infty$ sur $]-R, R[$ et 
+    $\mc \infty$ sur $]-R, R[$ et 
     $$\forall x \in ]-R, R[, 
     f(x) = \sum_{n = 0}^{+\infty} \frac{f^{(n)}(0)}{n!} x^n$$
 \end{proposition}
@@ -763,7 +763,7 @@ disques ouverts et fermés ...}ko
 \end{proof}
 
 \begin{remarque}
-    Attention, il existe des fonctions de classe $\mathscr {C}^\infty$ qui ne sont pas
+    Attention, il existe des fonctions de classe $\mc \infty$ qui ne sont pas
     développables en série entière.
 \end{remarque}
 
@@ -771,7 +771,7 @@ disques ouverts et fermés ...}ko
     $\fonction{f}{\R}{\R}{x}{\left\{ \begin{matrix}
         e^{- \frac 1 {x^2}} & \text{ si } x \neq 0 \\
         0 & \text{ si } x = 0
-    \end{matrix} \right.}$ est de classe $\mathscr {C}^\infty$ sur $\R$ mais 
+    \end{matrix} \right.}$ est de classe $\mc \infty$ sur $\R$ mais 
     $\forall n \in \N, f^{(n)}(0) = 0$ donc son développement en série entière en $0$ est
     la série nulle qui ne coïncide pas avec $f$ sur un intervalle ouvert contenant $0$.
 \end{exemple}
@@ -780,7 +780,7 @@ disques ouverts et fermés ...}ko
 
 \begin{proposition}{Stabilité des fonctions développables en série entière}{}
     Soient $f, g$ développables en série entière sur $]-R, R[$, $\alpha \in \C$, alors 
-    $f + g$, $\alpha f$, $fg$, $f'$ et $x \mapsto \int_0^x f(t) dt$ le sont aussi. 
+    $f + g$, $\alpha f$, $fg$, $f'$ et $x \mapsto \int_0^x f(t) \dt$ le sont aussi. 
 
 \end{proposition}
 
@@ -792,7 +792,7 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
         \item $\displaystyle (\alpha f)(x) = \sum_{n = 0}^{+\infty} \alpha a_n x^n$,
         \item $\displaystyle (fg)(x) = \sum_{n = 0}^{+\infty} c_n x^n$ où $\displaystyle c_n = \sum_{k = 0}^n a_k b_{n - k}$,
         \item $\displaystyle f'(x) = \sum_{n = 1}^{+\infty} n a_n x^{n - 1}$
-        \item $\displaystyle \int_0^x f(t) dt = \sum_{n = 0}^{+\infty} \frac{a_n}{n + 1} x^{n + 1}$
+        \item $\displaystyle \int_0^x f(t) \dt = \sum_{n = 0}^{+\infty} \frac{a_n}{n + 1} x^{n + 1}$
     \end{itemize}
 
 \begin{proof}
@@ -850,10 +850,10 @@ On a alors, en notant $\displaystyle \forall x \in ]-R, R[, \, f(x) = \sum_{n = 
     Posons $\displaystyle \forall x \in ]-1, 1[, \, g(x) = 1 + \sum_{n = 1}^{+\infty} a_n x^n$. 
     $g(0) = 1 = (1 + 0)^\alpha = f(0)$ où $f(x) = (1 + x)^\alpha$. 
 
-    De plus, $f$ est $\mathscr C^1$ et $\forall x \in ]-1, 1[, \, f'(x) = \alpha (1 + x)^{\alpha - 1} = \frac \alpha {1 + x} f(x)$.
+    De plus, $f$ est $\mc 1$ et $\forall x \in ]-1, 1[, \, f'(x) = \alpha (1 + x)^{\alpha - 1} = \frac \alpha {1 + x} f(x)$.
     Donc $(1 + x) f'(x) = \alpha f(x)$. 
 
-    Or $\forall x \in ]-1, 1[, \, g$ est aussi $\mathscr C^1$ et
+    Or $\forall x \in ]-1, 1[, \, g$ est aussi $\mc 1$ et
     $$ g'(x) = \sum_{n = 1 }^{+ \infty  } \frac{\alpha (\alpha - 1) \cdots (\alpha - n + 1) x^{n - 1}}{(n - 1 )! }$$ car série entière 
     Donc 
     \begin{align}
